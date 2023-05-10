@@ -10,7 +10,7 @@ spec:
     namespace: argocd
   project: default
   source:
-    repoURL: https://github.com/dhenne/minikube-argocd-traefik-example.git
+    repoURL: https://github.com/bhuism/impl-argocd.git
     path: charts/root
     targetRevision: HEAD
   syncPolicy:

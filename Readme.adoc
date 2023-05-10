@@ -11,7 +11,7 @@ image:https://github.com/bhuism/impl-argocd/actions/workflows/test.yaml/badge.sv
 .setup local directory and minikube
 [source,bash]
 ----
-git clone https://github.com/dhenne/minikube-argocd-traefik-example
+git clone https://github.com/bhuism/impl-argocd
 minikube start --driver=docker
 ----
 

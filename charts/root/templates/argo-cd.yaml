@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-cd
+  namespace: default
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  project: default
+  source:
+    repoURL: https://argoproj.github.io/argo-helm
+    chart: argo-cd
+    targetRevision: 5.16.7
+    helm:
+      values: |
+        repoServer:
+          env:
+            - name: SSL_CERT_DIR
+              value: "/app/config/tls/"
+        server:
+          env:
+            - name: SSL_CERT_DIR
+              value: "/app/config/tls/"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

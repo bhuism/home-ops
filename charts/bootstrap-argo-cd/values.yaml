@@ -31,7 +31,7 @@ argo-cd:
       pathType: Prefix
       extraPaths: []
       hosts:
-        - gatus.impl.nl
+        - argocd.impl.nl
 
   configs:
     cm:

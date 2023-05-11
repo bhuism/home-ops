@@ -45,7 +45,7 @@ jobs:
           kubectl config set-context --current --namespace=argocd
           for application_name in root argo-cd ok ; do
             argocd app sync $application_name || echo syncing $application_name failed
-            argocd app wait --operation --sync --health $application_name || echo waiting for $application_name failed
+            argocd app wait --operation --timeout 60 --sync --health $application_name || echo waiting for $application_name failed
           done
       #     kubectl port-forward service/springboot-helm-prod-spring-boot-helm-demo -n default 3000:80 &
       # - name: test application response

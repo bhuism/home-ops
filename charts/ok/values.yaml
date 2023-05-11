@@ -37,7 +37,6 @@ securityContext:
 service:
   type: ClusterIP
   port: 8080
-#  targetPort: 8080
   propeport: 9080
   annotations: {}
   labels: {}
@@ -47,11 +46,6 @@ ingress:
   ingressClassName: nginx
   className: nginx
   annotations:
-#    cert-manager.io/cluster-issuer: letsencrypt-production
-#    kubernetes.io/tls-acme: "true"
-#    kubernetes.io/ssl-redirect: "false"
-#    ingress.kubernetes.io/ssl-redirect: "false"
-#    ingress.kubernetes.io/force-ssl-redirect: "false"
     external-dns.alpha.kubernetes.io/target: jasmine.odee.net
   labels: {}
   path: /
@@ -63,15 +57,8 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: {}
-#    - secretName: ok.impl.nl
-#      hosts:
-#        - ok.impl.nl
 
 resources:
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   limits:
     cpu: 100m
     memory: 128Mi

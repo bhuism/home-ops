@@ -11,6 +11,13 @@ argo-cd:
     env:
       - name: SSL_CERT_DIR
         value: "/app/config/tls/"
+    extraArgs:
+      - --insecure
+    config:
+      repositories: |
+        - type: helm
+          name: argo-cd
+          url: https://argoproj.github.io/argo-helm
 
 configs:
   cm:

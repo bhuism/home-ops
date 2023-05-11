@@ -43,7 +43,7 @@ jobs:
           kubectl apply -n argocd -f charts/root/templates/root.yaml
           kubectl create namespace okapp
           kubectl config set-context --current --namespace=argocd
-          for application_name in root argo-cd ok ; do
+          for application_name in root argo-cd ok gatus ; do
             argocd app sync $application_name || echo syncing $application_name failed
             argocd app wait --operation --timeout 60 --sync --health $application_name || echo waiting for $application_name failed
           done

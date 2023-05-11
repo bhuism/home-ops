@@ -27,6 +27,7 @@ spec:
           extraArgs:
             - --insecure
           config:
+            application.resourceTrackingMethod: annotation+label
             repositories: |
               - type: helm
                 name: argo-cd

@@ -13,7 +13,7 @@ jobs:
       - name: install argocd cli
         run: |
           curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-arm64
-          sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+          sudo install -m 555 argocd-linux-arm64 /usr/local/bin/argocd
           rm argocd-linux-arm64
       - name: run argocd on minikube
         run: |

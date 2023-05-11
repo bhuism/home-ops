@@ -41,7 +41,7 @@ jobs:
           kubectl rollout -n argocd status --watch deployment argo-cd-argocd-server
           argocd login cd.argoproj.io --core
           kubectl apply -n argocd -f charts/root/templates/root.yaml
-          for application_name in root argo-cd ; do
+          for application_name in root argo-cd ok ; do
             argocd app sync $application_name || echo syncing $application_name failed
             argocd app wait --operation --sync --health $application_name || echo waiting for $application_name failed
           done

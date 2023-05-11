@@ -3,6 +3,8 @@
 #     extraArgs:
 #       - --insecure
 argo-cd:
+  dex:
+    enabled: false
   repoServer:
     env:
       - name: SSL_CERT_DIR

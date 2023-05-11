@@ -20,6 +20,8 @@ jobs:
           curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_arm64.deb
           sudo dpkg -i minikube_latest_arm64.deb
           rm -fv minikube_latest_arm64.deb
+      - uses: azure/setup-kubectl@v3
+        id: install
       - name: run argocd on minikube
         run: |
           minikube start --driver=docker

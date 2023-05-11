@@ -37,7 +37,7 @@ jobs:
             token: ${{ secrets.GITHUB_TOKEN }}
           EOF
           helm dependency update charts/bootstrap-argo-cd
-          helm install -m argocd --create-namespace argo-cd charts/bootstrap-argo-cd
+          helm install -n argocd --create-namespace argo-cd charts/bootstrap-argo-cd
           kubectl rollout -n argocd status --watch deployment argo-cd-argocd-server
           argocd login cd.argoproj.io --core
           kubectl apply -n argocd -f charts/root/templates/root.yaml

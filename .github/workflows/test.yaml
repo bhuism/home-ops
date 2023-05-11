@@ -25,7 +25,7 @@ jobs:
       - name: run argocd on minikube
         run: |
           set -o xtrace
-          sudo apt install helm
+          sudo snap install helm
           minikube start --driver=docker
           kubectl apply -f - <<EOF
           apiVersion: v1

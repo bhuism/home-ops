@@ -14,24 +14,6 @@ spec:
     repoURL: https://argoproj.github.io/argo-helm
     chart: argo-cd
     targetRevision: 5.32.1
-    helm:
-      values: |
-        repoServer:
-          env:
-            - name: SSL_CERT_DIR
-              value: "/app/config/tls/"
-        server:
-          env:
-            - name: SSL_CERT_DIR
-              value: "/app/config/tls/"
-          extraArgs:
-            - --insecure
-          config:
-            application.resourceTrackingMethod: annotation+label
-            repositories: |
-              - type: helm
-                name: argo-cd
-                url: https://argoproj.github.io/argo-helm
   syncPolicy:
     automated:
       prune: true

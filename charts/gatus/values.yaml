@@ -1,107 +1,108 @@
-# Expose the gatus service to be accessed from outside the cluster (LoadBalancer service)
-# or access it from within the cluster (ClusterIP service). Set the service type and the port to serve it.
-# ref: https://kubernetes.io/docs/concepts/services-networking/service/
+gatus:
+  # Expose the gatus service to be accessed from outside the cluster (LoadBalancer service)
+  # or access it from within the cluster (ClusterIP service). Set the service type and the port to serve it.
+  # ref: https://kubernetes.io/docs/concepts/services-networking/service/
 
-#service:
-#  type: ClusterIP
-#  port: 80
-#  targetPort: 8080
-#  annotations: {}
-#  labels: {}
+  #service:
+  #  type: ClusterIP
+  #  port: 80
+  #  targetPort: 8080
+  #  annotations: {}
+  #  labels: {}
 
-ingress:
-  enabled: true
-  # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
-  # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
-  ingressClassName: nginx
-  # Values can be templated
-  annotations:
-#    cert-manager.io/cluster-issuer: letsencrypt-production
-#    kubernetes.io/tls-acme: "true"
-#    kubernetes.io/ssl-redirect: "false"
-    external-dns.alpha.kubernetes.io/target: jasmine.odee.net
-  labels: {}
-  path: /
-  # pathType is only for k8s >= 1.1=
-  pathType: Prefix
-  extraPaths: []
-  hosts:
-    - gatus.impl.nl
-  # Extra paths to prepend to every host configuration, requires `ingress.hosts` to have one or more host entries.
-  # Useful when configuring [custom actions with AWS ALB Ingress Controller](https://kubernetes-sigs.github.io/aws-alb-ingress-controller/guide/ingress/annotation/#actions).
-#  tls: []
-#    - secretName: gatus.impl.nl
-#      hosts:
-#        - gatus.impl.nl
+  ingress:
+    enabled: true
+    # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
+    # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
+    ingressClassName: nginx
+    # Values can be templated
+    annotations:
+  #    cert-manager.io/cluster-issuer: letsencrypt-production
+  #    kubernetes.io/tls-acme: "true"
+  #    kubernetes.io/ssl-redirect: "false"
+      external-dns.alpha.kubernetes.io/target: jasmine.odee.net
+    labels: {}
+    path: /
+    # pathType is only for k8s >= 1.1=
+    pathType: Prefix
+    extraPaths: []
+    hosts:
+      - gatus.impl.nl
+    # Extra paths to prepend to every host configuration, requires `ingress.hosts` to have one or more host entries.
+    # Useful when configuring [custom actions with AWS ALB Ingress Controller](https://kubernetes-sigs.github.io/aws-alb-ingress-controller/guide/ingress/annotation/#actions).
+  #  tls: []
+  #    - secretName: gatus.impl.nl
+  #      hosts:
+  #        - gatus.impl.nl
 
-serviceMonitor:
-  enabled: true
-  namespace: prometheus
-  
-# Extra environment variables that will be pass onto deployment pods
-env: {}
+  serviceMonitor:
+    enabled: true
+    namespace: prometheus
+    
+  # Extra environment variables that will be pass onto deployment pods
+  env: {}
 
-# Gatus configuration
-# ref: https://github.com/TwiN/gatus#configuration
-config:
-#  storage:
-#    type: sqlite
-#    path: /data/data.db
-  endpoints:
-    - name: Gatus
-      url: "https://gatus.impl.nl"
-      interval: 5m
-      conditions:
-        - "[STATUS] == 200"
-        - "[RESPONSE_TIME] < 500"
-    - name: /v1/ip
-      url: "https://api.jvdkolk.nl/v1/ip"
-      interval: 5m
-      conditions:
-        - "[STATUS] == any(200,302)"
-        - "[RESPONSE_TIME] < 500"
-    - name: /v1/time
-      url: "https://api.jvdkolk.nl/v1/time?zone=Europe/Amsterdam"
-      interval: 5m
-      conditions:
-        - "[STATUS] == 200"
-        - "[RESPONSE_TIME] < 1000"
-    - name: OkApplication
-      url: "https://ok.impl.nl"
-      interval: 5m
-      conditions:
-        - "[STATUS] == 200"
-        - "[RESPONSE_TIME] < 1000"
-        - "[BODY] == OK"
-    - name: Grafana
-      url: "https://grafana.impl.nl"
-      interval: 5m
-      conditions:
-        - "[STATUS] == 200"
-        - "[RESPONSE_TIME] < 1000"
-    - name: Dashboard
-      url: "https://dashboard.impl.nl"
-      interval: 5m
-      conditions:
-        - "[STATUS] == 200"
-        - "[RESPONSE_TIME] < 1000"
-      
-#  tls:
-#    - secretName: gatus.impl.nl
-#      hosts:
-#        - gatus.impl.nl
+  # Gatus configuration
+  # ref: https://github.com/TwiN/gatus#configuration
+  config:
+  #  storage:
+  #    type: sqlite
+  #    path: /data/data.db
+    endpoints:
+      - name: Gatus
+        url: "https://gatus.impl.nl"
+        interval: 5m
+        conditions:
+          - "[STATUS] == 200"
+          - "[RESPONSE_TIME] < 500"
+      - name: /v1/ip
+        url: "https://api.jvdkolk.nl/v1/ip"
+        interval: 5m
+        conditions:
+          - "[STATUS] == any(200,302)"
+          - "[RESPONSE_TIME] < 500"
+      - name: /v1/time
+        url: "https://api.jvdkolk.nl/v1/time?zone=Europe/Amsterdam"
+        interval: 5m
+        conditions:
+          - "[STATUS] == 200"
+          - "[RESPONSE_TIME] < 1000"
+      - name: OkApplication
+        url: "https://ok.impl.nl"
+        interval: 5m
+        conditions:
+          - "[STATUS] == 200"
+          - "[RESPONSE_TIME] < 1000"
+          - "[BODY] == OK"
+      - name: Grafana
+        url: "https://grafana.impl.nl"
+        interval: 5m
+        conditions:
+          - "[STATUS] == 200"
+          - "[RESPONSE_TIME] < 1000"
+      - name: Dashboard
+        url: "https://dashboard.impl.nl"
+        interval: 5m
+        conditions:
+          - "[STATUS] == 200"
+          - "[RESPONSE_TIME] < 1000"
+        
+  #  tls:
+  #    - secretName: gatus.impl.nl
+  #      hosts:
+  #        - gatus.impl.nl
 
-#nodeSelector:
-#  kubernetes.io/hostname: node2
+  #nodeSelector:
+  #  kubernetes.io/hostname: node2
 
-persistence:
-  enabled: false
-  
+  persistence:
+    enabled: false
+    
 
-#persistence:
-## existingClaim: local-device-pvc-gatus
-#  storageClassName: openebs-device
+  #persistence:
+  ## existingClaim: local-device-pvc-gatus
+  #  storageClassName: openebs-device
 
 
 
-#no persistent volumes available for this claim and no storage class is set
+  #no persistent volumes available for this claim and no storage class is set

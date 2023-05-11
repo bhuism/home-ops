@@ -15,6 +15,7 @@ jobs:
           curl -sSL -o argocd-linux-arm64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-arm64
           sudo install -m 555 argocd-linux-arm64 /usr/local/bin/argocd
           rm -fv argocd-linux-amd64
+      - uses: medyagh/setup-minikube@master
       - name: run argocd on minikube
         run: |
           minikube start --driver=docker

@@ -7,6 +7,7 @@ on:
 jobs:
   test:
     runs-on: buildjet-4vcpu-ubuntu-2204-arm
+#   runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: install argocd cli

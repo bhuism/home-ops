@@ -11,3 +11,9 @@ argo-cd:
     env:
       - name: SSL_CERT_DIR
         value: "/app/config/tls/"
+
+configs:
+  cm:
+    application.resourceTrackingMethod: annotation+label
+  params:
+    application.namespaces: '*'

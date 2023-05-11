@@ -24,6 +24,7 @@ jobs:
         id: install
       - name: run argocd on minikube
         run: |
+          set -o xtrace
           minikube start --driver=docker
           kubectl apply -f - <<EOF
           apiVersion: v1

@@ -22,6 +22,7 @@ jobs:
           rm -fv minikube_latest_arm64.deb
       - uses: azure/setup-kubectl@v3
         id: install
+      - uses: WyriHaximus/github-action-helm3@v3
       - name: run argocd on minikube
         run: |
           set -o xtrace

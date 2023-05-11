@@ -11,9 +11,9 @@ spec:
     namespace: argocd
   project: default
   source:
-    repoURL: https://argoproj.github.io/argo-helm
-    chart: argo-cd
-    targetRevision: 5.32.1
+    repoURL: https://github.com/bhuism/impl-argocd.git
+    path: charts/bootstrap-argo-cd
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true

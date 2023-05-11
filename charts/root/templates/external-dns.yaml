@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: external-dns
+  namespace: external-dns
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: external-dns
+  project: default
+  source:
+    chart: external-dns
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 6.19.2
+    helm:
+      values: |
+        provider: cloudflare
+        cloudflare:
+          apiToken: "4AL-reSc839LrR2j_cY9iO8R9Qcxm_flsWcFH-7Z"
+          email: "meuk@odee.net"
+          proxied: true
+        txtOwnerId: impl
+        domainFilters:
+          - impl.nl
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true 
+    syncOptions:
+    - CreateNamespace=true

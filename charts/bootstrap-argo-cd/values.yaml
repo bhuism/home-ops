@@ -32,7 +32,6 @@ argo-cd:
       extraPaths: []
       hosts:
         - argocd.impl.nl
-
   configs:
     cm:
       application.resourceTrackingMethod: annotation+label

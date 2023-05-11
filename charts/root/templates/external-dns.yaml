@@ -13,7 +13,7 @@ spec:
   source:
     chart: external-dns
     repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 6.19.2
+    targetRevision: 6.20.1
     helm:
       values: |
         provider: cloudflare

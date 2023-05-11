@@ -22,11 +22,11 @@ argo-cd:
           url: https://argoproj.github.io/argo-helm
     configs:
       cm:
-        application.resourceTrackingMethod: annotation+label
+        application.resourceTrackingMethod: annotation
       params:
         application.namespaces: '*'
-  configs:
-    cm:
-      application.resourceTrackingMethod: annotation+label
-    params:
-      application.namespaces: '*'
+  # configs:
+  #   cm:
+  #     application.resourceTrackingMethod: annotation+label
+  #   params:
+  #     application.namespaces: '*'

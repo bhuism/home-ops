@@ -21,7 +21,7 @@ argo-cd:
           name: argo-cd
           url: https://argoproj.github.io/argo-helm
     ingress:
-      enabled: false
+      enabled: true
       ingressClassName: nginx
       annotations:
         external-dns.alpha.kubernetes.io/target: jasmine.odee.net

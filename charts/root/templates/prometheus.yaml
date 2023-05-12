@@ -23,48 +23,6 @@ spec:
               external-dns.alpha.kubernetes.io/target: jasmine.odee.net
             hosts:
             - grafana.impl.nl
-
-        # prometheus:
-        #   nodeSelector:
-        #     kubernetes.io/hostname: node2
-        #   prometheusSpec:
-        #     storageSpec:
-        #       volumeClaimTemplate:
-        #         spec:
-        #           storageClassName: openebs-device
-        #           accessModes: ["ReadWriteOnce"]
-        #           resources:
-        #             requests:
-        #               storage: 20Gi
-
-        #server:
-        #  persistentVolume:
-        #    storageClassName: openebs-device
-        #  ingress:
-        #    enabled: true
-        #    ingressClassName: nginx
-        #    annotations:
-        #      external-dns.alpha.kubernetes.io/target: jasmine.odee.net
-        #    hosts:
-        #    - grafana.impl.nl
-        #  nodeSelector:
-        #    kubernetes.io/hostname: node2
-
-
-
-        #prometheusSpec:
-        #    storageSpec: {}
-            ## Using PersistentVolumeClaim
-            ##
-            #  volumeClaimTemplate:
-            #    spec:
-            #      storageClassName: gluster
-            #      accessModes: ["ReadWriteOnce"]
-            #      resources:
-            #        requests:
-            #          storage: 50Gi
-            #    selector: {}
-
   syncPolicy:
     automated:
       prune: true

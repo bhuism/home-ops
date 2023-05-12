@@ -15,16 +15,6 @@ spec:
     targetRevision: 22.4.1
     helm:
       values: |
-        # prometheus:
-        #   prometheusSpec:
-        #     storageSpec:
-        #       volumeClaimTemplate:
-        #         spec:
-        #           storageClassName: nfs
-        #           accessModes: ["ReadWriteOnce"]
-        #           resources:
-        #             requests:
-        #               storage: 20Gi
         grafana:
           ingress:
             enabled: true

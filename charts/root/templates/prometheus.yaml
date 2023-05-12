@@ -1,0 +1,78 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prometheus
+  project: default
+  source:
+    chart: prometheus
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: 22.4.1
+    helm:
+      values: |
+        grafana:
+          ingress:
+            enabled: true
+            ingressClassName: nginx
+            annotations:
+              external-dns.alpha.kubernetes.io/target: jasmine.odee.net
+            hosts:
+            - grafana.impl.nl
+
+        # prometheus:
+        #   nodeSelector:
+        #     kubernetes.io/hostname: node2
+        #   prometheusSpec:
+        #     storageSpec:
+        #       volumeClaimTemplate:
+        #         spec:
+        #           storageClassName: openebs-device
+        #           accessModes: ["ReadWriteOnce"]
+        #           resources:
+        #             requests:
+        #               storage: 20Gi
+
+        #server:
+        #  persistentVolume:
+        #    storageClassName: openebs-device
+        #  ingress:
+        #    enabled: true
+        #    ingressClassName: nginx
+        #    annotations:
+        #      external-dns.alpha.kubernetes.io/target: jasmine.odee.net
+        #    hosts:
+        #    - grafana.impl.nl
+        #  nodeSelector:
+        #    kubernetes.io/hostname: node2
+
+
+
+        #prometheusSpec:
+        #    storageSpec: {}
+            ## Using PersistentVolumeClaim
+            ##
+            #  volumeClaimTemplate:
+            #    spec:
+            #      storageClassName: gluster
+            #      accessModes: ["ReadWriteOnce"]
+            #      resources:
+            #        requests:
+            #          storage: 50Gi
+            #    selector: {}
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true 
+    managedNamespaceMetadata:
+      labels:
+        pod-security.kubernetes.io/enforce: privileged
+        pod-security.kubernetes.io/audit: privileged
+        pod-security.kubernetes.io/warn: privileged
+    syncOptions:
+    - CreateNamespace=true

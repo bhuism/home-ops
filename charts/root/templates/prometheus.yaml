@@ -15,6 +15,8 @@ spec:
     targetRevision: 22.6.2
     helm:
       values: |
+        alertmanager:
+          enabled: false
         grafana:
           ingress:
             enabled: true

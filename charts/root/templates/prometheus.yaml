@@ -15,6 +15,10 @@ spec:
     targetRevision: 22.6.2
     helm:
       values: |
+        alertmanager:
+          enabled: true
+          nodeSelector:
+            kubernetes.io/hostname: node2
         grafana:
           ingress:
             enabled: true

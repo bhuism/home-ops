@@ -16,7 +16,10 @@ spec:
     helm:
       values: |
         alertmanager:
-          enabled: false
+          nodeSelector:
+            kubernetes.io/hostname: node2
+          persistentVolume:
+            storageClass: local-path
           # alertmanagerSpec:
           #   nodeSelector:
           #     kubernetes.io/hostname: node2

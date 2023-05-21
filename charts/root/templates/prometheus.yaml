@@ -20,7 +20,17 @@ spec:
             kubernetes.io/hostname: node2
           persistentVolume:
             storageClass: local-path
-          # alertmanagerSpec:
+          alertmanagerSpec:
+            storage:
+              volumeClaimTemplate:
+                spec:
+                  storageClassName: local-path
+                  accessModes: ["ReadWriteOnce"]
+                  resources:
+                    requests:
+                      storage: 10Gi
+
+
           #   nodeSelector:
           #     kubernetes.io/hostname: node2
         grafana:

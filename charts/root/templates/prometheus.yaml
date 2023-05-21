@@ -25,6 +25,9 @@ spec:
               external-dns.alpha.kubernetes.io/target: jasmine.odee.net
             hosts:
             - grafana.impl.nl
+        server:
+          nodeSelector:
+            kubernetes.io/hostname: node2
         prometheus:
           nodeSelector:
             kubernetes.io/hostname: node2

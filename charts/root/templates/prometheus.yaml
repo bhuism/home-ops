@@ -16,9 +16,9 @@ spec:
     helm:
       values: |
         alertmanager:
-          enabled: true
-          nodeSelector:
-            kubernetes.io/hostname: node2
+          alertmanagerSpec:
+            nodeSelector:
+              kubernetes.io/hostname: node2
         grafana:
           ingress:
             enabled: true

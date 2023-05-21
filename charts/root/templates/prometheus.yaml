@@ -21,7 +21,7 @@ spec:
           persistentVolume:
             storageClass: local-path
           alertmanagerSpec:
-            storage:
+            storageSpec:
               volumeClaimTemplate:
                 spec:
                   storageClassName: local-path

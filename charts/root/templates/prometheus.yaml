@@ -28,6 +28,8 @@ spec:
         server:
           nodeSelector:
             kubernetes.io/hostname: node2
+          persistentVolume:
+            storageClass: local-path
         prometheus:
           nodeSelector:
             kubernetes.io/hostname: node2

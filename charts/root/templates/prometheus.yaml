@@ -16,21 +16,20 @@ spec:
     helm:
       values: |
         alertmanager:
-          nodeSelector:
-            kubernetes.io/hostname: node2
-          persistentVolume:
-            storageClass: local-path
-          alertmanagerSpec:
-            storageSpec:
-              volumeClaimTemplate:
-                spec:
-                  storageClassName: local-path
-                  accessModes: ["ReadWriteOnce"]
-                  resources:
-                    requests:
-                      storage: 10Gi
-
-
+          enabled: false
+          # nodeSelector:
+          #   kubernetes.io/hostname: node2
+          # persistentVolume:
+          #   storageClass: local-path
+          # alertmanagerSpec:
+          #   storageSpec:
+          #     volumeClaimTemplate:
+          #       spec:
+          #         storageClassName: local-path
+          #         accessModes: ["ReadWriteOnce"]
+          #         resources:
+          #           requests:
+          #             storage: 10Gi
           #   nodeSelector:
           #     kubernetes.io/hostname: node2
         grafana:

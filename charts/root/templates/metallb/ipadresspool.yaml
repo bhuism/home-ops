@@ -8,12 +8,3 @@ spec:
     - 192.168.1.80-192.168.1.90
   autoAssign: true
   avoidBuggyIPs: true
----
-apiVersion: metallb.io/v1beta1
-kind: L2Advertisement
-metadata:
-  name: l2advertisement
-  namespace: metallb-system
-spec:
-    ipAddressPools:
-      - ipaddresspool-huisnetwerk

@@ -32,10 +32,11 @@ spec:
         prometheus:
           prometheusSpec:
             storageSpec:
-              spec:
-                selector:
-                  matchLabels:
-                    app: prometheus
+              volumeClaimTemplate:
+                spec:
+                  selector:
+                    matchLabels:
+                      app: prometheus
 
   syncPolicy:
     automated:

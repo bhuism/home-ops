@@ -7,6 +7,7 @@ metadata:
     app: prometheus
 spec:
   storageClassName: local-path
+  persistentVolumeReclaimPolicy: Retain
   claimRef:
     name: prometheus-pvc
     namespace: prometheus

@@ -27,11 +27,11 @@ spec:
           persistentVolume:
             existingClaim: prometheus-pvc
         grafana:
+          persistentVolume:
+            existingClaim: prometheus-pvc
           ingress:
             enabled: true
             ingressClassName: nginx
-          persistentVolume:
-            existingClaim: prometheus-pvc
             annotations:
               external-dns.alpha.kubernetes.io/target: jasmine.odee.net
             labels: {}

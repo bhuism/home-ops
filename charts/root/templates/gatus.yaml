@@ -82,7 +82,7 @@ spec:
         #  kubernetes.io/hostname: node2
 
         persistence:
-          enabled: false
+          enabled: true
           existingClaim: gatus-pvc
           
         #persistence:

@@ -83,6 +83,7 @@ spec:
 
         persistence:
           enabled: false
+          existingClaim: gatus-pvc
           
         #persistence:
         ## existingClaim: local-device-pvc-gatus

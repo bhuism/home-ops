@@ -33,9 +33,13 @@ spec:
           prometheusSpec:
             storageSpec:
               volumeClaimTemplate:
-                selector:
-                  matchLabels:
-                    app: prometheus
+                spec:
+                  storageClassName: local-path
+                  accessModes: ["ReadWriteOnce"]
+                  resources:
+                    requests:
+                      storage: 20Gi
+
   syncPolicy:
     automated:
       prune: true

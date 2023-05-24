@@ -29,10 +29,13 @@ spec:
             extraPaths: []
             hosts:
               - grafana.impl.nl
-        prometheus:
+        server:
           nodeSelector:
             kubernetes.io/hostname: node2
+        prometheus:
           prometheusSpec:
+            nodeSelector:
+              kubernetes.io/hostname: node2
             storageSpec:
               volumeClaimTemplate:
                 spec:

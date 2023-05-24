@@ -29,9 +29,9 @@ spec:
             extraPaths: []
             hosts:
               - grafana.impl.nl
-        server:
+        prometheusOperator:
           nodeSelector:
-            kubernetes.io/hostname: node2
+              kubernetes.io/hostname: node2
         prometheus:
           prometheusSpec:
             nodeSelector:

@@ -15,82 +15,81 @@ spec:
     targetRevision: 3.3.5
     helm:
       values: |
-        gatus:
-          ingress:
-            enabled: true
-            ingressClassName: nginx
-            annotations:
-              external-dns.alpha.kubernetes.io/target: jasmine.odee.net
-            labels: {}
-            path: /
-            pathType: Prefix
-            extraPaths: []
-            hosts:
-              - gatus.impl.nl
-          serviceMonitor:
-            enabled: true
-            namespace: prometheus
-            
-          config:
-          #  storage:
-          #    type: sqlite
-          #    path: /data/data.db
-            endpoints:
-              - name: Gatus
-                url: "https://gatus.impl.nl"
-                interval: 5m
-                conditions:
-                  - "[STATUS] == 200"
-                  - "[RESPONSE_TIME] < 500"
-              - name: /v1/ip
-                url: "https://api.jvdkolk.nl/v1/ip"
-                interval: 5m
-                conditions:
-                  - "[STATUS] == any(200,302)"
-                  - "[RESPONSE_TIME] < 500"
-              - name: /v1/time
-                url: "https://api.jvdkolk.nl/v1/time?zone=Europe/Amsterdam"
-                interval: 5m
-                conditions:
-                  - "[STATUS] == 200"
-                  - "[RESPONSE_TIME] < 1000"
-              - name: OkApplication
-                url: "https://ok.impl.nl"
-                interval: 5m
-                conditions:
-                  - "[STATUS] == 200"
-                  - "[RESPONSE_TIME] < 1000"
-                  - "[BODY] == OK"
-              - name: Grafana
-                url: "https://grafana.impl.nl"
-                interval: 5m
-                conditions:
-                  - "[STATUS] == 200"
-                  - "[RESPONSE_TIME] < 1000"
-              - name: Dashboard
-                url: "https://dashboard.impl.nl"
-                interval: 5m
-                conditions:
-                  - "[STATUS] == 200"
-                  - "[RESPONSE_TIME] < 1000"
-                
-          #  tls:
-          #    - secretName: gatus.impl.nl
-          #      hosts:
-          #        - gatus.impl.nl
+        ingress:
+          enabled: true
+          ingressClassName: nginx
+          annotations:
+            external-dns.alpha.kubernetes.io/target: jasmine.odee.net
+          labels: {}
+          path: /
+          pathType: Prefix
+          extraPaths: []
+          hosts:
+            - gatus.impl.nl
+        serviceMonitor:
+          enabled: true
+          namespace: prometheus
+          
+        config:
+        #  storage:
+        #    type: sqlite
+        #    path: /data/data.db
+          endpoints:
+            - name: Gatus
+              url: "https://gatus.impl.nl"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 500"
+            - name: /v1/ip
+              url: "https://api.jvdkolk.nl/v1/ip"
+              interval: 5m
+              conditions:
+                - "[STATUS] == any(200,302)"
+                - "[RESPONSE_TIME] < 500"
+            - name: /v1/time
+              url: "https://api.jvdkolk.nl/v1/time?zone=Europe/Amsterdam"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 1000"
+            - name: OkApplication
+              url: "https://ok.impl.nl"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 1000"
+                - "[BODY] == OK"
+            - name: Grafana
+              url: "https://grafana.impl.nl"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 1000"
+            - name: Dashboard
+              url: "https://dashboard.impl.nl"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 1000"
+              
+        #  tls:
+        #    - secretName: gatus.impl.nl
+        #      hosts:
+        #        - gatus.impl.nl
 
-          #nodeSelector:
-          #  kubernetes.io/hostname: node2
+        #nodeSelector:
+        #  kubernetes.io/hostname: node2
 
-          persistence:
-            enabled: false
-            
-          #persistence:
-          ## existingClaim: local-device-pvc-gatus
-          #  storageClassName: openebs-device
+        persistence:
+          enabled: false
+          
+        #persistence:
+        ## existingClaim: local-device-pvc-gatus
+        #  storageClassName: openebs-device
 
 
-          #no persistent volumes available for this claim and no storage class is set
+        #no persistent volumes available for this claim and no storage class is set
       
   syncPolicy:
     automated:

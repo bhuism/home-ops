@@ -30,6 +30,8 @@ spec:
             hosts:
               - grafana.impl.nl
         prometheus:
+          nodeSelector:
+              kubernetes.io/hostname: node2
           prometheusSpec:
             storageSpec:
               volumeClaimTemplate:

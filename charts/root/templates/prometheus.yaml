@@ -37,24 +37,14 @@ spec:
         prometheus:
           prometheusSpec:
             affinity:
-              # nodeAffinity:
-              #   requiredDuringSchedulingIgnoredDuringExecution:
-              #     nodeSelectorTerms:
-              #     - matchExpressions:
-              #       - key: kubernetes.io/e2e-az-name
-              #         operator: In
-              #         values:
-              #         - e2e-az1
-              #           - e2e-az2
               nodeAffinity:
-                required:
+                requiredDuringSchedulingIgnoredDuringExecution:
                   nodeSelectorTerms:
                   - matchExpressions:
                     - key: kubernetes.io/hostname
                       operator: In
                       values:
                       - node2
-
 
             nodeSelector:
               kubernetes.io/hostname: node2

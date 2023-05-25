@@ -34,10 +34,10 @@ spec:
             storageSpec:
               volumeClaimTemplate:
                 spec:
-                  selector:
-                    matchLabels:
-                      app: prometheus
-
+                  storageClassName: local-path
+                  resources:
+                    requests:
+                      storage: 15Gi
   syncPolicy:
     automated:
       prune: true

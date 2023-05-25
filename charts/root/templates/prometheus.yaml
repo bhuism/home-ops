@@ -36,16 +36,6 @@ spec:
             storageClass: local-path
         prometheus:
           prometheusSpec:
-            affinity:
-              nodeAffinity:
-                requiredDuringSchedulingIgnoredDuringExecution:
-                  nodeSelectorTerms:
-                  - matchExpressions:
-                    - key: kubernetes.io/hostname
-                      operator: In
-                      values:
-                      - node2
-
             nodeSelector:
               kubernetes.io/hostname: node2
             storageSpec:

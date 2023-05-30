@@ -1,37 +1,37 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: local-path-provisioner
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: local-path-storage
-  project: default
-  source:
-    repoURL: https://github.com/bhuism/impl-argocd.git
-    path: charts/local-path-provisioner
-    targetRevision: HEAD
-    helm:
-      values: |
-        nodeSelector:
-          kubernetes.io/hostname: node1
-        nodePathMap:
-          - node: node1
-            paths:
-              - /var/mnt/export
-        storageClass:
-          defaultClass: true
-          reclaimPolicy: Retain          
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    managedNamespaceMetadata:
-      labels:
-        pod-security.kubernetes.io/enforce: privileged
-        pod-security.kubernetes.io/audit: privileged
-        pod-security.kubernetes.io/warn: privileged
-    syncOptions:
-    - CreateNamespace=true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: local-path-provisioner
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io
+# spec:
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: local-path-storage
+#   project: default
+#   source:
+#     repoURL: https://github.com/bhuism/impl-argocd.git
+#     path: charts/local-path-provisioner
+#     targetRevision: HEAD
+#     helm:
+#       values: |
+#         nodeSelector:
+#           kubernetes.io/hostname: node1
+#         nodePathMap:
+#           - node: node1
+#             paths:
+#               - /var/mnt/export
+#         storageClass:
+#           defaultClass: true
+#           reclaimPolicy: Retain          
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     managedNamespaceMetadata:
+#       labels:
+#         pod-security.kubernetes.io/enforce: privileged
+#         pod-security.kubernetes.io/audit: privileged
+#         pod-security.kubernetes.io/warn: privileged
+#     syncOptions:
+#     - CreateNamespace=true

@@ -21,6 +21,9 @@ spec:
           - node: node1
             paths:
               - /var/mnt/export
+        storageClass:
+          defaultClass: true
+          reclaimPolicy: Retain          
   syncPolicy:
     automated:
       prune: true

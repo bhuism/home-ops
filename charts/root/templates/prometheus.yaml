@@ -29,18 +29,18 @@ spec:
             extraPaths: []
             hosts:
               - grafana.impl.nl
-        # prometheus:
-        #   prometheusSpec:
-        #     nodeSelector:
-        #       kubernetes.io/hostname: node2
-        #     storageSpec:
-        #       volumeClaimTemplate:
-        #         spec:
-        #           storageClassName: local-path
-        #           accessModes: ["ReadWriteOnce"]
-        #           resources:
-        #             requests:
-        #               storage: 15Gi
+        prometheus:
+          prometheusSpec:
+            nodeSelector:
+              kubernetes.io/hostname: node1
+            storageSpec:
+              volumeClaimTemplate:
+                spec:
+                  storageClassName: local-path
+                  accessModes: ["ReadWriteOnce"]
+                  resources:
+                    requests:
+                      storage: 15Gi
   syncPolicy:
     automated:
       prune: true

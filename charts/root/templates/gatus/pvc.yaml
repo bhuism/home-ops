@@ -1,12 +1,12 @@
-# kind: PersistentVolumeClaim
-# apiVersion: v1
-# metadata:
-#   name: gatus-pvc
-#   namespace: gatus
-# spec:
-#   storageClassName: local-path
-#   accessModes:
-#     - ReadWriteOnce
-#   resources:
-#     requests:
-#       storage: 5G
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: gatus-pvc
+  namespace: gatus
+spec:
+  storageClassName: local-path
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5G

@@ -66,9 +66,9 @@ spec:
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 1000"
-        # persistence:
-        #   enabled: true
-        #   existingClaim: gatus-pvc
+        persistence:
+          enabled: true
+          existingClaim: gatus-pvc
   syncPolicy:
     automated:
       prune: true

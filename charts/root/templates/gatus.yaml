@@ -66,8 +66,6 @@ spec:
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 1000"
-        nodeSelector:
-          kubernetes.io/hostname: node3
         persistence:
           enabled: true
           existingClaim: gatus-pvc

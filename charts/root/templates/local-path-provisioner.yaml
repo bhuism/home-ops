@@ -22,7 +22,7 @@ spec:
             paths:
               - /var/mnt/export
         storageClass:
-          defaultClass: true
+          defaultClass: false
           reclaimPolicy: Retain
   syncPolicy:
     automated:

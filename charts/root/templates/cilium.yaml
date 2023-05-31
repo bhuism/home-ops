@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cilium
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  project: default
+  source:
+    chart: cilium
+    repoURL: https://helm.cilium.io/
+    targetRevision: 1.13.3
+    helm:
+      values: |
+        enableXTSocketFallback: false
+        hubble:
+          relay:
+            enabled: true
+          ui:
+            enabled: true
+        ipam:
+          mode: kubernetes
+        k8sServiceHost: control.impl.nl
+        k8sServicePort: 6443
+        securityContext:
+          privileged: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

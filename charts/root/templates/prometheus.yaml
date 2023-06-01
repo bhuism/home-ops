@@ -18,6 +18,7 @@ spec:
         alertmanager:
           enabled: false
         grafana:
+          adminPassword: killer
           ingress:
             enabled: true
             ingressClassName: nginx
@@ -31,8 +32,6 @@ spec:
               - grafana.impl.nl
         prometheus:
           prometheusSpec:
-            # nodeSelector:
-            #   kubernetes.io/hostname: node3
             storageSpec:
               volumeClaimTemplate:
                 spec:

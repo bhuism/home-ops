@@ -15,6 +15,7 @@ spec:
     targetRevision: 3.3.5
     helm:
       values: |
+        metrics: true
         ingress:
           enabled: true
           ingressClassName: nginx

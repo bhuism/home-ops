@@ -16,6 +16,10 @@ spec:
     helm:
       values: |
         metrics: true
+        connectivity:
+          checker:
+            target: 1.1.1.1:53
+            interval: 60s
         ingress:
           enabled: true
           ingressClassName: nginx

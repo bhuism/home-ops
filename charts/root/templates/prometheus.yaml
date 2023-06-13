@@ -1,56 +1,56 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: prometheus
-#   finalizers:
-#     - resources-finalizer.argocd.argoproj.io
-# spec:
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: prometheus
-#   project: default
-#   source:
-#     chart: kube-prometheus-stack
-#     repoURL: https://prometheus-community.github.io/helm-charts
-#     targetRevision: 46.8.0
-#     helm:
-#       values: |
-#         alertmanager:
-#           enabled: false
-#         grafana:
-#           adminPassword: killer
-#           ingress:
-#             enabled: true
-#             ingressClassName: nginx
-#             annotations:
-#               external-dns.alpha.kubernetes.io/target: jasmine.odee.net
-#             labels: {}
-#             path: /
-#             pathType: Prefix
-#             extraPaths: []
-#             hosts:
-#               - grafana.impl.nl
-#         prometheus:
-#           prometheusSpec:
-#             nodeSelector:
-#               kubernetes.io/hostname: node3
-#             storageSpec:
-#               volumeClaimTemplate:
-#                 spec:
-#                   storageClassName: local-path
-#                   accessModes: ["ReadWriteOnce"]
-#                   resources:
-#                     requests:
-#                       storage: 15Gi
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-#     managedNamespaceMetadata:
-#       labels:
-#         pod-security.kubernetes.io/enforce: privileged
-#         pod-security.kubernetes.io/audit: privileged
-#         pod-security.kubernetes.io/warn: privileged
-#     syncOptions:
-#       - CreateNamespace=true
-#       - ServerSideApply=true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prometheus
+  project: default
+  source:
+    chart: kube-prometheus-stack
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: 46.8.0
+    helm:
+      values: |
+        alertmanager:
+          enabled: false
+        grafana:
+          adminPassword: killer
+          ingress:
+            enabled: true
+            ingressClassName: nginx
+            annotations:
+              external-dns.alpha.kubernetes.io/target: jasmine.odee.net
+            labels: {}
+            path: /
+            pathType: Prefix
+            extraPaths: []
+            hosts:
+              - grafana.impl.nl
+        prometheus:
+          prometheusSpec:
+            nodeSelector:
+              kubernetes.io/hostname: node3
+            storageSpec:
+              volumeClaimTemplate:
+                spec:
+                  storageClassName: local-path
+                  accessModes: ["ReadWriteOnce"]
+                  resources:
+                    requests:
+                      storage: 15Gi
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    managedNamespaceMetadata:
+      labels:
+        pod-security.kubernetes.io/enforce: privileged
+        pod-security.kubernetes.io/audit: privileged
+        pod-security.kubernetes.io/warn: privileged
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true

@@ -39,6 +39,7 @@ spec:
                 token_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/oauth/token
                 api_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/userinfo
                 use_pkce: true
+                signout_redirect_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/logout
           ingress:
             enabled: true
             ingressClassName: nginx

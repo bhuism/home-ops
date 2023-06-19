@@ -22,15 +22,14 @@ spec:
           grafana.ini:
             analytics:
               check_for_updates: false
-              reporting_enabled: false              
-            root_url: https://grafana.impl.nl
+              reporting_enabled: false
             server:
               root_url: https://grafana.impl.nl
             auth:
               disable_login_form: true
             auth.generic_oauth:
                 enabled: true
-                allow_sign_up: false
+                allow_sign_up: true
                 auto_login: true
                 name: Auth0
                 client_id: ksdkWYma0ijfC10amKanYD3YtD9weZ4N

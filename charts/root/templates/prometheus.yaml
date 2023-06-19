@@ -20,6 +20,9 @@ spec:
         grafana:
           # adminPassword: killer
           grafana.ini:
+            analytics:
+              check_for_updates: false
+              reporting_enabled: false              
             root_url: https://grafana.impl.nl
             server:
               root_url: https://grafana.impl.nl

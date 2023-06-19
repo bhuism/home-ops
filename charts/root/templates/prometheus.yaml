@@ -21,6 +21,8 @@ spec:
           # adminPassword: killer
           grafana.ini:
             root_url: https://grafana.impl.nl
+            server:
+              root_url: https://grafana.impl.nl
             auth:
               disable_login_form: true
             auth.generic_oauth:

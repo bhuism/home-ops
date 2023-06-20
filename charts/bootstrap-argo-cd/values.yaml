@@ -49,6 +49,7 @@ argo-cd:
       enabled: true
   configs:
     cm:
+      admin.enabled: false
       application.resourceTrackingMethod: annotation+label
       url: https://argocd.impl.nl
       oidc.config: |

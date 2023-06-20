@@ -60,5 +60,6 @@ argo-cd:
           - openid
           - profile
           - email
+          - name
     params:
       application.namespaces: "*"

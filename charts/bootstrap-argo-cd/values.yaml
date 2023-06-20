@@ -27,7 +27,6 @@ argo-cd:
     redis:
       metrics:
         enabled: true
-
     ingress:
       enabled: true
       ingressClassName: nginx
@@ -35,7 +34,6 @@ argo-cd:
         external-dns.alpha.kubernetes.io/target: jasmine.odee.net
       labels: {}
       path: /
-      # pathType is only for k8s >= 1.1=
       pathType: Prefix
       extraPaths: []
       hosts:

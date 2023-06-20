@@ -17,6 +17,7 @@ spec:
       values: |
         alertmanager:
           enabled: false
+          test: false
         grafana:
           grafana.ini:
             analytics:

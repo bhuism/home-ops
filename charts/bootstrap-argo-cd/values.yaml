@@ -56,7 +56,11 @@ argo-cd:
         issuer: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/
         clientID: ksdkWYma0ijfC10amKanYD3YtD9weZ4N
         clientSecret: $auth0.client_secret
-        requestedScopes: ["openid", "profile", "email", "groups"]
+        requestedScopes:
+          - openid
+          - profile
+          - email 
+          - 'https://impl.nl/claims/groups'
         requestedIDTokenClaims:
           email:
             essential: true
@@ -80,6 +84,7 @@ argo-cd:
         p, role:org-admin, logs, get, *, allow
         p, role:org-admin, exec, create, */*, allow
         g, argocd-global-admins, role:admin
+        g, argo-admins, role:admin
         g, bhuism@odee.net, role:org-admin
         g, bhuism@odee.net, role:admin
         g, bhuism, role:org-admin

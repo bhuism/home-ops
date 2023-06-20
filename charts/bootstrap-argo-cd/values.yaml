@@ -56,8 +56,12 @@ argo-cd:
         issuer: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/
         clientID: ksdkWYma0ijfC10amKanYD3YtD9weZ4N
         clientSecret: $auth0.client_secret
-
-
+        requestedScopes: ["openid", "profile", "email", "groups"]
+        requestedIDTokenClaims:
+          email:
+            essential: true
+          groups:
+            essential: true
 
     rbac:
       create: true
@@ -77,6 +81,9 @@ argo-cd:
         p, role:org-admin, exec, create, */*, allow
         g, argocd-global-admins, role:admin
         g, bhuism@odee.net, role:org-admin
+        g, bhuism@odee.net, role:admin
+        g, bhuism, role:org-admin
+        g, bhuism, role:admin
 
       # -- OIDC scopes to examine during rbac enforcement (in addition to `sub` scope).
       # The scope value can be a string, or a list of strings.

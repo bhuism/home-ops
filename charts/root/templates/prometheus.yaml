@@ -70,8 +70,8 @@ spec:
               volumeClaimTemplate:
                 spec:
                   storageClassName: local-path
-                  finalizers:
-                    - kubernetes.io/pvc-protection
+                  # finalizers:
+                  #   - kubernetes.io/pvc-protection
                   accessModes: ["ReadWriteOnce"]
                   resources:
                     requests:

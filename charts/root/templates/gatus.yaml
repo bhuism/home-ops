@@ -31,11 +31,11 @@ spec:
           extraPaths: []
           hosts:
             - gatus.impl.nl
-        serviceMonitor:
-          enabled: true
-          namespace: prometheus
-          labels:
-            - release: prometheus
+        # serviceMonitor:
+        #   enabled: true
+        #   namespace: prometheus
+        #   labels:
+        #     - release: prometheus
         config:
         #  storage:
         #    type: sqlite

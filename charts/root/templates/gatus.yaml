@@ -31,15 +31,15 @@ spec:
           extraPaths: []
           hosts:
             - gatus.impl.nl
-        # serviceMonitor:
-        #   enabled: true
-        #   namespace: prometheus
-        #   labels:
-        #     - release: prometheus
+        serviceMonitor:
+          enabled: true
+          namespace: prometheus
+          labels:
+            - release: prometheus
         config:
-        #  storage:
-        #    type: sqlite
-        #    path: /data/data.db
+          storage:
+            type: sqlite
+            path: /data/data.db
           endpoints:
             - name: Gatus
               url: "https://gatus.impl.nl"
@@ -71,7 +71,7 @@ spec:
               interval: 5m
               conditions:
                 - "[STATUS] == any(200, 429)"
-                - "[RESPONSE_TIME] < 8000"
+                - "[RESPONSE_TIME] < 10000"
             - name: "Argo CD"
               url: "https://argocd.impl.nl"
               interval: 5m

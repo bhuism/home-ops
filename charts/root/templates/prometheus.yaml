@@ -22,8 +22,8 @@ spec:
             type: pvc
             enabled: true
             storageClassName: local-path
-            finalizers:
-              - kubernetes.io/pvc-protection
+            # finalizers:
+            #   - kubernetes.io/pvc-protection
             accessModes:
               - ReadWriteOnce
             size: 10Gi
@@ -72,6 +72,8 @@ spec:
               volumeClaimTemplate:
                 spec:
                   storageClassName: local-path
+                  finalizers:
+                    - kubernetes.io/pvc-protection
                   accessModes: ["ReadWriteOnce"]
                   resources:
                     requests:

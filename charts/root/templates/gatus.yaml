@@ -33,7 +33,6 @@ spec:
             - gatus.impl.nl
         serviceMonitor:
           enabled: true
-          namespace: prometheus
           labels:
             release: prometheus
         config:

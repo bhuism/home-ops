@@ -71,7 +71,7 @@ spec:
               interval: 5m
               conditions:
                 - "[STATUS] == any(200, 429)"
-                - "[RESPONSE_TIME] < 1000"
+                - "[RESPONSE_TIME] < 8000"
             - name: "Argo CD"
               url: "https://argocd.impl.nl"
               interval: 5m

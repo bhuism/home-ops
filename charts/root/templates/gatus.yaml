@@ -36,7 +36,6 @@ spec:
           namespace: prometheus
           labels:
             - release: prometheus
-          
         config:
         #  storage:
         #    type: sqlite

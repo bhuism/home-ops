@@ -37,8 +37,6 @@ spec:
           labels:
             release: prometheus
         config:
-          ui:
-            title: Home-Ops.
           storage:
             type: sqlite
             path: /data/data.db

@@ -71,7 +71,7 @@ spec:
               url: "https://grafana.impl.nl"
               interval: 5m
               conditions:
-                - "[STATUS] == 200"
+                - "[STATUS] == any(200, 429)"
                 - "[RESPONSE_TIME] < 1000"
             - name: Argo CD
               url: "https://argocd.impl.nl"

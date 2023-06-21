@@ -79,6 +79,12 @@ spec:
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 1000"
+            - name: BMC
+              url: "https:/bmc.impl.nl"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 1000"
         nodeSelector:
           kubernetes.io/hostname: node3
         persistence:

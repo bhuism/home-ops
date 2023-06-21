@@ -16,9 +16,9 @@ spec:
     helm:
       values: |
         nodeSelector:
-          kubernetes.io/hostname: node3
+          kubernetes.io/hostname: node2
         nodePathMap:
-          - node: node3
+          - node: node2
             paths:
               - /var/mnt/export
         storageClass:

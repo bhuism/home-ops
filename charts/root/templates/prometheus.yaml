@@ -18,6 +18,17 @@ spec:
         alertmanager:
           enabled: false
         grafana:
+          persistence:
+            type: pvc
+            enabled: true
+            storageClassName: local-path
+            finalizers:
+              - kubernetes.io/pvc-protection
+            accessModes:
+              - ReadWriteOnce
+            size: 10Gi
+          nodeSelector:
+            kubernetes.io/hostname: node3
           grafana.ini:
             analytics:
               check_for_updates: false
@@ -61,6 +72,8 @@ spec:
               volumeClaimTemplate:
                 spec:
                   storageClassName: local-path
+                  finalizers:
+                    - kubernetes.io/pvc-protection
                   accessModes: ["ReadWriteOnce"]
                   resources:
                     requests:

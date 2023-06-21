@@ -31,11 +31,11 @@ spec:
           extraPaths: []
           hosts:
             - gatus.impl.nl
-        # serviceMonitor:
-        #   enabled: true
-        #   namespace: prometheus
-        #   labels:
-        #     - release: prometheus
+        serviceMonitor:
+          enabled: true
+          namespace: prometheus
+          labels:
+            - release: prometheus
         config:
         #  storage:
         #    type: sqlite
@@ -79,7 +79,7 @@ spec:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 1000"
             - name: BMC
-              url: "https://bmc.impl.nl"
+              url: "http://bmc.impl.nl"
               interval: 5m
               conditions:
                 - "[STATUS] == 200"

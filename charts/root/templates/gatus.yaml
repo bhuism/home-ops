@@ -37,6 +37,8 @@ spec:
           labels:
             release: prometheus
         config:
+          ui:
+            title: Home-Ops.
           storage:
             type: sqlite
             path: /data/data.db
@@ -82,7 +84,15 @@ spec:
           kubernetes.io/hostname: node3
         persistence:
           enabled: true
-          existingClaim: gatus-pvc
+          size: 200Mi
+          mountPath: /data
+          # subPath: ""
+          finalizers:
+            - kubernetes.io/pvc-protection
+          accessModes:
+            - ReadWriteOnce
+          storageClassName: nfs-client
+          
   syncPolicy:
     automated:
       prune: true

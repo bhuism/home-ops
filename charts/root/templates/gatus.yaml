@@ -91,7 +91,7 @@ spec:
             - kubernetes.io/pvc-protection
           accessModes:
             - ReadWriteOnce
-          storageClassName: nfs-client
+          storageClassName: local-path
           
   syncPolicy:
     automated:

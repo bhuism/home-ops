@@ -64,6 +64,7 @@ spec:
               - grafana.impl.nl
         prometheus:
           prometheusSpec:
+            serviceMonitorSelectorNilUsesHelmValues: false
             nodeSelector:
               kubernetes.io/hostname: node3
             storageSpec:

@@ -54,7 +54,7 @@ spec:
         prometheus:
           prometheusSpec:
             nodeSelector:
-              kubernetes.io/hostname: node2
+              kubernetes.io/hostname: node3
             storageSpec:
               volumeClaimTemplate:
                 spec:

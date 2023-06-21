@@ -84,7 +84,7 @@ spec:
           kubernetes.io/hostname: node3
         persistence:
           enabled: true
-          size: 200Mi
+          size: 10Gi
           mountPath: /data
           # subPath: ""
           finalizers:

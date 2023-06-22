@@ -19,16 +19,10 @@ spec:
           enabled: false
         grafana:
           persistence:
-            type: pvc
             enabled: true
-            storageClassName: local-path
-            # finalizers:
-            #   - kubernetes.io/pvc-protection
-            accessModes:
-              - ReadWriteOnce
-            size: 10Gi
-            selectorLabels:
-              for_app: prometheus-grafana
+            finalizers:
+              - kubernetes.io/pvc-protection
+            existingClaim: prometheus-grafana
           nodeSelector:
             kubernetes.io/hostname: node3
           grafana.ini:
@@ -73,12 +67,9 @@ spec:
               volumeClaimTemplate:
                 spec:
                   storageClassName: local-path
-                  # finalizers:
-                  #   - kubernetes.io/pvc-protection
+                  finalizers:
+                    - kubernetes.io/pvc-protection
                   accessModes: ["ReadWriteOnce"]
-                  selector:
-                    matchLabels:
-                      for_app: prometheus
                   resources:
                     requests:
                       storage: 15Gi

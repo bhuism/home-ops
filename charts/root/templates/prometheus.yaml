@@ -74,6 +74,9 @@ spec:
                   # finalizers:
                   #   - kubernetes.io/pvc-protection
                   accessModes: ["ReadWriteOnce"]
+                  selector:
+                    matchLabels:
+                      for_app: prometheus-grafana
                   resources:
                     requests:
                       storage: 15Gi

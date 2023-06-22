@@ -1,9 +1,14 @@
+# Default values for appsource.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
 replicaCount: 1
 
 image:
-  repository: europe-west4-docker.pkg.dev/impl-383520/docker/ok
+  repository: europe-west4-docker.pkg.dev/impl-383520/docker/appsource
   pullPolicy: Always
   tag: "latest"
+
 
 imagePullSecrets: []
 nameOverride: ""
@@ -11,7 +16,7 @@ fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
-  create: false
+  create: true
   # Annotations to add to the service account
   annotations: {}
   # The name of the service account to use.
@@ -23,22 +28,17 @@ podAnnotations: {}
 podSecurityContext: {}
   # fsGroup: 2000
 
-securityContext:
-  allowPrivilegeEscalation: false
-  capabilities:
-    drop:
-    - ALL
-  runAsNonRoot: true
-  seccompProfile:
-    type: RuntimeDefault
-    
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
 
 service:
   type: ClusterIP
-  port: 8080
-  propeport: 9080
-  annotations: {}
-  labels: {}
+  port: 80
 
 ingress:
   enabled: true
@@ -46,18 +46,21 @@ ingress:
   className: nginx
   annotations:
     external-dns.alpha.kubernetes.io/target: jasmine.odee.net
-  labels: {}
-  path: /
-  pathType: Prefix
-  extraPaths: []
   hosts:
-    - host: ok.impl.nl
+    - host: www.appsource.nl
       paths:
         - path: /
           pathType: ImplementationSpecific
-  tls: {}
+  tls:
+   - secretName: appsource-tls
+     hosts:
+       - www.appsource.nl
 
 resources:
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   limits:
     cpu: 100m
     memory: 128Mi

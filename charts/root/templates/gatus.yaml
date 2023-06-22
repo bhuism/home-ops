@@ -83,14 +83,7 @@ spec:
           kubernetes.io/hostname: node3
         persistence:
           enabled: true
-          size: 10Gi
-          mountPath: /data
-          # subPath: ""
-          finalizers:
-            - kubernetes.io/pvc-protection
-          accessModes:
-            - ReadWriteOnce
-          storageClassName: local-path
+          existingClaim: gatus
           
   syncPolicy:
     automated:

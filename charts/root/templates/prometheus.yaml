@@ -27,9 +27,8 @@ spec:
             accessModes:
               - ReadWriteOnce
             size: 10Gi
-            selector:
-              matchLabels:
-                for_app: prometheus-grafana
+            selectorLabels:
+              for_app: prometheus-grafana
           nodeSelector:
             kubernetes.io/hostname: node3
           grafana.ini:

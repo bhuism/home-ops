@@ -23,6 +23,7 @@ spec:
         txtOwnerId: impl
         domainFilters:
           - impl.nl
+          - appsource.nl
   syncPolicy:
     automated:
       prune: true

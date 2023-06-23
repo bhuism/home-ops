@@ -28,15 +28,17 @@ podAnnotations: {}
 podSecurityContext: {}
   # fsGroup: 2000
 
-securityContext:
-  allowPrivilegeEscalation: false
-  capabilities:
-    drop:
-    - ALL
-  readOnlyRootFilesystem: true
-  # runAsNonRoot: false
-  seccompProfile:
-    type: RuntimeDefault
+securityContext: {}
+
+# securityContext:
+#   allowPrivilegeEscalation: false
+#   capabilities:
+#     drop:
+#     - ALL
+#   readOnlyRootFilesystem: false
+#   # runAsNonRoot: false
+#   seccompProfile:
+#     type: RuntimeDefault
 
 
 service:

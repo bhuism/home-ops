@@ -79,6 +79,12 @@ spec:
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 1000"
+            - name: "Appsource"
+              url: "https://www.appsource.nl"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 1000"
         nodeSelector:
           kubernetes.io/hostname: node3
         persistence:

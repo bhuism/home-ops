@@ -34,7 +34,7 @@ securityContext:
     drop:
     - ALL
   readOnlyRootFilesystem: false
-  runAsNonRoot: false
+  runAsNonRoot: true
   seccompProfile:
     type: RuntimeDefault
 

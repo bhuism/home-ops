@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cloudflare-tunnel
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cloudflare-tunnel
+  project: default
+  source:
+    chart: cloudflare-tunnel
+    repoURL: https://cloudflare.github.io/helm-charts
+    targetRevision: 0.2.0
+    helm:
+      values: |
+        cloudflare:
+          account: "4316bf40a24216761dd785cc0591de6f"
+          tunnelName: "impl-tunnel"
+          tunnelId: "55c7affb-4f19-426b-aa56-cfa47940ee99"
+          secret: "Z3X58pS/e8ZC9JxSWSuE04xEG23BW8FkcwhWhn5LGKY="
+          enableWarp: false
+          # Define ingress rules for the tunnel. See
+          # https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/configuration-file/ingress
+          ingress: []
+            # The first rule proxies traffic to the httpbin sample service named web-server at port 80
+            # - hostname: tunnel.example.com
+            #  service: http://web-service:80
+            # This rule sends traffic to the built-in hello-world HTTP server. This can help debug connectivity
+            # issues. If hello.example.com resolves and tunnel.example.com does not, then the problem is
+            # in the connection from cloudflared to your local service, not from the internet to cloudflared.
+            # - hostname: hello.example.com
+            #   service: hello_world  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

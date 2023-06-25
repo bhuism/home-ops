@@ -34,4 +34,4 @@ spec:
         pod-security.kubernetes.io/audit: privileged
         pod-security.kubernetes.io/warn: privileged
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true

@@ -32,6 +32,7 @@ spec:
             # in the connection from cloudflared to your local service, not from the internet to cloudflared.
             # - hostname: hello.example.com
             #   service: hello_world  syncPolicy:
+  syncPolicy:
     automated:
       prune: true
       selfHeal: true

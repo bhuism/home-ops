@@ -25,15 +25,9 @@ spec:
           # https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/configuration-file/ingress
           ingress:
             - hostname: www.appsource.nl
-              service: http://192.168.1.80
-            # The first rule proxies traffic to the httpbin sample service named web-server at port 80
-            # - hostname: tunnel.example.com
-            #  service: http://web-service:80
-            # This rule sends traffic to the built-in hello-world HTTP server. This can help debug connectivity
-            # issues. If hello.example.com resolves and tunnel.example.com does not, then the problem is
-            # in the connection from cloudflared to your local service, not from the internet to cloudflared.
-            # - hostname: hello.example.com
-            #   service: hello_world  
+              service: http://192.168.1.80:80
+            - hostname: *.impl.nl
+              service: http://192.168.1.80:80
             - service: http_status:404
   syncPolicy:
     automated:

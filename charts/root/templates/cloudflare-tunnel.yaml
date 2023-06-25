@@ -22,10 +22,10 @@ spec:
           secret: "Z3X58pS/e8ZC9JxSWSuE04xEG23BW8FkcwhWhn5LGKY="
           enableWarp: false
           ingress:
-            - hostname: www.appsource.nl
-              service: http://192.168.1.80:80
-            - hostname: *.impl.nl
-              service: http://192.168.1.80:80
+            - hostname: "www.appsource.nl"
+              service: "http://192.168.1.80:80"
+            - hostname: "*.impl.nl"
+              service: "http://192.168.1.80:80"
   syncPolicy:
     automated:
       prune: true

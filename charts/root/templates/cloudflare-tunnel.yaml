@@ -35,7 +35,6 @@ spec:
             # - hostname: hello.example.com
             #   service: hello_world  
             - service: http_status:404
-            
   syncPolicy:
     automated:
       prune: true

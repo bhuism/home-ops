@@ -24,7 +24,7 @@ spec:
           enabled: true
           ingressClassName: nginx
           annotations:
-            external-dns.alpha.kubernetes.io/target: jasmine.odee.net
+            external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
           labels: {}
           path: /
           pathType: Prefix

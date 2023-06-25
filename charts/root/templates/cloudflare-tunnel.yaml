@@ -23,7 +23,8 @@ spec:
           enableWarp: false
           # Define ingress rules for the tunnel. See
           # https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/configuration-file/ingress
-          ingress: []
+          ingress:
+            - service: http://192.168.1.80
             # The first rule proxies traffic to the httpbin sample service named web-server at port 80
             # - hostname: tunnel.example.com
             #  service: http://web-service:80

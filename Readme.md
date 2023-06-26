@@ -28,6 +28,7 @@ Eleanor: |  ![Jasmine](https://shields.io/uptimerobot/status/m794488049-f2b30350
 * [Cloudflare Tunnel](https://github.com/cloudflare/helm-charts/tree/main/charts/cloudflare-tunnel)
 * [Echo-Server](https://ealenn.github.io/Echo-Server/)
 * [Change Detection](https://changedetection.io/)
+* [PiHole](https://pi-hole.net/)
 
 ### Todo
 

@@ -15,6 +15,8 @@ spec:
     targetRevision: 0.9.0
     helm:
       values: |
+        env:
+          TZ: "Europe/Amsterdam"
         ingress:
           main:
             enabled: true
@@ -26,7 +28,9 @@ spec:
             pathType: Prefix
             extraPaths: []
             hosts:
-              - changedetection.impl.nl
+              - host: changedetection.impl.nl
+                paths:
+                  - path: /
   syncPolicy:
     automated:
       prune: true

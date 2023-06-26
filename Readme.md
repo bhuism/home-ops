@@ -1,19 +1,33 @@
+# Home Ops
+
+<div align="center">
+[![GitHub last commit](https://img.shields.io/github/last-commit/bhuism/home-ops)](https://github.com/bhuism/home-ops/commits/main "Commit History")
+[![Test](https://github.com/bhuism/home-ops/actions/workflows/test.yaml/badge.svg)](https://github.com/bhuism/home-ops/actions/workflows/test.yaml)
+[![Talos](https://img.shields.io/badge/OS-Talos-success)](https://talos.dev "Talos OS")
+[![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com)
+</div>
 
 Service|| 
 ---------|-|
 Jasmine: |  ![Jasmine](https://shields.io/uptimerobot/status/m794488019-0bd05c1abe3b5c8b6b95d190)
 Eleanor: |  ![Jasmine](https://shields.io/uptimerobot/status/m794488049-f2b30350c7ad3e2ff4bc3c94)
-Build Status: | [![Test](https://github.com/bhuism/home-ops/actions/workflows/test.yaml/badge.svg)](https://github.com/bhuism/home-ops/actions/workflows/test.yaml)
 
 ### Running
 
-* cilium
-* argocd
-* gatus
-* metallb
-* prometheus stack
-* external-dns
-* ingress-nginx
-* local-path-provisioner
-* ok
-* cloudflare tunnel
+* [Cilium](https://cilium.io/)
+* [ArgoCD](https://argo-cd.readthedocs.io/)
+* [Gatus](https://gatus.io/)
+* [MetalLB](https://metallb.universe.tf/)
+* [Prometheus Stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
+* [ExternalDNS](https://github.com/kubernetes-sigs/external-dns)
+* [Ingress-nginx](https://github.com/kubernetes/ingress-nginx)
+* [Local-path-provisioner](https://github.com/rancher/local-path-provisioner)
+* [Ok](https://github.com/bhuism/ok)
+* [Cloudflare Tunnel](https://github.com/cloudflare/helm-charts/tree/main/charts/cloudflare-tunnel)
+
+
+### Todo
+
+* [Paperless](https://github.com/paperless-ngx/paperless-ngx)
+* [nginx.ingress.kubernetes.io/auth-url](https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/nginx-configuration/annotations.md#external-authentication)
+* [Oauth2-Proxy](https://oauth2-proxy.github.io/oauth2-proxy)

@@ -33,3 +33,4 @@ Eleanor: |  ![Jasmine](https://shields.io/uptimerobot/status/m794488049-f2b30350
 * [Paperless](https://github.com/paperless-ngx/paperless-ngx)
 * [nginx.ingress.kubernetes.io/auth-url](https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/nginx-configuration/annotations.md#external-authentication)
 * [Oauth2-Proxy](https://oauth2-proxy.github.io/oauth2-proxy)
+* A speedtest

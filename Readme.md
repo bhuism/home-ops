@@ -6,7 +6,7 @@
 [![Test](https://github.com/bhuism/home-ops/actions/workflows/test.yaml/badge.svg)](https://github.com/bhuism/home-ops/actions/workflows/test.yaml)
 [![Talos](https://img.shields.io/badge/OS-Talos-success)](https://talos.dev "Talos OS")
 [![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com)
-</p>
+</div>
 
 
 Service|| 

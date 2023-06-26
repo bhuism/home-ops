@@ -26,7 +26,7 @@ spec:
             pathType: Prefix
             extraPaths: []
             hosts:
-              - gatus.impl.nl
+              - changedetection.impl.nl
   syncPolicy:
     automated:
       prune: true

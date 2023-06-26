@@ -1,0 +1,45 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pihole
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: pihole
+  project: default
+  source:
+    chart: pihole
+    repoURL: https://mojo2600.github.io/pihole-kubernetes/
+    targetRevision: 2.15.0
+    helm:
+      values: |
+        serviceWeb:
+            loadBalancerIP: 192.168.1.80
+            annotations:
+                metallb.universe.tf/allow-shared-ip: pihole-svc
+            type: LoadBalancer
+
+        serviceDns:
+            loadBalancerIP: 192.168.1.80
+            annotations:
+                metallb.universe.tf/allow-shared-ip: pihole-svc
+            type: LoadBalancer          
+        # ingress:
+        #   enabled: true
+        #   ingressClassName: nginx
+        #   annotations:
+        #     external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
+        #   labels: {}
+        #   path: /
+        #   pathType: Prefix
+        #   extraPaths: []
+        #   hosts:
+        #     - pihole.impl.nl
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

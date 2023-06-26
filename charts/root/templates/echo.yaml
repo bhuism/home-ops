@@ -26,7 +26,6 @@ spec:
             - host: echo.impl.nl
               paths:
                 - /
-
   syncPolicy:
     automated:
       prune: true

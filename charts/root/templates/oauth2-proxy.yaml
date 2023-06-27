@@ -46,13 +46,14 @@ spec:
             cookie_refresh = "1m"
             cookie_expire = "30m"
         ingress:
-          enabled: true
-          ingressClassName: nginx
-          className: nginx
-          annotations:
-            external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
-          hosts:
-            - auth.impl.nl
+          main:
+            enabled: true
+            ingressClassName: nginx
+            className: nginx
+            annotations:
+              external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
+            hosts:
+              - auth.impl.nl
 
   syncPolicy:
     automated:

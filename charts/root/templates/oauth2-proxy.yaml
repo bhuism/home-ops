@@ -34,7 +34,7 @@ spec:
             provider = "oidc"
             provider_display_name = "Auth0"
             oidc_issuer_url = "https://dev-g4n3hjan0v2jg3le.eu.auth0.com/"
-            code_challenge_method = S256
+            code_challenge_method = "S256"
             email_domains = [ "*" ]
             scope = "openid profile email"
             whitelist_domains = "auth.impl.nl"

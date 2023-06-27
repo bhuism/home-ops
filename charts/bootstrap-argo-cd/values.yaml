@@ -31,7 +31,7 @@ argo-cd:
       enabled: true
       ingressClassName: nginx
       annotations:
-        external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
+        external-dns.alpha.kubernetes.io/target: ingress.impl.nl
       labels: {}
       path: /
       pathType: Prefix
@@ -49,50 +49,50 @@ argo-cd:
       enabled: true
   configs:
     cm:
-      admin.enabled: false
+      # admin.enabled: true
       application.resourceTrackingMethod: annotation+label
       url: https://argocd.impl.nl
-      oidc.config: |
-        name: Auth0
-        issuer: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/
-        clientID: ksdkWYma0ijfC10amKanYD3YtD9weZ4N
-        clientSecret: $auth0.client_secret
-        requestedScopes:
-          - openid
-          - profile
-          - email 
-          - 'https://impl.nl/claims/groups'
-        requestedIDTokenClaims:
-          email:
-            essential: true
-          groups:
-            essential: true
+      # oidc.config: |
+      #   name: Auth0
+      #   issuer: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/
+      #   clientID: ksdkWYma0ijfC10amKanYD3YtD9weZ4N
+      #   clientSecret: $auth0.client_secret
+      #   requestedScopes:
+      #     - openid
+      #     - profile
+      #     - email 
+      #     - 'https://impl.nl/claims/groups'
+      #   requestedIDTokenClaims:
+      #     email:
+      #       essential: true
+      #     groups:
+      #       essential: true
 
     rbac:
       create: true
-      policy.default: ''
+      # policy.default: ''
 
-      # Policy rules are in the form:
-      #  p, subject, resource, action, object, effect
-      # Role definitions and bindings are in the form:
-      #  g, subject, inherited-subject
-
-
-      policy.csv: |
-        p, role:org-admin, applications, *, */*, allow
-        p, role:org-admin, clusters, get, *, allow
-        p, role:org-admin, repositories, *, *, allow
-        p, role:org-admin, logs, get, *, allow
-        p, role:org-admin, exec, create, */*, allow
-        g, argocd-global-admins, role:admin
-        g, argo-admins, role:admin
-        g, argocd-global-admins, role:org-admin
-        g, argo-admins, role:org-admin
+      # # Policy rules are in the form:
+      # #  p, subject, resource, action, object, effect
+      # # Role definitions and bindings are in the form:
+      # #  g, subject, inherited-subject
 
 
-      # -- OIDC scopes to examine during rbac enforcement (in addition to `sub` scope).
-      # The scope value can be a string, or a list of strings.
-      scopes: "[https://impl.nl/claims/groups, email]"
+      # policy.csv: |
+      #   p, role:org-admin, applications, *, */*, allow
+      #   p, role:org-admin, clusters, get, *, allow
+      #   p, role:org-admin, repositories, *, *, allow
+      #   p, role:org-admin, logs, get, *, allow
+      #   p, role:org-admin, exec, create, */*, allow
+      #   g, argocd-global-admins, role:admin
+      #   g, argo-admins, role:admin
+      #   g, argocd-global-admins, role:org-admin
+      #   g, argo-admins, role:org-admin
+
+
+      # # -- OIDC scopes to examine during rbac enforcement (in addition to `sub` scope).
+      # # The scope value can be a string, or a list of strings.
+      # scopes: "[https://impl.nl/claims/groups, email]"
 
 
 

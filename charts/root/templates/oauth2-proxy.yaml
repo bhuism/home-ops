@@ -10,7 +10,7 @@ spec:
     namespace: oauth2-proxy
   project: default
   source:
-    chart: oauth2-proxy/oauth2-proxy
+    chart: oauth2-proxy
     repoURL: https://oauth2-proxy.github.io/manifests
     targetRevision: 6.13.1
     helm:

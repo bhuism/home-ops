@@ -36,7 +36,6 @@ spec:
             oidc_issuer_url = "https://dev-g4n3hjan0v2jg3le.eu.auth0.com/"
             email_domains = [ "*" ]
             scope = "openid profile email"
-            cookie_domain = "auth.impl.nl"
             whitelist_domains = "auth.impl.nl"
             pass_authorization_header = true
             pass_access_token = true

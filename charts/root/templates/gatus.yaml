@@ -67,12 +67,6 @@ spec:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
                 - "[BODY] == OK"
-            - name: Grafana
-              url: "https://grafana.impl.nl"
-              interval: 5m
-              conditions:
-                - "[STATUS] == any(200, 429)"
-                - "[RESPONSE_TIME] < 5000"
             - name: "Argo CD"
               url: "https://argocd.impl.nl"
               interval: 5m

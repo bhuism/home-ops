@@ -39,6 +39,11 @@ argo-cd:
       extraPaths: []
       hosts:
         - argocd.impl.nl
+      tls:
+        - secretName: argocd.impl.nl
+          hosts:
+            - argocd.impl.nl
+
   applicationSet:
     metrics:
       enabled: true

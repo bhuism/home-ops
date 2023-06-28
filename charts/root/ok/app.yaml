@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/bhuism/impl-argocd.git
-    path: charts/ok
+    path: ../charts/ok
     targetRevision: HEAD
   syncPolicy:
     automated:

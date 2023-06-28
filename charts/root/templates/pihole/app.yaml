@@ -15,15 +15,8 @@ spec:
     targetRevision: 2.17.0
     helm:
       values: |
-        replicaCount: 2
         serviceDhcp:
           enabled: false
-        # serviceWeb:
-        #     loadBalancerIP: 192.168.1.80
-        #     annotations:
-        #         metallb.universe.tf/allow-shared-ip: pihole-svc
-        #     type: LoadBalancer
-
         serviceDns:
             loadBalancerIP: 192.168.1.81
             annotations:

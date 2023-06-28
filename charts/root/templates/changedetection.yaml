@@ -1,46 +1,46 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: change-detection
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: change-detection
-  project: default
-  source:
-    chart: changedetection-io
-    repoURL: https://charts.gabe565.com
-    targetRevision: 0.9.0
-    helm:
-      values: |
-        env:
-          TZ: "Europe/Amsterdam"
-        ingress:
-          main:
-            enabled: true
-            ingressClassName: nginx
-            annotations:
-              external-dns.alpha.kubernetes.io/target: ingress.impl.nl
-              external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-              cert-manager.io/cluster-issuer: letsencrypt-production
-            labels: {}
-            path: /
-            pathType: Prefix
-            extraPaths: []
-            hosts:
-              - host: changedetection.impl.nl
-                paths:
-                  - path: /
-            tls:
-              - hosts:
-                - changedetection.impl.nl
-                  secretName: changedetection.impl.nl
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: change-detection
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io
+# spec:
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: change-detection
+#   project: default
+#   source:
+#     chart: changedetection-io
+#     repoURL: https://charts.gabe565.com
+#     targetRevision: 0.9.0
+#     helm:
+#       values: |
+#         env:
+#           TZ: "Europe/Amsterdam"
+#         ingress:
+#           main:
+#             enabled: true
+#             ingressClassName: nginx
+#             annotations:
+#               external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+#               external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+#               cert-manager.io/cluster-issuer: letsencrypt-production
+#             labels: {}
+#             path: /
+#             pathType: Prefix
+#             extraPaths: []
+#             hosts:
+#               - host: changedetection.impl.nl
+#                 paths:
+#                   - path: /
+#             tls:
+#               - hosts:
+#                 - changedetection.impl.nl
+#                   secretName: changedetection.impl.nl
 
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - CreateNamespace=true

@@ -34,9 +34,10 @@ spec:
                 paths:
                   - path: /
             tls:
-              - hosts:
-                - changedetection.impl.nl
-                  secretName: changedetection.impl.nl
+              - secretName: changedetection.impl.nl
+                hosts:
+                  - changedetection.impl.nl
+                  
 
   syncPolicy:
     automated:

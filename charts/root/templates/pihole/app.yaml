@@ -15,6 +15,7 @@ spec:
     targetRevision: 2.17.0
     helm:
       values: |
+        replicaCount: 2
         serviceDhcp:
           enabled: false
         serviceWeb:

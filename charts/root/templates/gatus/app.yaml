@@ -77,7 +77,7 @@ spec:
               url: "https://auth.impl.nl"
               interval: 5m
               conditions:
-                - "[STATUS] == 200"
+                - "[STATUS] == 403"
                 - "[RESPONSE_TIME] < 5000"
         nodeSelector:
           kubernetes.io/hostname: node3

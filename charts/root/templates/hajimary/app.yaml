@@ -46,12 +46,6 @@ spec:
             - pihole
             - prometheus
           name: Bas
-          searchProviders:
-            - name: Google
-              token: g
-              icon: simple-icons:google
-              searchUrl: https://www.google.com/search?q={query}
-              url: https://www.google.com
         ingress:
           main:
             enabled: true

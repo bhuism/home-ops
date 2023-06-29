@@ -1,0 +1,44 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hajimari
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: hajimari
+  project: default
+  source:
+    chart: hajimari
+    repoURL: https://hajimari.io
+    targetRevision: 2.0.2
+    helm:
+      values: |
+        defaultEnable: true
+        ingress:
+          enabled: true
+          ingressClassName: nginx
+          annotations:
+            external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+            external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+            cert-manager.io/cluster-issuer: letsencrypt-production
+         pathType: Prefix
+         extraPaths: []
+         hosts:
+           - host: changedetection.impl.nl
+             paths:
+               - path: /
+         tls:
+           - secretName: changedetection.impl.nl
+             hosts:
+               - changedetection.impl.nl
+        persistence:
+            data:
+                enabled: false
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

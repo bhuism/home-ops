@@ -24,16 +24,16 @@ spec:
             external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
             cert-manager.io/cluster-issuer: letsencrypt-production
             nginx.ingress.kubernetes.io/default-backend: fallback-backend
-         pathType: Prefix
-         extraPaths: []
-         hosts:
-           - host: hajimari.impl.nl
-             paths:
-               - path: /
-         tls:
-           - secretName: hajimari.impl.nl
-             hosts:
-               - hajimari.impl.nl
+          pathType: Prefix
+          extraPaths: []
+          hosts:
+            - host: hajimari.impl.nl
+              paths:
+                - path: /
+            tls:
+              - secretName: hajimari.impl.nl
+                hosts:
+                  - hajimari.impl.nl
         persistence:
             data:
                 enabled: false

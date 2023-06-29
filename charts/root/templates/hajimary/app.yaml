@@ -27,13 +27,13 @@ spec:
          pathType: Prefix
          extraPaths: []
          hosts:
-           - host: changedetection.impl.nl
+           - host: hajimari.impl.nl
              paths:
                - path: /
          tls:
-           - secretName: changedetection.impl.nl
+           - secretName: hajimari.impl.nl
              hosts:
-               - changedetection.impl.nl
+               - hajimari.impl.nl
         persistence:
             data:
                 enabled: false

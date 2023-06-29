@@ -20,6 +20,7 @@ spec:
         hajimari:
           defaultEnable: true
           showAppInfo: true
+          alwaysTargetBlank: true
           namespaceSelector:
             matchNames:
             - appsource
@@ -44,7 +45,6 @@ spec:
             - pihole
             - prometheus
           name: Bas
-          defaultSearchProvider: Google
           searchProviders:
             - name: Google
               token: g

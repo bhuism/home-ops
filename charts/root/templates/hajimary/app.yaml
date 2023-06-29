@@ -21,7 +21,6 @@ spec:
           defaultEnable: true
           name: Bas
           defaultSearchProvider: Google
-          namespaceSelector: any
           searchProviders:
             - name: Google
               token: g

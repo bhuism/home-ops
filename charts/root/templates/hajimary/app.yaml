@@ -20,7 +20,14 @@ spec:
         hajimari:
           defaultEnable: true
           name: Bas
-
+          defaultSearchProvider: Google
+          namespaceSelector: any
+          searchProviders:
+            - name: Google
+              token: g
+              icon: simple-icons:google
+              searchUrl: https://www.google.com/search?q={query}
+              url: https://www.google.com
         ingress:
           main:
             enabled: true

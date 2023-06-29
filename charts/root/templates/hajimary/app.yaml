@@ -46,6 +46,8 @@ spec:
             - pihole
             - prometheus
           name: Bas
+          lightTheme: cab
+          darkTheme: lime
         ingress:
           main:
             enabled: true

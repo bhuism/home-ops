@@ -20,7 +20,7 @@ spec:
         hajimari:
           defaultEnable: true
           showAppUrls: false
-          showAppInfo: true
+          showAppInfo: false
           alwaysTargetBlank: true
           namespaceSelector:
             matchNames:

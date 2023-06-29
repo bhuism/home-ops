@@ -15,7 +15,12 @@ spec:
     targetRevision: 2.0.2
     helm:
       values: |
-        defaultEnable: true
+        env:
+          TZ: "Europe/Amsterdam"
+        hajimari:
+          defaultEnable: true
+          name: Bas
+
         ingress:
           main:
             enabled: true

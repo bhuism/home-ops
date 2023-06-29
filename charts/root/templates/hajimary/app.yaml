@@ -19,6 +19,7 @@ spec:
           TZ: "Europe/Amsterdam"
         hajimari:
           defaultEnable: true
+          showAppUrls: false
           showAppInfo: true
           alwaysTargetBlank: true
           namespaceSelector:

@@ -13,20 +13,20 @@ spec:
     chart: ingress-nginx
     repoURL: https://kubernetes.github.io/ingress-nginx
     targetRevision: 4.7.0
-    helm:
-      values: |
-        defaultBackend:
-          enabled: true
-          name: defaultbackend
-          image:
-            registry: europe-west4-docker.pkg.dev
-            image: impl-383520/docker/defaultbackend
-            tag: latest
-            pullPolicy: Always
-            runAsUser: 0
-            runAsNonRoot: false
-            readOnlyRootFilesystem: false
-            allowPrivilegeEscalation: true
+    # helm:
+    #   values: |
+    #     defaultBackend:
+    #       enabled: true
+    #       name: defaultbackend
+    #       image:
+    #         registry: europe-west4-docker.pkg.dev
+    #         image: impl-383520/docker/defaultbackend
+    #         tag: latest
+    #         pullPolicy: Always
+    #         runAsUser: 0
+    #         runAsNonRoot: false
+    #         readOnlyRootFilesystem: false
+    #         allowPrivilegeEscalation: true
   syncPolicy:
     automated:
       prune: true

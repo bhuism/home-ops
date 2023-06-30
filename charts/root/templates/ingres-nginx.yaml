@@ -25,7 +25,7 @@ spec:
             pullPolicy: Always
             runAsUser: 65534
             runAsNonRoot: true
-            readOnlyRootFilesystem: true
+            readOnlyRootFilesystem: false
             allowPrivilegeEscalation: false        
   syncPolicy:
     automated:

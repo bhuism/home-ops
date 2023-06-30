@@ -23,9 +23,6 @@ spec:
             image: impl-383520/docker/defaultbackend
             tag: latest
             pullPolicy: Always
-            runAsUser: 65534
-            runAsNonRoot: true
-            readOnlyRootFilesystem: false
             allowPrivilegeEscalation: false        
   syncPolicy:
     automated:

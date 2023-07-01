@@ -12,6 +12,7 @@ spec:
   source:
     chart: ingress-nginx
     repoURL: https://kubernetes.github.io/ingress-nginx
+<<<<<<< HEAD
     targetRevision: 4.7.0
     helm:
       values: |
@@ -27,6 +28,23 @@ spec:
             runAsNonRoot: true
             # readOnlyRootFilesystem: false
             allowPrivilegeEscalation: false
+=======
+    targetRevision: 4.7.1
+    # helm:
+    #   values: |
+    #     defaultBackend:
+    #       enabled: true
+    #       name: defaultbackend
+    #       image:
+    #         registry: europe-west4-docker.pkg.dev
+    #         image: impl-383520/docker/defaultbackend
+    #         tag: latest
+    #         pullPolicy: Always
+    #         runAsUser: 0
+    #         runAsNonRoot: false
+    #         readOnlyRootFilesystem: false
+    #         allowPrivilegeEscalation: true
+>>>>>>> cf0c577219828ce2ac556a5cf5a1302f7d32c90a
   syncPolicy:
     automated:
       prune: true

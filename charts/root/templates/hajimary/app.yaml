@@ -22,7 +22,9 @@ spec:
           showAppUrls: false
           showAppInfo: false
           alwaysTargetBlank: true
-          # namespaceSelector:
+          namespaceSelector:
+            any: true
+            
             # matchNames:
             # - appsource
             # - argocd

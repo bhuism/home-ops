@@ -17,6 +17,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
+        name: "{{ .Release.Name }}"
         {{- include "arm-exporter.selectorLabels" . | nindent 8 }}
     spec:
       tolerations:

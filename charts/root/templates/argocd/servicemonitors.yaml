@@ -6,6 +6,9 @@ metadata:
   labels:
     release: prometheus
 spec:
+  namespaceSelector:
+    matchNames:
+    - argocd  
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-metrics
@@ -20,6 +23,9 @@ metadata:
   labels:
     release: prometheus
 spec:
+  namespaceSelector:
+    matchNames:
+    - argocd  
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-server-metrics
@@ -34,6 +40,9 @@ metadata:
   labels:
     release: prometheus
 spec:
+  namespaceSelector:
+    matchNames:
+    - argocd  
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-repo-server
@@ -48,6 +57,9 @@ metadata:
   labels:
     release: prometheus
 spec:
+  namespaceSelector:
+    matchNames:
+    - argocd  
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-applicationset-controller

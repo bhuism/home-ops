@@ -9,7 +9,6 @@ image:
   pullPolicy: Always
   tag: "latest"
 
-
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

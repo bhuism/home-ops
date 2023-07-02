@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: arm_exporter
+  name: arm-exporter
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: arm_exporter
+    namespace: arm-exporter
   project: default
   source:
     repoURL: https://github.com/bhuism/impl-argocd.git
-    path: charts/arm_exporter
+    path: charts/arm-exporter
     targetRevision: HEAD
   syncPolicy:
     automated:

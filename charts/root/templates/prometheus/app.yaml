@@ -27,6 +27,7 @@ spec:
             kubernetes.io/hostname: node3
           adminPassword: killer
 
+
           grafana.ini:
             analytics:
               check_for_updates: false
@@ -35,6 +36,8 @@ spec:
               home_page: /dashboards
             server:
               root_url: https://grafana.impl.nl
+            security:
+              disable_brute_force_login_protection: true
             # auth.generic_oauth:
             #   enabled: true
             #   allow_sign_up: false

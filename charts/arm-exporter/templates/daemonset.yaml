@@ -12,8 +12,12 @@ spec:
       name: "{{ .Release.Name }}"
   template:
     metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       labels:
-        name: "{{ .Release.Name }}"
+        {{- include "arm-exporter.selectorLabels" . | nindent 8 }}
     spec:
       tolerations:
       - key: node-role.kubernetes.io/control-plane

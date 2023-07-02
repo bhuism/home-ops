@@ -3,17 +3,18 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   labels:
+    {{- include "arm-exporter.labels" . | nindent 4 }}
     release: prometheus
-  name: arm-exporter
-  namespace: arm-exporter
+  name: "{{ .Release.Name }}"
+  namespace: "{{ .Release.Namespace }}"
 spec:
   endpoints:
-  - port: http
+    - port: http
   namespaceSelector:
     matchNames:
-    - arm-exporter
+    - {{ .Release.Namespace }}
+  jobLabel: "{{ .Release.Name }}"
   selector:
     matchLabels:
-      app.kubernetes.io/name: arm-exporter
-      app.kubernetes.io/instance: arm-exporter
+      app.kubernetes.io/name: "{{ .Release.Name }}"
 {{- end }}

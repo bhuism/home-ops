@@ -1,0 +1,18 @@
+{{- if .Values.prometheus.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    release: prometheus
+  name: arm-exporter
+  namespace: arm-exporter
+spec:
+  endpoints:
+  - port: http
+  namespaceSelector:
+    matchNames:
+    - arm-exporter
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: arm-exporter
+{{- end }}

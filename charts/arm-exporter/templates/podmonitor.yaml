@@ -16,3 +16,8 @@ spec:
   jobLabel: "{{ .Release.Name }}"
   podMetricsEndpoints:
     - targetPort: 9243
+    relabelings:
+      - action: replace
+        sourceLabels:
+        - __meta_kubernetes_pod_node_name
+        targetLabel: instance

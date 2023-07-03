@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: carlosedp/arm_exporter
+  repository: bhuism/arm_exporter
   pullPolicy: IfNotPresent
   tag: "latest"
 

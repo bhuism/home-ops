@@ -46,4 +46,12 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - mountPath: /etc/nodename
+              name: hostname
+      volumes:
+        - name: hostname
+          hostPath:
+            path: /proc/sys/kernel/hostname
+            type: file
       terminationGracePeriodSeconds: 10

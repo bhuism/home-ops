@@ -1,4 +1,3 @@
-{{- if .Values.daemonset.enabled }}
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
@@ -48,4 +47,3 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       terminationGracePeriodSeconds: 10
-{{- end }}

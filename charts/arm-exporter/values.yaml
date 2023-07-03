@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: bhuism/arm_exporter
-  pullPolicy: Always
+  repository: carlosedp/docker-arm_exporter
+  pullPolicy: IfNotPresent
   tag: "latest"
 
 imagePullSecrets: []

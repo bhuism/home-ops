@@ -54,5 +54,5 @@ spec:
         - name: hostname
           hostPath:
             path: /proc/sys/kernel/hostname
-            type: file
+            type: File
       terminationGracePeriodSeconds: 10

@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: carlosedp/docker-arm_exporter
+  repository: europe-west4-docker.pkg.dev/impl-383520/docker/arm_exporter
   pullPolicy: IfNotPresent
   tag: "latest"
 

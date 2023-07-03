@@ -52,6 +52,11 @@ spec:
             - mountPath: /etc/nodename
               name: hostname
               readOnly: true
+          env:
+            - name: MY_NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
       volumes:
         - name: hostname
           hostPath:

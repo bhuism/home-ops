@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: bhuism/docker-arm_exporter
+  repository: carlosedp/docker-arm_exporter
   pullPolicy: IfNotPresent
   tag: "latest"
 

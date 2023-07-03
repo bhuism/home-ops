@@ -11,7 +11,7 @@ spec:
     - argocd  
   selector:
     matchLabels:
-      app.kubernetes.io/name: argocd-metrics
+      app.kubernetes.io/name: argo-cd-argocd-application-controller-metrics
   endpoints:
   - port: metrics
 ---
@@ -28,7 +28,7 @@ spec:
     - argocd  
   selector:
     matchLabels:
-      app.kubernetes.io/name: argocd-server-metrics
+      app.kubernetes.io/name: argo-cd-argocd-server-metrics
   endpoints:
   - port: metrics
 ---
@@ -45,7 +45,7 @@ spec:
     - argocd  
   selector:
     matchLabels:
-      app.kubernetes.io/name: argocd-repo-server
+      app.kubernetes.io/name: argo-cd-argocd-repo-server-metrics
   endpoints:
   - port: metrics
 ---
@@ -62,6 +62,6 @@ spec:
     - argocd  
   selector:
     matchLabels:
-      app.kubernetes.io/name: argocd-applicationset-controller
+      app.kubernetes.io/name: argo-cd-argocd-applicationset-controller-metrics
   endpoints:
   - port: metrics

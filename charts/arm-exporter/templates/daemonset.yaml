@@ -48,18 +48,9 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          volumeMounts:
-            - mountPath: /etc/nodename
-              name: hostname
-              readOnly: true
           env:
-            - name: MY_NODE_NAME
+            - name: NODE_NAME
               valueFrom:
                 fieldRef:
                   fieldPath: spec.nodeName
-      volumes:
-        - name: hostname
-          hostPath:
-            path: /proc/sys/kernel/hostname
-            type: File
       terminationGracePeriodSeconds: 10

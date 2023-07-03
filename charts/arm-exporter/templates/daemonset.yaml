@@ -49,6 +49,7 @@ spec:
           volumeMounts:
             - mountPath: /etc/nodename
               name: hostname
+              readOnly: true
       volumes:
         - name: hostname
           hostPath:

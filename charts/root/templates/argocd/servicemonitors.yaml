@@ -13,7 +13,7 @@ spec:
     matchLabels:
       app.kubernetes.io/name: argo-cd-argocd-application-controller-metrics
   endpoints:
-  - port: metrics
+  - port: http-metrics
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -30,7 +30,7 @@ spec:
     matchLabels:
       app.kubernetes.io/name: argo-cd-argocd-server-metrics
   endpoints:
-  - port: metrics
+  - port: http-metrics
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -47,7 +47,7 @@ spec:
     matchLabels:
       app.kubernetes.io/name: argo-cd-argocd-repo-server-metrics
   endpoints:
-  - port: metrics
+  - port: http-metrics
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -64,4 +64,4 @@ spec:
     matchLabels:
       app.kubernetes.io/name: argo-cd-argocd-applicationset-controller-metrics
   endpoints:
-  - port: metrics
+  - port: http-metrics

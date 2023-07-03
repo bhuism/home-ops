@@ -53,4 +53,13 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: spec.nodeName
+          volumeMounts:
+            - mountPath: /etc/machine-id
+              name: machine-id
+              readOnly: true
+      volumes:
+        - name: machine-id
+          hostPath:
+            path: /etc/machine-id
+            type: File
       terminationGracePeriodSeconds: 10

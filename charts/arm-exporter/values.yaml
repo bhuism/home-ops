@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: bhuism/arm_exporter
-  pullPolicy: IfNotPresent
+  pullPolicy: Allways
   tag: "latest"
 
 imagePullSecrets: []

@@ -23,7 +23,7 @@ spec:
             clients:
               - PublicKey: HBMvo31yBJiS8KCnb1mwCS1FiSCKOELZHo5q+y1N7yE=
                 AllowedIPs: 10.34.0.2/32
-              - PublicKey: LEAQEJzxBT9F/uY9vNBSgzi7joct9tgxeo7IuAWcpnk=
+              - PublicKey: e54lwBo+pUn9TAqz1XZTAeF+iFTLGriCQfnhx1PQnyQ=
                 AllowedIPs: 10.34.0.3/32
   syncPolicy:
     automated:

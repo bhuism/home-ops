@@ -31,7 +31,7 @@ spec:
               className: nginx
               hosts:
                 - hubble.impl.nl
-              tls: []
+              tls:
                 - secretName: hubble.impl.nl
                   hosts:
                     - hubble.impl.nl

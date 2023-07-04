@@ -21,10 +21,10 @@ spec:
         secretName: wireguard-wg-generated
         wireguard:
           clients:
-            - PublicKey: "HBMvo31yBJiS8KCnb1mwCS1FiSCKOELZHo5q+y1N7yE="
-              AllowedIPs: "10.34.0.2/32, 192.168.1.0/24"
-            - PublicKey: "e54lwBo+pUn9TAqz1XZTAeF+iFTLGriCQfnhx1PQnyQ="
-              AllowedIPs: "10.34.0.3/32, 192.168.1.0/24"
+            - PublicKey: HBMvo31yBJiS8KCnb1mwCS1FiSCKOELZHo5q+y1N7yE=
+              AllowedIPs: 10.34.0.2/32
+            - PublicKey: e54lwBo+pUn9TAqz1XZTAeF+iFTLGriCQfnhx1PQnyQ=
+              AllowedIPs: 10.34.0.3/32
   syncPolicy:
     automated:
       prune: true

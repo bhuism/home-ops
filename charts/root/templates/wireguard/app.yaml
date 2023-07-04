@@ -23,7 +23,7 @@ spec:
         secretName: wireguard-wg-generated
         wireguard:
           clients:
-            - PublicKey: HBMvo31yBJiS8KCnb1mwCS1FiSCKOELZHo5q+y1N7yE=
+            - PublicKey: xU9I4I0rhc6j+sZipez23X1W4nd/upupn/r4BuN2Iy4=
               AllowedIPs: 10.34.0.2/32
             - PublicKey: e54lwBo+pUn9TAqz1XZTAeF+iFTLGriCQfnhx1PQnyQ=
               AllowedIPs: 10.34.0.3/32

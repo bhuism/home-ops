@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: wireguard
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: pihole
+  project: default
+  source:
+    chart: wireguard
+    repoURL: https://bryopsida.github.io/wireguard-chart
+    targetRevision: 0.10.0
+    helm:
+      values: |
+        autoscaling:
+            disabled
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

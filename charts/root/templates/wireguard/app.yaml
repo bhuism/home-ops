@@ -16,15 +16,14 @@ spec:
     helm:
       values: |
         autoscaling:
-            enabled: false
+          enabled: false
         secretName: wireguard-wg-generated
         wireguard:
-            allowWan: false
-            clients:
-              - PublicKey: HBMvo31yBJiS8KCnb1mwCS1FiSCKOELZHo5q+y1N7yE=
-                AllowedIPs: 10.34.0.2/32
-              - PublicKey: e54lwBo+pUn9TAqz1XZTAeF+iFTLGriCQfnhx1PQnyQ=
-                AllowedIPs: 10.34.0.3/32
+          clients:
+            - PublicKey: HBMvo31yBJiS8KCnb1mwCS1FiSCKOELZHo5q+y1N7yE=
+              AllowedIPs: 10.34.0.2/32
+            - PublicKey: e54lwBo+pUn9TAqz1XZTAeF+iFTLGriCQfnhx1PQnyQ=
+              AllowedIPs: 10.34.0.3/32
   syncPolicy:
     automated:
       prune: true

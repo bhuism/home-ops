@@ -18,6 +18,8 @@ spec:
         autoscaling:
           enabled: false
         replicaCount: 1
+        service:
+          port: 51820
         secretName: wireguard-wg-generated
         wireguard:
           clients:
@@ -25,8 +27,6 @@ spec:
               AllowedIPs: 10.34.0.2/32
             - PublicKey: e54lwBo+pUn9TAqz1XZTAeF+iFTLGriCQfnhx1PQnyQ=
               AllowedIPs: 10.34.0.3/32
-  service:
-    port: 51820
   syncPolicy:
     automated:
       prune: true

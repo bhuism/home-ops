@@ -26,7 +26,7 @@ spec:
             - PublicKey: xU9I4I0rhc6j+sZipez23X1W4nd/upupn/r4BuN2Iy4=
               AllowedIPs: 10.34.0.2/32
             - PublicKey: e54lwBo+pUn9TAqz1XZTAeF+iFTLGriCQfnhx1PQnyQ=
-              AllowedIPs: 10.34.0.3/32              
+              AllowedIPs: 10.34.0.3/32, 10.244.0.0/16, 10.96.0.0/12
   syncPolicy:
     automated:
       prune: true

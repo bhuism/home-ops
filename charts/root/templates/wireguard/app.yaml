@@ -17,6 +17,7 @@ spec:
       values: |
         autoscaling:
           enabled: false
+        replicaCount: 1
         secretName: wireguard-wg-generated
         wireguard:
           clients:

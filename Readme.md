@@ -40,3 +40,4 @@ Eleanor: |  ![Jasmine](https://shields.io/uptimerobot/status/m794488049-f2b30350
 * VPN
 * Fix test
 * remove secretos
+* [Uptime Kuma](https://github.com/louislam/uptime-kuma)

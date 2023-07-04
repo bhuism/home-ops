@@ -17,6 +17,7 @@ spec:
       values: |
         autoscaling:
             enabled: false
+        secretName: wireguard-wg-generated
   syncPolicy:
     automated:
       prune: true

@@ -15,8 +15,7 @@ spec:
     targetRevision: 0.10.0
     helm:
       values: |
-        autoscaling:
-            disabled
+        autoscaling: disabled
   syncPolicy:
     automated:
       prune: true

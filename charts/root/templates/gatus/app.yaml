@@ -85,7 +85,8 @@ spec:
         persistence:
           enabled: true
           existingClaim: gatus
-          
+        serviceMonitor:
+          enabled: true          
   syncPolicy:
     automated:
       prune: true

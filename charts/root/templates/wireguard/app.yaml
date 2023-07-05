@@ -21,6 +21,8 @@ spec:
         service:
           port: 51820
         secretName: wireguard-wg-generated
+        securityContext:
+          readOnlyRootFilesystem: false
         wireguard:
           clients:
             - PublicKey: 9Xk7uuawffYT1aB+eLZaAEML+PpXLEpQGb6+c4b40ns=

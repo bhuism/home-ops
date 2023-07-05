@@ -1,6 +1,4 @@
 argo-cd:
-  global:
-    addPrometheusAnnotations:
   dex:
     enabled: false
   repoServer:

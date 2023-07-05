@@ -85,6 +85,23 @@ spec:
               interval: 5m
               conditions:
                 - "[CONNECTED] == true"
+            - name: "Eleanor"
+              url: "icmp://eleanor.odee.net"
+              interval: 5m
+              conditions:
+                - "[CONNECTED] == true"
+            - name: "Home Ops"
+              url: "tcp://jasmine.odee.net:6443"
+              interval: 5m
+              conditions:
+                - "[CONNECTED] == true"
+                - "[RESPONSE_TIME] < 5000"
+            - name: "Wireguard"
+              url: "tcp://jasmine.odee.net:51820"
+              interval: 5m
+              conditions:
+                - "[CONNECTED] == true"
+                - "[RESPONSE_TIME] < 5000"
         nodeSelector:
           kubernetes.io/hostname: node3
         persistence:

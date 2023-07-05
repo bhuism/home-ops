@@ -31,13 +31,13 @@ Eleanor: |  ![Jasmine](https://shields.io/uptimerobot/status/m794488049-f2b30350
 * [PiHole](https://pi-hole.net/)
 * [Oauth2-Proxy](https://oauth2-proxy.github.io/oauth2-proxy)
 * [Cert Manager](https://cert-manager.io/)
+* [WireGuard] (https://www.wireguard.com/)
 
 ### Todo
 
 * [Paperless](https://github.com/paperless-ngx/paperless-ngx)
 * [nginx.ingress.kubernetes.io/auth-url](https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/nginx-configuration/annotations.md#external-authentication)
 * ISP speedtest
-* VPN
 * Fix test
 * remove secretos
 * [Uptime Kuma](https://github.com/louislam/uptime-kuma)

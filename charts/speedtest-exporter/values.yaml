@@ -1,0 +1,22 @@
+image:
+  repository: ghcr.io/miguelndecarvalho/speedtest-exporter
+  pullPolicy: IfNotPresent
+env:
+  TZ: "UTC"
+service:
+  main:
+    ports:
+      http:
+        enabled: false
+      metrics:
+        enabled: true
+        protocol: TCP
+        port: 9798
+serviceMonitor:
+  main:
+    enabled: true
+    endpoints:
+      - port: metrics
+        path: /metrics
+        interval: 1h
+        scrapeTimeout: 1m

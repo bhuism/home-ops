@@ -20,8 +20,6 @@ spec:
           checker:
             target: 1.1.1.1:53
             interval: 60s
-        securityContext:
-          runAsNonRoot: false
         ingress:
           enabled: true
           ingressClassName: nginx

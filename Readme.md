@@ -31,7 +31,7 @@ Eleanor: |  ![Jasmine](https://shields.io/uptimerobot/status/m794488049-f2b30350
 * [PiHole](https://pi-hole.net/)
 * [Oauth2-Proxy](https://oauth2-proxy.github.io/oauth2-proxy)
 * [Cert Manager](https://cert-manager.io/)
-* [WireGuard] (https://www.wireguard.com/)
+* [WireGuard](https://www.wireguard.com/)
 
 ### Todo
 

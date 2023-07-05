@@ -33,12 +33,12 @@ Eleanor: |  ![Jasmine](https://shields.io/uptimerobot/status/m794488049-f2b30350
 * [Cert Manager](https://cert-manager.io/)
 * [WireGuard](https://www.wireguard.com/)
 * [Goldilocks](https://goldilocks.docs.fairwinds.com/)
+* [Speedtest Exporter](https://github.com/MiguelNdeCarvalho/speedtest-exporter)
 
 ### Todo
 
 * [Paperless](https://github.com/paperless-ngx/paperless-ngx)
 * [nginx.ingress.kubernetes.io/auth-url](https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/nginx-configuration/annotations.md#external-authentication)
-* [Speedtest Exporter](https://github.com/MiguelNdeCarvalho/speedtest-exporter)
 * Fix test
 * remove secretos
 * [Uptime Kuma](https://github.com/louislam/uptime-kuma)

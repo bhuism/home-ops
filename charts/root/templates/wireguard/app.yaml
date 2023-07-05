@@ -27,7 +27,7 @@ spec:
         wireguard:
           clients:
             - PublicKey: jaWQtuHs2dPeR5YtRPDrqf1drbm72Y7EHanDro9OfTw=
-              AllowedIPs: 10.34.0.0/24
+              AllowedIPs: 10.34.0.3/24
             # - PublicKey: 9Xk7uuawffYT1aB+eLZaAEML+PpXLEpQGb6+c4b40ns=
             #   AllowedIPs: 10.34.0.2/24
   syncPolicy:

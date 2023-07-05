@@ -100,7 +100,7 @@ spec:
                 - "[CONNECTED] == true"
                 - "[RESPONSE_TIME] < 5000"
             - name: "Wireguard"
-              url: "tcp://jasmine.odee.net:51820"
+              url: "udp://jasmine.odee.net:51820"
               interval: 5m
               conditions:
                 - "[CONNECTED] == true"

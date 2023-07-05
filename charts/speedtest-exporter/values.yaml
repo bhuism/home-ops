@@ -7,7 +7,7 @@ service:
   main:
     ports:
       http:
-        enabled: false
+        enabled: true
       metrics:
         enabled: true
         protocol: TCP

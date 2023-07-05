@@ -15,7 +15,7 @@ spec:
       app.kubernetes.io/name: "{{ .Release.Name }}"
   jobLabel: "{{ .Release.Name }}"
   podMetricsEndpoints:
-    - port: "9243"
+    - port: "http"
       relabelings:
         - action: Replace
           sourceLabels:

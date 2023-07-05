@@ -80,6 +80,11 @@ spec:
               conditions:
                 - "[STATUS] == 403"
                 - "[RESPONSE_TIME] < 5000"
+            - name: "Jasmine"
+              url: "icmp://jasmine.odee.net"
+              interval: 5m
+              conditions:
+                - "[CONNECTED] == true"
         nodeSelector:
           kubernetes.io/hostname: node3
         persistence:

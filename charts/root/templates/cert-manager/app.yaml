@@ -17,7 +17,9 @@ spec:
       values: |
         installCRDs: true
         prometheus:
-          enabled: false
+          enabled: true
+          servicemonitor:
+            enabled: true
   syncPolicy:
     automated:
       prune: true

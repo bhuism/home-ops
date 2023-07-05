@@ -24,9 +24,9 @@ spec:
         wireguard:
           clients:
             - PublicKey: xU9I4I0rhc6j+sZipez23X1W4nd/upupn/r4BuN2Iy4=
-              AllowedIPs: 10.34.0.2/32
+              AllowedIPs: 10.34.0.2/32, 192.168.1.0/24
             - PublicKey: e54lwBo+pUn9TAqz1XZTAeF+iFTLGriCQfnhx1PQnyQ=
-              AllowedIPs: 10.34.0.3/32
+              AllowedIPs: 10.34.0.3/32, 192.168.1.0/24
   syncPolicy:
     automated:
       prune: true

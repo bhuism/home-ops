@@ -17,13 +17,9 @@ spec:
       values: |
         autoscaling:
           enabled: false
-        replicaCount: 1
         service:
           port: 51820
         secretName: wireguard-wg-generated
-        securityContext:
-          privileged: true
-          readOnlyRootFilesystem: false
         wireguard:
           clients:
             - PublicKey: jaWQtuHs2dPeR5YtRPDrqf1drbm72Y7EHanDro9OfTw=

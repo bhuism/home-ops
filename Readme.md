@@ -42,3 +42,6 @@ Eleanor: |  ![Jasmine](https://shields.io/uptimerobot/status/m794488049-f2b30350
 * remove secretos
 * [Uptime Kuma](https://github.com/louislam/uptime-kuma)
 * [Unifi Poller](https://unpoller.com/)
+* [Goldilocks](https://goldilocks.docs.fairwinds.com/)
+* [Home Asistant](https://www.home-assistant.io/)
+* [CSI Driver NFS](https://github.com/kubernetes-csi/csi-driver-nfs)

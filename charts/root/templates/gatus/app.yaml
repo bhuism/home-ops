@@ -85,11 +85,13 @@ spec:
               interval: 5m
               conditions:
                 - "[CONNECTED] == true"
+                - "[RESPONSE_TIME] < 5000"
             - name: "Eleanor"
               url: "icmp://eleanor.odee.net"
               interval: 5m
               conditions:
                 - "[CONNECTED] == true"
+                - "[RESPONSE_TIME] < 5000"
             - name: "Home Ops"
               url: "tcp://jasmine.odee.net:6443"
               interval: 5m

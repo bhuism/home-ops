@@ -17,7 +17,7 @@ spec:
   podMetricsEndpoints:
     - port: "9243"
       relabelings:
-        - action: replace
+        - action: Replace
           sourceLabels:
           - __meta_kubernetes_pod_node_name
           targetLabel: instance

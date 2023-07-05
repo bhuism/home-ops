@@ -85,7 +85,6 @@ spec:
         persistence:
           enabled: true
           existingClaim: gatus
-        metrics: true
         serviceMonitor:
           enabled: true          
   syncPolicy:

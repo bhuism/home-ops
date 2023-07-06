@@ -15,15 +15,15 @@ spec:
     targetRevision: 3.3.5
     helm:
       values: |
-        debug: true
+        # debug: true
         securityContext:
-          runAsGroup: 0
-          runAsNonRoot: false
-          runAsUser: 0
+          # runAsGroup: 0
+          # runAsNonRoot: false
+          # runAsUser: 0
           capabilities:
             add: ["CAP_NET_ADMIN"]          
-        podSecurityContext:
-          runAsNonRoot: false
+        # podSecurityContext:
+        #   runAsNonRoot: false
         connectivity:
           checker:
             target: 1.1.1.1:53

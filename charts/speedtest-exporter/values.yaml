@@ -6,6 +6,8 @@ env:
 service:
   main:
     ports:
+      http:
+        enabled: false
       metrics:
         enabled: true
         protocol: TCP

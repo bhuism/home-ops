@@ -32,7 +32,6 @@ Eleanor: |  ![Jasmine](https://shields.io/uptimerobot/status/m794488049-f2b30350
 * [Oauth2-Proxy](https://oauth2-proxy.github.io/oauth2-proxy)
 * [Cert Manager](https://cert-manager.io/)
 * [WireGuard](https://www.wireguard.com/)
-* [Goldilocks](https://goldilocks.docs.fairwinds.com/)
 * [Speedtest Exporter](https://github.com/MiguelNdeCarvalho/speedtest-exporter)
 
 ### Todo

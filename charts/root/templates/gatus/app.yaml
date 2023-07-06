@@ -18,7 +18,7 @@ spec:
         # debug: true
         securityContext:
           runAsNonRoot: false
-          # runAsUser: 0
+          runAsUser: 0
         connectivity:
           checker:
             target: 1.1.1.1:53

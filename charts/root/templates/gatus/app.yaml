@@ -17,11 +17,10 @@ spec:
       values: |
         # debug: true
         securityContext:
-          # runAsGroup: 0
           runAsNonRoot: false
-          # runAsUser: 0
-        podSecurityContext:
-          runAsNonRoot: false
+          runAsUser: 0
+        # podSecurityContext:
+        #   runAsNonRoot: false
         connectivity:
           checker:
             target: 1.1.1.1:53

@@ -19,9 +19,7 @@ spec:
         securityContext:
           # runAsGroup: 0
           runAsNonRoot: false
-          runAsUser: 0
-          # capabilities:
-          #   add: ["CAP_NET_ADMIN"]          
+          # runAsUser: 0
         podSecurityContext:
           runAsNonRoot: false
         connectivity:

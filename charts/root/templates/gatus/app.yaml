@@ -16,6 +16,10 @@ spec:
     helm:
       values: |
         debug: true
+        podSecurityContext:
+          runAsNonRoot: false
+          capabilities:
+            add: ["CAP_NET_ADMIN"]          
         connectivity:
           checker:
             target: 1.1.1.1:53

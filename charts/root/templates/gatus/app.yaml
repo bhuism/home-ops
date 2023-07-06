@@ -17,7 +17,10 @@ spec:
       values: |
         debug: true
         securityContext:
+          runAsGroup: 0
+          runAsNonRoot: false
           runAsUser: 0
+          fsGroup: 0
         podSecurityContext:
           runAsNonRoot: false
           capabilities:

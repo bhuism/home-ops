@@ -15,7 +15,6 @@ spec:
     targetRevision: 3.3.5
     helm:
       values: |
-        # debug: true
         securityContext:
           runAsNonRoot: false
           runAsUser: 0

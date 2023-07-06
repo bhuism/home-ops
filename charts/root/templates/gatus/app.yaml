@@ -17,10 +17,8 @@ spec:
       values: |
         # debug: true
         securityContext:
-          runAsNonRoot: false
+          # runAsNonRoot: false
           runAsUser: 0
-        # podSecurityContext:
-        #   runAsNonRoot: false
         connectivity:
           checker:
             target: 1.1.1.1:53

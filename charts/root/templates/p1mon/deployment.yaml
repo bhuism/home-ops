@@ -1,23 +1,30 @@
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: p1mon
-#   namespace: p1mon
-# spec:
-#   replicas: 1
-#   revisionHistoryLimit: 3
-#   selector:
-#     matchLabels:
-#       app: p1mon
-#   template:
-#     metadata:
-#       labels:
-#         app: p1mon
-#     spec:
-#       nodeSelector:
-#         kubernetes.io/hostname: node3
-#       containers:
-#         - image: mclaassen/p1mon
-#           name: p1mon
-#           ports:
-#             - containerPort: 80
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: p1mon
+  namespace: p1mon
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: p1mon
+  template:
+    metadata:
+      labels:
+        app: p1mon
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: node3
+      containers:
+        - image: mclaassen/p1mon
+          name: p1mon
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi

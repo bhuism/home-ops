@@ -31,21 +31,21 @@ spec:
               memory: 128Mi
           volumeMounts:
             - mountPath: /p1mon/data
-              name: p1mon_data
+              name: p1mon-data
             - mountPath: /p1mon/usb
-              name: p1mon_usb
+              name: p1mon-usb
             - mountPath: /p1mon/ramdisk
-              name: p1mon_ramdisk
+              name: p1mon-ramdisk
       volumes:
-        - name: p1mon_data
+        - name: p1mon-data
           emptyDir:
             medium: Memory
             sizeLimit: 64Mi
-        - name: p1mon_usb
+        - name: p1mon-usb
           emptyDir:
             medium: Memory
             sizeLimit: 64Mi
-        - name: p1mon_ramdisk
+        - name: p1mon-ramdisk
           emptyDir:
             medium: Memory
             sizeLimit: 64Mi

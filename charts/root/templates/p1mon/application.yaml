@@ -12,3 +12,7 @@ spec:
       namespace: default
       server: https://kubernetes.default.svc
   project: default
+  source:
+    directory:
+      recurse: true
+

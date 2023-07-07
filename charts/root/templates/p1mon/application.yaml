@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: p1mon
+  namespace: p1mon
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    name: p1mon
+spec:
+  project: default
+  source:
+    directory:
+      recurse: true

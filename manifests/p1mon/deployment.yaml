@@ -28,3 +28,11 @@ spec:
             requests:
               cpu: 100m
               memory: 128Mi
+          volumeMounts:
+            - mountPath: /p1mon
+              name: p1mon
+      volumes:
+        - name: p1mon
+          emptyDir:
+            medium: Memory
+            sizeLimit: 64Mi

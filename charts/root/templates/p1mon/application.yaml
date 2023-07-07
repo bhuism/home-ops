@@ -9,7 +9,7 @@ metadata:
     name: p1mon
 spec:
   destination:
-      namespace: default
+      namespace: p1mon
       server: https://kubernetes.default.svc
   project: default
   source:

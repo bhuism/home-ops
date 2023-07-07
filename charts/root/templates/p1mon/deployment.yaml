@@ -3,8 +3,6 @@ kind: Deployment
 metadata:
   name: p1mon
   namespace: p1mon
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   replicas: 1
   revisionHistoryLimit: 3

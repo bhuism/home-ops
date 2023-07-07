@@ -18,6 +18,7 @@ spec:
         kubernetes.io/hostname: node3
       containers:
         - image: mclaassen/p1mon
+          imagePullPolicy: IfNotPresent
           name: p1mon
           ports:
             - containerPort: 80

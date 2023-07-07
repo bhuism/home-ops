@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: p1mon
+  namespace: p1mon
 spec:
   replicas: 1
   revisionHistoryLimit: 3

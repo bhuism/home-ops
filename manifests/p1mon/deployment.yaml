@@ -32,9 +32,9 @@ spec:
           volumeMounts:
             - mountPath: /p1mon/data
               name: p1mon-data
-            - mountPath: /p1mon/usb
+            - mountPath: /p1mon/mnt/usb
               name: p1mon-usb
-            - mountPath: /p1mon/ramdisk
+            - mountPath: /p1mon/mnt/ramdisk
               name: p1mon-ramdisk
       volumes:
         - name: p1mon-data

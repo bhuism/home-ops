@@ -2,11 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: p1mon
-  namespace: p1mon
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-  labels:
-    name: p1mon
 spec:
   destination:
       namespace: p1mon
@@ -18,3 +15,9 @@ spec:
     targetRevision: HEAD
     directory:
       include: '*.yaml'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

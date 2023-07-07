@@ -17,7 +17,7 @@ spec:
       nodeSelector:
         kubernetes.io/hostname: node3
       containers:
-        - image: mclaassen/p1mon
+        - image: mclaassen/p1mon:2.2.0d
           imagePullPolicy: IfNotPresent
           name: p1mon
           ports:

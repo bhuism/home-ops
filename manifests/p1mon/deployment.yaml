@@ -20,6 +20,8 @@ spec:
         - image: mclaassen/p1mon:2.2.0d
           imagePullPolicy: IfNotPresent
           name: p1mon
+          securityContext:
+            privileged: true
           ports:
             - containerPort: 80
           resources:

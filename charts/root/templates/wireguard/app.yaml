@@ -17,6 +17,8 @@ spec:
       values: |
         autoscaling:
           enabled: false
+          minReplicas: 1
+          maxReplicas: 1          
         service:
           port: 51820
         secretName: wireguard-wg-generated

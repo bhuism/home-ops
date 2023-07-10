@@ -25,7 +25,7 @@ spec:
             - PublicKey: jaWQtuHs2dPeR5YtRPDrqf1drbm72Y7EHanDro9OfTw=
               AllowedIPs: 10.34.0.3/24
             - PublicKey: x1IQ28f/KkCqo82SeVAev1/2fxcrMfeoVOB62yzeqGk=
-              AllowedIPs: 10.34.0.3/24
+              AllowedIPs: 10.34.0.4/24
   syncPolicy:
     automated:
       prune: true

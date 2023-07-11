@@ -27,11 +27,11 @@ spec:
         wireguard:
           clients:
             - PublicKey: 'x1IQ28f/KkCqo82SeVAev1/2fxcrMfeoVOB62yzeqGk='
-              AllowedIPs: 10.34.0.4/24
+              AllowedIPs: 10.34.0.4/32
             - PublicKey: 'jaWQtuHs2dPeR5YtRPDrqf1drbm72Y7EHanDro9OfTw='
-              AllowedIPs: 10.34.0.3/24
+              AllowedIPs: 10.34.0.3/32
             - PublicKey: '+mh9FhDhm+RIBAtAGL4SBbG8Xnoix2rNSDJ1ZT1G5X8='
-              AllowedIPs: 10.34.0.254/24
+              AllowedIPs: 10.34.0.254/32
   syncPolicy:
     automated:
       prune: true

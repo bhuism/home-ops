@@ -23,6 +23,7 @@ spec:
         secretName: wireguard-wg-generated
         securityContext:
           readOnlyRootFilesystem: false
+          privileged: true
         wireguard:
           clients:
             - PublicKey: jaWQtuHs2dPeR5YtRPDrqf1drbm72Y7EHanDro9OfTw=

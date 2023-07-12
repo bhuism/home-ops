@@ -21,9 +21,7 @@ spec:
               name: letsencrypt-production
               scope: cluster
             hosts:
-              - localhost
               - dashboard.impl.nl
-
         cert-manager:
           enabled: false
         nginx:

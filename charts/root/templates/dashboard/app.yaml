@@ -29,6 +29,9 @@ spec:
           containers:
             args:
               - --system-banner="Home Ops Kubernetes Dashboard"
+        api:
+          containers:
+            args:
               - --enable-skip-login
               - --disable-settings-authorizer
               - --enable-insecure-login

@@ -15,23 +15,37 @@ spec:
     targetRevision: 7.0.2
     helm:
       values: |
-        ingress:
-          enabled: true
-          ingressClassName: nginx
-          annotations:
-              external-dns.alpha.kubernetes.io/target: ingress.impl.nl
-              external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-              cert-manager.io/cluster-issuer: letsencrypt-production
-          pathType: Prefix
-          extraPaths: []
-          hosts:
-            - host: dashboard.impl.nl
-              paths:
-                - /
-          tls:
-            - secretName: dashboard.impl.nl
-              hosts:
-                - dashboard.impl.nl
+        app:
+          ingress:
+            issuer:
+              name: letsencrypt-production
+              scope: cluster
+            hosts:
+              - localhost
+              - dashboard.impl.nl
+
+        cert-manager:
+          enabled: false
+        nginx:
+          enabled: false
+
+        # ingress:
+        #   enabled: true
+        #   ingressClassName: nginx
+        #   annotations:
+        #       external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+        #       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+        #       cert-manager.io/cluster-issuer: letsencrypt-production
+        #   pathType: Prefix
+        #   extraPaths: []
+        #   hosts:
+        #     - host: dashboard.impl.nl
+        #       paths:
+        #         - /
+        #   tls:
+        #     - secretName: dashboard.impl.nl
+        #       hosts:
+        #         - dashboard.impl.nl
   syncPolicy:
     automated:
       prune: true

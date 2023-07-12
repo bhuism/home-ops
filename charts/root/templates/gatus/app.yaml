@@ -41,7 +41,7 @@ spec:
         config:
           metrics: true
           ui:
-            header: Home-Ops
+            header: "Home Ops"
           storage:
             type: sqlite
             path: /data/data.db

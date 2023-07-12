@@ -28,6 +28,10 @@ spec:
             - host: dashboard.impl.nl
               paths:
                 - /
+          tls:
+            - secretName: dashboard.impl.nl
+              hosts:
+                - dashboard.impl.nl
   syncPolicy:
     automated:
       prune: true

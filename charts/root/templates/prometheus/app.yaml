@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     directory:
-          exclude: 'dashboards/*'
+      exclude: 'dashboards/*'
     chart: kube-prometheus-stack
     repoURL: https://prometheus-community.github.io/helm-charts
     targetRevision: 48.1.1
@@ -85,7 +85,7 @@ spec:
               argocd:
                 url: https://raw.githubusercontent.com/argoproj/argo-cd/master/examples/dashboard.json
               speedtestexporter:
-                file: dashboards/Speedtest-Exporter-Dashboard-1689456651201.board
+                file: dashboards/Speedtest-Exporter-Dashboard-1689456651201.js
               kubernetes:
                 url: https://raw.githubusercontent.com/carlosedp/cluster-monitoring/master/grafana-dashboards/kubernetes-cluster-dashboard.json
             grafana-dashboards-kubernetes:

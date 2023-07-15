@@ -84,6 +84,8 @@ spec:
                 url: https://raw.githubusercontent.com/argoproj/argo-cd/master/examples/dashboard.json
               external-dns
                 url: https://gitlab.com/gitlab-org/grafana-dashboards/-/raw/4619149d856111ddc8bd490989bb09246d0786e2/dashboards/external-dns-overview.json
+              speedtest-exporter
+                url: https://raw.githubusercontent.com/MiguelNdeCarvalho/speedtest-exporter/main/Dashboard/Speedtest-Exporter.json
             grafana-dashboards-kubernetes:
               k8s-system-api-server:
                 url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json

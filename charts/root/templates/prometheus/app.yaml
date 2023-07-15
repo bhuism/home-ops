@@ -66,7 +66,18 @@ spec:
                 editable: true
                 options:
                   path: /var/lib/grafana/dashboards/grafana-dashboards-kubernetes
+              - name: 'grafana-bas'
+                orgId: 1
+                folder: 'Bas'
+                type: file
+                disableDeletion: true
+                editable: true
+                options:
+                  path: /var/lib/grafana/dashboards/grafana-bas
           dashboards:
+            grafana-bas:
+              gatus:
+                url: https://raw.githubusercontent.com/TwiN/gatus/master/.examples/docker-compose-grafana-prometheus/grafana/provisioning/dashboards/gatus.json
             grafana-dashboards-kubernetes:
               k8s-system-api-server:
                 url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json

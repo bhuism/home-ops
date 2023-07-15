@@ -86,6 +86,9 @@ spec:
               k8s-views-pods:
                 url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
                 token: ''
+              k8s-prometheus:
+                url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-addons-prometheus.json
+                token: ''
         prometheus:
           prometheusSpec:
             serviceMonitorSelectorNilUsesHelmValues: false

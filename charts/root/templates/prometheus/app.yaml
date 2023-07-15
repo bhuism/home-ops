@@ -82,9 +82,9 @@ spec:
                 url: https://gitlab.com/uneeq-oss/cert-manager-mixin/-/raw/master/dashboards/cert-manager.json
               argocd:
                 url: https://raw.githubusercontent.com/argoproj/argo-cd/master/examples/dashboard.json
-              external-dns
+              external-dns:
                 url: https://gitlab.com/gitlab-org/grafana-dashboards/-/raw/4619149d856111ddc8bd490989bb09246d0786e2/dashboards/external-dns-overview.json
-              speedtest-exporter
+              speedtest-exporter:
                 url: https://raw.githubusercontent.com/MiguelNdeCarvalho/speedtest-exporter/main/Dashboard/Speedtest-Exporter.json
             grafana-dashboards-kubernetes:
               k8s-system-api-server:

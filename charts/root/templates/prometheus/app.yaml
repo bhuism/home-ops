@@ -82,6 +82,8 @@ spec:
                 url: https://gitlab.com/uneeq-oss/cert-manager-mixin/-/raw/master/dashboards/cert-manager.json
               argocd:
                 url: https://raw.githubusercontent.com/argoproj/argo-cd/master/examples/dashboard.json
+              nodemonitor:
+                url: https://raw.githubusercontent.com/carlosedp/arm-monitoring/master/grafana/Node%20Exporter%20Full-1516232839939.json
             grafana-dashboards-kubernetes:
               k8s-system-api-server:
                 url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json

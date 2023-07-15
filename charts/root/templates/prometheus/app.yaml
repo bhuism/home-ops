@@ -10,6 +10,8 @@ spec:
     namespace: prometheus
   project: default
   source:
+    directory:
+          exclude: 'dashboards/*'
     chart: kube-prometheus-stack
     repoURL: https://prometheus-community.github.io/helm-charts
     targetRevision: 48.1.1

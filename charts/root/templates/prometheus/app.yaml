@@ -83,7 +83,7 @@ spec:
               argocd:
                 url: https://raw.githubusercontent.com/argoproj/argo-cd/master/examples/dashboard.json
               speedtest-exporter:
-                file: dashboards/Speedtest-Exporter-Dashboard-1689456651201.json
+                file: dashboards/Speedtest-Exporter-Dashboard-1689456651201.board
             grafana-dashboards-kubernetes:
               k8s-system-api-server:
                 url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json

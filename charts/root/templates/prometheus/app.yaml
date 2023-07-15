@@ -78,6 +78,8 @@ spec:
             grafana-bas:
               gatus:
                 url: https://raw.githubusercontent.com/TwiN/gatus/master/.examples/docker-compose-grafana-prometheus/grafana/provisioning/dashboards/gatus.json
+              cert-manager:
+                url: https://gitlab.com/uneeq-oss/cert-manager-mixin/-/raw/master/dashboards/cert-manager.json
             grafana-dashboards-kubernetes:
               k8s-system-api-server:
                 url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json

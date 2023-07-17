@@ -79,7 +79,7 @@ spec:
           dashboards:
             grafana-bas:
               gatus:
-                file: ../../../dashboards/prometheus_grafana_provisioning_dashboards_gatus.json
+                file: dashboards/prometheus_grafana_provisioning_dashboards_gatus.json
               cert-manager:
                 url: https://gitlab.com/uneeq-oss/cert-manager-mixin/-/raw/master/dashboards/cert-manager.json
               argocd:

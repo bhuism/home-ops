@@ -7,11 +7,6 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      # - uses: azure/setup-kubectl@v3
-      #   id: install
-      # - run: kubectl -n argocd annotate Application/root argocd.argoproj.io/refresh=normal
-
-
       - uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}

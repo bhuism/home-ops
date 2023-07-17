@@ -27,7 +27,7 @@ Eleanor: | ![Eleanor](https://shields.io/uptimerobot/status/m794488049-f2b30350c
 * [Ok](https://github.com/bhuism/ok)
 * [Cloudflare Tunnel](https://github.com/cloudflare/helm-charts/tree/main/charts/cloudflare-tunnel)
 * [Echo-Server](https://ealenn.github.io/Echo-Server/)
-* [Change Detection](https://changedetection.io/)
+* ~~[Change Detection](https://changedetection.io/)~~
 * [PiHole](https://pi-hole.net/)
 * [Oauth2-Proxy](https://oauth2-proxy.github.io/oauth2-proxy)
 * [Cert Manager](https://cert-manager.io/)

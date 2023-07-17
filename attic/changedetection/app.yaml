@@ -37,8 +37,6 @@ spec:
               - secretName: changedetection.impl.nl
                 hosts:
                   - changedetection.impl.nl
-                  
-
   syncPolicy:
     automated:
       prune: true

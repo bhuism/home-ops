@@ -15,7 +15,7 @@ spec:
         app: p1mon
     spec:
       nodeSelector:
-        kubernetes.io/hostname: node3
+        kubernetes.io/hostname: node2
       containers:
         - image: mclaassen/p1mon:2.2.0d
           imagePullPolicy: IfNotPresent

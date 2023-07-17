@@ -16,5 +16,4 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
         with:
-          args: -n argocd get pods
-#         args: -n argocd annotate Application/root argocd.argoproj.io/refresh=normal
+          args: -n argocd annotate Application/root argocd.argoproj.io/refresh=normal

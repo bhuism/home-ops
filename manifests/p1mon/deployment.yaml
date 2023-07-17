@@ -17,8 +17,8 @@ spec:
       nodeSelector:
         kubernetes.io/hostname: node2
       containers:
-        - image: mclaassen/p1mon:2.2.0d
-          imagePullPolicy: IfNotPresent
+        - image: europe-west4-docker.pkg.dev/impl-383520/docker/p1monitor:latest
+          imagePullPolicy: Always
           name: p1mon
           securityContext:
             privileged: true

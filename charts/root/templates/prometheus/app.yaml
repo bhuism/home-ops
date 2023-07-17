@@ -85,7 +85,7 @@ spec:
               speedtestexporter:
                 url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/speedtest.json
               kubernetes:
-                url: https://raw.githubusercontent.com/carlosedp/cluster-monitoring/master/grafana-dashboards/kubernetes-cluster-dashboard.json
+                url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/kubernetes-withtemp.json
             grafana-dashboards-kubernetes:
               k8s-system-api-server:
                 url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json

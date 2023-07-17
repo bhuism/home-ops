@@ -85,7 +85,7 @@ spec:
               argocd:
                 url: https://raw.githubusercontent.com/argoproj/argo-cd/master/examples/dashboard.json
               speedtestexporter:
-                url: https://raw.githubusercontent.com/billimek/prometheus-speedtest-exporter/master/speedtest-exporter.json
+                url: https://raw.githubusercontent.com/MiguelNdeCarvalho/speedtest-exporter/main/Dashboard/Speedtest-Exporter.json
               kubernetes:
                 url: https://raw.githubusercontent.com/carlosedp/cluster-monitoring/master/grafana-dashboards/kubernetes-cluster-dashboard.json
             grafana-dashboards-kubernetes:

@@ -5,9 +5,9 @@ on:
       - main
 jobs:
   runs-on: ubuntu-latest
-    steps:
-      refresh:
-        - uses: azure/setup-kubectl@v3
-          id: install
-        - run: kubectl -n argocd annotate Application/root argocd.argoproj.io/refresh=normal
+  steps:
+    refresh:
+      - uses: azure/setup-kubectl@v3
+        id: install
+      - run: kubectl -n argocd annotate Application/root argocd.argoproj.io/refresh=normal
 

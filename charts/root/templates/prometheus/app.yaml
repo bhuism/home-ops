@@ -62,7 +62,8 @@ spec:
                 orgId: 1
                 folder: 'Kubernetes2'
                 type: file
-                disableDeletion: true
+                disableDeletion: false
+                allowUiUpdates: true
                 editable: true
                 options:
                   path: /var/lib/grafana/dashboards/grafana-dashboards-kubernetes

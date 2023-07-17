@@ -18,13 +18,6 @@ spec:
         alertmanager:
           enabled: false
         grafana:
-          # persistence:
-          #   enabled: true
-          #   finalizers:
-          #     - kubernetes.io/pvc-protection
-          #   existingClaim: prometheus-grafana
-          # nodeSelector:
-          #   kubernetes.io/hostname: node3
           adminPassword: killer
           grafana.ini:
             analytics:

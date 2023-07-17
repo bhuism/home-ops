@@ -27,10 +27,10 @@ spec:
           resources:
             limits:
               cpu: 100m
-              memory: 128Mi
+              memory: 512Mi
             requests:
               cpu: 100m
-              memory: 128Mi
+              memory: 512Mi
           volumeMounts:
             - mountPath: /p1mon/data
               name: p1mon-data
@@ -42,12 +42,12 @@ spec:
         - name: p1mon-data
           emptyDir:
             medium: Memory
-            sizeLimit: 64Mi
+            sizeLimit: 128Mi
         - name: p1mon-usb
           emptyDir:
             medium: Memory
-            sizeLimit: 64Mi
+            sizeLimit: 128Mi
         - name: p1mon-ramdisk
           emptyDir:
             medium: Memory
-            sizeLimit: 64Mi
+            sizeLimit: 128Mi

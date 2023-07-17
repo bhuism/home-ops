@@ -63,6 +63,7 @@ spec:
                 folder: 'Kubernetes2'
                 type: file
                 disableDeletion: false
+                updateIntervalSeconds: 15
                 allowUiUpdates: true
                 editable: true
                 options:
@@ -72,6 +73,7 @@ spec:
                 folder: 'Bas'
                 type: file
                 disableDeletion: false
+                updateIntervalSeconds: 15
                 allowUiUpdates: true
                 editable: true
                 options:

@@ -8,11 +8,11 @@ spec:
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: gotsmart
+      app.kubernetes.io/name: gotsmart
   template:
     metadata:
       labels:
-        app: gotsmart
+        app.kubernetes.io/name: gotsmart
     spec:
       nodeSelector:
         kubernetes.io/hostname: node2

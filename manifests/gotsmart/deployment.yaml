@@ -25,6 +25,7 @@ spec:
             privileged: true
           ports:
             - containerPort: 8080
+              name: http
           resources:
             limits:
               cpu: 100m

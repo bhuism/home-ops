@@ -1,5 +1,5 @@
 apiVersion: monitoring.coreos.com/v1
-kind: ServiceMonitor
+kind: PodMonitor
 metadata:
   name: gotsmart
   namespace: gotsmart
@@ -12,7 +12,6 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: gotsmart
-  endpoints:
-    - targetPort: 8080
-      path: /metrics
-      interval: 60s
+  jobLabel: "gotsmart"
+  podMetricsEndpoints:
+    - port: http

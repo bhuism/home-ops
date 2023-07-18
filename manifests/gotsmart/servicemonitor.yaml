@@ -11,7 +11,7 @@ spec:
       - gotsmart
   selector:
     matchLabels:
-      app.kubernetes.io/name: argocd-metrics
+      app.kubernetes.io/name: gotsmart
   endpoints:
     - targetPort: 8080
       path: /metrics

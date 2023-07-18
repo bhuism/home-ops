@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gotsmart
+  namespace: gotsmart
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: gotsmart
+  template:
+    metadata:
+      labels:
+        app: gotsmart
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: node2
+      containers:
+        - image: europe-west4-docker.pkg.dev/impl-383520/docker/gotsmart:latest
+          imagePullPolicy: Always
+          name: gotsmart
+          securityContext:
+            privileged: true
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi

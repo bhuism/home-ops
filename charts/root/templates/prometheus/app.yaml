@@ -79,6 +79,8 @@ spec:
                 url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/speedtest.json
               kubernetes:
                 url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/kubernetes-withtemp.json
+              smartmeter:
+                url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/smartmeter.json
             grafana-dashboards-kubernetes:
               k8s-system-api-server:
                 url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json

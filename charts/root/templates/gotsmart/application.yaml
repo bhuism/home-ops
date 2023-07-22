@@ -9,12 +9,12 @@ spec:
     namespace: gotsmart
     server: https://kubernetes.default.svc
   project: default
-  source:
-    repoURL: https://github.com/bhuism/impl-argocd.git
-    path: manifests/gotsmart
-    targetRevision: HEAD
-    directory:
-      include: "*.yaml"
+  # source:
+  #   repoURL: https://github.com/bhuism/impl-argocd.git
+  #   path: manifests/gotsmart
+  #   targetRevision: HEAD
+  #   directory:
+  #     include: "*.yaml"
   syncPolicy:
     automated:
       prune: true

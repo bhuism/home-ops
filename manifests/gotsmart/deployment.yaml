@@ -20,8 +20,6 @@ spec:
         - image: debian:bookworm-slim
           imagePullPolicy: Always
           name: mypod
-          command:
-            - "bash"
           # args: [ "-device", "/dev/ttyUSB0" ]
           securityContext:
             privileged: true

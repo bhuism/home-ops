@@ -24,7 +24,7 @@
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 1,
-    "id": 43,
+    "id": 14,
     "links": [],
     "liveNow": false,
     "panels": [
@@ -88,7 +88,7 @@
         },
         "gridPos": {
           "h": 8,
-          "w": 19,
+          "w": 24,
           "x": 0,
           "y": 0
         },
@@ -150,188 +150,6 @@
         "fieldConfig": {
           "defaults": {
             "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [
-              {
-                "options": {
-                  "match": "null",
-                  "result": {
-                    "text": "N/A"
-                  }
-                },
-                "type": "special"
-              }
-            ],
-            "max": 5000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "#299c46",
-                  "value": null
-                }
-              ]
-            },
-            "unit": "kwatt"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 3,
-          "x": 19,
-          "y": 0
-        },
-        "id": 65,
-        "links": [],
-        "maxDataPoints": 100,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "none",
-          "justifyMode": "auto",
-          "orientation": "horizontal",
-          "reduceOptions": {
-            "calcs": [
-              "last"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "textMode": "auto"
-        },
-        "pluginVersion": "10.0.2",
-        "targets": [
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "prometheus"
-            },
-            "editorMode": "code",
-            "expr": "sum(gotsmart_active_power_delivered_l1_kw+gotsmart_active_power_delivered_l2_kw+gotsmart_active_power_delivered_l3_kw)",
-            "hide": false,
-            "instant": false,
-            "range": true,
-            "refId": "A"
-          }
-        ],
-        "title": "huidige elektriciteitsverbruik kW (som phases)",
-        "type": "stat"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "prometheus"
-        },
-        "description": "",
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [
-              {
-                "options": {
-                  "match": "null",
-                  "result": {
-                    "text": "N/A"
-                  }
-                },
-                "type": "special"
-              }
-            ],
-            "max": 5000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "#299c46",
-                  "value": null
-                }
-              ]
-            },
-            "unit": "kwatt"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 2,
-          "x": 22,
-          "y": 0
-        },
-        "id": 67,
-        "links": [],
-        "maxDataPoints": 100,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "none",
-          "justifyMode": "auto",
-          "orientation": "horizontal",
-          "reduceOptions": {
-            "calcs": [
-              "last"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "text": {},
-          "textMode": "auto"
-        },
-        "pluginVersion": "10.0.2",
-        "targets": [
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "prometheus"
-            },
-            "editorMode": "code",
-            "expr": "sum(gotsmart_active_power_delivered_l1_kw)",
-            "hide": false,
-            "instant": false,
-            "legendFormat": "l1",
-            "range": true,
-            "refId": "A"
-          },
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "prometheus"
-            },
-            "editorMode": "code",
-            "expr": "sum(gotsmart_active_power_delivered_l2_kw)",
-            "hide": false,
-            "instant": false,
-            "legendFormat": "l2",
-            "range": true,
-            "refId": "B"
-          },
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "prometheus"
-            },
-            "editorMode": "code",
-            "expr": "sum(gotsmart_active_power_delivered_l3_kw)",
-            "hide": false,
-            "instant": false,
-            "legendFormat": "l3",
-            "range": true,
-            "refId": "C"
-          }
-        ],
-        "type": "stat"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "prometheus"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
               "mode": "palette-classic"
             },
             "custom": {
@@ -384,7 +202,7 @@
         },
         "gridPos": {
           "h": 9,
-          "w": 19,
+          "w": 24,
           "x": 0,
           "y": 8
         },
@@ -446,83 +264,6 @@
         "fieldConfig": {
           "defaults": {
             "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [
-              {
-                "options": {
-                  "match": "null",
-                  "result": {
-                    "text": "N/A"
-                  }
-                },
-                "type": "special"
-              }
-            ],
-            "max": 5000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "#299c46",
-                  "value": null
-                }
-              ]
-            },
-            "unit": "kwatt"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 9,
-          "w": 5,
-          "x": 19,
-          "y": 8
-        },
-        "id": 4,
-        "links": [],
-        "maxDataPoints": 100,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "none",
-          "justifyMode": "auto",
-          "orientation": "horizontal",
-          "reduceOptions": {
-            "calcs": [
-              "last"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "textMode": "auto"
-        },
-        "pluginVersion": "10.0.2",
-        "targets": [
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "prometheus"
-            },
-            "editorMode": "code",
-            "expr": "sum(gotsmart_electricity_power_delivered_kw)",
-            "hide": false,
-            "instant": false,
-            "range": true,
-            "refId": "A"
-          }
-        ],
-        "title": "huidige elektriciteitsverbruik kW",
-        "type": "stat"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "prometheus"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
               "mode": "palette-classic"
             },
             "custom": {
@@ -571,7 +312,7 @@
         },
         "gridPos": {
           "h": 9,
-          "w": 19,
+          "w": 24,
           "x": 0,
           "y": 17
         },
@@ -624,98 +365,6 @@
         ],
         "title": "power by rate (tariff 1+2)",
         "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "prometheus"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "decimals": 3,
-            "mappings": [
-              {
-                "options": {
-                  "match": "null",
-                  "result": {
-                    "text": "N/A"
-                  }
-                },
-                "type": "special"
-              }
-            ],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "#299c46",
-                  "value": null
-                }
-              ]
-            },
-            "unit": "none"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 9,
-          "w": 5,
-          "x": 19,
-          "y": 17
-        },
-        "id": 66,
-        "links": [],
-        "maxDataPoints": 100,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "none",
-          "justifyMode": "auto",
-          "orientation": "horizontal",
-          "reduceOptions": {
-            "calcs": [
-              "last"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "textMode": "auto"
-        },
-        "pluginVersion": "10.0.2",
-        "targets": [
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "prometheus"
-            },
-            "editorMode": "code",
-            "exemplar": false,
-            "expr": "sum(gotsmart_electricity_delivered_to_client_tariff_1_kwh)",
-            "hide": false,
-            "instant": true,
-            "legendFormat": "tariff 1",
-            "range": false,
-            "refId": "A"
-          },
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "prometheus"
-            },
-            "editorMode": "code",
-            "exemplar": false,
-            "expr": "sum(gotsmart_electricity_delivered_to_client_tariff_2_kwh)",
-            "hide": false,
-            "instant": true,
-            "legendFormat": "tariff 2",
-            "range": false,
-            "refId": "B"
-          }
-        ],
-        "title": "huidige elektriciteitsverbruik kW",
-        "type": "stat"
       },
       {
         "collapsed": false,
@@ -1028,6 +677,136 @@
         "type": "timeseries"
       },
       {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 34,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "normal"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "kwatt"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 24,
+          "x": 0,
+          "y": 45
+        },
+        "id": 68,
+        "links": [],
+        "options": {
+          "legend": {
+            "calcs": [
+              "last"
+            ],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "10.0.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "sum(gotsmart_active_power_delivered_l1_kw)",
+            "format": "time_series",
+            "hide": false,
+            "instant": false,
+            "interval": "",
+            "intervalFactor": 1,
+            "legendFormat": "l1",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "sum(gotsmart_active_power_delivered_l2_kw)",
+            "format": "time_series",
+            "hide": false,
+            "instant": false,
+            "interval": "",
+            "intervalFactor": 1,
+            "legendFormat": "l2",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "sum(gotsmart_active_power_delivered_l3_kw)",
+            "format": "time_series",
+            "hide": false,
+            "instant": false,
+            "interval": "",
+            "intervalFactor": 1,
+            "legendFormat": "l3",
+            "refId": "C"
+          }
+        ],
+        "title": "Power",
+        "type": "timeseries"
+      },
+      {
         "collapsed": false,
         "datasource": {
           "type": "prometheus",
@@ -1037,7 +816,7 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 45
+          "y": 54
         },
         "id": 28,
         "panels": [],
@@ -1130,9 +909,9 @@
         },
         "gridPos": {
           "h": 9,
-          "w": 12,
+          "w": 8,
           "x": 0,
-          "y": 46
+          "y": 55
         },
         "id": 60,
         "links": [],
@@ -1186,6 +965,357 @@
         ],
         "title": "totaal aantal stroomstoringen",
         "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 3,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "#299c46",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 5,
+          "x": 8,
+          "y": 55
+        },
+        "id": 66,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "last"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "10.0.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "sum(gotsmart_electricity_delivered_to_client_tariff_1_kwh)",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "tariff 1",
+            "range": false,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "sum(gotsmart_electricity_delivered_to_client_tariff_2_kwh)",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "tariff 2",
+            "range": false,
+            "refId": "B"
+          }
+        ],
+        "title": "huidige elektriciteitsverbruik kW",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "max": 5000,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "#299c46",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "kwatt"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 4,
+          "x": 13,
+          "y": 55
+        },
+        "id": 65,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "last"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "10.0.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "editorMode": "code",
+            "expr": "sum(gotsmart_active_power_delivered_l1_kw+gotsmart_active_power_delivered_l2_kw+gotsmart_active_power_delivered_l3_kw)",
+            "hide": false,
+            "instant": false,
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "huidige elektriciteitsverbruik kW (som phases)",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "max": 5000,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "#299c46",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "kwatt"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 4,
+          "x": 17,
+          "y": 55
+        },
+        "id": 4,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "last"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "10.0.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "editorMode": "code",
+            "expr": "sum(gotsmart_electricity_power_delivered_kw)",
+            "hide": false,
+            "instant": false,
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "huidige elektriciteitsverbruik kW",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "max": 5000,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "#299c46",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "kwatt"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 3,
+          "x": 21,
+          "y": 55
+        },
+        "id": 67,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "last"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "text": {},
+          "textMode": "auto"
+        },
+        "pluginVersion": "10.0.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "editorMode": "code",
+            "expr": "sum(gotsmart_active_power_delivered_l1_kw)",
+            "hide": false,
+            "instant": false,
+            "legendFormat": "l1",
+            "range": true,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "editorMode": "code",
+            "expr": "sum(gotsmart_active_power_delivered_l2_kw)",
+            "hide": false,
+            "instant": false,
+            "legendFormat": "l2",
+            "range": true,
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "editorMode": "code",
+            "expr": "sum(gotsmart_active_power_delivered_l3_kw)",
+            "hide": false,
+            "instant": false,
+            "legendFormat": "l3",
+            "range": true,
+            "refId": "C"
+          }
+        ],
+        "type": "stat"
       }
     ],
     "refresh": "10s",
@@ -1196,7 +1326,7 @@
       "list": []
     },
     "time": {
-      "from": "now-12h",
+      "from": "now-24h",
       "to": "now"
     },
     "timepicker": {
@@ -1227,6 +1357,6 @@
     "timezone": "browser",
     "title": "Smartmeter",
     "uid": "dd3ab232-e269-4a19-af10-834b9f95c97f",
-    "version": 39,
+    "version": 8,
     "weekStart": ""
   }

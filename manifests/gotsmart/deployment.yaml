@@ -17,10 +17,10 @@ spec:
       nodeSelector:
         kubernetes.io/hostname: node2
       containers:
-        - image: debian:bookworm-slim
+        - image: europe-west4-docker.pkg.dev/impl-383520/docker/gotsmart:latest
           imagePullPolicy: Always
-          name: mypod
-          # args: [ "-device", "/dev/ttyUSB0" ]
+          name: gotsmart
+          args: [ "-device", "/dev/ttyUSB0" ]
           securityContext:
             privileged: true
           ports:

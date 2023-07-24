@@ -3,7 +3,7 @@
 <div align="center">
   
 [![GitHub last commit](https://img.shields.io/github/last-commit/bhuism/home-ops)](https://github.com/bhuism/home-ops/commits/main "Commit History")
-[![Test](https://github.com/bhuism/home-ops/actions/workflows/test.yaml/badge.svg)](https://github.com/bhuism/home-ops/actions/workflows/test.yaml)
+[![Refresh](https://github.com/bhuism/home-ops/actions/workflows/refreesh.yaml/badge.svg)](https://github.com/bhuism/home-ops/actions/workflows/test.yaml)
 [![Talos](https://img.shields.io/badge/OS-Talos-success)](https://talos.dev "Talos OS")
 [![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com)
 </div>

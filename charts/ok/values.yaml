@@ -46,13 +46,16 @@ ingress:
   className: nginx
   annotations:
     external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
-    hajimari.io/url: https://ok.impl.nl
   labels: {}
   path: /
   pathType: Prefix
   extraPaths: []
   hosts:
     - host: ok.impl.nl
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+    - host: ip.impl.nl
       paths:
         - path: /
           pathType: ImplementationSpecific
@@ -68,10 +71,6 @@ resources:
 
 autoscaling:
   enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
 
 nodeSelector: {}
 

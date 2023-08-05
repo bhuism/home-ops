@@ -52,18 +52,6 @@ spec:
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
-            - name: /v1/ip
-              url: "https://api.jvdkolk.nl/v1/ip"
-              interval: 5m
-              conditions:
-                - "[STATUS] == any(200,302)"
-                - "[RESPONSE_TIME] < 5000"
-            - name: /v1/time
-              url: "https://api.jvdkolk.nl/v1/time?zone=Europe/Amsterdam"
-              interval: 5m
-              conditions:
-                - "[STATUS] == 200"
-                - "[RESPONSE_TIME] < 5000"
             - name: OkApplication
               url: "https://ok.impl.nl"
               interval: 5m

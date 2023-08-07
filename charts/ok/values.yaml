@@ -59,6 +59,10 @@ ingress:
       paths:
         - path: /
           pathType: ImplementationSpecific
+    - host: time.impl.nl
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
   tls: {}
 
 resources:

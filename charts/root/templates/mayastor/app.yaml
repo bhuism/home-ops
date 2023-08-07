@@ -21,6 +21,14 @@ spec:
             kubernetes.io/arch: arm64
         loki-stack:
             ​enabled: false
+            ​loki:
+                ​enabled: false
+            persistence:
+                storageClassName: manual
+        etcd:
+            persistence:
+                storageClassName: manual
+
   syncPolicy:
     automated:
       prune: true

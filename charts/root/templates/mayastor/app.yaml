@@ -19,6 +19,8 @@ spec:
             ​logLevel: info
         nodeSelector:
             kubernetes.io/arch: arm64
+        loki-stack:
+            ​enabled: false
   syncPolicy:
     automated:
       prune: true

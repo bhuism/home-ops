@@ -17,6 +17,8 @@ spec:
       values: |
         io_engine:
             ​logLevel: info
+        nodeSelector:
+            kubernetes.io/arch: arm64
   syncPolicy:
     automated:
       prune: true

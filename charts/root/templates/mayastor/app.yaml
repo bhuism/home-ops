@@ -28,7 +28,6 @@ spec:
         etcd:
             persistence:
                 storageClassName: manual
-
   syncPolicy:
     automated:
       prune: true

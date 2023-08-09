@@ -19,6 +19,8 @@ spec:
           registry: europe-west4-docker.pkg.dev/impl-383520/docker
           repo: openebs
           tag: v2.3
+        metrics:
+          enabled: false
         io_engine:
             ​logLevel: info
         nodeSelector:

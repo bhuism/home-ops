@@ -15,6 +15,10 @@ spec:
     targetRevision: 2.3.0
     helm:
       values: |
+        image:
+          registry: europe-west4-docker.pkg.dev/impl-383520
+          repo: docker
+          tag: 2.3
         io_engine:
             ​logLevel: info
         nodeSelector:

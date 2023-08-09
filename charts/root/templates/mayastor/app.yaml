@@ -35,9 +35,12 @@ spec:
           promtail:
             enabled: false
         etcd:
-            persistence:
-                enabled: true
-                storageClass: manual
+          nodeSelector:
+            kubernetes.io/hostname: node3
+          replicaCount: 1
+          persistence:
+            enabled: true
+            storageClass: etcd-pv-sc
 
   syncPolicy:
     automated:

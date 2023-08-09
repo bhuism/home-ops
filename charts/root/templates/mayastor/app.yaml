@@ -30,7 +30,7 @@ spec:
           ​loki:
             enabled: false
             persistence:
-              ​enabled: false
+              ​enabled: true
               storageClassName: manual
           promtail:
             enabled: false

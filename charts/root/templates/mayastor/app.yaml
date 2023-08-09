@@ -26,6 +26,7 @@ spec:
         nodeSelector:
             kubernetes.io/arch: arm64
         loki-stack:
+          enabled: false
           loki-stack:
             ​enabled: false
             ​loki:

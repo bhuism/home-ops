@@ -1,7 +1,7 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: etcd-pv
+  name: etcd-pv-sc
 provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer
 ---
@@ -12,7 +12,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: etcd-pv
+  storageClassName: etcd-pv-sc
   capacity:
     storage: 5Gi
   volumeMode: Filesystem

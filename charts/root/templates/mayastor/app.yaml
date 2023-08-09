@@ -32,6 +32,9 @@ spec:
         etcd:
             persistence:
                 storageClassName: manual
+        mayastor:
+          loki-stack:
+            enabled: false
   syncPolicy:
     automated:
       prune: true

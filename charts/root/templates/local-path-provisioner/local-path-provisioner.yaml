@@ -20,7 +20,7 @@ spec:
         nodePathMap:
           - node: node3
             paths:
-              - /var/mnt/export
+              - /var/mnt/export/lpp
         storageClass:
           defaultClass: true
           reclaimPolicy: Retain

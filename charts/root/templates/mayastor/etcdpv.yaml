@@ -21,13 +21,4 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   local:
     path: "/var/mnt/export/mayastor/etcd"
-  nodeSelector:
-    kubernetes.io/hostname: node3
-#   nodeAffinity:
-#     required:
-#       nodeSelectorTerms:
-#       - matchExpressions:
-#         - key: kubernetes.io/hostname
-#           operator: In
-#           values:
-#           - node3
+  nodeName: node3

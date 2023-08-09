@@ -21,4 +21,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   local:
     path: "/var/mnt/export/mayastor/etcd"
-  nodeName: node3
+  affinity:
+    nodeName: node3

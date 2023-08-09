@@ -4,6 +4,7 @@ metadata:
   name: etcd-pv-sc
 provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer
+reclaimPolicy: Retain
 ---
 apiVersion: v1
 kind: PersistentVolume

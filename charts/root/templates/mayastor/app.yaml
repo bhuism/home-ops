@@ -24,17 +24,16 @@ spec:
         nodeSelector:
             kubernetes.io/arch: arm64
         loki-stack:
+          ​enabled: false
+          ​loki:
             ​enabled: false
-            ​loki:
-                ​enabled: false
             persistence:
-                storageClassName: manual
+                enabled: false
         etcd:
             persistence:
-                storageClassName: manual
-        mayastor:
-          loki-stack:
-            enabled: false
+                enabled: true
+                storageClass: manual
+
   syncPolicy:
     automated:
       prune: true

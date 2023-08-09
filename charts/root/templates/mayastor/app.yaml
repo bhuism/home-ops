@@ -26,14 +26,15 @@ spec:
         nodeSelector:
             kubernetes.io/arch: arm64
         loki-stack:
-          ​enabled: false
-          ​loki:
-            enabled: false
-            persistence:
-              ​enabled: true
-              storageClassName: manual
-          promtail:
-            enabled: false
+          loki-stack:
+            ​enabled: false
+            ​loki:
+              enabled: false
+              persistence:
+                ​enabled: true
+                storageClassName: manual
+            promtail:
+              enabled: false
         etcd:
           image:
             tag: 3.5.7-debian-11-r26

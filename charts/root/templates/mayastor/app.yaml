@@ -26,9 +26,12 @@ spec:
         loki-stack:
           ​enabled: false
           ​loki:
+            enabled: false
             persistence:
               ​enabled: false
               storageClassName: manual
+          promtail:
+            enabled: false
         etcd:
             persistence:
                 enabled: true

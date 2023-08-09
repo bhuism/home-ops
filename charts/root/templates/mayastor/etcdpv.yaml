@@ -22,4 +22,11 @@ spec:
   local:
     path: "/var/mnt/export/mayastor/etcd"
   affinity:
-    nodeName: node3
+    nodeAffinity:
+        required:
+        nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - node3

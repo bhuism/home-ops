@@ -27,8 +27,7 @@ spec:
           ​enabled: false
           ​loki:
             ​enabled: false
-            persistence:
-                enabled: false
+            storageClassName: manual
         etcd:
             persistence:
                 enabled: true

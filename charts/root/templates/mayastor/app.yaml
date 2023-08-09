@@ -26,8 +26,9 @@ spec:
         loki-stack:
           ​enabled: false
           ​loki:
-            ​enabled: false
-            storageClassName: manual
+            persistence:
+              ​enabled: false
+              storageClassName: manual
         etcd:
             persistence:
                 enabled: true

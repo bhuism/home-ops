@@ -16,7 +16,7 @@ spec:
     helm:
       values: |
         image:
-          registry: europe-west4-docker.pkg.dev/impl-383520
+          registry: europe-west4-docker.pkg.dev/impl-383520/openebs
           repo: docker
           tag: v2.3
         io_engine:

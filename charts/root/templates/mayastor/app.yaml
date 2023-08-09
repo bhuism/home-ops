@@ -18,7 +18,7 @@ spec:
         image:
           registry: europe-west4-docker.pkg.dev/impl-383520
           repo: docker
-          tag: 2.3
+          tag: v2.3
         io_engine:
             ​logLevel: info
         nodeSelector:

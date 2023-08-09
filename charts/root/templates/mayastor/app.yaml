@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mayastor
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: mayastor
+  project: default
+  source:
+    chart: mayastor
+    repoURL: https://openebs.github.io/mayastor-extensions
+    targetRevision: 2.3.0
+    helm:
+      values: |
+        io_engine:
+            ​logLevel: info
+        nodeSelector:
+            kubernetes.io/arch: arm64
+        loki-stack:
+            ​enabled: false
+            ​loki:
+                ​enabled: false
+            persistence:
+                storageClassName: manual
+        etcd:
+            persistence:
+                storageClassName: manual
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    managedNamespaceMetadata:
+      labels:
+        pod-security.kubernetes.io/enforce: privileged
+        pod-security.kubernetes.io/audit: privileged
+        pod-security.kubernetes.io/warn: privileged
+    syncOptions:
+      - CreateNamespace=true

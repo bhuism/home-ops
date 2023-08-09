@@ -39,8 +39,8 @@ spec:
             kubernetes.io/hostname: node3
           replicaCount: 1
           persistence:
-            enabled: true
-            storageClass: etcd-pv-sc
+            enabled: false
+#           storageClass: etcd-pv-sc
 
   syncPolicy:
     automated:

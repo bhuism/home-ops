@@ -3,6 +3,7 @@ kind: StorageClass
 metadata:
   name: manual
 provisioner: kubernetes.io/no-provisioner
+---
 # ---
 # apiVersion: v1
 # kind: PersistentVolume

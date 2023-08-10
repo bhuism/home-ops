@@ -43,8 +43,6 @@ spec:
             size: 1Gi
           volumePermissions:
             enabled: true
-            image:
-              tag: 11-debian-11-r34 # the default version (11-debian-11-r16) has no arm artifact in dockerhub
   syncPolicy:
     automated:
       prune: true

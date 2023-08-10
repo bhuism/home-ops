@@ -41,13 +41,11 @@ spec:
             enabled: true
             storageClass: manual
             size: 1Gi
-          replicaCount: 1
+#         replicaCount: 1
           volumePermissions:
             enabled: true
             image:
               tag: 11-debian-11-r136 # the default version (11-debian-11-r16) has no arm artifact in dockerhub
-          nodeSelector:
-            kubernetes.io/hostname: node1
   syncPolicy:
     automated:
       prune: true

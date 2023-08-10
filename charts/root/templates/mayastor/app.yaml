@@ -41,7 +41,6 @@ spec:
             enabled: true
             storageClass: manual
             size: 1Gi
-#         replicaCount: 1
           volumePermissions:
             enabled: true
             image:

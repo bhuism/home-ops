@@ -1,32 +1,31 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: etcd-pv-sc
+  name: manual
 provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: Immediate
-reclaimPolicy: Retain
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: etcd-pv
-  labels:
-    type: local
-spec:
-  storageClassName: etcd-pv-sc
-  capacity:
-    storage: 5Gi
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
-  local:
-    path: "/var/mnt/export/mayastor/etcd"
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - node3
+# ---
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: etcd-pv
+#   labels:
+#     type: local
+# spec:
+#   storageClassName: etcd-pv-sc
+#   capacity:
+#     storage: 5Gi
+#   volumeMode: Filesystem
+#   accessModes:
+#     - ReadWriteOnce
+#   persistentVolumeReclaimPolicy: Retain
+#   local:
+#     path: "/var/mnt/export/mayastor/etcd"
+#   nodeAffinity:
+#     required:
+#       nodeSelectorTerms:
+#       - matchExpressions:
+#         - key: kubernetes.io/hostname
+#           operator: In
+#           values:
+#           - node3

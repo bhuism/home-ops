@@ -41,6 +41,8 @@ spec:
             enabled: true
             storageClass: manual
           replicaCount: 1
+          volumePermissions:
+            enabled: true
           nodeSelector:
             kubernetes.io/hostname: node1
   syncPolicy:

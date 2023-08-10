@@ -44,8 +44,8 @@ spec:
           replicaCount: 1
           volumePermissions:
             enabled: true
-          nodeSelector:
-            kubernetes.io/hostname: node1
+#         nodeSelector:
+#           kubernetes.io/hostname: node1
   syncPolicy:
     automated:
       prune: true

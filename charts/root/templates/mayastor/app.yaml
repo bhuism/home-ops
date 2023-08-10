@@ -42,7 +42,8 @@ spec:
             storageClass: manual
             size: 1Gi
           volumePermissions:
-            enabled: true
+            tag: 11-debian-11-r34
+            
   syncPolicy:
     automated:
       prune: true

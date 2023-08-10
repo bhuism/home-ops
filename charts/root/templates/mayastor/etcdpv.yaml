@@ -3,7 +3,6 @@ kind: StorageClass
 metadata:
   name: manual
 provisioner: kubernetes.io/no-provisioner
-volumeBindingMode: Immediate
 # ---
 # apiVersion: v1
 # kind: PersistentVolume

@@ -36,10 +36,10 @@ spec:
               enabled: false
         etcd:
           image:
-            tag: 3.5.7-debian-11-r26
+            tag: 3.5.7-debian-11-r26 # the default version (3.5.7-debian-11-r26) has no arm artifact in dockerhub
           persistence:
             enabled: false
-          nodeSelector:
+          nodeSelector: # node3 is slow for some reason
             kubernetes.io/hostname: node1
             kubernetes.io/hostname: node2
             kubernetes.io/hostname: node4

@@ -42,7 +42,9 @@ spec:
             storageClass: manual
             size: 1Gi
           volumePermissions:
-            tag: 11-debian-11-r34
+            image:
+              repository: bitnami/os-shell
+              tag: 11-debian-11-r34
             
   syncPolicy:
     automated:

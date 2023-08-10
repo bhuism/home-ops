@@ -45,7 +45,6 @@ spec:
             enabled: true
             image:
               tag: 11-debian-11-r136 # the default version (11-debian-11-r16) has no arm artifact in dockerhub
-          initialClusterState: new
   syncPolicy:
     automated:
       prune: true

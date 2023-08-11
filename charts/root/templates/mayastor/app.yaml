@@ -23,6 +23,10 @@ spec:
           enabled: false
         nodeSelector:
             kubernetes.io/arch: arm64
+        io_engine:
+          nodeSelector:
+            openebs.io/engine: mayastor
+            kubernetes.io/hostname: node1
         loki-stack:
           enabled: false
           loki-stack:

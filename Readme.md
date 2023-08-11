@@ -34,7 +34,7 @@ Eleanor: | ![Eleanor](https://shields.io/uptimerobot/status/m794488049-f2b30350c
 * [WireGuard](https://www.wireguard.com/)
 * [Speedtest Exporter](https://github.com/MiguelNdeCarvalho/speedtest-exporter)
 * [Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
-* Mayastor
+* [Mayastor](https://mayastor.gitbook.io/)
 
 ### Todo
 

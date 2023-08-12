@@ -77,12 +77,6 @@ spec:
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
-            - name: "Auth"
-              url: "https://auth.impl.nl"
-              interval: 5m
-              conditions:
-                - "[STATUS] == 403"
-                - "[RESPONSE_TIME] < 5000"
             - name: "Jasmine"
               url: "icmp://jasmine.odee.net"
               interval: 5m

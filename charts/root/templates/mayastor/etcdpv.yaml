@@ -5,28 +5,17 @@ metadata:
 provisioner: kubernetes.io/no-provisioner
 reclaimPolicy: Retain
 ---
-# ---
-# apiVersion: v1
-# kind: PersistentVolume
-# metadata:
-#   name: etcd-pv
-#   labels:
-#     type: local
-# spec:
-#   storageClassName: etcd-pv-sc
-#   capacity:
-#     storage: 5Gi
-#   volumeMode: Filesystem
-#   accessModes:
-#     - ReadWriteOnce
-#   persistentVolumeReclaimPolicy: Retain
-#   local:
-#     path: "/var/mnt/export/mayastor/etcd"
-#   nodeAffinity:
-#     required:
-#       nodeSelectorTerms:
-#       - matchExpressions:
-#         - key: kubernetes.io/hostname
-#           operator: In
-#           values:
-#           - node3
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: impl-default
+  annotations:
+    storageclass.kubernetes.io/is-default-class: true
+provisioner: io.openebs.csi-mayastor
+reclaimPolicy: Retain
+parameters:
+  repl: '1'
+  protocol: 'nvmf'
+  ioTimeout: '60'
+  fsType: xfs
+  

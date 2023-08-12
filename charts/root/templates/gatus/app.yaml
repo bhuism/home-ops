@@ -111,7 +111,6 @@ spec:
           kubernetes.io/hostname: node3
         persistence:
           enabled: true
-          existingClaim: gatus
         serviceMonitor:
           enabled: true          
   syncPolicy:

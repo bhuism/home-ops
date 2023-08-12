@@ -16,7 +16,7 @@ Eleanor: | ![Eleanor](https://shields.io/uptimerobot/status/m794488049-f2b30350c
 
 ### Running
 
-* [Cilium](https://cilium.io/)
+* ~~[Cilium](https://cilium.io/)~~
 * [ArgoCD](https://argo-cd.readthedocs.io/)
 * [Gatus](https://gatus.io/)
 * [MetalLB](https://metallb.universe.tf/)

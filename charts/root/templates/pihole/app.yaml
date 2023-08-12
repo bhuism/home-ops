@@ -38,6 +38,7 @@ spec:
                 - pihole.impl.nl
           DNS1: "1.1.1.1"
           DNS2: "8.8.4.4"
+          DNS3: "8.8.8.8"
         hostname: pihole
         adminPassword: "killer"
   syncPolicy:

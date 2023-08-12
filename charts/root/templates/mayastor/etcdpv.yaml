@@ -3,6 +3,7 @@ kind: StorageClass
 metadata:
   name: manual
 provisioner: kubernetes.io/no-provisioner
+reclaimPolicy: Retain
 ---
 # ---
 # apiVersion: v1

@@ -111,6 +111,7 @@ spec:
           kubernetes.io/hostname: node3
         persistence:
           enabled: true
+          storageClassName: impl-default
         serviceMonitor:
           enabled: true          
   syncPolicy:

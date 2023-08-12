@@ -10,7 +10,7 @@ apiVersion: storage.k8s.io/v1
 metadata:
   name: impl-default
   annotations:
-    storageclass.kubernetes.io/is-default-class: true
+    storageclass.kubernetes.io/is-default-class: "true"
 provisioner: io.openebs.csi-mayastor
 reclaimPolicy: Retain
 parameters:
@@ -18,4 +18,4 @@ parameters:
   protocol: 'nvmf'
   ioTimeout: '60'
   fsType: xfs
-  
+

@@ -39,10 +39,8 @@ Eleanor: | ![Eleanor](https://shields.io/uptimerobot/status/m794488049-f2b30350c
 ### Todo
 
 * [Paperless](https://github.com/paperless-ngx/paperless-ngx)
-* [nginx.ingress.kubernetes.io/auth-url](https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/nginx-configuration/annotations.md#external-authentication)
 * Fix test
 * remove secretos
 * [Uptime Kuma](https://github.com/louislam/uptime-kuma)
 * [Unifi Poller](https://unpoller.com/)
 * [Home Asistant](https://www.home-assistant.io/)
-* [CSI Driver NFS](https://github.com/kubernetes-csi/csi-driver-nfs)

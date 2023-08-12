@@ -107,8 +107,6 @@ spec:
               conditions:
                 - "[CONNECTED] == true"
                 - "[RESPONSE_TIME] < 5000"
-        nodeSelector:
-          kubernetes.io/hostname: node3
         persistence:
           enabled: true
           storageClassName: impl-default

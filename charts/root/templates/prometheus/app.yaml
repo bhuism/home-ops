@@ -106,12 +106,10 @@ spec:
         prometheus:
           prometheusSpec:
             serviceMonitorSelectorNilUsesHelmValues: false
-            nodeSelector:
-              kubernetes.io/hostname: node3
             storageSpec:
               volumeClaimTemplate:
                 spec:
-                  storageClassName: prometheus-sc
+                  storageClassName: impl-default
                   accessModes: ["ReadWriteOnce"]
                   resources:
                     requests:

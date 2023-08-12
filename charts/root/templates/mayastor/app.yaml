@@ -43,6 +43,9 @@ spec:
           image:
             tag: 3.5.9-debian-11-r90 # the default version has no arm64 artifact
           tolerations:
+            - key: "node-role.kubernetes.io/control-plane"
+              operator: "Exists"
+              effect: "NoSchedule"          
             node-role.kubernetes.io/control-plane
           persistence:
             enabled: true

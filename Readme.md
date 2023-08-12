@@ -23,13 +23,13 @@ Eleanor: | ![Eleanor](https://shields.io/uptimerobot/status/m794488049-f2b30350c
 * [Prometheus Stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
 * [ExternalDNS](https://github.com/kubernetes-sigs/external-dns)
 * [Ingress-nginx](https://github.com/kubernetes/ingress-nginx)
-* [Local-path-provisioner](https://github.com/rancher/local-path-provisioner)
+* ~~[Local-path-provisioner](https://github.com/rancher/local-path-provisioner)~~
 * [Ok](https://github.com/bhuism/ok)
 * [Cloudflare Tunnel](https://github.com/cloudflare/helm-charts/tree/main/charts/cloudflare-tunnel)
 * [Echo-Server](https://ealenn.github.io/Echo-Server/)
 * ~~[Change Detection](https://changedetection.io/)~~
 * [PiHole](https://pi-hole.net/)
-* [Oauth2-Proxy](https://oauth2-proxy.github.io/oauth2-proxy)
+* ~~[Oauth2-Proxy](https://oauth2-proxy.github.io/oauth2-proxy)~~
 * [Cert Manager](https://cert-manager.io/)
 * [WireGuard](https://www.wireguard.com/)
 * [Speedtest Exporter](https://github.com/MiguelNdeCarvalho/speedtest-exporter)

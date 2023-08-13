@@ -18,6 +18,12 @@ spec:
         image: europe-west4-docker.pkg.dev/impl-383520/docker/k8s-ephemeral-storage-metrics:latest
         prometheus:
           release: prometheus
+        resources:
+          limits:
+            memory: 32Mi
+          requests:
+            cpu: 50m
+            memory: 64Mi
   syncPolicy:
     automated:
       prune: true

@@ -50,7 +50,7 @@ spec:
         etcd:
           image:
             tag: 3.5.9-debian-11-r90 # the default version has no arm64 artifact
-            replicaCount: 2
+          replicaCount: 2
           # tolerations:
           #   - key: "node-role.kubernetes.io/control-plane"
           #     operator: "Exists"

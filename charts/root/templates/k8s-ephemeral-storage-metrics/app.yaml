@@ -20,10 +20,10 @@ spec:
           release: prometheus
         resources:
           limits:
-            memory: 32Mi
+            memory: 64Mi
           requests:
             cpu: 50m
-            memory: 64Mi
+            memory: 32Mi
   syncPolicy:
     automated:
       prune: true

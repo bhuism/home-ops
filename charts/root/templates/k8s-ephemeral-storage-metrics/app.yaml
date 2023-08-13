@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: k8s-ephemeral-storage-metric
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: k8s-ephemeral-storage-metric
+  project: default
+  source:
+    repoURL: https://github.com/jmcgrath207/k8s-ephemeral-storage-metrics.git
+    path: charts/k8s-ephemeral-storage-metrics
+    targetRevision: HEAD
+    helm:
+      values: |
+        image: europe-west4-docker.pkg.dev/impl-383520/docker/k8s-ephemeral-storage-metrics:latest
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    managedNamespaceMetadata:
+      labels:
+        pod-security.kubernetes.io/enforce: privileged
+        pod-security.kubernetes.io/audit: privileged
+        pod-security.kubernetes.io/warn: privileged
+    syncOptions:
+      - CreateNamespace=true

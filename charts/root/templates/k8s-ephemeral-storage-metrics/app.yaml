@@ -10,12 +10,14 @@ spec:
     namespace: k8s-ephemeral-storage-metric
   project: default
   source:
-    repoURL: https://github.com/jmcgrath207/k8s-ephemeral-storage-metrics.git
+    repoURL: https://github.com/bhuism/k8s-ephemeral-storage-metrics.git
     path: charts/k8s-ephemeral-storage-metrics
     targetRevision: HEAD
     helm:
       values: |
         image: europe-west4-docker.pkg.dev/impl-383520/docker/k8s-ephemeral-storage-metrics:latest
+        prometheus:
+          release: prometheus
   syncPolicy:
     automated:
       prune: true

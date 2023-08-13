@@ -56,13 +56,13 @@ spec:
           #     operator: "Exists"
           #     effect: "NoSchedule"          
           persistence:
-            enabled: false
-            # storageClass: manual
-            # size: 1Gi
-          # volumePermissions:
-          #   image:
-          #     repository: bitnami/os-shell # the default version has no arm64 artifact
-          #     tag: 11-debian-11-r34 # the default version has no arm64 artifact
+            enabled: true
+            storageClass: manual
+            size: 1Gi
+          volumePermissions:
+            image:
+              repository: bitnami/os-shell # the default version has no arm64 artifact
+              tag: 11-debian-11-r34 # the default version has no arm64 artifact
         agents:
           core:
             resources:

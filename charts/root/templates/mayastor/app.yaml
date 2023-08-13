@@ -28,6 +28,11 @@ spec:
             kubernetes.io/arch: arm64
             openebs.io/engine: mayastor
             kubernetes.io/hostname: node1
+          resources:
+            limits:
+              cpu: "900m"
+            requests:
+              cpu: "900m"
         loki-stack:
           enabled: false
           loki-stack:

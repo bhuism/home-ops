@@ -33,9 +33,9 @@ spec:
             kubernetes.io/hostname: node1
           resources:
             limits:
-              cpu: "750m"
+              cpu: "1100m"
             requests:
-              cpu: "750m"
+              cpu: "1100m"
         loki-stack:
           enabled: false
           loki-stack:
@@ -44,7 +44,6 @@ spec:
               enabled: false
               persistence:
                 ​enabled: false
-                # storageClassName: manual
             promtail:
               enabled: false
         etcd:
@@ -63,15 +62,15 @@ spec:
             image:
               repository: bitnami/os-shell # the default version has no arm64 artifact
               tag: 11-debian-11-r34 # the default version has no arm64 artifact
-        agents:
-          core:
-            resources:
-              limits:
-                cpu: "500m"
-                memory: "128Mi"
-              requests:
-                cpu: "100m"
-                memory: "32Mi"              
+        # agents:
+        #   core:
+        #     resources:
+        #       limits:
+        #         cpu: "500m"
+        #         memory: "128Mi"
+        #       requests:
+        #         cpu: "100m"
+        #         memory: "32Mi"              
             
   syncPolicy:
     automated:

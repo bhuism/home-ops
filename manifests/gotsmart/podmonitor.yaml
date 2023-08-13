@@ -15,4 +15,4 @@ spec:
   jobLabel: "gotsmart"
   podMetricsEndpoints:
     - port: http
-      interval: 20s
+      interval: 15s

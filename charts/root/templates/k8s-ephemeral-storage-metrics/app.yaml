@@ -24,6 +24,7 @@ spec:
           requests:
             cpu: 50m
             memory: 32Mi
+          interval: 1m
   syncPolicy:
     automated:
       prune: true

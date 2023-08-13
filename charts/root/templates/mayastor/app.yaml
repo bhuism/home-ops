@@ -33,9 +33,9 @@ spec:
             kubernetes.io/hostname: node1
           resources:
             limits:
-              cpu: "900m"
+              cpu: "1100m"
             requests:
-              cpu: "900m"
+              cpu: "1100m"
         loki-stack:
           enabled: false
           loki-stack:
@@ -50,10 +50,10 @@ spec:
         etcd:
           image:
             tag: 3.5.9-debian-11-r90 # the default version has no arm64 artifact
-          tolerations:
-            - key: "node-role.kubernetes.io/control-plane"
-              operator: "Exists"
-              effect: "NoSchedule"          
+          # tolerations:
+          #   - key: "node-role.kubernetes.io/control-plane"
+          #     operator: "Exists"
+          #     effect: "NoSchedule"          
           persistence:
             enabled: true
             storageClass: manual

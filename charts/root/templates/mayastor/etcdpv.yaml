@@ -17,5 +17,5 @@ parameters:
   repl: '1'
   protocol: 'nvmf'
   ioTimeout: '60'
-  fsType: xfs
+  csi.storage.k8s.io/fstype: xfs
 

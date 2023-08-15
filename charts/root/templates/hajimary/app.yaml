@@ -48,9 +48,9 @@ spec:
         persistence:
           data:
             enabled: true
-              type: pvc
-              accessMode: ReadWriteOnce
-              size: 1Gi
+            type: pvc
+            accessMode: ReadWriteOnce
+            size: 1Gi
   syncPolicy:
     automated:
       prune: true

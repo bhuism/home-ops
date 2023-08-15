@@ -20,7 +20,6 @@ spec:
           repo: openebs
           tag: v2.3
         metrics:
-          enabled: true
           pollingInterval: "1m"
         nodeSelector:
             kubernetes.io/arch: arm64

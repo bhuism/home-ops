@@ -50,14 +50,14 @@ spec:
           initialClusterState: existing
           image:
             tag: 3.5.9-debian-11-r90 # the default version has no arm64 artifact
-          # tolerations:
-          #   - key: "node-role.kubernetes.io/control-plane"
-          #     operator: "Exists"
-          #     effect: "NoSchedule"          
+            tolerations:
+              - key: "node-role.kubernetes.io/control-plane"
+                operator: "Exists"
+                effect: "NoSchedule"          
           persistence:
-            enabled: true
-            storageClass: manual
-            size: 1Gi
+            enabled: false
+            # storageClass: manual
+            # size: 1Gi
           volumePermissions:
             image:
               repository: bitnami/os-shell # the default version has no arm64 artifact

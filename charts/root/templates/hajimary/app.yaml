@@ -46,8 +46,11 @@ spec:
                 hosts:
                   - hajimari.impl.nl
         persistence:
-            data:
-                enabled: false
+          data:
+            enabled: true
+              type: pvc
+              accessMode: ReadWriteOnce
+              size: 1Gi
   syncPolicy:
     automated:
       prune: true

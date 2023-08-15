@@ -10,6 +10,6 @@ spec:
   selector:
     matchLabels:
       openebs.io/release: mayastor
-    #   app: metrics-exporter-pool
+      app: metrics-exporter-pool
   endpoints:
     - port: metrics

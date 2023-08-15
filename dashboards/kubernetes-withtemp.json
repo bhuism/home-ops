@@ -51,7 +51,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -131,7 +132,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(0, 0, 0, 0)"
+                "color": "rgba(0, 0, 0, 0)",
+                "value": null
               },
               {
                 "color": "rgb(210, 1, 1)",
@@ -215,7 +217,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -716,7 +719,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -756,7 +760,7 @@
           "editorMode": "code",
           "expr": "sum(ephemeral_storage_pod_usage) by (node_name)",
           "instant": false,
-          "legendFormat": "{{ node }}",
+          "legendFormat": "__auto",
           "range": true,
           "refId": "A"
         }
@@ -929,7 +933,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -1940,6 +1945,6 @@
   "timezone": "browser",
   "title": "Kubernetes cluster monitoring (via Prometheus)",
   "uid": "fe783c8d-c36c-4d25-ad69-0a98046457e3",
-  "version": 4,
+  "version": 5,
   "weekStart": ""
 }

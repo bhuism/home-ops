@@ -20,7 +20,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 162,
   "graphTooltip": 1,
-  "id": 12,
+  "id": 15,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -51,8 +51,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)",
-                "value": null
+                "color": "rgba(50, 172, 45, 0.97)"
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -80,14 +79,16 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "10.0.1",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
@@ -130,8 +131,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(0, 0, 0, 0)",
-                "value": null
+                "color": "rgba(0, 0, 0, 0)"
               },
               {
                 "color": "rgb(210, 1, 1)",
@@ -161,13 +161,15 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["mean"],
+          "calcs": [
+            "mean"
+          ],
           "fields": "/^{job=\"kubelet\"}$/",
           "values": false
         },
         "textMode": "auto"
       },
-      "pluginVersion": "10.0.1",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
@@ -213,8 +215,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)",
-                "value": null
+                "color": "rgba(50, 172, 45, 0.97)"
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -242,14 +243,16 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "10.0.1",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
@@ -393,14 +396,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [0.85],
+              "params": [
+                0.85
+              ],
               "type": "gt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["B", "5m", "now"]
+              "params": [
+                "B",
+                "5m",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -458,7 +467,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.0.1",
+      "pluginVersion": "10.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -533,14 +542,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [90],
+              "params": [
+                90
+              ],
               "type": "gt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["A", "15m", "now"]
+              "params": [
+                "A",
+                "15m",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -597,7 +612,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.0.1",
+      "pluginVersion": "10.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -657,6 +672,99 @@
       }
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 39,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 17
+      },
+      "id": 32,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "sum(ephemeral_storage_pod_usage) by (node_name)",
+          "instant": false,
+          "legendFormat": "{{ node }}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Ephemeral Storage",
+      "type": "timeseries"
+    },
+    {
       "columns": [],
       "datasource": {
         "type": "prometheus",
@@ -667,7 +775,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 17
+        "y": 25
       },
       "id": 31,
       "links": [],
@@ -755,7 +863,7 @@
         "h": 9,
         "w": 5,
         "x": 12,
-        "y": 17
+        "y": 25
       },
       "id": 27,
       "limit": 10,
@@ -821,8 +929,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)",
-                "value": null
+                "color": "rgba(50, 172, 45, 0.97)"
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -842,7 +949,7 @@
         "h": 5,
         "w": 7,
         "x": 17,
-        "y": 17
+        "y": 25
       },
       "id": 7,
       "links": [],
@@ -850,14 +957,16 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "10.0.1",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
@@ -881,14 +990,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [1],
+              "params": [
+                1
+              ],
               "type": "lt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["C", "5m", "now"]
+              "params": [
+                "C",
+                "5m",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -924,7 +1039,7 @@
         "h": 4,
         "w": 7,
         "x": 17,
-        "y": 22
+        "y": 30
       },
       "hiddenSeries": false,
       "id": 29,
@@ -945,7 +1060,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.0.1",
+      "pluginVersion": "10.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1035,14 +1150,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [85],
+              "params": [
+                85
+              ],
               "type": "gt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["A", "1m", "now"]
+              "params": [
+                "A",
+                "1m",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -1078,7 +1199,7 @@
         "h": 6,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 13,
@@ -1099,7 +1220,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.0.1",
+      "pluginVersion": "10.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1168,7 +1289,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 40
       },
       "id": 17,
       "panels": [],
@@ -1209,7 +1330,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 41
       },
       "hiddenSeries": false,
       "id": 3,
@@ -1237,7 +1358,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.0.1",
+      "pluginVersion": "10.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1318,7 +1439,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 40
+        "y": 48
       },
       "hiddenSeries": false,
       "id": 2,
@@ -1344,7 +1465,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.0.1",
+      "pluginVersion": "10.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1436,7 +1557,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 47
+        "y": 55
       },
       "hiddenSeries": false,
       "id": 19,
@@ -1464,7 +1585,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.0.1",
+      "pluginVersion": "10.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1560,7 +1681,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 47
+        "y": 55
       },
       "hiddenSeries": false,
       "id": 21,
@@ -1588,7 +1709,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.0.1",
+      "pluginVersion": "10.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1680,7 +1801,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 54
+        "y": 62
       },
       "hiddenSeries": false,
       "id": 8,
@@ -1706,7 +1827,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.0.1",
+      "pluginVersion": "10.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1781,12 +1902,14 @@
   "refresh": "1m",
   "schemaVersion": 38,
   "style": "dark",
-  "tags": ["custom"],
+  "tags": [
+    "custom"
+  ],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {
@@ -1802,11 +1925,21 @@
       "2h",
       "1d"
     ],
-    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
   },
   "timezone": "browser",
   "title": "Kubernetes cluster monitoring (via Prometheus)",
   "uid": "fe783c8d-c36c-4d25-ad69-0a98046457e3",
-  "version": 2,
+  "version": 4,
   "weekStart": ""
 }

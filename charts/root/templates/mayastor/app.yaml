@@ -60,7 +60,7 @@ spec:
             whenDeleted: Delete
           persistence:
             enabled: false
-            # storageClass: manual
+            storageClass: manual
             size: 1Gi
           volumePermissions:
             image:

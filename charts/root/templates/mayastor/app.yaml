@@ -19,8 +19,9 @@ spec:
           registry: europe-west4-docker.pkg.dev/impl-383520/docker
           repo: openebs
           tag: v2.3
-        metrics:
-          pollingInterval: "1m"
+        base:
+          metrics:
+            pollingInterval: "1m"
         nodeSelector:
             kubernetes.io/arch: arm64
         io_engine:

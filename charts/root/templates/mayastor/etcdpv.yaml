@@ -14,7 +14,7 @@ metadata:
 provisioner: io.openebs.csi-mayastor
 reclaimPolicy: Retain
 parameters:
-  repl: '2'
+  repl: '1'
   protocol: 'nvmf'
   ioTimeout: '60'
   csi.storage.k8s.io/fstype: xfs

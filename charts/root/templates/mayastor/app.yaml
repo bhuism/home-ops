@@ -57,7 +57,7 @@ spec:
             whenScaled: Delete
             whenDeleted: Delete
           persistence:
-            enabled: true
+            enabled: false
             storageClass: manual
             size: 1Gi
           volumePermissions:

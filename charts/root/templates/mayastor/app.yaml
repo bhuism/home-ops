@@ -52,7 +52,7 @@ spec:
             - key: "node-role.kubernetes.io/control-plane"
               operator: "Exists"
               effect: "NoSchedule"          
-          replicaCount: 1
+          replicaCount: 3
           persistentVolumeClaimRetentionPolicy:
             enabled: true
             whenScaled: Delete

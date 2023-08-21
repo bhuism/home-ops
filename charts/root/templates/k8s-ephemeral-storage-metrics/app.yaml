@@ -16,7 +16,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/bhuism/home-ops.git
-    path: charts/k8s-ephemeral-storage-metrics
+    path: charts/k8s-ephemeral-storage-metric
     targetRevision: HEAD
     helm:
       values: |

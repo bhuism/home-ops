@@ -1,22 +1,22 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: k8s-ephemeral-storage-metric
+  name: k8s-ephemeral-storage-metrics
 ---  
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: k8s-ephemeral-storage-metric
+  name: k8s-ephemeral-storage-metrics
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: k8s-ephemeral-storage-metric
+    namespace: k8s-ephemeral-storage-metrics
   project: default
   source:
-    repoURL: https://github.com/bhuism/home-ops.git
-    path: charts/k8s-ephemeral-storage-metric
+    repoURL: https://github.com/jmcgrath207/k8s-ephemeral-storage-metrics
+    path: charts/k8s-ephemeral-storage-metrics
     targetRevision: HEAD
     helm:
       values: |

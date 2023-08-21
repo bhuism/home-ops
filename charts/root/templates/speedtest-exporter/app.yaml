@@ -1,3 +1,8 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: speedtest-exporter
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:

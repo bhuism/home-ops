@@ -66,7 +66,9 @@ spec:
             image:
               repository: bitnami/os-shell # the default version has no arm64 artifact
               tag: 11-debian-11-r34 # the default version has no arm64 artifact
-          
+        obs:
+          ​callhome:
+            ​enabled: false
         # agents:
         #   core:
         #     resources:

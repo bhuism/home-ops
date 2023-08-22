@@ -45,7 +45,7 @@ spec:
             promtail:
               enabled: false
         etcd:
-          initialClusterState: existing
+          # initialClusterState: existing
           image:
             tag: 3.5.9-debian-11-r90 # the default version has no arm64 artifact
           tolerations:
@@ -53,10 +53,10 @@ spec:
               operator: "Exists"
               effect: "NoSchedule"          
           replicaCount: 3
-          persistentVolumeClaimRetentionPolicy:
-            enabled: true
-            whenScaled: Delete
-            whenDeleted: Delete
+          # persistentVolumeClaimRetentionPolicy:
+          #   enabled: true
+          #   whenScaled: Delete
+          #   whenDeleted: Delete
           persistence:
             enabled: true
             storageClass: manual

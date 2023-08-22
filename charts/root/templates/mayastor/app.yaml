@@ -19,9 +19,6 @@ spec:
           registry: europe-west4-docker.pkg.dev/impl-383520/docker
           repo: openebs
           tag: v2.3
-        base:
-          metrics:
-            pollingInterval: "1m"
         nodeSelector:
             kubernetes.io/arch: arm64
         io_engine:
@@ -48,15 +45,6 @@ spec:
           # initialClusterState: existing
           image:
             tag: 3.5.9-debian-11-r90 # the default version has no arm64 artifact
-          tolerations:
-            - key: "node-role.kubernetes.io/control-plane"
-              operator: "Exists"
-              effect: "NoSchedule"          
-          replicaCount: 3
-          # persistentVolumeClaimRetentionPolicy:
-          #   enabled: true
-          #   whenScaled: Delete
-          #   whenDeleted: Delete
           persistence:
             enabled: true
             storageClass: manual
@@ -68,17 +56,7 @@ spec:
               tag: 11-debian-11-r34 # the default version has no arm64 artifact
         obs:
           ​callhome:
-            ​enabled: false
-        # agents:
-        #   core:
-        #     resources:
-        #       limits:
-        #         cpu: "500m"
-        #         memory: "128Mi"
-        #       requests:
-        #         cpu: "100m"
-        #         memory: "32Mi"              
-            
+            ​enabled: false            
   syncPolicy:
     automated:
       prune: true

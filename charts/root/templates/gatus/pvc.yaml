@@ -10,6 +10,5 @@ spec:
       storage: 200Mi
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
   storageClassName: impl-default
   volumeName: pvc-e3f48761-b668-4743-8e0d-06152541eadc

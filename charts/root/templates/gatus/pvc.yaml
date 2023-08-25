@@ -12,4 +12,3 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   storageClassName: impl-default
-  volumeName: gatus-pv

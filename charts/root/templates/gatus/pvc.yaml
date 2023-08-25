@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gatus
+  name: gatus-pvc
   namespace: gatus
 spec:
   volumeMode: Filesystem

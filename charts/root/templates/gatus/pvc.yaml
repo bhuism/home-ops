@@ -4,5 +4,11 @@ metadata:
   name: gatus-pvc
   namespace: gatus
 spec:
+  capacity:
+    storage: 200Mi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
   storageClassName: impl-default
   volumeName: pvc-e3f48761-b668-4743-8e0d-06152541eadc

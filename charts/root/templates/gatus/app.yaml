@@ -103,7 +103,7 @@ spec:
                 - "[RESPONSE_TIME] < 5000"
         persistence:
           enabled: true
-          storageClassName: impl-default
+          existingClaim: gatus-pvc
         serviceMonitor:
           enabled: true          
   syncPolicy:

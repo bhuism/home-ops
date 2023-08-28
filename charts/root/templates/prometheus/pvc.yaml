@@ -7,7 +7,7 @@ spec:
   volumeMode: Filesystem
   resources:
     requests:
-      storage: 200Mi
+      storage: 15Gi
   accessModes:
     - ReadWriteOnce
   storageClassName: impl-default

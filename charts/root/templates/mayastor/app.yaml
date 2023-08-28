@@ -19,6 +19,9 @@ spec:
           registry: europe-west4-docker.pkg.dev/impl-383520/docker
           repo: openebs
           tag: v2.3
+        obs:
+          ​callhome:
+            ​enabled: false            
         nodeSelector:
             kubernetes.io/arch: arm64
         io_engine:
@@ -29,6 +32,7 @@ spec:
           resources:
             limits:
               cpu: "900m"
+            requests:
             requests:
               cpu: "900m"
         loki-stack:
@@ -54,9 +58,6 @@ spec:
             image:
               repository: bitnami/os-shell # the default version has no arm64 artifact
               tag: 11-debian-11-r34 # the default version has no arm64 artifact
-        obs:
-          ​callhome:
-            ​enabled: false            
   syncPolicy:
     automated:
       prune: true

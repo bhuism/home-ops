@@ -65,6 +65,12 @@ spec:
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
+            - name: EchoApplication
+              url: "https://echo.impl.nl"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 5000"
             - name: TimeApplication
               url: "https://time.impl.nl"
               interval: 5m

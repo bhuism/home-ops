@@ -48,7 +48,7 @@ spec:
         etcd:
           # initialClusterState: existing
           image:
-            tag: 3.5.9-debian-11-r90 # the default version has no arm64 artifact
+            tag: 3.5.9-debian-11-r90
           persistence:
             enabled: true
             storageClass: manual
@@ -56,8 +56,8 @@ spec:
             size: 1Gi
           volumePermissions:
             image:
-              repository: bitnami/os-shell # the default version has no arm64 artifact
-              tag: 11-debian-11-r34 # the default version has no arm64 artifact
+              repository: bitnami/os-shell
+              tag: 11-debian-11-r34
   syncPolicy:
     automated:
       prune: true

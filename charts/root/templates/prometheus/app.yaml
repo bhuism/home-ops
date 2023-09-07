@@ -109,9 +109,7 @@ spec:
             storageSpec:
               volumeClaimTemplate:
                 spec:
-                  selector:
-                    matchLabels:
-                      app.kubernetes.io/name: pvc-a5f447a5-9920-494b-8ebf-30468566b9a9
+                  storageClassName: impl-default
                   resources:
                     requests:
                       storage: 15Gi

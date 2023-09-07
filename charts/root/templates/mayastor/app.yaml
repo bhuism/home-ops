@@ -52,7 +52,7 @@ spec:
             enabled: true
             # storageClass: manual
             # reclaimPolicy: Delete
-            # size: 1Gi
+            size: 1Gi
           volumePermissions:
             image:
               repository: bitnami/os-shell

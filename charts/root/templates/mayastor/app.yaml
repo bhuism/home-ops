@@ -46,18 +46,17 @@ spec:
             promtail:
               enabled: false
         etcd:
-          initialClusterState: new
           image:
-            tag: 3.5.9-debian-11-r90
+            tag: 3.5
           persistence:
             enabled: true
-            storageClass: manual
-            reclaimPolicy: Delete
-            size: 1Gi
+            # storageClass: manual
+            # reclaimPolicy: Delete
+            # size: 1Gi
           volumePermissions:
             image:
               repository: bitnami/os-shell
-              tag: 11-debian-11-r34
+              tag: 11
   syncPolicy:
     automated:
       prune: true

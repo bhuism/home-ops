@@ -12,13 +12,13 @@ spec:
   source:
     chart: mayastor
     repoURL: https://openebs.github.io/mayastor-extensions
-    targetRevision: 2.3.0
+    targetRevision: 2.4.0
     helm:
       values: |
         image:
           registry: europe-west4-docker.pkg.dev/impl-383520/docker
           repo: openebs
-          tag: v2.3
+          tag: v2.4
         obs:
           ​callhome:
             ​enabled: false            

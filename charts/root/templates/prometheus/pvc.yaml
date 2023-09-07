@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prometheus-prometheus-kube-prometheus-prometheus-db-prometheus-prometheus-kube-prometheus-prometheus-0
+  namespace: prometheus
+spec:
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 15Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: impl-default
+  # volumeName: pvc-e3f48761-b668-4743-8e0d-06152541eadc

@@ -34,6 +34,8 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           securityContext:
             privileged: true
+            capabilities:
+              add: ["NET_ADMIN", "SYS_TIME"]
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}

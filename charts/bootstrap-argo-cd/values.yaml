@@ -22,7 +22,7 @@ argo-cd:
           url: https://argoproj.github.io/argo-helm
     redis:
       metrics:
-        enabled: true
+        enabled: false
     ingress:
       enabled: true
       ingressClassName: nginx

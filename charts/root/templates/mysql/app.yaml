@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mysql
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: mysql
+  project: default
+  source:
+    chart: kube-prometheus-stack
+    repoURL: oci://registry-1.docker.io/bitnamicharts/mysql
+    targetRevision: 9.12.2
+    helm:
+      values: |
+            global:
+                storageClass: impl-default
+            auth:
+                rootPassword: killer
+                createDatabase: false
+            primary:
+                persistence:
+                    existingClaim: pvc-mysql
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true

@@ -15,14 +15,14 @@ spec:
     targetRevision: main
     helm:
       values: |
-            global:
-                storageClass: impl-default
-            auth:
-                rootPassword: killer
-                createDatabase: false
-            primary:
-                persistence:
-                    existingClaim: pvc-mysql
+        global:
+          storageClass: impl-default
+        auth:
+          rootPassword: killer
+          createDatabase: false
+        primary:
+          persistence:
+          existingClaim: pvc-mysql
   syncPolicy:
     automated:
       prune: true

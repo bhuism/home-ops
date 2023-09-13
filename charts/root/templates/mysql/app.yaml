@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: registry-1.docker.io/bitnamicharts
-    targetRevision: 9.12.0
+    targetRevision: 9.12.2
     chart: mysql
     helm:
       values: |

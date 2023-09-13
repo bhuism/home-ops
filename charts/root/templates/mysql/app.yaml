@@ -22,7 +22,7 @@ spec:
           createDatabase: false
         primary:
           persistence:
-            existingClaim: pvc-mysql
+            existingClaim: mysql-pvc
   syncPolicy:
     automated:
       prune: true

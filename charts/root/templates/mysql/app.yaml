@@ -10,9 +10,8 @@ spec:
     namespace: mysql
   project: default
   source:
-    repoURL: https://github.com/bitnami/charts.git
-    path: bitnami/mysql
-    targetRevision: main
+    repository: oci://registry-1.docker.io/bitnamicharts/mysql
+    targetRevision: 9.12.0
     helm:
       values: |
         global:

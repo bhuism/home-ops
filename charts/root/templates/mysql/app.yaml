@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/bitnami/charts.git
     path: bitnami/mysql
-    targetRevision: 9.12.2
+    targetRevision: main
     helm:
       values: |
             global:

@@ -10,8 +10,8 @@ spec:
     namespace: mysql
   project: default
   source:
-    chart: kube-prometheus-stack
-    repoURL: oci://registry-1.docker.io/bitnamicharts/mysql
+    repoURL: https://github.com/bitnami/charts.git
+    path: bitnami/mysql
     targetRevision: 9.12.2
     helm:
       values: |

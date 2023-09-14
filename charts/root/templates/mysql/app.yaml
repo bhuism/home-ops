@@ -20,6 +20,8 @@ spec:
         auth:
           rootPassword: killer
           createDatabase: false
+        networkPolicy:
+          enabled: true
         primary:
           persistence:
             existingClaim: mysql-pvc

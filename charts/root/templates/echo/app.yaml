@@ -27,6 +27,9 @@ spec:
             - host: echo.impl.nl
               paths:
                 - /
+        application:
+          enable:
+            environment: false	
   syncPolicy:
     automated:
       prune: true

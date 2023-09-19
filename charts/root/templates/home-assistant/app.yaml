@@ -1,0 +1,45 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: home-assistant
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: home-assistant
+  project: default
+  source:
+    chart: home-assistant
+    repoURL: https://charts.gabe565.com
+    targetRevision: 0.9.2
+    helm:
+      values: |
+        env:
+          TZ: "Europe/Amsterdam"
+        ingress:
+          main:
+            enabled: true
+            ingressClassName: nginx
+            annotations:
+              external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+              external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+              cert-manager.io/cluster-issuer: letsencrypt-production
+            hosts:
+              - host: home-assistant.impl.nl
+                paths:
+                  - /
+            tls:
+              - secretName: home-assistant.impl.nl
+                hosts:
+                  - home-assistant.impl.nl
+        persistence:
+          config:
+            enabled: true
+            existingClaim: home-assistant-pvc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

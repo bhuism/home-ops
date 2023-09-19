@@ -28,6 +28,8 @@ spec:
               cert-manager.io/cluster-issuer: letsencrypt-production
             hosts:
               - host: home-assistant.impl.nl
+                paths:
+                  - path: /
             tls:
               - secretName: home-assistant.impl.nl
                 hosts:

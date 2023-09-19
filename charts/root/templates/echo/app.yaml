@@ -20,7 +20,6 @@ spec:
           ingressClassName: nginx
           annotations:
             external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
-            hajimari.io/url: https://echo.impl.nl
           pathType: Prefix
           extraPaths: []
           hosts:

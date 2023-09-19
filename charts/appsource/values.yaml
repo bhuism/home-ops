@@ -49,9 +49,6 @@ ingress:
   className: nginx
   annotations:
     external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
-    hajimari.io/url: https://www.appsource.nl
-    # nginx.ingress.kubernetes.io/auth-url: https://auth.impl.nl/oauth2/auth
-    # nginx.ingress.kubernetes.io/auth-signin: https://auth.impl.nl/oauth2/start?rd=https://$best_http_host$request_uri
   hosts:
     - host: www.appsource.nl
       paths:
@@ -69,10 +66,6 @@ resources:
 
 autoscaling:
   enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
 
 nodeSelector: {}
 

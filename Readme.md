@@ -28,13 +28,14 @@ Eleanor: | ![Eleanor](https://shields.io/uptimerobot/status/m794488049-f2b30350c
 * [Cloudflare Tunnel](https://github.com/cloudflare/helm-charts/tree/main/charts/cloudflare-tunnel)
 * [Echo-Server](https://ealenn.github.io/Echo-Server/)
 * ~~[Change Detection](https://changedetection.io/)~~
-* [PiHole](https://pi-hole.net/)
+* ~~[PiHole](https://pi-hole.net/)~~
 * ~~[Oauth2-Proxy](https://oauth2-proxy.github.io/oauth2-proxy)~~
 * [Cert Manager](https://cert-manager.io/)
 * [WireGuard](https://www.wireguard.com/)
 * [Speedtest Exporter](https://github.com/MiguelNdeCarvalho/speedtest-exporter)
-* [Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+* ~~[Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)~~
 * [Mayastor](https://mayastor.gitbook.io/)
+* [Home Asistant](https://www.home-assistant.io/)
 
 ### Todo
 
@@ -43,4 +44,4 @@ Eleanor: | ![Eleanor](https://shields.io/uptimerobot/status/m794488049-f2b30350c
 * remove secretos
 * [Uptime Kuma](https://github.com/louislam/uptime-kuma)
 * [Unifi Poller](https://unpoller.com/)
-* [Home Asistant](https://www.home-assistant.io/)
+* [AdGuard](https://github.com/AdguardTeam/AdGuardHome)

@@ -45,3 +45,4 @@ Eleanor: | ![Eleanor](https://shields.io/uptimerobot/status/m794488049-f2b30350c
 * [Uptime Kuma](https://github.com/louislam/uptime-kuma)
 * [Unifi Poller](https://unpoller.com/)
 * [AdGuard](https://github.com/AdguardTeam/AdGuardHome)
+* [Node ZWave JS](https://github.com/zwave-js/node-zwave-js)

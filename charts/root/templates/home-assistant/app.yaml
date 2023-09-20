@@ -17,9 +17,6 @@ spec:
       values: |
         env:
           TZ: "Europe/Amsterdam"
-        defaultPodOptions:
-          nodeSelector:
-            kubernetes.io/hostname: node4
         nodeSelector:
           kubernetes.io/hostname: node4
         ingress:

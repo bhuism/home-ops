@@ -17,13 +17,13 @@ spec:
       values: |
         env:
           TZ: "Europe/Amsterdam"
-      config:
-        data: |
-          devices:
-            - name: serial
-              groups:
-                - paths:
-                    - path: /dev/ttyS0
+        config:
+          data: |
+            devices:
+              - name: serial
+                groups:
+                  - paths:
+                      - path: /dev/ttyS0
   syncPolicy:
     automated:
       prune: true

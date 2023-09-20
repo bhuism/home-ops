@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: generic-device-plugin
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: generic-device-plugin
+  project: default
+  source:
+    chart: generic-device-plugin
+    repoURL: https://charts.gabe565.com
+    targetRevision: 0.1.2
+    helm:
+      values: |
+        env:
+          TZ: "Europe/Amsterdam"
+      config:
+        data: |
+          devices:
+            - name: serial
+              groups:
+                - paths:
+                    - path: /dev/ttyS0
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

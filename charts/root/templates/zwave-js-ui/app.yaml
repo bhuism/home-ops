@@ -11,7 +11,6 @@ spec:
   project: default
   source:
     repoURL: https://github.com/zwave-js/zwave-js-ui
-    path: kustomize/zwave-js-ui
     targetRevision: refs/tags/v8.25.1
   syncPolicy:
     automated:

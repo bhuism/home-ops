@@ -10,11 +10,9 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    repoURL: https://github.com/bhuism/home-ops.git
+    repoURL: https://github.com/zwave-js/zwave-js-ui
     path: kustomize/zwave-js-ui
-    targetRevision: HEAD
-    directory:
-      include: "*.yaml"
+    targetRevision: v8.25.1
   syncPolicy:
     automated:
       prune: true

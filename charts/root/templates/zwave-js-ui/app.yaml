@@ -11,7 +11,11 @@ spec:
   project: default
   source:
     repoURL: https://github.com/zwave-js/zwave-js-ui
+    path: /
     targetRevision: refs/tags/v8.25.1
+    directory:
+      include: 'kustomization.yaml'
+
   syncPolicy:
     automated:
       prune: true

@@ -1,3 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    pod-security.kubernetes.io/enforce: privileged
+  name: zwave
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -24,4 +31,3 @@ spec:
         pod-security.kubernetes.io/warn: privileged
     syncOptions:
       - CreateNamespace=true
-      - ServerSideApply=true

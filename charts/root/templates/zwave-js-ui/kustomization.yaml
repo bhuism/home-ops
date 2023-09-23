@@ -1,2 +1,13 @@
-patches:
-- path: noselector.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+patchesJson6902:
+- patch: |-
+  - op: replace
+    path: /spec/template/spec/nodeSelector
+    value:
+      kubernetes.io/hostname: node4
+  target:
+    group: apps
+    version: v1
+    kind: Deployment
+    name: zwave

@@ -12,9 +12,7 @@ spec:
   source:
     repoURL: https://github.com/zwave-js/zwave-js-ui
     path: .
-    targetRevision: v8.26.0
-    directory:
-      include: 'kustomization.yaml'
+    targetRevision: refs/tags/v8.25.1
   syncPolicy:
     automated:
       prune: true

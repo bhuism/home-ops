@@ -1,0 +1,5 @@
+patch: |-
+  - op: replace
+    path: /spec/template/spec/nodeSelector
+    value:
+      kubernetes.io/hostname: node4

@@ -40,9 +40,6 @@ spec:
           config:
             enabled: true
             existingClaim: home-assistant-pvc
-        resources:
-          limits:
-            squat.ai/serial: 1
   syncPolicy:
     automated:
       prune: true

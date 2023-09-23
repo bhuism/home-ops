@@ -12,8 +12,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/zwave-js/zwave-js-ui
-    path: .
     targetRevision: refs/tags/v8.25.1
+    path: .
   syncPolicy:
     automated:
       prune: true
@@ -24,3 +24,10 @@ spec:
         pod-security.kubernetes.io/audit: privileged
         pod-security.kubernetes.io/warn: privileged
  
+
+        #  resources:
+        #   limits:
+        #     squat.ai/serial: 1
+
+# patch nodeselector
+# patch 

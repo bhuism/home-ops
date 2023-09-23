@@ -8,6 +8,8 @@ metadata:
 spec:
   destination:
     namespace: zwave
+      addLabels:
+        - pod-security.kubernetes.io/enforce: "privileged"
     server: https://kubernetes.default.svc
   project: default
   source:

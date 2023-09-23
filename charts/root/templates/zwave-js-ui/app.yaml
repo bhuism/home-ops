@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/zwave-js/zwave-js-ui
-    targetRevision: refs/tags/v8.25.1
+    targetRevision: v8.26.0
     path: .
   syncPolicy:
     automated:

@@ -24,3 +24,13 @@ patches:
     version: v1
     kind: Deployment
     name: zwave
+- patch: |-
+    - op: replace
+      path: /spec/rules/0/host
+      value: zwave.impl.nl
+  target:
+    group: networking.k8s.io
+    version: v1
+    kind: Ingress
+    name: zwave
+

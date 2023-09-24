@@ -9,13 +9,10 @@ spec:
     namespace: zwave
     server: https://kubernetes.default.svc
   project: default
-  sources:
-    - repoURL: https://github.com/zwave-js/zwave-js-ui
-      targetRevision: v8.26.0
-      path: .
-    - repoURL: https://github.com/bhuism/home-ops
-      targetRevision: HEAD
-      path: charts/root/templates/zwave-js-ui
+  source:
+    repoURL: https://github.com/bhuism/home-ops.git
+    path: kustomize/zwave-js-ui
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
@@ -25,6 +22,9 @@ spec:
         pod-security.kubernetes.io/enforce: privileged
         pod-security.kubernetes.io/audit: privileged
         pod-security.kubernetes.io/warn: privileged
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
  
 
         #  resources:

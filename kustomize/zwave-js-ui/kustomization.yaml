@@ -37,6 +37,9 @@ patches:
     - op: replace
       path: /spec/rules/0/host
       value: zwave.impl.nl
+    - op: add
+      path: /spec/ingressClassName
+      value: nginx
   target:
     group: networking.k8s.io
     version: v1

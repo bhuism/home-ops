@@ -15,6 +15,9 @@ patches:
       path: /spec/template/spec/nodeSelector
       value:
         kubernetes.io/hostname: node4
+    - op: replace
+      path: /spec/template/spec/volumes/0/path
+      value: /dev/ttyS0
   target:
     group: apps
     version: v1

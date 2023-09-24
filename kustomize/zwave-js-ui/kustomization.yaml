@@ -25,9 +25,6 @@ patches:
         name: data
         emptyDir:
           sizeLimit: 128Mi
-    - op: add
-      path: /spec/template/spec/containers/0/securityContext/readOnlyRootFilesystem
-      value: false
   target:
     group: apps
     version: v1

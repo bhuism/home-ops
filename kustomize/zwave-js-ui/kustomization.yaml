@@ -19,6 +19,12 @@ patches:
       path: /spec/template/spec/volumes/0/hostPath/path
       value:
         /dev/ttyS0
+    - op: replace
+      path: /spec/template/spec/volumes/1
+      value:
+        name: data
+        emptyDir:
+          sizeLimit: 128Mi
     - op: add
       path: /spec/template/spec/containers/0/securityContext/readOnlyRootFilesystem
       value: false

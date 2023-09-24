@@ -13,3 +13,12 @@ patches:
     version: v1
     kind: Deployment
     name: zwave
+- patch: |-
+    - op: add
+      path: /metadata/labels
+      value:
+        pod-security.kubernetes.io/enforce: privileged
+  target:
+    version: v1
+    kind: Namespace
+    name: zwave

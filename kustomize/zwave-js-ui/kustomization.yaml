@@ -19,6 +19,9 @@ patches:
       path: /spec/template/spec/volumes/0/hostPath/path
       value:
         /dev/ttyS0
+    - op: add
+      path: /spec/template/spec/containers/0/securityContext/readOnlyRootFilesystem
+      value: false
   target:
     group: apps
     version: v1

@@ -9,13 +9,13 @@ spec:
     namespace: zwave
     server: https://kubernetes.default.svc
   project: default
-  sources:
-    - repoURL: https://github.com/zwave-js/zwave-js-ui
-      targetRevision: v8.26.0
-      path: .
-    - repoURL: https://github.com/bhuism/home-ops
-      targetRevision: HEAD
-      path: charts/root/templates/zwave-js-ui/kustomize
+  source:
+    repoURL: https://github.com/zwave-js/zwave-js-ui
+    targetRevision: v8.26.0
+    path: .
+    # - repoURL: https://github.com/bhuism/home-ops
+    #   targetRevision: HEAD
+    #   path: charts/root/templates/zwave-js-ui/kustomize
   syncPolicy:
     automated:
       prune: true

@@ -18,7 +18,7 @@ patches:
     - op: replace
       path: /spec/template/spec/volumes/0/hostPath/path
       value:
-        /dev/ttyS0
+        /dev/ttyAMA0
     - op: replace
       path: /spec/template/spec/volumes/1
       value:

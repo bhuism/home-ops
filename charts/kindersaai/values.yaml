@@ -41,8 +41,9 @@ service:
   port: 8080
 
 ingress:
-  enabled: false
-  className: "nginx"
+  enabled: true
+  ingressClassName: nginx
+  className: nginx
   annotations:
     external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
   hosts:

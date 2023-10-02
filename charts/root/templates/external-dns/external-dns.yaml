@@ -17,7 +17,7 @@ spec:
       values: |
         provider: cloudflare
         cloudflare:
-          apiToken: "4AL-reSc839LrR2j_cY9iO8R9Qcxm_flsWcFH-7Z"
+          apiToken: "KHpxqF3BvvOOtlTy5DDtMhAJL1inEUO1ercPJb8S"
           email: "meuk@odee.net"
           proxied: true
         txtOwnerId: impl

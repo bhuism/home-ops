@@ -24,6 +24,7 @@ spec:
         domainFilters:
           - impl.nl
           - appsource.nl
+          - kindersaai.nl
   syncPolicy:
     automated:
       prune: true

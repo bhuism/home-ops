@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: photoprism-pvc-originals
+  namespace: photoprism
+spec:
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: impl-default
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: photoprism-pvc-import
+  namespace: photoprism
+spec:
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: impl-default
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: photoprism-pvc-storage
+  namespace: photoprism
+spec:
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: impl-default

@@ -19,7 +19,7 @@ spec:
           image: photoprism/photoprism:230923-ce
           env:
             - name: PHOTOPRISM_DEBUG
-              value: "true"
+              value: "false"
             - name: PHOTOPRISM_DATABASE_DRIVER
               value: sqlite
             - name: PHOTOPRISM_HTTP_HOST

@@ -17,8 +17,6 @@ spec:
       values: |
         env:
           TZ: "Europe/Amsterdam"
-        nodeSelector:
-          kubernetes.io/hostname: node4
         ingress:
           main:
             enabled: true

@@ -4,7 +4,7 @@ appVersion: v3.5.3
 dependencies:
   - name: common
     repository: https://bjw-s.github.io/helm-charts
-    version: 2.0.2
+    version: 2.0.3
 apiVersion: v2
 version: 1.5.1
 

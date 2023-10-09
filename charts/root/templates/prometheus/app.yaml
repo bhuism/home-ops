@@ -51,7 +51,7 @@ spec:
               apiVersion: 1
               providers:
               - name: 'grafana-dashboards-kubernetes'
-                orgId: 1
+                orgId: '1'
                 folder: 'Kubernetes2'
                 type: file
                 allowUiUpdates: true
@@ -59,7 +59,7 @@ spec:
                 options:
                   path: /var/lib/grafana/dashboards/grafana-dashboards-kubernetes
               - name: 'grafana-bas'
-                orgId: 1
+                orgId: '1'
                 folder: 'Bas'
                 type: file
                 allowUiUpdates: true

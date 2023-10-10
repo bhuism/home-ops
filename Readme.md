@@ -42,6 +42,9 @@ Eleanor: | ![Eleanor](https://shields.io/uptimerobot/status/m794488049-f2b30350c
 * [Paperless](https://github.com/paperless-ngx/paperless-ngx)
 * Fix test
 * remove secretos
+* [InfluxDB](https://www.influxdata.com/)
+* [Prometheus](https://prometheus.io/)
+* [Grafana](https://grafana.com/)
 * [Uptime Kuma](https://github.com/louislam/uptime-kuma)
 * [Unifi Poller](https://unpoller.com/)
 * [AdGuard](https://github.com/AdguardTeam/AdGuardHome)

@@ -17,6 +17,8 @@ spec:
       values: |
         image:
           tag: "1.8.10"
+        config:
+          reporting_disabled: true
         persistence:
           existingClaim: influx-pvc
         setDefaultUser:

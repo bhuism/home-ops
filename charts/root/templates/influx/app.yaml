@@ -22,7 +22,6 @@ spec:
           user:
             username: "admin"
             password: killer
-            # existingSecret: influxdb-auth
         persistence:
           existingClaim: influx-pvc
   syncPolicy:

@@ -17,8 +17,8 @@ spec:
       values: |
         persistence:
           existingClaim: influx-pvc
-        # env:
-        #   TZ: "Europe/Amsterdam"
+        env:
+          TZ: "Europe/Amsterdam"
         # setDefaultUser:
         #   enabled: true
         #   user:

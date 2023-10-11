@@ -19,8 +19,8 @@ spec:
           existingClaim: influx-pvc
         env:
           TZ: "Europe/Amsterdam"
-        # setDefaultUser:
-        #   enabled: true
+        setDefaultUser:
+          enabled: true
         #   user:
         #     username: "admin"
         #     password: "killer"

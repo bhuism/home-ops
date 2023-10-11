@@ -17,13 +17,11 @@ spec:
       values: |
         persistence:
           existingClaim: influx-pvc
-        env:
-          TZ: "Europe/Amsterdam"
         setDefaultUser:
           enabled: true
-        #   user:
-        #     username: "admin"
-        #     password: "killer"
+          user:
+            username: "admin"
+            password: "killer"
   syncPolicy:
     automated:
       prune: true

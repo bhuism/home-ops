@@ -15,15 +15,15 @@ spec:
     targetRevision: 4.12.5
     helm:
       values: |
-        env:
-          TZ: "Europe/Amsterdam"
-        setDefaultUser:
-          enabled: true
-          user:
-            username: "admin"
-            password: killer
         persistence:
           existingClaim: influx-pvc
+        # env:
+        #   TZ: "Europe/Amsterdam"
+        # setDefaultUser:
+        #   enabled: true
+        #   user:
+        #     username: "admin"
+        #     password: killer
   syncPolicy:
     automated:
       prune: true

@@ -50,8 +50,6 @@ spec:
             tag: 3.5
           persistence:
             enabled: true
-            # storageClass: manual
-            # reclaimPolicy: Delete
             size: 1Gi
           volumePermissions:
             image:

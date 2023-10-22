@@ -1,0 +1,123 @@
+clusterName: impl-k8s
+talosVersion: v1.5.4
+kubernetesVersion: v1.28.2
+endpoint: https://control.impl.nl:6443
+allowSchedulingOnMasters: true
+additionalMachineCertSans:
+      - 192.168.1.11
+      - 192.168.1.153
+      - 192.168.1.154
+      - 192.168.1.155
+      - 192.168.1.156
+      - 192.168.1.157
+      - 192.168.1.158
+      - 192.168.1.159
+      - control.impl.nl
+      - node1.impl.nl
+      - node2.impl.nl
+      - node3.impl.nl
+      - node4.impl.nl
+      - jasmine.odee.net
+additionalApiServerCertSans:
+      - 192.168.1.11
+      - 192.168.1.153
+      - 192.168.1.154
+      - 192.168.1.155
+      - 192.168.1.156
+      - 192.168.1.157
+      - 192.168.1.158
+      - 192.168.1.159
+      - control.impl.nl
+      - node1.impl.nl
+      - node2.impl.nl
+      - node3.impl.nl
+      - node4.impl.nl
+      - jasmine.odee.net
+#cniConfig:
+#  name: flannel
+nodes:
+  - hostname: node1
+    ipAddress: 192.168.1.153
+    controlPlane: true
+    installDisk: /dev/mmcblk0
+    nodeLabels:
+      mayastorage.impl.nl:
+    nameservers:
+      - 1.1.1.1
+      - 8.8.4.4
+    networkInterfaces:
+      - interface: eth0
+        dhcp: true
+        vip:
+          ip: 192.168.1.11
+    patches:
+      - |-
+        machine:
+            sysctls:
+                net.ipv4.ip_forward: "1"
+                vm.nr_hugepages: "1024"
+  - hostname: node2
+    ipAddress: 192.168.1.154
+    controlPlane: false
+    installDisk: /dev/mmcblk0
+    nameservers:
+      - 1.1.1.1
+      - 8.8.4.4
+    networkInterfaces:
+      - interface: eth0
+        dhcp: true
+  - hostname: node3
+    ipAddress: 192.168.1.155
+    controlPlane: true
+    installDisk: /dev/mmcblk0
+    nodeLabels:
+      mayastorage.impl.nl:
+    nameservers:
+      - 1.1.1.1
+      - 8.8.4.4
+    networkInterfaces:
+      - interface: eth0
+        dhcp: true
+        vip:
+          ip: 192.168.1.11
+  - hostname: node4
+    ipAddress: 192.168.1.156
+    controlPlane: true
+    installDisk: /dev/mmcblk0
+    nameservers:
+      - 1.1.1.1
+      - 8.8.4.4
+    networkInterfaces:
+      - interface: eth0
+        dhcp: true
+        vip:
+          ip: 192.168.1.11
+  - hostname: node5
+    ipAddress: 192.168.1.113
+    controlPlane: false
+    installDisk: /dev/sda
+    nameservers:
+      - 1.1.1.1
+      - 8.8.4.4
+    networkInterfaces:
+      - interface: eth0
+        dhcp: true
+
+
+#controlPlane:
+#  patches:
+#    - |-
+#      - op: add
+#        path: /machine/kubelet/extraArgs
+#        value:
+#          feature-gates: GracefulNodeShutdown=true,MixedProtocolLBService=true
+#          rotate-server-certificates: "true"
+#    - "@./extraKernelArgs-patch.yaml"
+#worker:
+#  patches:
+#    - |-
+#      - op: add
+#        path: /machine/kubelet/extraArgs
+#        value:
+#          feature-gates: GracefulNodeShutdown=false,MixedProtocolLBService=false
+#          rotate-server-certificates: "true"

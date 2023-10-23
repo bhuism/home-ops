@@ -35,89 +35,81 @@ additionalApiServerCertSans:
       - jasmine.odee.net
 cniConfig:
   name: flannel
+patches:
+  - |-
+    - op: add
+      path: /machine/nodeLabels
+      value:
+        openebs.io/engine: mayastor
+    - op: add 
+      path: /machine/kubelet
+      value:
+        extraMounts:
+          - destination: /var/local/localpv-hostpath/mayastor/etcd
+            type: bind
+            source: /var/local/localpv-hostpath/mayastor/etcd
+            options:
+            - rbind
+            - rshared
+            - rw         
 nodes:
   - hostname: node1
     ipAddress: 192.168.1.153
     controlPlane: true
     installDisk: /dev/mmcblk0
-    nodeLabels:
-      mayastorage.impl.nl:
-    nameservers:
-      - 1.1.1.1
-      - 8.8.4.4
-    networkInterfaces:
-      - interface: eth0
-        dhcp: true
-        vip:
-          ip: 192.168.1.11
     patches:
       - |-
-        machine:
-            sysctls:
-                net.ipv4.ip_forward: "1"
-                vm.nr_hugepages: "1024"
+        - op: add
+          path: /machine/nodeLabels
+          value:
+              mayastorage.impl.nl:
+        - op: add
+          path: /machine/sysctls
+          value:
+              net.ipv4.ip_forward: "1"
+              vm.nr_hugepages: "1024"
   - hostname: node2
     ipAddress: 192.168.1.154
     controlPlane: false
     installDisk: /dev/mmcblk0
-    nameservers:
-      - 1.1.1.1
-      - 8.8.4.4
-    networkInterfaces:
-      - interface: eth0
-        dhcp: true
   - hostname: node3
     ipAddress: 192.168.1.155
     controlPlane: true
     installDisk: /dev/mmcblk0
-    nodeLabels:
-      mayastorage.impl.nl:
-    nameservers:
-      - 1.1.1.1
-      - 8.8.4.4
-    networkInterfaces:
-      - interface: eth0
-        dhcp: true
-        vip:
-          ip: 192.168.1.11
+    patches:
+      - |-
+        - op: add
+          path: /machine/nodeLabels
+          value:
+              mayastorage.impl.nl:
+        - op: add
+          path: /machine/sysctls
+          value:
+              net.ipv4.ip_forward: "1"
+              vm.nr_hugepages: "1024"
   - hostname: node4
     ipAddress: 192.168.1.156
     controlPlane: true
     installDisk: /dev/mmcblk0
-    nameservers:
-      - 1.1.1.1
-      - 8.8.4.4
-    networkInterfaces:
-      - interface: eth0
-        dhcp: true
-        vip:
-          ip: 192.168.1.11
   - hostname: node5
     ipAddress: 192.168.1.113
     controlPlane: false
     installDisk: /dev/sda
-    nameservers:
-      - 1.1.1.1
-      - 8.8.4.4
-    networkInterfaces:
-      - interface: eth0
-        dhcp: true
-
-
-#controlPlane:
-#  patches:
-#    - |-
-#      - op: add
-#        path: /machine/kubelet/extraArgs
-#        value:
-#          feature-gates: GracefulNodeShutdown=true,MixedProtocolLBService=true
-#          rotate-server-certificates: "true"
-#    - "@./extraKernelArgs-patch.yaml"
-#worker:
-#  patches:
-#    - |-
-#      - op: add
-#        path: /machine/kubelet/extraArgs
-#        value:
-#          feature-gates: GracefulNodeShutdown=false,MixedProtocolLBService=false
-#          rotate-server-certificates: "true"
+controlPlane:
+  patches:
+    - |-
+      - op: add
+        path: /machine/network/interfaces
+        value:
+          - interface: eth0
+            dhcp: true
+            vip:
+              ip: 192.168.1.11
+worker:
+  patches:
+    - |-
+      - op: add
+        path: /machine/network/interfaces
+        value:
+          - interface: eth0
+            dhcp: true

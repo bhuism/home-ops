@@ -47,6 +47,7 @@ spec:
               enabled: false
         etcd:
           removeMemberOnContainerTermination: true
+          replicaCount: 5
           image:
             tag: 3.5
           persistence:

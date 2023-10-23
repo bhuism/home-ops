@@ -46,6 +46,7 @@ spec:
             promtail:
               enabled: false
         etcd:
+          removeMemberOnContainerTermination: true
           image:
             tag: 3.5
           persistence:

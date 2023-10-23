@@ -45,9 +45,9 @@ patches:
       path: /machine/kubelet
       value:
         extraMounts:
-          - destination: /var/local/localpv-hostpath/mayastor/etcd
+          - destination: /var/local
             type: bind
-            source: /var/local/localpv-hostpath/mayastor/etcd
+            source: /var/local
             options:
             - rbind
             - rshared

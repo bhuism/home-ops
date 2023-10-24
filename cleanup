@@ -1,0 +1,17 @@
+#!/bin/sh
+
+#!/bin/bash
+
+kubectl get pod -A --field-selector status.phase=Failed
+
+kubectl delete pods -A --field-selector status.phase=Failed
+
+for ns in $(kubectl get po -A --no-headers | grep -v Running | awk {'print $1'}); do
+  delpods=$(kubectl get pods --no-headers -n $ns | grep -E 'Evicted|Completed|ErrImagePull|Failed' | awk '{print $1 }')    
+  echo delpods=$delpods
+  for i in $delpods; do
+     echo deleting $ns/$i
+#     kubectl delete pod $i --force=true --wait=false --grace-period=0 -n $ns 
+     kubectl delete pod $i -n $ns 
+  done
+done

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#set -x
+set -e
+
+# use insecure for first patch
+
+
+./talhelper validate talconfig
+rm -Rf clusterconfig
+./talhelper genconfig
+
+
+c=1
+for i in 153 154 155 156 113 ; do
+
+echo $c 192.168.1.$i
+
+#talosctl -n 192.168.1.$((153+$i-1)) apply-config -f controlplane.yaml -p @node$i.json
+
+talosctl -n 192.168.1.$i apply-config -f clusterconfig/impl-k8s-node$c.yaml 
+
+c=$((c+1))
+
+
+done

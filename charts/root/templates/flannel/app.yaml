@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flannel
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: flannel
+  project: default
+  source:
+    chart: kube-flannel
+    repoURL: https://github.com/flannel-io/flannel/tree/master/chart
+    targetRevision: 0.22.3
+    helm:
+      values: |
+        flannel:
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

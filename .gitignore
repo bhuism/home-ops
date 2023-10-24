@@ -2,3 +2,6 @@
 .idea
 Chart.lock
 clusterconfig
+talsecret.yaml
+talhelper
+*~

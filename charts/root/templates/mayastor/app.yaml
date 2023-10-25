@@ -28,7 +28,7 @@ spec:
           nodeSelector:
             kubernetes.io/arch: arm64
             openebs.io/engine: mayastor
-            mayastorage.impl.nl: ""
+            mayastorage.impl.nl: true
           resources:
             limits:
               cpu: "900m"

@@ -66,15 +66,6 @@ nodes:
     ipAddress: 192.168.1.153
     controlPlane: true
     installDisk: /dev/mmcblk0
-    # networkInterfaces:
-    #   - interface: enxd83add379af1
-    #     addresses:
-    #       - 192.168.1.153/24
-    #     routes:
-    #       - network: 0.0.0.0/0
-    #         gateway: 192.168.1.1
-    #        vip:
-    #          ip: 192.168.1.11
     patches:
       - |-
         - op: add
@@ -108,8 +99,6 @@ nodes:
         routes:
           - network: 0.0.0.0/0
             gateway: 192.168.1.1
-    #        vip:
-    #          ip: 192.168.1.11
     patches:
       - |-
         - op: add
@@ -132,27 +121,7 @@ nodes:
         routes:
           - network: 0.0.0.0/0
             gateway: 192.168.1.1
-  #        vip:
-  #          ip: 192.168.1.11
   - hostname: node5
     ipAddress: 192.168.1.113
     controlPlane: false
     installDisk: /dev/sda
-#controlPlane:
-#  patches:
-#    - |-
-#      - op: add
-#        path: /machine/network/interfaces
-#        value:
-#          - interface: eth0
-#            dhcp: true
-#            vip:
-#              ip: 192.168.1.11
-#worker:
-#  patches:
-#    - |-
-#      - op: add
-#        path: /machine/network/interfaces
-#        value:
-#          - interface: eth0
-#            dhcp: true

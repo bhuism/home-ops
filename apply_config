@@ -18,7 +18,7 @@ echo $c 192.168.1.$i
 
 #talosctl -n 192.168.1.$((153+$i-1)) apply-config -f controlplane.yaml -p @node$i.json
 
-talosctl -n 192.168.1.$i apply-config -f clusterconfig/impl-k8s-node$c.yaml 
+talosctl -n 192.168.1.$i -e 192.168.1.$i apply-config -f clusterconfig/impl-k8s-node$c.yaml 
 
 c=$((c+1))
 

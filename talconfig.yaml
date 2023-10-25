@@ -4,35 +4,35 @@ kubernetesVersion: v1.28.2
 endpoint: https://control.impl.nl:6443
 allowSchedulingOnMasters: true
 additionalMachineCertSans:
-      - 192.168.1.11
-      - 192.168.1.153
-      - 192.168.1.154
-      - 192.168.1.155
-      - 192.168.1.156
-      - 192.168.1.157
-      - 192.168.1.158
-      - 192.168.1.159
-      - control.impl.nl
-      - node1.impl.nl
-      - node2.impl.nl
-      - node3.impl.nl
-      - node4.impl.nl
-      - jasmine.odee.net
+  - 192.168.1.11
+  - 192.168.1.153
+  - 192.168.1.154
+  - 192.168.1.155
+  - 192.168.1.156
+  - 192.168.1.157
+  - 192.168.1.158
+  - 192.168.1.159
+  - control.impl.nl
+  - node1.impl.nl
+  - node2.impl.nl
+  - node3.impl.nl
+  - node4.impl.nl
+  - jasmine.odee.net
 additionalApiServerCertSans:
-      - 192.168.1.11
-      - 192.168.1.153
-      - 192.168.1.154
-      - 192.168.1.155
-      - 192.168.1.156
-      - 192.168.1.157
-      - 192.168.1.158
-      - 192.168.1.159
-      - control.impl.nl
-      - node1.impl.nl
-      - node2.impl.nl
-      - node3.impl.nl
-      - node4.impl.nl
-      - jasmine.odee.net
+  - 192.168.1.11
+  - 192.168.1.153
+  - 192.168.1.154
+  - 192.168.1.155
+  - 192.168.1.156
+  - 192.168.1.157
+  - 192.168.1.158
+  - 192.168.1.159
+  - control.impl.nl
+  - node1.impl.nl
+  - node2.impl.nl
+  - node3.impl.nl
+  - node4.impl.nl
+  - jasmine.odee.net
 patches:
   - |-
     - op: add
@@ -73,8 +73,8 @@ nodes:
     #     routes:
     #       - network: 0.0.0.0/0
     #         gateway: 192.168.1.1
-#        vip:
-#          ip: 192.168.1.11
+    #        vip:
+    #          ip: 192.168.1.11
     patches:
       - |-
         - op: add
@@ -84,7 +84,7 @@ nodes:
         - op: add
           path: /machine/nodeLabels
           value:
-            mayastorage.impl.nl: true
+            mayastorage.impl.nl: "true"
             openebs.io/engine: mayastor
   - hostname: node2
     ipAddress: 192.168.1.154
@@ -108,8 +108,8 @@ nodes:
         routes:
           - network: 0.0.0.0/0
             gateway: 192.168.1.1
-#        vip: 
-#          ip: 192.168.1.11
+    #        vip:
+    #          ip: 192.168.1.11
     patches:
       - |-
         - op: add
@@ -132,8 +132,8 @@ nodes:
         routes:
           - network: 0.0.0.0/0
             gateway: 192.168.1.1
-#        vip: 
-#          ip: 192.168.1.11
+  #        vip:
+  #          ip: 192.168.1.11
   - hostname: node5
     ipAddress: 192.168.1.113
     controlPlane: false

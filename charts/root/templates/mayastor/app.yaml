@@ -57,8 +57,6 @@ spec:
             image:
               repository: bitnami/os-shell
               tag: 11
-          localpvScConfig:
-            basePath: "/var/local"
   syncPolicy:
     automated:
       prune: true

@@ -33,8 +33,6 @@ additionalApiServerCertSans:
       - node3.impl.nl
       - node4.impl.nl
       - jasmine.odee.net
-cniConfig:
-  name: none
 patches:
   - |-
     - op: add
@@ -45,18 +43,38 @@ patches:
       path: /machine/kubelet
       value:
         extraMounts:
-          - destination: /var/local
+          - destination: /var/local/mayastor/localpv-hostpath/etcd
             type: bind
-            source: /var/local
+            source: /var/local/mayastor/localpv-hostpath/etcd
             options:
             - rbind
             - rshared
             - rw         
+    - op: add
+      path: /machine/features/kubePrism
+      value:
+        enabled: true
+        port: 7445
+    - op: add
+      path: /machine/network/nameservers
+      value:
+        - 8.8.4.4
+        - 1.1.1.1
+        - 8.8.8.8
 nodes:
   - hostname: node1
     ipAddress: 192.168.1.153
     controlPlane: true
     installDisk: /dev/mmcblk0
+    # networkInterfaces:
+    #   - interface: enxd83add379af1
+    #     addresses:
+    #       - 192.168.1.153/24
+    #     routes:
+    #       - network: 0.0.0.0/0
+    #         gateway: 192.168.1.1
+#        vip:
+#          ip: 192.168.1.11
     patches:
       - |-
         - op: add
@@ -72,10 +90,26 @@ nodes:
     ipAddress: 192.168.1.154
     controlPlane: false
     installDisk: /dev/mmcblk0
+    networkInterfaces:
+      - interface: enxe45f01e07434
+        addresses:
+          - 192.168.1.154/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.1.1
   - hostname: node3
     ipAddress: 192.168.1.155
     controlPlane: true
     installDisk: /dev/mmcblk0
+    networkInterfaces:
+      - interface: enxe45f01e10b00
+        addresses:
+          - 192.168.1.155/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.1.1
+#        vip: 
+#          ip: 192.168.1.11
     patches:
       - |-
         - op: add
@@ -91,25 +125,34 @@ nodes:
     ipAddress: 192.168.1.156
     controlPlane: true
     installDisk: /dev/mmcblk0
+    networkInterfaces:
+      - interface: enxd83add3772b1
+        addresses:
+          - 192.168.1.156/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.1.1
+#        vip: 
+#          ip: 192.168.1.11
   - hostname: node5
     ipAddress: 192.168.1.113
     controlPlane: false
     installDisk: /dev/sda
-controlPlane:
-  patches:
-    - |-
-      - op: add
-        path: /machine/network/interfaces
-        value:
-          - interface: eth0
-            dhcp: true
-            vip:
-              ip: 192.168.1.11
-worker:
-  patches:
-    - |-
-      - op: add
-        path: /machine/network/interfaces
-        value:
-          - interface: eth0
-            dhcp: true
+#controlPlane:
+#  patches:
+#    - |-
+#      - op: add
+#        path: /machine/network/interfaces
+#        value:
+#          - interface: eth0
+#            dhcp: true
+#            vip:
+#              ip: 192.168.1.11
+#worker:
+#  patches:
+#    - |-
+#      - op: add
+#        path: /machine/network/interfaces
+#        value:
+#          - interface: eth0
+#            dhcp: true

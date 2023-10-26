@@ -18,7 +18,7 @@ spec:
         autoscaling:
           enabled: false
         replicaCount: 1
-        # secretName: wireguard-wg-generated
+        secretName: wireguard-wg-generated
         metrics:
           enabled: true
         wireguard:

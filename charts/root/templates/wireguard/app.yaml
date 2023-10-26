@@ -19,6 +19,8 @@ spec:
           enabled: false
         replicaCount: 1
         secretName: wireguard-wg-generated
+        metrics:
+          enabled: true
         wireguard:
           clients:
             - PublicKey: 'x1IQ28f/KkCqo82SeVAev1/2fxcrMfeoVOB62yzeqGk='

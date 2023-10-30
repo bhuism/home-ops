@@ -34,10 +34,30 @@ spec:
               - secretName: home-assistant.impl.nl
                 hosts:
                   - home-assistant.impl.nl
+        hostNetwork: true
         persistence:
           config:
             enabled: true
             existingClaim: home-assistant-pvc
+        addons:
+          codeserver:
+            enabled: true
+            ingress:
+              enabled: true
+              hosts:
+                - host: home-assistant-code.impl.nl
+                  paths:
+                    - path: /
+              tls:
+                - secretName: home-assistant-code.impl.nl
+                  hosts:
+                    - home-assistant-code.impl.nl
+            args:
+              - --auth=none
+              - --user-data-dir=/data/config/.vscode
+            volumeMounts:
+              - name: config
+                mountPath: /data/config
   syncPolicy:
     automated:
       prune: true

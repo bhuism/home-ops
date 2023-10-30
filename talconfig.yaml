@@ -81,24 +81,10 @@ nodes:
     ipAddress: 192.168.1.154
     controlPlane: false
     installDisk: /dev/mmcblk0
-    networkInterfaces:
-      - interface: enxe45f01e07434
-        addresses:
-          - 192.168.1.154/24
-        routes:
-          - network: 0.0.0.0/0
-            gateway: 192.168.1.1
   - hostname: node3
     ipAddress: 192.168.1.155
     controlPlane: true
     installDisk: /dev/mmcblk0
-    networkInterfaces:
-      - interface: enxe45f01e10b00
-        addresses:
-          - 192.168.1.155/24
-        routes:
-          - network: 0.0.0.0/0
-            gateway: 192.168.1.1
     patches:
       - |-
         - op: add
@@ -114,13 +100,6 @@ nodes:
     ipAddress: 192.168.1.156
     controlPlane: true
     installDisk: /dev/mmcblk0
-    networkInterfaces:
-      - interface: enxd83add3772b1
-        addresses:
-          - 192.168.1.156/24
-        routes:
-          - network: 0.0.0.0/0
-            gateway: 192.168.1.1
   - hostname: node5
     ipAddress: 192.168.1.113
     controlPlane: false

@@ -965,7 +965,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "",
+  "refresh": "1m",
   "schemaVersion": 38,
   "style": "dark",
   "tags": [],
@@ -980,6 +980,6 @@
   "timezone": "",
   "title": "Home Asistant",
   "uid": "ad29c903-6484-4d1b-a82d-4a82f823c717",
-  "version": 8,
+  "version": 10,
   "weekStart": ""
 }

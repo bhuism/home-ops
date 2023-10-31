@@ -1,6 +1,18 @@
-image:
-  repository: ghcr.io/miguelndecarvalho/speedtest-exporter
-  pullPolicy: IfNotPresent
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          repository: ghcr.io/miguelndecarvalho/speedtest-exporter
+          pullPolicy: IfNotPresent
+          tag: v3.5.4
+        probes:
+          liveness:
+            enabled: false
+          readiness:
+            enabled: false
+          startup:
+            enabled: false
 env:
   TZ: "Europe/Amsterdam"
 service:

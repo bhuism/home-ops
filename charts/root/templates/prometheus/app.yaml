@@ -113,6 +113,19 @@ spec:
               k8s-prometheus:
                 url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-addons-prometheus.json
                 token: ''
+          datasources:
+            datasources.yaml:
+              apiVersion: 1
+              datasources:
+                - name: Home Assistant
+                  type: influxdb
+                  access: proxy
+                  url: http://influx.impl.nl
+                  user: root
+                  database: home_assistant
+                  secureJsonData:
+                    password: killer
+                  editable: false
         prometheus:
           prometheusSpec:
             serviceMonitorSelectorNilUsesHelmValues: false

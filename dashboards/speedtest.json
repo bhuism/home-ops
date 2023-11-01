@@ -26,7 +26,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 13665,
   "graphTooltip": 0,
-  "id": 15,
+  "id": 14,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -97,7 +97,7 @@
         },
         "textMode": "value"
       },
-      "pluginVersion": "10.0.3",
+      "pluginVersion": "10.1.5",
       "targets": [
         {
           "datasource": {
@@ -161,7 +161,7 @@
         },
         "textMode": "value"
       },
-      "pluginVersion": "10.0.3",
+      "pluginVersion": "10.1.5",
       "targets": [
         {
           "datasource": {
@@ -227,7 +227,7 @@
               }
             ]
           },
-          "unit": "Mbits"
+          "unit": "bps"
         },
         "overrides": []
       },
@@ -251,20 +251,24 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "10.0.3",
+      "pluginVersion": "10.1.5",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "disableTextWrap": false,
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(speedtest_download_bits_per_second*10^-6)",
+          "expr": "sum(speedtest_download_bits_per_second)",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "interval": "",
           "legendFormat": "",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "Download Speed",
@@ -291,7 +295,7 @@
               }
             ]
           },
-          "unit": "Mbits"
+          "unit": "bps"
         },
         "overrides": []
       },
@@ -314,7 +318,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "10.0.3",
+      "pluginVersion": "10.1.5",
       "targets": [
         {
           "datasource": {
@@ -323,7 +327,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(speedtest_upload_bits_per_second*10^-6)",
+          "expr": "sum(speedtest_upload_bits_per_second)",
           "interval": "",
           "legendFormat": "",
           "range": true,
@@ -377,7 +381,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "10.0.3",
+      "pluginVersion": "10.1.5",
       "targets": [
         {
           "datasource": {
@@ -440,7 +444,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "10.0.3",
+      "pluginVersion": "10.1.5",
       "targets": [
         {
           "datasource": {
@@ -510,6 +514,7 @@
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -610,6 +615,7 @@
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -710,6 +716,7 @@
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -800,7 +807,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "1m",
+  "refresh": "1h",
   "schemaVersion": 38,
   "style": "dark",
   "tags": [],

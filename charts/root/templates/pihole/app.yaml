@@ -18,10 +18,10 @@ spec:
         serviceDhcp:
           enabled: false
         serviceDns:
-            loadBalancerIP: 192.168.1.81
-            annotations:
-                metallb.universe.tf/allow-shared-ip: pihole-svc
-            type: LoadBalancer          
+          loadBalancerIP: 192.168.1.81
+          annotations:
+              metallb.universe.tf/allow-shared-ip: pihole-svc
+          type: LoadBalancer          
         virtualHost: pihole.impl.nl
         nodeSelector:
           !mayastorage.impl.nl
@@ -38,9 +38,16 @@ spec:
             - secretName: pihole.impl.nl
               hosts:
                 - pihole.impl.nl
-          DNS1: "1.1.1.1"
-          DNS2: "8.8.4.4"
-          DNS3: "8.8.8.8"
+        DNS1: "1.1.1.1"
+        DNS2: "8.8.4.4"
+        DNS3: "8.8.8.8"
+
+        serviceWeb:
+          loadBalancerIP: 192.168.1.81
+          annotations:
+            metallb.universe.tf/allow-shared-ip: pihole-svc
+          type: LoadBalancer
+
         hostname: pihole
         adminPassword: "killer"
   syncPolicy:

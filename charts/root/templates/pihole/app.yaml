@@ -23,6 +23,8 @@ spec:
                 metallb.universe.tf/allow-shared-ip: pihole-svc
             type: LoadBalancer          
         virtualHost: pihole.impl.nl
+        nodeSelector:
+          !mayastorage.impl.nl
         ingress:
           enabled: true
           ingressClassName: nginx

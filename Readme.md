@@ -28,7 +28,7 @@ Eleanor: | ![Eleanor](https://shields.io/uptimerobot/status/m794488049-f2b30350c
 * [Cloudflare Tunnel](https://github.com/cloudflare/helm-charts/tree/main/charts/cloudflare-tunnel)
 * [Echo-Server](https://ealenn.github.io/Echo-Server/)
 * ~~[Change Detection](https://changedetection.io/)~~
-* ~~[PiHole](https://pi-hole.net/)~~
+* [PiHole](https://pi-hole.net/)
 * ~~[Oauth2-Proxy](https://oauth2-proxy.github.io/oauth2-proxy)~~
 * [Cert Manager](https://cert-manager.io/)
 * [WireGuard](https://www.wireguard.com/)
@@ -36,15 +36,15 @@ Eleanor: | ![Eleanor](https://shields.io/uptimerobot/status/m794488049-f2b30350c
 * ~~[Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)~~
 * [Mayastor](https://mayastor.gitbook.io/)
 * [Home Asistant](https://www.home-assistant.io/)
+* [InfluxDB](https://www.influxdata.com/)
 
 ### Todo
 
 * [Paperless](https://github.com/paperless-ngx/paperless-ngx)
 * Fix test
-* remove secretos
-* [InfluxDB](https://www.influxdata.com/)
-* [Prometheus](https://prometheus.io/)
-* [Grafana](https://grafana.com/)
+* Remove secretos
+* [Prometheus](https://prometheus.io/) separate
+* [Grafana](https://grafana.com/) separate
 * [Uptime Kuma](https://github.com/louislam/uptime-kuma)
 * [Unifi Poller](https://unpoller.com/)
 * [AdGuard](https://github.com/AdguardTeam/AdGuardHome)

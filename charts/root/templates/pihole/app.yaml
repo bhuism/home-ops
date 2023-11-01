@@ -17,8 +17,10 @@ spec:
       values: |
         serviceDhcp:
           enabled: false
+        podDnsConfig:
+          enabled: false
         serviceDns:
-          loadBalancerIP: 192.168.1.81
+          loadBalancerIP: 192.168.1.82
           annotations:
               metallb.universe.tf/allow-shared-ip: pihole-svc
           type: LoadBalancer          
@@ -39,7 +41,7 @@ spec:
               hosts:
                 - pihole.impl.nl
         serviceWeb:
-          loadBalancerIP: 192.168.1.81
+          loadBalancerIP: 192.168.1.82
           annotations:
             metallb.universe.tf/allow-shared-ip: pihole-svc
           type: LoadBalancer

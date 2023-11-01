@@ -52,6 +52,9 @@ spec:
           type: LoadBalancer
         hostname: pihole
         adminPassword: "killer"
+        monitoring:
+          podMonitor:
+            enabled: true
   syncPolicy:
     automated:
       prune: true

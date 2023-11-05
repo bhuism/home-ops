@@ -1,10 +1,22 @@
 apiVersion: v2
-name: dsmr-reader
-description: DSMR Reader
-type: application
-version: 0.1.0
-appVersion: "1.16.0"
+description: A common powered chart template. This can be useful for small projects that don't have their own chart.
+name: app-template
+version: 2.0.3
+kubeVersion: ">=1.22.0-0"
+maintainers:
+  - name: bjw-s
+    email: me@bjw-s.dev
 dependencies:
   - name: common
+    repository: https://bjw-s.github.io/helm-charts
     version: 2.0.3
-    repository: https://bjw-s.github.io/helm-charts/
+annotations:
+  artifacthub.io/changes: |-
+    - kind: changed
+      description: |
+        Updated library version to 2.0.3.
+      links:
+        - name: Upgrade instructions from v1.x
+          url: https://github.com/bjw-s/helm-charts/tree/main/charts/other/app-template#from-1xx-to-20x
+        - name: Common library chart definition
+          url: https://github.com/bjw-s/helm-charts/blob/main/charts/library/common/Chart.yaml

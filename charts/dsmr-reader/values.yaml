@@ -1,6 +1,9 @@
 defaultPodOptions:
   nodeSelector:
     kubernetes.io/hostname: node2
+  securityContext:
+    privileged: true
+
 controllers:
   main:
     containers:

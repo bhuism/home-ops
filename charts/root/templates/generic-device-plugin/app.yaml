@@ -26,6 +26,7 @@ spec:
                       - path: /dev/ttyUSB*
                   - paths:
                       - path: /dev/ttyACM*
+  syncPolicy:
     automated:
       prune: true
       selfHeal: true

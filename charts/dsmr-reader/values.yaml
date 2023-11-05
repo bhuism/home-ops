@@ -14,11 +14,10 @@ controllers:
           DJANGO_TIME_ZONE: Europe/Amsterdam
           DJANGO_DATABASE_ENGINE: "django.db.backends.sqlite3"
           DJANGO_DATABASE_NAME: /sqlite3.db
-          # DJANGO_DATABASE_HOST: 127.0.0.1
+          DJANGO_DATABASE_HOST: 127.0.0.1
 
 service:
   main:
     ports:
       http:
         port: 80
-

@@ -12,10 +12,9 @@ controllers:
           DISABLE_NGINX_ACCESS_LOGS: true
           ENABLE_HTTP_AUTH: false
           DJANGO_TIME_ZONE: Europe/Amsterdam
-          DJANGO_DATABASE_ENGINE: "django.db.backends.sqlite3"
-          DJANGO_DATABASE_NAME: /sqlite3.db
-          DJANGO_DATABASE_HOST: 127.0.0.1
-
+          DJANGO_DATABASE_ENGINE: "django.db.backends.mysql"
+          DJANGO_DATABASE_HOST: mysql.impl.nl
+          DJANGO_DATABASE_PORT: 3306
 service:
   main:
     ports:

@@ -3,6 +3,8 @@ defaultPodOptions:
     kubernetes.io/hostname: node2
   securityContext:
     privileged: true
+    allowPrivilegeEscalation: false
+    runAsUser: 0
 
 controllers:
   main:
@@ -21,6 +23,8 @@ controllers:
           DJANGO_DATABASE_ENGINE: "django.db.backends.mysql"
           DJANGO_DATABASE_HOST: mysql.impl.nl
           DJANGO_DATABASE_PORT: 3306
+          DUID: 0
+          DGID: 0
 service:
   main:
     ports:

@@ -5,6 +5,14 @@ image:
   pullPolicy: IfNotPresent
   tag: 5.10.3-2023.04.02
 
+env:
+  TZ: Europe/Amsterdam
+  DJANGO_TIME_ZONE: Europe/Amsterdam
+  VIRTUAL_HOST: localhost
+  DISABLE_NGINX_ACCESS_LOGS: true
+  ENABLE_HTTP_AUTH: false
+  DJANGO_DATABASE_ENGINE: "django.db.backends.sqlite3"
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

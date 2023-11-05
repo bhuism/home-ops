@@ -37,6 +37,10 @@ Eleanor: | ![Eleanor](https://shields.io/uptimerobot/status/m794488049-f2b30350c
 * [Mayastor](https://mayastor.gitbook.io/)
 * [Home Asistant](https://www.home-assistant.io/)
 * [InfluxDB](https://www.influxdata.com/)
+* [General Device Plugin](https://github.com/squat/generic-device-plugin/)
+* [MySQL](https://www.mysql.com/)
+* [DSMR Reader](https://dsmr-reader.readthedocs.io/)
+
 
 ### Todo
 

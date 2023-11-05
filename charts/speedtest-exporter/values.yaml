@@ -13,8 +13,8 @@ controllers:
             enabled: false
           startup:
             enabled: false
-env:
-  TZ: "Europe/Amsterdam"
+        env:
+          TZ: "Europe/Amsterdam"
 service:
   main:
     ports:

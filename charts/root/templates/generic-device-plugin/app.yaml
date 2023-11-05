@@ -23,8 +23,9 @@ spec:
               - name: serial
                 groups:
                   - paths:
-                      - path: /dev/ttyS0
-  syncPolicy:
+                      - path: /dev/ttyUSB*
+                  - paths:
+                      - path: /dev/ttyACM*
     automated:
       prune: true
       selfHeal: true

@@ -1,0 +1,17 @@
+controller:
+  main:
+    containers:
+      main:
+        image:
+          repository: ghcr.io/xirixiz/dsmr-reader-docker
+          tag: 5.10.3-2023.04.02
+          pullPolicy: IfNotPresent
+        env:
+          TZ=Europe/Amsterdam
+          DJANGO_TIME_ZONE=Europe/Amsterdam
+service:
+  main:
+    ports:
+      http:
+        port: 80
+

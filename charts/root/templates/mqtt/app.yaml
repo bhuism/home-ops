@@ -22,6 +22,8 @@ spec:
         portal:
           open:
             enabled: true
+        auth:
+          enabled: true
   syncPolicy:
     automated:
       prune: true

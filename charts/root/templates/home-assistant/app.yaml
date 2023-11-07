@@ -34,6 +34,7 @@ spec:
               - secretName: home-assistant.impl.nl
                 hosts:
                   - home-assistant.impl.nl
+        dnsPolicy: ClusterFirstWithHostNet
         hostNetwork: true
         persistence:
           config:

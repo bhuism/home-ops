@@ -15,13 +15,15 @@ controllers:
           pullPolicy: IfNotPresent
           tag: 5.10.3-2023.04.02
         env:
+          TZ: UTC
           VIRTUAL_HOST: localhost
           DISABLE_NGINX_ACCESS_LOGS: true
           ENABLE_HTTP_AUTH: false
-          DJANGO_TIME_ZONE: CET/CEST
+          DJANGO_TIME_ZONE: UTC
           DJANGO_DATABASE_ENGINE: "django.db.backends.mysql"
           DJANGO_DATABASE_HOST: mysql.impl.nl
           DJANGO_DATABASE_PORT: 3306
+          # DSMRREADER_PLUGINS: dsmr_plugins.modules.plugin_name1,dsmr_plugins.modules.plugin_name2
         resources:
           limits:
             squat.ai/serial: 1

@@ -15,6 +15,10 @@ spec:
     targetRevision: HEAD
     helm:
       values: |
+        image:
+          repository: eclipse-mosquitto
+          tag: 2.0.18
+          pullPolicy: IfNotPresent
         portal:
           open:
             enabled: true

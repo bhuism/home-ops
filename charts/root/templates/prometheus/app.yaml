@@ -120,7 +120,7 @@ spec:
                 - name: Home Assistant
                   type: influxdb
                   access: proxy
-                  url: http://influx.impl.nl
+                  url: http://influx-influxdb.influx:8086
                   user: root
                   database: home_assistant
                   secureJsonData:

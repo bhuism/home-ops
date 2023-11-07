@@ -10,8 +10,8 @@ spec:
     namespace: mqtt
   project: default
   source:
-    repoURL: https://github.com/truecharts/charts/tree/master/charts/stable
-    path: mosquitto
+    repoURL: https://github.com/truecharts/charts.git
+    path: /tree/master/charts/stable/mosquitto
     targetRevision: HEAD
     helm:
       values: |

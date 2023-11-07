@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/truecharts/charts.git
-    path: /charts/stable/mosquitto
+    path: charts/stable/mosquitto
     targetRevision: HEAD
     helm:
       values: |

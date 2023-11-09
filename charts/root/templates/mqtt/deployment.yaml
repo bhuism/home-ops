@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: release-name-mosquitto
+  name: mosquitto
   namespace: mosquitto
   labels:
     app.kubernetes.io/name: "mosquitto"
-spec:  
+spec:
   replicas: 1
   revisionHistoryLimit: 3
   strategy:
@@ -27,7 +27,7 @@ spec:
       #     - 568
       #   sysctls: []
       containers:
-        - name: release-name-mosquitto
+        - name: mosquitto
           image: eclipse-mosquitto:2.0.18
           imagePullPolicy: IfNotPresent
           ports:
@@ -89,11 +89,11 @@ spec:
             requests:
               cpu: 10m
               memory: 50Mi
-            limits: 
-              cpu: 4000m 
+            limits:
+              cpu: 4000m
               memory: 8Gi
           securityContext:
-            runAsNonRoot: true
+            # runAsNonRoot: true
             # runAsUser: 568
             # runAsGroup: 568
             readOnlyRootFilesystem: true

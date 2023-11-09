@@ -20,12 +20,12 @@ spec:
     spec:
       restartPolicy: Always
       dnsPolicy: ClusterFirst
-      securityContext:
-        fsGroup: 568
-        fsGroupChangePolicy: OnRootMismatch
-        supplementalGroups:
-          - 568
-        sysctls: []
+      # securityContext:
+      #   fsGroup: 568
+      #   fsGroupChangePolicy: OnRootMismatch
+      #   supplementalGroups:
+      #     - 568
+      #   sysctls: []
       containers:
         - name: release-name-mosquitto
           image: eclipse-mosquitto:2.0.18
@@ -94,8 +94,8 @@ spec:
               memory: 8Gi
           securityContext:
             runAsNonRoot: true
-            runAsUser: 568
-            runAsGroup: 568
+            # runAsUser: 568
+            # runAsGroup: 568
             readOnlyRootFilesystem: true
             allowPrivilegeEscalation: false
             privileged: false

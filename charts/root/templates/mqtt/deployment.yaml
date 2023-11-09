@@ -43,18 +43,6 @@ spec:
               mountPath: /mosquitto/config/mosquitto.conf
               readOnly: false
               subPath: mosquitto.conf
-            - name: shared
-              mountPath: /shared
-              readOnly: false
-            - name: tmp
-              mountPath: /tmp
-              readOnly: false
-            - name: varlogs
-              mountPath: /var/logs
-              readOnly: false
-            - name: varrun
-              mountPath: /var/run
-              readOnly: false
           livenessProbe:
             tcpSocket:
               port: 1883
@@ -107,12 +95,3 @@ spec:
           configMap:
             name: mosquitto-config
             optional: false
-        - name: shared
-          emptyDir: {}
-        - name: tmp
-          emptyDir: {}
-        - name: varlogs
-          emptyDir: {}
-        - name: varrun
-          emptyDir:
-            medium: Memory

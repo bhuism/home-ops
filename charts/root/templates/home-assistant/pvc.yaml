@@ -10,5 +10,6 @@ spec:
       storage: 2Gi
   accessModes:
     - ReadWriteOnce
+  storageClassName: impl-default
   volumeName: pvc-037b0f02-8b1e-442c-b6e1-e52c4759b49b
 

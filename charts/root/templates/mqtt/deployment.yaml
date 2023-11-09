@@ -90,21 +90,8 @@ spec:
               cpu: 10m
               memory: 50Mi
             limits:
-              cpu: 4000m
-              memory: 8Gi
-          securityContext:
-            # runAsNonRoot: true
-            # runAsUser: 568
-            # runAsGroup: 568
-            readOnlyRootFilesystem: false
-            allowPrivilegeEscalation: false
-            privileged: false
-            seccompProfile:
-              type: RuntimeDefault
-            capabilities:
-              add: []
-              drop:
-                - ALL
+              cpu: 100m
+              memory: 500Mi
           env:
             - name: "TZ"
               value: "UTC"

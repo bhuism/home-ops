@@ -17,8 +17,7 @@ spec:
         app: mosquitto
     spec:
       securityContext:
-        runAsUser: 1883
-        runAsGroup: 1883
+        fsGroup: 1883
       containers:
         - image: eclipse-mosquitto:2.0.18
           name: mosquitto
@@ -31,13 +30,10 @@ spec:
             - name: mosquitto-config
               mountPath: /mosquitto/config/mosquitto.conf
               subPath: mosquitto.conf
-          securityContext:
-            runAsUser: 1883
       volumes:
         - name: mosquitto-persistent-data-storage
           persistentVolumeClaim:
             claimName: mosquitto-data-pvc
         - name: mosquitto-config
           configMap:
-            defaultMode: 420
             name: mosquitto-config

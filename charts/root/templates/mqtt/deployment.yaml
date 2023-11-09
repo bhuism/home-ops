@@ -124,7 +124,7 @@ spec:
             medium: Memory
         - name: mosquitto-config
           configMap:
-            name: release-name-mosquitto-config
+            name: mosquitto-config
             optional: false
         - name: shared
           emptyDir: {}

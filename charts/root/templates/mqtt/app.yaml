@@ -24,6 +24,8 @@ spec:
             enabled: true
         auth:
           enabled: true
+        nodeSelector:
+          kubernetes.io/arch: arm64
   syncPolicy:
     automated:
       prune: true

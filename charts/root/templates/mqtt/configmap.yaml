@@ -6,8 +6,9 @@ metadata:
 data:
   mosquitto.conf: |
     listener 1883
-    allow_anonymous true
+    allow_anonymous false
     persistence true
     persistence_location /mosquitto/data
     autosave_interval 1800
     include_dir /mosquitto/configinc
+    password_file /mosquitto/configinc/passwordfile

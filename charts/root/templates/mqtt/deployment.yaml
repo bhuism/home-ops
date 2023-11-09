@@ -1,48 +1,137 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mosquitto
+  name: release-name-mosquitto
   namespace: mosquitto
   labels:
-    app: mosquitto
-spec:
-  selector:
-    matchLabels:
-      app: mosquitto
+    app.kubernetes.io/name: "mosquitto"
+spec:  
+  replicas: 1
+  revisionHistoryLimit: 3
   strategy:
     type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: mosquitto
   template:
     metadata:
       labels:
-        app: mosquitto
+        app.kubernetes.io/name: "mosquitto"
     spec:
-      initContainers:
-        - name: create-config
-          image: alpine
-          command: [/bin/sh, -c]
-          args:
-            - |
-              mkdir -pv /mosquitto/config
-              chown -Rv 1883:1883 /mosquitto
-              cat <<EOF > /mosquitto/config/mosquitto.conf
-              listener 1883
-              persistence true
-              persistence_location /mosquitto/data/
-              log_dest file /mosquitto/log/mosquitto.log
-              allow_anonymous true
-              EOF
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
+      securityContext:
+        fsGroup: 568
+        fsGroupChangePolicy: OnRootMismatch
+        supplementalGroups:
+          - 568
+        sysctls: []
       containers:
-        - image: eclipse-mosquitto:2.0.18
-          name: mosquitto
+        - name: release-name-mosquitto
+          image: eclipse-mosquitto:2.0.18
+          imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 1883
-            - containerPort: 9001
+            - name: main
+              containerPort: 1883
+              protocol: TCP
+              hostPort: null
           volumeMounts:
-            - name: mosquitto-persistent-data-storage
+            - name: configinc
+              mountPath: /mosquitto/configinc
+              readOnly: false
+            - name: data
               mountPath: /mosquitto/data
+              readOnly: false
+            - name: devshm
+              mountPath: /dev/shm
+              readOnly: false
+            - name: mosquitto-config
+              mountPath: /mosquitto/config/mosquitto.conf
+              readOnly: false
+              subPath: mosquitto.conf
+            - name: shared
+              mountPath: /shared
+              readOnly: false
+            - name: tmp
+              mountPath: /tmp
+              readOnly: false
+            - name: varlogs
+              mountPath: /var/logs
+              readOnly: false
+            - name: varrun
+              mountPath: /var/run
+              readOnly: false
+          livenessProbe:
+            tcpSocket:
+              port: 1883
+            initialDelaySeconds: 10
+            failureThreshold: 5
+            successThreshold: 1
+            timeoutSeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            tcpSocket:
+              port: 1883
+            initialDelaySeconds: 10
+            failureThreshold: 5
+            successThreshold: 2
+            timeoutSeconds: 5
+            periodSeconds: 10
+          startupProbe:
+            tcpSocket:
+              port: 1883
+            initialDelaySeconds: 10
+            failureThreshold: 60
+            successThreshold: 1
+            timeoutSeconds: 2
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: 10m
+              memory: 50Mi
+            limits: 
+              cpu: 4000m 
+              memory: 8Gi
           securityContext:
-            readOnlyRootFilesystem: false
+            runAsNonRoot: true
+            runAsUser: 568
+            runAsGroup: 568
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            privileged: false
+            seccompProfile:
+              type: RuntimeDefault
+            capabilities:
+              add: []
+              drop:
+                - ALL
+          env:
+            - name: "TZ"
+              value: "UTC"
+            - name: "UMASK"
+              value: "0022"
+            - name: "UMASK_SET"
+              value: "0022"
       volumes:
-        - name: mosquitto-persistent-data-storage
+        - name: configinc
+          persistentVolumeClaim:
+            claimName: mosquitto-inc-pvc
+        - name: data
           persistentVolumeClaim:
             claimName: mosquitto-data-pvc
+        - name: devshm
+          emptyDir:
+            medium: Memory
+        - name: mosquitto-config
+          configMap:
+            name: release-name-mosquitto-config
+            optional: false
+        - name: shared
+          emptyDir: {}
+        - name: tmp
+          emptyDir: {}
+        - name: varlogs
+          emptyDir: {}
+        - name: varrun
+          emptyDir:
+            medium: Memory

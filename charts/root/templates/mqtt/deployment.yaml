@@ -20,12 +20,6 @@ spec:
     spec:
       restartPolicy: Always
       dnsPolicy: ClusterFirst
-      # securityContext:
-      #   fsGroup: 568
-      #   fsGroupChangePolicy: OnRootMismatch
-      #   supplementalGroups:
-      #     - 568
-      #   sysctls: []
       containers:
         - name: mosquitto
           image: eclipse-mosquitto:2.0.18

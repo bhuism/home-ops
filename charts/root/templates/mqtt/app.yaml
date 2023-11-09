@@ -27,6 +27,13 @@ spec:
         podOptions:
           nodeSelector:
             kubernetes.io/arch: arm64
+        configmap:
+          config:
+            enabled: true
+            data:
+              mosquitto.conf: |
+                listener 1883
+                allow_anonymous true
         persistence:
           data:
             enabled: false

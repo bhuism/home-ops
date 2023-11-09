@@ -22,6 +22,8 @@ spec:
           command: [/bin/sh, -c]
           args:
             - |
+              mkdir -pv /mosquitto/config
+              chown -Rv 1883:1883 /mosquitto
               cat <<EOF > /mosquitto/config/mosquitto.conf
               listener 1883
               persistence true

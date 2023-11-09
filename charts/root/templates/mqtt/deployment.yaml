@@ -18,14 +18,14 @@ spec:
     spec:
       securityContext:
         fsGroup: 1883
-      # initContainers:
-      #   - name: volume-mount-hack
-      #     image: busybox
-      #     command: ["sh", "-c", "chown -Rv 1883:1883 /mosquitto"]
-      volumeMounts:
-        - name: mosquitto-config
-          mountPath: /mosquitto/config/mosquitto.conf
-          subPath: mosquitto.conf
+      initContainers:
+        - name: volume-mount-hack
+          image: busybox
+          command: ["sh", "-c", "ls -la /mosquitto"]
+          volumeMounts:
+            - name: mosquitto-config
+              mountPath: /mosquitto/config/mosquitto.conf
+              subPath: mosquitto.conf
       containers:
         - image: eclipse-mosquitto:2.0.18
           name: mosquitto

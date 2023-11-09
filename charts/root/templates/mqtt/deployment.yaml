@@ -25,9 +25,11 @@ spec:
           volumeMounts:
             - name: mosquitto-persistent-data-storage
               mountPath: /mosquitto/data
+              readOnly: false
             - name: mosquitto-config
               mountPath: /mosquitto/config/mosquitto.conf
               subPath: mosquitto.conf
+              readOnly: false
       volumes:
         - name: mosquitto-persistent-data-storage
           persistentVolumeClaim:

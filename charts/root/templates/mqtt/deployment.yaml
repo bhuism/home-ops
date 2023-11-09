@@ -19,7 +19,6 @@ spec:
       securityContext:
         runAsUser: 1883
         runAsGroup: 1883
-        readOnlyRootFilesystem: true
       containers:
         - image: eclipse-mosquitto:2.0.18
           name: mosquitto
@@ -29,11 +28,9 @@ spec:
           volumeMounts:
             - name: mosquitto-persistent-data-storage
               mountPath: /mosquitto/data
-              readOnly: false
             - name: mosquitto-config
               mountPath: /mosquitto/config/mosquitto.conf
               subPath: mosquitto.conf
-              readOnly: false
           securityContext:
             runAsUser: 1883
       volumes:

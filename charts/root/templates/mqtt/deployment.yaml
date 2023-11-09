@@ -22,7 +22,7 @@ spec:
         - name: volume-mount-hack
           image: busybox
           command: ["sh", "-c", "chown -Rv 1883:1883 /mosquitto/config"]
-          volumeMounts:
+      volumeMounts:
         - name: mosquitto-config
           mountPath: /mosquitto/config/mosquitto.conf
           subPath: mosquitto.conf

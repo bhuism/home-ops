@@ -18,6 +18,14 @@ spec:
     spec:
       securityContext:
         fsGroup: 1883
+      initContainers:
+        - name: volume-mount-hack
+          image: busybox
+          command: ["sh", "-c", "chown -Rv 1883:1883 /mosquitto/config"]
+          volumeMounts:
+        - name: mosquitto-config
+          mountPath: /mosquitto/config/mosquitto.conf
+          subPath: mosquitto.conf
       containers:
         - image: eclipse-mosquitto:2.0.18
           name: mosquitto
@@ -30,6 +38,11 @@ spec:
             - name: mosquitto-config
               mountPath: /mosquitto/config/mosquitto.conf
               subPath: mosquitto.conf
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1883
+            runAsGroup: 1883
+            readOnlyRootFilesystem: true
       volumes:
         - name: mosquitto-persistent-data-storage
           persistentVolumeClaim:

@@ -21,7 +21,7 @@ spec:
       initContainers:
         - name: volume-mount-hack
           image: busybox
-          command: ["sh", "-c", "ls -la /mosquitto"]
+          command: ["sh", "-c", "chown -Rv 1883:1883 /mosquitto/config"]
           volumeMounts:
             - name: mosquitto-config
               mountPath: /mosquitto/config/mosquitto.conf

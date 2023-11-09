@@ -16,16 +16,19 @@ spec:
       labels:
         app: mosquitto
     spec:
-      securityContext:
-        fsGroup: 1883
       initContainers:
-        - name: volume-mount-hack
-          image: busybox
-          command: ["sh", "-c", "chown -Rv 1883:1883 /mosquitto/config"]
-          volumeMounts:
-            - name: mosquitto-config
-              mountPath: /mosquitto/config/mosquitto.conf
-              subPath: mosquitto.conf
+        - name: create-config
+          image: alpine
+          command: [/bin/sh, -c]
+          args:
+            - |
+              cat <<EOF > /mosquitto/config/mosquitto.conf
+              listener 1883
+              persistence true
+              persistence_location /mosquitto/data/
+              log_dest file /mosquitto/log/mosquitto.log
+              allow_anonymous true
+              EOF
       containers:
         - image: eclipse-mosquitto:2.0.18
           name: mosquitto
@@ -35,15 +38,9 @@ spec:
           volumeMounts:
             - name: mosquitto-persistent-data-storage
               mountPath: /mosquitto/data
-            - name: mosquitto-config
-              mountPath: /mosquitto/config/mosquitto.conf
-              subPath: mosquitto.conf
           securityContext:
             readOnlyRootFilesystem: false
       volumes:
         - name: mosquitto-persistent-data-storage
           persistentVolumeClaim:
             claimName: mosquitto-data-pvc
-        - name: mosquitto-config
-          configMap:
-            name: mosquitto-config

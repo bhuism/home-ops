@@ -39,10 +39,7 @@ spec:
               mountPath: /mosquitto/config/mosquitto.conf
               subPath: mosquitto.conf
           securityContext:
-            runAsNonRoot: true
-            runAsUser: 1883
-            runAsGroup: 1883
-            readOnlyRootFilesystem: true
+            readOnlyRootFilesystem: false
       volumes:
         - name: mosquitto-persistent-data-storage
           persistentVolumeClaim:

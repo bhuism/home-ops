@@ -10,5 +10,4 @@ spec:
       storage: 200Mi
   accessModes:
     - ReadWriteOnce
-  storageClassName: impl-default
   # volumeName: pvc-95425817-5f91-4aa1-8cce-57237c8df8b7

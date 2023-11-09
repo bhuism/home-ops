@@ -27,6 +27,13 @@ spec:
         podOptions:
           nodeSelector:
             kubernetes.io/arch: arm64
+        persistence:
+          data:
+            enabled: false
+          configinc:
+            enabled: false
+          mosquitto-config:
+            enabled: false
   syncPolicy:
     automated:
       prune: true

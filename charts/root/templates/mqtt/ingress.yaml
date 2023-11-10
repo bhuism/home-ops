@@ -12,20 +12,22 @@ spec:
   - host: mosquitto.impl.nl
     http:
       paths:
-      - backend:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
           service:
             name: main
             port:
               name: main
-        path: /
-        pathType: ImplementationSpecific
   - host: mosquitto.impl.nl
     http:
       paths:
-      - backend:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
           service:
             name: ws
             port:
-              name: ws
-        path: /
-        pathType: ImplementationSpecific
+              number: 90
+        
+        

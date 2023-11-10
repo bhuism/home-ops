@@ -19,3 +19,13 @@ spec:
               name: main
         path: /
         pathType: ImplementationSpecific
+  - host: mosquitto.impl.nl
+    http:
+      paths:
+      - backend:
+          service:
+            name: ws
+            port:
+              name: ws
+        path: /
+        pathType: ImplementationSpecific

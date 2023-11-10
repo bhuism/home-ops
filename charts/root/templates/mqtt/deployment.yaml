@@ -29,6 +29,10 @@ spec:
               containerPort: 1883
               protocol: TCP
               hostPort: null
+            - name: ws
+              containerPort: 8083
+              protocol: TCP
+              hostPort: null
           volumeMounts:
             - name: configinc
               mountPath: /mosquitto/configinc

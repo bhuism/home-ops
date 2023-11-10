@@ -9,7 +9,10 @@ spec:
       port: 1883
       protocol: TCP
       targetPort: 1883
+    - name: ws
+      port: 8083
+      protocol: TCP
+      targetPort: 8083
   selector:
     app.kubernetes.io/name: mosquitto
   type: LoadBalancer
-  # type: ClusterIP

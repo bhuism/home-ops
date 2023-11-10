@@ -4,7 +4,6 @@ metadata:
   name: mosquitto
   namespace: mosquitto
 spec:
-  type: ClusterIP
   ports:
     - name: main
       port: 1883
@@ -12,3 +11,5 @@ spec:
       targetPort: 1883
   selector:
     app.kubernetes.io/name: mosquitto
+  type: LoadBalancer
+  # type: ClusterIP

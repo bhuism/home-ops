@@ -56,4 +56,4 @@ persistence:
     name: mosquitto-config
     globalMounts:
       - path: /mosquitto/config/mosquitto.conf
-        subPath: /mosquitto.conf
+        subPath: mosquitto.conf

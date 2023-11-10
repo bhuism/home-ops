@@ -16,6 +16,6 @@ spec:
           service:
             name: main
             port:
-              name: 1883
+              number: 1883
         path: /
         pathType: ImplementationSpecific

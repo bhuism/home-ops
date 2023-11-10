@@ -11,3 +11,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   storageClassName: impl-default
+  volumeName: pvc-6dad0998-6275-4266-8395-e2a91a5f377b

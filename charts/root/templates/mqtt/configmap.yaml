@@ -11,7 +11,7 @@ data:
     persistence_location /mosquitto/data
     autosave_interval 1800
     include_dir /mosquitto/configinc
-    password_file /mosquitto/configinc/passwordfile
+    # password_file /mosquitto/configinc/passwordfile
     listener 1883
     protocol mqtt
     listener 8083

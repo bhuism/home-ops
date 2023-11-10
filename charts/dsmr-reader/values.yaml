@@ -1,10 +1,6 @@
 defaultPodOptions:
   nodeSelector:
     kubernetes.io/hostname: node2
-  # securityContext:
-  #   privileged: true
-  #   allowPrivilegeEscalation: false
-  #   runAsUser: 0
 
 controllers:
   main:
@@ -14,6 +10,13 @@ controllers:
           repository: ghcr.io/xirixiz/dsmr-reader-docker
           pullPolicy: IfNotPresent
           tag: 5.10.3-2023.04.02
+        probes:
+          liveness:
+            enabled: true
+          readiness:
+            enabled: true
+          startup:
+            enabled: true
         env:
           TZ: UTC
           VIRTUAL_HOST: localhost

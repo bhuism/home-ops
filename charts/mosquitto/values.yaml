@@ -41,20 +41,19 @@ ingress:
               port: 8083
 persistence:
   configinc:
-    enabled: true
     type: persistentVolumeClaim
-    accessMode: ReadWriteOnce
     existingClaim: mosquitto-inc-pvc
-    mountPath: /mosquitto/configinc
+    globalMounts:
+      - path: /mosquitto/configinc
   data:
-    enabled: true
     type: persistentVolumeClaim
-    accessMode: ReadWriteOnce
     existingClaim: mosquitto-data-pvc
-    mountPath: /mosquitto/data
+    globalMounts:
+      - path: /mosquitto/data
   config:
     enabled: true
     type: configMap
     name: mosquitto-config
-    mountPath: /mosquitto/config/mosquitto.conf
-    subPath: /mosquitto.conf
+    globalMounts:
+      - path: /mosquitto/config/mosquitto.conf
+        subPath: /mosquitto.conf

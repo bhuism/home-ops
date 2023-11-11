@@ -21,6 +21,8 @@ spec:
         initdbScripts:
           dsmrreader.sql: |
             CREATE DATABASE IF NOT EXISTS dsmrreader CHARACTER SET utf8;
+            CREATE USER IF NOT EXISTS 'dsmrreader'@'%' identified by 'dsmrreader';
+            GRANT ALL PRIVILEGES ON dsmrreader.* to 'dsmrreader'@'%';
         networkPolicy:
           enabled: true
           metrics:

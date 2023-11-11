@@ -24,7 +24,7 @@ spec:
           enabled: true
         primary:
           args:
-            "--upgrade=NONE"
+            - "--upgrade=NONE"
           service:
             type: LoadBalancer
             loadBalancerIP: 192.168.1.83

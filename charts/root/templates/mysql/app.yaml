@@ -1,23 +1,26 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mariadb
+  name: mysql
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: mariadb
+    namespace: mysql
   project: default
   source:
     repoURL: registry-1.docker.io/bitnamicharts
-    targetRevision: 14.1.1
-    chart: mariadb
+    targetRevision: 9.14.3
+    chart: mysql
     helm:
       values: |
         auth:
           rootPassword: killer
           createDatabase: false
+        initdbScripts:
+          dsmrreader.sql: |
+            CREATE DATABASE IF NOT EXISTS dsmrreader CHARACTER SET utf8;
         networkPolicy:
           enabled: true
           metrics:
@@ -27,7 +30,7 @@ spec:
             type: LoadBalancer
             loadBalancerIP: 192.168.1.83
           persistence:
-            existingClaim: mariadb-pvc
+            existingClaim: mysql-pvc
           startupProbe:
             failureThreshold: 360
   syncPolicy:

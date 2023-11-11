@@ -23,6 +23,8 @@ spec:
         networkPolicy:
           enabled: true
         primary:
+          command:
+            - "/opt/bitnami/scripts/mysql/run.sh"
           args:
             - "--upgrade=NONE"
           service:

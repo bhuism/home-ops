@@ -28,6 +28,7 @@ spec:
           loadBalancerIP: 192.168.1.82
           annotations:
               metallb.universe.tf/allow-shared-ip: pihole-svc
+              metallb.universe.tf/ip-allocated-from-pool: ipaddresspool-huisnetwerk
           type: LoadBalancer          
         virtualHost: pihole.impl.nl
         nodeSelector:
@@ -49,6 +50,7 @@ spec:
           loadBalancerIP: 192.168.1.82
           annotations:
             metallb.universe.tf/allow-shared-ip: pihole-svc
+            metallb.universe.tf/ip-allocated-from-pool: ipaddresspool-huisnetwerk
           type: LoadBalancer
         hostname: pihole
         adminPassword: "killer"

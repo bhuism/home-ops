@@ -24,7 +24,7 @@ spec:
           enabled: true
         primary:
           command:
-            - "/opt/bitnami/scripts/mysql/run.sh"
+            - "/opt/bitnami/scripts/mysql/entrypoint.sh"
           args:
             - "--upgrade=NONE"
           service:

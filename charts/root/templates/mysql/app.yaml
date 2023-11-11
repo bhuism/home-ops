@@ -23,6 +23,7 @@ spec:
         networkPolicy:
           enabled: true
         primary:
+          args: --upgrade=NONE
           service:
             type: LoadBalancer
             loadBalancerIP: 192.168.1.83

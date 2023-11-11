@@ -20,12 +20,31 @@ spec:
         config:
           data: |
             devices:
-              - name: serial
+              - name: p1port
                 groups:
-                  - usb:
-                    - vendor: "0403"
-                      product: "6001"
-                    mountPath: /dev/ttyUSB0
+                  - paths:
+                      - path: /dev/ttyUSB0
+                        mountPath: /dev/ttyUSB0
+              - name: upsport
+                groups:
+                  - paths:
+                      - path: /dev/ttyUSB1
+                        mountPath: /dev/ttyUSB0
+
+            #  - name: capture
+            #    groups:
+            #      - paths:
+            #         - path: /dev/snd/controlC1
+            #           mountPath: /dev/snd/controlC0
+            #         - path: /dev/snd/pcmC1D0c
+            #           mountPath: /dev/snd/pcmC0D0c
+                
+              # - name: p1port
+              #   groups:
+              #     - usb:
+              #       - vendor: "0403"
+              #         product: "6001"
+              #       mountPath: /dev/ttyUSB0
               # - name: ups
               #   groups:
               #     - usb:

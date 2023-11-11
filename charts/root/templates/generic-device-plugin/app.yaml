@@ -26,8 +26,14 @@ spec:
                       - path: /dev/ttyUSB0
               - name: upsport
                 groups:
-                  - paths:
-                      - path: /dev/ttyUSB1
+                  - usb:
+                    - vendor: "067b"
+                      product: "2303"
+              # - name: upsport
+              #   groups:
+              #     - paths:
+              #         - path: /dev/ttyUSB1
+
               #           mountPath: /dev/ttyUSB0
               # - name: upsport
               #   groups:
@@ -49,7 +55,7 @@ spec:
               #       - vendor: "0403"
               #         product: "6001"
               #       mountPath: /dev/ttyUSB0
-              # - name: ups
+              # - name: upsport
               #   groups:
               #     - usb:
               #       - vendor: "067b"

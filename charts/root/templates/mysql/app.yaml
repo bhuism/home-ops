@@ -1,32 +1,28 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mysql
+  name: mariadb
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: mysql
+    namespace: mariadb
   project: default
   source:
     repoURL: registry-1.docker.io/bitnamicharts
     targetRevision: 9.14.3
-    chart: mysql
+    chart: mariadb
     helm:
       values: |
-        global:
-          storageClass: impl-default
         auth:
           rootPassword: killer
           createDatabase: false
         networkPolicy:
           enabled: true
+          metrics:
+            enabled: true
         primary:
-          command:
-            - "/opt/bitnami/scripts/mysql/entrypoint.sh"
-          args:
-            - "--upgrade=NONE"
           service:
             type: LoadBalancer
             loadBalancerIP: 192.168.1.83

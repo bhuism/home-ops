@@ -20,16 +20,18 @@ spec:
         config:
           data: |
             devices:
-              - name: ups
-                groups:
-                  - usb:
-                    - vendor: "067b"
-                      product: "2303"
-              - name: p1port
+              - name: serial
                 groups:
                   - usb:
                     - vendor: "0403"
                       product: "6001"
+                    mountPath: /dev/ttyUSB0
+              # - name: ups
+              #   groups:
+              #     - usb:
+              #       - vendor: "067b"
+              #         product: "2303"
+
   syncPolicy:
     automated:
       prune: true

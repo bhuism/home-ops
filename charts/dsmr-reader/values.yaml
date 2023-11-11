@@ -1,6 +1,6 @@
-# defaultPodOptions:
-#   nodeSelector:
-#     kubernetes.io/hostname: node2
+defaultPodOptions:
+  nodeSelector:
+    kubernetes.io/hostname: node2
 
 controllers:
   main:
@@ -29,9 +29,9 @@ controllers:
           DJANGO_DATABASE_ENGINE: "django.db.backends.mysql"
           DJANGO_DATABASE_HOST: mysql.impl.nl
           DJANGO_DATABASE_PORT: 3306
-        resources:
-          limits:
-            squat.ai/p1port: 1
+        # resources:
+        #   limits:
+        #     squat.ai/p1port: 1
 service:
   main:
     ports:

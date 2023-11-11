@@ -17,6 +17,8 @@ controllers:
             enabled: true
           startup:
             enabled: true
+            periodSeconds: 5
+            failureThreshold: 360
         env:
           TZ: UTC
           VIRTUAL_HOST: localhost

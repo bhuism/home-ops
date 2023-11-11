@@ -23,7 +23,7 @@ controllers:
           DISABLE_NGINX_ACCESS_LOGS: true
           ENABLE_HTTP_AUTH: false
           DJANGO_TIME_ZONE: UTC
-          DJANGO_DATABASE_ENGINE: "django.db.backends.mariadb"
+          DJANGO_DATABASE_ENGINE: "django.db.backends.mysql"
           DJANGO_DATABASE_HOST: mysql.impl.nl
           DJANGO_DATABASE_PORT: 3306
         resources:

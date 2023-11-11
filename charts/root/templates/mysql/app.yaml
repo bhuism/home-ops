@@ -29,7 +29,7 @@ spec:
           persistence:
             existingClaim: mysql-pvc
           startupProbe:
-            failureThreshold: 100
+            failureThreshold: 360
   syncPolicy:
     automated:
       prune: true

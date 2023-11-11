@@ -31,7 +31,7 @@ controllers:
           DJANGO_DATABASE_PORT: 3306
         resources:
           limits:
-            squat.ai/serial: 1
+            squat.ai/p1port: 1
 service:
   main:
     ports:

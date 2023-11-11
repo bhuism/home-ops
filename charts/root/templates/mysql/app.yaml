@@ -28,6 +28,8 @@ spec:
             loadBalancerIP: 192.168.1.83
           persistence:
             existingClaim: mysql-pvc
+          startupProbe:
+            failureThreshold: 100
   syncPolicy:
     automated:
       prune: true

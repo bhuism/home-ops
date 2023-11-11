@@ -32,7 +32,7 @@ configMaps:
 
 service:
   main:
-    type: ClusterIP
+    type: LoadBalancer
     loadBalancerIP: 192.168.1.83
     ports:
       http:

@@ -34,6 +34,8 @@ service:
   main:
     type: LoadBalancer
     loadBalancerIP: 192.168.1.81
+    annotations:
+      metallb.universe.tf/allow-shared-ip: eightyone
     ports:
       http:
         port: 1883

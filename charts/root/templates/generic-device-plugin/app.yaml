@@ -24,6 +24,10 @@ spec:
                 groups:
                   - paths:
                       - path: /dev/ttyUSB0
+              - name: upsport
+                groups:
+                  - paths:
+                      - path: /dev/ttyUSB1
               #           mountPath: /dev/ttyUSB0
               # - name: upsport
               #   groups:

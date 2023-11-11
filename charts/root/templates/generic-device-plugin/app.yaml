@@ -24,12 +24,12 @@ spec:
                 groups:
                   - usb:
                     - vendor: "067b"
-                      product "2303"
+                      product: "2303"
               - name: p1port
                 groups:
                   - usb:
                     - vendor: "0403"
-                      product "6001"
+                      product: "6001"
   syncPolicy:
     automated:
       prune: true

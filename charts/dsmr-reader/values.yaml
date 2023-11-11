@@ -1,6 +1,6 @@
-defaultPodOptions:
-  nodeSelector:
-    kubernetes.io/hostname: node2
+# defaultPodOptions:
+#   nodeSelector:
+#     kubernetes.io/hostname: node2
 
 controllers:
   main:

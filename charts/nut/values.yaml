@@ -15,11 +15,11 @@ controllers:
         resources:
           limits:
             squat.ai/upsport: 1
-# service:
-#   main:
-#     ports:
-#       http:
-#         port: 80
+service:
+  main:
+    ports:
+      http:
+        port: 3493
 
 # ingress:
 #   main:

@@ -10,29 +10,11 @@ spec:
     namespace: mysql
   project: default
   source:
-    repoURL: registry-1.docker.io/bitnamicharts
-    targetRevision: 9.14.3
-    chart: mysql
-    helm:
-      values: |
-        auth:
-          rootPassword: killer
-          createDatabase: false
-        initdbScripts:
-          dsmrreader.sql: |
-            CREATE DATABASE IF NOT EXISTS dsmrreader CHARACTER SET utf8;
-        networkPolicy:
-          enabled: true
-          metrics:
-            enabled: true
-        primary:
-          service:
-            type: LoadBalancer
-            loadBalancerIP: 192.168.1.83
-          persistence:
-            existingClaim: mysql-pvc
-          startupProbe:
-            failureThreshold: 360
+    repoURL: https://mysql.github.io/mysql-operator
+    targetRevision: 2.1.1
+    chart: mysql-operator
+    # helm:
+    #   values: |
   syncPolicy:
     automated:
       prune: true

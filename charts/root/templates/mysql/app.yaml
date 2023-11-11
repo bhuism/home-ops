@@ -10,7 +10,7 @@ spec:
     namespace: mysql
   project: default
   source:
-    repoURL: https://mysql.github.io/mysql-operator
+    repoURL: registry-1.docker.io/bitnamicharts
     targetRevision: 9.14.3
     chart: mysql
     helm:

@@ -1,6 +1,5 @@
 controllers:
   main:
-    strategy: Recreate
     containers:
       main:
         image:
@@ -14,7 +13,6 @@ controllers:
             enabled: true
           startup:
             enabled: true
-
 configMaps:
   config:
     enabled: true

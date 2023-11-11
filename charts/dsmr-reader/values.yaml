@@ -29,9 +29,9 @@ controllers:
           DJANGO_DATABASE_ENGINE: "django.db.backends.mysql"
           DJANGO_DATABASE_HOST: mysql.impl.nl
           DJANGO_DATABASE_PORT: 3306
-        resources:
-          limits:
-            squat.ai/serial: 1
+        # resources:
+        #   limits:
+        #     squat.ai/serial: 1
 service:
   main:
     ports:

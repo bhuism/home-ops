@@ -46,7 +46,7 @@ spec:
             promtail:
               enabled: false
         etcd:
-          replicaCount: 3
+          replicaCount: 4
           image:
             tag: 3.5
           persistence:

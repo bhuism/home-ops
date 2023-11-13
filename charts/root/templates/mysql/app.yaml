@@ -35,14 +35,14 @@ spec:
             existingClaim: mysql-pvc
           startupProbe:
             failureThreshold: 360
-          extraVolumes:
-            - name: myconfig
-              configMap:
-                name: myconfig
-          extraVolumeMounts:
-            - name: myconfig
-              mountPath: /opt/bitnami/mysql/conf/my_custom.cnf
-              subPath: my_custom.cnf
+          # extraVolumes:
+          #   - name: myconfig
+          #     configMap:
+          #       name: myconfig
+          # extraVolumeMounts:
+          #   - name: myconfig
+          #     mountPath: /opt/bitnami/mysql/conf/my_custom.cnf
+          #     subPath: my_custom.cnf
   syncPolicy:
     automated:
       prune: true

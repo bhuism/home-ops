@@ -34,7 +34,7 @@ spec:
           persistence:
             existingClaim: mysql-pvc
           startupProbe:
-            failureThreshold: 360
+            failureThreshold: 720
           # extraVolumes:
           #   - name: mymainconfig
           #     emptyDir:

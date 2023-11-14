@@ -46,34 +46,34 @@ spec:
                 hosts:
                   - grafana.impl.nl
           # Provision grafana-dashboards-kubernetes
-          dashboardProviders:
-            dashboardproviders.yaml:
-              apiVersion: 1
-              providers:
-              - name: 'grafana-dashboards-kubernetes'
-                orgId: 1
-                folder: 'Kubernetes2'
-                type: file
-                allowUiUpdates: true
-                editable: true
-                options:
-                  path: /var/lib/grafana/dashboards/grafana-dashboards-kubernetes
-              - name: 'grafana-bas'
-                orgId: 1
-                folder: 'Bas'
-                type: file
-                allowUiUpdates: true
-                editable: true
-                options:
-                  path: /var/lib/grafana/dashboards/grafana-bas
-              - name: 'home-assistant'
-                orgId: 1
-                folder: 'Home Assistant'
-                type: file
-                allowUiUpdates: true
-                editable: true
-                options:
-                  path: /var/lib/grafana/dashboards/home-assistant
+          # dashboardProviders:
+          #   dashboardproviders.yaml:
+          #     apiVersion: 1
+          #     providers:
+          #     - name: 'grafana-dashboards-kubernetes'
+          #       orgId: 1
+          #       folder: 'Kubernetes2'
+          #       type: file
+          #       allowUiUpdates: true
+          #       editable: true
+          #       options:
+          #         path: /var/lib/grafana/dashboards/grafana-dashboards-kubernetes
+          #     - name: 'grafana-bas'
+          #       orgId: 1
+          #       folder: 'Bas'
+          #       type: file
+          #       allowUiUpdates: true
+          #       editable: true
+          #       options:
+          #         path: /var/lib/grafana/dashboards/grafana-bas
+          #     - name: 'home-assistant'
+          #       orgId: 1
+          #       folder: 'Home Assistant'
+          #       type: file
+          #       allowUiUpdates: true
+          #       editable: true
+          #       options:
+          #         path: /var/lib/grafana/dashboards/home-assistant
           dashboards:
             home-assistant:
               home-assistant:
@@ -122,7 +122,7 @@ spec:
                   access: proxy
                   url: http://influx-influxdb.influx:8086
                   user: root
-                  database: home_assistant
+                  database: homeassistant
                   secureJsonData:
                     password: killer
                   editable: false

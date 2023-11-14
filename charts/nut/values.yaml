@@ -14,6 +14,7 @@ controllers:
           TZ: UTC
           DRIVER: blazer_ser
           PORT: /dev/ttyUSB1
+          API_USER: root
           API_PASSWORD: killer
         resources:
           limits:

@@ -74,45 +74,45 @@ spec:
           #       editable: true
           #       options:
           #         path: /var/lib/grafana/dashboards/home-assistant
-          dashboards:
-            home-assistant:
-              home-assistant:
-                url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/home-assistant.json
-            grafana-bas:
-              gatus:
-                url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/prometheus_grafana_provisioning_dashboards_gatus.json
-              cert-manager:
-                url: https://gitlab.com/uneeq-oss/cert-manager-mixin/-/raw/master/dashboards/cert-manager.json
-              argocd:
-                url: https://raw.githubusercontent.com/argoproj/argo-cd/master/examples/dashboard.json
-              speedtestexporter:
-                url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/speedtest.json
-              kubernetes:
-                url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/kubernetes-withtemp.json
-              smartmeter:
-                url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/smartmeter.json
-            grafana-dashboards-kubernetes:
-              k8s-system-api-server:
-                url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
-                token: ''
-              k8s-system-coredns:
-                url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-coredns.json
-                token: ''
-              k8s-views-global:
-                url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-global.json
-                token: ''
-              k8s-views-namespaces:
-                url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-namespaces.json
-                token: ''
-              k8s-views-nodes:
-                url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
-                token: ''
-              k8s-views-pods:
-                url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
-                token: ''
-              k8s-prometheus:
-                url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-addons-prometheus.json
-                token: ''
+          # dashboards:
+          #   home-assistant:
+          #     home-assistant:
+          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/home-assistant.json
+          #   grafana-bas:
+          #     gatus:
+          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/prometheus_grafana_provisioning_dashboards_gatus.json
+          #     cert-manager:
+          #       url: https://gitlab.com/uneeq-oss/cert-manager-mixin/-/raw/master/dashboards/cert-manager.json
+          #     argocd:
+          #       url: https://raw.githubusercontent.com/argoproj/argo-cd/master/examples/dashboard.json
+          #     speedtestexporter:
+          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/speedtest.json
+          #     kubernetes:
+          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/kubernetes-withtemp.json
+          #     smartmeter:
+          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/smartmeter.json
+          #   grafana-dashboards-kubernetes:
+          #     k8s-system-api-server:
+          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
+          #       token: ''
+          #     k8s-system-coredns:
+          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-coredns.json
+          #       token: ''
+          #     k8s-views-global:
+          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-global.json
+          #       token: ''
+          #     k8s-views-namespaces:
+          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-namespaces.json
+          #       token: ''
+          #     k8s-views-nodes:
+          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
+          #       token: ''
+          #     k8s-views-pods:
+          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
+          #       token: ''
+          #     k8s-prometheus:
+          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-addons-prometheus.json
+          #       token: ''
           datasources:
             datasources.yaml:
               apiVersion: 1

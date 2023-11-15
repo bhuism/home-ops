@@ -61,7 +61,7 @@ spec:
           dashboards:
             default:
               test:
-                file: ../../dashboards/test.dashboard
+                file: ../../dashboards/test.yaml
           # Provision grafana-dashboards-kubernetes
           # dashboardProviders:
           #   dashboardproviders.yaml:

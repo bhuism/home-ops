@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgresql
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: postgresql
+  project: postgresql
+  source:
+    chart: postgresql
+    repoURL: registry-1.docker.io/bitnamicharts
+    targetRevision: 13.2.9
+    helm:
+      values: |
+        auth:
+          postgresPassword: killer
+        primary:
+          persistence:
+            existingClaim: postgresql-pvc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true

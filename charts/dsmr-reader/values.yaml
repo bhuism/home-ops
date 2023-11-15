@@ -46,6 +46,7 @@ ingress:
     annotations:
       external-dns.alpha.kubernetes.io/target: ingress.impl.nl
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+      cert-manager.io/cluster-issuer: letsencrypt-production
     ingressClassName: nginx
     className: nginx
     hosts:
@@ -56,3 +57,7 @@ ingress:
             service:
               name: main
               port: http
+        tls:
+          - secretName: dsmr-reader.impl.nl
+            hosts:
+              - dsmr-reader.impl.nl

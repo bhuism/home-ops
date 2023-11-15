@@ -1,6 +1,6 @@
 clusterName: impl-k8s
-talosVersion: v1.5.4
-kubernetesVersion: v1.28.2
+talosVersion: v1.5.5
+kubernetesVersion: v1.28.3
 endpoint: https://control.impl.nl:6443
 allowSchedulingOnMasters: true
 additionalMachineCertSans:

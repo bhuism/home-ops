@@ -29,6 +29,8 @@ controllers:
           DJANGO_DATABASE_ENGINE: "django.db.backends.mysql"
           DJANGO_DATABASE_HOST: mysql.impl.nl
           DJANGO_DATABASE_PORT: 3306
+          DSMRREADER_ADMIN_USER: root
+          DSMRREADER_ADMIN_PASSWORD: killer
         resources:
           limits:
             squat.ai/p1port: 1

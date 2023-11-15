@@ -6,287 +6,307 @@ metadata:
 data:
   test.json: |
     {
-        "annotations": {
-            "list": [
-                {
-                    "builtIn": 1,
-                    "datasource": {
-                        "type": "grafana",
-                        "uid": "-- Grafana --"
-                    },
-                    "enable": true,
-                    "hide": true,
-                    "iconColor": "rgba(0, 211, 255, 1)",
-                    "name": "Annotations & Alerts",
-                    "type": "dashboard"
-                }
-            ]
-        },
-        "editable": true,
-        "fiscalYearStartMonth": 0,
-        "graphTooltip": 0,
-        "id": 30,
-        "links": [],
-        "liveNow": false,
-        "panels": [
+      "annotations":{
+          "list":[
             {
-                "datasource": {
-                    "type": "influxdb",
-                    "uid": "P2A366ABB0CD47F51"
+                "builtIn":1,
+                "datasource":{
+                  "type":"grafana",
+                  "uid":"-- Grafana --"
                 },
-                "fieldConfig": {
-                    "defaults": {
-                        "color": {
-                            "mode": "palette-classic"
-                        },
-                        "custom": {
-                            "axisCenteredZero": false,
-                            "axisColorMode": "text",
-                            "axisLabel": "",
-                            "axisPlacement": "auto",
-                            "barAlignment": 0,
-                            "drawStyle": "line",
-                            "fillOpacity": 0,
-                            "gradientMode": "none",
-                            "hideFrom": {
-                                "legend": false,
-                                "tooltip": false,
-                                "viz": false
-                            },
-                            "insertNulls": false,
-                            "lineInterpolation": "linear",
-                            "lineWidth": 1,
-                            "pointSize": 5,
-                            "scaleDistribution": {
-                                "type": "linear"
-                            },
-                            "showPoints": "auto",
-                            "spanNulls": false,
-                            "stacking": {
-                                "group": "A",
-                                "mode": "none"
-                            },
-                            "thresholdsStyle": {
-                                "mode": "off"
-                            }
-                        },
-                        "mappings": [],
-                        "thresholds": {
-                            "mode": "absolute",
-                            "steps": [
-                                {
-                                    "color": "green",
-                                    "value": null
-                                },
-                                {
-                                    "color": "red",
-                                    "value": 80
-                                }
-                            ]
-                        },
-                        "unit": "kwatt"
-                    },
-                    "overrides": []
-                },
-                "gridPos": {
-                    "h": 21,
-                    "w": 24,
-                    "x": 0,
-                    "y": 0
-                },
-                "id": 1,
-                "options": {
-                    "legend": {
-                        "calcs": [],
-                        "displayMode": "list",
-                        "placement": "bottom",
-                        "showLegend": true
-                    },
-                    "tooltip": {
-                        "mode": "single",
-                        "sort": "none"
-                    }
-                },
-                "targets": [
-                    {
-                        "datasource": {
-                            "type": "influxdb",
-                            "uid": "P2A366ABB0CD47F51"
-                        },
-                        "groupBy": [
-                            {
-                                "params": [
-                                    "$__interval"
-                                ],
-                                "type": "time"
-                            },
-                            {
-                                "params": [
-                                    "entity_id::tag"
-                                ],
-                                "type": "tag"
-                            },
-                            {
-                                "params": [
-                                    "none"
-                                ],
-                                "type": "fill"
-                            }
-                        ],
-                        "hide": false,
-                        "measurement": "kW",
-                        "orderByTime": "ASC",
-                        "policy": "default",
-                        "refId": "B",
-                        "resultFormat": "time_series",
-                        "select": [
-                            [
-                                {
-                                    "params": [
-                                        "value"
-                                    ],
-                                    "type": "field"
-                                },
-                                {
-                                    "params": [],
-                                    "type": "mean"
-                                }
-                            ]
-                        ],
-                        "tags": [
-                            {
-                                "key": "entity_id::tag",
-                                "operator": "=",
-                                "value": "dsmr_reading_electricity_currently_delivered"
-                            }
-                        ]
-                    },
-                    {
-                        "datasource": {
-                            "type": "influxdb",
-                            "uid": "P2A366ABB0CD47F51"
-                        },
-                        "groupBy": [
-                            {
-                                "params": [
-                                    "$__interval"
-                                ],
-                                "type": "time"
-                            },
-                            {
-                                "params": [
-                                    "entity_id::tag"
-                                ],
-                                "type": "tag"
-                            },
-                            {
-                                "params": [
-                                    "none"
-                                ],
-                                "type": "fill"
-                            }
-                        ],
-                        "hide": false,
-                        "measurement": "kW",
-                        "orderByTime": "ASC",
-                        "policy": "default",
-                        "refId": "A",
-                        "resultFormat": "time_series",
-                        "select": [
-                            [
-                                {
-                                    "params": [
-                                        "value"
-                                    ],
-                                    "type": "field"
-                                },
-                                {
-                                    "params": [],
-                                    "type": "mean"
-                                }
-                            ]
-                        ],
-                        "tags": [
-                            {
-                                "key": "entity_id::tag",
-                                "operator": "=",
-                                "value": "dsmr_reading_electricity_currently_returned"
-                            }
-                        ]
-                    },
-                    {
-                        "datasource": {
-                            "type": "influxdb",
-                            "uid": "P2A366ABB0CD47F51"
-                        },
-                        "groupBy": [
-                            {
-                                "params": [
-                                    "$__interval"
-                                ],
-                                "type": "time"
-                            },
-                            {
-                                "params": [
-                                    "entity_id::tag"
-                                ],
-                                "type": "tag"
-                            },
-                            {
-                                "params": [
-                                    "none"
-                                ],
-                                "type": "fill"
-                            }
-                        ],
-                        "hide": false,
-                        "measurement": "kW",
-                        "orderByTime": "ASC",
-                        "policy": "default",
-                        "refId": "C",
-                        "resultFormat": "time_series",
-                        "select": [
-                            [
-                                {
-                                    "params": [
-                                        "value"
-                                    ],
-                                    "type": "field"
-                                },
-                                {
-                                    "params": [],
-                                    "type": "mean"
-                                }
-                            ]
-                        ],
-                        "tags": [
-                            {
-                                "key": "entity_id::tag",
-                                "operator": "=",
-                                "value": "envoy_122229083619_current_power_production"
-                            }
-                        ]
-                    }
-                ],
-                "title": "Panel Title",
-                "type": "timeseries"
+                "enable":true,
+                "hide":true,
+                "iconColor":"rgba(0, 211, 255, 1)",
+                "name":"Annotations & Alerts",
+                "type":"dashboard"
             }
-        ],
-        "refresh": "",
-        "schemaVersion": 38,
-        "style": "dark",
-        "tags": [],
-        "templating": {
-            "list": []
-        },
-        "time": {
-            "from": "now-24h",
-            "to": "now"
-        },
-        "timepicker": {},
-        "timezone": "",
-        "title": "Electricity",
-        "uid": "a8839cea-f717-4d83-92ba-fd34b05c59a6",
-        "version": 3,
-        "weekStart": ""
+          ]
+      },
+      "editable":true,
+      "fiscalYearStartMonth":0,
+      "graphTooltip":0,
+      "id":30,
+      "links":[
+          
+      ],
+      "liveNow":false,
+      "panels":[
+          {
+            "datasource":{
+                "type":"influxdb",
+                "uid":"P2A366ABB0CD47F51"
+            },
+            "fieldConfig":{
+                "defaults":{
+                  "color":{
+                      "mode":"palette-classic"
+                  },
+                  "custom":{
+                      "axisCenteredZero":false,
+                      "axisColorMode":"text",
+                      "axisLabel":"",
+                      "axisPlacement":"auto",
+                      "barAlignment":0,
+                      "drawStyle":"line",
+                      "fillOpacity":0,
+                      "gradientMode":"none",
+                      "hideFrom":{
+                        "legend":false,
+                        "tooltip":false,
+                        "viz":false
+                      },
+                      "insertNulls":false,
+                      "lineInterpolation":"linear",
+                      "lineWidth":1,
+                      "pointSize":5,
+                      "scaleDistribution":{
+                        "type":"linear"
+                      },
+                      "showPoints":"auto",
+                      "spanNulls":false,
+                      "stacking":{
+                        "group":"A",
+                        "mode":"none"
+                      },
+                      "thresholdsStyle":{
+                        "mode":"off"
+                      }
+                  },
+                  "mappings":[
+                      
+                  ],
+                  "thresholds":{
+                      "mode":"absolute",
+                      "steps":[
+                        {
+                            "color":"green",
+                            "value":null
+                        },
+                        {
+                            "color":"red",
+                            "value":80
+                        }
+                      ]
+                  },
+                  "unit":"kwatt"
+                },
+                "overrides":[
+                  
+                ]
+            },
+            "gridPos":{
+                "h":21,
+                "w":24,
+                "x":0,
+                "y":0
+            },
+            "id":1,
+            "options":{
+                "legend":{
+                  "calcs":[
+                      
+                  ],
+                  "displayMode":"list",
+                  "placement":"bottom",
+                  "showLegend":true
+                },
+                "tooltip":{
+                  "mode":"single",
+                  "sort":"none"
+                }
+            },
+            "targets":[
+                {
+                  "datasource":{
+                      "type":"influxdb",
+                      "uid":"P2A366ABB0CD47F51"
+                  },
+                  "groupBy":[
+                      {
+                        "params":[
+                            "$__interval"
+                        ],
+                        "type":"time"
+                      },
+                      {
+                        "params":[
+                            "entity_id::tag"
+                        ],
+                        "type":"tag"
+                      },
+                      {
+                        "params":[
+                            "none"
+                        ],
+                        "type":"fill"
+                      }
+                  ],
+                  "hide":false,
+                  "measurement":"kW",
+                  "orderByTime":"ASC",
+                  "policy":"default",
+                  "refId":"B",
+                  "resultFormat":"time_series",
+                  "select":[
+                      [
+                        {
+                            "params":[
+                              "value"
+                            ],
+                            "type":"field"
+                        },
+                        {
+                            "params":[
+                              
+                            ],
+                            "type":"mean"
+                        }
+                      ]
+                  ],
+                  "tags":[
+                      {
+                        "key":"entity_id::tag",
+                        "operator":"=",
+                        "value":"dsmr_reading_electricity_currently_delivered"
+                      }
+                  ]
+                },
+                {
+                  "datasource":{
+                      "type":"influxdb",
+                      "uid":"P2A366ABB0CD47F51"
+                  },
+                  "groupBy":[
+                      {
+                        "params":[
+                            "$__interval"
+                        ],
+                        "type":"time"
+                      },
+                      {
+                        "params":[
+                            "entity_id::tag"
+                        ],
+                        "type":"tag"
+                      },
+                      {
+                        "params":[
+                            "none"
+                        ],
+                        "type":"fill"
+                      }
+                  ],
+                  "hide":false,
+                  "measurement":"kW",
+                  "orderByTime":"ASC",
+                  "policy":"default",
+                  "refId":"A",
+                  "resultFormat":"time_series",
+                  "select":[
+                      [
+                        {
+                            "params":[
+                              "value"
+                            ],
+                            "type":"field"
+                        },
+                        {
+                            "params":[
+                              
+                            ],
+                            "type":"mean"
+                        }
+                      ]
+                  ],
+                  "tags":[
+                      {
+                        "key":"entity_id::tag",
+                        "operator":"=",
+                        "value":"dsmr_reading_electricity_currently_returned"
+                      }
+                  ]
+                },
+                {
+                  "datasource":{
+                      "type":"influxdb",
+                      "uid":"P2A366ABB0CD47F51"
+                  },
+                  "groupBy":[
+                      {
+                        "params":[
+                            "$__interval"
+                        ],
+                        "type":"time"
+                      },
+                      {
+                        "params":[
+                            "entity_id::tag"
+                        ],
+                        "type":"tag"
+                      },
+                      {
+                        "params":[
+                            "none"
+                        ],
+                        "type":"fill"
+                      }
+                  ],
+                  "hide":false,
+                  "measurement":"kW",
+                  "orderByTime":"ASC",
+                  "policy":"default",
+                  "refId":"C",
+                  "resultFormat":"time_series",
+                  "select":[
+                      [
+                        {
+                            "params":[
+                              "value"
+                            ],
+                            "type":"field"
+                        },
+                        {
+                            "params":[
+                              
+                            ],
+                            "type":"mean"
+                        }
+                      ]
+                  ],
+                  "tags":[
+                      {
+                        "key":"entity_id::tag",
+                        "operator":"=",
+                        "value":"envoy_122229083619_current_power_production"
+                      }
+                  ]
+                }
+            ],
+            "title":"Panel Title",
+            "type":"timeseries"
+          }
+      ],
+      "refresh":"",
+      "schemaVersion":38,
+      "style":"dark",
+      "tags":[
+          
+      ],
+      "templating":{
+          "list":[
+            
+          ]
+      },
+      "time":{
+          "from":"now-24h",
+          "to":"now"
+      },
+      "timepicker":{
+          
+      },
+      "timezone":"",
+      "title":"Electricity",
+      "uid":"a8839cea-f717-4d83-92ba-fd34b05c59a6",
+      "version":3,
+      "weekStart":""
     }

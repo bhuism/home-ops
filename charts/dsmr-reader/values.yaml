@@ -57,7 +57,7 @@ ingress:
             service:
               name: main
               port: http
-        tls:
-          - secretName: dsmr-reader.impl.nl
-            hosts:
-              - dsmr-reader.impl.nl
+    tls:
+      - secretName: dsmr-reader.impl.nl
+        hosts:
+          - dsmr-reader.impl.nl

@@ -8,11 +8,11 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: postgresql
-  project: postgresql
+  project: default
   source:
-    chart: postgresql
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 13.2.9
+    chart: postgresql
     helm:
       values: |
         auth:
@@ -26,3 +26,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - ServerSideApply=true

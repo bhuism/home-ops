@@ -11,7 +11,7 @@ spec:
   project: postgresql
   source:
     chart: postgresql
-    repoURL: registry-1.docker.io/bitnamicharts
+    repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 13.2.9
     helm:
       values: |

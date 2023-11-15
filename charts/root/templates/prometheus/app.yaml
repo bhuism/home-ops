@@ -57,11 +57,13 @@ spec:
                 editable: true
                 options:
                   path: /var/lib/grafana/dashboards/default
+          dashboardsConfigMaps:
+            default: test
 
-          dashboards:
-            default:
-              test:
-                file: ../../dashboards/test.yaml
+          # dashboards:
+          #   default:
+          #     test:
+          #       file: ../../dashboards/test.yaml
           # Provision grafana-dashboards-kubernetes
           # dashboardProviders:
           #   dashboardproviders.yaml:

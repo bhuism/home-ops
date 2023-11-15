@@ -51,9 +51,10 @@ spec:
               providers:
               - name: 'default'
                 orgId: 1
-                folder: ''
+                folder: 'Test'
                 type: file
                 disableDeletion: true
+                allowUiUpdates: true
                 editable: true
                 options:
                   path: /var/lib/grafana/dashboards/default

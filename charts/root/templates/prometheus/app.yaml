@@ -59,7 +59,7 @@ spec:
                 options:
                   path: /var/lib/grafana/dashboards/default
           dashboardsConfigMaps:
-            default: test
+            default: {{ .Release.Name }}-test
 
           # dashboards:
           #   default:

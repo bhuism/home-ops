@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: test
+  name: {{ .Release.Name }}-test
   namespace: prometheus
-
 data:
   test.json: |
+{{`
     {
       "annotations": {
         "list": [
@@ -693,3 +693,4 @@ data:
       "version": 12,
       "weekStart": ""
     }
+`}}  

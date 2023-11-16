@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: test
   namespace: prometheus
+
 data:
   test.json: |
     {

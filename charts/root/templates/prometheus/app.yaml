@@ -146,6 +146,15 @@ spec:
                   secureJsonData:
                     password: killer
                   editable: false
+                - name: DSMR Reader
+                  type: influxdb
+                  access: proxy
+                  url: http://influx-influxdb.influx:8086
+                  user: root
+                  database: dsmrreader
+                  secureJsonData:
+                    password: killer
+                  editable: false
         prometheus:
           prometheusSpec:
             serviceMonitorSelectorNilUsesHelmValues: false

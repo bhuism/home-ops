@@ -47,7 +47,7 @@ spec:
               enabled: false
         etcd:
           initialClusterState: existing
-          replicaCount: 3
+          replicaCount: 4
           removeMemberOnContainerTermination: true
           image:
             tag: 3.5

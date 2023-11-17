@@ -5,7 +5,7 @@ metadata:
   namespace: prometheus
 data:
   test.json: |
-{{`
+    {{`
 {
   "annotations": {
     "list": [
@@ -699,4 +699,4 @@ data:
   "version": 4,
   "weekStart": ""
 }
-`}}  
+    `}}  

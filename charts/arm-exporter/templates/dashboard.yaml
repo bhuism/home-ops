@@ -13,5 +13,5 @@ metadata:
 {{- end }}
 data:
   {{ .Release.Name }}.json: |-
-    {{- .Files.Get "dashboard.json" | nindent 4 }}
+    {{- .Files.Get "files/dashboard.json" | nindent 4 }}
 {{- end }}

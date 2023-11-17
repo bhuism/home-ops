@@ -5,4 +5,4 @@ metadata:
   namespace: prometheus
 data:
   test.json: |-
-    {{- .Files.Get "test.json" | nindent 4 }}
+    {{- .Files.Get "files/test.json" | nindent 4 }}

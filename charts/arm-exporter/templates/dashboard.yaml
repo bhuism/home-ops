@@ -12,6 +12,6 @@ metadata:
     {{ toYaml .Values.metrics.dashboard.annotations | indent 4 }}
 {{- end }}
 data:
-  wireguard.json: |-
+  {{ .Release.Name }}.json: |-
     {{- .Files.Get "dashboard.json" | nindent 4 }}
 {{- end }}

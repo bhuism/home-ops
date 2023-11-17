@@ -124,7 +124,7 @@
   "schemaVersion": 38,
   "style": "dark",
   "tags": [
-    "Raspberry Pi"
+    "rpi-mixin"
   ],
   "templating": {
     "list": []

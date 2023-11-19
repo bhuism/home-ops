@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: influxdb2
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: influxdb2
+  project: default
+  source:
+    chart: influxdb2
+    repoURL: https://helm.influxdata.com
+    targetRevision: 2.1.1
+    helm:
+      values: |
+        adminUser:
+          organization: "influxdata"
+          bucket: "default"
+          user: "admin"
+          retention_policy: "0s"
+          password: "killer"
+          token: "jEFGuULYg3N5nQwYMq8hkda95lrcLhOH"
+        persistence:
+          enabled: true
+          useExisting: true
+          name: {{ .Release.Name }}-pvc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

@@ -7,10 +7,10 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: {{ .Release.Name }}
+    namespace: influxdb2
   project: default
   source:
-    chart: {{ .Release.Name }}
+    chart: influxdb2
     repoURL: https://helm.influxdata.com
     targetRevision: 2.1.1
     helm:
@@ -25,7 +25,7 @@ spec:
         persistence:
           enabled: true
           useExisting: true
-          name: {{ .Release.Name }}-pvc
+          name: influxdb2-pvc
   syncPolicy:
     automated:
       prune: true

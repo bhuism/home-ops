@@ -21,7 +21,7 @@ controllers:
               periodSeconds: 5
               failureThreshold: 360
         env:
-          TZ: UTC
+          TZ: Europe/Amsterdam
           VIRTUAL_HOST: localhost
           DISABLE_NGINX_ACCESS_LOGS: true
           ENABLE_HTTP_AUTH: false

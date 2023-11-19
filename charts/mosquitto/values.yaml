@@ -29,7 +29,7 @@ configMaps:
         protocol mqtt
         listener 8083
         protocol websockets
-        max_inflight_messages 100
+        max_inflight_messages 1000
 
 service:
   main:

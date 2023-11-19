@@ -7,10 +7,10 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: influxdb2
+    namespace: {{ .Release.Name }}
   project: default
   source:
-    chart: influxdb2
+    chart: {{ .Release.Name }}
     repoURL: https://helm.influxdata.com
     targetRevision: 2.1.1
     helm:

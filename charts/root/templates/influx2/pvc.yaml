@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: {{ .Release.Name }}-pvc
-  namespace: influx
+  namespace: {{ .Release.Name }}
 spec:
   volumeMode: Filesystem
   resources:

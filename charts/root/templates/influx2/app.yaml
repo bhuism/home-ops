@@ -22,6 +22,7 @@ spec:
           retention_policy: "0s"
           password: "killer"
           token: "jEFGuULYg3N5nQwYMq8hkda95lrcLhOH"
+        
         persistence:
           enabled: true
           useExisting: true
@@ -31,11 +32,13 @@ spec:
           initialDelaySeconds: 10
           timeoutSeconds: 3
           failureThreshold: 30
+          periodSeconds: 60
 
         readinessProbe:
           initialDelaySeconds: 10
           timeoutSeconds: 3
           failureThreshold: 30
+          periodSeconds: 60
 
   syncPolicy:
     automated:

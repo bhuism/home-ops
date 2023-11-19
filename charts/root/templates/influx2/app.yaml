@@ -26,6 +26,17 @@ spec:
           enabled: true
           useExisting: true
           name: influxdb2-pvc
+
+        livenessProbe:
+          initialDelaySeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 30
+
+        readinessProbe:
+          initialDelaySeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 30
+
   syncPolicy:
     automated:
       prune: true

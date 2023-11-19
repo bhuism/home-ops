@@ -20,7 +20,7 @@ configMaps:
       mosquitto.conf: |
         per_listener_settings false
         allow_anonymous false
-        persistence false
+        persistence true
         persistence_location /mosquitto/data
         autosave_interval 1800
         include_dir /mosquitto/configinc

@@ -31,7 +31,8 @@ spec:
             enabled: true
         primary:
           extraEnvVars:
-            MYSQL_STARTUP_WAIT_RETRIES: 3600
+            - name: MYSQL_STARTUP_WAIT_RETRIES
+              value: 3600
           service:
             type: LoadBalancer
             loadBalancerIP: 192.168.1.83

@@ -34,7 +34,7 @@ spec:
           persistence:
             existingClaim: mysql-pvc
           startupProbe:
-            failureThreshold: 720
+            failureThreshold: 3600
           
           configuration: |-
             [mysqld]

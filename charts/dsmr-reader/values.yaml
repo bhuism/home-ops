@@ -32,7 +32,7 @@ controllers:
           DSMRREADER_ADMIN_USER: root
           DSMRREADER_ADMIN_PASSWORD: killer
           DSMRREADER_LOGLEVEL: DEBUG
-          DSMRREADER_MQTT_MAX_MESSAGES_IN_QUEUE: 50
+          # DSMRREADER_MQTT_MAX_MESSAGES_IN_QUEUE: 50
         resources:
           limits:
             squat.ai/p1port: 1

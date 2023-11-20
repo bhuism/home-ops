@@ -8,6 +8,8 @@ controllers:
       main:
         image:
           repository: europe-west4-docker.pkg.dev/impl-383520/docker/dsmr-reader-docker
+          pullPolicy: IfNotPresent
+          tag: latest
         probes:
           liveness:
             enabled: true

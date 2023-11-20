@@ -7,9 +7,7 @@ controllers:
     containers:
       main:
         image:
-          repository: ghcr.io/xirixiz/dsmr-reader-docker
-          pullPolicy: IfNotPresent
-          tag: 5.10.3-2023.04.02
+          repository: europe-west4-docker.pkg.dev/impl-383520/docker/dsmr-reader-docker
         probes:
           liveness:
             enabled: true

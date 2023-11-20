@@ -42,11 +42,11 @@ spec:
             failureThreshold: 3600
           resources:
             requests:
-              cpu: 800m
-              memory: 512Mi
+              cpu: 1000m
+              memory: 1Gi
             limits:
-              cpu: 800m
-              memory: 512Mi
+              cpu: 1000m
+              memory: 1Gi
 
           configuration: |-
             [mysqld]

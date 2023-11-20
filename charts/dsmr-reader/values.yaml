@@ -27,7 +27,8 @@ controllers:
           ENABLE_HTTP_AUTH: false
           # DJANGO_TIME_ZONE: Europe/Amsterdam
           DJANGO_DATABASE_ENGINE: "django.db.backends.mysql"
-          DJANGO_DATABASE_HOST: mysql-headless.mysql
+          # DJANGO_DATABASE_HOST: mysql-headless.mysql
+          DJANGO_DATABASE_HOST: 192.168.1.12
           DJANGO_DATABASE_PORT: 3306
           DSMRREADER_ADMIN_USER: root
           DSMRREADER_ADMIN_PASSWORD: killer

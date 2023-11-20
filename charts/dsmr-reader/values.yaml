@@ -7,9 +7,9 @@ controllers:
     containers:
       main:
         image:
-          repository: europe-west4-docker.pkg.dev/impl-383520/docker/dsmr-reader-docker
-          pullPolicy: Always
-          tag: latest
+          repository: ghcr.io/xirixiz/dsmr-reader-docker
+          pullPolicy: IfNotPresent
+          tag: 5.10.3-2023.04.02
         probes:
           liveness:
             enabled: true
@@ -17,9 +17,6 @@ controllers:
             enabled: true
           startup:
             enabled: true
-            spec:
-              periodSeconds: 5
-              failureThreshold: 360
         env:
           # TZ: Europe/Amsterdam
           VIRTUAL_HOST: localhost
@@ -34,8 +31,6 @@ controllers:
           DJANGO_DATABASE_PORT: 3306
           DSMRREADER_ADMIN_USER: root
           DSMRREADER_ADMIN_PASSWORD: killer
-          DSMRREADER_LOGLEVEL: DEBUG
-          # DSMRREADER_MQTT_MAX_MESSAGES_IN_QUEUE: 50
         resources:
           limits:
             squat.ai/p1port: 1

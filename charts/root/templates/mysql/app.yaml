@@ -39,6 +39,7 @@ spec:
           configuration: |-
             [mysqld]
             skip-log-bin
+            innodb_buffer_pool_size=512M
             default_authentication_plugin=mysql_native_password
             skip-name-resolve
             explicit_defaults_for_timestamp

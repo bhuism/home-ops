@@ -12,13 +12,13 @@ rm -Rf clusterconfig
 
 
 c=1
-for i in 153 154 155 156 113 ; do
+for i in 153 154 155 156 113 182 197 196 183 ; do
 
-echo $c 192.168.1.$i
+#echo $c 192.168.1.$i
 
 #talosctl -n 192.168.1.$((153+$i-1)) apply-config -f controlplane.yaml -p @node$i.json
 
-talosctl -n 192.168.1.$i -e 192.168.1.$i apply-config -f clusterconfig/impl-k8s-node$c.yaml 
+echo "talosctl -n 192.168.1.$i -e 192.168.1.$i apply-config --insecure -f clusterconfig/impl-k8s-node$c.yaml"
 
 c=$((c+1))
 

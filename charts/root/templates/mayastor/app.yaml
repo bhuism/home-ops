@@ -46,7 +46,7 @@ spec:
             promtail:
               enabled: false
         etcd:
-          initialClusterState: new
+          initialClusterState: existing
           replicaCount: 5
           removeMemberOnContainerTermination: true
           image:

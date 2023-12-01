@@ -46,6 +46,10 @@ spec:
             promtail:
               enabled: false
         etcd:
+          tolerations:
+            - key: "node.kubernetes.io/unschedulable"
+              operator: "Exists"
+              effect: "NoSchedule"
           initialClusterState: new
           replicaCount: 5
           removeMemberOnContainerTermination: true

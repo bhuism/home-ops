@@ -50,18 +50,18 @@ spec:
             - key: "node.kubernetes.io/unschedulable"
               operator: "Exists"
               effect: "NoSchedule"
-          initialClusterState: existing
+          initialClusterState: new
           replicaCount: 5
-          removeMemberOnContainerTermination: false
+          # removeMemberOnContainerTermination: false
           image:
-            tag: 3.5
-          persistence:
-            enabled: true
-            size: 1Gi
-          volumePermissions:
-            image:
-              repository: bitnami/os-shell
-              tag: 11
+            tag: 3.5.10-debian-11-r2
+          # persistence:
+          #   enabled: true
+          #   size: 1Gi
+          # volumePermissions:
+          #   image:
+          #     repository: bitnami/os-shell
+          #     tag: 11
   syncPolicy:
     automated:
       prune: true

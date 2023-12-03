@@ -58,10 +58,10 @@ spec:
           # persistence:
           #   enabled: true
           #   size: 1Gi
-          # volumePermissions:
-          #   image:
-          #     repository: bitnami/os-shell
-          #     tag: 11
+          volumePermissions:
+            image:
+              repository: bitnami/os-shell
+              tag: 11
   syncPolicy:
     automated:
       prune: true

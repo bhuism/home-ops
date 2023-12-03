@@ -50,7 +50,7 @@ spec:
             - key: "node.kubernetes.io/unschedulable"
               operator: "Exists"
               effect: "NoSchedule"
-          initialClusterState: new
+          initialClusterState: existing
           replicaCount: 3
           removeMemberOnContainerTermination: false
           image:

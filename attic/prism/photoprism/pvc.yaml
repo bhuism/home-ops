@@ -10,7 +10,6 @@ spec:
       storage: 10Gi
   accessModes:
     - ReadWriteOnce
-  # volumeName: pvc-5c613d51-b8ed-48c0-aa2f-26f366a6fce9
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -24,7 +23,6 @@ spec:
       storage: 10Gi
   accessModes:
     - ReadWriteOnce
-  # volumeName: pvc-b5586951-f2df-4dcd-ba5b-a17c7f096781
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -38,4 +36,3 @@ spec:
       storage: 10Gi
   accessModes:
     - ReadWriteOnce
-  # volumeName: pvc-035e1185-34e3-4c63-917c-2a9fa6caab84

@@ -7,8 +7,7 @@ spec:
   volumeMode: Filesystem
   resources:
     requests:
-      storage: 15Gi
+      storage: 5Gi
   accessModes:
     - ReadWriteOnce
   storageClassName: impl-default
-  # volumeName: pvc-3886ca51-34d1-4bc4-b9b5-b58fbc170c95

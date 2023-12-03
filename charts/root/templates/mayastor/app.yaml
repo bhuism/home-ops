@@ -52,7 +52,7 @@ spec:
               effect: "NoSchedule"
           initialClusterState: new
           replicaCount: 3
-          removeMemberOnContainerTermination: true
+          removeMemberOnContainerTermination: false
           image:
             tag: 3.5
           persistence:

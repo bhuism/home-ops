@@ -51,7 +51,7 @@ spec:
               operator: "Exists"
               effect: "NoSchedule"
           initialClusterState: existing
-          replicaCount: 5
+          replicaCount: 3
           removeMemberOnContainerTermination: true
           image:
             tag: 3.5

@@ -12,7 +12,7 @@ spec:
   source:
     chart: influxdb2
     repoURL: https://helm.influxdata.com
-    targetRevision: 2.1.1
+    targetRevision: 2.1.2
     helm:
       values: |
         adminUser:

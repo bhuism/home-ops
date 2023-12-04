@@ -1,0 +1,7 @@
+apiVersion: v2
+name: registry
+version: 2.3.0
+dependencies:
+  - name: common
+    repository: https://bjw-s.github.io/helm-charts
+    version: 2.3.0

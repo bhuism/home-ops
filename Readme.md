@@ -8,47 +8,49 @@
 [![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com)
 </div>
 
-
-Service||| 
----------|-|-|
-Jasmine: | ![Jasmine](https://shields.io/uptimerobot/status/m794488019-0bd05c1abe3b5c8b6b95d190) | ![Jasmine](https://gatus.impl.nl/api/v1/endpoints/_jasmine/health/badge.svg)
-Eleanor: | ![Eleanor](https://shields.io/uptimerobot/status/m794488049-f2b30350c7ad3e2ff4bc3c94) | ![Eleanor](https://gatus.impl.nl/api/v1/endpoints/_eleanor/health/badge.svg)
+| Service  |                                                                                       |                                                                              |
+| -------- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Jasmine: | ![Jasmine](https://shields.io/uptimerobot/status/m794488019-0bd05c1abe3b5c8b6b95d190) | ![Jasmine](https://gatus.impl.nl/api/v1/endpoints/_jasmine/health/badge.svg) |
+| Eleanor: | ![Eleanor](https://shields.io/uptimerobot/status/m794488049-f2b30350c7ad3e2ff4bc3c94) | ![Eleanor](https://gatus.impl.nl/api/v1/endpoints/_eleanor/health/badge.svg) |
 
 ### Running
 
-* ~~[Cilium](https://cilium.io/)~~
-* [ArgoCD](https://argo-cd.readthedocs.io/)
-* [Gatus](https://gatus.io/)
-* [MetalLB](https://metallb.universe.tf/)
-* [Prometheus Stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
-* [ExternalDNS](https://github.com/kubernetes-sigs/external-dns)
-* [Ingress-nginx](https://github.com/kubernetes/ingress-nginx)
-* ~~[Local-path-provisioner](https://github.com/rancher/local-path-provisioner)~~
-* [Ok](https://github.com/bhuism/ok)
-* [Cloudflare Tunnel](https://github.com/cloudflare/helm-charts/tree/main/charts/cloudflare-tunnel)
-* [Echo-Server](https://ealenn.github.io/Echo-Server/)
-* ~~[Change Detection](https://changedetection.io/)~~
-* [PiHole](https://pi-hole.net/)
-* ~~[Oauth2-Proxy](https://oauth2-proxy.github.io/oauth2-proxy)~~
-* [Cert Manager](https://cert-manager.io/)
-* [WireGuard](https://www.wireguard.com/)
-* [Speedtest Exporter](https://github.com/MiguelNdeCarvalho/speedtest-exporter)
-* ~~[Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)~~
-* [Mayastor](https://mayastor.gitbook.io/)
-* [Home Asistant](https://www.home-assistant.io/)
-* [InfluxDB](https://www.influxdata.com/)
-* [General Device Plugin](https://github.com/squat/generic-device-plugin/)
-* [MySQL](https://www.mysql.com/)
-* [DSMR Reader](https://dsmr-reader.readthedocs.io/)
-
+- ~~[Cilium](https://cilium.io/)~~
+- [ArgoCD](https://argo-cd.readthedocs.io/)
+- [Arm Exported](https://github.com/carlosedp/docker-arm_exporter)
+- [Gatus](https://gatus.io/)
+- [MetalLB](https://metallb.universe.tf/)
+- [Prometheus Stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
+- [ExternalDNS](https://github.com/kubernetes-sigs/external-dns)
+- [Ingress-nginx](https://github.com/kubernetes/ingress-nginx)
+- ~~[Local-path-provisioner](https://github.com/rancher/local-path-provisioner)~~
+- [Ok](https://github.com/bhuism/ok)
+- [Cloudflare Tunnel](https://github.com/cloudflare/helm-charts/tree/main/charts/cloudflare-tunnel)
+- [Echo-Server](https://ealenn.github.io/Echo-Server/)
+- ~~[Change Detection](https://changedetection.io/)~~
+- [PiHole](https://pi-hole.net/)
+- ~~[Oauth2-Proxy](https://oauth2-proxy.github.io/oauth2-proxy)~~
+- [Cert Manager](https://cert-manager.io/)
+- [WireGuard](https://www.wireguard.com/)
+- [Speedtest Exporter](https://github.com/MiguelNdeCarvalho/speedtest-exporter)
+- ~~[Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)~~
+- [Mayastor](https://mayastor.gitbook.io/)
+- [Home Asistant](https://www.home-assistant.io/)
+- [InfluxDB](https://www.influxdata.com/)
+- [InfluxDB2](https://www.influxdata.com/)
+- [General Device Plugin](https://github.com/squat/generic-device-plugin/)
+- [MySQL](https://www.mysql.com/)
+- [DSMR Reader](https://dsmr-reader.readthedocs.io/)
+- [Registry](https://docs.docker.com/registry/)
+- [Mosquitto](https://mosquitto.org/)
+- [Nut](https://networkupstools.org/)
 
 ### Todo
 
-* [Paperless](https://github.com/paperless-ngx/paperless-ngx)
-* Fix test
-* Remove secretos
-* [Prometheus](https://prometheus.io/) separate
-* [Grafana](https://grafana.com/) separate
-* [Uptime Kuma](https://github.com/louislam/uptime-kuma)
-* [Unifi Poller](https://unpoller.com/)
-
+- [Paperless](https://github.com/paperless-ngx/paperless-ngx)
+- Fix test
+- Remove secretos
+- [Prometheus](https://prometheus.io/) separate
+- [Grafana](https://grafana.com/) separate
+- [Uptime Kuma](https://github.com/louislam/uptime-kuma)
+- [Unifi Poller](https://unpoller.com/)

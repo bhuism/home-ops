@@ -11,19 +11,19 @@ controllers:
             spec:
               httpGet:
                 path: /v2/
-                port: http
+                port: 5000
           readiness:
             custom: true
             spec:
               httpGet:
                 path: /v2/
-                port: http
+                port: 5000
           startup:
             custom: true
             spec:
               httpGet:
                 path: /v2/
-                port: http
+                port: 5000
 
 service:
   main:

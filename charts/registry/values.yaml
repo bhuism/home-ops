@@ -37,11 +37,11 @@ ingress:
     annotations:
       external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-      cert-manager.io/cluster-issuer: letsencrypt-production
+      # cert-manager.io/cluster-issuer: letsencrypt-production
       nginx.ingress.kubernetes.io/proxy-body-size: 512m
       nginx.ingress.kubernetes.io/auth-type: basic
       nginx.ingress.kubernetes.io/auth-secret: basic-auth
-      nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - root'
+      nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
     ingressClassName: nginx
     className: nginx
     hosts:
@@ -52,10 +52,7 @@ ingress:
             service:
               name: main
               port: http
-    tls:
-      - secretName: registry.impl.nl
-        hosts:
-          - registry.impl.nl
+    tls: {}
 
 persistence:
   data:

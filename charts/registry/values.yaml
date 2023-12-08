@@ -5,6 +5,10 @@ controllers:
         image:
           repository: registry
           tag: 2
+        env:
+          REGISTRY_AUTH: htpasswd
+          REGISTRY_AUTH_HTPASSWD_REALM: Impl Container Registry
+          REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
         probes:
           liveness:
             custom: true

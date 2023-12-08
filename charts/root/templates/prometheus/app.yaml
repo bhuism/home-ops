@@ -49,9 +49,9 @@ spec:
             dashboardproviders.yaml:
               apiVersion: 1
               providers:
-              - name: 'default'
+              - name: 'myone'
                 orgId: 1
-                folder: 'Test'
+                folder: 'Bassie'
                 type: file
                 disableDeletion: true
                 allowUiUpdates: true
@@ -59,7 +59,9 @@ spec:
                 options:
                   path: /var/lib/grafana/dashboards/default
           dashboardsConfigMaps:
-            default: {{ .Release.Name }}-test
+            myone:
+              - {{ .Release.Name }}-electricity
+              - {{ .Release.Name }}-volumes
 
           # dashboards:
           #   default:

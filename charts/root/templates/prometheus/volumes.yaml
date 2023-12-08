@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-volumes
+  namespace: prometheus
+data:
+  electricity.json: |-
+    {{- .Files.Get "files/volumes.json" | nindent 4 }}

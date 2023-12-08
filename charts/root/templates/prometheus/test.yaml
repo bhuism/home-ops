@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: {{ .Release.Name }}-test
-  namespace: prometheus
-data:
-  test.json: |-
-    {{- .Files.Get "files/test.json" | nindent 4 }}

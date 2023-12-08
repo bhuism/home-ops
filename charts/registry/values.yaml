@@ -7,11 +7,20 @@ controllers:
           tag: 2
         probes:
           liveness:
-            enabled: true
+            custom: true
+            spec:
+              httpGet:
+                path: /v2/
           readiness:
-            enabled: true
+            custom: true
+            spec:
+              httpGet:
+                path: /v2/
           startup:
-            enabled: true
+            custom: true
+            spec:
+              httpGet:
+                path: /v2/
 
 service:
   main:

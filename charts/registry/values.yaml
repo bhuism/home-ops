@@ -47,7 +47,7 @@ ingress:
     hosts:
       - host: registry.impl.nl
         paths:
-          - path: /v2
+          - path: /
             pathType: Prefix
             service:
               name: main

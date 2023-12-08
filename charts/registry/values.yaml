@@ -43,12 +43,15 @@ ingress:
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
       cert-manager.io/cluster-issuer: letsencrypt-production
       nginx.ingress.kubernetes.io/proxy-body-size: 512m
+      nginx.ingress.kubernetes.io/auth-type: basic
+      nginx.ingress.kubernetes.io/auth-secret: basic-auth
+      nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
     ingressClassName: nginx
     className: nginx
     hosts:
       - host: registry.impl.nl
         paths:
-          - path: /
+          - path: /v2
             pathType: Prefix
             service:
               name: main

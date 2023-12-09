@@ -4,6 +4,7 @@ defaultPodOptions:
 
 controllers:
   main:
+    type: statefulset
     containers:
       main:
         image:

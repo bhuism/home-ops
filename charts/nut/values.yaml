@@ -4,6 +4,7 @@ defaultPodOptions:
 
 controllers:
   main:
+    type: statefulset
     containers:
       main:
         image:
@@ -27,7 +28,6 @@ service:
     ports:
       http:
         port: 3493
-
 # ingress:
 #   main:
 #     enabled: true

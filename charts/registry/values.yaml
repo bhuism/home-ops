@@ -1,8 +1,8 @@
 controllers:
   main:
+    type: statefulset
     containers:
       main:
-        strategy: recreate
         image:
           repository: registry
           tag: 2

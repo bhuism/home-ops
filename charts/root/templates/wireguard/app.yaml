@@ -15,6 +15,9 @@ spec:
     targetRevision: 0.16.1
     helm:
       values: |
+        image:
+          repository: ghcr.io/bhuism/wireguard
+          tag: main
         autoscaling:
           enabled: false
         replicaCount: 1

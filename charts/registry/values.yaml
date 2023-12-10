@@ -41,8 +41,8 @@ ingress:
       nginx.ingress.kubernetes.io/auth-type: basic
       nginx.ingress.kubernetes.io/auth-secret: basic-auth
       nginx.ingress.kubernetes.io/auth-realm: "Authentication Required"
-      # external-dns.alpha.kubernetes.io/target: ingress.impl.nl
-      # external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+      external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
       cert-manager.io/cluster-issuer: letsencrypt-production
 
     ingressClassName: nginx

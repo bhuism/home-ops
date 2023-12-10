@@ -18,6 +18,7 @@ spec:
         image:
           repository: ghcr.io/bhuism/wireguard
           tag: main
+          pullPolicy: Always
         autoscaling:
           enabled: false
         replicaCount: 1

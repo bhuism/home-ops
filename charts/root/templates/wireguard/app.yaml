@@ -22,7 +22,7 @@ spec:
         metrics:
           enabled: true
         nodeSelector:
-          cm4.impl.nl: true
+          cm4.impl.nl: "true"
         wireguard:
           clients:
             - PublicKey: 'PIXLqvUeEZEDYkw7/hAcOQeBIhRwoJe6lZAOXkbyIws='

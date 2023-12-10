@@ -27,6 +27,8 @@ spec:
           enabled: true
         nodeSelector:
           cm4.impl.nl: "true"
+        service:
+          type: ClusterIP
         wireguard:
           clients:
             - PublicKey: 'PIXLqvUeEZEDYkw7/hAcOQeBIhRwoJe6lZAOXkbyIws='

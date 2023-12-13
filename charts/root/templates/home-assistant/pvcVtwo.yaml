@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: home-assistantVtwo-pvc
+  name: home-assistant-v2-pvc
   namespace: home-assistant
 spec:
   volumeMode: Filesystem

@@ -50,8 +50,8 @@ spec:
             - key: "node.kubernetes.io/unschedulable"
               operator: "Exists"
               effect: "NoSchedule"
-          initialClusterState: existing
-          replicaCount: 1
+          # initialClusterState: existing
+          replicaCount: 7
           removeMemberOnContainerTermination: true
           image:
             tag: 3.5.10-debian-11-r2

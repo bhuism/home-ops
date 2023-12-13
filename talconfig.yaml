@@ -75,7 +75,7 @@ nodes:
         - op: add
           path: /machine/nodeLabels
           value:
-            mayastorage.impl.nl: "true"
+            mayastorage.impl.nl: true
             openebs.io/engine: mayastor
   - hostname: node2
     ipAddress: 192.168.1.154
@@ -108,6 +108,17 @@ nodes:
     ipAddress: 192.168.1.182
     controlPlane: false
     installDisk: /dev/mmcblk0
+    patches:
+      - |-
+        - op: add
+          path: /machine/nodeLabels
+          value:
+              mayastorage.impl.nl: true
+              openebs.io/engine: mayastor
+        - op: add
+          path: /machine/sysctls
+          value:
+              vm.nr_hugepages: "1024"
   - hostname: node7
     ipAddress: 192.168.1.197
     controlPlane: false

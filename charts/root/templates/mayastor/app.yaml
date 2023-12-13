@@ -51,7 +51,7 @@ spec:
               operator: "Exists"
               effect: "NoSchedule"
           initialClusterState: existing
-          replicaCount: 7
+          replicaCount: 3
           removeMemberOnContainerTermination: true
           image:
             tag: 3.5.10-debian-11-r2

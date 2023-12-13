@@ -1,0 +1,8 @@
+apiVersion: "openebs.io/v1beta1"
+kind: DiskPool
+metadata:
+  name: pool-on-node-1
+  namespace: mayastor
+spec:
+  node: node1
+  disks: ["/dev/nvme0n1"]

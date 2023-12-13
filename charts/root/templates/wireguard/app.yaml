@@ -12,7 +12,7 @@ spec:
   source:
     chart: wireguard
     repoURL: https://bryopsida.github.io/wireguard-chart
-    targetRevision: 0.16.1
+    targetRevision: 0.16.2
     helm:
       values: |
         image:

@@ -28,19 +28,3 @@ service:
     ports:
       http:
         port: 3493
-# ingress:
-#   main:
-#     enabled: true
-#     annotations:
-#       external-dns.alpha.kubernetes.io/target: ingress.impl.nl
-#       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-#     ingressClassName: nginx
-#     className: nginx
-#     hosts:
-#       - host: dsmr-reader.impl.nl
-#         paths:
-#           - path: /
-#             pathType: Prefix
-#             service:
-#               name: main
-#               port: http

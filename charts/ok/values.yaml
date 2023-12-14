@@ -1,83 +1,98 @@
-replicaCount: 1
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          repository: europe-west4-docker.pkg.dev/impl-383520/docker/ok
+          tag: "latest"
+          pullPolicy: Always
+        probes:
+          liveness:
+            type: HTTP
+            path: /actuator/health/liveness
+            port: liveness-port
+          readiness:
+            type: HTTP
+            path: /actuator/health/readiness
+            port: liveness-port
+          startup:
+            enabled: true
+        resources:
+          limits:
+            cpu: 100m
+            memory: 64Mi
+          requests:
+            cpu: 100m
+            memory: 64Mi
 
-image:
-  repository: europe-west4-docker.pkg.dev/impl-383520/docker/ok
-  pullPolicy: Always
-  tag: "latest"
 
-imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
 
-serviceAccount:
-  # Specifies whether a service account should be created
-  create: false
-  # Annotations to add to the service account
-  annotations: {}
-  # The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
-  name: ""
-
-podAnnotations: {}
-
-podSecurityContext: {}
-  # fsGroup: 2000
-
-securityContext:
-  allowPrivilegeEscalation: false
-  capabilities:
-    drop:
-    - ALL
-  runAsNonRoot: true
-  seccompProfile:
-    type: RuntimeDefault
-    
-
+# configMaps:
+#   config:
+#     enabled: true
+#     data:
+#       mosquitto.conf: |
+#         per_listener_settings false
+#         allow_anonymous false
+#         persistence true
+#         persistence_location /mosquitto/data
+#         autosave_interval 1800
+#         include_dir /mosquitto/configinc
+#         password_file /mosquitto/configinc/passwordfile
+#         listener 1883
+#         protocol mqtt
+#         listener 8083
+#         protocol websockets
 service:
-  type: ClusterIP
-  port: 8080
-  propeport: 9080
-  annotations: {}
-  labels: {}
+  main:
+    ports:
+      http:
+        port: 8080
+      liveness-port:
+        port: 9080
 
 ingress:
-  enabled: true
-  ingressClassName: nginx
-  className: nginx
-  annotations:
-    external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
-  labels: {}
-  path: /
-  pathType: Prefix
-  extraPaths: []
-  hosts:
-    - host: ok.impl.nl
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
-    - host: ip.impl.nl
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
-    - host: time.impl.nl
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
-  tls: {}
+  main:
+    enabled: true
+    className: nginx
+    annotations:
+      external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
 
-resources:
-  limits:
-    cpu: 100m
-    memory: 64Mi
-  requests:
-    cpu: 100m
-    memory: 64Mi
-
-autoscaling:
-  enabled: false
-
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
+    hosts:
+      - host: ok.impl.nl
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            service:
+              name: main
+      - host: ip.impl.nl
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            service:
+              name: main
+      - host: time.impl.nl
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            service:
+              name: main
+    tls: {}
+# persistence:
+#   configinc:
+#     type: persistentVolumeClaim
+#     existingClaim: mosquitto-inc-v2-pvc
+#     globalMounts:
+#       - path: /mosquitto/configinc
+#   data:
+#     type: persistentVolumeClaim
+#     existingClaim: mosquitto-data-pvc
+#     globalMounts:
+#       - path: /mosquitto/data
+#   config:
+#     enabled: true
+#     type: configMap
+#     name: mosquitto-config
+#     globalMounts:
+#       - path: /mosquitto/config/mosquitto.conf
+#         subPath: mosquitto.conf

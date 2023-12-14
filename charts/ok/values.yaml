@@ -48,6 +48,8 @@ service:
     ports:
       http:
         port: 8080
+      liveness-port:
+        port: 9080
 
 ingress:
   main:

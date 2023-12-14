@@ -1,0 +1,4 @@
+#!//bin/sh
+
+for i in `kubectl get pv -o json    | jq -r '.items[] | select (.spec.storageClassName=="impl-default")' | jq -r .metadata.name` ; do kubectl mayastor scale volume ${i:4} $1 ; done
+

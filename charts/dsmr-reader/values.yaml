@@ -11,13 +11,6 @@ controllers:
           repository: ghcr.io/xirixiz/dsmr-reader-docker
           pullPolicy: IfNotPresent
           tag: 5.10.3-2023.04.02
-        probes:
-          liveness:
-            enabled: true
-          readiness:
-            enabled: true
-          startup:
-            enabled: true
         env:
           # TZ: Europe/Amsterdam
           VIRTUAL_HOST: localhost

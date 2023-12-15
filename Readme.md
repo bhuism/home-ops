@@ -47,6 +47,7 @@
 
 ### Todo
 
+- cloudnative-pg (dsmr reader)
 - [Paperless](https://github.com/paperless-ngx/paperless-ngx)
 - Fix test
 - Remove secretos

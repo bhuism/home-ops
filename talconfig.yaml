@@ -1,6 +1,6 @@
 clusterName: impl-k8s
-talosVersion: v1.5.5
-kubernetesVersion: v1.28.3
+talosVersion: v1.6.0
+kubernetesVersion: v1.29.0
 endpoint: https://control.impl.nl:6443
 allowSchedulingOnMasters: true
 additionalMachineCertSans:
@@ -68,13 +68,10 @@ nodes:
     installDisk: /dev/mmcblk0
     patches:
       - |-
-        - op: add
-          path: /machine/sysctls
-          value:
+        machine:
+          sysctls:
             vm.nr_hugepages: "1024"
-        - op: add
-          path: /machine/nodeLabels
-          value:
+          nodeLabels:
             mayastorage.impl.nl: true
             openebs.io/engine: mayastor
   - hostname: node2
@@ -97,9 +94,9 @@ nodes:
           value:
               vm.nr_hugepages: "1024"
   - hostname: node4
-    ipAddress: 192.168.1.156
+    ipAddress: 192.168.1.160
     controlPlane: true
-    installDisk: /dev/mmcblk0
+    installDisk: /dev/nvme0n1
   - hostname: node5
     ipAddress: 192.168.1.113
     controlPlane: false
@@ -108,16 +105,24 @@ nodes:
     ipAddress: 192.168.1.182
     controlPlane: false
     installDisk: /dev/mmcblk0
+    kernelModules:   
+      - name: rockchip-cpufreq
   - hostname: node7
     ipAddress: 192.168.1.197
     controlPlane: false
     installDisk: /dev/mmcblk0
+    kernelModules:   
+      - name: rockchip-cpufreq
   - hostname: node8
     ipAddress: 192.168.1.196
     controlPlane: false
     installDisk: /dev/mmcblk0
+    kernelModules:   
+      - name: rockchip-cpufreq
   - hostname: node9
     ipAddress: 192.168.1.183
     controlPlane: false
     installDisk: /dev/mmcblk0
+    kernelModules:   
+      - name: rockchip-cpufreq
     

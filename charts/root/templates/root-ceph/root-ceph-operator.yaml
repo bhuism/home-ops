@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-ceph
+  name: rook-ceph
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: root-ceph
+    namespace: rook-ceph
   project: default
   source:
     chart: rook-ceph

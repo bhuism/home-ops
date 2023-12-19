@@ -16,7 +16,7 @@ spec:
     helm:
       values: |
         monitoring:
-          enabled: true
+          enabled: false
           createPrometheusRules: false
         ingress:
           dashboard:

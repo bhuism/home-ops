@@ -84,14 +84,15 @@ spec:
                         - key: node-role.kubernetes.io/control-plane
                           operator: Exists
         cephBlockPools:
-          - spec:
+          - name: ceph-blockpool
+            spec:
               failureDomain: host
               replicated:
                 size: 1
                 requireSafeReplicaSize: false
             storageClass:
-              enabled: true
-              name: ceph-block
+              # enabled: true
+              # name: ceph-block
               # isDefault: true
               reclaimPolicy: Retain
               # allowVolumeExpansion: true

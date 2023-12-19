@@ -33,11 +33,12 @@ spec:
         #   # bdev_async_discard = true
         #   # osd_class_update_on_start = false
         cephClusterSpec:
-          # mon:
-          #   count: 1
+          image: quay.io/ceph/ceph:v18
+          mon:
+            count: 1
           #   allowMultiplePerNode: true
-          # mgr:
-          #   count: 1
+          mgr:
+            count: 1
           #   allowMultiplePerNode: true
           # cephVersion:
           #   image: quay.io/ceph/ceph:v18.2.1

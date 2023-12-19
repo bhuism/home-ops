@@ -15,14 +15,14 @@ spec:
     targetRevision: v1.13.0
     helm:
       values: |
-        # ingress:
-        #   dashboard:
-        #     annotations:
-        #       external-dns.alpha.kubernetes.io/target: ingress.impl.nl
-        #       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+        ingress:
+          dashboard:
+            annotations:
+              external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+              external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
         #       cert-manager.io/cluster-issuer: letsencrypt-production
-        #     hosts:
-        #       name: root.impl.nl
+            hosts:
+              name: root.impl.nl
         #     tls:
         #       - secretName: root.impl.nl
         #         hosts:
@@ -53,7 +53,7 @@ spec:
           dashboard:
             enabled: true
             urlPrefix: /
-            # ssl: false
+            ssl: false
           removeOSDsIfOutAndSafeToRemove: true
           storage:
             useAllNodes: false

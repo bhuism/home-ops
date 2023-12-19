@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rook-ceph
+  name: rook-ceph-operator
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:

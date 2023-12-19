@@ -39,7 +39,7 @@ spec:
         persistence:
           config:
             enabled: true
-            existingClaim: home-assistant-v2-pvc
+            existingClaim: home-assistant-v3-pvc
         addons:
           codeserver:
             enabled: true

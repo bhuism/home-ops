@@ -27,11 +27,11 @@ spec:
         #       - secretName: root.impl.nl
         #         hosts:
         #           - root.impl.nl
-        configOverride: |
-          [global]
-          bdev_enable_discard = true
-          bdev_async_discard = true
-          osd_class_update_on_start = false
+        # configOverride: |
+        #   # [global]
+        #   # bdev_enable_discard = true
+        #   # bdev_async_discard = true
+        #   # osd_class_update_on_start = false
         cephClusterSpec:
           mon:
             count: 1

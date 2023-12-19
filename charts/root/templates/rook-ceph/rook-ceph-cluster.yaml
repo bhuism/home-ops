@@ -17,6 +17,9 @@ spec:
       values: |
         toolbox:
           enabled: true
+        configOverride: |
+          [global]
+          osd_pool_default_size = 2
         monitoring:
           enabled: true
         cephClusterSpec:

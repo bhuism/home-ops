@@ -16,7 +16,7 @@ spec:
     helm:
       values: |
         monitoring:
-          enabled: false
+          enabled: true
           createPrometheusRules: false
         ingress:
           dashboard:
@@ -60,8 +60,6 @@ spec:
           storage:
             useAllNodes: false
             useAllDevices: false
-            config:
-              osdsPerDevice: "1"
             nodes:
               - name: node6
                 devices:
@@ -94,6 +92,11 @@ spec:
                 - key: "node.kubernetes.io/unschedulable"
                   operator: "Exists"
                   effect: "NoSchedule"
+        cephFileSystems: {}
+        cephBlockPoolsVolumeSnapshotClass:
+          enabled: false
+        cephFileSystemVolumeSnapshotClass:
+          enabled: false
         cephBlockPools:
           - name: ceph-blockpool
             spec:
@@ -117,6 +120,7 @@ spec:
               #   csi.storage.k8s.io/node-stage-secret-name: rook-csi-rbd-node
               #   csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph
               #   csi.storage.k8s.io/fstype: ext4
+        cephObjectStores: {}
   syncPolicy:
     automated:
       prune: true

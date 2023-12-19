@@ -15,14 +15,13 @@ spec:
     targetRevision: v1.13.0
     helm:
       values: |
-        ingress:
-          dashboard:
-            annotations:
-              external-dns.alpha.kubernetes.io/target: ingress.impl.nl
-              external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-        #       cert-manager.io/cluster-issuer: letsencrypt-production
-            hosts:
-              name: root.impl.nl
+        # ingress:
+        #   dashboard:
+        #     annotations:
+        #       external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+        #       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+        #     hosts:
+        #       name: root.impl.nl
         #     tls:
         #       - secretName: root.impl.nl
         #         hosts:
@@ -32,15 +31,17 @@ spec:
         #   # bdev_enable_discard = true
         #   # bdev_async_discard = true
         #   # osd_class_update_on_start = false
+        monitoring:
+          enabled: true
         cephClusterSpec:
           cephVersion:
             image: quay.io/ceph/ceph:v18
-          mon:
-            count: 1
-          #   allowMultiplePerNode: true
-          mgr:
-            count: 1
-          #   allowMultiplePerNode: true
+          # mon:
+          #   count: 3
+          #   allowMultiplePerNode: false
+          # mgr:
+          #   count: 2
+          #   allowMultiplePerNode: false
           # cephVersion:
           #   image: quay.io/ceph/ceph:v18.2.1
           # network:

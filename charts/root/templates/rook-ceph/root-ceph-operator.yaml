@@ -16,10 +16,6 @@ spec:
     helm:
       values: |
         currentNamespaceOnly: true
-        # csi:
-        #   cephFSKernelMountOptions: ms_mode=prefer-crc
-        #   enableGrpcMetrics: true
-        #   enableLiveness: true
         csi:
           enableGrpcMetrics: true
           enableLiveness: true
@@ -28,7 +24,6 @@ spec:
           enableCephfsDriver: false
           enableCephfsSnapshotter: false
           enableNFSSnapshotter: false
-          
         monitoring:
           enabled: true
         resources:

@@ -15,6 +15,7 @@ spec:
     targetRevision: v1.13.0
     helm:
       values: |
+        currentNamespaceOnly: true
         csi:
           cephFSKernelMountOptions: ms_mode=prefer-crc
           enableGrpcMetrics: true
@@ -26,6 +27,7 @@ spec:
           requests:
             cpu: 100m
             memory: 128Mi
+
 
   syncPolicy:
     automated:

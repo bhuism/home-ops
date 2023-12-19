@@ -19,9 +19,9 @@ spec:
           enabled: true
         cephClusterSpec:
           mon:
-            count: 1
+            count: 3
           mgr:
-            count: 1
+            count: 2
           dashboard:
             enabled: true
             urlPrefix: /

@@ -38,8 +38,10 @@ spec:
         cephClusterSpec:
           mon:
             count: 1
+            allowMultiplePerNode: true
           mgr:
             count: 1
+            allowMultiplePerNode: true
           # cephVersion:
           #   image: quay.io/ceph/ceph:v18.2.1
           # network:

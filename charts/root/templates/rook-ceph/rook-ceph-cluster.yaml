@@ -15,9 +15,6 @@ spec:
     targetRevision: v1.13.0
     helm:
       values: |
-        monitoring:
-          enabled: true
-          createPrometheusRules: false
         ingress:
           dashboard:
             annotations:

@@ -17,7 +17,7 @@ spec:
       values: |
         monitoring:
           enabled: true
-          createPrometheusRules: true
+          createPrometheusRules: false
         ingress:
           dashboard:
             ingressClassName: nginx

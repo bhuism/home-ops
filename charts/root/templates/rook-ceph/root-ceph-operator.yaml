@@ -26,6 +26,9 @@ spec:
           serviceMonitor:
             enabled: true
           enableCephfsDriver: false
+          enableCephfsSnapshotter: false
+          enableNFSSnapshotter: false
+          
         monitoring:
           enabled: true
         resources:

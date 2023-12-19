@@ -16,8 +16,6 @@ spec:
     helm:
       values: |
         currentNamespaceOnly: true
-        global:
-          osd_pool_default_size: 2
         csi:
           enableGrpcMetrics: true
           enableLiveness: true

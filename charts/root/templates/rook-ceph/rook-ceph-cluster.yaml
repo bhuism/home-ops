@@ -16,17 +16,13 @@ spec:
     helm:
       values: |
         monitoring:
-          enabled: true
+          enabled: false
         cephClusterSpec:
-          mon:
-            count: 3
-          mgr:
-            count: 2
           dashboard:
             enabled: true
             urlPrefix: /
             ssl: false
-          removeOSDsIfOutAndSafeToRemove: true
+          # removeOSDsIfOutAndSafeToRemove: true
           storage:
             useAllNodes: false
             useAllDevices: false
@@ -39,29 +35,29 @@ spec:
                   - name: /dev/disk/by-id/nvme-ADATA_SX8200PNP_2L2029Q18GKY
           crashCollector:
             disable: true
-          placement:
-            mgr:
-              nodeAffinity:
-                requiredDuringSchedulingIgnoredDuringExecution:
-                  nodeSelectorTerms:
-                    - matchExpressions:
-                        - key: node-role.kubernetes.io/control-plane
-                          operator: Exists
-              tolerations:
-                - key: "node.kubernetes.io/unschedulable"
-                  operator: "Exists"
-                  effect: "NoSchedule"
-            mon:
-              nodeAffinity:
-                requiredDuringSchedulingIgnoredDuringExecution:
-                  nodeSelectorTerms:
-                    - matchExpressions:
-                        - key: node-role.kubernetes.io/control-plane
-                          operator: Exists
-              tolerations:
-                - key: "node.kubernetes.io/unschedulable"
-                  operator: "Exists"
-                  effect: "NoSchedule"
+          # placement:
+          #   mgr:
+          #     nodeAffinity:
+          #       requiredDuringSchedulingIgnoredDuringExecution:
+          #         nodeSelectorTerms:
+          #           - matchExpressions:
+          #               - key: node-role.kubernetes.io/control-plane
+          #                 operator: Exists
+          #     tolerations:
+          #       - key: "node.kubernetes.io/unschedulable"
+          #         operator: "Exists"
+          #         effect: "NoSchedule"
+          #   mon:
+          #     nodeAffinity:
+          #       requiredDuringSchedulingIgnoredDuringExecution:
+          #         nodeSelectorTerms:
+          #           - matchExpressions:
+          #               - key: node-role.kubernetes.io/control-plane
+          #                 operator: Exists
+          #     tolerations:
+          #       - key: "node.kubernetes.io/unschedulable"
+          #         operator: "Exists"
+          #         effect: "NoSchedule"
         cephFileSystems: {}
         cephBlockPoolsVolumeSnapshotClass:
           enabled: false

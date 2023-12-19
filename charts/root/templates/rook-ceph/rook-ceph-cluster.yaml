@@ -36,8 +36,10 @@ spec:
           bdev_async_discard = true
           osd_class_update_on_start = false
         cephClusterSpec:
-          crashCollector:
-            disable: true
+          mon:
+            count: 1
+          mgr:
+            count: 1
           # cephVersion:
           #   image: quay.io/ceph/ceph:v18.2.1
           # network:
@@ -65,21 +67,31 @@ spec:
               - name: node8
                 devices:
                   - name: /dev/disk/by-id/nvme-ADATA_SX8200PNP_2L2029Q18GKY
-          # placement:
-          #   mgr:
-          #     nodeAffinity:
-          #       requiredDuringSchedulingIgnoredDuringExecution:
-          #         nodeSelectorTerms:
-          #           - matchExpressions:
-          #               - key: node-role.kubernetes.io/control-plane
-          #                 operator: Exists
-          #   mon:
-          #     nodeAffinity:
-          #       requiredDuringSchedulingIgnoredDuringExecution:
-          #         nodeSelectorTerms:
-          #           - matchExpressions:
-          #               - key: node-role.kubernetes.io/control-plane
-          #                 operator: Exists
+          crashCollector:
+            disable: true
+          placement:
+            mgr:
+              nodeAffinity:
+                requiredDuringSchedulingIgnoredDuringExecution:
+                  nodeSelectorTerms:
+                    - matchExpressions:
+                        - key: node-role.kubernetes.io/control-plane
+                          operator: Exists
+              tolerations:
+                - key: "node.kubernetes.io/unschedulable"
+                  operator: "Exists"
+                  effect: "NoSchedule"
+            mon:
+              nodeAffinity:
+                requiredDuringSchedulingIgnoredDuringExecution:
+                  nodeSelectorTerms:
+                    - matchExpressions:
+                        - key: node-role.kubernetes.io/control-plane
+                          operator: Exists
+              tolerations:
+                - key: "node.kubernetes.io/unschedulable"
+                  operator: "Exists"
+                  effect: "NoSchedule"
         cephBlockPools:
           - name: ceph-blockpool
             spec:

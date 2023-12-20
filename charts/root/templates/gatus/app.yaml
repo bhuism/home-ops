@@ -108,7 +108,7 @@ spec:
                 - "[RESPONSE_TIME] < 5000"
         persistence:
           enabled: true
-          existingClaim: gatus-pvc
+          existingClaim: gatus-v2-pvc
         serviceMonitor:
           enabled: true          
   syncPolicy:

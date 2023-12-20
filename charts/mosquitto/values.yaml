@@ -67,7 +67,7 @@ persistence:
       - path: /mosquitto/configinc
   data:
     type: persistentVolumeClaim
-    existingClaim: mosquitto-data-pvc
+    existingClaim: mosquitto-data-v2-pvc
     globalMounts:
       - path: /mosquitto/data
   config:

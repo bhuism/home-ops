@@ -67,9 +67,19 @@ spec:
                 editable: true
                 options:
                   path: /var/lib/grafana/dashboards/volumes
+              - name: 'ceph'
+                orgId: 1
+                folder: 'Bassie'
+                type: file
+                disableDeletion: true
+                allowUiUpdates: true
+                editable: true
+                options:
+                  path: /var/lib/grafana/dashboards/ceph
           dashboardsConfigMaps:
             electricity: {{ .Release.Name }}-electricity
             volumes: {{ .Release.Name }}-volumes
+            ceph: {{ .Release.Name }}-ceph
 
           # dashboards:
           #   default:

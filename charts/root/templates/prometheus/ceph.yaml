@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-ceph
+  namespace: prometheus
+data:
+  ceph.json: |-
+    {{- .Files.Get "files/ceph.json" | nindent 4 }}

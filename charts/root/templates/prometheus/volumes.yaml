@@ -4,5 +4,5 @@ metadata:
   name: {{ .Release.Name }}-volumes
   namespace: prometheus
 data:
-  electricity.json: |-
+  volumes.json: |-
     {{- .Files.Get "files/volumes.json" | nindent 4 }}

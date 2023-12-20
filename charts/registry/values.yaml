@@ -63,7 +63,7 @@ ingress:
 persistence:
   data:
     type: persistentVolumeClaim
-    existingClaim: registry-pvc
+    existingClaim: registry-v2-pvc
     globalMounts:
       - path: /var/lib/registry
         subpath: registry

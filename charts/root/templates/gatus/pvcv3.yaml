@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: registry-pvc
-  namespace: registry
+  name: gatus-v3-pvc
+  namespace: gatus
 spec:
   volumeMode: Filesystem
   resources:
     requests:
-      storage: 10Gi
+      storage: 1Gi
   accessModes:
     - ReadWriteOnce
-  storageClassName: impl-default
+  storageClassName: ceph-block

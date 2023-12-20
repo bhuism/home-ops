@@ -20,7 +20,7 @@ spec:
         config:
           reporting_disabled: true
         persistence:
-          existingClaim: influx-pvc
+          existingClaim: influx-v2-pvc
         setDefaultUser:
           enabled: true
           user:

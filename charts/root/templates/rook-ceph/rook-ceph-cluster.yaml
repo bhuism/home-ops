@@ -77,7 +77,7 @@ spec:
             storageClass:
               enabled: true
               name: ceph-block
-              isDefault: false
+              isDefault: true
               reclaimPolicy: Retain
               allowVolumeExpansion: true
               parameters:

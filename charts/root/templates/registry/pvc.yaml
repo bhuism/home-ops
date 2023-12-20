@@ -10,4 +10,4 @@ spec:
       storage: 10Gi
   accessModes:
     - ReadWriteOnce
-  storageClassName: impl-default
+  storageClassName: ceph-block

@@ -34,7 +34,7 @@
 - [WireGuard](https://www.wireguard.com/)
 - [Speedtest Exporter](https://github.com/MiguelNdeCarvalho/speedtest-exporter)
 - ~~[Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)~~
-- [Mayastor](https://mayastor.gitbook.io/)
+- ~~[Mayastor](https://mayastor.gitbook.io/)~~
 - [Home Asistant](https://www.home-assistant.io/)
 - [InfluxDB](https://www.influxdata.com/)
 - [InfluxDB2](https://www.influxdata.com/)
@@ -44,10 +44,10 @@
 - [Registry](https://docs.docker.com/registry/)
 - [Mosquitto](https://mosquitto.org/)
 - [Nut](https://networkupstools.org/)
+- Rook-Ceph
 
 ### Todo
 
-- Rook-Ceph
 - cloudnative-pg (dsmr reader)
 - [Paperless](https://github.com/paperless-ngx/paperless-ngx)
 - Fix test

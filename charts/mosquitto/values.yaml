@@ -62,7 +62,7 @@ ingress:
 persistence:
   configinc:
     type: persistentVolumeClaim
-    existingClaim: mosquitto-inc-v2-pvc
+    existingClaim: mosquitto-inc-v3-pvc
     globalMounts:
       - path: /mosquitto/configinc
   data:

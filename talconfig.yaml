@@ -36,21 +36,6 @@ additionalApiServerCertSans:
 patches:
   - |-
     - op: add
-      path: /machine/nodeLabels
-      value:
-        openebs.io/engine: mayastor
-    - op: add 
-      path: /machine/kubelet
-      value:
-        extraMounts:
-          - destination: /var/local/localpv-hostpath/mayastor/etcd
-            type: bind   
-            source: /var/local/localpv-hostpath/mayastor/etcd
-            options:
-            - rbind
-            - rshared
-            - rw         
-    - op: add
       path: /machine/features/kubePrism
       value:
         enabled: true
@@ -66,14 +51,6 @@ nodes:
     ipAddress: 192.168.1.153
     controlPlane: true
     installDisk: /dev/mmcblk0
-    patches:
-      - |-
-        machine:
-          sysctls:
-            vm.nr_hugepages: "1024"
-          nodeLabels:
-            mayastorage.impl.nl: true
-            openebs.io/engine: mayastor
   - hostname: node2
     ipAddress: 192.168.1.154
     controlPlane: false
@@ -82,17 +59,6 @@ nodes:
     ipAddress: 192.168.1.155
     controlPlane: true
     installDisk: /dev/mmcblk0
-    patches:
-      - |-
-        - op: add
-          path: /machine/nodeLabels
-          value:
-              mayastorage.impl.nl: true
-              openebs.io/engine: mayastor
-        - op: add
-          path: /machine/sysctls
-          value:
-              vm.nr_hugepages: "1024"
   - hostname: node4
     ipAddress: 192.168.1.160
     controlPlane: true

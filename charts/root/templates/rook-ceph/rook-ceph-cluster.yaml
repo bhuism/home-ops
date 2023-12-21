@@ -46,9 +46,15 @@ spec:
                 - key: "node.kubernetes.io/unschedulable"
                   operator: "Exists"
                   effect: "NoSchedule"
+                - key: node-role.kubernetes.io/control-plane
+                  operator: "Exists"
+                  effect: "NoSchedule"
             mon:
               tolerations:
                 - key: "node.kubernetes.io/unschedulable"
+                  operator: "Exists"
+                  effect: "NoSchedule"
+                - key: node-role.kubernetes.io/control-plane
                   operator: "Exists"
                   effect: "NoSchedule"
         cephFileSystems: {}

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+for i in $(kubectl get nodes -o wide --no-headers -o custom-columns=Name:.status.addresses[0].address) ; do talosctl  -n $i mounts | grep "/var$" ; done

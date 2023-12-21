@@ -40,29 +40,17 @@ spec:
                   - name: /dev/disk/by-id/nvme-ADATA_SX8200PNP_2L2029Q18GKY
           crashCollector:
             disable: true
-          # placement:
-          #   mgr:
-          #     nodeAffinity:
-          #       requiredDuringSchedulingIgnoredDuringExecution:
-          #         nodeSelectorTerms:
-          #           - matchExpressions:
-          #               - key: node-role.kubernetes.io/control-plane
-          #                 operator: Exists
-          #     tolerations:
-          #       - key: "node.kubernetes.io/unschedulable"
-          #         operator: "Exists"
-          #         effect: "NoSchedule"
-          #   mon:
-          #     nodeAffinity:
-          #       requiredDuringSchedulingIgnoredDuringExecution:
-          #         nodeSelectorTerms:
-          #           - matchExpressions:
-          #               - key: node-role.kubernetes.io/control-plane
-          #                 operator: Exists
-          #     tolerations:
-          #       - key: "node.kubernetes.io/unschedulable"
-          #         operator: "Exists"
-          #         effect: "NoSchedule"
+          placement:
+            mgr:
+              tolerations:
+                - key: "node.kubernetes.io/unschedulable"
+                  operator: "Exists"
+                  effect: "NoSchedule"
+            mon:
+              tolerations:
+                - key: "node.kubernetes.io/unschedulable"
+                  operator: "Exists"
+                  effect: "NoSchedule"
         cephFileSystems: {}
         cephBlockPoolsVolumeSnapshotClass:
           enabled: false

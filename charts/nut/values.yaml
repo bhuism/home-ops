@@ -8,6 +8,14 @@ defaultPodOptions:
     - key: node-role.kubernetes.io/control-plane
       operator: "Exists"
       effect: "NoSchedule"
+
+service:
+  main:
+    ports:
+      http:
+        port: 3493
+
+
 controllers:
   main:
     type: statefulset
@@ -30,9 +38,4 @@ controllers:
           privileged: true
 
 
-service:
-  main:
-    ports:
-      http:
-        port: 3493
 

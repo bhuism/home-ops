@@ -15,17 +15,17 @@ spec:
     targetRevision: v1.13.1
     helm:
       values: |
-        toolbox:
-          enabled: true
-          affinity:
-            nodeAffinity:
-              requiredDuringSchedulingIgnoredDuringExecution:
-                nodeSelectorTerms:
-                - matchExpressions:
-                  - key: name
-                    operator: In
-                    values:
-                    - node6
+        # toolbox:
+        #   enabled: true
+        #   affinity:
+        #     nodeAffinity:
+        #       requiredDuringSchedulingIgnoredDuringExecution:
+        #         nodeSelectorTerms:
+        #         - matchExpressions:
+        #           - key: name
+        #             operator: In
+        #             values:
+        #             - node6
         configOverride: |
           [global]
           osd_pool_default_size = 2

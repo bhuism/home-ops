@@ -20,6 +20,8 @@ spec:
         configOverride: |
           [global]
           osd_pool_default_size = 2
+          [mon]
+          mon_data_avail_warn = 20
         monitoring:
           enabled: true
         cephClusterSpec:

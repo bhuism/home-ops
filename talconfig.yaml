@@ -60,7 +60,7 @@ nodes:
     controlPlane: true
     installDisk: /dev/mmcblk0
   - hostname: node4
-    ipAddress: 192.168.1.160
+    ipAddress: 192.168.1.161
     controlPlane: true
     installDisk: /dev/nvme0n1
   - hostname: node5

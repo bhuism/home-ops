@@ -15,8 +15,8 @@ spec:
     targetRevision: v1.13.1
     helm:
       values: |
-        # toolbox:
-        #   enabled: true
+        toolbox:
+          enabled: true
         #   affinity:
         #     nodeAffinity:
         #       requiredDuringSchedulingIgnoredDuringExecution:

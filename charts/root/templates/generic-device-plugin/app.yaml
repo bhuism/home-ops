@@ -17,6 +17,15 @@ spec:
       values: |
         env:
           TZ: "Europe/Amsterdam"
+
+        tolerations:
+          - key: "node.kubernetes.io/unschedulable"
+            operator: "Exists"
+            effect: "NoSchedule"
+          - key: node-role.kubernetes.io/control-plane
+            operator: "Exists"
+            effect: "NoSchedule"
+
         config:
           data: |
             devices:

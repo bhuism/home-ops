@@ -1,6 +1,10 @@
 defaultPodOptions:
   nodeSelector:
     kubernetes.io/hostname: node2
+  tolerations:
+    - key: "node.kubernetes.io/unschedulable"
+      operator: "Exists"
+      effect: "NoSchedule"
 
 controllers:
   main:

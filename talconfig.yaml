@@ -1,8 +1,8 @@
 clusterName: impl-k8s
-talosVersion: v1.6.0
-kubernetesVersion: v1.29.0
+talosVersion: v1.5.5
+kubernetesVersion: v1.28.3
 endpoint: https://control.impl.nl:6443
-allowSchedulingOnMasters: true
+allowSchedulingOnMasters: false
 additionalMachineCertSans:
   - 192.168.1.11
   - 192.168.1.153
@@ -51,9 +51,9 @@ nodes:
     ipAddress: 192.168.1.153
     controlPlane: true
     installDisk: /dev/mmcblk0
-  - hostname: node2
-    ipAddress: 192.168.1.154
-    controlPlane: false
+  - hostname: node5
+    ipAddress: 192.168.1.110
+    controlPlane: true
     installDisk: /dev/mmcblk0
   - hostname: node3
     ipAddress: 192.168.1.155
@@ -61,12 +61,8 @@ nodes:
     installDisk: /dev/mmcblk0
   - hostname: node4
     ipAddress: 192.168.1.161
-    controlPlane: true
-    installDisk: /dev/nvme0n1
-  - hostname: node5
-    ipAddress: 192.168.1.113
     controlPlane: false
-    installDisk: /dev/sda
+    installDisk: /dev/nvme0n1
   - hostname: node6
     ipAddress: 192.168.1.182
     controlPlane: false

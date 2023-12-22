@@ -17,15 +17,6 @@ spec:
       values: |
         toolbox:
           enabled: true
-        #   affinity:
-        #     nodeAffinity:
-        #       requiredDuringSchedulingIgnoredDuringExecution:
-        #         nodeSelectorTerms:
-        #         - matchExpressions:
-        #           - key: name
-        #             operator: In
-        #             values:
-        #             - node6
         configOverride: |
           [global]
           osd_pool_default_size = 2

@@ -43,9 +43,15 @@ spec:
             useAllNodes: false
             useAllDevices: false
             nodes:
-              - name: node6
+              # - name: node6
+              #   devices:
+              #     - name: /dev/disk/by-id/nvme-ADATA_SX8200PNP_2L232LQQB4RP
+              - name: node1
                 devices:
-                  - name: /dev/disk/by-id/nvme-ADATA_SX8200PNP_2L232LQQB4RP
+                  -name: /dev/disk/by-id/nvme-TS512GMTE400S_I152110465
+              - name: node3
+                devices:
+                  -name: /dev/disk/by-id/nvme-TS512GMTE400S_H908310130 
               - name: node8
                 devices:
                   - name: /dev/disk/by-id/nvme-ADATA_SX8200PNP_2L2029Q18GKY

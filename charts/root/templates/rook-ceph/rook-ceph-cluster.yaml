@@ -38,7 +38,6 @@ spec:
             enabled: true
             urlPrefix: /
             ssl: false
-          removeOSDsIfOutAndSafeToRemove: true
           storage:
             useAllNodes: false
             useAllDevices: false

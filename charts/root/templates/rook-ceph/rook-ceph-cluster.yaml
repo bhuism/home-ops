@@ -45,7 +45,7 @@ spec:
           crashCollector:
             disable: true
           placement:
-            all:
+            osd:
               tolerations:
                 - key: "node.kubernetes.io/unschedulable"
                   operator: "Exists"
@@ -53,14 +53,22 @@ spec:
                 - key: node-role.kubernetes.io/control-plane
                   operator: "Exists"
                   effect: "NoSchedule"
-            # mon:
-            #   tolerations:
-            #     - key: "node.kubernetes.io/unschedulable"
-            #       operator: "Exists"
-            #       effect: "NoSchedule"
-            #     - key: node-role.kubernetes.io/control-plane
-            #       operator: "Exists"
-            #       effect: "NoSchedule"
+            mon:
+              tolerations:
+                - key: "node.kubernetes.io/unschedulable"
+                  operator: "Exists"
+                  effect: "NoSchedule"
+                - key: node-role.kubernetes.io/control-plane
+                  operator: "Exists"
+                  effect: "NoSchedule"
+            mgr:
+              tolerations:
+                - key: "node.kubernetes.io/unschedulable"
+                  operator: "Exists"
+                  effect: "NoSchedule"
+                - key: node-role.kubernetes.io/control-plane
+                  operator: "Exists"
+                  effect: "NoSchedule"
         cephFileSystems: {}
         cephBlockPoolsVolumeSnapshotClass:
           enabled: false
@@ -69,7 +77,6 @@ spec:
         cephBlockPools:
           - name: ceph-blockpool
             spec:
-              failureDomain: host
               replicated:
                 size: 1
             storageClass:

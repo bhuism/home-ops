@@ -25,6 +25,8 @@ spec:
         monitoring:
           enabled: true
         cephClusterSpec:
+          mon:
+            count: 5
           dashboard:
             enabled: true
             urlPrefix: /

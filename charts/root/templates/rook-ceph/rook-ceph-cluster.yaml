@@ -24,6 +24,32 @@ spec:
           mon_data_avail_warn = 20
         monitoring:
           enabled: true
+        ingress:
+          dashboard:
+            ingressClassName: nginx
+            annotations:
+              external-dns.alpha.kubernetes.io/hostname: rook-ceph-cluster-dashboard.impl.nl
+              external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+              external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+            host:
+              name: rook-ceph-cluster-dashboard.impl.nl
+            #   # path: "/ceph-dashboard(/|$)(.*)"
+            # tls:
+            # - hosts:
+            #     - dashboard.example.com
+            #   secretName: testsecret-tls
+            # # Note: Only one of ingress class annotation or the `ingressClassName:` can be used at a time
+            # # to set the ingress class
+            
+
+
+            # hosts:
+            #   - host: home-assistant.impl.nl
+            #     paths:
+            #       - path: /
+
+
+
         cephClusterSpec:
           mon:
             count: 5

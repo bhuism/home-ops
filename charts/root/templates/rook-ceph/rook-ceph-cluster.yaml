@@ -67,9 +67,9 @@ spec:
               - name: node3
                 devices:
                   - name: /dev/disk/by-id/nvme-TS512GMTE400S_H908310130 
-              - name: node8
-                devices:
-                  - name: /dev/disk/by-id/nvme-ADATA_SX8200PNP_2L2029Q18GKY
+              # - name: node8
+              #   devices:
+              #     - name: /dev/disk/by-id/nvme-ADATA_SX8200PNP_2L2029Q18GKY
           crashCollector:
             disable: true
           placement:

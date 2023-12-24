@@ -54,6 +54,8 @@ spec:
           removeOSDsIfOutAndSafeToRemove: true
           mon:
             count: 5
+          mgr:
+            count: 1
           dashboard:
             enabled: true
             urlPrefix: /

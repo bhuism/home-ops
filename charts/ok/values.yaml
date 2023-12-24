@@ -25,24 +25,6 @@ controllers:
             cpu: 100m
             memory: 64Mi
 
-
-
-# configMaps:
-#   config:
-#     enabled: true
-#     data:
-#       mosquitto.conf: |
-#         per_listener_settings false
-#         allow_anonymous false
-#         persistence true
-#         persistence_location /mosquitto/data
-#         autosave_interval 1800
-#         include_dir /mosquitto/configinc
-#         password_file /mosquitto/configinc/passwordfile
-#         listener 1883
-#         protocol mqtt
-#         listener 8083
-#         protocol websockets
 service:
   main:
     ports:

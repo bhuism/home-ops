@@ -6,13 +6,11 @@ set -e
 # use insecure for first patch
 
 
-./talhelper validate talconfig
+talhelper validate talconfig
 rm -Rf clusterconfig
-./talhelper genconfig
+talhelper genconfig
 
-
-
-./talhelper gencommand apply
+talhelper gencommand apply
 
 
 #c=1

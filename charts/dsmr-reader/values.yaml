@@ -22,11 +22,14 @@ controllers:
           VIRTUAL_HOST: localhost
           DISABLE_NGINX_ACCESS_LOGS: true
           ENABLE_HTTP_AUTH: false
-          # DJANGO_TIME_ZONE: Europe/Amsterdam
-          DJANGO_DATABASE_ENGINE: "django.db.backends.mysql"
+          # DJANGO_DATABASE_ENGINE: "django.db.backends.mysql"
+          DJANGO_DATABASE_ENGINE: "django.db.backends.postgresql"
           # DJANGO_DATABASE_HOST: mysql-headless.mysql
-          DJANGO_DATABASE_HOST: 192.168.1.12
-          DJANGO_DATABASE_USER: root
+          # DJANGO_DATABASE_HOST: 192.168.1.12
+          DJANGO_DATABASE_NAME: dsmr-reader
+          DJANGO_DATABASE_HOST: postgresql-rw.cloudnative-pg
+          # DJANGO_DATABASE_USER: root
+          DJANGO_DATABASE_USER: postgres
           DJANGO_DATABASE_PASSWORD: killer
           DJANGO_DATABASE_PORT: 3306
           DSMRREADER_ADMIN_USER: root

@@ -31,7 +31,7 @@ controllers:
           # DJANGO_DATABASE_USER: root
           DJANGO_DATABASE_USER: postgres
           DJANGO_DATABASE_PASSWORD: killer
-          DJANGO_DATABASE_PORT: 3306
+          DJANGO_DATABASE_PORT: 5432
           DSMRREADER_ADMIN_USER: root
           DSMRREADER_ADMIN_PASSWORD: killer
         resources:

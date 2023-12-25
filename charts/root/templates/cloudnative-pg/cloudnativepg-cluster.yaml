@@ -10,4 +10,4 @@ spec:
     size: 5Gi
   enableSuperuserAccess: true
   monitoring:
-    podMonitorEnabled: true
+    enablePodMonitor: true

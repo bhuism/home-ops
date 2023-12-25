@@ -29,8 +29,8 @@ controllers:
           DJANGO_DATABASE_NAME: dsmr-reader
           DJANGO_DATABASE_HOST: postgresql-rw.cloudnative-pg
           # DJANGO_DATABASE_USER: root
-          DJANGO_DATABASE_USER: postgres
-          DJANGO_DATABASE_PASSWORD: killer
+          DJANGO_DATABASE_USER: app
+          DJANGO_DATABASE_PASSWORD: fgriK6PbLqdT0BG97AvfnsMHFZq6FKKvn7S3bBm7fiFCkPsJSqXAS9MUaGXFo6Nu
           DJANGO_DATABASE_PORT: 5432
           DSMRREADER_ADMIN_USER: root
           DSMRREADER_ADMIN_PASSWORD: killer

@@ -13,10 +13,6 @@ spec:
     chart: cloudnative-pg
     repoURL: https://cloudnative-pg.github.io/charts
     targetRevision: 0.20.0
-    helm:
-      values: |
-        monitoring:
-          podMonitorEnabled: true
   syncPolicy:
     automated:
       prune: true

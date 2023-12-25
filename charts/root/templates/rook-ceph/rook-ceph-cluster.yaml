@@ -55,7 +55,7 @@ spec:
           mon:
             count: 5
           mgr:
-            count: 1
+            count: 2
           dashboard:
             enabled: true
             urlPrefix: /

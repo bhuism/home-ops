@@ -17,6 +17,10 @@ spec:
       values: |
         controller:
           replicaCount: 2
+          metrics:
+            enabled: true
+            serviceMonitor:
+              enabled: true
         defaultBackend:
           enabled: true
           name: defaultbackend

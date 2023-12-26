@@ -25,6 +25,7 @@ spec:
             pullPolicy: Always
             runAsNonRoot: true
             allowPrivilegeEscalation: false
+          replicaCount: 2
   syncPolicy:
     automated:
       prune: true

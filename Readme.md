@@ -46,6 +46,7 @@
 - Fix test
 - Remove secretos
 - [Prometheus](https://prometheus.io/) separate
+- [Node Exporter](https://github.com/prometheus/node_exporter)
 - [Grafana](https://grafana.com/) separate
 - [Uptime Kuma](https://github.com/louislam/uptime-kuma)
 - [Unifi Poller](https://unpoller.com/)

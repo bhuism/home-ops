@@ -38,13 +38,13 @@ spec:
             pathType: Prefix
             extraPaths: []
             hosts:
-              - host: hajimari.impl.nl
+              - host: www.impl.nl
                 paths:
                   - path: /
             tls:
-              - secretName: hajimari.impl.nl
+              - secretName: www.impl.nl
                 hosts:
-                  - hajimari.impl.nl
+                  - www.impl.nl
         persistence:
           data:
             enabled: true

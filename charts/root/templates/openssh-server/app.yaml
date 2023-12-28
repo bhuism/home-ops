@@ -25,10 +25,6 @@ spec:
           - traceroute
           - rsync
           - joe
-        persistence:
-          home:
-            enabled: true
-            storageClass: ceph-block
   syncPolicy:
     automated:
       prune: true

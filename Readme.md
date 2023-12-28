@@ -50,6 +50,10 @@
 - [Grafana](https://grafana.com/) separate
 - [Uptime Kuma](https://github.com/louislam/uptime-kuma)
 - [Unifi Poller](https://unpoller.com/)
+- [Shlink] 
+- [Node Access](https://github.com/christianknell/helm-charts/tree/main/charts/node-access)
+- [Popeye]
+- [Metrics Server](https://artifacthub.io/packages/helm/metrics-server/metrics-server)
 
 ### Done
 

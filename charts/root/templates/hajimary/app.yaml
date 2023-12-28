@@ -1,32 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hajimari
+  name: homer
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: hajimari
+    namespace: homer
   project: default
   source:
-    chart: hajimari
-    repoURL: https://hajimari.io
-    targetRevision: 2.0.2
+    chart: homer
+    repoURL: https://djjudas21.github.io/charts/
+    targetRevision: 8.1.9
     helm:
       values: |
         env:
           TZ: "Europe/Amsterdam"
-        hajimari:
-          defaultEnable: true
-          showAppUrls: false
-          showAppInfo: false
-          alwaysTargetBlank: true
-          namespaceSelector:
-            any: true
-          name: Bas
-          lightTheme: cab
-          darkTheme: lime
         ingress:
           main:
             enabled: true

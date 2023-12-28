@@ -12,7 +12,7 @@ spec:
   source:
     chart: skooner
     repoURL: https://christianknell.github.io/helm-charts
-    targetRevision: 1.0.1
+    targetRevision: 0.0.6
     helm:
       values: |
         ingress:

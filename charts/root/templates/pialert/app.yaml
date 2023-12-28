@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pialert
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: pialert
+  project: default
+  source:
+    chart: pialert
+    repoURL: https://charts.truecharts.org/
+    targetRevision: 3.0.8
+    helm:
+      values: |
+        pialert:
+          pihole:
+            pihole_active: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ServerSideApply=true

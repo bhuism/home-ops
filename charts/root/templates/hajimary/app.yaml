@@ -56,6 +56,13 @@ spec:
                 - name: "Second Page"
                   icon: "fas fa-file-alt"
                   url: "#page2"
+              services:
+                - name: "Pi-hole"
+                  logo: "assets/tools/sample.png"
+                  # subtitle: "Network-wide Ad Blocking" # optional, if no subtitle is defined, PiHole statistics will be shown
+                  url: "https://pihole.impl.nl/admin"
+                  apikey: "e16dcf7c10ef8be1f9e7c42660d3722c1244a45e976ce98a358296ada777bc0d"
+                  type: "PiHole"
 
   syncPolicy:
     automated:

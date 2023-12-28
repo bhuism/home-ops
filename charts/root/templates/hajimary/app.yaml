@@ -17,6 +17,7 @@ spec:
       values: |
         env:
           TZ: "Europe/Amsterdam"
+          IPV6_DISABLE: 1
         ingress:
           main:
             enabled: true

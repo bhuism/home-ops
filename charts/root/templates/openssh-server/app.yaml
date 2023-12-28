@@ -17,10 +17,7 @@ spec:
       values: |
         env:
           tz: "Europe/Amsterdam"
-          publicKey:
-            - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDuaxdZW5oYLM+fx9GL7z6grFlHE0kwQIXcD159vAmVgh4PqyqQT0vh7ulTgm/YFGu0nymbJJwuDnovxYi3G4pObNjGXK1F06mtYd6790FaYgPj3dS6FhWsd9KSTrEsm7uqrSFs6++Z4k38VpviUJnFd+uM4dEM+D2nV55eNnRZisrOYXOKy89Ks5YLFHDF3YMLxOe+c2fMxEfhNosF5QaVe3X2tjm1qPMsu015CIaL6HS/GYMtMTFbWeL8fFM63iaCUU5qSyxAjoY1+seWQHFgcMIgLvfZiOY4Gt0SDsYUriVGc98M7z8YEW3V8Ef33DTqIH6ut8klegarlL6GFVIr bhuism@elza
-            - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEApx159H8qKAoPkesRbYZUrOWkM6JjZmFBY6wLmbKFr6cij4GYiL5aiUQSmxR/ZO1qTJmpUiJ7Z+Cz0ArPMp6nkAdHNH445Kadfzbj/dPdcRU10+3zBU94olt7e96MBDThniZGhItUIV1iY6/F/3jpObzwucg0mcuT6bWNWqSMul+GumfzhFDx181WIHnd0akxQ0y5E726VBvFiFcyGbpApgGSz4K58OnamOEUbhIaHM0SsAAsL8+MAfR53VhdWHhPNepqJeyhw8zWgifDh+t+y9uYYEfNc76dlECI4y866f5xIBrDmvcZyK4lURE1ImJLO3fbtH+lAai5iuaqY5mrTw== bhuism@eleanor
-            - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+MieaK3sDbRvB/hxS5z/wLIaHv2MI9HywLLBpjoHs99657LMFoCO5OqF48OOjAGaNenzUilp2d84Y4LfKo2EeaQ/sQpil1xSEY5z9nIcPKauJ2ydJb90mHQcyuqHa3pkXe0R+frCYCDOz/lwNTXXeljlDJW0pf02J7KKpHIcCoSCdKoPv35DswemRycAuQ+5injAX4yHhpEr314553DTT3ShvQllnCubxkTl/lAWvrt7z4yeCii2iikxtXUUAQPqbl/eyU+VhAEH49kbL/oJ9FXC6nBd5UvRzZhGCPp/XZQJR63t8tc3MiKJA58gA6pukVik9p+4pknorPogGaqQAycO/1Tj3AYRHWZhZTF4Ey3jIzamz9T4JYh8ucmCBorM3ikSnWGk+h5+FQPcGpiyrxDKoWAwsW8/3pRYmbmqoRW1MCxrqSNBmDgw/uCPzUmD9XNr78ctLZpPImpH/tuH4p+neE7KBCzBSV/4DCsvEWZT+qEheWwC1Ie5Pzua62lk= bhuism@eva
+          publicKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+MieaK3sDbRvB/hxS5z/wLIaHv2MI9HywLLBpjoHs99657LMFoCO5OqF48OOjAGaNenzUilp2d84Y4LfKo2EeaQ/sQpil1xSEY5z9nIcPKauJ2ydJb90mHQcyuqHa3pkXe0R+frCYCDOz/lwNTXXeljlDJW0pf02J7KKpHIcCoSCdKoPv35DswemRycAuQ+5injAX4yHhpEr314553DTT3ShvQllnCubxkTl/lAWvrt7z4yeCii2iikxtXUUAQPqbl/eyU+VhAEH49kbL/oJ9FXC6nBd5UvRzZhGCPp/XZQJR63t8tc3MiKJA58gA6pukVik9p+4pknorPogGaqQAycO/1Tj3AYRHWZhZTF4Ey3jIzamz9T4JYh8ucmCBorM3ikSnWGk+h5+FQPcGpiyrxDKoWAwsW8/3pRYmbmqoRW1MCxrqSNBmDgw/uCPzUmD9XNr78ctLZpPImpH/tuH4p+neE7KBCzBSV/4DCsvEWZT+qEheWwC1Ie5Pzua62lk= bhuism@eva
           sudoAccess: true
           userName: bhuism
         service:

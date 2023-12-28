@@ -23,6 +23,11 @@ spec:
         packages:
           - nmap
           - traceroute
+          - rsync
+          - joe
+        persistence:
+          home:
+            enabled: true
   syncPolicy:
     automated:
       prune: true

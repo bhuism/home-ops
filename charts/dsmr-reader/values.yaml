@@ -1,6 +1,6 @@
 defaultPodOptions:
   nodeSelector:
-    kubernetes.io/hostname: node5
+    kubernetes.io/hostname: node9
   tolerations:
     - key: "node.kubernetes.io/unschedulable"
       operator: "Exists"

@@ -61,6 +61,12 @@ spec:
                     url: "https://pihole.impl.nl/admin"
                     apikey: "e16dcf7c10ef8be1f9e7c42660d3722c1244a45e976ce98a358296ada777bc0d"
                     type: "PiHole"
+                  - name: "Ping"
+                    type: Ping
+                    logo: "assets/tools/sample.png"
+                    url: "https://www.reddit.com/r/selfhosted/"
+                    method: "head"
+
   syncPolicy:
     automated:
       prune: true

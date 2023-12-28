@@ -28,6 +28,7 @@ spec:
         persistence:
           home:
             enabled: true
+            storageClass: ceph-block
   syncPolicy:
     automated:
       prune: true

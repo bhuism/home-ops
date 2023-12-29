@@ -70,9 +70,9 @@ spec:
               - name: node3
                 devices:
                   - name: /dev/disk/by-id/nvme-TS512GMTE400S_H908310130 
-              - name: node8
-                devices:
-                  - name: /dev/disk/by-id/nvme-TS256GMTE400S_H790500043
+              # - name: node8
+              #   devices:
+              #     - name: /dev/disk/by-id/nvme-TS256GMTE400S_H790500043
           crashCollector:
             disable: true
           placement:

@@ -26,8 +26,8 @@ spec:
             operator: "Exists"
             effect: "NoSchedule"
         
-        nodeSelector:
-          kubernetes.io/hostname: node7
+        # nodeSelector:
+        #   kubernetes.io/hostname: node7
 
         config:
           data: |
@@ -40,6 +40,10 @@ spec:
                 groups:
                   - paths:
                       - path: /dev/ttyUSB1
+              - name: zwavemodule
+                groups:
+                  - paths:
+                      - path: /dev/ttyS2
   syncPolicy:
     automated:
       prune: true

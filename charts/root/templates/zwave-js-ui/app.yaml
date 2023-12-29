@@ -50,8 +50,9 @@ spec:
           enabled: true
           existingClaim: zwave-js-ui-pvc
           
-
-
+        resources:
+          limits:
+            squat.ai/zwavemodule: 1
 
   syncPolicy:
     automated:

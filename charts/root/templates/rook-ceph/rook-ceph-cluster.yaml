@@ -64,9 +64,9 @@ spec:
             useAllNodes: false
             useAllDevices: false
             nodes:
-             - name: node1
-               devices:
-                 - name: /dev/disk/by-id/nvme-TS512GMTE400S_I152110465
+              - name: node1
+                devices:
+                  - name: /dev/disk/by-id/nvme-TS512GMTE400S_I152110465
               - name: node3
                 devices:
                   - name: /dev/disk/by-id/nvme-TS512GMTE400S_H908310130 

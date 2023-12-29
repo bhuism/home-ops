@@ -67,6 +67,9 @@ spec:
               - name: node1
                 devices:
                   - name: /dev/disk/by-id/nvme-TS512GMTE400S_I152110465
+              - name: node2
+                devices:
+                  - name: /dev/disk/by-id/nvme-TS256GMTE400S_H790500043
               - name: node3
                 devices:
                   - name: /dev/disk/by-id/nvme-TS512GMTE400S_H908310130 

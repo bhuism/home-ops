@@ -16,8 +16,7 @@ spec:
     helm:
       values: |
         nodeAccess:
-          nodePlacement:
-            nodeName: node8
+          accessMode: daemonset
   syncPolicy:
     automated:
       prune: true

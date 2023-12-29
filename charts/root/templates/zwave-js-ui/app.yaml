@@ -1,0 +1,66 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: zwave-js-ui
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: zwave-js-ui
+  project: default
+  source:
+    chart: zwave-js-ui
+    repoURL: https://charts.ar80.eu
+    targetRevision: 0.2.62
+    helm:
+      values: |
+        nodeSelector:
+          kubernetes.io/hostname: node6
+
+        env:
+          SESSION_SECRET: mysupersecretkey
+
+        tolerations:
+          - key: node-role.kubernetes.io/control-plane
+            operator: Exists
+            effect: NoSchedule
+
+        ingress:
+          enabled: true
+          className: "nginx"
+          annotations:
+            external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+            external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+            cert-manager.io/cluster-issuer: letsencrypt-production
+          hosts:
+            - host: zwave-js-ui.impl.nl
+              paths:
+                - path: /
+                  pathType: ImplementationSpecific
+          tls:
+            - secretName: zwave-js-ui.impl.nl
+              hosts:
+                - zwave-js-ui.impl.nl
+
+        serviceMonitor:
+          enabled: true
+
+        persistence:
+          enabled: true
+          existingClaim: zwave-js-ui-pvc
+          
+
+
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    managedNamespaceMetadata:
+      labels:
+        pod-security.kubernetes.io/enforce: privileged
+        pod-security.kubernetes.io/audit: privileged
+        pod-security.kubernetes.io/warn: privileged
+    syncOptions:
+      - CreateNamespace=true

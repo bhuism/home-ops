@@ -2,5 +2,5 @@
 
 #watch -n 1.0 kubectl --request-timeout=1s get service,daemonset.apps,deployments.apps,nodes -A
 
-watch -n 1.0 "kubectl get pvc,pv,nodes -A -o wide ; kubectl mayastor get volume-replica-topologies ; kubectl get dsp -o wide -n mayastor ; kubectl mayastor get nodes ; kubectl mayastor get pools ; kubectl mayastor get volumes "
+watch -n 1.0 "kubectl get pvc,pv,nodes -A -o wide"
 

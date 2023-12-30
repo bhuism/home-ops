@@ -51,5 +51,7 @@
 - [Grafana](https://grafana.com/) separate
 - [Uptime Kuma](https://github.com/louislam/uptime-kuma)
 - [Unifi Poller](https://unpoller.com/)
-- [Shlink] 
-- [Popeye]
+- [Gotify](https://github.com/gotify/server)
+- Jellyfin
+- Shlink, no arm image
+- Popeye, no arm image

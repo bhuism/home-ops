@@ -67,9 +67,9 @@ spec:
               - name: node6
                 devices:
                   - name: /dev/disk/by-id/nvme-TS512GMTE400S_I152110465
-              # - name: node8
-              #   devices:
-              #     - name: /dev/disk/by-id/nvme-TS512GMTE400S_H908310130 
+              - name: node8
+                devices:
+                  - name: /dev/disk/by-id/nvme-TS512GMTE400S_H908310130 
           crashCollector:
             disable: true
           placement:

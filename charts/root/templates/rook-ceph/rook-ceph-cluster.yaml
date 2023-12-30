@@ -53,7 +53,7 @@ spec:
         cephClusterSpec:
           removeOSDsIfOutAndSafeToRemove: true
           mon:
-            count: 5
+            count: 3
           mgr:
             count: 2
           dashboard:

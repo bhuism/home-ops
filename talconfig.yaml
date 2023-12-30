@@ -49,7 +49,7 @@ patches:
 nodes:
   - hostname: node1
     ipAddress: 192.168.1.153
-    controlPlane: true
+    controlPlane: false
     installDisk: /dev/mmcblk0
   - hostname: node2
     ipAddress: 192.168.1.154
@@ -61,7 +61,7 @@ nodes:
     installDisk: /dev/mmcblk0
   - hostname: node3
     ipAddress: 192.168.1.155
-    controlPlane: true
+    controlPlane: false
     installDisk: /dev/mmcblk0
   - hostname: node4
     ipAddress: 192.168.1.161
@@ -69,7 +69,7 @@ nodes:
     installDisk: /dev/nvme0n1
   - hostname: node6
     ipAddress: 192.168.1.182
-    controlPlane: false
+    controlPlane: true
     installDisk: /dev/mmcblk0
     kernelModules:
       - name: rockchip-cpufreq
@@ -81,7 +81,7 @@ nodes:
       - name: rockchip-cpufreq
   - hostname: node8
     ipAddress: 192.168.1.196
-    controlPlane: false
+    controlPlane: true
     installDisk: /dev/mmcblk0
     kernelModules:   
       - name: rockchip-cpufreq

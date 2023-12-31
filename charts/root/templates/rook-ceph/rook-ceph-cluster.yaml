@@ -71,6 +71,7 @@ spec:
               - name: node8
                 devices:
                   - name: /dev/disk/by-id/nvme-TS512GMTE400S_H908310130 
+                  - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_500GB_S5H7NS0N812724P
           crashCollector:
             disable: true
           placement:

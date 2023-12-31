@@ -12,7 +12,7 @@ spec:
   source:
     chart: home-assistant
     repoURL: https://charts.gabe565.com
-    targetRevision: 0.12.1
+    targetRevision: 0.12.2
     helm:
       values: |
         env:

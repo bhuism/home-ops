@@ -36,12 +36,12 @@ spec:
                 groups:
                   - paths:
                       - path: /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AK4LXHI2-if00-port0
-                        mountPath: /dev/USB0
+                        mountPath: /dev/ttyUSB0
               - name: upsport
                 groups:
                   - paths:
                       - path: /dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller_D-if00-port0
-                        mountPath: /dev/USB0
+                        mountPath: /dev/ttyUSB0
               - name: zwavemodule
                 groups:
                   - paths:

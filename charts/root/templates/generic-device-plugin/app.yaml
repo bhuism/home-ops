@@ -35,11 +35,11 @@ spec:
               - name: p1port
                 groups:
                   - paths:
-                      - path: /dev/ttyUSB0
+                      - path: /dev/ttyUSB1
               - name: upsport
                 groups:
                   - paths:
-                      - path: /dev/ttyUSB1
+                      - path: /dev/ttyUSB0
               - name: zwavemodule
                 groups:
                   - paths:

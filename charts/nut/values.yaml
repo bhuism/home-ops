@@ -28,14 +28,14 @@ controllers:
         env:
           TZ: UTC
           DRIVER: blazer_ser
-          PORT: /dev/ttyUSB1
+          PORT: /dev/ttyUSB0
           API_USER: root
           API_PASSWORD: killer
         resources:
           limits:
             squat.ai/upsport: 1
-        securityContext:
-          privileged: true
+        # securityContext:
+        #   privileged: true
 
 
 

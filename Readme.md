@@ -55,4 +55,4 @@
 - Jellyfin
 - Shlink, no arm image
 - Popeye, no arm image
--https://github.com/aquasecurity/trivy
+- https://github.com/aquasecurity/trivy

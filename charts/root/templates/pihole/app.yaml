@@ -15,7 +15,7 @@ spec:
     targetRevision: 2.20.0
     helm:
       values: |
-        replicaCount: 2
+        replicaCount: 1
         serviceDhcp:
           enabled: false
         podDnsConfig:

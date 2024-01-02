@@ -67,7 +67,7 @@ spec:
               - name: node6
                 devices:
                   - name: /dev/disk/by-id/nvme-TS512GMTE400S_I152110465
-                  - name: /dev/disk/by-id/nvme-PNY_CS3030_250GB_SSD_PNY1120000494010AF64
+                  # - name: /dev/disk/by-id/nvme-PNY_CS3030_250GB_SSD_PNY1120000494010AF64
               - name: node8
                 devices:
                   - name: /dev/disk/by-id/nvme-TS512GMTE400S_H908310130 

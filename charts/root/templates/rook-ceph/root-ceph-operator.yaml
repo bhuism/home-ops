@@ -18,7 +18,6 @@ spec:
         currentNamespaceOnly: true
         csi:
           enableGrpcMetrics: true
-          enableLiveness: true
           serviceMonitor:
             enabled: true
           enableCephfsDriver: false

@@ -1,4 +1,4 @@
-apiVersion: metallb.io/v1beta1
+apiVersion: metallb.io
 kind: L2Advertisement
 metadata:
   name: l2advertisement

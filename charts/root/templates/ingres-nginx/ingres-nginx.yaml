@@ -16,7 +16,6 @@ spec:
     helm:
       values: |
         controller:
-          replicaCount: 2
           metrics:
             enabled: true
             serviceMonitor:

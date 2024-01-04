@@ -24,6 +24,10 @@ spec:
           enableCephfsDriver: false
           enableCephfsSnapshotter: false
           enableNFSSnapshotter: false
+          enableRBDSnapshotter: false
+          enableMetadata: true
+          readAffinity:
+            enabled: true
         monitoring:
           enabled: true
         # resources:

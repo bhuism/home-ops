@@ -41,6 +41,7 @@
 - [CloudNativePG](https://cloudnative-pg.io/)
 - [Metrics Server](https://artifacthub.io/packages/helm/metrics-server/metrics-server)
 - [Trivy](https://github.com/aquasecurity/trivy)
+- https://docs.frigate.video/
 
 ### Todo
 

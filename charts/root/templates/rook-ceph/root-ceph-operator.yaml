@@ -15,7 +15,7 @@ spec:
     targetRevision: v1.13.1
     helm:
       values: |
-        currentNamespaceOnly: true
+        currentNamespaceOnly: false
         csi:
           enableGrpcMetrics: true
           enableLiveness: true

@@ -1,0 +1,71 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: rook-ceph-external
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io
+# spec:
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: rook-ceph-external
+#   project: default
+#   source:
+#     chart: rook-ceph-cluster
+#     repoURL: https://charts.rook.io/release
+#     targetRevision: v1.13.1
+#     helm:
+#       parameters:
+#         - name: NAMESPACE
+#           value: rook-ceph-external
+#         - name: ROOK_EXTERNAL_FSID
+#           value: 32532a78-266d-4423-a868-fc162ab5b8e6
+#         - name: ROOK_EXTERNAL_USERNAME
+#           value: client.healthchecker
+#         - name: ROOK_EXTERNAL_CEPH_MON_DATA
+#           value: d=192.168.1.153:6789,f=192.168.1.155,e=192.168.1.157
+#         - name: ROOK_EXTERNAL_USER_SECRET
+#           value: AQBasJllBRbeMhAAaLMUpGusPXYNcAnx/HkWEw==
+#         - name: ROOK_EXTERNAL_DASHBOARD_LINK
+#           value: http://10.244.3.1:9000/
+#         - name: CSI_RBD_NODE_SECRET
+#           value: AQBpgJhl4PrRCxAAXAC3t8uFAEraDtTIvRpiaQ==
+#         - name: CSI_RBD_NODE_SECRET_NAME
+#           value: csi-rbd-node
+#         - name: CSI_RBD_PROVISIONER_SECRET
+#           value: AQBlgJhlqIUNBxAAt0d7cQ6bEgLMxJaj6KktDA==
+#         - name: CSI_RBD_PROVISIONER_SECRET_NAME
+#           value: csi-rbd-provisioner
+#         - name: RBD_POOL_NAME
+#           value: ceph-blockpool-big
+#         - name: RGW_POOL_PREFIX
+#           value: default
+#       valuesObject:
+#         operatorNamespace: rook-ceph
+#         cephClusterSpec:
+#           external:
+#             enable: true
+#           crashCollector:
+#             disable: true
+#           healthCheck:
+#             daemonHealth:
+#               mon:
+#                 disabled: false
+#                 interval: 45s
+#         cephBlockPools: {}
+#         cephFileSystems: {}
+#         cephObjectStores: {}
+
+#   # optionally, the ceph-mgr IP address can be passed to gather metric from the prometheus exporter
+#   # monitoring:
+#   #   enabled: true
+#   #   externalMgrEndpoints:
+#   #   - ip: ip
+#   #     externalMgrPrometheusPort: 9283
+
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - CreateNamespace=true
+#       - ServerSideApply=true

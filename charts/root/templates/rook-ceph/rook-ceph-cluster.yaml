@@ -16,7 +16,7 @@ spec:
     helm:
       values: |
         toolbox:
-          enabled: false
+          enabled: true
         configOverride: |
           [global]
           osd_pool_default_size = 2

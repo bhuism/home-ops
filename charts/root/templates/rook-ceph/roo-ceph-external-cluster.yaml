@@ -22,7 +22,7 @@ spec:
         - name: ROOK_EXTERNAL_USERNAME
           value: client.healthchecker
         - name: ROOK_EXTERNAL_CEPH_MON_DATA
-          value: d=192.168.1.153:6789
+          value: d=192.168.1.153:6789,f=192.168.1.155,e=192.168.1.157
         - name: ROOK_EXTERNAL_USER_SECRET
           value: AQBasJllBRbeMhAAaLMUpGusPXYNcAnx/HkWEw==
         - name: ROOK_EXTERNAL_DASHBOARD_LINK

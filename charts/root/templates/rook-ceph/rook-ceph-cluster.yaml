@@ -14,7 +14,7 @@ spec:
     repoURL: https://charts.rook.io/release
     targetRevision: v1.13.1
     helm:
-      values: |
+      valuesObject:
         toolbox:
           enabled: true
         configOverride: |

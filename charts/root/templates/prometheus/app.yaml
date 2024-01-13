@@ -67,7 +67,7 @@ spec:
                 editable: true
                 options:
                   path: /var/lib/grafana/dashboards/volumes
-              - name: 'ceph'
+              - name: 'ceph-cluster'
                 orgId: 1
                 folder: 'Bassie'
                 type: file
@@ -75,11 +75,31 @@ spec:
                 allowUiUpdates: true
                 editable: true
                 options:
-                  path: /var/lib/grafana/dashboards/ceph
+                  path: /var/lib/grafana/dashboards/ceph-cluster
+              - name: 'ceph-osd'
+                orgId: 1
+                folder: 'Bassie'
+                type: file
+                disableDeletion: true
+                allowUiUpdates: true
+                editable: true
+                options:
+                  path: /var/lib/grafana/dashboards/ceph-osd
+              - name: 'ceph-pools'
+                orgId: 1
+                folder: 'Bassie'
+                type: file
+                disableDeletion: true
+                allowUiUpdates: true
+                editable: true
+                options:
+                  path: /var/lib/grafana/dashboards/ceph-pools
           dashboardsConfigMaps:
             electricity: {{ .Release.Name }}-electricity
             volumes: {{ .Release.Name }}-volumes
-            ceph: {{ .Release.Name }}-ceph
+            ceph-cluster: {{ .Release.Name }}-ceph-cluster
+            ceph-osd: {{ .Release.Name }}-ceph-osd
+            ceph-pools: {{ .Release.Name }}-ceph-pools
 
           # dashboards:
           #   default:

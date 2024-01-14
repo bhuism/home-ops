@@ -1,46 +1,43 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: rook-ceph-external
-#   finalizers:
-#     - resources-finalizer.argocd.argoproj.io
-# spec:
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: rook-ceph-external
-#   project: default
-#   source:
-#     chart: rook-ceph-cluster
-#     repoURL: https://charts.rook.io/release
-#     targetRevision: v1.13.1
-#     helm:
-#       valuesObject:
-#         operatorNamespace: rook-ceph
-#         cephClusterSpec:
-#           external:
-#             enable: true
-#           crashCollector:
-#             disable: true
-#           healthCheck:
-#             daemonHealth:
-#               mon:
-#                 disabled: false
-#                 interval: 45s
-#         cephBlockPools: {}
-#         cephFileSystems: {}
-#         cephObjectStores: {}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rook-ceph-external
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: rook-ceph-external
+  project: default
+  source:
+    chart: rook-ceph-cluster
+    repoURL: https://charts.rook.io/release
+    targetRevision: v1.13.1
+    helm:
+      valuesObject:
+        operatorNamespace: rook-ceph
+        cephClusterSpec:
+          external:
+            enable: true
+          crashCollector:
+            disable: true
+          healthCheck:
+            daemonHealth:
+              mon:
+                disabled: false
+                interval: 45s
 
-#   # optionally, the ceph-mgr IP address can be passed to gather metric from the prometheus exporter
-#   # monitoring:
-#   #   enabled: true
-#   #   externalMgrEndpoints:
-#   #   - ip: ip
-#   #     externalMgrPrometheusPort: 9283
 
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-#     syncOptions:
-#       - CreateNamespace=true
-#       - ServerSideApply=true
+  # optionally, the ceph-mgr IP address can be passed to gather metric from the prometheus exporter
+  # monitoring:
+  #   enabled: true
+  #   externalMgrEndpoints:
+  #   - ip: ip
+  #     externalMgrPrometheusPort: 9283
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ServerSideApply=true

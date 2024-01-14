@@ -15,6 +15,7 @@ spec:
     targetRevision: v1.13.2
     helm:
       valuesObject:
+        operatorNamespace: rook-ceph
         toolbox:
           enabled: true
         configOverride: |

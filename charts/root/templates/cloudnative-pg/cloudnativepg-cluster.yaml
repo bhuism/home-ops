@@ -16,24 +16,24 @@ spec:
       secret:
         name: dsmr-reader-secret
 
-    postInitApplicationSQL:
-      - CREATE ROLE dsmr-reader;
-      - CREATE SCHEMA dsmr-reader AUTHORIZATION dsmr-reader;
+    # postInitApplicationSQL:
+    #   - CREATE ROLE dsmr-reader;
+    #   - CREATE SCHEMA dsmr-reader AUTHORIZATION dsmr-reader;
 
-      # - GRANT USAGE ON SCHEMA dsmr-reader TO dsmr-reader;
-      # - GRANT SELECT ON ALL TABLES IN SCHEMA dsmr-reader TO dsmr-reader;
-      # - GRANT USAGE ON ALL SEQUENCES IN SCHEMA dsmr-reader TO dsmr-reader;
-      # - ALTER DEFAULT PRIVILEGES IN SCHEMA dsmr-reader GRANT SELECT ON TABLES TO dsmr-reader;
-      # - ALTER DEFAULT PRIVILEGES IN SCHEMA dsmr-reader GRANT SELECT ON SEQUENCES TO dsmr-reader;
+    #   # - GRANT USAGE ON SCHEMA dsmr-reader TO dsmr-reader;
+    #   # - GRANT SELECT ON ALL TABLES IN SCHEMA dsmr-reader TO dsmr-reader;
+    #   # - GRANT USAGE ON ALL SEQUENCES IN SCHEMA dsmr-reader TO dsmr-reader;
+    #   # - ALTER DEFAULT PRIVILEGES IN SCHEMA dsmr-reader GRANT SELECT ON TABLES TO dsmr-reader;
+    #   # - ALTER DEFAULT PRIVILEGES IN SCHEMA dsmr-reader GRANT SELECT ON SEQUENCES TO dsmr-reader;
 
 
-  managed:
-    roles:
-      - name: dsmr-reader
-        ensure: present
-        comment: Dsmr Reader
-        login: true
-        superuser: false
+  # managed:
+  #   roles:
+  #     - name: dsmr-reader
+  #       ensure: present
+  #       comment: Dsmr Reader
+  #       login: true
+  #       superuser: false
 
   storage:
     storageClass: ceph-rbd

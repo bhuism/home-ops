@@ -1,72 +1,72 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: zwave-js-ui
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: zwave-js-ui
-  project: default
-  source:
-    chart: zwave-js-ui
-    repoURL: https://charts.ar80.eu
-    targetRevision: 0.2.62
-    helm:
-      values: |
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: zwave-js-ui
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io
+# spec:
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: zwave-js-ui
+#   project: default
+#   source:
+#     chart: zwave-js-ui
+#     repoURL: https://charts.ar80.eu
+#     targetRevision: 0.2.62
+#     helm:
+#       values: |
 
-        image:
-          repository: europe-west4-docker.pkg.dev/impl-383520/docker/zwave-js-ui
-          tag: v9.7.0
+#         image:
+#           repository: europe-west4-docker.pkg.dev/impl-383520/docker/zwave-js-ui
+#           tag: v9.7.0
 
-        nodeSelector:
-          kubernetes.io/hostname: node6
+#         nodeSelector:
+#           kubernetes.io/hostname: node6
 
-        env:
-          SESSION_SECRET: mysupersecretkey
+#         env:
+#           SESSION_SECRET: mysupersecretkey
 
-        tolerations:
-          - key: node-role.kubernetes.io/control-plane
-            operator: Exists
-            effect: NoSchedule
+#         tolerations:
+#           - key: node-role.kubernetes.io/control-plane
+#             operator: Exists
+#             effect: NoSchedule
 
-        ingress:
-          enabled: true
-          className: "nginx"
-          annotations:
-            external-dns.alpha.kubernetes.io/target: ingress.impl.nl
-            external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-            cert-manager.io/cluster-issuer: letsencrypt-production
-          hosts:
-            - host: zwave-js-ui.impl.nl
-              paths:
-                - path: /
-                  pathType: ImplementationSpecific
-          tls:
-            - secretName: zwave-js-ui.impl.nl
-              hosts:
-                - zwave-js-ui.impl.nl
+#         ingress:
+#           enabled: true
+#           className: "nginx"
+#           annotations:
+#             external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+#             external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+#             cert-manager.io/cluster-issuer: letsencrypt-production
+#           hosts:
+#             - host: zwave-js-ui.impl.nl
+#               paths:
+#                 - path: /
+#                   pathType: ImplementationSpecific
+#           tls:
+#             - secretName: zwave-js-ui.impl.nl
+#               hosts:
+#                 - zwave-js-ui.impl.nl
 
-        serviceMonitor:
-          enabled: true
+#         serviceMonitor:
+#           enabled: true
 
-        persistence:
-          enabled: true
-          existingClaim: zwave-js-ui-pvc
+#         persistence:
+#           enabled: true
+#           existingClaim: zwave-js-ui-v1-pvc
           
-        resources:
-          limits:
-            squat.ai/zwavemodule: 1
+#         resources:
+#           limits:
+#             squat.ai/zwavemodule: 1
 
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    managedNamespaceMetadata:
-      labels:
-        pod-security.kubernetes.io/enforce: privileged
-        pod-security.kubernetes.io/audit: privileged
-        pod-security.kubernetes.io/warn: privileged
-    syncOptions:
-      - CreateNamespace=true
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     managedNamespaceMetadata:
+#       labels:
+#         pod-security.kubernetes.io/enforce: privileged
+#         pod-security.kubernetes.io/audit: privileged
+#         pod-security.kubernetes.io/warn: privileged
+#     syncOptions:
+#       - CreateNamespace=true

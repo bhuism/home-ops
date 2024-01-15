@@ -16,6 +16,14 @@ spec:
       secret:
         name: dsmr-reader-secret
 
+  managed:
+    roles:
+      - name: dsmr-reader
+        ensure: present
+        comment: Dsmr Reader
+        login: true
+        superuser: false
+
   storage:
     storageClass: ceph-rbd
     size: 5Gi

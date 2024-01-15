@@ -1,78 +1,78 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: home-assistant
-#   finalizers:
-#     - resources-finalizer.argocd.argoproj.io
-# spec:
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: home-assistant
-#   project: default
-#   source:
-#     chart: home-assistant
-#     repoURL: https://charts.gabe565.com
-#     targetRevision: 0.13.2
-#     helm:
-#       values: |
-#         env:
-#           TZ: "Europe/Amsterdam"
-#         ingress:
-#           main:
-#             enabled: true
-#             ingressClassName: nginx
-#             className: nginx
-#             annotations:
-#               external-dns.alpha.kubernetes.io/target: ingress.impl.nl
-#               external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-#               cert-manager.io/cluster-issuer: letsencrypt-production
-#             hosts:
-#               - host: home-assistant.impl.nl
-#                 paths:
-#                   - path: /
-#             tls:
-#               - secretName: home-assistant.impl.nl
-#                 hosts:
-#                   - home-assistant.impl.nl
-#         dnsPolicy: ClusterFirstWithHostNet
-#         hostNetwork: true
-#         persistence:
-#           config:
-#             enabled: true
-#             existingClaim: home-assistant-v3-pvc
-#         addons:
-#           codeserver:
-#             enabled: true
-#             ingress:
-#               enabled: true
-#               ingressClassName: nginx
-#               className: nginx
-#               annotations:
-#                 external-dns.alpha.kubernetes.io/target: ingress.impl.nl
-#                 external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-#                 cert-manager.io/cluster-issuer: letsencrypt-production
-#               hosts:
-#                 - host: home-assistant-code.impl.nl
-#                   paths:
-#                     - path: /
-#               tls:
-#                 - secretName: home-assistant-code.impl.nl
-#                   hosts:
-#                     - home-assistant-code.impl.nl
-#             args:
-#               - --auth=none
-#               - --user-data-dir=/data/config/.vscode
-#             volumeMounts:
-#               - name: config
-#                 mountPath: /data/config
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-#     managedNamespaceMetadata:
-#       labels:
-#         pod-security.kubernetes.io/enforce: privileged
-#         pod-security.kubernetes.io/audit: privileged
-#         pod-security.kubernetes.io/warn: privileged
-#     syncOptions:
-#       - CreateNamespace=true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: home-assistant
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: home-assistant
+  project: default
+  source:
+    chart: home-assistant
+    repoURL: https://charts.gabe565.com
+    targetRevision: 0.13.2
+    helm:
+      values: |
+        env:
+          TZ: "Europe/Amsterdam"
+        ingress:
+          main:
+            enabled: true
+            ingressClassName: nginx
+            className: nginx
+            annotations:
+              external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+              external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+              cert-manager.io/cluster-issuer: letsencrypt-production
+            hosts:
+              - host: home-assistant.impl.nl
+                paths:
+                  - path: /
+            tls:
+              - secretName: home-assistant.impl.nl
+                hosts:
+                  - home-assistant.impl.nl
+        dnsPolicy: ClusterFirstWithHostNet
+        hostNetwork: true
+        persistence:
+          config:
+            enabled: true
+            existingClaim: home-assistant-v4-pvc
+        addons:
+          codeserver:
+            enabled: true
+            ingress:
+              enabled: true
+              ingressClassName: nginx
+              className: nginx
+              annotations:
+                external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+                external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+                cert-manager.io/cluster-issuer: letsencrypt-production
+              hosts:
+                - host: home-assistant-code.impl.nl
+                  paths:
+                    - path: /
+              tls:
+                - secretName: home-assistant-code.impl.nl
+                  hosts:
+                    - home-assistant-code.impl.nl
+            args:
+              - --auth=none
+              - --user-data-dir=/data/config/.vscode
+            volumeMounts:
+              - name: config
+                mountPath: /data/config
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    managedNamespaceMetadata:
+      labels:
+        pod-security.kubernetes.io/enforce: privileged
+        pod-security.kubernetes.io/audit: privileged
+        pod-security.kubernetes.io/warn: privileged
+    syncOptions:
+      - CreateNamespace=true

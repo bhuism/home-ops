@@ -6,8 +6,15 @@ metadata:
 spec:
   instances: 1
 
+  superuserSecret:
+    name: superuser-secret
+
   bootstrap:
-    pg_basebackup:
+    initdb:
+      database: dsmr-reader
+      owner: dsmr-reader
+      secret:
+        name: dsmr-reader-secret
 
   storage:
     storageClass: ceph-rbd

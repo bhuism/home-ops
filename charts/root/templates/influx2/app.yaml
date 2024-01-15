@@ -1,48 +1,48 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: influxdb2
-#   finalizers:
-#     - resources-finalizer.argocd.argoproj.io
-# spec:
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: influxdb2
-#   project: default
-#   source:
-#     chart: influxdb2
-#     repoURL: https://helm.influxdata.com
-#     targetRevision: 2.1.2
-#     helm:
-#       values: |
-#         adminUser:
-#           organization: "influxdata"
-#           bucket: "default"
-#           user: "admin"
-#           retention_policy: "0s"
-#           password: "killer2killer"
-#           token: "jEFGuULYg3N5nQwYMq8hkda95lrcLhOH"
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: influxdb2
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: influxdb2
+  project: default
+  source:
+    chart: influxdb2
+    repoURL: https://helm.influxdata.com
+    targetRevision: 2.1.2
+    helm:
+      values: |
+        adminUser:
+          organization: "influxdata"
+          bucket: "default"
+          user: "admin"
+          retention_policy: "0s"
+          password: "killer2killer"
+          token: "jEFGuULYg3N5nQwYMq8hkda95lrcLhOH"
         
-#         persistence:
-#           enabled: true
-#           useExisting: true
-#           name: influxdb2-v3-pvc
+        persistence:
+          enabled: true
+          useExisting: true
+          name: influxdb2-v3-pvc
 
-#         livenessProbe:
-#           initialDelaySeconds: 10
-#           timeoutSeconds: 3
-#           failureThreshold: 30
-#           periodSeconds: 60
+        livenessProbe:
+          initialDelaySeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 30
+          periodSeconds: 60
 
-#         readinessProbe:
-#           initialDelaySeconds: 10
-#           timeoutSeconds: 3
-#           failureThreshold: 30
-#           periodSeconds: 60
+        readinessProbe:
+          initialDelaySeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 30
+          periodSeconds: 60
 
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-#     syncOptions:
-#       - CreateNamespace=true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

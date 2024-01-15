@@ -1,232 +1,232 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: prometheus
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: prometheus
-  project: default
-  source:
-    chart: kube-prometheus-stack
-    repoURL: https://prometheus-community.github.io/helm-charts
-    targetRevision: 55.8.1
-    helm:
-      values: |
-        alertmanager:
-          enabled: false
-        grafana:
-          adminPassword: killer
-          grafana.ini:
-            analytics:
-              check_for_updates: false
-              reporting_enabled: false
-            users:
-              home_page: /dashboards
-            server:
-              root_url: https://grafana.impl.nl
-            security:
-              disable_brute_force_login_protection: true
-          ingress:
-            enabled: true
-            ingressClassName: nginx
-            annotations:
-              external-dns.alpha.kubernetes.io/target: ingress.impl.nl
-              external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-              cert-manager.io/cluster-issuer: letsencrypt-production
-            path: /
-            pathType: Prefix
-            extraPaths: []
-            hosts:
-              - grafana.impl.nl
-            tls:
-              - secretName: grafana.impl.nl
-                hosts:
-                  - grafana.impl.nl
-          dashboardProviders:
-            dashboardproviders.yaml:
-              apiVersion: 1
-              providers:
-              - name: 'electricity'
-                orgId: 1
-                folder: 'Bassie'
-                type: file
-                disableDeletion: true
-                allowUiUpdates: true
-                editable: true
-                options:
-                  path: /var/lib/grafana/dashboards/electricity
-              - name: 'volumes'
-                orgId: 1
-                folder: 'Bassie'
-                type: file
-                disableDeletion: true
-                allowUiUpdates: true
-                editable: true
-                options:
-                  path: /var/lib/grafana/dashboards/volumes
-              - name: 'ceph-cluster'
-                orgId: 1
-                folder: 'Bassie'
-                type: file
-                disableDeletion: true
-                allowUiUpdates: true
-                editable: true
-                options:
-                  path: /var/lib/grafana/dashboards/ceph-cluster
-              - name: 'ceph-osd'
-                orgId: 1
-                folder: 'Bassie'
-                type: file
-                disableDeletion: true
-                allowUiUpdates: true
-                editable: true
-                options:
-                  path: /var/lib/grafana/dashboards/ceph-osd
-              - name: 'ceph-pools'
-                orgId: 1
-                folder: 'Bassie'
-                type: file
-                disableDeletion: true
-                allowUiUpdates: true
-                editable: true
-                options:
-                  path: /var/lib/grafana/dashboards/ceph-pools
-          dashboardsConfigMaps:
-            electricity: {{ .Release.Name }}-electricity
-            volumes: {{ .Release.Name }}-volumes
-            ceph-cluster: {{ .Release.Name }}-ceph-cluster
-            ceph-osd: {{ .Release.Name }}-ceph-osd
-            ceph-pools: {{ .Release.Name }}-ceph-pools
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: prometheus
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io
+# spec:
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: prometheus
+#   project: default
+#   source:
+#     chart: kube-prometheus-stack
+#     repoURL: https://prometheus-community.github.io/helm-charts
+#     targetRevision: 55.8.1
+#     helm:
+#       values: |
+#         alertmanager:
+#           enabled: false
+#         grafana:
+#           adminPassword: killer
+#           grafana.ini:
+#             analytics:
+#               check_for_updates: false
+#               reporting_enabled: false
+#             users:
+#               home_page: /dashboards
+#             server:
+#               root_url: https://grafana.impl.nl
+#             security:
+#               disable_brute_force_login_protection: true
+#           ingress:
+#             enabled: true
+#             ingressClassName: nginx
+#             annotations:
+#               external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+#               external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+#               cert-manager.io/cluster-issuer: letsencrypt-production
+#             path: /
+#             pathType: Prefix
+#             extraPaths: []
+#             hosts:
+#               - grafana.impl.nl
+#             tls:
+#               - secretName: grafana.impl.nl
+#                 hosts:
+#                   - grafana.impl.nl
+#           dashboardProviders:
+#             dashboardproviders.yaml:
+#               apiVersion: 1
+#               providers:
+#               - name: 'electricity'
+#                 orgId: 1
+#                 folder: 'Bassie'
+#                 type: file
+#                 disableDeletion: true
+#                 allowUiUpdates: true
+#                 editable: true
+#                 options:
+#                   path: /var/lib/grafana/dashboards/electricity
+#               - name: 'volumes'
+#                 orgId: 1
+#                 folder: 'Bassie'
+#                 type: file
+#                 disableDeletion: true
+#                 allowUiUpdates: true
+#                 editable: true
+#                 options:
+#                   path: /var/lib/grafana/dashboards/volumes
+#               - name: 'ceph-cluster'
+#                 orgId: 1
+#                 folder: 'Bassie'
+#                 type: file
+#                 disableDeletion: true
+#                 allowUiUpdates: true
+#                 editable: true
+#                 options:
+#                   path: /var/lib/grafana/dashboards/ceph-cluster
+#               - name: 'ceph-osd'
+#                 orgId: 1
+#                 folder: 'Bassie'
+#                 type: file
+#                 disableDeletion: true
+#                 allowUiUpdates: true
+#                 editable: true
+#                 options:
+#                   path: /var/lib/grafana/dashboards/ceph-osd
+#               - name: 'ceph-pools'
+#                 orgId: 1
+#                 folder: 'Bassie'
+#                 type: file
+#                 disableDeletion: true
+#                 allowUiUpdates: true
+#                 editable: true
+#                 options:
+#                   path: /var/lib/grafana/dashboards/ceph-pools
+#           dashboardsConfigMaps:
+#             electricity: {{ .Release.Name }}-electricity
+#             volumes: {{ .Release.Name }}-volumes
+#             ceph-cluster: {{ .Release.Name }}-ceph-cluster
+#             ceph-osd: {{ .Release.Name }}-ceph-osd
+#             ceph-pools: {{ .Release.Name }}-ceph-pools
 
-          # dashboards:
-          #   default:
-          #     test:
-          #       file: ../../dashboards/test.yaml
-          # Provision grafana-dashboards-kubernetes
-          # dashboardProviders:
-          #   dashboardproviders.yaml:
-          #     apiVersion: 1
-          #     providers:
-          #     - name: 'grafana-dashboards-kubernetes'
-          #       orgId: 1
-          #       folder: 'Kubernetes2'
-          #       type: file
-          #       allowUiUpdates: true
-          #       editable: true
-          #       options:
-          #         path: /var/lib/grafana/dashboards/grafana-dashboards-kubernetes
-          #     - name: 'grafana-bas'
-          #       orgId: 1
-          #       folder: 'Bas'
-          #       type: file
-          #       allowUiUpdates: true
-          #       editable: true
-          #       options:
-          #         path: /var/lib/grafana/dashboards/grafana-bas
-          #     - name: 'home-assistant'
-          #       orgId: 1
-          #       folder: 'Home Assistant'
-          #       type: file
-          #       allowUiUpdates: true
-          #       editable: true
-          #       options:
-          #         path: /var/lib/grafana/dashboards/home-assistant
-          # dashboards:
-          #   home-assistant:
-          #     home-assistant:
-          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/home-assistant.json
-          #   grafana-bas:
-          #     gatus:
-          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/prometheus_grafana_provisioning_dashboards_gatus.json
-          #     cert-manager:
-          #       url: https://gitlab.com/uneeq-oss/cert-manager-mixin/-/raw/master/dashboards/cert-manager.json
-          #     argocd:
-          #       url: https://raw.githubusercontent.com/argoproj/argo-cd/master/examples/dashboard.json
-          #     speedtestexporter:
-          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/speedtest.json
-          #     kubernetes:
-          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/kubernetes-withtemp.json
-          #     smartmeter:
-          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/smartmeter.json
-          #   grafana-dashboards-kubernetes:
-          #     k8s-system-api-server:
-          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
-          #       token: ''
-          #     k8s-system-coredns:
-          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-coredns.json
-          #       token: ''
-          #     k8s-views-global:
-          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-global.json
-          #       token: ''
-          #     k8s-views-namespaces:
-          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-namespaces.json
-          #       token: ''
-          #     k8s-views-nodes:
-          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
-          #       token: ''
-          #     k8s-views-pods:
-          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
-          #       token: ''
-          #     k8s-prometheus:
-          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-addons-prometheus.json
-          #       token: ''
-          datasources:
-            datasources.yaml:
-              apiVersion: 1
-              datasources:
-                - name: Home Assistant
-                  type: influxdb
-                  access: proxy
-                  url: http://influx-influxdb.influx:8086
-                  user: root
-                  database: homeassistant
-                  secureJsonData:
-                    password: killer
-                  editable: false
-                # - name: DSMR Reader
-                #   type: influxdb
-                #   access: proxy
-                #   url: http://influx-influxdb.influx:8086
-                #   user: root
-                #   database: dsmrreader
-                #   secureJsonData:
-                #     password: killer
-                #   editable: false
-                - name: dsmrreader_measurements influxdb2
-                  type: influxdb
-                  access: proxy
-                  url: http://influxdb2.influxdb2
-                  jsonData:
-                    version: Flux
-                    organization: influxdata
-                    defaultBucket: dsmrreader_measurements
-                    tlsSkipVerify: true
-                  secureJsonData:
-                    token: jEFGuULYg3N5nQwYMq8hkda95lrcLhOH
-                  editable: false
+#           # dashboards:
+#           #   default:
+#           #     test:
+#           #       file: ../../dashboards/test.yaml
+#           # Provision grafana-dashboards-kubernetes
+#           # dashboardProviders:
+#           #   dashboardproviders.yaml:
+#           #     apiVersion: 1
+#           #     providers:
+#           #     - name: 'grafana-dashboards-kubernetes'
+#           #       orgId: 1
+#           #       folder: 'Kubernetes2'
+#           #       type: file
+#           #       allowUiUpdates: true
+#           #       editable: true
+#           #       options:
+#           #         path: /var/lib/grafana/dashboards/grafana-dashboards-kubernetes
+#           #     - name: 'grafana-bas'
+#           #       orgId: 1
+#           #       folder: 'Bas'
+#           #       type: file
+#           #       allowUiUpdates: true
+#           #       editable: true
+#           #       options:
+#           #         path: /var/lib/grafana/dashboards/grafana-bas
+#           #     - name: 'home-assistant'
+#           #       orgId: 1
+#           #       folder: 'Home Assistant'
+#           #       type: file
+#           #       allowUiUpdates: true
+#           #       editable: true
+#           #       options:
+#           #         path: /var/lib/grafana/dashboards/home-assistant
+#           # dashboards:
+#           #   home-assistant:
+#           #     home-assistant:
+#           #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/home-assistant.json
+#           #   grafana-bas:
+#           #     gatus:
+#           #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/prometheus_grafana_provisioning_dashboards_gatus.json
+#           #     cert-manager:
+#           #       url: https://gitlab.com/uneeq-oss/cert-manager-mixin/-/raw/master/dashboards/cert-manager.json
+#           #     argocd:
+#           #       url: https://raw.githubusercontent.com/argoproj/argo-cd/master/examples/dashboard.json
+#           #     speedtestexporter:
+#           #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/speedtest.json
+#           #     kubernetes:
+#           #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/kubernetes-withtemp.json
+#           #     smartmeter:
+#           #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/smartmeter.json
+#           #   grafana-dashboards-kubernetes:
+#           #     k8s-system-api-server:
+#           #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
+#           #       token: ''
+#           #     k8s-system-coredns:
+#           #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-coredns.json
+#           #       token: ''
+#           #     k8s-views-global:
+#           #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-global.json
+#           #       token: ''
+#           #     k8s-views-namespaces:
+#           #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-namespaces.json
+#           #       token: ''
+#           #     k8s-views-nodes:
+#           #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
+#           #       token: ''
+#           #     k8s-views-pods:
+#           #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
+#           #       token: ''
+#           #     k8s-prometheus:
+#           #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-addons-prometheus.json
+#           #       token: ''
+#           datasources:
+#             datasources.yaml:
+#               apiVersion: 1
+#               datasources:
+#                 - name: Home Assistant
+#                   type: influxdb
+#                   access: proxy
+#                   url: http://influx-influxdb.influx:8086
+#                   user: root
+#                   database: homeassistant
+#                   secureJsonData:
+#                     password: killer
+#                   editable: false
+#                 # - name: DSMR Reader
+#                 #   type: influxdb
+#                 #   access: proxy
+#                 #   url: http://influx-influxdb.influx:8086
+#                 #   user: root
+#                 #   database: dsmrreader
+#                 #   secureJsonData:
+#                 #     password: killer
+#                 #   editable: false
+#                 - name: dsmrreader_measurements influxdb2
+#                   type: influxdb
+#                   access: proxy
+#                   url: http://influxdb2.influxdb2
+#                   jsonData:
+#                     version: Flux
+#                     organization: influxdata
+#                     defaultBucket: dsmrreader_measurements
+#                     tlsSkipVerify: true
+#                   secureJsonData:
+#                     token: jEFGuULYg3N5nQwYMq8hkda95lrcLhOH
+#                   editable: false
 
 
-        prometheus:
-          prometheusSpec:
-            serviceMonitorSelectorNilUsesHelmValues: false
-            storageSpec:
-              volumeClaimTemplate:
-                spec:
-                  resources:
-                    requests:
-                      storage: 15Gi
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    managedNamespaceMetadata:
-      labels:
-        pod-security.kubernetes.io/enforce: privileged
-        pod-security.kubernetes.io/audit: privileged
-        pod-security.kubernetes.io/warn: privileged
-    syncOptions:
-      - CreateNamespace=true
-      - ServerSideApply=true
+#         prometheus:
+#           prometheusSpec:
+#             serviceMonitorSelectorNilUsesHelmValues: false
+#             storageSpec:
+#               volumeClaimTemplate:
+#                 spec:
+#                   resources:
+#                     requests:
+#                       storage: 15Gi
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     managedNamespaceMetadata:
+#       labels:
+#         pod-security.kubernetes.io/enforce: privileged
+#         pod-security.kubernetes.io/audit: privileged
+#         pod-security.kubernetes.io/warn: privileged
+#     syncOptions:
+#       - CreateNamespace=true
+#       - ServerSideApply=true

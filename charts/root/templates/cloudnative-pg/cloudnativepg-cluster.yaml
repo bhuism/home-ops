@@ -6,7 +6,7 @@ metadata:
 spec:
   instances: 1
   storage:
-    storageClass: ceph-block
+    storageClass: ceph-rbd
     size: 5Gi
   enableSuperuserAccess: true
   monitoring:

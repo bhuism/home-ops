@@ -1,124 +1,124 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: gatus
-#   finalizers:
-#     - resources-finalizer.argocd.argoproj.io
-# spec:
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: gatus
-#   project: default
-#   source:
-#     chart: gatus
-#     repoURL: https://minicloudlabs.github.io/helm-charts
-#     targetRevision: 3.4.1
-#     helm:
-#       values: |
-#         securityContext:
-#           runAsNonRoot: false
-#           runAsUser: 0
-#         connectivity:
-#           checker:
-#             target: 1.1.1.1:53
-#             interval: 60s
-#         ingress:
-#           enabled: true
-#           ingressClassName: nginx
-#           annotations:
-#             external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
-#           labels: {}
-#           path: /
-#           pathType: Prefix
-#           extraPaths: []
-#           hosts:
-#             - gatus.impl.nl
-#         serviceMonitor:
-#           enabled: true
-#           labels:
-#             release: prometheus
-#         config:
-#           metrics: true
-#           ui:
-#             header: "Home Ops"
-#           storage:
-#             type: sqlite
-#             path: /data/data.db
-#           endpoints:
-#             - name: Gatus
-#               url: "https://gatus.impl.nl"
-#               interval: 5m
-#               conditions:
-#                 - "[STATUS] == 200"
-#                 - "[RESPONSE_TIME] < 5000"
-#             - name: OkApplication
-#               url: "https://ok.impl.nl"
-#               interval: 5m
-#               conditions:
-#                 - "[STATUS] == 200"
-#                 - "[RESPONSE_TIME] < 5000"
-#                 - "[BODY] == OK"
-#             - name: IpApplication
-#               url: "https://ip.impl.nl"
-#               interval: 5m
-#               conditions:
-#                 - "[STATUS] == 200"
-#                 - "[RESPONSE_TIME] < 5000"
-#             - name: EchoApplication
-#               url: "https://echo.impl.nl"
-#               interval: 5m
-#               conditions:
-#                 - "[STATUS] == 200"
-#                 - "[RESPONSE_TIME] < 5000"
-#             - name: TimeApplication
-#               url: "https://time.impl.nl"
-#               interval: 5m
-#               conditions:
-#                 - "[STATUS] == 200"
-#                 - "[RESPONSE_TIME] < 5000"
-#             - name: "Appsource"
-#               url: "https://www.appsource.nl"
-#               interval: 5m
-#               conditions:
-#                 - "[STATUS] == 200"
-#                 - "[RESPONSE_TIME] < 5000"
-#             - name: "Jasmine"
-#               url: "icmp://jasmine.odee.net"
-#               interval: 5m
-#               conditions:
-#                 - "[CONNECTED] == true"
-#                 - "[RESPONSE_TIME] < 5000"
-#             - name: "Eleanor"
-#               url: "icmp://eleanor.odee.net"
-#               interval: 5m
-#               conditions:
-#                 - "[CONNECTED] == true"
-#                 - "[RESPONSE_TIME] < 5000"
-#             - name: "Home Ops"
-#               url: "tcp://jasmine.odee.net:6443"
-#               interval: 5m
-#               conditions:
-#                 - "[CONNECTED] == true"
-#                 - "[RESPONSE_TIME] < 5000"
-#             - name: "Wireguard"
-#               url: "udp://jasmine.odee.net:51820"
-#               interval: 5m
-#               conditions:
-#                 - "[CONNECTED] == true"
-#                 - "[RESPONSE_TIME] < 5000"
-#         persistence:
-#           enabled: true
-#           existingClaim: gatus-v3-pvc
-#         serviceMonitor:
-#           enabled: true          
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-#     managedNamespaceMetadata:
-#       labels:
-#         pod-security.kubernetes.io/enforce: privileged
-#         pod-security.kubernetes.io/audit: privileged
-#         pod-security.kubernetes.io/warn: privileged
-#     syncOptions:
-#       - CreateNamespace=true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gatus
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: gatus
+  project: default
+  source:
+    chart: gatus
+    repoURL: https://minicloudlabs.github.io/helm-charts
+    targetRevision: 3.4.1
+    helm:
+      values: |
+        securityContext:
+          runAsNonRoot: false
+          runAsUser: 0
+        connectivity:
+          checker:
+            target: 1.1.1.1:53
+            interval: 60s
+        ingress:
+          enabled: true
+          ingressClassName: nginx
+          annotations:
+            external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
+          labels: {}
+          path: /
+          pathType: Prefix
+          extraPaths: []
+          hosts:
+            - gatus.impl.nl
+        serviceMonitor:
+          enabled: true
+          labels:
+            release: prometheus
+        config:
+          metrics: true
+          ui:
+            header: "Home Ops"
+          storage:
+            type: sqlite
+            path: /data/data.db
+          endpoints:
+            - name: Gatus
+              url: "https://gatus.impl.nl"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 5000"
+            - name: OkApplication
+              url: "https://ok.impl.nl"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 5000"
+                - "[BODY] == OK"
+            - name: IpApplication
+              url: "https://ip.impl.nl"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 5000"
+            - name: EchoApplication
+              url: "https://echo.impl.nl"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 5000"
+            - name: TimeApplication
+              url: "https://time.impl.nl"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 5000"
+            - name: "Appsource"
+              url: "https://www.appsource.nl"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 5000"
+            - name: "Jasmine"
+              url: "icmp://jasmine.odee.net"
+              interval: 5m
+              conditions:
+                - "[CONNECTED] == true"
+                - "[RESPONSE_TIME] < 5000"
+            - name: "Eleanor"
+              url: "icmp://eleanor.odee.net"
+              interval: 5m
+              conditions:
+                - "[CONNECTED] == true"
+                - "[RESPONSE_TIME] < 5000"
+            - name: "Home Ops"
+              url: "tcp://jasmine.odee.net:6443"
+              interval: 5m
+              conditions:
+                - "[CONNECTED] == true"
+                - "[RESPONSE_TIME] < 5000"
+            - name: "Wireguard"
+              url: "udp://jasmine.odee.net:51820"
+              interval: 5m
+              conditions:
+                - "[CONNECTED] == true"
+                - "[RESPONSE_TIME] < 5000"
+        persistence:
+          enabled: true
+          existingClaim: gatus-v1-pvc-external
+        serviceMonitor:
+          enabled: true          
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    managedNamespaceMetadata:
+      labels:
+        pod-security.kubernetes.io/enforce: privileged
+        pod-security.kubernetes.io/audit: privileged
+        pod-security.kubernetes.io/warn: privileged
+    syncOptions:
+      - CreateNamespace=true

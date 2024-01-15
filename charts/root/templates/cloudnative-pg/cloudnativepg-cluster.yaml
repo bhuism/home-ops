@@ -6,15 +6,15 @@ metadata:
 spec:
   instances: 1
 
-  # superuserSecret:
-  #   name: superuser-secret
+  superuserSecret:
+    name: superuser-secret
 
-  # bootstrap:
-  #   initdb:
-  #     database: dsmr-reader
-  #     owner: dsmr-reader
-  #     # secret:
-  #     #   name: dsmr-reader-secret
+  bootstrap:
+    initdb:
+      database: dsmr-reader
+      owner: dsmr-reader
+      secret:
+        name: dsmr-reader-secret
 
   storage:
     storageClass: ceph-rbd

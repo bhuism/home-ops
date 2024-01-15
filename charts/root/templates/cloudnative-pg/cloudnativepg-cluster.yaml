@@ -5,9 +5,15 @@ metadata:
   namespace: cloudnative-pg
 spec:
   instances: 1
+
+  bootstrap:
+    pg_basebackup:
+
   storage:
     storageClass: ceph-rbd
     size: 5Gi
+
+
   enableSuperuserAccess: true
   monitoring:
     enablePodMonitor: true

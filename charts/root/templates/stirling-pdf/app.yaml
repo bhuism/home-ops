@@ -23,9 +23,9 @@ spec:
             external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
             cert-manager.io/cluster-issuer: letsencrypt-production
           hosts:
-            - name: {{ .Chart.Name }}.impl.nl
+            - name: stirling-pdf.impl.nl
               tls: true
-              tlsSecret: {{ .Chart.Name }}.impl.nl
+              tlsSecret: stirling-pdf.impl.nl
 
   syncPolicy:
     automated:

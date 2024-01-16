@@ -24,11 +24,8 @@ spec:
             cert-manager.io/cluster-issuer: letsencrypt-production
           hosts:
             - name: {{ .Release.Name }}.impl.nl
-          tls:
-            - secretName: stirling-pdf.impl.nl
-              hosts:
-                - stirling-pdf.impl.nl
-
+              tls: true
+              tlsSecret: {{ .Release.Name }}.impl.nl
 
   syncPolicy:
     automated:

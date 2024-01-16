@@ -23,9 +23,9 @@ spec:
             external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
             cert-manager.io/cluster-issuer: letsencrypt-production
           hosts:
-            - name: {{ .Release.Name }}.impl.nl
+            - name: {{ .Chart.Name }}.impl.nl
               tls: true
-              tlsSecret: {{ .Release.Name }}.impl.nl
+              tlsSecret: {{ .Chart.Name }}.impl.nl
 
   syncPolicy:
     automated:

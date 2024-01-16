@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: stirling-pdf
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: stirling-pdf
+  project: default
+  source:
+    repoURL: https://github.com/Stirling-Tools/Stirling-PDF.git
+    path: chart/stirling-pdf
+    targetRevision: HEAD
+    helm:
+      valuesObject:
+        ingress:
+          enabled: true
+          ingressClassName: nginx
+          annotations:
+            external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+            external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+            cert-manager.io/cluster-issuer: letsencrypt-production
+          hosts:
+            - {{ .Release.Name }}.impl.nl
+          tls:
+            - secretName: {{ .Release.Name }}.impl.nl
+              hosts:
+                - {{ .Release.Name }}.impl.nl
+
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

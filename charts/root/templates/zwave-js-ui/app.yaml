@@ -16,9 +16,9 @@ spec:
     helm:
       values: |
 
-        image:
-          repository: europe-west4-docker.pkg.dev/impl-383520/docker/zwave-js-ui
-          tag: v9.7.0
+        # image:
+        #   repository: europe-west4-docker.pkg.dev/impl-383520/docker/zwave-js-ui
+        #   tag: v9.7.0
 
         nodeSelector:
           kubernetes.io/hostname: node6

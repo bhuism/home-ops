@@ -14,7 +14,7 @@ spec:
     repoURL: https://djjudas21.github.io/charts/
     targetRevision: 0.1.9
     helm:
-      values: |
+      valuesObject:
         env:
           tz: "Europe/Amsterdam"
           publicKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+MieaK3sDbRvB/hxS5z/wLIaHv2MI9HywLLBpjoHs99657LMFoCO5OqF48OOjAGaNenzUilp2d84Y4LfKo2EeaQ/sQpil1xSEY5z9nIcPKauJ2ydJb90mHQcyuqHa3pkXe0R+frCYCDOz/lwNTXXeljlDJW0pf02J7KKpHIcCoSCdKoPv35DswemRycAuQ+5injAX4yHhpEr314553DTT3ShvQllnCubxkTl/lAWvrt7z4yeCii2iikxtXUUAQPqbl/eyU+VhAEH49kbL/oJ9FXC6nBd5UvRzZhGCPp/XZQJR63t8tc3MiKJA58gA6pukVik9p+4pknorPogGaqQAycO/1Tj3AYRHWZhZTF4Ey3jIzamz9T4JYh8ucmCBorM3ikSnWGk+h5+FQPcGpiyrxDKoWAwsW8/3pRYmbmqoRW1MCxrqSNBmDgw/uCPzUmD9XNr78ctLZpPImpH/tuH4p+neE7KBCzBSV/4DCsvEWZT+qEheWwC1Ie5Pzua62lk= bhuism@eva

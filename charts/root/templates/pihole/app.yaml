@@ -14,7 +14,7 @@ spec:
     repoURL: https://mojo2600.github.io/pihole-kubernetes/
     targetRevision: 2.21.0
     helm:
-      values: |
+      valuesObject:
         replicaCount: 1
         serviceDhcp:
           enabled: false
@@ -44,11 +44,6 @@ spec:
             - secretName: pihole.impl.nl
               hosts:
                 - pihole.impl.nl
-        # serviceWeb:
-        #   loadBalancerIP: 192.168.1.82
-        #   annotations:
-        #     metallb.universe.tf/allow-shared-ip: pihole-svc
-        #   type: LoadBalancer
         hostname: pihole
         adminPassword: "killer"
         monitoring:

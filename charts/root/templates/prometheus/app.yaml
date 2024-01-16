@@ -14,7 +14,7 @@ spec:
     repoURL: https://prometheus-community.github.io/helm-charts
     targetRevision: 55.8.2
     helm:
-      values: |
+      valuesObject:
         alertmanager:
           enabled: false
         grafana:

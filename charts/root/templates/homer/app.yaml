@@ -14,7 +14,7 @@ spec:
     repoURL: https://djjudas21.github.io/charts/
     targetRevision: 8.1.9
     helm:
-      values: |
+      valuesObject:
         env:
           TZ: "Europe/Amsterdam"
           IPV6_DISABLE: 1

@@ -14,7 +14,7 @@ spec:
     repoURL: https://minicloudlabs.github.io/helm-charts
     targetRevision: 3.4.1
     helm:
-      values: |
+      valuesObject:
         securityContext:
           runAsNonRoot: false
           runAsUser: 0

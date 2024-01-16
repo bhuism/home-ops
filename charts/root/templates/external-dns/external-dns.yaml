@@ -14,7 +14,7 @@ spec:
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 6.29.1
     helm:
-      values: |
+      valuesObject:
         provider: cloudflare
         cloudflare:
           apiToken: "KHpxqF3BvvOOtlTy5DDtMhAJL1inEUO1ercPJb8S"

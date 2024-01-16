@@ -14,7 +14,7 @@ spec:
     repoURL: https://cloudflare.github.io/helm-charts
     targetRevision: 0.3.0
     helm:
-      values: |
+      valuesObject:
         image:
           tag: "2023.8.2"
         cloudflare:

@@ -14,7 +14,7 @@ spec:
     repoURL: https://helm.influxdata.com
     targetRevision: 2.1.2
     helm:
-      values: |
+      valuesObject:
         adminUser:
           organization: "influxdata"
           bucket: "default"

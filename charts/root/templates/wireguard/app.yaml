@@ -14,7 +14,7 @@ spec:
     repoURL: https://bryopsida.github.io/wireguard-chart
     targetRevision: 0.18.0
     helm:
-      values: |
+      valuesObject:
         autoscaling:
           enabled: false
         replicaCount: 1

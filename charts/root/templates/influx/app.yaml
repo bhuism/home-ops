@@ -14,7 +14,7 @@ spec:
     repoURL: https://helm.influxdata.com
     targetRevision: 4.12.5
     helm:
-      values: |
+      valuesObject:
         image:
           tag: "1.8.10"
         config:

@@ -14,7 +14,7 @@ spec:
     repoURL: https://kubernetes-sigs.github.io/metrics-server/
     targetRevision: 3.11.0
     helm:
-      values: |
+      valuesObject:
         metrics:
           enabled: true
         serviceMonitor:

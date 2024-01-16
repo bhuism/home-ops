@@ -14,7 +14,7 @@ spec:
     repoURL: https://ealenn.github.io/charts
     targetRevision: 0.5.0
     helm:
-      values: |
+      valuesObject:
         ingress:
           enabled: true
           ingressClassName: nginx

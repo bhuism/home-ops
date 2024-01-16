@@ -17,6 +17,7 @@ spec:
       values: |
         currentNamespaceOnly: false
         csi:
+          enableRbdDriver: false
           enableGrpcMetrics: true
           enableLiveness: true
           serviceMonitor:

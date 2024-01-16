@@ -23,11 +23,11 @@ spec:
             external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
             cert-manager.io/cluster-issuer: letsencrypt-production
           hosts:
-            - {{ .Release.Name }}.impl.nl
+            - stirling-pdf.impl.nl
           tls:
-            - secretName: {{ .Release.Name }}.impl.nl
+            - secretName: stirling-pdf.impl.nl
               hosts:
-                - {{ .Release.Name }}.impl.nl
+                - stirling-pdf.impl.nl
 
 
   syncPolicy:

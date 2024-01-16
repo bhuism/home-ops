@@ -17,12 +17,12 @@ spec:
       values: |
         currentNamespaceOnly: false
         csi:
-          enableRbdDriver: false
+          enableRbdDriver: true
+          enableCephfsDriver: false
           enableGrpcMetrics: true
           enableLiveness: true
           serviceMonitor:
             enabled: true
-          enableCephfsDriver: false
           enableCephfsSnapshotter: false
           enableNFSSnapshotter: false
           enableRBDSnapshotter: false

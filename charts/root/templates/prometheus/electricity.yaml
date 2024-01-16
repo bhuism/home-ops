@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Release.Name }}-electricity
+  name: dashboard-electricity
   namespace: prometheus
 data:
   electricity.json: |-

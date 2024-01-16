@@ -109,8 +109,6 @@ spec:
         persistence:
           enabled: true
           existingClaim: gatus-v1-pvc-external
-        serviceMonitor:
-          enabled: true          
   syncPolicy:
     automated:
       prune: true

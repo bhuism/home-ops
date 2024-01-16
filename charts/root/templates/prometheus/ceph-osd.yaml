@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Release.Name }}-ceph-osd
+  name: dashboard-ceph-osd
   namespace: prometheus
 data:
   ceph-osd.json: |-

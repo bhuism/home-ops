@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Release.Name }}-ceph-pools
+  name: dashboard-ceph-pools
   namespace: prometheus
 data:
   ceph-pools.json: |-

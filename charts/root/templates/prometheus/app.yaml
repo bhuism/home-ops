@@ -95,11 +95,11 @@ spec:
                 options:
                   path: /var/lib/grafana/dashboards/ceph-pools
           dashboardsConfigMaps:
-            electricity: {{ .Release.Name }}-electricity
-            volumes: {{ .Release.Name }}-volumes
-            ceph-cluster: {{ .Release.Name }}-ceph-cluster
-            ceph-osd: {{ .Release.Name }}-ceph-osd
-            ceph-pools: {{ .Release.Name }}-ceph-pools
+            electricity: dashboard-electricity
+            volumes: dashboard-volumes
+            ceph-cluster: dashboard-ceph-cluster
+            ceph-osd: dashboard-ceph-osd
+            ceph-pools: dashboard-ceph-pools
 
           # dashboards:
           #   default:

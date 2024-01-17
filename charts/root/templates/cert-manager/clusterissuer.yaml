@@ -10,9 +10,6 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-production
     solvers:
-#    - http01:
-#        ingress:
-#          class: nginx
     - dns01:
         cloudflare:
           apiTokenSecretRef:

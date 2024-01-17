@@ -15,6 +15,10 @@ spec:
     targetRevision: 1.2.3
     helm:
       valuesObject:
+        image:
+          repository: ghcr.io/gethomepage/homepage
+          pullPolicy: Always
+          tag: "latest"
         config:
           bookmarks:
             - Developer:

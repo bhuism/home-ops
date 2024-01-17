@@ -40,8 +40,7 @@
 - [Rook-Ceph](https://rook.io/docs/rook/latest-release/Helm-Charts/helm-charts/)
 - [CloudNativePG](https://cloudnative-pg.io/)
 - [Metrics Server](https://artifacthub.io/packages/helm/metrics-server/metrics-server)
-- [Trivy](https://github.com/aquasecurity/trivy)
-- https://docs.frigate.video/
+- [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF)
 
 ### Todo
 
@@ -58,6 +57,7 @@
 - Shlink, no arm image
 - Popeye, no arm image
 - [Homepage](https://gethomepage.dev/)
+- https://docs.frigate.video/
 
 ### Install
 

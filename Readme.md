@@ -59,3 +59,15 @@
 - Popeye, no arm image
 - [Homepage](https://gethomepage.dev/)
 
+### Install
+
+```bash
+helm install argocd -n argocd  --create-namespace  argo/argo-cd -f values.yaml 
+```
+
+```bash
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
+```bash
+kubectl -n argocd create -f charts/root/root.yaml 
+```

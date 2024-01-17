@@ -41,6 +41,7 @@
 - [CloudNativePG](https://cloudnative-pg.io/)
 - [Metrics Server](https://artifacthub.io/packages/helm/metrics-server/metrics-server)
 - [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF)
+- [Homepage](https://gethomepage.dev/)
 
 ### Todo
 
@@ -56,7 +57,6 @@
 - Jellyfin
 - Shlink, no arm image
 - Popeye, no arm image
-- [Homepage](https://gethomepage.dev/)
 - https://docs.frigate.video/
 
 ### Install

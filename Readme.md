@@ -54,7 +54,7 @@
 - [Uptime Kuma](https://github.com/louislam/uptime-kuma)
 - [Unifi Poller](https://unpoller.com/)
 - [Gotify](https://github.com/gotify/server)
-- Jellyfin
+- [Jellyfin](https://github.com/truecharts/charts/tree/master/charts/stable/jellyfin)
 - Shlink, no arm image
 - Popeye, no arm image
 - https://docs.frigate.video/

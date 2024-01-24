@@ -39,7 +39,6 @@ ingress:
     className: nginx
     annotations:
       external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
-      cert-manager.io/cluster-issuer: letsencrypt-production
     hosts:
       - host: ok.impl.nl
         paths:
@@ -59,13 +58,4 @@ ingress:
             pathType: ImplementationSpecific
             service:
               name: main
-    tls:
-      - secretName: ok.impl.nl
-        hosts:
-          - ok.impl.nl
-      - secretName: ip.impl.nl
-        hosts:
-          - ip.impl.nl
-      - secretName: time.impl.nl
-        hosts:
-          - time.impl.nl
+    tls: {}

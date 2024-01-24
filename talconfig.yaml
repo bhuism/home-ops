@@ -1,9 +1,11 @@
 clusterName: impl-k8s
-talosVersion: v1.6.1
-kubernetesVersion: v1.29.0
 endpoint: https://control.impl.nl:6443
+talosVersion: v1.6.3
+kubernetesVersion: v1.29.0
 allowSchedulingOnMasters: true
+talosImageURL: ghcr.io/nberlee/installer
 additionalMachineCertSans:
+  - 127.0.0.1
   - 192.168.1.11
   - 192.168.1.153
   - 192.168.1.154
@@ -19,6 +21,7 @@ additionalMachineCertSans:
   - node4.impl.nl
   - jasmine.odee.net
 additionalApiServerCertSans:
+  - 127.0.0.1
   - 192.168.1.11
   - 192.168.1.153
   - 192.168.1.154
@@ -36,37 +39,12 @@ additionalApiServerCertSans:
 patches:
   - |-
     - op: add
-      path: /machine/features/kubePrism
-      value:
-        enabled: true
-        port: 7445
-    - op: add
       path: /machine/network/nameservers
       value:
         - 8.8.4.4
         - 1.1.1.1
         - 8.8.8.8
 nodes:
-  - hostname: node1
-    ipAddress: 192.168.1.153
-    controlPlane: false
-    installDisk: /dev/mmcblk0
-  - hostname: node2
-    ipAddress: 192.168.1.154
-    controlPlane: false
-    installDisk: /dev/mmcblk0
-  - hostname: node5
-    ipAddress: 192.168.1.110
-    controlPlane: false
-    installDisk: /dev/mmcblk0
-  - hostname: node3
-    ipAddress: 192.168.1.155
-    controlPlane: false
-    installDisk: /dev/mmcblk0
-  - hostname: node4
-    ipAddress: 192.168.1.161
-    controlPlane: false
-    installDisk: /dev/nvme0n1
   - hostname: node6
     ipAddress: 192.168.1.182
     controlPlane: true
@@ -79,6 +57,11 @@ nodes:
     installDisk: /dev/mmcblk0
     kernelModules:   
       - name: rockchip-cpufreq
+    configPatches:
+      - op: add
+        path: /machine/install/extraKernelArgs
+        value:
+          - "-console=ttyS2,115200"
   - hostname: node8
     ipAddress: 192.168.1.196
     controlPlane: true

@@ -59,22 +59,14 @@ ingress:
             pathType: ImplementationSpecific
             service:
               name: main
-    tls: {}
-# persistence:
-#   configinc:
-#     type: persistentVolumeClaim
-#     existingClaim: mosquitto-inc-v2-pvc
-#     globalMounts:
-#       - path: /mosquitto/configinc
-#   data:
-#     type: persistentVolumeClaim
-#     existingClaim: mosquitto-data-pvc
-#     globalMounts:
-#       - path: /mosquitto/data
-#   config:
-#     enabled: true
-#     type: configMap
-#     name: mosquitto-config
-#     globalMounts:
-#       - path: /mosquitto/config/mosquitto.conf
-#         subPath: mosquitto.conf
+    tls:
+      - hosts:
+          - ok.impl.nl
+        secretName: ok.impl.nl
+      - hosts:
+          - ip.impl.nl
+        secretName: ip.impl.nl
+      - hosts:
+          - time.impl.nl
+        secretName: time.impl.nl
+

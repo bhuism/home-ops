@@ -63,11 +63,9 @@ ingress:
       - secretName: ok.impl.nl
         hosts:
           - ok.impl.nl
-        
       - secretName: ip.impl.nl
         hosts:
           - ip.impl.nl
       - secretName: time.impl.nl
         hosts:
           - time.impl.nl
-

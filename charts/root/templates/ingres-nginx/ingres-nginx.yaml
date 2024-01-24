@@ -20,8 +20,8 @@ spec:
             enabled: true
             serviceMonitor:
               enabled: true
-          extraArgs:
-            default-ssl-certificate: "homepage/www.impl.nl"
+          # extraArgs:
+          #   default-ssl-certificate: "homepage/www.impl.nl"
         defaultBackend:
           enabled: true
           name: defaultbackend

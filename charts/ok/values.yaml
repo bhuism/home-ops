@@ -60,13 +60,14 @@ ingress:
             service:
               name: main
     tls:
-      - hosts:
+      - secretName: ok.impl.nl
+        hosts:
           - ok.impl.nl
-        secretName: ok.impl.nl
-      - hosts:
+        
+      - secretName: ip.impl.nl
+        hosts:
           - ip.impl.nl
-        secretName: ip.impl.nl
-      - hosts:
+      - secretName: time.impl.nl
+        hosts:
           - time.impl.nl
-        secretName: time.impl.nl
 

@@ -1,12 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", "group:all"],
+  "extends": ["config:recommended", "group:all"],
   "automerge": false,
-  "argocd": {
-    "fileMatch": ["charts/.+\\.ya?ml$"]
-  },
-  "helm-values": {
-    "fileMatch": ["kubernetes/.+\\.ya?ml$"]
-  },
-  "platform": "github"
+  "argocd": { "fileMatch": ["charts/.+\\.ya?ml$"] },
+  "helm-values": { "fileMatch": ["kubernetes/.+\\.ya?ml$"] },
+  "platform": "github",
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["argocd"],
+      "automerge": true
+    }
+  ]
 }

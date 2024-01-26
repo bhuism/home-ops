@@ -1,6 +1,6 @@
 clusterName: impl-k8s
 endpoint: https://control.impl.nl:6443
-talosVersion: v1.6.3
+talosVersion: v1.6.2
 kubernetesVersion: v1.29.0
 allowSchedulingOnMasters: true
 talosImageURL: ghcr.io/nberlee/installer
@@ -57,11 +57,18 @@ nodes:
     installDisk: /dev/mmcblk0
     kernelModules:   
       - name: rockchip-cpufreq
-    configPatches:
-      - op: add
-        path: /machine/install/extraKernelArgs
-        value:
+    schematic:
+      customization:
+        extraKernelArgs:
           - "-console=ttyS2,115200"
+#B        systemExtensions:
+#          officialExtensions:
+#          - siderolabs/intel-ucode
+#    configPatches:
+#      - op: add
+#        path: /machine/install/extraKernelArgs
+#        value:
+#          - "-console=ttyS2,115200"
   - hostname: node8
     ipAddress: 192.168.1.196
     controlPlane: true

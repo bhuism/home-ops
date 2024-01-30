@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: dashboard-ceph-cluster
-  namespace: prometheus
-data:
-  ceph-cluster.json: |-
-    {{- .Files.Get "files/ceph-cluster.json" | nindent 4 }}

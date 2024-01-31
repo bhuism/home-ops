@@ -191,7 +191,8 @@ spec:
         prometheus-node-exporter:
           prometheus:
             monitor:
-              attachMetadata: true
+              attachMetadata:
+                node: true
               relabelings:
                 - action: replace
                   sourceLabels:

@@ -186,7 +186,7 @@ spec:
                   - role: node
                 relabel_configs:
                   - source_labels: __meta_kubernetes_node_name
-                    target_label: hostname
+                    target_label: instance
             serviceMonitorSelectorNilUsesHelmValues: false
             storageSpec:
               volumeClaimTemplate:

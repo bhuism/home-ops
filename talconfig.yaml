@@ -1,9 +1,8 @@
 clusterName: impl-k8s
-endpoint: https://control.impl.nl:6443
-talosVersion: v1.6.3
+talosVersion: v1.6.4
 kubernetesVersion: v1.29.0
-allowSchedulingOnMasters: true
-talosImageURL: ghcr.io/nberlee/installer
+endpoint: https://control.impl.nl:6443
+allowSchedulingOnControlPlanes: true
 additionalMachineCertSans:
   - 127.0.0.1
   - 192.168.1.11
@@ -36,14 +35,18 @@ additionalApiServerCertSans:
   - node3.impl.nl
   - node4.impl.nl
   - jasmine.odee.net
-patches:
-  - |-
-    - op: add
-      path: /machine/network/nameservers
-      value:
-        - 1.0.0.1
-        - 8.8.4.4
-        - 8.8.8.8
+
+controlPlane:
+  nameservers:
+    - 1.0.0.1
+    - 8.8.4.4
+    - 8.8.8.8
+
+worker:
+  nameservers:
+    - 1.0.0.1
+    - 8.8.4.4
+    - 8.8.8.8
 
 nodes:
   - hostname: node24
@@ -98,4 +101,3 @@ nodes:
     installDisk: /dev/mmcblk0
     kernelModules:
       - name: rockchip-cpufreq
-    

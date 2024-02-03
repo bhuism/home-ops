@@ -19,6 +19,7 @@ spec:
           enabled: false
         grafana:
           adminPassword: killer
+          defaultDashboardsEnabled: false
           grafana.ini:
             analytics:
               check_for_updates: false
@@ -49,24 +50,24 @@ spec:
             dashboardproviders.yaml:
               apiVersion: 1
               providers:
-              - name: 'electricity'
-                orgId: 1
-                folder: 'Bassie'
-                type: file
-                disableDeletion: true
-                allowUiUpdates: true
-                editable: true
-                options:
-                  path: /var/lib/grafana/dashboards/electricity
-              - name: 'volumes'
-                orgId: 1
-                folder: 'Bassie'
-                type: file
-                disableDeletion: true
-                allowUiUpdates: true
-                editable: true
-                options:
-                  path: /var/lib/grafana/dashboards/volumes
+                - name: "electricity"
+                  orgId: 1
+                  folder: "Bassie"
+                  type: file
+                  disableDeletion: true
+                  allowUiUpdates: true
+                  editable: true
+                  options:
+                    path: /var/lib/grafana/dashboards/electricity
+                - name: "volumes"
+                  orgId: 1
+                  folder: "Bassie"
+                  type: file
+                  disableDeletion: true
+                  allowUiUpdates: true
+                  editable: true
+                  options:
+                    path: /var/lib/grafana/dashboards/volumes
           dashboardsConfigMaps:
             electricity: dashboard-electricity
             volumes: dashboard-volumes

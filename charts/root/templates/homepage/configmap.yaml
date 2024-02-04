@@ -19,39 +19,40 @@ data:
   custom.js: ""
   bookmarks.yaml: |
     - Storage:
-        - Rook:
-            - href: http://rook.ceph.impl.nl
+      - Rook:
+        - abbr: Rook
+          href: http://rook.ceph.impl.nl
   services.yaml: |
     - My First Group:
-        - My First Service:
-            href: http://localhost/
-            description: Homepage is awesome
+      - My First Service:
+        href: http://localhost/
+        description: Homepage is awesome
     - My Second Group:
-        - My Second Service:
-            href: http://localhost/
-            description: Homepage is the best
+      - My Second Service:
+        href: http://localhost/
+        description: Homepage is the best
     - My Third Group:
-        - My Third Service:
-            href: http://localhost/
-            description: Homepage is 😎
+      - My Third Service:
+        href: http://localhost/
+        description: Homepage is 😎
   widgets.yaml: |
     - kubernetes:
-        cluster:
-          show: true
-          cpu: true
-          memory: true
-          showLabel: true
-          label: "cluster"
-        nodes:
-          show: true
-          cpu: true
-          memory: true
-          showLabel: true
-    - resources:
-        backend: resources
-        expanded: true
+      cluster:
+        show: true
         cpu: true
         memory: true
+        showLabel: true
+        label: "cluster"
+      nodes:
+        show: true
+        cpu: true
+        memory: true
+        showLabel: true
+    - resources:
+      backend: resources
+      expanded: true
+      cpu: true
+      memory: true
     - datetime:
       text_size: xl
       locale: nl

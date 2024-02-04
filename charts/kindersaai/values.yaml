@@ -25,10 +25,12 @@ serviceAccount:
 
 podAnnotations: {}
 
-podSecurityContext: {}
+podSecurityContext:
+  {}
   # fsGroup: 2000
 
-securityContext: {}
+securityContext:
+  {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -46,13 +48,13 @@ ingress:
   className: nginx
   annotations:
     external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
+    gethomepage.dev/enabled: "true"
   hosts:
     - host: www.kindersaai.nl
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls: {}
-
 
 resources:
   limits:

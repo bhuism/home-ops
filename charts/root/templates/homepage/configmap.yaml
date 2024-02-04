@@ -9,17 +9,18 @@ data:
   kubernetes.yaml: |
     mode: cluster
   settings.yaml: |
-    title: My Awesome Homepage2
+    title: impl.nl
     theme: dark
     base: https://www.impl.nl
     headerStyle: clean
+    language: nl
+    showStats: true
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
-    - Developer:
-        - Github:
-            - abbr: GH
-              href: https://github.com/
+    - Storage:
+        - Rook:
+            - href: http://rook.ceph.impl.nl
   services.yaml: |
     - My First Group:
         - My First Service:

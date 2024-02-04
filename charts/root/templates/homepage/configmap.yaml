@@ -8,18 +8,15 @@ metadata:
 data:
   kubernetes.yaml: |
     mode: cluster
-  settings.yaml: ""
-  #settings.yaml: |
-  #  providers:
-  #    longhorn:
-  #      url: https://longhorn.my.network
+  settings.yaml: |
+    title: impl.nl
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
-    - Developer:
-        - Github:
-            - abbr: GH
-              href: https://github.com/
+    - Ceph:
+        - Rook:
+            - abbr: Rook
+              href: http://rook.ceph.impl.nl
   services.yaml: |
     - My First Group:
         - My First Service:

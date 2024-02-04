@@ -10,7 +10,6 @@ data:
     mode: cluster
   settings.yaml: |
     title: impl.nl
-    theme: dark
     base: https://www.impl.nl
   custom.css: ""
   custom.js: ""

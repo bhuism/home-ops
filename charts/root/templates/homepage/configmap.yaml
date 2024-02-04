@@ -12,7 +12,6 @@ data:
     title: impl.nl
     theme: dark
     base: https://www.impl.nl
-    headerStyle: clean
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
@@ -53,7 +52,6 @@ data:
       memory: true
     - datetime:
       text_size: xl
-      locale: nl
       format:
         dateStyle: long
         timeStyle: long

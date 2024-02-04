@@ -13,8 +13,6 @@ data:
     theme: dark
     base: https://www.impl.nl
     headerStyle: clean
-    language: nl
-    showStats: true
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |

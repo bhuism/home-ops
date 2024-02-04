@@ -54,6 +54,12 @@ data:
         cpu: true
         memory: true
     - search:
-        provider: duckduckgo
+        provider: google
         target: _blank
+    - datetime:
+      text_size: xl
+      locale: nl
+      format:
+        dateStyle: long
+        timeStyle: long        
   docker.yaml: ""

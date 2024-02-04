@@ -8,9 +8,10 @@ metadata:
 data:
   kubernetes.yaml: |
     mode: cluster
-  settings.yaml: |
-    title: impl.nl
-    base: https://www.impl.nl
+  settings.yaml: ""
+  # settings.yaml: |
+  #   title: impl.nl
+  #   base: https://www.impl.nl
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |

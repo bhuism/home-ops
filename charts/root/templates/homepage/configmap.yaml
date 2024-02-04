@@ -10,6 +10,9 @@ data:
     mode: cluster
   settings.yaml: |
     title: impl.nl
+    startUrl: https://impl.nl
+    theme: dark
+    headerStyle: clean
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |

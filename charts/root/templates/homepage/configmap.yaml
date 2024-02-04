@@ -13,7 +13,6 @@ data:
     startUrl: https://impl.nl
     theme: dark
     headerStyle: clean
-    showStats: true
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |

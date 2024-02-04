@@ -14,8 +14,8 @@ spec:
     repoURL: https://jameswynn.github.io/helm-charts
     targetRevision: 1.2.3
     helm:
-      - valueFiles:
-        values.yaml
+      valueFiles:
+        - values.yaml
   syncPolicy:
     automated:
       prune: true

@@ -12,11 +12,7 @@ data:
     title: My Awesome Homepage2
     theme: dark
     base: https://www.impl.nl
-    headerStyle: boxedWidgets
-  #settings.yaml: |
-  #  providers:
-  #    longhorn:
-  #      url: https://longhorn.my.network
+    headerStyle: clean
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |

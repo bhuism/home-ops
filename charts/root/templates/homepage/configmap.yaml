@@ -8,7 +8,7 @@ metadata:
 data:
   kubernetes.yaml: |
     mode: cluster
-  settings.yaml:
+  settings.yaml: |
     title: My Awesome Homepage2
     theme: dark
     base: https://www.impl.nl

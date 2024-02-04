@@ -51,7 +51,6 @@ data:
       cpu: true
       memory: true
     - datetime:
-      text_size: xl
       format:
         dateStyle: long
         timeStyle: long

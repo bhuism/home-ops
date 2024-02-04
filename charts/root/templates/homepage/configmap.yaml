@@ -37,24 +37,24 @@ data:
             description: Homepage is 😎
   widgets.yaml: |
     - kubernetes:
-        cluster:
-          show: true
-          cpu: true
-          memory: true
-          showLabel: true
-          label: "cluster"
-        nodes:
-          show: true
-          cpu: true
-          memory: true
-          showLabel: true
-    - resources:
-        backend: resources
-        expanded: true
+      cluster:
+        show: true
         cpu: true
         memory: true
+        showLabel: true
+        label: "cluster"
+      nodes:
+        show: true
+        cpu: true
+        memory: true
+        showLabel: true
+    - resources:
+      backend: resources
+      expanded: true
+      cpu: true
+      memory: true
     - search:
-        provider: duckduckgo
-        target: _blank
+      provider: duckduckgo
+      target: _blank
   docker.yaml: ""
  

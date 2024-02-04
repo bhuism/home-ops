@@ -25,12 +25,10 @@ data:
         - My First Service:
             href: http://localhost/
             description: Homepage is awesome
-
     - My Second Group:
         - My Second Service:
             href: http://localhost/
             description: Homepage is the best
-
     - My Third Group:
         - My Third Service:
             href: http://localhost/
@@ -53,13 +51,10 @@ data:
         expanded: true
         cpu: true
         memory: true
-    - search:
-        provider: google
-        target: _blank
     - datetime:
       text_size: xl
       locale: nl
       format:
         dateStyle: long
-        timeStyle: long        
+        timeStyle: long
   docker.yaml: ""

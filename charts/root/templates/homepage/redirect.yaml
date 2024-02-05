@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: www.impl.nl
+  namespace: homepage
   annotations:
     nginx.ingress.kubernetes.io/permanent-redirect: https://impl.nl
     external-dns.alpha.kubernetes.io/target: ingress.impl.nl

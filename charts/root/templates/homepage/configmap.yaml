@@ -18,18 +18,25 @@ data:
   custom.js: ""
   bookmarks.yaml: |
     - Bookmarks:
-        - ArgoCD:
+        - Jasmine:
             - abbr: JM
               href: https://jasmine.odee.net
+        - Eleanor:
+            - abbr: EN
+              href: http://eleanor.odee.net
   services.yaml: |
     - Ceph:
         - ArgoCD:
-            - href: https://argocd.ceph.impl.nl
+            href: https://argocd.ceph.impl.nl
         - Grafana:
-            - href: http://grafana.ceph.impl.nl
+            href: http://grafana.ceph.impl.nl
         - Rook:
-            - href: https://rook.ceph.impl.nl
-  widgets.yaml: |
+            href: https://rook.ceph.impl.nl
+    - My Second Group:
+        - My Second Service:
+            href: http://localhost/
+            description: Homepage is the best
+
     - kubernetes:
         cluster:
           show: true

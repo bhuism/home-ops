@@ -9,17 +9,17 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-production
 spec:
   ingressClassName: nginx
-  # rules:
-  # - host: impl.nl
-  #   http:
-  #     paths:
-  #     - backend:
-  #         service:
-  #           name: homepage
-  #           port:
-  #             number: 3000
-  #       path: /
-  #       pathType: Prefix
+  rules:
+  - host: impl.nl
+    http:
+      paths:
+      - backend:
+          service:
+            name: ingress-nginx-defaultbackend
+            port:
+              name: http
+        path: /
+        pathType: Prefix
   tls:
   - hosts:
     - www.impl.nl

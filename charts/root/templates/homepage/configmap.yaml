@@ -18,9 +18,15 @@ data:
   custom.js: ""
   bookmarks.yaml: |
     - Ceph:
+        - ArgoCD:
+            - abbr: ArgoCD
+              href: https://argocd.ceph.impl.nl
+        - Grafana:
+            - abbr: Grafana
+              href: http://grafana.ceph.impl.nl
         - Rook:
             - abbr: Rook
-              href: http://rook.ceph.impl.nl
+              href: https://rook.ceph.impl.nl
   services.yaml: |
     - My First Group:
         - My First Service:

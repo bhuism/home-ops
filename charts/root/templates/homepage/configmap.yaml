@@ -17,31 +17,18 @@ data:
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
-    - Ceph:
+    - Bookmarks:
         - ArgoCD:
-            - abbr: AC
-              href: https://argocd.ceph.impl.nl
-        - Grafana:
-            - abbr: GF
-              href: http://grafana.ceph.impl.nl
-        - Rook:
-            - abbr: RK
-              href: https://rook.ceph.impl.nl
+            - abbr: JM
+              href: https://jasmine.odee.net
   services.yaml: |
     - Ceph:
         - ArgoCD:
-            - description: AC
-              href: https://argocd.ceph.impl.nl
+            - href: https://argocd.ceph.impl.nl
         - Grafana:
-            - description: GF
-              href: http://grafana.ceph.impl.nl
+            - href: http://grafana.ceph.impl.nl
         - Rook:
-            - description: RK
-              href: https://rook.ceph.impl.nl
-    - My Second Group:
-        - My Second Service:
-            href: http://localhost/
-            description: Homepage is the best
+            - href: https://rook.ceph.impl.nl
   widgets.yaml: |
     - kubernetes:
         cluster:

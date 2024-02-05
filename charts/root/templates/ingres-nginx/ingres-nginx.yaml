@@ -20,6 +20,10 @@ spec:
             enabled: true
             serviceMonitor:
               enabled: true
+          service:
+            annotations:
+              metallb.universe.tf/address-pool: ipaddresspool-huisnetwerk
+              metallb.universe.tf/loadBalancerIPs: 192.168.1.80
         defaultBackend:
           enabled: true
           name: defaultbackend

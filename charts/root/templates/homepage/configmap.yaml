@@ -19,13 +19,13 @@ data:
   bookmarks.yaml: |
     - Ceph:
         - ArgoCD:
-            - abbr: ArgoCD
+            - abbr: AC
               href: https://argocd.ceph.impl.nl
         - Grafana:
-            - abbr: Grafana
+            - abbr: GF
               href: http://grafana.ceph.impl.nl
         - Rook:
-            - abbr: Rook
+            - abbr: RK
               href: https://rook.ceph.impl.nl
   services.yaml: |
     - My First Group:

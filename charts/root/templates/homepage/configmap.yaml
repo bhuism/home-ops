@@ -25,13 +25,6 @@ data:
             - abbr: EN
               href: http://eleanor.odee.net
   services.yaml: |
-    - Ceph:
-        - ArgoCD:
-            href: https://argocd.ceph.impl.nl
-        - Grafana:
-            href: http://grafana.ceph.impl.nl
-        - Rook:
-            href: https://rook.ceph.impl.nl
     - My Second Group:
         - My Second Service:
             href: http://localhost/

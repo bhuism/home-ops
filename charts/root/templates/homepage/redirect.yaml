@@ -9,9 +9,18 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-production
 spec:
   ingressClassName: nginx
-rules:
-  - host: www.impl.nl
+  defaultBackend:
+    resource:
+      enabled: true
+      name: defaultbackend
+      image:
+      registry: europe-west4-docker.pkg.dev
+      image: impl-383520/docker/defaultbackend
+        tag: latest
+        pullPolicy: Always
+        runAsNonRoot: true
+        allowPrivilegeEscalation: false
 tls:
-  - hosts:
-      - www.impl.nl
-    secretName: www.impl.nl
+- hosts:
+  - www.impl.nl
+  secretName: www.impl.nl

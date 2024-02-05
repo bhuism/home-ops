@@ -71,6 +71,16 @@ spec:
             admin.enabled: true
             application.resourceTrackingMethod: annotation+label
             url: https://argocd.impl.nl
+            oidc.config: |
+              name: Auth0
+              issuer: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/
+              clientID: ksdkWYma0ijfC10amKanYD3YtD9weZ4N
+              clientSecret: 92m5WAuUzfrfWlGn4yWDMo7TPtAR65Ov4yDTre3uKzboRauDiDL_Z4KqjJmg39Th
+              requestedScopes:
+              - openid
+              - profile
+              - email
+              - 'http://impl.nl/groups'
           rbac:
             create: true
           params:

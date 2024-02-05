@@ -28,20 +28,20 @@ data:
             - abbr: RK
               href: https://rook.ceph.impl.nl
   services.yaml: |
-    - My First Group:
-        - My First Service:
-            href: http://localhost/
-            description: Homepage is awesome
-
+    - Ceph:
+        - ArgoCD:
+            - description: AC
+              href: https://argocd.ceph.impl.nl
+        - Grafana:
+            - description: GF
+              href: http://grafana.ceph.impl.nl
+        - Rook:
+            - description: RK
+              href: https://rook.ceph.impl.nl
     - My Second Group:
         - My Second Service:
             href: http://localhost/
             description: Homepage is the best
-
-    - My Third Group:
-        - My Third Service:
-            href: http://localhost/
-            description: Homepage is 😎
   widgets.yaml: |
     - kubernetes:
         cluster:

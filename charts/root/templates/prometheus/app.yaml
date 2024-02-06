@@ -47,28 +47,28 @@ spec:
               - secretName: grafana.impl.nl
                 hosts:
                   - grafana.impl.nl
-          dashboardProviders:
-            dashboardproviders.yaml:
-              apiVersion: 1
-              providers:
-                - name: "electricity"
-                  orgId: 1
-                  folder: "Bassie"
-                  type: file
-                  disableDeletion: true
-                  allowUiUpdates: true
-                  editable: true
-                  options:
-                    path: /var/lib/grafana/dashboards/electricity
-                - name: "volumes"
-                  orgId: 1
-                  folder: "Bassie"
-                  type: file
-                  disableDeletion: true
-                  allowUiUpdates: true
-                  editable: true
-                  options:
-                    path: /var/lib/grafana/dashboards/volumes
+          # dashboardProviders:
+          #   dashboardproviders.yaml:
+          #     apiVersion: 1
+          #     providers:
+          #       - name: "electricity"
+          #         orgId: 1
+          #         folder: "Bassie"
+          #         type: file
+          #         disableDeletion: true
+          #         allowUiUpdates: true
+          #         editable: true
+          #         options:
+          #           path: /var/lib/grafana/dashboards/electricity
+          #       - name: "volumes"
+          #         orgId: 1
+          #         folder: "Bassie"
+          #         type: file
+          #         disableDeletion: true
+          #         allowUiUpdates: true
+          #         editable: true
+          #         options:
+          #           path: /var/lib/grafana/dashboards/volumes
           dashboardsConfigMaps:
             electricity: dashboard-electricity
             volumes: dashboard-volumes

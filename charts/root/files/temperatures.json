@@ -112,7 +112,7 @@
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,
-          "legendFormat": "{{instance}} {{type}} {{zone}}",
+          "legendFormat": "{{node}} {{type}} {{zone}}",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -211,7 +211,7 @@
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,
-          "legendFormat": "{{instance}} {{sensor}}",
+          "legendFormat": "{{node}} {{sensor}}",
           "range": true,
           "refId": "A",
           "useBackend": false

@@ -262,7 +262,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "avg(100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"node-exporter\",mode=\"idle\"}[5m])) * 100))",
+          "expr": "avg(100 - (avg by (node) (irate(node_cpu_seconds_total{job=\"node-exporter\",mode=\"idle\"}[5m])) * 100))",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 1,
@@ -342,7 +342,7 @@
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
-          "pattern": "instance",
+          "pattern": "node",
           "preserveFormat": false,
           "sanitize": false,
           "thresholds": [],
@@ -487,7 +487,7 @@
           "expr": "node_memory_MemTotal_bytes - (node_memory_MemFree_bytes+node_memory_Buffers_bytes+node_memory_Cached_bytes)",
           "format": "time_series",
           "intervalFactor": 2,
-          "legendFormat": "{{ instance }}",
+          "legendFormat": "{{node}}",
           "refId": "A"
         },
         {
@@ -629,10 +629,10 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"node-exporter\",mode=\"idle\"}[5m])) * 100)",
+          "expr": "100 - (avg by (node) (irate(node_cpu_seconds_total{job=\"node-exporter\",mode=\"idle\"}[5m])) * 100)",
           "format": "time_series",
           "intervalFactor": 3,
-          "legendFormat": "{{instance}}",
+          "legendFormat": "{{node}}",
           "refId": "A"
         }
       ],
@@ -759,9 +759,9 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(avg_over_time(node_hwmon_temp_celsius[5m])) by (instance, chip, sensor) > 0",
+          "expr": "sum(avg_over_time(node_hwmon_temp_celsius[5m])) by (node, chip, sensor) > 0",
           "instant": false,
-          "legendFormat": "{{instance}} {{chip}} {{sensor}}",
+          "legendFormat": "{{node}} {{chip}} {{sensor}}",
           "range": true,
           "refId": "A"
         }
@@ -861,7 +861,7 @@
           "expr": "rpi_cpu_temperature_celsius",
           "format": "time_series",
           "intervalFactor": 5,
-          "legendFormat": "{{instance}}",
+          "legendFormat": "{{node}}",
           "refId": "A"
         }
       ],

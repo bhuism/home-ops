@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: dashboard-electricity
-  namespace: prometheus
-data:
-  electricity.json: |-
-    {{- .Files.Get "files/electricity.json" | nindent 4 }}

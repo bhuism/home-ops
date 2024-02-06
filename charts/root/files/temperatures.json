@@ -18,7 +18,6 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 34,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -77,12 +76,13 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unitScale": true
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
+        "h": 38,
         "w": 24,
         "x": 0,
         "y": 0
@@ -90,9 +90,11 @@
       "id": 2,
       "options": {
         "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
+          "calcs": [
+            "last"
+          ],
+          "displayMode": "table",
+          "placement": "right",
           "showLegend": true
         },
         "tooltip": {
@@ -176,22 +178,25 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unitScale": true
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
-        "w": 23,
+        "h": 32,
+        "w": 24,
         "x": 0,
-        "y": 11
+        "y": 38
       },
       "id": 1,
       "options": {
         "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
+          "calcs": [
+            "last"
+          ],
+          "displayMode": "table",
+          "placement": "right",
           "showLegend": true
         },
         "tooltip": {
@@ -211,7 +216,7 @@
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,
-          "legendFormat": "{{node}} {{sensor}}",
+          "legendFormat": "{{node}} {{sensor}} {{chip}}",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -235,6 +240,6 @@
   "timezone": "",
   "title": "Temperature",
   "uid": "ad7f3f36-c2b2-43a0-9330-ec23461d33e1",
-  "version": 5,
+  "version": 1,
   "weekStart": ""
 }

@@ -7,7 +7,7 @@
   "platform": "github",
   "packageRules": [
     {
-      "matchPackagePatterns": ["argo-cd", "kube-prometheus-stack"],
+      "matchPackagePatterns": ["argo-cd", "kube-prometheus-stack", "external-dns"],
       "matchUpdateTypes": ["patch", "minor"],
       "automerge": true
     }

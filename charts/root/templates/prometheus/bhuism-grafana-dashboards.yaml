@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dotdc-grafana-dashboards
+  name: bhuism-grafana-dashboards
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
     path: ./
-    repoURL: https://github.com/dotdc/grafana-dashboards-kubernetes
+    repoURL: https://github.com/bhuism/grafana-dashboards
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc

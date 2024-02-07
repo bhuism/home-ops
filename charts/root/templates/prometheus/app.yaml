@@ -47,109 +47,11 @@ spec:
               - secretName: grafana.impl.nl
                 hosts:
                   - grafana.impl.nl
-          # dashboardProviders:
-          #   dashboardproviders.yaml:
-          #     apiVersion: 1
-          #     providers:
-          #       - name: "electricity"
-          #         orgId: 1
-          #         folder: "Bassie"
-          #         type: file
-          #         disableDeletion: true
-          #         allowUiUpdates: true
-          #         editable: true
-          #         options:
-          #           path: /var/lib/grafana/dashboards/electricity
-          #       - name: "volumes"
-          #         orgId: 1
-          #         folder: "Bassie"
-          #         type: file
-          #         disableDeletion: true
-          #         allowUiUpdates: true
-          #         editable: true
-          #         options:
-          #           path: /var/lib/grafana/dashboards/volumes
-          dashboardsConfigMaps:
-            electricity: dashboard-electricity
-            volumes: dashboard-volumes
-
-          # dashboards:
-          #   default:
-          #     test:
-          #       file: ../../dashboards/test.yaml
-          # Provision grafana-dashboards-kubernetes
-          # dashboardProviders:
-          #   dashboardproviders.yaml:
-          #     apiVersion: 1
-          #     providers:
-          #     - name: 'grafana-dashboards-kubernetes'
-          #       orgId: 1
-          #       folder: 'Kubernetes2'
-          #       type: file
-          #       allowUiUpdates: true
-          #       editable: true
-          #       options:
-          #         path: /var/lib/grafana/dashboards/grafana-dashboards-kubernetes
-          #     - name: 'grafana-bas'
-          #       orgId: 1
-          #       folder: 'Bas'
-          #       type: file
-          #       allowUiUpdates: true
-          #       editable: true
-          #       options:
-          #         path: /var/lib/grafana/dashboards/grafana-bas
-          #     - name: 'home-assistant'
-          #       orgId: 1
-          #       folder: 'Home Assistant'
-          #       type: file
-          #       allowUiUpdates: true
-          #       editable: true
-          #       options:
-          #         path: /var/lib/grafana/dashboards/home-assistant
-          # dashboards:
-          #   home-assistant:
-          #     home-assistant:
-          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/home-assistant.json
-          #   grafana-bas:
-          #     gatus:
-          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/prometheus_grafana_provisioning_dashboards_gatus.json
-          #     cert-manager:
-          #       url: https://gitlab.com/uneeq-oss/cert-manager-mixin/-/raw/master/dashboards/cert-manager.json
-          #     argocd:
-          #       url: https://raw.githubusercontent.com/argoproj/argo-cd/master/examples/dashboard.json
-          #     speedtestexporter:
-          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/speedtest.json
-          #     kubernetes:
-          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/kubernetes-withtemp.json
-          #     smartmeter:
-          #       url: https://raw.githubusercontent.com/bhuism/home-ops/main/dashboards/smartmeter.json
-          #   grafana-dashboards-kubernetes:
-          #     k8s-system-api-server:
-          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
-          #       token: ''
-          #     k8s-system-coredns:
-          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-coredns.json
-          #       token: ''
-          #     k8s-views-global:
-          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-global.json
-          #       token: ''
-          #     k8s-views-namespaces:
-          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-namespaces.json
-          #       token: ''
-          #     k8s-views-nodes:
-          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
-          #       token: ''
-          #     k8s-views-pods:
-          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
-          #       token: ''
-          #     k8s-prometheus:
-          #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-addons-prometheus.json
-          #       token: ''
           datasources:
             datasources.yaml:
               apiVersion: 1
               datasources:
-                - name: Home Assistant
+                - name: Home Assistant influx
                   type: influxdb
                   access: proxy
                   url: http://influx-influxdb.influx:8086
@@ -158,16 +60,7 @@ spec:
                   secureJsonData:
                     password: killer
                   editable: false
-                # - name: DSMR Reader
-                #   type: influxdb
-                #   access: proxy
-                #   url: http://influx-influxdb.influx:8086
-                #   user: root
-                #   database: dsmrreader
-                #   secureJsonData:
-                #     password: killer
-                #   editable: false
-                - name: dsmrreader_measurements influxdb2
+                - name: Dsmr Reader Measurements influxdb2
                   type: influxdb
                   access: proxy
                   url: http://influxdb2.influxdb2

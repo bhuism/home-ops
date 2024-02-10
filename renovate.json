@@ -1,13 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended", "group:all"],
-  "automerge": false,
   "argocd": { "fileMatch": ["charts/.+\\.ya?ml$"] },
   "helm-values": { "fileMatch": ["kubernetes/.+\\.ya?ml$"] },
   "platform": "github",
   "packageRules": [
     {
-      "matchPackagePatterns": ["argo-cd", "kube-prometheus-stack", "external-dns"],
       "matchUpdateTypes": ["patch", "minor"],
       "automerge": true
     }

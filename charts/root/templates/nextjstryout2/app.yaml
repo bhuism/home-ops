@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/bhuism/nextjstryout2.git
-    path: /
+    path: .
     targetRevision: v0.1.25
   syncPolicy:
     automated:

@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/bhuism/nextjstryout2.git
     path: deploy/helm
-    targetRevision: v0.1.25
+    targetRevision: v1.0.2
   syncPolicy:
     automated:
       prune: true

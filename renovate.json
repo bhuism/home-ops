@@ -8,6 +8,5 @@
       "matchUpdateTypes": ["patch", "minor"],
       "automerge": true
     }
-  ],
-  "enabledManagers": ["helm", "kubernetes"]
+  ]
 }

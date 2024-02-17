@@ -3,6 +3,8 @@ controllers:
     type: statefulset
     containers:
       main:
+        env:
+          SPEEDTEST_CACHE_FOR: 3600
         image:
           repository: ghcr.io/miguelndecarvalho/speedtest-exporter
           pullPolicy: IfNotPresent

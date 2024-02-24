@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended", "group:all"],
-  "argocd": { "fileMatch": ["charts/root/.+\\.ya?ml$"] },
+  "argocd": { "fileMatch": ["charts/.+\\.ya?ml$"] },
   "platform": "github",
   "packageRules": [
     {

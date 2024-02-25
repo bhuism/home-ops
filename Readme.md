@@ -42,6 +42,7 @@
 - [Metrics Server](https://artifacthub.io/packages/helm/metrics-server/metrics-server)
 - [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF)
 - [Homepage](https://gethomepage.dev/)
+- [Minecraft](https://github.com/itzg/minecraft-server-charts)
 
 ### Todo
 

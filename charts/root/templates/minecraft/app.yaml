@@ -25,24 +25,24 @@ spec:
           #nodePort: 30101
           # servicePort: 19132
           loadBalancerIP: 192.168.1.85
-          extraPorts:
-            - name: map
-                containerPort: 25565
-                protocol: UDP
-                service:
-                  enabled: true
-                  embedded: true
-                  type: LoadBalancer
-                  loadBalancerIP: 192.168.1.85
-                  externalTrafficPolicy: Cluster
-                  port: 25565
-                ingress:
-                  ingressClassName: nginx
-                  enabled: false
+          # extraPorts:
+          #   - name: map
+          #       containerPort: 25565
+          #       protocol: UDP
+          #       service:
+          #         enabled: true
+          #         embedded: true
+          #         type: LoadBalancer
+          #         loadBalancerIP: 192.168.1.85
+          #         externalTrafficPolicy: Cluster
+          #         port: 25565
+          #       ingress:
+          #         ingressClassName: nginx
+          #         enabled: false
 
 
-        workloadAsStatefulSet: true
-        strategyType: RollingUpdate
+        # workloadAsStatefulSet: false
+        # strategyType: RollingUpdate
         persistence:
           existingClaim: minecraft-pvc
   syncPolicy:

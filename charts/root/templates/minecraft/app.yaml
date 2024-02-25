@@ -17,8 +17,6 @@ spec:
       valuesObject:
         minecraftServer:
           eula: true
-          rcon: true
-          password: killer
           gameMode: creative
           motd: "Welcome to Huismans Minecraft!"
           serviceType: LoadBalancer

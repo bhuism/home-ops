@@ -20,6 +20,7 @@ spec:
           gameMode: creative
           motd: "Welcome to Huismans Minecraft!"
           serviceType: LoadBalancer
+          pvp: false
           levelType: "minecraft:normal"
           loadBalancerIP: 192.168.1.85
         workloadAsStatefulSet: true

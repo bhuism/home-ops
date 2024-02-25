@@ -22,7 +22,7 @@ spec:
           enableLanVisibility: true
           serviceType: LoadBalancer
           pvp: false
-          levelType: "minecraft:normal"
+          levelType: DEFAULT
           #nodePort: 30101
           # servicePort: 19132
           loadBalancerIP: 192.168.1.85

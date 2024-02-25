@@ -23,7 +23,7 @@ spec:
           pvp: false
           levelType: "minecraft:normal"
           nodePort: 30565
-          servicePort: 30565
+          servicePort: 30566
           loadBalancerIP: 192.168.1.85
         workloadAsStatefulSet: true
         strategyType: RollingUpdate

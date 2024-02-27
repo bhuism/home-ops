@@ -26,7 +26,7 @@ spec:
           pvp: false
           levelType: DEFAULT
           loadBalancerIP: 192.168.1.85
-          ops: 2535437459132467
+          ops: 2535437459132467,2535413218097118
           cheats: true
         persistence:
           existingClaim: minecraft-pvc

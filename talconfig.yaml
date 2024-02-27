@@ -1,5 +1,5 @@
 clusterName: impl-k8s
-talosVersion: v1.6.4
+talosVersion: v1.6.5
 kubernetesVersion: v1.29.0
 endpoint: https://control.impl.nl:6443
 allowSchedulingOnControlPlanes: true

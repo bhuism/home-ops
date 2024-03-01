@@ -58,7 +58,7 @@ spec:
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
-                - "[BODY] == OK"
+                - "[BODY] == ok"
             - name: IpApplication
               url: "https://ip.impl.nl"
               interval: 5m

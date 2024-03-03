@@ -37,8 +37,8 @@ spec:
               - name: upsport
                 groups:
                   - paths:
-                      - path: /dev/bus/usb/001/018
-                        mountPath: /dev/bus/usb/001/018
+                      - path: /dev/bus/usb
+                        mountPath: /dev/bus/usb
               - name: zwavemodule
                 groups:
                   - paths:

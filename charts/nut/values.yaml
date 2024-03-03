@@ -27,8 +27,8 @@ controllers:
           tag: 2.8.0-r4
         env:
           TZ: UTC
-          DRIVER: blazer_ser
-          PORT: /dev/ttyUSB0
+          DRIVER: usbhid-ups
+          PORT: /dev/hidraw0
           API_USER: root
           API_PASSWORD: killer
         resources:

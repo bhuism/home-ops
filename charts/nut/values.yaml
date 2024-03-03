@@ -34,8 +34,8 @@ controllers:
         resources:
           limits:
             squat.ai/upsport: 1
-        # securityContext:
-        #   privileged: true
+        securityContext:
+          privileged: true
 
 
 

@@ -31,9 +31,9 @@ controllers:
           PORT: auto
           API_USER: root
           API_PASSWORD: killer
-        # resources:
-        #   limits:
-        #     squat.ai/upsport: 1
+        resources:
+          limits:
+            squat.ai/upsport: 1
         securityContext:
           privileged: true
 

@@ -39,6 +39,9 @@ spec:
                   - paths:
                       - path: /dev/bus/usb
                         mountPath: /dev/bus/usb
+                  - paths:
+                      - path: /dev/char
+                        mountPath: /dev/char
               - name: zwavemodule
                 groups:
                   - paths:

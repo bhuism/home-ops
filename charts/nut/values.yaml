@@ -28,7 +28,7 @@ controllers:
         env:
           TZ: UTC
           DRIVER: usbhid-ups
-          # PORT: /dev/hidraw0
+          PORT: auto
           API_USER: root
           API_PASSWORD: killer
         resources:

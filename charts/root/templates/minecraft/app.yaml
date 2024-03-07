@@ -15,7 +15,11 @@ spec:
     targetRevision: 2.4.1
     helm:
       valuesObject:
-        minecraftServer:
+        resources:
+          requests:
+            memory: 768Mi
+            cpu: 500m
+          minecraftServer:
           eula: true
           gameMode: creative
           defaultPermission: operator

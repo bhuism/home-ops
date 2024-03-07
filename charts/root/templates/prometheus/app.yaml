@@ -32,9 +32,10 @@ spec:
               disable_login_form: true
               disable_signout_menu: true
             auth.basic:
-              enabled: false
+              enabled: true
             auth.anonymous:
               enabled: true
+              org_role: Admin
             security:
               disable_brute_force_login_protection: true
               allow_embedding: true

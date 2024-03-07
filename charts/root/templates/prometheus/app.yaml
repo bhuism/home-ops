@@ -28,14 +28,9 @@ spec:
               home_page: /dashboards
             server:
               root_url: https://grafana.impl.nl
-            auth:
-              disable_login_form: true
-              disable_signout_menu: true
-            auth.basic:
-              enabled: true
-            auth.anonymous:
-              enabled: true
-              org_role: Admin
+            # auth:
+            #   disable_login_form: true
+            #   disable_signout_menu: true
             security:
               disable_brute_force_login_protection: true
               allow_embedding: true

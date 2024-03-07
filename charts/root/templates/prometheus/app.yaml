@@ -28,8 +28,16 @@ spec:
               home_page: /dashboards
             server:
               root_url: https://grafana.impl.nl
+            auth:
+              disable_login_form: true
+              disable_signout_menu: true
+            auth.basic:
+              enabled: false
+            auth.anonymous:
+              enabled: true
             security:
               disable_brute_force_login_protection: true
+              allow_embedding: true
           ingress:
             enabled: true
             ingressClassName: nginx

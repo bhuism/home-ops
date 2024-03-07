@@ -19,7 +19,7 @@ spec:
           requests:
             memory: 768Mi
             cpu: 500m
-          minecraftServer:
+        minecraftServer:
           eula: true
           gameMode: creative
           defaultPermission: operator

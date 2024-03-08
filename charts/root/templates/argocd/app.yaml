@@ -73,7 +73,7 @@ spec:
               - openid
               - profile
               - email
-              - http://impl.nl/groups
+              - "http://impl.nl/groups"
           rbac:
             create: true
             policy.default: role:readonly
@@ -83,7 +83,7 @@ spec:
               - openid
               - profile
               - email
-              - http://impl.nl/groups
+              - "http://impl.nl/groups"
           params:
             application.namespaces: "*"
             server.insecure: true

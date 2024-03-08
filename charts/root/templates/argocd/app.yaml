@@ -73,9 +73,17 @@ spec:
               - openid
               - profile
               - email
-              - 'http://impl.nl/groups'
+              - http://impl.nl/groups
           rbac:
             create: true
+            policy.default: role:readonly
+            policy.csv: |
+              g, bhuism@odee.net, role:admin
+            scopes:
+              - openid
+              - profile
+              - email
+              - http://impl.nl/groups
           params:
             application.namespaces: "*"
             server.insecure: true

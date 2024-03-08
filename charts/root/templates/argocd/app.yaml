@@ -69,11 +69,12 @@ spec:
               issuer: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/
               clientID: ksdkWYma0ijfC10amKanYD3YtD9weZ4N
               clientSecret: 92m5WAuUzfrfWlGn4yWDMo7TPtAR65Ov4yDTre3uKzboRauDiDL_Z4KqjJmg39Th
+              logoutURL: "https://dev-g4n3hjan0v2jg3le.eu.auth0.com/oidc/logout?id_token_hint={{token}}&post_logout_redirect_uri=https://impl.nl"
               requestedScopes:
               - openid
               - profile
               - email
-              - "http://impl.nl/groups"
+              - "https://impl.nl/claims/groups"
           rbac:
             create: true
             policy.default: role:readonly
@@ -83,7 +84,7 @@ spec:
               - openid
               - profile
               - email
-              - "http://impl.nl/groups"
+              - "https://impl.nl/claims/groups"
             scopes: '[https://impl.nl/claims/groups, email]' 
           params:
             application.namespaces: "*"

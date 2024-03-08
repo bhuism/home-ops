@@ -41,7 +41,7 @@ patches:
     - op: add
       path: /machine/kubelet/extraArgs
       value:
-        rotate-server-certificates: false
+        rotate-server-certificates: true
   - |-
     cluster:
       proxy:

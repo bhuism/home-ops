@@ -69,7 +69,7 @@ spec:
               issuer: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/
               clientID: ksdkWYma0ijfC10amKanYD3YtD9weZ4N
               clientSecret: 92m5WAuUzfrfWlGn4yWDMo7TPtAR65Ov4yDTre3uKzboRauDiDL_Z4KqjJmg39Th
-              requestedScopes:
+              requestedScopes: ""
               - openid
               - profile
               - email
@@ -77,13 +77,14 @@ spec:
           rbac:
             create: true
             policy.default: role:readonly
-            policy.csv: |
-              g, bhuism@odee.net, role:admin
+            # policy.csv: |
+            #   g, bhuism@odee.net, role:admin
             scopes:
               - openid
               - profile
               - email
               - "http://impl.nl/groups"
+            scopes: '[https://impl.nl/claims/groups, email]' 
           params:
             application.namespaces: "*"
             server.insecure: true

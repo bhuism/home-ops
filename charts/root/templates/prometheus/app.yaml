@@ -39,7 +39,7 @@ spec:
             auth.generic_oauth:
               name: Auth0
               enabled: true
-              allow_sign_up: false
+              allow_sign_up: true
               client_id: ksdkWYma0ijfC10amKanYD3YtD9weZ4N
               client_secret: 92m5WAuUzfrfWlGn4yWDMo7TPtAR65Ov4yDTre3uKzboRauDiDL_Z4KqjJmg39Th
               scopes: openid profile email name

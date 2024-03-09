@@ -18,6 +18,7 @@ spec:
         alertmanager:
           enabled: false
         grafana:
+          assertNoLeakedSecrets: false
           adminPassword: killer
           defaultDashboardsEnabled: false
           grafana.ini:

@@ -19,7 +19,6 @@ spec:
         cephClusterSpec:
           cephVersion:
             image: quay.io/ceph/ceph:v18.2.2
-
           external:
             enable: true
           crashCollector:

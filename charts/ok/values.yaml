@@ -27,6 +27,7 @@ controllers:
 
 service:
   main:
+    controller: main
     ports:
       http:
         port: 8080
@@ -46,17 +47,20 @@ ingress:
           - path: /
             pathType: ImplementationSpecific
             service:
-              name: main
+               identifier: app
+               port: http
       - host: ip.impl.nl
         paths:
           - path: /
             pathType: ImplementationSpecific
             service:
-              name: main
+               identifier: app
+               port: http
       - host: time.impl.nl
         paths:
           - path: /
             pathType: ImplementationSpecific
             service:
-              name: main
+               identifier: app
+               port: http
     tls: {}

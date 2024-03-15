@@ -47,20 +47,20 @@ ingress:
           - path: /
             pathType: ImplementationSpecific
             service:
-               identifier: app
+               identifier: main
                port: http
       - host: ip.impl.nl
         paths:
           - path: /
             pathType: ImplementationSpecific
             service:
-               identifier: app
+               identifier: main
                port: http
       - host: time.impl.nl
         paths:
           - path: /
             pathType: ImplementationSpecific
             service:
-               identifier: app
+               identifier: main
                port: http
     tls: {}

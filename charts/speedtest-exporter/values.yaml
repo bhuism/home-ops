@@ -33,6 +33,7 @@ serviceMonitor:
     enabled: true
     endpoints:
       - port: metrics
+        scheme: http
         path: /metrics
         interval: 1h
         scrapeTimeout: 1m

@@ -5,6 +5,7 @@ controllers:
       main:
         env:
           SPEEDTEST_CACHE_FOR: 3600
+          TZ: "Europe/Amsterdam"
         image:
           repository: ghcr.io/miguelndecarvalho/speedtest-exporter
           pullPolicy: IfNotPresent
@@ -16,10 +17,10 @@ controllers:
             enabled: false
           startup:
             enabled: false
-        env:
-          TZ: "Europe/Amsterdam"
+
 service:
   main:
+    controller: main
     ports:
       http:
         enabled: false

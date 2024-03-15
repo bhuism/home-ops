@@ -54,9 +54,8 @@ ingress:
       - host: dsmr-reader.impl.nl
         paths:
           - path: /
-            pathType: Prefix
             service:
-              name: main
+              identifier: main
               port: http
     tls:
       - secretName: dsmr-reader.impl.nl

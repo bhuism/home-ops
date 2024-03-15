@@ -9,13 +9,6 @@ defaultPodOptions:
       operator: "Exists"
       effect: "NoSchedule"
 
-service:
-  main:
-    ports:
-      http:
-        port: 3493
-
-
 controllers:
   main:
     type: statefulset
@@ -37,5 +30,9 @@ controllers:
         securityContext:
           privileged: true
 
-
-
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 3493

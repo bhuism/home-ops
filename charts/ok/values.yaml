@@ -26,7 +26,21 @@ controllers:
             memory: 64Mi
 
 service:
-  main:
+  ok_service:
+    controller: main
+    ports:
+      http:
+        port: 8080
+      liveness-port:
+        port: 9080
+  ip_service:
+    controller: main
+    ports:
+      http:
+        port: 8080
+      liveness-port:
+        port: 9080
+  time_service:
     controller: main
     ports:
       http:
@@ -47,20 +61,20 @@ ingress:
           - path: /
             pathType: ImplementationSpecific
             service:
-               identifier: main
+               identifier: ok_service
                port: http
       - host: ip.impl.nl
         paths:
           - path: /
             pathType: ImplementationSpecific
             service:
-               identifier: main
+               identifier: ip_service
                port: http
       - host: time.impl.nl
         paths:
           - path: /
             pathType: ImplementationSpecific
             service:
-               identifier: main
+               identifier: time_service
                port: http
     tls: {}

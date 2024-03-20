@@ -50,3 +50,9 @@ ingress:
       - secretName: jellyfin.impl.nl
         hosts:
           - jellyfin.impl.nl
+
+persistence:
+  config:
+    existingClaim: jellyfin-config-pvc
+  cache:
+    existingClaim: jellyfin-cache-pvc

@@ -26,7 +26,7 @@ service:
     ports:
       autodiscovery:
         enabled: true
-        protocol: udp
+        protocol: UDP
         port: 7359
         targetPort: 7359
 

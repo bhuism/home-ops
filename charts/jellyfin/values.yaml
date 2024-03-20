@@ -56,3 +56,5 @@ persistence:
     existingClaim: jellyfin-config-pvc
   cache:
     existingClaim: jellyfin-cache-pvc
+  media:
+    existingClaim: jellyfin-media-pvc

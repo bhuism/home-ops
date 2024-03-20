@@ -10,9 +10,9 @@ spec:
     namespace: jellyfin
   project: default
   source:
-    repoURL: https://github.com/truecharts/charts.git
+    repoURL: https://github.com/truecharts/charts
     path: charts/stable/jellyfin
-    targetRevision: 18.7.1
+    targetRevision: HEAD
     helm:
       valuesObject:
         chartContext:

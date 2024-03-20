@@ -10,7 +10,7 @@ spec:
     namespace: jellyfin
   project: default
   source:
-    repoURL: https://github.com/truecharts/charts
+    repoURL: https://github.com/truecharts/charts.git
     path: charts/stable/jellyfin
     targetRevision: HEAD
     helm:

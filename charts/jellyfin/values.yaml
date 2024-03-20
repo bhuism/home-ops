@@ -8,7 +8,7 @@ controllers:
           tag: 10.8.13
         securityContext:
           allowPrivilegeEscalation: false
-          runAsNonRoot: true
+          runAsNonRoot: false
           capabilities:
             drop:
               - ALL

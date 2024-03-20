@@ -10,16 +10,12 @@ spec:
     namespace: jellyfin
   project: default
   source:
-    repoURL: https://github.com/truecharts/charts.git
-    path: charts/stable/jellyfin
+    repoURL: https://github.com/bhuism/home-ops.git
+    path: charts/jellyfin
     targetRevision: HEAD
-    helm:
-      valuesObject:
-        chartContext:
-          appUrl: "https://jellyfin.impl.nl"
-        autodiscovery:
-          enabled: true
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

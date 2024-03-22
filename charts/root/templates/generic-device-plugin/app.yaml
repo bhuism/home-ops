@@ -36,12 +36,9 @@ spec:
                         mountPath: /dev/ttyUSB0
               - name: upsport
                 groups:
-                  - paths:
-                      - path: /dev/bus/usb
-                        mountPath: /dev/bus/usb
-                  - paths:
-                      - path: /dev/char
-                        mountPath: /dev/char
+                  - usb:
+                    - vendor: "051d"
+                      product: "0002"
               - name: zwavemodule
                 groups:
                   - paths:

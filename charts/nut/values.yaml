@@ -24,8 +24,8 @@ controllers:
           PORT: auto
           API_USER: root
           API_PASSWORD: killer
-          GROUP: root
-          USER: root
+          # GROUP: root
+          # USER: root
           VENDORID: 051d
           MAXAGE: 60
         resources:

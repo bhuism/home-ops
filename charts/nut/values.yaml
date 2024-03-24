@@ -27,7 +27,7 @@ controllers:
           # GROUP: root
           # USER: root
           VENDORID: 051d
-          MAXAGE: 60
+          MAXAGE: 300
         resources:
           limits:
             squat.ai/upsport: 1

@@ -4,7 +4,7 @@ controllers:
     containers:
       main:
         image:
-          repository: docker.io/jellyfin/jellyfin
+          repository: nyanmisaka/jellyfin:latest-rockchip
           pullPolicy: IfNotPresent
           tag: 10.8.13
         securityContext:

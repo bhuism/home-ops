@@ -5,7 +5,7 @@ controllers:
       main:
         image:
           repository: nyanmisaka/jellyfin:latest-rockchip
-          pullPolicy: IfNotPresent
+          pullPolicy: Always
           tag: 10.8.13
         securityContext:
           allowPrivilegeEscalation: false

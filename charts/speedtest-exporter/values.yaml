@@ -17,7 +17,6 @@ controllers:
             enabled: false
           startup:
             enabled: false
-
 service:
   main:
     controller: main

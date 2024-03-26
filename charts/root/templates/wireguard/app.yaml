@@ -15,12 +15,9 @@ spec:
     targetRevision: 0.22.0
     helm:
       valuesObject:
-        autoscaling:
-          enabled: false
-        replicaCount: 1
         secretName: wireguard-wg-generated
         metrics:
-          enabled: false
+          enabled: true
         wireguard:
           clients:
             - PublicKey: 'PIXLqvUeEZEDYkw7/hAcOQeBIhRwoJe6lZAOXkbyIws='

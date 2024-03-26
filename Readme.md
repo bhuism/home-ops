@@ -43,6 +43,7 @@
 - [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF)
 - [Homepage](https://gethomepage.dev/)
 - [Minecraft](https://github.com/itzg/minecraft-server-charts)
+- [Jellyfin](https://github.com/truecharts/charts/tree/master/charts/stable/jellyfin)
 
 ### Todo
 
@@ -55,7 +56,6 @@
 - [Uptime Kuma](https://github.com/louislam/uptime-kuma)
 - [Unifi Poller](https://unpoller.com/)
 - [Gotify](https://github.com/gotify/server)
-- [Jellyfin](https://github.com/truecharts/charts/tree/master/charts/stable/jellyfin)
 - Shlink, no arm image
 - Popeye, no arm image
 - https://docs.frigate.video/

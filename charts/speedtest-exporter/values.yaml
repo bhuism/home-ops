@@ -17,6 +17,7 @@ controllers:
               initialDelaySeconds: 10
               httpGet:
                 path: /
+                port: 9798
           readiness:
             enabled: true
             custom: true
@@ -24,6 +25,7 @@ controllers:
               initialDelaySeconds: 10
               httpGet:
                 path: /
+                port: 9798
           startup:
             enabled: true
             custom: true
@@ -31,6 +33,7 @@ controllers:
               initialDelaySeconds: 10
               httpGet:
                 path: /
+                port: 9798
 service:
   main:
     controller: main

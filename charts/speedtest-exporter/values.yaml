@@ -11,12 +11,15 @@ controllers:
           tag: v3.5.4
         probes:
           liveness:
+            enabled: true
             spec:
               initialDelaySeconds: 10
           readiness:
+            enabled: true
             spec:
               initialDelaySeconds: 10
           startup:
+            enabled: true
             spec:
               initialDelaySeconds: 10
 service:

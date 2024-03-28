@@ -11,15 +11,14 @@ controllers:
           tag: v3.5.4
         probes:
           liveness:
-            enabled: true
-            initialDelaySeconds: 10
+            spec:
+              initialDelaySeconds: 10
           readiness:
-            enabled: true
-            initialDelaySeconds: 10
+            spec:
+              initialDelaySeconds: 10
           startup:
-            enabled: true
-            initialDelaySeconds: 10
-
+            spec:
+              initialDelaySeconds: 10
 service:
   main:
     controller: main

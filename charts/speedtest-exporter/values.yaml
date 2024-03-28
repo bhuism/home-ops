@@ -1,6 +1,5 @@
 controllers:
   main:
-    type: statefulset
     containers:
       main:
         env:
@@ -12,11 +11,11 @@ controllers:
           tag: v3.5.4
         probes:
           liveness:
-            enabled: false
+            enabled: true
           readiness:
-            enabled: false
+            enabled: true
           startup:
-            enabled: false
+            enabled: true
 service:
   main:
     controller: main

@@ -1,7 +1,7 @@
 controllers:
   main:
     containers:
-      main:
+      speedtest-exporter:
         env:
           SPEEDTEST_CACHE_FOR: 3600
           TZ: "Europe/Amsterdam"
@@ -36,7 +36,7 @@ controllers:
                 port: 9798
 service:
   main:
-    controller: main
+    controller: speedtest-exporter
     ports:
       http:
         enabled: true

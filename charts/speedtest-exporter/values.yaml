@@ -12,6 +12,7 @@ controllers:
         probes:
           liveness:
             enabled: true
+            type: HTTP
             spec:
               initialDelaySeconds: 10
           readiness:

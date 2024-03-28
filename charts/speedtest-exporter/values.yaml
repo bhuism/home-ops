@@ -40,6 +40,7 @@ service:
     ports:
       http:
         enabled: true
+        protocol: HTTP
         port: 9798
 serviceMonitor:
   main:

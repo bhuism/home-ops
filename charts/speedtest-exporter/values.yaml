@@ -14,7 +14,7 @@ controllers:
             enabled: true
             custom: true
             spec:
-              initialDelaySeconds: 10
+              initialDelaySeconds: 30
               httpGet:
                 path: /
                 port: 9798
@@ -22,7 +22,7 @@ controllers:
             enabled: true
             custom: true
             spec:
-              initialDelaySeconds: 10
+              initialDelaySeconds: 30
               httpGet:
                 path: /
                 port: 9798
@@ -30,7 +30,7 @@ controllers:
             enabled: true
             custom: true
             spec:
-              initialDelaySeconds: 10
+              initialDelaySeconds: 30
               httpGet:
                 path: /
                 port: 9798

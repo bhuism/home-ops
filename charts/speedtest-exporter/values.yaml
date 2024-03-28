@@ -21,8 +21,6 @@ service:
     controller: main
     ports:
       http:
-        enabled: false
-      metrics:
         enabled: true
         protocol: TCP
         port: 9798
@@ -31,7 +29,7 @@ serviceMonitor:
     enabled: true
     serviceName: main
     endpoints:
-      - port: metrics
+      - port: http
         scheme: http
         path: /metrics
         interval: 1h

@@ -12,8 +12,10 @@ defaultPodOptions:
 controllers:
   main:
     type: statefulset
+
     containers:
       main:
+        replicas: 0
         image:
           repository: instantlinux/nut-upsd
           pullPolicy: IfNotPresent

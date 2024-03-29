@@ -25,10 +25,9 @@ controllers:
           PORT: auto
           API_USER: root
           API_PASSWORD: killer
-          # GROUP: root
-          # USER: root
           VENDORID: 051d
           MAXAGE: 300
+          SERIAL: 9B2346A68179
         resources:
           limits:
             squat.ai/upsport: 1

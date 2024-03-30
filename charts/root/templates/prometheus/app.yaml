@@ -73,8 +73,17 @@ spec:
                   type: influxdb
                   access: proxy
                   url: http://influx-influxdb.influx:8086
-                  user: root
+                  user: admin
                   database: homeassistant
+                  secureJsonData:
+                    password: killer
+                  editable: false
+                - name: Lorawan influx
+                  type: influxdb
+                  access: proxy
+                  url: http://influx-influxdb.influx:8086
+                  user: admin
+                  database: lorawan
                   secureJsonData:
                     password: killer
                   editable: false

@@ -4,7 +4,7 @@ metadata:
   name: postgresql
   namespace: cloudnative-pg
 spec:
-  instances: 3
+  instances: 1
 
   superuserSecret:
     name: superuser-secret

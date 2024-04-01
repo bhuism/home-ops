@@ -4,7 +4,7 @@ metadata:
   name: postgresql
   namespace: cloudnative-pg
 spec:
-  instances: 3
+  # instances: 1
 
   superuserSecret:
     name: superuser-secret
@@ -15,11 +15,6 @@ spec:
       owner: dsmr-reader
       secret:
         name: dsmr-reader-secret
-
-
-  replica:
-    enabled: false
-    source: postgresql
 
     # postInitApplicationSQL:
     #   - CREATE ROLE dsmr-reader;

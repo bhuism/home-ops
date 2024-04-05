@@ -18,7 +18,7 @@ spec:
         resources:
           requests:
             memory: 2048Mi
-            cpu: 2048m
+            cpu: 2
         minecraftServer:
           eula: true
           gameMode: creative

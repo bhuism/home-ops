@@ -17,24 +17,24 @@ spec:
       values: |
         hubble:
           enabled: false
-          # relay:
-          #   enabled: true
-          # ui:
-          #   enabled: true
-          #   ingress:
-          #     enabled: true
-          #     ingressClassName: nginx
-          #     annotations:
-          #       external-dns.alpha.kubernetes.io/target: ingress.impl.nl
-          #       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-          #       cert-manager.io/cluster-issuer: letsencrypt-production
-          #     className: nginx
-          #     hosts:
-          #       - hubble.impl.nl
-          #     tls:
-          #       - secretName: hubble.impl.nl
-          #         hosts:
-          #           - hubble.impl.nl
+          relay:
+            enabled: true
+          ui:
+            enabled: true
+            ingress:
+              enabled: true
+              ingressClassName: nginx
+              annotations:
+                external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+                external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+                cert-manager.io/cluster-issuer: letsencrypt-production
+              className: nginx
+              hosts:
+                - hubble.impl.nl
+              tls:
+                - secretName: hubble.impl.nl
+                  hosts:
+                    - hubble.impl.nl
         ipam:
           mode: kubernetes
 

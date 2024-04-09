@@ -3,6 +3,8 @@ talosVersion: v1.6.6
 kubernetesVersion: v1.29.0
 endpoint: https://control.impl.nl:6443
 allowSchedulingOnControlPlanes: true
+cniConfig:
+  name: none
 additionalMachineCertSans:
   - 127.0.0.1
   - 192.168.1.11

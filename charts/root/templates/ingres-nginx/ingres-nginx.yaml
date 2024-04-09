@@ -16,6 +16,9 @@ spec:
     helm:
       valuesObject:
         controller:
+          watchIngressWithoutClass: true
+          ingressClassResource:
+            default: true
           metrics:
             enabled: true
             serviceMonitor:

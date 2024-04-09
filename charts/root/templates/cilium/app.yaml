@@ -62,6 +62,8 @@ spec:
           autoMount:
             enabled: false
           hostRoot: /sys/fs/cgroup
+        loadBalancer:
+          acceleration: native
   syncPolicy:
     automated:
       prune: true

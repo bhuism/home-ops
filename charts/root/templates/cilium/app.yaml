@@ -37,7 +37,15 @@ spec:
         ipam:
           mode: kubernetes
 
-        kubeProxyReplacement: disabled
+        l2announcements:
+          enabled: true
+        kubeProxyReplacement: true
+        loadBalancer:
+          acceleration: native
+        k8sServiceHost: 127.0.0.1
+        k8sServicePort: 7445
+        bpf:
+          masquerade: true
 
         securityContext:
           capabilities:
@@ -61,8 +69,6 @@ spec:
           autoMount:
             enabled: false
           hostRoot: /sys/fs/cgroup
-        loadBalancer:
-          acceleration: native
   syncPolicy:
     automated:
       prune: true

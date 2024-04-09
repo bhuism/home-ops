@@ -44,6 +44,10 @@ patches:
       path: /machine/kubelet/extraArgs
       value:
         rotate-server-certificates: true
+    - op: add 
+      path: /cluster/proxy
+      value:
+        disabled: true
   - |-
     cluster:
       proxy:

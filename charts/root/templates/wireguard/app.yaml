@@ -15,8 +15,11 @@ spec:
     targetRevision: 0.22.0
     helm:
       valuesObject:
+      {{- if and (not .Values.autoscaling.enabled) (not .Values.daemonSet) }}
         secretName: wireguard-wg-generated
         replicaCount: 1
+        autoscaling:
+          enabled: false
         metrics:
           enabled: true
         wireguard:

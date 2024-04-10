@@ -1,0 +1,3 @@
+#!/bin/sh
+
+kubectl debug -i -n ingress-nginx pod/ingress-nginx-controller-678cd4c85d-sz66k  --image=nicolaka/netshoot -c mycontainer28 -q  -- tcpdump -i eth0 -w -  | sudo wireshark -k -i -

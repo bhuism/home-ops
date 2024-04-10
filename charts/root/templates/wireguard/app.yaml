@@ -21,9 +21,9 @@ spec:
           enabled: false
         metrics:
           enabled: true
+        securityContext:
+          runAsNonRoot: false
         wireguard:
-          securityContext:
-            runAsNonRoot: false
           clients:
             - PublicKey: 'PIXLqvUeEZEDYkw7/hAcOQeBIhRwoJe6lZAOXkbyIws='
               AllowedIPs: 10.34.0.4/32

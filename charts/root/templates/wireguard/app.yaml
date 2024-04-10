@@ -23,6 +23,9 @@ spec:
           enabled: true
         securityContext:
           runAsNonRoot: false
+          runAsUser: 0
+          readOnlyRootFilesystem: false
+          privileged: true
         wireguard:
           clients:
             - PublicKey: 'PIXLqvUeEZEDYkw7/hAcOQeBIhRwoJe6lZAOXkbyIws='

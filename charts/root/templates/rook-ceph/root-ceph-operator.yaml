@@ -12,7 +12,7 @@ spec:
   source:
     chart: rook-ceph
     repoURL: https://charts.rook.io/release
-    targetRevision: v1.14.1
+    targetRevision: v1.14.2
     helm:
       valuesObject:
         currentNamespaceOnly: false

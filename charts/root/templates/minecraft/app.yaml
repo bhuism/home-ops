@@ -12,7 +12,7 @@ spec:
   source:
     chart: minecraft-bedrock
     repoURL: https://itzg.github.io/minecraft-server-charts/
-    targetRevision: 2.4.2
+    targetRevision: 2.5.0
     helm:
       valuesObject:
         resources:

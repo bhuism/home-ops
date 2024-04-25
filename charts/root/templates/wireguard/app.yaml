@@ -17,7 +17,6 @@ spec:
       valuesObject:
         secretName: wireguard-wg-generated
         replicaCount: 1
-        runPodOnHostNetwork: true
         autoscaling:
           enabled: false
         metrics:

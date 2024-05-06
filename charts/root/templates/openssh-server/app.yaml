@@ -12,7 +12,7 @@ spec:
   source:
     chart: openssh-server
     repoURL: https://djjudas21.github.io/charts/
-    targetRevision: 0.1.11
+    targetRevision: 0.1.12
     helm:
       valuesObject:
         env:

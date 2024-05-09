@@ -24,6 +24,8 @@ controllers:
           requests:
             cpu: 500m
             memory: 768Mi
+        env:
+          SPRING_PROFILES_ACTIVE: production,resourceserver
 
 service:
   main:

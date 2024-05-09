@@ -1,6 +1,5 @@
 controllers:
   main:
-    replicas: 3
     containers:
       main:
         image:

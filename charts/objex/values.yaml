@@ -19,11 +19,11 @@ controllers:
             enabled: true
         resources:
           limits:
-            cpu: 100m
-            memory: 512Mi
+            cpu: 500m
+            memory: 768Mi
           requests:
-            cpu: 100m
-            memory: 512Mi
+            cpu: 500m
+            memory: 768Mi
 
 service:
   main:

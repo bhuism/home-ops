@@ -26,6 +26,7 @@ controllers:
             memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production,resourceserver
+          SPRING_DATASOURCE_URL: jdbc:mariadb://objex-mariadb:3306/objex
 
 service:
   main:
@@ -58,6 +59,7 @@ ingress:
 mariadb:
   auth:
     rootPassword: killer
+    database: objex
   primary:
     persistence:
       enabled: false

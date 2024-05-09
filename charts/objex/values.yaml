@@ -4,7 +4,7 @@ controllers:
       main:
         image:
           repository: europe-west4-docker.pkg.dev/impl-383520/docker/objex
-          tag: "latest"
+          tag: latest
           pullPolicy: Always
         probes:
           liveness:
@@ -29,6 +29,7 @@ controllers:
           SPRING_DATASOURCE_URL: jdbc:mariadb://objex-mariadb:3306/objex
           SPRING_DATASOURCE_USERNAME: root
           SPRING_DATASOURCE_PASSWORD: killer
+          LOGGING_LEVEL_ROOT: debug
 
 service:
   main:

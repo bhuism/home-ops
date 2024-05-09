@@ -25,10 +25,10 @@ controllers:
         resources:
           limits:
             cpu: 4
-            memory: 4Gi
+            memory: 3Gi
           requests:
             cpu: 2
-            memory: 4Gi
+            memory: 3Gi
         env:
           SPRING_PROFILES_ACTIVE: production,resourceserver
           SPRING_DATASOURCE_URL: jdbc:mariadb://objex-mariadb:3306/objex

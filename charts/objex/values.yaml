@@ -27,6 +27,8 @@ controllers:
         env:
           SPRING_PROFILES_ACTIVE: production,resourceserver
           SPRING_DATASOURCE_URL: jdbc:mariadb://objex-mariadb:3306/objex
+          SPRING_DATASOURCE_USERNAME: root
+          SPRING_DATASOURCE_PASSWORD: killer
 
 service:
   main:

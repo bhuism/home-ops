@@ -54,3 +54,10 @@ ingress:
       - secretName: api.objex.impl.nl
         hosts:
           - api.objex.impl.nl
+
+mariadb:
+  auth:
+    rootPassword: killer
+  primary:
+    persistence:
+      enabled: false

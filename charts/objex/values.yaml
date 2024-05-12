@@ -10,9 +10,7 @@ controllers:
           liveness:
             type: HTTP
             path: /actuator/health/liveness
-            port: 9080
           readiness:
-            type: HTTP
             path: /actuator/health/readiness
             port: 9080
           startup:

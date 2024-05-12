@@ -34,6 +34,7 @@ controllers:
           SPRING_DATASOURCE_URL: jdbc:mariadb://objex-mariadb:3306/objex
           SPRING_DATASOURCE_USERNAME: root
           SPRING_DATASOURCE_PASSWORD: killer
+          LOGGING_LEVEL_ROOT: debug
 
 service:
   main:

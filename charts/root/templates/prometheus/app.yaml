@@ -19,7 +19,7 @@ spec:
           enabled: false
         grafana:
           assertNoLeakedSecrets: false
-          adminPassword: 1killer2
+          adminPassword: killer
           defaultDashboardsEnabled: false
           grafana.ini:
             analytics:

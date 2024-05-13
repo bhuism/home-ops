@@ -43,7 +43,6 @@ service:
 
 ingress:
   main:
-    # enabled: true
     className: nginx
     annotations:
       external-dns.alpha.kubernetes.io/target: jasmine.odee.net

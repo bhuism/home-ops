@@ -26,7 +26,7 @@ spec:
           service:
             annotations:
               metallb.universe.tf/address-pool: ipaddresspool-huisnetwerk
-              metallb.universe.tf/loadBalancerIPs: 192.168.1.80, 192.168.1.82
+              metallb.universe.tf/loadBalancerIPs: 192.168.1.80, 192.168.1.83
         defaultBackend:
           enabled: true
           name: defaultbackend

@@ -50,16 +50,16 @@ ingress:
       cert-manager.io/cluster-issuer: letsencrypt-production
       gethomepage.dev/enabled: "true"
     hosts:
-      - host: api.objex.impl.nl
+      - host: api.objex.nl
         paths:
           - path: /
             service:
               identifier: main
               port: http
     tls:
-      - secretName: api.objex.impl.nl
+      - secretName: api.objex.nl
         hosts:
-          - api.objex.impl.nl
+          - api.objex.nl
 
 mariadb:
   auth:

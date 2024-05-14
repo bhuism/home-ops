@@ -25,6 +25,7 @@ spec:
           - impl.nl
           - appsource.nl
           - kindersaai.nl
+          - objex.nl
   syncPolicy:
     automated:
       prune: true

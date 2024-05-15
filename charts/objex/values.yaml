@@ -29,11 +29,10 @@ controllers:
             memory: 3Gi
         env:
           SPRING_PROFILES_ACTIVE: production,resourceserver
-          SPRING_DATASOURCE_URL: jdbc:mariadb://objex-mariadb:3306/objex
+          SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb.mariadb:3306/objex
           SPRING_DATASOURCE_USERNAME: root
           SPRING_DATASOURCE_PASSWORD: killer
           # LOGGING_LEVEL_ROOT: debug
-
 service:
   main:
     controller: main
@@ -60,11 +59,3 @@ ingress:
       - secretName: api.objex.nl
         hosts:
           - api.objex.nl
-
-mariadb:
-  auth:
-    rootPassword: killer
-    database: objex
-  primary:
-    persistence:
-      enabled: false

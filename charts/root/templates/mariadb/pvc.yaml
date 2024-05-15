@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mariadb-pvc
+  namespace: mariadb
+spec:
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 8Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ceph-rbd

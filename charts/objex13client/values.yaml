@@ -1,6 +1,6 @@
 controllers:
   main:
-    replicas: 3
+    replicas: 2
     strategy: RollingUpdate
     rollingUpdate:
       unavailable: 1
@@ -53,7 +53,7 @@ ingress:
     className: nginx
     annotations:
       external-dns.alpha.kubernetes.io/target: jasmine.odee.net
-      external-dns.alpha.kubernetes.io/cloudflare-proxied: 'false'
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
       cert-manager.io/cluster-issuer: letsencrypt-production
       gethomepage.dev/enabled: "true"
     hosts:

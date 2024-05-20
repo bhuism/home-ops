@@ -17,7 +17,7 @@ spec:
       valuesObject:
         resources:
           requests:
-            memory: 2048Mi
+            memory: 4096Mi
             cpu: 3
         minecraftServer:
           eula: true

@@ -20,6 +20,14 @@ controllers:
               timeoutSeconds: 3
               periodSeconds: 15
               failureThreshold: 60
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
         resources:
           limits:
             cpu: 4

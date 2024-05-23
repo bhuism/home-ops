@@ -1,10 +1,10 @@
 controllers:
   main:
-    # replicas: 2
-    # strategy: RollingUpdate
-    # rollingUpdate:
-    #   unavailable: 1
-    #   surge: 1
+    replicas: 2
+    strategy: RollingUpdate
+    rollingUpdate:
+      unavailable: 1
+      surge: 1
     containers:
       main:
         image:
@@ -62,3 +62,7 @@ ingress:
             service:
               identifier: main
               port: http
+    tls:
+      - secretName: nextjstryout2.impl.nl
+        hosts:
+          - nextjstryout2.impl.nl

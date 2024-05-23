@@ -1,6 +1,6 @@
 controllers:
   main:
-    replicas: 3
+    replicas: 2
     containers:
       main:
         image:
@@ -62,20 +62,20 @@ ingress:
           - path: /
             pathType: ImplementationSpecific
             service:
-               identifier: ok-service
-               port: http
+              identifier: ok-service
+              port: http
       - host: ip.impl.nl
         paths:
           - path: /
             pathType: ImplementationSpecific
             service:
-               identifier: ip-service
-               port: http
+              identifier: ip-service
+              port: http
       - host: time.impl.nl
         paths:
           - path: /
             pathType: ImplementationSpecific
             service:
-               identifier: time-service
-               port: http
+              identifier: time-service
+              port: http
     tls: {}

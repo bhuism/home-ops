@@ -62,7 +62,3 @@ ingress:
             service:
               identifier: main
               port: http
-    tls:
-      - secretName: www.objex.nl
-        hosts:
-          - www.objex.nl

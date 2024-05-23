@@ -1,0 +1,71 @@
+controllers:
+  main:
+    replicas: 3
+    strategy: RollingUpdate
+    rollingUpdate:
+      unavailable: 1
+      surge: 1
+    containers:
+      main:
+        image:
+          repository: europe-west4-docker.pkg.dev/impl-383520/docker/nextjstryout2
+          tag: 1.24.55
+          pullPolicy: IfNotPresent
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+        probes:
+          liveness:
+            type: HTTP
+            path: /
+            port: 3000
+          readiness:
+            type: HTTP
+            path: /
+            port: 3000
+          startup:
+            type: HTTP
+            path: /
+            port: 3000
+            spec:
+              initialDelaySeconds: 1
+        resources:
+          limits:
+            cpu: 100m
+            memory: 128Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 3000
+ingress:
+  main:
+    enabled: true
+    className: nginx
+    annotations:
+      external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
+      # external-dns.alpha.kubernetes.io/target: jasmine.odee.net
+      # external-dns.alpha.kubernetes.io/cloudflare-proxied: 'false'
+      # cert-manager.io/cluster-issuer: letsencrypt-production
+      gethomepage.dev/enabled: 'true'
+    hosts:
+      - host: nextjstryout2.impl.nl
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            service:
+              identifier: main
+              port: http
+    tls:
+      - secretName: nextjstryout2.impl.nl
+        hosts:
+          - nextjstryout2.impl.nl

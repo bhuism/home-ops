@@ -10,9 +10,9 @@ spec:
     namespace: nextjstryout2
   project: default
   source:
-    repoURL: https://github.com/bhuism/nextjstryout2.git
-    path: deploy/helm
-    targetRevision: v1.24.56
+    repoURL: https://github.com/bhuism/home-ops.git
+    path: charts/nextjstryout2
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true

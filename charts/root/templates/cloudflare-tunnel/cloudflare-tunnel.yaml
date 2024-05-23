@@ -25,15 +25,15 @@ spec:
           enableWarp: false
           ingress:
             - hostname: "www.appsource.nl"
-              service: "http://192.168.1.80:80"
+              service: "http://192.168.1.80"
             - hostname: "www.objex.nl"
-              service: "http://192.168.1.80:80"
+              service: "http://192.168.1.80"
             - hostname: "*.impl.nl"
-              service: "http://192.168.1.80:80"
+              service: "http://192.168.1.80"
             - hostname: "www.kindersaai.nl"
-              service: "http://192.168.1.80:80"
+              service: "http://192.168.1.80"
             - hostname: "fotos.kindersaai.nl"
-              service: "http://192.168.1.80:80"
+              service: "http://192.168.1.80"
   syncPolicy:
     automated:
       prune: true

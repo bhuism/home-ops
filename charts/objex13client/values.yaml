@@ -65,3 +65,10 @@ ingress:
             service:
               identifier: main
               port: http
+      - host: objex.nl
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            service:
+              identifier: main
+              port: http

@@ -52,6 +52,7 @@ ingress:
     enabled: true
     className: nginx
     annotations:
+      kubernetes.io/ingress.class: nginx
       external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
       gethomepage.dev/enabled: "true"
       nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
@@ -64,7 +65,3 @@ ingress:
             service:
               identifier: main
               port: http
-      - host: objex.nl
-        paths:
-          - path: /
-            pathType: ImplementationSpecific

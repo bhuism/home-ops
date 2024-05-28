@@ -28,11 +28,18 @@ controllers:
           VENDORID: 051d
           MAXAGE: 300
           SERIAL: 9B2346A68179
-        resources:
-          limits:
-            squat.ai/upsport: 1
+        # resources:
+        #   limits:
+        #     squat.ai/upsport: 1
         securityContext:
           privileged: true
+        # volumeMounts:
+        #   - name: p1port
+        #     mountPath: /dev/ttyUSB0
+  # volumes:
+  #   - name: p1port
+  #     hostPath:
+  #       path: /dev/ttyUSB0
 
 service:
   main:
@@ -40,3 +47,12 @@ service:
     ports:
       http:
         port: 3493
+
+
+persistence:
+  config:
+    enabled: true
+    type: hostPath
+    hostPath: /dev/ttyUSB0
+    # globalMounts:
+    #   - path: /dev/ttyUSB0

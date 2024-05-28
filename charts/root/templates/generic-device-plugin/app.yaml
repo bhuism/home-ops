@@ -34,11 +34,6 @@ spec:
                   - paths:
                       - path: /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AK4LXHI2-if00-port0
                         mountPath: /dev/ttyUSB0
-              # - name: upsport
-              #   groups:
-              #     - usb:
-              #       - vendor: "051d"
-              #         product: "0002"
               - name: zwavemodule
                 groups:
                   - paths:

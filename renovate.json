@@ -1,6 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended", "group:all"],
+  "argocd": {
+    "fileMatch": ["charts/.+\\.yaml$"]
+  },
   "packageRules": [
     {
       "matchUpdateTypes": ["patch", "minor"],

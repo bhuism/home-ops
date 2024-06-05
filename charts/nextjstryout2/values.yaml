@@ -67,3 +67,7 @@ ingress:
             service:
               identifier: main
               port: http
+    tls:
+      - secretName: nextjstryout2.impl.nl
+        hosts:
+          - nextjstryout2.impl.nl

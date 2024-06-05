@@ -119,6 +119,12 @@ spec:
               conditions:
                 - "[CONNECTED] == true"
                 - "[RESPONSE_TIME] < 5000"
+            - name: "Kindersaai"
+              url: "https://www.kindersaai.nl"
+              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 5000"
         persistence:
           enabled: true
           existingClaim: gatus-v1-pvc-external

@@ -23,11 +23,11 @@ controllers:
               port: 2222
         resources:
           limits:
-            cpu: 500m
-            memory: 512Mi
+            cpu: 2
+            memory: 1024Mi
           requests:
-            cpu: 500m
-            memory: 512Mi
+            cpu: 2
+            memory: 1024Mi
 
 service:
   main:

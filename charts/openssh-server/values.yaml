@@ -10,7 +10,8 @@ controllers:
           TZ: "Europe/Amsterdam"
           PUID: 1000
           GUID: 1000
-          PUBLIC_KEY: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDuaxdZW5oYLM+fx9GL7z6grFlHE0kwQIXcD159vAmVgh4PqyqQT0vh7ulTgm/YFGu0nymbJJwuDnovxYi3G4pObNjGXK1F06mtYd6790FaYgPj3dS6FhWsd9KSTrEsm7uqrSFs6++Z4k38VpviUJnFd+uM4dEM+D2nV55eNnRZisrOYXOKy89Ks5YLFHDF3YMLxOe+c2fMxEfhNosF5QaVe3X2tjm1qPMsu015CIaL6HS/GYMtMTFbWeL8fFM63iaCUU5qSyxAjoY1+seWQHFgcMIgLvfZiOY4Gt0SDsYUriVGc98M7z8YEW3V8Ef33DTqIH6ut8klegarlL6GFVIr bhuism@elza
+          PUBLIC_KEY: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDuaxdZW5oYLM+fx9GL7z6grFlHE0kwQIXcD159vAmVgh4PqyqQT0vh7ulTgm/YFGu0nymbJJwuDnovxYi3G4pObNjGXK1F06mtYd6790FaYgPj3dS6FhWsd9KSTrEsm7uqrSFs6++Z4k38VpviUJnFd+uM4dEM+D2nV55eNnRZisrOYXOKy89Ks5YLFHDF3YMLxOe+c2fMxEfhNosF5QaVe3X2tjm1qPMsu015CIaL6HS/GYMtMTFbWeL8fFM63iaCUU5qSyxAjoY1+seWQHFgcMIgLvfZiOY4Gt0SDsYUriVGc98M7z8YEW3V8Ef33DTqIH6ut8klegarlL6GFVIr
+          #PUBLIC_KEY: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC6+VRoSnAE+9S3XfxrR+vlJTtVnHXXryGZ3KuOTtB5oGQKs0aHsnKoi/4lYDPlEKHyqNVhFGRHVSToG+tJu60In1AX7Fali0l7Cd/u5cMxkeZD5k1NaFWc3Q3JiA3vOhS4riBsBxpRsUhGtRCnyTPn6yO8L70Fsy2GboZn+BH9q7OaQ105s9oSYDsvDhGqeVLNpOLaU5FHNdZbWnb1KqgathotGUmY/Z4C2YjM8x8fTGv6agCMdR+nG7b9lJILgGuwL2xsrsx/pp8BAXDcpG0zcrsyl797XQJekZe+kbUVe7Bfj1jSOl7sYZbrDEfn37bu4xZN6mNYDKwXUoM9fiZysZaie96dnb3XrNpOYqnBCMq9G2nWUf5mibJfMtqHq6Q7PCMSdCtCRaQ1bIN0wYgxeKJdEvACx7YEweIIRP1IqG2wAXb8TJ3maNZg5MVZseMpx+HOSeMazA+tTqOR8OvNDh9Iwo7Yse5hnmz4wST7NNX/Wps+ATGOKx7pDU0jrjQJgUlk3soXuKXoyK6Sef3e0F7dSrJHu3xiObhfmC1BfEsN1yDwAGWV874eb6E0qYGt3KkriH1wH53L6faTXDuItXiF0j10GKs3buasziUl2myHo8dredMGIX1kMcI0Q5IXkC31OcOIAlWsxksToN6tJokuq+tgl3O1e7zDTvWr0Q==
           SUDO_ACCESS: true
           USER_NAME: bhuism
         probes:
@@ -22,11 +23,11 @@ controllers:
               port: 2222
         resources:
           limits:
-            cpu: 100m
-            memory: 64Mi
+            cpu: 500m
+            memory: 512Mi
           requests:
-            cpu: 100m
-            memory: 64Mi
+            cpu: 500m
+            memory: 512Mi
 
 service:
   main:

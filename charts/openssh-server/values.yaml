@@ -38,8 +38,9 @@ service:
         port: 2222
         protocol: TCP
 
-packages:
-  - nmap
-  - traceroute
-  - rsync
-  - joe
+persistence:
+  jeroenk:
+    type: persistentVolumeClaim
+    existingClaim: jeroenk
+    globalMounts:
+      - path: /mnt

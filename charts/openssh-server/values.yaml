@@ -37,12 +37,6 @@ service:
         port: 2222
         protocol: TCP
 
-persistence:
-  custom-cont-init.d:
-    enabled: true
-    type: configMap
-    name: custom-scripts
-
 packages:
   - nmap
   - traceroute

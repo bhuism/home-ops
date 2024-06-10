@@ -1,0 +1,51 @@
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          repository: linuxserver/openssh-server
+          pullPolicy: Always
+          tag: "latest"
+        env:
+          TZ: "Europe/Amsterdam"
+          PUID: 1000
+          GUID: 1000
+          PUBLIC_KEY: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDuaxdZW5oYLM+fx9GL7z6grFlHE0kwQIXcD159vAmVgh4PqyqQT0vh7ulTgm/YFGu0nymbJJwuDnovxYi3G4pObNjGXK1F06mtYd6790FaYgPj3dS6FhWsd9KSTrEsm7uqrSFs6++Z4k38VpviUJnFd+uM4dEM+D2nV55eNnRZisrOYXOKy89Ks5YLFHDF3YMLxOe+c2fMxEfhNosF5QaVe3X2tjm1qPMsu015CIaL6HS/GYMtMTFbWeL8fFM63iaCUU5qSyxAjoY1+seWQHFgcMIgLvfZiOY4Gt0SDsYUriVGc98M7z8YEW3V8Ef33DTqIH6ut8klegarlL6GFVIr bhuism@elza
+          SUDO_ACCESS: true
+          USER_PASSWORD: bhuism          
+        probes:
+          livenessProbe:
+            tcpSocket:
+              port: 2222
+          readinessProbe:
+            tcpSocket:
+              port: 2222
+        resources:
+          limits:
+            cpu: 100m
+            memory: 64Mi
+          requests:
+            cpu: 100m
+            memory: 64Mi
+
+service:
+  main:
+    type: LoadBalancer
+    ports:
+      ssh:
+        enabled: true
+        primary: true
+        port: 2222
+        protocol: TCP
+        
+persistence:
+  custom-cont-init.d:
+    enabled: true
+    type: configMap
+    name: custom-scripts
+
+packages:
+  - nmap
+  - traceroute
+  - rsync
+  - joe

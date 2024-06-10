@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: custom-scripts
+data:
+  install-packages.bash: |
+    #!/bin/bash
+    {{- if .Values.packages }}
+    apk add --no-cache{{- range .Values.packages }} {{ . }}{{- end }}  
+    {{- end }}

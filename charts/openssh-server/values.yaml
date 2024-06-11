@@ -42,10 +42,12 @@ service:
 
 persistence:
   jeroenk:
+    enabled: true
     type: persistentVolumeClaim
     existingClaim: jeroenk
     globalMounts:
       - path: /mnt
   keys:
-    type: confifMap
+    enabled: true
+    type: configMap
     name: pubkeys

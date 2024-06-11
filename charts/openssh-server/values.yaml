@@ -51,3 +51,14 @@ persistence:
     enabled: true
     type: configMap
     name: pubkeys
+  customscripts:
+    enabled: true
+    type: configMap
+    name: customscripts
+    path: /custom-cont-init.d
+
+packages:
+  - joe
+  - rsync
+  - nmap
+  - tcpdump

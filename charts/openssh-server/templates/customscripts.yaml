@@ -6,6 +6,8 @@ metadata:
 data:
   install-packages.bash: |
     #!/bin/bash
+    apk update
+    apk upgrade
     {{- if .Values.packages }}
     apk add --no-cache{{- range .Values.packages }} {{ . }}{{- end }}  
     {{- end }}

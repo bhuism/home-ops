@@ -41,11 +41,6 @@ service:
         protocol: TCP
 
 persistence:
-  # jeroenk:
-  #   type: persistentVolumeClaim
-  #   existingClaim: jeroenk
-  #   globalMounts:
-  #     - path: /mnt
   keys:
     type: configMap
     name: pubkeys

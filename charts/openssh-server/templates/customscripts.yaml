@@ -7,13 +7,6 @@ data:
   install-packages.bash: |
     #!/bin/bash
 
-    echo "░        ░  ░░░░  ░       ░░  ░░░░░░░" > /etc/motd
-    echo "▒▒▒▒  ▒▒▒▒   ▒▒   ▒  ▒▒▒▒  ▒  ▒▒▒▒▒▒▒" >> /etc/motd
-    echo "▓▓▓▓  ▓▓▓▓        ▓       ▓▓  ▓▓▓▓▓▓▓" >> /etc/motd
-    echo "████  ████  █  █  █  ███████  ███████" >> /etc/motd
-    echo "█        █  ████  █  ███████        █" >> /etc/motd
-    echo "                                     " >> /etc/motd
-
     apk update
     apk upgrade
 

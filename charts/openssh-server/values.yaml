@@ -42,20 +42,19 @@ service:
 
 persistence:
   jeroenk:
-    enabled: true
     type: persistentVolumeClaim
     existingClaim: jeroenk
     globalMounts:
       - path: /mnt
   keys:
-    enabled: true
     type: configMap
     name: pubkeys
   customscripts:
-    enabled: true
     type: configMap
     name: customscripts
-    path: /custom-cont-init.d
+    globalMounts:
+      - path: /custom-cont-init.d/install-packages.bash
+        subPath: install-packages.bash
 
 packages:
   - joe

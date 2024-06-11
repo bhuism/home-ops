@@ -47,9 +47,6 @@ persistence:
   config:
     type: persistentVolumeClaim
     existingClaim: config
-  mnt:
-    type: persistentVolumeClaim
-    existingClaim: jeroenk
   customscripts:
     type: configMap
     name: customscripts

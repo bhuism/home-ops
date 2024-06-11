@@ -49,6 +49,9 @@ persistence:
   keys:
     type: configMap
     name: pubkeys
+  config:
+    type: configMap
+    name: config
   customscripts:
     type: configMap
     name: customscripts

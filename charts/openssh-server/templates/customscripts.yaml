@@ -6,8 +6,17 @@ metadata:
 data:
   install-packages.bash: |
     #!/bin/bash
+
+    echo "░        ░  ░░░░  ░       ░░  ░░░░░░░" > /etc/motd
+    echo "▒▒▒▒  ▒▒▒▒   ▒▒   ▒  ▒▒▒▒  ▒  ▒▒▒▒▒▒▒" >> /etc/motd
+    echo "▓▓▓▓  ▓▓▓▓        ▓       ▓▓  ▓▓▓▓▓▓▓" >> /etc/motd
+    echo "████  ████  █  █  █  ███████  ███████" >> /etc/motd
+    echo "█        █  ████  █  ███████        █" >> /etc/motd
+    echo "                                     " >> /etc/motd
+
     apk update
     apk upgrade
+
     {{- if .Values.packages }}
     apk add --no-cache{{- range .Values.packages }} {{ . }}{{- end }}  
     {{- end }}

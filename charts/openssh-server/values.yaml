@@ -50,8 +50,8 @@ persistence:
     type: configMap
     name: pubkeys
   config:
-    type: configMap
-    name: config
+    type: persistentVolumeClaim
+    existingClaim: config
   customscripts:
     type: configMap
     name: customscripts

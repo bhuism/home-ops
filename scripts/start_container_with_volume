@@ -1,0 +1,31 @@
+#!/bin/sh
+
+kubectl run -i --rm --tty debian -n jellyfin --overrides='
+{
+  "apiVersion": "v1",
+      "spec": {
+        "containers": [
+          {
+            "name": "debian",
+            "image": "debian",
+            "args": [
+              "bash"
+            ],
+            "stdin": true,
+            "stdinOnce": true,
+            "tty": true,
+            "volumeMounts": [{
+              "mountPath": "/mnt",
+              "name": "disk"
+            }]
+          }
+        ],
+        "volumes": [{
+          "name":"disk",
+          "persistentVolumeClaim":{
+		"claimName": "jellyfin-media-pvc"
+	}
+        }]
+      }
+}
+'  --image=debian --restart=Never -- bash

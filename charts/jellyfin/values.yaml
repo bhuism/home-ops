@@ -4,9 +4,9 @@ controllers:
     containers:
       main:
         image:
-          repository: nyanmisaka/jellyfin
-          pullPolicy: Always
-          tag: latest-rockchip
+          repository: jellyfin/jellyfin
+          pullPolicy: IfMotPresent
+          tag: 2024061005-arm64
         securityContext:
           allowPrivilegeEscalation: false
           runAsNonRoot: false

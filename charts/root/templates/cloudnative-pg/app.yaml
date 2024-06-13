@@ -12,7 +12,7 @@ spec:
   source:
     chart: cloudnative-pg
     repoURL: https://cloudnative-pg.github.io/charts
-    targetRevision: 0.21.4
+    targetRevision: 0.21.5
   syncPolicy:
     automated:
       prune: true

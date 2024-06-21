@@ -19,7 +19,7 @@ spec:
         nodeSelector:
           kubernetes.io/hostname: node6
 
-        env:
+        environment:
           - name: SESSION_SECRET
             value: mysupersecretkey
           - name: TRUST_PROXY

@@ -21,6 +21,7 @@ spec:
 
         env:
           SESSION_SECRET: mysupersecretkey
+          TRUST_PROXY: true
 
         tolerations:
           - key: node-role.kubernetes.io/control-plane

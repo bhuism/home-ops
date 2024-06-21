@@ -20,10 +20,10 @@ spec:
           kubernetes.io/hostname: node6
 
         environment:
-          - name: SESSION_SECRET
-            value: mysupersecretkey
-          - name: TRUST_PROXY
-            value: true
+          - name: "SESSION_SECRET"
+            value: "mysupersecretkey"
+          - name: "TRUST_PROXY"
+            value: "true"
 
         tolerations:
           - key: node-role.kubernetes.io/control-plane

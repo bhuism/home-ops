@@ -48,80 +48,72 @@ spec:
           endpoints:
             - name: Gatus
               url: "https://gatus.impl.nl"
-              interval: 5m
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
             - name: OkApplication
               url: "https://ok.impl.nl"
-              interval: 5m
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
                 - "[BODY] == ok"
             - name: IpApplication
               url: "https://ip.impl.nl"
-              interval: 5m
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
             - name: EchoApplication
               url: "https://echo.impl.nl"
-              interval: 5m
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
             - name: TimeApplication
               url: "https://time.impl.nl"
-              interval: 5m
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
             - name: "Appsource"
               url: "https://www.appsource.nl"
-              interval: 5m
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
-            - name: "Objex"
+            - name: "Objex Ui"
               url: "https://www.objex.nl/login"
-              interval: 5m
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 5000"
+            - name: "Objex Api"
+              url: "https://api.objex.nl"
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
             - name: "NextJs tryout 2"
               url: "https://nextjstryout2.impl.nl"
-              interval: 5m
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
             - name: "Jasmine"
               url: "icmp://jasmine.odee.net"
-              interval: 5m
               conditions:
                 - "[CONNECTED] == true"
                 - "[RESPONSE_TIME] < 5000"
             - name: "Eleanor"
               url: "icmp://eleanor.odee.net"
-              interval: 5m
               conditions:
                 - "[CONNECTED] == true"
                 - "[RESPONSE_TIME] < 5000"
             - name: "Home Ops"
               url: "tcp://jasmine.odee.net:6443"
-              interval: 5m
               conditions:
                 - "[CONNECTED] == true"
                 - "[RESPONSE_TIME] < 5000"
             - name: "Wireguard"
               url: "udp://jasmine.odee.net:51820"
-              interval: 5m
               conditions:
                 - "[CONNECTED] == true"
                 - "[RESPONSE_TIME] < 5000"
             - name: "Kindersaai"
               url: "https://www.kindersaai.nl"
-              interval: 5m
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"

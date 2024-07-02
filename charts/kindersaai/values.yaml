@@ -47,7 +47,8 @@ ingress:
   ingressClassName: nginx
   className: nginx
   annotations:
-    external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
     gethomepage.dev/enabled: "true"
   hosts:
     - host: www.kindersaai.nl

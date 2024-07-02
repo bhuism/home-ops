@@ -48,6 +48,8 @@ ingress:
   ingressClassName: nginx
   className: nginx
   annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
     gethomepage.dev/enabled: "true"
   hosts:
     - host: www.appsource.nl

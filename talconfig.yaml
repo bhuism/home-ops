@@ -1,5 +1,5 @@
 clusterName: impl-k8s
-talosVersion: v1.7.4
+talosVersion: v1.7.5
 kubernetesVersion: v1.29.0
 endpoint: https://control.impl.nl:6443
 allowSchedulingOnControlPlanes: true
@@ -53,7 +53,6 @@ patches:
       proxy:
         extraArgs:
           metrics-bind-address: "0.0.0.0:10249"
-  - "@./watchdog.yaml"
 controlPlane:
   nameservers:
     - 1.0.0.1

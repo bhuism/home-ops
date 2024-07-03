@@ -12,7 +12,7 @@ spec:
   source:
     chart: rook-ceph-cluster
     repoURL: https://charts.rook.io/release
-    targetRevision: v1.14.7
+    targetRevision: v1.14.8
     helm:
       valuesObject:
         operatorNamespace: rook-ceph

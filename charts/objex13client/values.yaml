@@ -71,6 +71,3 @@ ingress:
       - secretName: www.objex.nl
         hosts:
           - www.objex.nl
-      - secretName: objex.nl
-        hosts:
-          - objex.nl

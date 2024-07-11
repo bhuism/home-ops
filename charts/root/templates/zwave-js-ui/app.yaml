@@ -10,9 +10,9 @@ spec:
     namespace: zwave-js-ui
   project: default
   source:
-    chart: zwave-js-ui
-    repoURL: https://charts.ar80.eu
-    targetRevision: 0.2.89
+    chart: charts/zwave-js-ui
+    repoURL: https://github.com/bhuism/publiccharts
+    targetRevision: 0.2.88
     helm:
       valuesObject:
 

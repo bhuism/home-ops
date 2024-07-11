@@ -12,7 +12,7 @@ spec:
   source:
     chart: charts/zwave-js-ui
     repoURL: https://github.com/bhuism/publiccharts
-    targetRevision: 0.2.88
+    targetRevision: HEAD
     helm:
       valuesObject:
 

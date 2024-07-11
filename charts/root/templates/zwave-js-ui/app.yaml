@@ -30,9 +30,6 @@ spec:
             operator: Exists
             effect: NoSchedule
 
-        strategy:
-          type: Recreate
-
         ingress:
           enabled: true
           className: "nginx"

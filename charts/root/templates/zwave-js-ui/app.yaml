@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     chart: charts/zwave-js-ui
-    repoURL: https://github.com/bhuism/publiccharts
+    repoURL: https://github.com/bhuism/publiccharts.git
     targetRevision: HEAD
     helm:
       valuesObject:

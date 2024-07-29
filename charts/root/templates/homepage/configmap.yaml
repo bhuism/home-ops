@@ -32,10 +32,11 @@ data:
             href: http://grafana.ceph.impl.nl
         - Rook:
             href: https://rook.ceph.impl.nl
-    - My Second Group:
-        - My Second Service:
-            href: http://localhost/
-            description: Homepage is the best
+    - Board Management Controller:
+        - impl:
+            href: https://bmc.impl.nl
+        - ceph:
+            href: https://bmc2.impl.nl
   widgets.yaml: |
     - kubernetes:
         cluster:

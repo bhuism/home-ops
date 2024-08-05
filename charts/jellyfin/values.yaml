@@ -6,7 +6,7 @@ controllers:
         image:
           repository: jellyfin/jellyfin
           pullPolicy: IfNotPresent
-          tag: 2024072905-arm64
+          tag: 2024080505-arm64
         securityContext:
           allowPrivilegeEscalation: false
           runAsNonRoot: false

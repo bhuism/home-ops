@@ -12,7 +12,7 @@ spec:
   source:
     chart: gatus
     repoURL: https://minicloudlabs.github.io/helm-charts
-    targetRevision: 3.4.5
+    targetRevision: 3.4.6
     helm:
       valuesObject:
         securityContext:

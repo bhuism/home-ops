@@ -2,8 +2,6 @@
 
 CONTEXT=ceph-k8s
 
-
-
 kubectl --context $CONTEXT get pod -A --field-selector status.phase=Failed
 
 kubectl --context $CONTEXT delete pods -A --field-selector status.phase=Failed

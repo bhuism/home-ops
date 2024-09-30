@@ -1,6 +1,5 @@
 controllers:
   main:
-    type: statefulset
     replicas: 3
     strategy: RollingUpdate
     rollingUpdate:

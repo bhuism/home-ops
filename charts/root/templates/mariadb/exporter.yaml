@@ -28,6 +28,8 @@ spec:
           user: "root"
         serviceMonitor:
           enabled: true
+          additionalLabels:
+            release: prometheus
   syncPolicy:
     automated:
       prune: true

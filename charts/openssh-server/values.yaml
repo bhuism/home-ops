@@ -53,6 +53,11 @@ persistence:
     globalMounts:
       - path: /custom-cont-init.d/install-packages.bash
         subPath: install-packages.bash
+  storage:
+    type: persistentVolumeClaim
+    existingClaim: openssh-v1-pvc
+    globalMounts:
+      - path: /mnt/storage
 
 packages:
   - joe

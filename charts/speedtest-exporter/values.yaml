@@ -44,6 +44,8 @@ service:
 serviceMonitor:
   main:
     enabled: true
+    labels:
+      release: prometheus
     serviceName: speedtest-exporter
     endpoints:
       - port: http

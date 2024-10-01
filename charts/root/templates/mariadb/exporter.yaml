@@ -26,6 +26,8 @@ spec:
           port: 3306
           protocol: "TCP"
           user: "root"
+        serviceMonitor:
+          enabled: true
   syncPolicy:
     automated:
       prune: true

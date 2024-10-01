@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-mysql-exporter
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: mariadb
+  project: default
+  source:
+    chart: prometheus-community/prometheus-mysql-exporter
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: 2.6.1
+    helm:
+      valuesObject:
+        mysql:
+          db: "objex"
+          host: "mariadb.mariadb"
+          # config my.cnf https://dev.mysql.com/doc/c-api/8.0/en/mysql-options.html
+          additionalConfig:
+            # - connect-timeout=5
+            # - debug
+          pass: "killer"
+          port: 3306
+          protocol: "TCP"
+          user: "root"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

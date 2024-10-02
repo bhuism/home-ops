@@ -19,6 +19,9 @@ spec:
           rootPassword: killer
           database: objex
         primary:
+          extraEnvVars:
+          - name: MARIADB_INIT_SLEEP_TIME
+            value: "20"
           persistence:
             existingClaim: mariadb-pvc
   syncPolicy:

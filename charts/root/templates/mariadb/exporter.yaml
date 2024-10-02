@@ -17,7 +17,7 @@ spec:
       valuesObject:
         mysql:
           db: "mysql"
-          host: "mariadb"
+          host: "mariadb.mariadb"
           additionalConfig:
             - connect-timeout=5
           user: "root"

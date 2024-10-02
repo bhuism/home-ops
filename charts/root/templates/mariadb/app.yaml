@@ -17,7 +17,6 @@ spec:
       valuesObject:
         auth:
           rootPassword: killer
-          database: objex
         primary:
           extraEnvVars:
           - name: MARIADB_INIT_SLEEP_TIME

@@ -18,9 +18,9 @@ spec:
         auth:
           rootPassword: killer
         primary:
-          extraEnvVars:
-          - name: MARIADB_INIT_SLEEP_TIME
-            value: "5"
+          # extraEnvVars:
+          # - name: MARIADB_INIT_SLEEP_TIME
+          #   value: "5"
           persistence:
             existingClaim: mariadb-pvc
   syncPolicy:

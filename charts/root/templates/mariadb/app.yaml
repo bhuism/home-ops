@@ -21,7 +21,7 @@ spec:
         primary:
           extraEnvVars:
           - name: MARIADB_INIT_SLEEP_TIME
-            value: "15"
+            value: "5"
           persistence:
             existingClaim: mariadb-pvc
   syncPolicy:

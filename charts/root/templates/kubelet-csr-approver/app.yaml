@@ -12,7 +12,7 @@ spec:
   source:
     chart: kubelet-csr-approver
     repoURL: https://postfinance.github.io/kubelet-csr-approver
-    targetRevision: 1.2.2
+    targetRevision: 1.2.3
     helm:
       valuesObject:
         providerRegex: "^node.*$"

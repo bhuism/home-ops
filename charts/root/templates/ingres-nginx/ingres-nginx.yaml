@@ -17,6 +17,8 @@ spec:
       valuesObject:
         controller:
           watchIngressWithoutClass: true
+          replicaCount: 5
+          minAvailable: 3
           ingressClassResource:
             default: true
           metrics:

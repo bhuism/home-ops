@@ -16,7 +16,6 @@ spec:
     helm:
       valuesObject:
         secretName: wireguard-wg-generated
-        replicaCount: 1
         autoscaling:
           enabled: false
         metrics:

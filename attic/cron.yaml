@@ -1,0 +1,79 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: talos-backup
+spec:
+  schedule: "0/10 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: talos-backup
+            image: ghcr.io/siderolabs/talos-backup:v0.1.0-beta.2-1-g9ccc125
+            workingDir: /tmp
+            imagePullPolicy: IfNotPresent
+            env:
+              - name: AWS_ACCESS_KEY_ID
+                value: MZLE7K3O9YJ4X4HY1OMY
+              - name: AWS_SECRET_ACCESS_KEY
+                value: AQsMHgKbbn0dk20XiuezIzB0bNYi3piKZUkUecef
+              - name: AWS_REGION
+                value: us-west-2
+              # CUSTOM_S3_ENDPOINT is optional; if omitted the service will fallback to default AWS endpoints.
+              - name: CUSTOM_S3_ENDPOINT
+                value: https://homeopsetcdbackup.fsn1.your-objectstorage.com:443
+              - name: BUCKET
+                value: talos-backups
+              # CLUSTER_NAME is optional; if omitted it will fall back to the name of the default context.
+              - name: CLUSTER_NAME
+                value: "prod-cluster"
+              # S3_PREFIX is optional; if omitted it will fall back to the cluster name.
+              - name: S3_PREFIX
+                value: "important/backups"
+              - name: AGE_X25519_PUBLIC_KEY
+                value: "age1khpnnl86pzx96ttyjmldptsl5yn2v9jgmmzcjcufvk00ttkph9zs0ytgec"
+              # USE_PATH_STYLE is optional; set this to false if you have another s3 like endpoint such as minio.
+              # If not, the S3 will resolve to a hostname based on https://$BUCKET_NAME.$CUSTOM_S3_ENDPOINT/
+              - name: USE_PATH_STYLE
+                value: "false"
+            securityContext:
+              runAsUser: 1000
+              runAsGroup: 1000
+              allowPrivilegeEscalation: false
+              runAsNonRoot: true
+              capabilities:
+                drop:
+                  - ALL
+              seccompProfile:
+                type: RuntimeDefault
+            command:
+            - /talos-backup
+            volumeMounts:
+            - mountPath: /tmp
+              name: tmp
+            - mountPath: /var/run/secrets/talos.dev
+              name: talos-secrets
+          restartPolicy: OnFailure
+          volumes:
+          - emptyDir: {}
+            name: tmp
+          - name: talos-secrets
+            secret:
+              secretName: talos-backup-secrets
+---
+apiVersion: talos.dev/v1alpha1
+kind: ServiceAccount
+metadata:
+    name: talos-backup-secrets
+spec:
+    roles:
+        - os:etcd:backup
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: talos-backup-secrets
+  annotations:
+    kubernetes.io/service-account.name: talos-backup-secrets
+---

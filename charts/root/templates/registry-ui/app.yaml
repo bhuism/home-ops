@@ -20,6 +20,7 @@ spec:
           registrySecured: true
           useControlCacheHeader: false
           deleteImages: true
+          showContentDigest: true
           ingress:
             enabled: true
             host: registry-ui.impl.nl

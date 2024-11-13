@@ -21,6 +21,7 @@ spec:
           useControlCacheHeader: false
           deleteImages: true
           showContentDigest: true
+          showCatalogNbTags: true
           ingress:
             enabled: true
             host: registry-ui.impl.nl

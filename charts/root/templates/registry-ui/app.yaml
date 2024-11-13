@@ -16,7 +16,8 @@ spec:
     helm:
       valuesObject:
         ui:
-          dockerRegistryUrl: https://registry.impl.nl
+          dockerRegistryUrl: http://registry.registry:5000
+          pullUrl: https://registry.impl.nl
 # registrySecured: true
           useControlCacheHeader: true
           deleteImages: true

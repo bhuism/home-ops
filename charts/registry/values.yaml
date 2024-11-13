@@ -7,12 +7,12 @@ controllers:
           repository: registry
           tag: 2
         env:
-          REGISTRY_HTTP_HEADERS_Access-Control-Allow-Origin: '[https://registry-ui.impl.nl]'
-          REGISTRY_HTTP_HEADERS_Access-Control-Allow-Methods: '[HEAD,GET,OPTIONS,DELETE]'
-          REGISTRY_HTTP_HEADERS_Access-Control-Allow-Credentials: '[true]'
-          REGISTRY_HTTP_HEADERS_Access-Control-Allow-Headers: '[Authorization,Accept,Cache-Control]'
-          REGISTRY_HTTP_HEADERS_Access-Control-Expose-Headers: '[Docker-Content-Digest]'
-          REGISTRY_STORAGE_DELETE_ENABLED: 'true'        
+          REGISTRY_HTTP_HEADERS_Access-Control-Allow-Origin: "[https://registry-ui.impl.nl]"
+          REGISTRY_HTTP_HEADERS_Access-Control-Allow-Methods: "[HEAD,GET,OPTIONS,DELETE]"
+          REGISTRY_HTTP_HEADERS_Access-Control-Allow-Credentials: "[true]"
+          REGISTRY_HTTP_HEADERS_Access-Control-Allow-Headers: "[Authorization,Accept,Cache-Control]"
+          REGISTRY_HTTP_HEADERS_Access-Control-Expose-Headers: "[Docker-Content-Digest]"
+          REGISTRY_STORAGE_DELETE_ENABLED: "true"
         probes:
           liveness:
             enabled: true
@@ -47,13 +47,13 @@ ingress:
   main:
     annotations:
       nginx.ingress.kubernetes.io/proxy-body-size: 512m
-      # nginx.ingress.kubernetes.io/auth-type: basic
-      # nginx.ingress.kubernetes.io/auth-secret: basic-auth
-      # nginx.ingress.kubernetes.io/auth-realm: "Authentication Required"
+      nginx.ingress.kubernetes.io/auth-type: basic
+      nginx.ingress.kubernetes.io/auth-secret: basic-auth
+      nginx.ingress.kubernetes.io/auth-realm: "Authentication Required"
       external-dns.alpha.kubernetes.io/target: jasmine.odee.net
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
       cert-manager.io/cluster-issuer: letsencrypt-production
-      gethomepage.dev/enabled: "true"      
+      gethomepage.dev/enabled: "true"
     className: nginx
     hosts:
       - host: registry.impl.nl

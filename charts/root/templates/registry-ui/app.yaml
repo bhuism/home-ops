@@ -17,7 +17,7 @@ spec:
       valuesObject:
         ui:
           dockerRegistryUrl: https://registry.impl.nl
-          registrySecured: false
+          registrySecured: true
           useControlCacheHeader: false
           deleteImages: true
           showContentDigest: true

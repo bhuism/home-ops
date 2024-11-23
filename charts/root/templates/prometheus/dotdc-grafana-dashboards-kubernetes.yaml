@@ -9,7 +9,7 @@ spec:
   source:
     path: ./
     repoURL: https://github.com/dotdc/grafana-dashboards-kubernetes
-    targetRevision: v2.5.0
+    targetRevision: v2.5.1
   destination:
     server: https://kubernetes.default.svc
     namespace: prometheus

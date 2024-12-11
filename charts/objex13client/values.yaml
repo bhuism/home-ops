@@ -1,6 +1,6 @@
 controllers:
   main:
-    replicas: 5
+    replicas: 2
     strategy: RollingUpdate
     rollingUpdate:
       unavailable: 1
@@ -33,14 +33,14 @@ controllers:
             path: /
             port: 3000
             spec:
-              initialDelaySeconds: 1
+              initialDelaySeconds: 3
         resources:
           limits:
-            cpu: 100m
-            memory: 128Mi
+            cpu: 250m
+            memory: 256Mi
           requests:
-            cpu: 100m
-            memory: 128Mi
+            cpu: 250m
+            memory: 256Mi
 service:
   main:
     controller: main

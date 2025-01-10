@@ -1,0 +1,67 @@
+controllers:
+  main:
+    replicas: 1
+    strategy: RollingUpdate
+    rollingUpdate:
+      unavailable: 1
+      surge: 1
+    containers:
+      main:
+        image:
+          repository: ghcr.io/bhuism/pseudoniemenservice
+          tag: latest
+        probes:
+          liveness:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 9080
+          readiness:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 9080
+          startup:
+            enabled: true
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+        resources:
+          limits:
+            cpu: 1
+            memory: 256Mi
+          requests:
+            cpu: 1
+            memory: 256Mi
+        env:
+          SPRING_PROFILES_ACTIVE: production
+          pseudoniemenservice_token-private-key: i4dfBykN5Fjw9p3ADxvpRUhpbFSXepRSOcRGuaiJ4iQ=
+          pseudoniemenservice_identifier-private-key: b2RPRGh6aThiMmluVEpMWVVJM2lOTGlWekVCU2hDMEU=
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 8080
+
+ingress:
+  main:
+    className: nginx
+    annotations:
+      external-dns.alpha.kubernetes.io/target: jasmine.odee.net
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+      cert-manager.io/cluster-issuer: letsencrypt-production
+    hosts:
+      - host: pseudoniemenservice.stelseltoegang.nl
+        paths:
+          - path: /
+            service:
+              identifier: main
+              port: http
+    tls:
+      - secretName: pseudoniemenservice.stelseltoegang.nl
+        hosts:
+          - pseudoniemenservice.stelseltoegang.nl

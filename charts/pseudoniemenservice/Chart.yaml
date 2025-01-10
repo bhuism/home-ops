@@ -1,0 +1,7 @@
+apiVersion: v2
+name: pseudoniemenservice
+version: 1.0.0
+dependencies:
+  - name: common
+    repository: https://bjw-s.github.io/helm-charts
+    version: 3.6.0

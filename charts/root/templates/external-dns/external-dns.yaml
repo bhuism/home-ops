@@ -18,7 +18,7 @@ spec:
         logLevel: debug
         provider: cloudflare
         cloudflare:
-          apiToken: "KHpxqF3BvvOOtlTy5DDtMhAJL1inEUO1ercPJb8S"
+          apiToken: "Ba6_XVoe9DPIfKqynPbU6XRjzlJnMT1HKTToMigl"
           email: "meuk@odee.net"
           proxied: false
         txtOwnerId: impl

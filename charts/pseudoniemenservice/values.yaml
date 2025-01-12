@@ -1,6 +1,6 @@
 controllers:
   main:
-    replicas: 1
+    replicas: 3
     strategy: RollingUpdate
     rollingUpdate:
       unavailable: 1
@@ -9,7 +9,7 @@ controllers:
       main:
         image:
           repository: ghcr.io/bhuism/pseudoniemenservice
-          tag: latest-arm64
+          tag: latest
         probes:
           liveness:
             httpGet:

@@ -63,10 +63,10 @@ spec:
           cm:
             resource.customizations.ignoreDifferences.apps_Deployment: |
               jsonPointers:
-              - /spec/hostUsers  
+              - /spec/hostUsers
             resource.customizations.ignoreDifferences.apps_StatefulSet: |
               jsonPointers:
-              - /spec/hostUsers  
+              - /spec/hostUsers
             admin.enabled: true
             application.resourceTrackingMethod: annotation+label
             url: https://argocd.impl.nl

@@ -15,7 +15,6 @@ spec:
     targetRevision: 8.7.1
     helm:
       valuesObject:
-        logLevel: debug
         provider: cloudflare
         cloudflare:
           apiToken: "Ba6_XVoe9DPIfKqynPbU6XRjzlJnMT1HKTToMigl"

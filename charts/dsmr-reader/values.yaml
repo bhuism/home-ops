@@ -1,4 +1,5 @@
 defaultPodOptions:
+  hostUsers: false
   nodeSelector:
     kubernetes.io/hostname: node7
   tolerations:

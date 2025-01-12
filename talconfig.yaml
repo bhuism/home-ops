@@ -1,6 +1,6 @@
 clusterName: impl-k8s
-talosVersion: v1.7.5
-kubernetesVersion: v1.29.0
+talosVersion: v1.9.1
+kubernetesVersion: v1.32.0
 endpoint: https://control.impl.nl:6443
 allowSchedulingOnControlPlanes: true
 cniConfig:
@@ -71,38 +71,26 @@ nodes:
     ipAddress: 192.168.1.24
     controlPlane: false
     installDisk: /dev/mmcblk0
-    kernelModules:
-      - name: rockchip-cpufreq
   - hostname: node25
     ipAddress: 192.168.1.25
     controlPlane: false
     installDisk: /dev/mmcblk0
-    kernelModules:
-      - name: rockchip-cpufreq
   - hostname: node26
     ipAddress: 192.168.1.26
     controlPlane: false
     installDisk: /dev/mmcblk0
-    kernelModules:
-      - name: rockchip-cpufreq
   - hostname: node27
     ipAddress: 192.168.1.27
     controlPlane: false
     installDisk: /dev/mmcblk0
-    kernelModules:
-      - name: rockchip-cpufreq
   - hostname: node6
     ipAddress: 192.168.1.182
     controlPlane: true
     installDisk: /dev/mmcblk0
-    kernelModules:
-      - name: rockchip-cpufreq
   - hostname: node7
     ipAddress: 192.168.1.197
     controlPlane: false
     installDisk: /dev/mmcblk0
-    kernelModules:
-      - name: rockchip-cpufreq
     schematic:
       customization:
         extraKernelArgs:
@@ -111,11 +99,7 @@ nodes:
     ipAddress: 192.168.1.196
     controlPlane: true
     installDisk: /dev/mmcblk0
-    kernelModules:
-      - name: rockchip-cpufreq
   - hostname: node9
     ipAddress: 192.168.1.183
     controlPlane: true
     installDisk: /dev/mmcblk0
-    kernelModules:
-      - name: rockchip-cpufreq

@@ -64,7 +64,7 @@ spec:
             resource.customizations.ignoreDifferences.apps_Deployment: |
               jsonPointers:
               - /spec/hostUsers  
-            resource.customizations.ignoreDifferences.apps_Statefulsets: |
+            resource.customizations.ignoreDifferences.apps_StatefulSet: |
               jsonPointers:
               - /spec/hostUsers  
             admin.enabled: true

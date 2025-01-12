@@ -24,9 +24,9 @@ spec:
         pod-security.kubernetes.io/warn: privileged
     syncOptions:
       - CreateNamespace=true
-  # ignoreDifferences:
-  # - group: apps
-  #   kind: Deployment
-  #   jsonPointers:
-  #   - /spec/template/spec/hostUsers
+  ignoreDifferences:
+  - group: apps
+    kind: Deployment
+    jsonPointers:
+    - /spec/template/spec/hostUsers
     

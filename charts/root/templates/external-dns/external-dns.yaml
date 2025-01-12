@@ -10,9 +10,9 @@ spec:
     namespace: external-dns
   project: default
   source:
-    repoURL: oci://registry-1.docker.io/bitnamicharts
-    targetRevision: 8.7.1
     chart: external-dns
+    repoURL: registry-1.docker.io/bitnamicharts
+    targetRevision: 8.7.1
     helm:
       valuesObject:
         provider: cloudflare

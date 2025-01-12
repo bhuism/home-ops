@@ -32,10 +32,10 @@ controllers:
         resources:
           limits:
             cpu: 1
-            memory: 768Mi
+            memory: 256Mi
           requests:
             cpu: 1
-            memory: 768Mi
+            memory: 256Mi
         env:
           SPRING_PROFILES_ACTIVE: production
           pseudoniemenservice_token-private-key: i4dfBykN5Fjw9p3ADxvpRUhpbFSXepRSOcRGuaiJ4iQ=

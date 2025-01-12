@@ -19,7 +19,7 @@ spec:
         cloudflare:
           apiToken: "KHpxqF3BvvOOtlTy5DDtMhAJL1inEUO1ercPJb8S"
           email: "meuk@odee.net"
-          proxied: true
+          proxied: false
         txtOwnerId: impl
         domainFilters:
           - impl.nl

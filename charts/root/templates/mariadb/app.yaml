@@ -20,9 +20,9 @@ spec:
         primary:
           # readinessProbe:
           #   enabled: true
-          # extraEnvVars:
-          # - name: MARIADB_INIT_SLEEP_TIME
-          #   value: "5"
+          extraEnvVars:
+            - name: MARIADB_INIT_SLEEP_TIME
+              value: "15"
           persistence:
             existingClaim: mariadb-pvc
   syncPolicy:

@@ -12,13 +12,15 @@ controllers:
           tag: latest
         probes:
           liveness:
-            httpGet:
-              path: /actuator/health/liveness
-              port: 9080
+            enabled: true
+            type: HTTP
+            path: /actuator/health/liveness
+            port: 9080
           readiness:
-            httpGet:
-              path: /actuator/health/readiness
-              port: 9080
+            enabled: true
+            type: HTTP
+            path: /actuator/health/readiness
+            port: 9080
           startup:
             enabled: true
         securityContext:

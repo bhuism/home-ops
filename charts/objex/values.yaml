@@ -15,12 +15,12 @@ controllers:
           liveness:
             enabled: true
             type: HTTP
-            path: /actuator/health/liveness
+            path: /manage/health/liveness
             port: 9080
           readiness:
             enabled: true
             type: HTTP
-            path: /actuator/health/readiness
+            path: /manage/health/readiness
             port: 9080
           startup:
             enabled: true

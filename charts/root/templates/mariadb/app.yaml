@@ -18,8 +18,8 @@ spec:
         auth:
           rootPassword: killer
         primary:
-          readinessProbe:
-            enabled: false
+          # readinessProbe:
+          #   enabled: true
           # extraEnvVars:
           # - name: MARIADB_INIT_SLEEP_TIME
           #   value: "5"

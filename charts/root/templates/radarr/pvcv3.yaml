@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: radarr-v1-pvc
+  namespace: radarr
+spec:
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 250Mi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ceph-rbd

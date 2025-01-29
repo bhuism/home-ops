@@ -10,8 +10,9 @@ spec:
     namespace: radarr
   project: default
   source:
-    repoURL: oci://tccr.io/truecharts
-    path: radarr
+    repoURL: https://github.com/truecharts/public
+    path: charts/stable/radarr
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true

@@ -13,6 +13,12 @@ spec:
     repoURL: https://github.com/truecharts/public
     path: charts/stable/radarr
     targetRevision: HEAD
+    helm:
+      valuesObject:
+        persistence:
+          config:
+            type: pvc
+            existingClaim: radarr-config
   syncPolicy:
     automated:
       prune: true

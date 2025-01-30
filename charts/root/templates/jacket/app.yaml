@@ -15,6 +15,9 @@ spec:
     targetRevision: HEAD
     helm:
       valuesObject:
+        image:
+          repository: lscr.io/linuxserver/jackett
+          tag: latest
         workload:
           main:
             podSpec:

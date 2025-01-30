@@ -1,0 +1,47 @@
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          pullPolicy: always
+          repository: lscr.io/linuxserver/jackett
+          tag: latest
+        # securityContext:
+        #   allowPrivilegeEscalation: false
+        #   runAsNonRoot: false
+        #   capabilities:
+        #     drop:
+        #       - ALL
+        #   seccompProfile:
+        #     type: RuntimeDefault
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 9117
+ingress:
+  main:
+    enabled: true
+    className: nginx
+    annotations:
+      external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+      cert-manager.io/cluster-issuer: letsencrypt-production
+      gethomepage.dev/enabled: "true"
+    hosts:
+      - host: jackett.impl.nl
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            service:
+              identifier: main
+              port: http
+    tls:
+      - secretName: jackett.impl.nl
+        hosts:
+          - jackett.impl.nl
+
+persistence:
+  config:
+    existingClaim: jackett-config

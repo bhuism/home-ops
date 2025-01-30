@@ -3,7 +3,7 @@ controllers:
     containers:
       main:
         image:
-          pullPolicy: always
+          pullPolicy: Always
           repository: lscr.io/linuxserver/jackett
           tag: latest
         # securityContext:

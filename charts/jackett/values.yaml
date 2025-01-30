@@ -22,7 +22,7 @@ service:
         port: 9117
 ingress:
   main:
-    enabled: true
+    enabled: false
     className: nginx
     annotations:
       external-dns.alpha.kubernetes.io/target: ingress.impl.nl

@@ -25,7 +25,7 @@ spec:
                     RADARR__APP__THEME: "dark"
         ingress:
           main:
-            enabled: true
+            enabled: false
             ingressClassName: nginx
             annotations:
               external-dns.alpha.kubernetes.io/target: ingress.impl.nl

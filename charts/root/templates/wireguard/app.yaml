@@ -20,7 +20,7 @@ spec:
         autoscaling:
           enabled: false
         metrics:
-          enabled: true
+          enabled: false
         wireguard:
           clients:
             - PublicKey: 'PIXLqvUeEZEDYkw7/hAcOQeBIhRwoJe6lZAOXkbyIws='

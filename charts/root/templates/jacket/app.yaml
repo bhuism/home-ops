@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: jacket
+  name: jackett
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: jacket
+    namespace: jackett
   project: default
   source:
     repoURL: https://github.com/truecharts/public
-    path: charts/stable/jacket
+    path: charts/stable/jackett
     targetRevision: HEAD
     helm:
       valuesObject:
@@ -31,13 +31,13 @@ spec:
               cert-manager.io/cluster-issuer: letsencrypt-production
               gethomepage.dev/enabled: "true"
             hosts:
-              - host: jacket.impl.nl
+              - host: jackett.impl.nl
                 paths:
                   - path: /
             tls:
-              - secretName: jacket.impl.nl
+              - secretName: jackett.impl.nl
                 hosts:
-                  - jacket.impl.nl
+                  - jackett.impl.nl
             integrations:
               traefik:
                 enabled: false
@@ -50,7 +50,7 @@ spec:
         persistence:
           config:
             type: pvc
-            existingClaim: jacket-config
+            existingClaim: jackett-config
   syncPolicy:
     automated:
       prune: true

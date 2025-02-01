@@ -16,7 +16,8 @@ spec:
     helm:
       valuesObject:
         provider: cloudflare
-        image: registry.k8s.io/external-dns/external-dns:v0.15.0
+        image:
+          tag: 0.15.0
         cloudflare:
           apiToken: "BYwoYHyWZh0HojuWRxduO7gH_Ka30nQDgZjYaMtA"
           email: "bas@appsource.nl"

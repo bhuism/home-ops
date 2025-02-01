@@ -26,7 +26,9 @@ spec:
           enabled: true
           ingressClassName: nginx
           annotations:
-            external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
+            external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+            external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+            cert-manager.io/cluster-issuer: letsencrypt-production
             gethomepage.dev/enabled: "true"
           labels: {}
           path: /
@@ -34,6 +36,10 @@ spec:
           extraPaths: []
           hosts:
             - gatus.impl.nl
+          tls:
+            - secretName: gatus.impl.nl
+              hosts:
+                - gatus.impl.nl
         serviceMonitor:
           enabled: true
           labels:

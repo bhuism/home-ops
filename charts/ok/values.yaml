@@ -90,6 +90,10 @@ ingress:
     tls:
       - secretName: ok.impl.nl
         hosts:
-          - ip.impl.nl
-          - time.impl.nl
           - ok.impl.nl
+      - secretName: time.impl.nl
+        hosts:
+          - time.impl.nl
+      - secretName: ip.impl.nl
+        hosts:
+          - ip.impl.nl

@@ -58,8 +58,10 @@ ingress:
       paths:
         - path: /
           pathType: ImplementationSpecific
-  tls: {}
-
+  tls:
+    - secretName: www.kindersaai.nl
+      hosts:
+        - www.kindersaai.nl
 resources:
   limits:
     cpu: 100m

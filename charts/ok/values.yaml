@@ -61,7 +61,9 @@ ingress:
     enabled: true
     className: nginx
     annotations:
-      external-dns.alpha.kubernetes.io/target: 55c7affb-4f19-426b-aa56-cfa47940ee99.cfargotunnel.com
+      external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+      cert-manager.io/cluster-issuer: letsencrypt-production
       gethomepage.dev/enabled: "true"
     hosts:
       - host: ok.impl.nl
@@ -85,4 +87,9 @@ ingress:
             service:
               identifier: time-service
               port: http
-    tls: {}
+    tls:
+      - secretName: ok.impl.nl
+        hosts:
+          - ip.impl.nl
+          - time.impl.nl
+          - ok.impl.nl

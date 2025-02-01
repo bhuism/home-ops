@@ -17,7 +17,7 @@ spec:
       valuesObject:
         provider: cloudflare
         cloudflare:
-          apiToken: "NYf29t_s_avaLlHpRaHHD5KR8z0G1SL-rQzh2y40"
+          apiToken: "BYwoYHyWZh0HojuWRxduO7gH_Ka30nQDgZjYaMtA"
           email: "bas@appsource.nl"
           proxied: false
         txtOwnerId: impl

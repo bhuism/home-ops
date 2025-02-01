@@ -62,6 +62,7 @@ ingress:
     - secretName: www.appsource.nl
       hosts:
         - www.appsource.nl
+        - appsource.nl
 
 resources:
   limits:

@@ -15,8 +15,8 @@ spec:
     targetRevision: 0.3.2
     helm:
       valuesObject:
-        image:
-          tag: "2023.8.2"
+        # image:
+        #   tag: "2023.8.2"
         cloudflare:
           account: "4316bf40a24216761dd785cc0591de6f"
           tunnelName: "impl-tunnel"

@@ -18,7 +18,7 @@ spec:
         provider: cloudflare
         cloudflare:
           apiToken: "NYf29t_s_avaLlHpRaHHD5KR8z0G1SL-rQzh2y40"
-          email: "meuk@odee.net"
+          email: "bas@appsource.nl"
           proxied: false
         txtOwnerId: impl
         domainFilters:

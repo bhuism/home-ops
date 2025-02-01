@@ -24,9 +24,9 @@ spec:
         wireguard:
           clients:
             - PublicKey: 'PIXLqvUeEZEDYkw7/hAcOQeBIhRwoJe6lZAOXkbyIws='
-              AllowedIPs: 0.0.0.0/0
+              AllowedIPs: 10.34.0.0/24
             - PublicKey: 'EVAAhFwIIwzkNi6mchMzOXHuD+24yU8yAw1EmuVvQy8='
-              AllowedIPs: 0.0.0.0/0
+              AllowedIPs: 10.34.0.0/24
         service:
           loadBalancerIP: 192.168.1.81
         securityContext:

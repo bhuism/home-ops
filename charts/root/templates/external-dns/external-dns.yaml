@@ -17,7 +17,7 @@ spec:
       valuesObject:
         provider: cloudflare
         cloudflare:
-          apiToken: "Ba6_XVoe9DPIfKqynPbU6XRjzlJnMT1HKTToMigl"
+          apiToken: "T5iH5ninveUlXSLnPjuWgeRP8sFD3KWF1m7ufutW"
           email: "meuk@odee.net"
           proxied: false
         txtOwnerId: impl
@@ -25,6 +25,8 @@ spec:
           - impl.nl
           - objex.nl
           - stelseltoegang.nl
+          - kindersaai.nl
+          - appsource.nl
   syncPolicy:
     automated:
       prune: true

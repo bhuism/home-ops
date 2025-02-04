@@ -40,10 +40,8 @@ spec:
         l2announcements:
           enabled: true
         kubeProxyReplacement: true
-        routingMode: native
         loadBalancer:
           acceleration: native
-          mode: snat
         k8sServiceHost: 127.0.0.1
         k8sServicePort: 7445
         bpf:

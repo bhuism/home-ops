@@ -36,6 +36,7 @@ controllers:
 service:
   ok-service:
     controller: main
+    primary: true
     ports:
       http:
         port: 8080
@@ -43,6 +44,9 @@ service:
         port: 9080
   ip-service:
     controller: main
+    annotations:
+      service.cilium.io/type: LoadBalancer
+      service.cilium.io/forwarding-mode: dsr 
     ports:
       http:
         port: 8080

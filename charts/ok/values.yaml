@@ -37,6 +37,7 @@ service:
   ok-service:
     controller: main
     primary: true
+    type: LoadBalancer
     ports:
       http:
         port: 8080

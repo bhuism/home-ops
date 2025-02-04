@@ -15,6 +15,10 @@ spec:
     targetRevision: 0.5.0
     helm:
       valuesObject:
+        service:
+          annotations:
+            service.cilium.io/type: LoadBalancer
+            service.cilium.io/forwarding-mode: dsr 
         ingress:
           enabled: true
           ingressClassName: nginx

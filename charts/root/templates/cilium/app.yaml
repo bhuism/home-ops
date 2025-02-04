@@ -47,7 +47,6 @@ spec:
         k8sServicePort: 7445
         bpf:
           masquerade: true
-
         securityContext:
           capabilities:
             ciliumAgent:

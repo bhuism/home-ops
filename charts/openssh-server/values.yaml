@@ -35,7 +35,7 @@ service:
     controller: main
     loadBalancerIP: 192.168.1.83
     type: LoadBalancer
-    externalTrafficPolicy: Local
+    # externalTrafficPolicy: Local
     ports:
       http:
         port: 2222

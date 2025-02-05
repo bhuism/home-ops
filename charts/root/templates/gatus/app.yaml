@@ -93,11 +93,6 @@ spec:
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
-            - name: "Jasmine"
-              url: "icmp://jasmine.odee.net"
-              conditions:
-                - "[CONNECTED] == true"
-                - "[RESPONSE_TIME] < 5000"
             - name: "Eleanor"
               url: "icmp://eleanor.odee.net"
               conditions:

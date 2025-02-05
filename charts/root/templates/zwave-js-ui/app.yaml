@@ -17,7 +17,7 @@ spec:
       valuesObject:
 
         nodeSelector:
-          kubernetes.io/hostname: node6
+          kubernetes.io/hostname: node33
 
         environment:
           - name: "SESSION_SECRET"

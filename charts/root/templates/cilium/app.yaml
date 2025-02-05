@@ -45,8 +45,7 @@ spec:
         k8sServiceHost: 127.0.0.1
         k8sServicePort: 7445
         bpf:
-          masquerade: true
-          hostLegacyRouting: true
+          masquerade: false
         securityContext:
           capabilities:
             ciliumAgent:

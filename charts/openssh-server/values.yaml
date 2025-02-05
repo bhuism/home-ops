@@ -36,6 +36,9 @@ service:
     loadBalancerIP: 192.168.1.83
     type: LoadBalancer
     # externalTrafficPolicy: Local
+    annotations:
+      service.cilium.io/type: LoadBalancer
+      service.cilium.io/forwarding-mode: dsr
     ports:
       http:
         port: 2222

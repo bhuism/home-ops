@@ -53,6 +53,12 @@ patches:
       proxy:
         extraArgs:
           metrics-bind-address: "0.0.0.0:10249"
+  - |-
+    machine:
+      features:
+        hostDNS:
+          enabled: true
+          forwardKubeDNSToHost: false
 controlPlane:
   nameservers:
     - 1.0.0.1

@@ -113,6 +113,21 @@ spec:
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
+            - name: "Bmc1"
+              url: "https://bmc1.impl.nl"
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 5000"
+            - name: "Bmc2"
+              url: "https://bmc2.impl.nl"
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 5000"
+            - name: "Bmc3"
+              url: "https://bmc3.impl.nl"
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 5000"
         persistence:
           enabled: true
           existingClaim: gatus-v1-pvc-external

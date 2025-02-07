@@ -34,9 +34,11 @@ data:
             href: https://rook.ceph.impl.nl
     - Board Management Controller:
         - bmc1:
-            href: https://bmc.impl.nl
+            href: https://bmc1.impl.nl
         - bmc2:
             href: https://bmc2.impl.nl
+        - bmc3:
+            href: https://bmc3.impl.nl
   widgets.yaml: |
     - kubernetes:
         cluster:

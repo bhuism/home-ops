@@ -98,11 +98,6 @@ spec:
               conditions:
                 - "[CONNECTED] == true"
                 - "[RESPONSE_TIME] < 5000"
-            - name: "Home Ops"
-              url: "tcp://jasmine.odee.net:6443"
-              conditions:
-                - "[CONNECTED] == true"
-                - "[RESPONSE_TIME] < 5000"
             - name: "Wireguard"
               url: "udp://jasmine.odee.net:51820"
               conditions:

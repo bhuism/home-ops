@@ -117,11 +117,15 @@ spec:
                 - "[RESPONSE_TIME] < 5000"
             - name: "Bmc2"
               url: "https://bmc2.impl.nl"
+              client:
+                insecure: true
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
             - name: "Bmc3"
               url: "https://bmc3.impl.nl"
+              client:
+                insecure: true
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"

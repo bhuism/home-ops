@@ -15,6 +15,8 @@ spec:
     targetRevision: 1.1.0
     helm:
       valuesObject:
+        deployment:
+          strategy: Recreate
         securityContext:
           runAsNonRoot: false
           runAsUser: 0

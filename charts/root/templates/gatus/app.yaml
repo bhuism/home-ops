@@ -11,8 +11,8 @@ spec:
   project: default
   source:
     chart: gatus
-    repoURL: https://minicloudlabs.github.io/helm-charts
-    targetRevision: 3.4.6
+    repoURL: https://twin.github.io/helm-charts
+    targetRevision: 1.1.0
     helm:
       valuesObject:
         securityContext:

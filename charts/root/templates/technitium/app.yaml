@@ -21,9 +21,9 @@ spec:
               lbipam.cilium.io/ips: "192.168.1.82"
             ports:
               http:
-                enabled: false
-              https:
                 enabled: true
+              https:
+                enabled: false
               dns-tcp:
                 enabled: false
               dhcp:

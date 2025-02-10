@@ -45,6 +45,8 @@ spec:
         loadBalancer:
           acceleration: native
           mode: dsr
+        routingMode: tunnel
+        tunnelProtocol: geneve
         k8sServiceHost: 127.0.0.1
         k8sServicePort: 7445
         bpf:

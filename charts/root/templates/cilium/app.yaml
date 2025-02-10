@@ -45,6 +45,7 @@ spec:
         loadBalancer:
           acceleration: native
           mode: dsr
+          dsrDispatch: geneve
         routingMode: tunnel
         tunnelProtocol: geneve
         k8sServiceHost: 127.0.0.1

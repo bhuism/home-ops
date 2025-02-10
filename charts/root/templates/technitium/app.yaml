@@ -23,7 +23,7 @@ spec:
               http:
                 enabled: false
               https:
-                enabled: false
+                enabled: true
               dns-tcp:
                 enabled: false
               dhcp:

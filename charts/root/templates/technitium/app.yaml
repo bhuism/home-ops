@@ -24,8 +24,8 @@ spec:
                 enabled: true
               https:
                 enabled: false
-              dns-tcp:
-                enabled: false
+              # dns-tcp:
+              #   enabled: false
               dhcp:
                 enabled: false
               dot:

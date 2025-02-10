@@ -20,7 +20,17 @@ spec:
             annotations:
               lbipam.cilium.io/ips: "192.168.1.82"
             ports:
+              http:
+                enabled: false
+              https:
+                enabled: false
+              dns-tcp:
+                enabled: false
               dhcp:
+                enabled: false
+              dot:
+                enabled: false
+              doh-reverse:
                 enabled: false
         ingress:
           main:

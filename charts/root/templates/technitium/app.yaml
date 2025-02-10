@@ -10,7 +10,7 @@ spec:
     namespace: technitium
   project: default
   source:
-    chart: obeone/technitium-dnsserver
+    chart: technitium-dnsserver
     repoURL: https://charts.obeone.cloud
     targetRevision: 1.5.0
     helm:

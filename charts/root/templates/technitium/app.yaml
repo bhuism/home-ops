@@ -15,7 +15,26 @@ spec:
     targetRevision: 1.5.0
     helm:
       valuesObject:
-       
+        service:
+          main:
+            annotations:
+              lbipam.cilium.io/ips: "192.168.1.82"
+        ingress:
+          main:
+            enabled: true
+            annotations:
+                external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+                external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+                cert-manager.io/cluster-issuer: letsencrypt-production
+            hosts:
+              - host: technitium-dnsserver.impl.nl
+                paths:
+                  - path: /
+                    pathType: Prefix
+            tls:
+              - hosts:
+                  - technitium-dnsserver.impl.nl
+                secretName: technitium-dnsserver.impl.nl
   syncPolicy:
     automated:
       prune: true

@@ -29,8 +29,8 @@ spec:
           https:
             enabled: false
           annotations:
-            lbipam.cilium.io/ips: "192.168.1.82"
-            lbipam.cilium.io/sharing-key: "eightytwo"
+            lbipam.cilium.io/ips: "192.168.1.80"
+            # lbipam.cilium.io/sharing-key: "eightytwo"
           type: LoadBalancer          
         serviceDns:
           # loadBalancerIP: 192.168.1.82

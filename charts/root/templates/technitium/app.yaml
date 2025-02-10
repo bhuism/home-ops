@@ -22,6 +22,8 @@ spec:
             ports:
               http:
                 enabled: false
+              https:
+                enabled: false
               dns-tcp:
                 enabled: false
               dhcp:

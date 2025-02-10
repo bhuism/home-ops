@@ -19,7 +19,6 @@ spec:
           main:
             annotations:
               lbipam.cilium.io/ips: "192.168.1.82"
-              service.cilium.io/forwarding-mode: dsr
             ports:
               http:
                 enabled: false

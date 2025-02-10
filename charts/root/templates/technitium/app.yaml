@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: technitium
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: technitium
+  project: default
+  source:
+    chart: obeone/technitium-dnsserver
+    repoURL: https://charts.obeone.cloud
+    targetRevision: 1.5.0
+    helm:
+      valuesObject:
+       
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    # managedNamespaceMetadata:
+    #   labels:
+    #     pod-security.kubernetes.io/enforce: privileged
+    #     pod-security.kubernetes.io/audit: privileged
+    #     pod-security.kubernetes.io/warn: privileged
+    syncOptions:
+      - CreateNamespace=true

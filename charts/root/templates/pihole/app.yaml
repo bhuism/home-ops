@@ -33,10 +33,9 @@ spec:
             # lbipam.cilium.io/sharing-key: "eightytwo"
           # type: LoadBalancer          
         serviceDns:
-          loadBalancerIP: 192.168.1.82
           annotations:
             # metallb.universe.tf/allow-shared-ip: pihole-svc
-            lbipam.cilium.io/ips: "192.168.1.82"
+            # lbipam.cilium.io/ips: "192.168.1.82"
             lbipam.cilium.io/sharing-key: "pihole-svc"
           type: LoadBalancer          
         virtualHost: pihole.impl.nl

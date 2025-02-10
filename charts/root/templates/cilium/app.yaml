@@ -44,7 +44,7 @@ spec:
         kubeProxyReplacement: true
         loadBalancer:
           acceleration: native
-          mode: dsr
+          mode: hybrid
           dsrDispatch: geneve
         routingMode: tunnel
         tunnelProtocol: geneve

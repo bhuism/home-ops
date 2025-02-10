@@ -33,7 +33,9 @@ controllers:
 service:
   main:
     controller: main
-    loadBalancerIP: 192.168.1.83
+    # loadBalancerIP: 192.168.1.83
+    annotations:
+      lbipam.cilium.io/ips: 192.168.1.83
     type: LoadBalancer
     ports:
       http:

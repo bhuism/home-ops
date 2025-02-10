@@ -28,7 +28,9 @@ spec:
             - PublicKey: 'EVAAhFwIIwzkNi6mchMzOXHuD+24yU8yAw1EmuVvQy8='
               AllowedIPs: 10.34.0.0/24
         service:
-          loadBalancerIP: 192.168.1.81
+          # loadBalancerIP: 192.168.1.81
+          annotations:
+            lbipam.cilium.io/ips: 192.168.1.81
         securityContext:
           readOnlyRootFilesystem: false
           privileged: true

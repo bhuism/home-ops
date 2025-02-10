@@ -69,6 +69,12 @@ spec:
           autoMount:
             enabled: false
           hostRoot: /sys/fs/cgroup
+
+        rollOutCiliumPods: true
+
+        k8sClientRateLimit:
+          qps: 50
+          burst: 100
   syncPolicy:
     automated:
       prune: true

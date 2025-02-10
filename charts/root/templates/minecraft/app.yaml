@@ -29,7 +29,10 @@ spec:
           serviceType: LoadBalancer
           pvp: false
           levelType: DEFAULT
-          loadBalancerIP: 192.168.1.85
+          # loadBalancerIP: 192.168.1.85
+          serviceAnnotations:
+            lbipam.cilium.io/ips: 192.168.1.85
+
           ops: 2535437459132467,2535413218097118,2535451597618490
           cheats: true
         persistence:

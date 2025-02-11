@@ -19,6 +19,7 @@ spec:
           main:
             annotations:
               lbipam.cilium.io/ips: "192.168.1.82"
+            externalTrafficPolicy: Cluster
             ports:
               https:
                 enabled: false

@@ -44,9 +44,10 @@ spec:
         kubeProxyReplacement: true
         loadBalancer:
           acceleration: native
-          mode: snat
+          # mode: snat
           # dsrDispatch: opt
-        routingMode: native
+        # routingMode: native
+        # ipv4NativeRoutingCIDR: 10.244.0.0/16
         # tunnelProtocol: geneve
         k8sServiceHost: 127.0.0.1
         k8sServicePort: 7445

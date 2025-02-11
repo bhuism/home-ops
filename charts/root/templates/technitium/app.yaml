@@ -24,11 +24,11 @@ spec:
               http:
                 enabled: false
               # https:
-              #   enabled: true
+              #   enabled: false
               # dns-udp:
-              #   enabled: true
-              dns-tcp:
-                enabled: false
+              #   enabled: false
+              # dns-tcp:
+              #   enabled: false
               dhcp:
                 enabled: false
               dot:

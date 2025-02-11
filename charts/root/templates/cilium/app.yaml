@@ -53,6 +53,7 @@ spec:
         bpf:
           masquerade: true
           hostLegacyRouting: false
+          disableExternalIPMitigation: true
         securityContext:
           capabilities:
             ciliumAgent:

@@ -44,9 +44,9 @@ spec:
         kubeProxyReplacement: true
         loadBalancer:
           acceleration: native
-          mode: hybrid
-          dsrDispatch: opt
-        # routingMode: native
+          mode: snat
+          # dsrDispatch: opt
+        routingMode: native
         # tunnelProtocol: geneve
         k8sServiceHost: 127.0.0.1
         k8sServicePort: 7445

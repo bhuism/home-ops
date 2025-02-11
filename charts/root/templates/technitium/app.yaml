@@ -25,6 +25,8 @@ spec:
                 enabled: false
               https:
                 enabled: false
+              dns-udp:
+                enabled: true
               dns-tcp:
                 enabled: false
               dhcp:

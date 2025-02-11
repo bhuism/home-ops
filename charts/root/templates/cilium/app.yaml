@@ -45,9 +45,9 @@ spec:
         loadBalancer:
           acceleration: native
           mode: hybrid
-          dsrDispatch: geneve
-        routingMode: tunnel
-        tunnelProtocol: geneve
+          dsrDispatch: opt
+        routingMode: native
+        # tunnelProtocol: geneve
         k8sServiceHost: 127.0.0.1
         k8sServicePort: 7445
         bpf:

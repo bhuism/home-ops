@@ -23,10 +23,10 @@ spec:
             ports:
               http:
                 enabled: false
-              https:
-                enabled: false
-              dns-udp:
-                enabled: true
+              # https:
+              #   enabled: true
+              # dns-udp:
+              #   enabled: true
               dns-tcp:
                 enabled: false
               dhcp:

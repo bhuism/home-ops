@@ -8,6 +8,8 @@ controllers:
           repository: debian
           tag: stable-slim
           pullPolicy: IfNotPresent
+        command: ["/bin/sh", "-c"]
+        args: ["sleep infinity"]
         env:
           TZ: "Europe/Amsterdam"
         probes:

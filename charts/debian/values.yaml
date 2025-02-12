@@ -28,17 +28,17 @@ controllers:
             spec:
               failureThreshold: 60
               periodSeconds: 1
-        securityContext:
-          readOnlyRootFilesystem: false
-          runAsUser: 0
-          runAsGroup: 0
-          allowPrivilegeEscalation: false
-          runAsNonRoot: false
-          capabilities:
-            drop:
-              - ALL
-          seccompProfile:
-            type: RuntimeDefault
+        # securityContext:
+        #   readOnlyRootFilesystem: false
+        #   runAsUser: 0
+        #   runAsGroup: 0
+        #   allowPrivilegeEscalation: false
+        #   runAsNonRoot: false
+        #   capabilities:
+        #     drop:
+        #       - ALL
+        #   seccompProfile:
+        #     type: RuntimeDefault
         resources:
           requests:
             memory: "256Mi"

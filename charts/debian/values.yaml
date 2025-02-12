@@ -34,11 +34,7 @@ controllers:
           postStart:
             exec:
               command:
-                [
-                  "/bin/sh",
-                  "-c",
-                  "echo Hello from the postStart handler > /usr/share/message",
-                ]
+                ["/bin/sh", "-c", "/custom-scripts/install-packages.bash"]
           preStop:
             exec:
               command: ["/bin/sh", "-c", "killall sleep"]

@@ -29,11 +29,11 @@ controllers:
               failureThreshold: 60
               periodSeconds: 1
         securityContext:
-          readOnlyRootFilesystem: true
-          runAsUser: 1000
-          runAsGroup: 1000
+          readOnlyRootFilesystem: false
+          runAsUser: 0
+          runAsGroup: 0
           allowPrivilegeEscalation: false
-          runAsNonRoot: true
+          runAsNonRoot: false
           capabilities:
             drop:
               - ALL
@@ -59,12 +59,7 @@ controllers:
                 ]
           preStop:
             exec:
-              command:
-                [
-                  "/bin/sh",
-                  "-c",
-                  "cat /tmp/custom-scripts.log ; /usr/bin/touch /tmp/reboot",
-                ]
+              command: ["/bin/sh", "-c", "/usr/bin/touch /tmp/reboot"]
 service:
   main:
     controller: main

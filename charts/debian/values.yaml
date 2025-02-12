@@ -8,9 +8,9 @@ controllers:
       main:
         name: main
         image:
-          repository: debian
-          tag: sid-20250203-slim
-          pullPolicy: IfNotPresent
+          repository: ghcr.io/bhuism/openssh-server
+          tag: latest
+          pullPolicy: Always
         command: ["/bin/sh", "-c", "while [ ! -f /tmp/shutdown ] ; do sleep 3 ; done"]
         terminationGracePeriodSeconds: 4
         env:

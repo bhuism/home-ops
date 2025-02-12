@@ -11,7 +11,7 @@ controllers:
           repository: debian
           tag: sid-20250203-slim
           pullPolicy: IfNotPresent
-        command: ["/bin/sh", "-c", "while [ ! -f /tmp/shutdown ] ; sleep 2 ; done"]
+        command: ["/bin/sh", "-c", "while [ ! -f /tmp/shutdown ] ; do sleep 2 ; done"]
         terminationGracePeriodSeconds: 3
         env:
           TZ: "Europe/Amsterdam"

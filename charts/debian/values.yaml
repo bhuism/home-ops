@@ -59,7 +59,12 @@ controllers:
                 ]
           preStop:
             exec:
-              command: ["/usr/bin/touch", "/tmp/reboot"]
+              command:
+                [
+                  "/bin/sh",
+                  "-c",
+                  "cat /tmp/custom-scripts.log ; /usr/bin/touch /tmp/reboot",
+                ]
 service:
   main:
     controller: main

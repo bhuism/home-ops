@@ -1,6 +1,6 @@
 controllers:
   main:
-    revisionHistoryLimit: 1
+    revisionHistoryLimit: 0
     containers:
       main:
         name: main

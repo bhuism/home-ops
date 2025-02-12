@@ -21,14 +21,14 @@ spec:
               lbipam.cilium.io/ips: "192.168.1.82"
             # externalTrafficPolicy: Cluster
             ports:
-              http:
+              # http:
+              #   enabled: true
+              https:
                 enabled: false
-              # https:
-              #   enabled: false
               # dns-udp:
-              #   enabled: false
+              #   enabled: true
               # dns-tcp:
-              #   enabled: false
+              #   enabled: true
               dhcp:
                 enabled: false
               dot:

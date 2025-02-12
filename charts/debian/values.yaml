@@ -2,6 +2,7 @@ defaultPodOptions:
   terminationGracePeriodSeconds: 3
 controllers:
   main:
+    type: statefulset
     revisionHistoryLimit: 1
     containers:
       main:

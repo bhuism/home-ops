@@ -20,7 +20,7 @@ controllers:
           pullPolicy: IfNotPresent
           tag: 2.8.0-r4
         env:
-          TZ: UTC
+          TZ: "Europe/Amsterdam"
           DRIVER: usbhid-ups
           PORT: auto
           API_USER: root

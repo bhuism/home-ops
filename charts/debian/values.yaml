@@ -1,3 +1,5 @@
+defaultPodOptions:
+  terminationGracePeriodSeconds: 3
 controllers:
   main:
     revisionHistoryLimit: 0
@@ -9,6 +11,7 @@ controllers:
           tag: stable-slim
           pullPolicy: IfNotPresent
         command: ["/usr/bin/sleep", "infinity"]
+        terminationGracePeriodSeconds: 3
         env:
           TZ: "Europe/Amsterdam"
         probes:
@@ -25,15 +28,6 @@ controllers:
             spec:
               failureThreshold: 60
               periodSeconds: 1
-        # securityContext:
-        #   allowPrivilegeEscalation: true
-        #   capabilities:
-        #     drop:
-        #       - ALL
-        #   readOnlyRootFilesystem: false
-        #   runAsNonRoot: false
-        #   runAsUser: 0
-        #   runAsGroup: 0
         resources:
           requests:
             memory: "256Mi"

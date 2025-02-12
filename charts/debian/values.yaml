@@ -25,15 +25,15 @@ controllers:
             spec:
               failureThreshold: 60
               periodSeconds: 1
-        securityContext:
-          allowPrivilegeEscalation: true
-          capabilities:
-            drop:
-              - ALL
-          readOnlyRootFilesystem: false
-          runAsNonRoot: false
-          runAsUser: 0
-          runAsGroup: 0
+        # securityContext:
+        #   allowPrivilegeEscalation: true
+        #   capabilities:
+        #     drop:
+        #       - ALL
+        #   readOnlyRootFilesystem: false
+        #   runAsNonRoot: false
+        #   runAsUser: 0
+        #   runAsGroup: 0
         resources:
           requests:
             memory: "256Mi"

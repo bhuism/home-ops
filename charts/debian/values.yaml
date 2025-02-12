@@ -11,17 +11,20 @@ controllers:
         command: ["/usr/bin/sleep", "infinity"]
         env:
           TZ: "Europe/Amsterdam"
-        # probes:
-        #   liveness:
-        #     enabled: true
-        #     type: TCP
-        #     port: 2222
-        #   readiness:
-        #     enabled: true
-        #     type: TCP
-        #     port: 2222
-        #   startup:
-        #     enabled: true
+        probes:
+          liveness:
+            enabled: true
+            type: TCP
+            port: 2222
+          readiness:
+            enabled: true
+            type: TCP
+            port: 2222
+          startup:
+            enabled: true
+            spec:
+              failureThreshold: 60
+              periodSeconds: 1
         resources:
           requests:
             memory: "256Mi"

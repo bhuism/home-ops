@@ -36,8 +36,7 @@ controllers:
               command:
                 - /bin/sh,
                 - -c
-                - apt -qq update
-                - apt -qq full-upgrade
+                - ls &> /tmp/log.txt
 
 service:
   main:

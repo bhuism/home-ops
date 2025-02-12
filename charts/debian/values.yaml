@@ -51,10 +51,15 @@ service:
         targetPort: 2222
 
 persistence:
+  run:
+    enabled: true
+    type: emptyDir
+    medium: memory
+    sizeLimit: "16Mi"
   tmp:
     enabled: true
     type: emptyDir
-    size: "512Mi"
+    sizeLimit: "512Mi"
   custom-scripts:
     enabled: true
     type: configMap
@@ -72,4 +77,4 @@ packages:
   - tcpdump
   - bind-tools
   - net-tools
-
+  - iputils-ping

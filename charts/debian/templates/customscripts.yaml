@@ -13,11 +13,16 @@ data:
     apt -qq update
     apt -qq full-upgrade
 
+
     apt -y -qq install psmisc openssh-server
+
+    sed -i 's/#Port 22/Port 2222/g' /etc/ssh/sshd_config
 
     {{- if .Values.packages }}
     apt install -y -qq {{- range .Values.packages }} {{ . }}{{- end }}  
     {{- end }}
 
-    apt-get -y clean
+    apt -qq -y purge systemd
+    apt -qq -y autoremove
+    apt -qq -y clean
 

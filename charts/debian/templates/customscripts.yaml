@@ -7,11 +7,14 @@ metadata:
 data:
   install-packages.bash: |
     #!/bin/bash
+
+    set -x
+    set -e
     
     chmod 1777 /tmp
 
-    apt update
-    apt full-upgrade
+    apt -y update
+    apt -y full-upgrade
 
 
     apt -y install openssh-server

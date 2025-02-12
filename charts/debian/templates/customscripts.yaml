@@ -20,4 +20,3 @@ data:
       {{- end }}
     {{- end }}
 
-    # /etc/init.d/ssh restart

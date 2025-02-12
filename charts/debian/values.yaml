@@ -10,7 +10,7 @@ controllers:
         image:
           repository: ghcr.io/bhuism/openssh-server
           tag: 1
-          pullPolicy: Always
+          pullPolicy: IfNotPresent
         terminationGracePeriodSeconds: 3
         env:
           TZ: "Europe/Amsterdam"

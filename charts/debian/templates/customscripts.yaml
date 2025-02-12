@@ -13,12 +13,11 @@ data:
     apt -qq update
     apt -qq full-upgrade
 
-    # for killall
     apt -y -qq install psmisc openssh-server
 
     {{- if .Values.packages }}
     apt install -y -qq {{- range .Values.packages }} {{ . }}{{- end }}  
     {{- end }}
 
-    apt-get clean
+    apt-get -y clean
 

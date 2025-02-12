@@ -36,7 +36,7 @@ controllers:
                 ["/bin/sh", "-c", "/custom-scripts/install-packages.bash"]
           preStop:
             exec:
-              command: ["/bin/sh", "-c", "killall sleep"]
+              command: ["/bin/sh", "-c", "kill 1"]
 service:
   main:
     controller: main
@@ -75,3 +75,6 @@ packages:
   - bind-tools
   - net-tools
   - iputils-ping
+  - telnet
+  - psmisc
+

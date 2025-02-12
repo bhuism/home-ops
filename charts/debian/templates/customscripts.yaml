@@ -17,6 +17,7 @@ data:
     apt -y -qq install openssh-server
 
     sed -i 's/#Port 22/Port 2222/g' /etc/ssh/sshd_config
+    sed -i 's/#ClientAliveInterval 0/ClientAliveInterval 2/g' /etc/ssh/sshd_config
 
     {{- if .Values.packages }}
     apt install -y -qq {{- range .Values.packages }} {{ . }}{{- end }}  

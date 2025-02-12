@@ -75,9 +75,7 @@ packages:
   - rsync
   - nmap
   - tcpdump
-  - bind-tools
   - net-tools
   - iputils-ping
   - telnet
   - psmisc
-

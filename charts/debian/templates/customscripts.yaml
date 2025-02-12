@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: customscripts
+  namespace: debian
+data:
+  install-packages.bash: |
+    #!/bin/bash
+
+    apt -qq update
+    apt -qq full-upgrade
+
+    # for killall
+    apt -y -qq install psmisc openssh-server
+
+    {{- if .Values.packages }}
+    apt install -y -qq {{- range .Values.packages }} {{ . }}{{- end }}  
+    {{- end }}

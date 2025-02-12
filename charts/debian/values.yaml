@@ -33,10 +33,15 @@ controllers:
         lifecycle:
           postStart:
             exec:
-              command: ["/bin/sh", "-c", "echo Hello from the postStart handler > /usr/share/message"]
+              command:
+                [
+                  "/bin/sh",
+                  "-c",
+                  "echo Hello from the postStart handler > /usr/share/message",
+                ]
           preStop:
             exec:
-              command: ["/bin/sh","-c","killall sleep"]
+              command: ["/bin/sh", "-c", "killall sleep"]
 service:
   main:
     controller: main
@@ -54,7 +59,18 @@ persistence:
     enabled: true
     type: emptyDir
     site: "512Mi"
+  custom-scripts.sh:
+    enabled: true
+    type: configMap
+    name: customscripts
   home:
     enabled: true
     type: persistentVolumeClaim
     existingClaim: debian-home-pvc
+
+packages:
+  - joe
+  - rsync
+  - nmap
+  - tcpdump
+  - bind-tools

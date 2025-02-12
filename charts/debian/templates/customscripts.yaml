@@ -23,6 +23,13 @@ data:
     apt install -y -qq {{- range .Values.packages }} {{ . }}{{- end }}  
     {{- end }}
 
+    {{- if .Values.sshkeys }}
+      {{- range .Values.sshkeys }}
+    echo {{ . | quote }} >> /root/ssh/authorized_keys
+      {{- end }}
+    {{- end }}
+
+
     /etc/init.d/ssh start
 
     apt -qq -y purge systemd

@@ -39,9 +39,7 @@ controllers:
                 [
                   "/bin/sh",
                   "-c",
-                  "/custom-scripts/install-packages.bash",
-                  "&>",
-                  "/tmp/custom-scripts.log",
+                  "/custom-scripts/install-packages.bash &> /tmp/custom-scripts.log",
                 ]
           preStop:
             exec:

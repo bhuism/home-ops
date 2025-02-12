@@ -11,8 +11,7 @@ controllers:
           repository: ghcr.io/bhuism/openssh-server
           tag: latest
           pullPolicy: Always
-        command: ["/bin/sh", "-c", "while [ ! -f /tmp/shutdown ] ; do sleep 3 ; done"]
-        terminationGracePeriodSeconds: 4
+        terminationGracePeriodSeconds: 3
         env:
           TZ: "Europe/Amsterdam"
         probes:
@@ -29,6 +28,17 @@ controllers:
             spec:
               failureThreshold: 60
               periodSeconds: 1
+        securityContext:
+          readOnlyRootFilesystem: true
+          runAsUser: 1000
+          runAsGroup: 1000
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault         
         resources:
           requests:
             memory: "256Mi"

@@ -13,30 +13,14 @@ data:
     
     chmod 1777 /tmp
 
-    apt -y update
-    apt -y full-upgrade
+    # sed -i 's/#Port 22/Port 2222/g' /etc/ssh/sshd_config
+    # sed -i 's/#ClientAliveInterval 0/ClientAliveInterval 2/g' /etc/ssh/sshd_config
 
-
-    apt -y install openssh-server
-
-    sed -i 's/#Port 22/Port 2222/g' /etc/ssh/sshd_config
-    sed -i 's/#ClientAliveInterval 0/ClientAliveInterval 2/g' /etc/ssh/sshd_config
-
-    {{- if .Values.packages }}
-    apt install -y {{- range .Values.packages }} {{ . }}{{- end }}
-    {{- end }}
-
-    {{- if .Values.sshkeys }}
-    rm -f .ssh/authorized_keys
-      {{- range .Values.sshkeys }}
-    echo {{ . | quote }} >> /root/.ssh/authorized_keys
-      {{- end }}
-    {{- end }}
-
+    # {{- if .Values.sshkeys }}
+    # rm -f .ssh/authorized_keys
+    #   {{- range .Values.sshkeys }}
+    # echo {{ . | quote }} >> /root/.ssh/authorized_keys
+    #   {{- end }}
+    # {{- end }}
 
     /etc/init.d/ssh restart
-
-    apt -y purge systemd
-    apt -y autoremove
-    apt -y clean
-

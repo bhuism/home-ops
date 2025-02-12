@@ -11,7 +11,7 @@ data:
     set -x
     set -e
     
-    chmod 1777 /tmp
+    # chmod 1777 /tmp
 
     # sed -i 's/#Port 22/Port 2222/g' /etc/ssh/sshd_config
     # sed -i 's/#ClientAliveInterval 0/ClientAliveInterval 2/g' /etc/ssh/sshd_config

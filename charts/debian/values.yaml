@@ -38,7 +38,7 @@ controllers:
             drop:
               - ALL
           seccompProfile:
-            type: RuntimeDefault         
+            type: RuntimeDefault
         resources:
           requests:
             memory: "256Mi"
@@ -80,6 +80,7 @@ persistence:
   tmp:
     enabled: true
     type: emptyDir
+    defaultMode: 1777
   custom-scripts:
     enabled: true
     type: configMap

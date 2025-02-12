@@ -59,7 +59,7 @@ controllers:
                 ]
           preStop:
             exec:
-              command: ["/bin/sh", "-c", "/usr/bin/touch /tmp/reboot"]
+              command: ["/bin/sh", "-c", "/usr/bin/touch /tmp/shutdown"]
 service:
   main:
     controller: main

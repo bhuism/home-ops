@@ -8,7 +8,7 @@ controllers:
         name: main
         image:
           repository: debian
-          tag: stable-slim
+          tag: sid-20250203-slim
           pullPolicy: IfNotPresent
         command: ["/usr/bin/sleep", "infinity"]
         terminationGracePeriodSeconds: 3

@@ -65,3 +65,5 @@ packages:
   - rsync
   - nmap
   - tcpdump
+  - busybox-extras
+  - bind-tools

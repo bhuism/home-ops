@@ -28,18 +28,13 @@ controllers:
           limits:
             memory: "512Mi"
             cpu: "1000m"
-        lifecycle:
-          postStart:
-            exec:
-              command: [
-                  "/bin/sh",
-                  "-c",
-                  "
-                  set -x\n
-                  apt -qq update\n
-                  apt -qq full-upgrade\n
-                  ",
-                ]
+        # lifecycle:
+        #   postStart:
+        #     exec:
+        #       command:
+        #         - /bin/sh,
+        #         - -c
+        #         - apt -qq update &> /tmp/hallotxt
 service:
   main:
     controller: main

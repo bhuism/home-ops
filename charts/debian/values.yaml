@@ -54,12 +54,10 @@ persistence:
   run:
     enabled: true
     type: emptyDir
-    medium: memory
-    sizeLimit: "16Mi"
+    medium: Memory
   tmp:
     enabled: true
     type: emptyDir
-    sizeLimit: "512Mi"
   custom-scripts:
     enabled: true
     type: configMap

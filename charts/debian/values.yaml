@@ -59,7 +59,7 @@ persistence:
     enabled: true
     type: emptyDir
     site: "512Mi"
-  custom-scripts.sh:
+  custom-scripts:
     enabled: true
     type: configMap
     name: customscripts

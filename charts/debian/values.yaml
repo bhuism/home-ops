@@ -11,7 +11,7 @@ controllers:
           repository: debian
           tag: sid-20250203-slim
           pullPolicy: IfNotPresent
-        command: ["/usr/bin/sleep", "infinity"]
+        command: ["/bin/sh", "-c", "while [ ! -f /tmp/shutdown ] ; sleep 2 ; done"]
         terminationGracePeriodSeconds: 3
         env:
           TZ: "Europe/Amsterdam"
@@ -49,7 +49,7 @@ controllers:
                 ]
           preStop:
             exec:
-              command: ["/bin/sh", "-c", "kill 1"]
+              command: ["/usr/bin/touch", "/tmp/reboot"]
 service:
   main:
     controller: main

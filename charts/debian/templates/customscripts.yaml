@@ -10,6 +10,8 @@ data:
 
     set -x
     set -e
+
+    date
     
     # chmod 1777 /tmp
 

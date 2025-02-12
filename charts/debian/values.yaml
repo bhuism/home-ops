@@ -54,7 +54,7 @@ persistence:
   tmp:
     enabled: true
     type: emptyDir
-    site: "512Mi"
+    size: "512Mi"
   custom-scripts:
     enabled: true
     type: configMap

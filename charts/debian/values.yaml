@@ -26,7 +26,7 @@ controllers:
               failureThreshold: 60
               periodSeconds: 1
         securityContext:
-          allowPrivilegeEscalation: false
+          allowPrivilegeEscalation: true
           capabilities:
             drop:
               - ALL

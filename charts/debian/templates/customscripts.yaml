@@ -10,17 +10,17 @@ data:
     
     chmod 1777 /tmp
 
-    apt -qq update
-    apt -qq full-upgrade
+    apt update
+    apt full-upgrade
 
 
-    apt -y -qq install openssh-server
+    apt -y install openssh-server
 
     sed -i 's/#Port 22/Port 2222/g' /etc/ssh/sshd_config
     sed -i 's/#ClientAliveInterval 0/ClientAliveInterval 2/g' /etc/ssh/sshd_config
 
     {{- if .Values.packages }}
-    apt install -y -qq {{- range .Values.packages }} {{ . }}{{- end }}  
+    apt install -y {{- range .Values.packages }} {{ . }}{{- end }}
     {{- end }}
 
     {{- if .Values.sshkeys }}
@@ -32,7 +32,7 @@ data:
 
     /etc/init.d/ssh start
 
-    apt -qq -y purge systemd
-    apt -qq -y autoremove
-    apt -qq -y clean
+    apt -y purge systemd
+    apt -y autoremove
+    apt -y clean
 

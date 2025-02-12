@@ -63,7 +63,7 @@ persistence:
     enabled: true
     type: configMap
     name: customscripts
-    defaultMode: 755
+    defaultMode: 0755
   home:
     enabled: true
     type: persistentVolumeClaim

@@ -1,0 +1,59 @@
+controllers:
+  main:
+    strategy: Recreate
+    containers:
+      main:
+        name: main
+        image:
+          repository: debian
+          tag: stable-slim
+          pullPolicy: IfNotPresent
+        env:
+          TZ: "Europe/Amsterdam"
+        probes:
+          liveness:
+            enabled: true
+            type: TCP
+            port: 2222
+          readiness:
+            enabled: true
+            type: TCP
+            port: 2222
+          startup:
+            enabled: true
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "500m"
+          limits:
+            memory: "512Mi"
+            cpu: "1000m"
+        lifecycle:
+          postStart:
+            exec:
+              command: [
+                  "/bin/sh",
+                  "-c",
+                  "
+                  set -x\n
+                  apt -qq update\n
+                  apt -qq full-upgrade\n
+                  ",
+                ]
+service:
+  main:
+    controller: main
+    type: LoadBalancer
+    annotations:
+      lbipam.cilium.io/ips: "192.168.1.83"
+    ports:
+      ssh:
+        enabled: true
+        port: 2222
+        targetPort: 2222
+
+persistence:
+  home:
+    enabled: true
+    type: persistentVolumeClaim
+    existingClaim: debian-home-pvc

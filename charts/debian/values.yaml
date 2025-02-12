@@ -3,7 +3,7 @@ defaultPodOptions:
 controllers:
   main:
     type: statefulset
-    revisionHistoryLimit: 1
+    revisionHistoryLimit: 3
     containers:
       main:
         name: main

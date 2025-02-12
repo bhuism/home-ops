@@ -31,12 +31,16 @@ controllers:
             memory: "512Mi"
             cpu: "1000m"
         lifecycle:
-          postStart:
-            exec:
-              command:
-                - /bin/sh,
-                - -c
-                - ls &> /tmp/log.txt
+          # postStart:
+          #   exec:
+          #     command:
+          #       - /bin/sh,
+          #       - -c
+          #       - ls &> /tmp/log.txt
+          # preStop:
+          #   exec:
+          #     command:
+          #       - killall sleep
 
 service:
   main:

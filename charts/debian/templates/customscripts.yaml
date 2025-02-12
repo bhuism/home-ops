@@ -7,6 +7,8 @@ metadata:
 data:
   install-packages.bash: |
     #!/bin/bash
+    
+    chmod 1777 /tmp
 
     apt -qq update
     apt -qq full-upgrade
@@ -17,3 +19,6 @@ data:
     {{- if .Values.packages }}
     apt install -y -qq {{- range .Values.packages }} {{ . }}{{- end }}  
     {{- end }}
+
+    apt-get clean
+

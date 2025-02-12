@@ -12,17 +12,17 @@ controllers:
         args: ["sleep infinity"]
         env:
           TZ: "Europe/Amsterdam"
-        probes:
-          liveness:
-            enabled: true
-            type: TCP
-            port: 2222
-          readiness:
-            enabled: true
-            type: TCP
-            port: 2222
-          startup:
-            enabled: true
+        # probes:
+        #   liveness:
+        #     enabled: true
+        #     type: TCP
+        #     port: 2222
+        #   readiness:
+        #     enabled: true
+        #     type: TCP
+        #     port: 2222
+        #   startup:
+        #     enabled: true
         resources:
           requests:
             memory: "256Mi"

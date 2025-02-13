@@ -13,7 +13,7 @@ controllers:
           pullPolicy: IfNotPresent
         terminationGracePeriodSeconds: 3
         env:
-          TZ: "Europe/Amsterdam"
+          TZ: "UTC"
         probes:
           liveness:
             enabled: true

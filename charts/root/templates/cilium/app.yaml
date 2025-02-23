@@ -43,18 +43,17 @@ spec:
           enabled: true
         kubeProxyReplacement: true
         loadBalancer:
-          acceleration: native
-          # mode: snat
-          # dsrDispatch: opt
-        # routingMode: native
-        # ipv4NativeRoutingCIDR: 10.244.0.0/16
-        # tunnelProtocol: geneve
+          mode: hybrid
+          # acceleration: native
+        routingMode: native
+        ipv4NativeRoutingCIDR: 10.0.0.0/8
         k8sServiceHost: 127.0.0.1
         k8sServicePort: 7445
+        autoDirectNodeRoutes: true
         bpf:
           masquerade: true
-          hostLegacyRouting: false
-          disableExternalIPMitigation: true
+          # hostLegacyRouting: false
+          # disableExternalIPMitigation: true
         securityContext:
           capabilities:
             ciliumAgent:

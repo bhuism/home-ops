@@ -44,7 +44,7 @@ spec:
         kubeProxyReplacement: true
         loadBalancer:
           mode: hybrid
-          # acceleration: native
+          acceleration: native
         routingMode: native
         ipv4NativeRoutingCIDR: 10.0.0.0/8
         k8sServiceHost: 127.0.0.1

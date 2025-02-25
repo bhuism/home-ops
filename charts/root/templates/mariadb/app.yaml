@@ -12,7 +12,7 @@ spec:
   source:
     chart: mariadb
     repoURL: registry-1.docker.io/bitnamicharts
-    targetRevision: 20.3.1
+    targetRevision: 20.4.1
     helm:
       valuesObject:
         auth:

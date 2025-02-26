@@ -12,7 +12,7 @@ spec:
   source:
     chart: technitium-dnsserver
     repoURL: https://charts.obeone.cloud
-    targetRevision: 1.5.1
+    targetRevision: 1.5.2
     helm:
       valuesObject:
         service:

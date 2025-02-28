@@ -35,6 +35,9 @@ spec:
                 - secretName: hubble.impl.nl
                   hosts:
                     - hubble.impl.nl
+        externalIPs:
+          enabled: true
+        devices: end0
         ipam:
           mode: kubernetes
           # https://github.com/cilium/cilium/issues/35811

@@ -21,7 +21,7 @@ controllers:
           tag: 2.8.2-r2
         env:
           TZ: "Europe/Amsterdam"
-          DRIVER: nutdrv_qx
+          DRIVER: usbhid-ups
           PORT: auto
           API_USER: root
           API_PASSWORD: killer

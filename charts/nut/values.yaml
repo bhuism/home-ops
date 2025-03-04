@@ -43,3 +43,4 @@ persistence:
     enabled: true
     type: hostPath
     hostPath: /dev/ttyUSB0
+    hostPathType: CharDevice

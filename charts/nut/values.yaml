@@ -39,7 +39,7 @@ service:
         port: 3493
 
 persistence:
-  config:
+  usbdevice:
     enabled: true
     type: hostPath
     hostPath: /dev/ttyUSB0

@@ -18,7 +18,7 @@ controllers:
         image:
           repository: instantlinux/nut-upsd
           pullPolicy: IfNotPresent
-          tag: 2.8.0-r4
+          tag: 2.8.2-r2
         env:
           TZ: "Europe/Amsterdam"
           DRIVER: usbhid-ups

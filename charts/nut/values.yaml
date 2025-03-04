@@ -22,7 +22,7 @@ controllers:
         env:
           TZ: "Europe/Amsterdam"
           DRIVER: usbhid-ups
-          PORT: /dev/ttyUSB0
+          PORT: auto
           API_USER: root
           API_PASSWORD: killer
           VENDORID: 051d

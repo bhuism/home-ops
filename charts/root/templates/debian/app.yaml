@@ -13,6 +13,13 @@ spec:
     repoURL: https://github.com/bhuism/home-ops.git
     path: charts/debian
     targetRevision: HEAD
+    helm:
+      valuesObject:
+      persistence:
+        home:
+          enabled: true
+          type: persistentVolumeClaim
+          existingClaim: debian-home-pvc
   syncPolicy:
     automated:
       prune: true

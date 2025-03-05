@@ -12,3 +12,4 @@ spec:
     - ReadWriteMany
   volumeMode: Block
   storageClassName: ceph-rbd-twice
+  volumeName: pvc-4163aa25-0369-47c5-a85e-0eeb968f3625

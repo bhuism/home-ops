@@ -96,7 +96,7 @@ persistence:
         main:
           - path: /config
   media:
-    existingClaim: qbittorrent-media
+    existingClaim: jellyfin-media-pvc
     advancedMounts:
       main:
         main:

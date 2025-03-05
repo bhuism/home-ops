@@ -25,6 +25,15 @@ controllers:
           VPN_SERVICE_PROVIDER: nordvpn
           VPN_TYPE: openvpn
           SERVER_COUNTRIES: Switzerland
+          OPENVPN_USER:
+            configMapKeyRef:
+              name: nordvpn-credentials
+              key: username
+          OPENVPN_PASSWORD:
+            configMapKeyRef:
+              name: nordvpn-credentials
+              key: password
+
         securityContext:
           capabilities:
             add:

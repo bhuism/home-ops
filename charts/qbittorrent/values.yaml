@@ -32,6 +32,8 @@ controllers:
         image:
           repository: ghcr.io/onedr0p/qbittorrent
           tag: 5.0.4
+        env:
+          TZ: Europe/Amsterdam
         securityContext:
           runAsUser: 568
           runAsGroup: 568
@@ -43,6 +45,7 @@ controllers:
           repository: ghcr.io/qdm12/gluetun
           tag: v3.40.0
         env:
+          TZ: Europe/Amsterdam
           VPN_SERVICE_PROVIDER: nordvpn
           VPN_TYPE: openvpn
           SERVER_COUNTRIES: Switzerland

@@ -1,31 +1,18 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
+apiVersion: v1
+kind: Pod
 metadata:
-  name: debian1
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  name: debian-1
+  namespace: starr-arr
 spec:
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: starr-arr
-  project: default
-  source:
-    repoURL: https://github.com/bhuism/home-ops.git
-    path: charts/debian
-    targetRevision: HEAD
-    helm:
-      valuesObject:
-        persistence:
-          media:
-            enabled: true
-            type: persistentVolumeClaim
-            existingClaim: media-pvc
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    # managedNamespaceMetadata:
-    #   labels:
-    #     pod-security.kubernetes.io/enforce: privileged
-    #     pod-security.kubernetes.io/audit: privileged
-    #     pod-security.kubernetes.io/warn: privileged
+  containers:
+    - name: debian-1
+      image: debian:stable-slim
+      command: ["/bin/sh", "-c"]
+      args: ["sleep infinity"]      
+      volumeDevices:
+        - name: media
+          devicePath: /dev/xvda
+  volumes:
+    - name: media
+      persistentVolumeClaim:
+        claimName: media-pvc

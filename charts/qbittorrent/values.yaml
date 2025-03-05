@@ -1,0 +1,101 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/refs/heads/main/charts/library/common/values.schema.json
+
+# Configure options applied to all pods
+defaultPodOptions:
+  automountServiceAccountToken: false
+
+controllers:
+  main:
+
+    # Configure the pod-specific securityContext
+    pod:
+      securityContext:
+        fsGroup: 568
+        fsGroupChangePolicy: "OnRootMismatch"
+
+    containers:
+      # Configure the gluetun sidecar
+      gluetun:
+        dependsOn: main
+        image:
+          repository: ghcr.io/qdm12/gluetun
+          tag: v3.40.0
+        env:
+          VPN_SERVICE_PROVIDER: nordvpn
+          VPN_TYPE: openvpn
+          SERVER_COUNTRIES: Switzerland
+        securityContext:
+          capabilities:
+            add:
+              - NET_ADMIN
+
+      # port-forward:
+      #   dependsOn: gluetun
+      #   image:
+      #     repository: docker.io/snoringdragon/gluetun-qbittorrent-port-manager
+      #     tag: "1.0"
+      #   env:
+      #     - name: QBITTORRENT_SERVER
+      #       value: localhost
+      #     - name: QBITTORRENT_PORT
+      #       value: "8080"
+      #     - name: PORT_FORWARDED
+      #       value: "/tmp/gluetun/forwarded_port"
+
+      # main:
+      #   dependsOn: gluetun
+      #   image:
+      #     # -- image repository
+      #     repository: ghcr.io/onedr0p/qbittorrent
+      #     # -- image tag
+      #     # this example is not automatically updated, so be sure to use the latest image
+      #     tag: 5.0.4
+      #   # Configure the container-specific securityContext
+      #   securityContext:
+      #     runAsUser: 568
+      #     runAsGroup: 568
+
+# service:
+#   # Configure a service for the main application
+#   main:
+#     controller: main
+#     type: ClusterIP
+#     ports:
+#       http:
+#         port: 8080
+
+# ingress:
+#   # Configure an Ingress for the main application
+#   main:
+#     className: "external-nginx"
+#     hosts:
+#       - host: &host "qbittorent.impl.nl"
+#         paths:
+#           - path: /
+#             pathType: Prefix
+#             service:
+#               identifier: main
+#               port: http
+#     tls:
+#       - hosts:
+#           - *host
+
+# persistence:
+#   # Configure the main configuration storage location
+#   config:
+#     existingClaim: qbittorrent-config
+#     advancedMounts:
+#       main:
+#         main:
+#           - path: /config
+  # Configure an emptyDir to share the port-forwarding location between containers
+  # gluetun-data:
+  #   type: emptyDir
+  #   advancedMounts:
+  #     main:
+  #       gluetun:
+  #         - path: /tmp/gluetun
+        # port-forward:
+        #   - path: /tmp/gluetun
+        #     readOnly: true

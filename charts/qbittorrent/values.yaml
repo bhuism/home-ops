@@ -58,6 +58,7 @@ controllers:
               name: nordvpn-credentials
               key: password
           DNS_ADDRESS: 1.1.1.1
+          FIREWALL_INPUT_PORTS: 8080
 
         securityContext:
           capabilities:

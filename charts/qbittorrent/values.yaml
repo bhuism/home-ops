@@ -16,8 +16,8 @@ controllers:
 
     containers:
       # Configure the gluetun sidecar
-      gluetun:
-        dependsOn: main
+      main:
+        # dependsOn: main
         image:
           repository: ghcr.io/qdm12/gluetun
           tag: v3.40.0

@@ -90,11 +90,6 @@ persistence:
     enabled: true
     type: persistentVolumeClaim
     existingClaim: debian-home-pvc
-  media2:
-    enabled: true
-    type: persistentVolumeClaim
-    existingClaim: jellyfin-media-pvc2
-
 
 sshkeys:
   - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID8LV5y8YTAdq4DbU75jO3zbsmgRaLpRrWdGQHbxAt8/ bhuism@eva

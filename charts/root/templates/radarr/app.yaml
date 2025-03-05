@@ -54,10 +54,12 @@ spec:
             enabled: true
             type: pvc
             existingClaim: radarr-config
+            mountPath: /config
           media:
             enabled: true
             type: pvc
             existingClaim: jellyfin-media-pvc
+            mountPath: /media
   syncPolicy:
     automated:
       prune: true

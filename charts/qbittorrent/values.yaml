@@ -90,6 +90,12 @@ persistence:
       main:
         main:
           - path: /config
+  media:
+    existingClaim: qbittorrent-media
+    advancedMounts:
+      main:
+        main:
+          - path: /media
 
   # Configure an emptyDir to share the port-forwarding location between containers
   # gluetun-data:

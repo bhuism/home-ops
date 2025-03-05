@@ -60,5 +60,3 @@ persistence:
     existingClaim: jellyfin-cache-pvc
   media:
     existingClaim: jellyfin-media-pvc
-    accessMode: ReadWriteMany
-

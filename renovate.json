@@ -6,7 +6,6 @@
   },
   "packageRules": [
     {
-      "matchUpdateTypes": ["patch", "minor", "lockFileMaintenance"],
       "automerge": true
     }
   ]

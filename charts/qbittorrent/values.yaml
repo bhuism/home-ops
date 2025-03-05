@@ -90,12 +90,14 @@ service:
 
 persistence:
   config:
+    enabled: true
     existingClaim: qbittorrent-config
     advancedMounts:
       main:
         main:
           - path: /config
   media:
+    enabled: true
     existingClaim: jellyfin-media-pvc
     advancedMounts:
       main:

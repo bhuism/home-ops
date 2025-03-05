@@ -51,9 +51,11 @@ spec:
             kubernetes.io/arch: "arm64"
         persistence:
           config:
+            enabled: true
             type: pvc
             existingClaim: radarr-config
           media:
+            enabled: true
             type: pvc
             existingClaim: jellyfin-media-pvc
   syncPolicy:

@@ -1,6 +1,6 @@
 controllers:
   main:
-    replicas: 0
+    replicas: 1
     containers:
       main:
         image:
@@ -60,3 +60,5 @@ persistence:
     existingClaim: jellyfin-cache-pvc
   media:
     existingClaim: jellyfin-media-pvc
+    accessMode: ReadWriteMany
+

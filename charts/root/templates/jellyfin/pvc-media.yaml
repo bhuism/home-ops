@@ -9,7 +9,6 @@ spec:
     requests:
       storage: 2200Gi
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   storageClassName: ceph-rbd-twice
   volumeName: pvc-5bb9288e-7681-431e-8139-330bbbab1970
-

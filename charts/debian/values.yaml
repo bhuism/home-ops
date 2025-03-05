@@ -60,17 +60,6 @@ controllers:
           preStop:
             exec:
               command: ["/bin/sh", "-c", "/usr/bin/touch /tmp/shutdown"]
-service:
-  main:
-    controller: main
-    type: LoadBalancer
-    annotations:
-      lbipam.cilium.io/ips: "192.168.1.83"
-    ports:
-      ssh:
-        enabled: true
-        port: 2222
-        targetPort: 2222
 
 persistence:
   run:

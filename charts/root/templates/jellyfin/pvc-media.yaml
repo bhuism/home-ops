@@ -9,5 +9,5 @@ spec:
     requests:
       storage: 2200Gi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   storageClassName: ceph-rbd-twice

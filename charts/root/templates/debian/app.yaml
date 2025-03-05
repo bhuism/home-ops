@@ -15,11 +15,11 @@ spec:
     targetRevision: HEAD
     helm:
       valuesObject:
-      persistence:
-        home:
-          enabled: true
-          type: persistentVolumeClaim
-          existingClaim: debian-home-pvc
+        persistence:
+          home:
+            enabled: true
+            type: persistentVolumeClaim
+            existingClaim: debian-home-pvc
   syncPolicy:
     automated:
       prune: true

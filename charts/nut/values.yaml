@@ -31,6 +31,8 @@ controllers:
         securityContext:
           privileged: true
 
+# Bus 002 Device 004: ID 051d:0002 American Power Conversion Back-UPS BX950MI
+
 service:
   main:
     controller: main

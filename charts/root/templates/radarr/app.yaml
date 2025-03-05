@@ -54,6 +54,7 @@ spec:
             type: pvc
             existingClaim: radarr-config
           media:
+            type: pvc
             existingClaim: jellyfin-media-pvc
   syncPolicy:
     automated:

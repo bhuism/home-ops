@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: customscripts
-  namespace: debian
+  namespace: {{ .Release.Namespace }}
 data:
   install-packages.bash: |
     #!/bin/bash
@@ -19,4 +19,3 @@ data:
     echo {{ . | quote }} >> /root/.ssh/authorized_keys
       {{- end }}
     {{- end }}
-

@@ -1,5 +1,5 @@
 clusterName: impl-k8s
-talosVersion: v1.9.3
+talosVersion: v1.9.4
 kubernetesVersion: v1.32.0
 endpoint: https://control.impl.nl:6443
 allowSchedulingOnControlPlanes: true
@@ -71,7 +71,6 @@ worker:
     - 8.8.4.4
     - 8.8.8.8
 
-        
 nodes:
   - hostname: node37
     ipAddress: 192.168.1.37
@@ -101,6 +100,12 @@ nodes:
       customization:
         extraKernelArgs:
           - "-console=ttyS2,115200"
+    patches:
+      - |-
+        machine:
+          udev:
+            rules:
+              - SUBSYSTEM=="usb", ATTRS{idVendor}==“051d”, ATTRS{idProduct}==“0002”, MODE="0666"
   - hostname: node34
     ipAddress: 192.168.1.34
     controlPlane: true

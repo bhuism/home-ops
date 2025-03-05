@@ -9,10 +9,3 @@ spec:
       image: debian:stable-slim
       command: ["/bin/sh", "-c"]
       args: ["sleep infinity"]      
-      volumeDevices:
-        - name: media
-          devicePath: /dev/xvda
-  volumes:
-    - name: media
-      persistentVolumeClaim:
-        claimName: media-pvc

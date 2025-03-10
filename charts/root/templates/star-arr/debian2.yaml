@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: debian-2
-  namespace: starr-arr
+  namespace: star-arr
 spec:
   containers:
     - name: debian-2

@@ -7,5 +7,11 @@ spec:
   containers:
     - name: debian-1
       image: debian:stable-slim
-      command: ["/bin/sh", "-c"]
-      args: ["sleep infinity"]      
+      command: ["/usr/bin/sleep", "infinity"]
+      volumeMounts:
+        - name: media-vol
+          mountPath: /mnt/media
+  volumes:
+    - name: media-vol
+      persistentVolumeClaim:
+        claimName: media

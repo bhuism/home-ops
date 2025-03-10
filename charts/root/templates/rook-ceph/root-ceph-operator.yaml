@@ -18,7 +18,7 @@ spec:
         currentNamespaceOnly: false
         csi:
           enableRbdDriver: true
-          enableCephfsDriver: false
+          enableCephfsDriver: true
           enableGrpcMetrics: true
           enableLiveness: true
           serviceMonitor:

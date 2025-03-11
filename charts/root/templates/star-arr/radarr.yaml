@@ -55,6 +55,11 @@ spec:
             type: pvc
             existingClaim: radarr-config-pvc
             mountPath: /config
+          download:
+            enabled: true
+            type: pvc
+            existingClaim: download-pvc
+            mountPath: /download
           media:
             enabled: true
             type: pvc

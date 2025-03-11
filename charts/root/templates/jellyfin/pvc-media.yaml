@@ -1,14 +1,14 @@
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: jellyfin-media-pvc
-  namespace: jellyfin
-spec:
-  volumeMode: Filesystem
-  resources:
-    requests:
-      storage: 2200Gi
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: ceph-rbd-twice
-  volumeName: pvc-5bb9288e-7681-431e-8139-330bbbab1970
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: jellyfin-media-pvc
+#   namespace: jellyfin
+# spec:
+#   volumeMode: Filesystem
+#   resources:
+#     requests:
+#       storage: 2200Gi
+#   accessModes:
+#     - ReadWriteOnce
+#   storageClassName: ceph-rbd-twice
+#   volumeName: pvc-5bb9288e-7681-431e-8139-330bbbab1970

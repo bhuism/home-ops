@@ -1,69 +1,69 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: radarr
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: radarr
-  project: default
-  source:
-    repoURL: https://github.com/truecharts/public
-    path: charts/stable/radarr
-    targetRevision: HEAD
-    helm:
-      valuesObject:
-        workload:
-          main:
-            podSpec:
-              containers:
-                main:
-                  env:
-                    RADARR__AUTH__METHOD: "external"
-                    RADARR__APP__THEME: "dark"
-        # ingress:
-        #   main:
-        #     enabled: false
-        #     ingressClassName: nginx
-        #     annotations:
-        #       external-dns.alpha.kubernetes.io/target: ingress.impl.nl
-        #       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-        #       cert-manager.io/cluster-issuer: letsencrypt-production
-        #       gethomepage.dev/enabled: "true"
-        #     hosts:
-        #       - host: radarr.impl.nl
-        #         paths:
-        #           - path: /
-        #     tls:
-        #       - secretName: radarr.impl.nl
-        #         hosts:
-        #           - radarr.impl.nl
-        #     integrations:
-        #       traefik:
-        #         enabled: false
-        metrics:
-          main:
-            enabled: false
-        podOptions:
-          nodeSelector:
-            kubernetes.io/arch: "arm64"
-        persistence:
-          config:
-            enabled: true
-            type: pvc
-            existingClaim: radarr-config
-            mountPath: /config
-          media:
-            enabled: true
-            type: pvc
-            existingClaim: jellyfin-media-pvc
-            mountPath: /media
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
-      - ServerSideApply=true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: radarr
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io
+# spec:
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: radarr
+#   project: default
+#   source:
+#     repoURL: https://github.com/truecharts/public
+#     path: charts/stable/radarr
+#     targetRevision: HEAD
+#     helm:
+#       valuesObject:
+#         workload:
+#           main:
+#             podSpec:
+#               containers:
+#                 main:
+#                   env:
+#                     RADARR__AUTH__METHOD: "external"
+#                     RADARR__APP__THEME: "dark"
+#         # ingress:
+#         #   main:
+#         #     enabled: false
+#         #     ingressClassName: nginx
+#         #     annotations:
+#         #       external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+#         #       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+#         #       cert-manager.io/cluster-issuer: letsencrypt-production
+#         #       gethomepage.dev/enabled: "true"
+#         #     hosts:
+#         #       - host: radarr.impl.nl
+#         #         paths:
+#         #           - path: /
+#         #     tls:
+#         #       - secretName: radarr.impl.nl
+#         #         hosts:
+#         #           - radarr.impl.nl
+#         #     integrations:
+#         #       traefik:
+#         #         enabled: false
+#         metrics:
+#           main:
+#             enabled: false
+#         podOptions:
+#           nodeSelector:
+#             kubernetes.io/arch: "arm64"
+#         persistence:
+#           config:
+#             enabled: true
+#             type: pvc
+#             existingClaim: radarr-config
+#             mountPath: /config
+#           media:
+#             enabled: true
+#             type: pvc
+#             existingClaim: jellyfin-media-pvc
+#             mountPath: /media
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - CreateNamespace=true
+#       - ServerSideApply=true

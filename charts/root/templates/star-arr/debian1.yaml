@@ -10,7 +10,7 @@ spec:
       command: ["/usr/bin/sleep", "infinity"]
       volumeMounts:
         - name: media-vol
-          mountPath: /mnt/media
+          mountPath: /mnt/target
   volumes:
     - name: media-vol
       persistentVolumeClaim:

@@ -9,10 +9,10 @@ controllers:
   main:
 
     # Configure the pod-specific securityContext
-    pod:
-      securityContext:
-        fsGroup: 0
-        fsGroupChangePolicy: "OnRootMismatch"
+    # pod:
+    #   securityContext:
+    #     fsGroup: 0
+    #     fsGroupChangePolicy: "OnRootMismatch"
 
     containers:
       # port-forward:

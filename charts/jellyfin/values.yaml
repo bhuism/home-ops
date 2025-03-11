@@ -1,6 +1,6 @@
 controllers:
   main:
-    replicas: 0
+    replicas: 1
     containers:
       main:
         image:
@@ -58,5 +58,5 @@ persistence:
     existingClaim: jellyfin-config-pvc
   cache:
     existingClaim: jellyfin-cache-pvc
-  # media:
-  #   existingClaim: jellyfin-media-pvc
+  media:
+    existingClaim: media-pvc

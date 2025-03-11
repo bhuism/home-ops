@@ -53,7 +53,7 @@ spec:
           config:
             enabled: true
             type: pvc
-            existingClaim: radarr-config
+            existingClaim: radarr-config-pvc
             mountPath: /config
           media:
             enabled: true

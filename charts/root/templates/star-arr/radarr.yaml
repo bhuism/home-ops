@@ -43,6 +43,9 @@ spec:
             integrations:
               homepage:
                 enabled: true
+              traefik:
+                enabled: false
+
         metrics:
           main:
             enabled: false

@@ -1,5 +1,9 @@
 controllers:
   main:
+    pod:
+      securityContext:
+        fsGroup: 568
+        fsGroupChangePolicy: "OnRootMismatch"
     replicas: 1
     containers:
       main:
@@ -8,6 +12,8 @@ controllers:
           pullPolicy: IfNotPresent
           tag: 2025031005-arm64
         securityContext:
+          runAsUser: 568
+          runAsGroup: 568
           allowPrivilegeEscalation: false
           runAsNonRoot: false
           capabilities:
@@ -15,6 +21,8 @@ controllers:
               - ALL
           seccompProfile:
             type: RuntimeDefault
+        env:
+          TZ: Europe/Amsterdam
 service:
   main:
     controller: main

@@ -53,6 +53,8 @@ spec:
           nodeSelector:
             kubernetes.io/arch: "arm64"
         persistence:
+          shared:
+            enabled: false
           config:
             enabled: true
             type: pvc

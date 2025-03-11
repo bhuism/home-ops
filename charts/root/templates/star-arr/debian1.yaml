@@ -9,9 +9,14 @@ spec:
       image: debian:stable-slim
       command: ["/usr/bin/sleep", "infinity"]
       volumeMounts:
-        - name: media-vol
+        - name: media-target
           mountPath: /mnt/target
+        - name: media-source
+          mountPath: /mnt/source
   volumes:
-    - name: media-vol
+    - name: media-target
       persistentVolumeClaim:
         claimName: media-pvc
+    - name: media-source
+      persistentVolumeClaim:
+        claimName: media-source-pvc

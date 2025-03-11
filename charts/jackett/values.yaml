@@ -44,4 +44,4 @@ ingress:
 
 persistence:
   config:
-    existingClaim: jackett-config
+    existingClaim: jackett-config-pvc

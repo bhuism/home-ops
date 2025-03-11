@@ -7,7 +7,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: jackett
+    namespace: star-arr
   project: default
   source:
     repoURL: https://github.com/bhuism/home-ops.git

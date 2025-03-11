@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: jackett-config
+  name: jackett-config-pvc
   namespace: jackett
 spec:
   volumeMode: Filesystem
@@ -11,3 +11,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   storageClassName: ceph-rbd
+  volumeName: pvc-365e8e83-03c8-415f-b138-b78320a71254

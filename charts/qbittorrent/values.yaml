@@ -9,10 +9,10 @@ controllers:
   main:
 
     # Configure the pod-specific securityContext
-    pod:
-      securityContext:
-        fsGroup: 568
-        fsGroupChangePolicy: "OnRootMismatch"
+    # pod:
+    #   securityContext:
+    #     fsGroup: 568
+    #     fsGroupChangePolicy: "OnRootMismatch"
 
     containers:
       # port-forward:
@@ -34,9 +34,9 @@ controllers:
           tag: 5.0.4
         env:
           TZ: Europe/Amsterdam
-        securityContext:
-          runAsUser: 568
-          runAsGroup: 568
+        # securityContext:
+        #   runAsUser: 568
+        #   runAsGroup: 568
 
       # Configure the gluetun sidecar
       gluetun:

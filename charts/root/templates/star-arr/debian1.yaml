@@ -1,22 +1,22 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: debian-1
-  namespace: star-arr
-spec:
-  containers:
-    - name: debian-1
-      image: debian:stable-slim
-      command: ["/usr/bin/sleep", "infinity"]
-      volumeMounts:
-        - name: media-target
-          mountPath: /mnt/target
-        - name: media-source
-          mountPath: /mnt/source
-  volumes:
-    - name: media-target
-      persistentVolumeClaim:
-        claimName: media-pvc
-    - name: media-source
-      persistentVolumeClaim:
-        claimName: media-source-pvc
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: debian-1
+#   namespace: star-arr
+# spec:
+#   containers:
+#     - name: debian-1
+#       image: debian:stable-slim
+#       command: ["/usr/bin/sleep", "infinity"]
+#       volumeMounts:
+#         - name: media-target
+#           mountPath: /mnt/target
+#         - name: media-source
+#           mountPath: /mnt/source
+#   volumes:
+#     - name: media-target
+#       persistentVolumeClaim:
+#         claimName: media-pvc
+#     - name: media-source
+#       persistentVolumeClaim:
+#         claimName: media-source-pvc

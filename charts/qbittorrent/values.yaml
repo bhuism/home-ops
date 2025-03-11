@@ -91,7 +91,7 @@ service:
 persistence:
   config:
     enabled: true
-    existingClaim: qbittorrent-config
+    existingClaim: qbittorrent-config-pvc
     advancedMounts:
       main:
         main:

@@ -96,13 +96,13 @@ persistence:
       main:
         main:
           - path: /config
-  media:
+  download:
     enabled: true
-    existingClaim: media-pvc
+    existingClaim: download-pvc
     advancedMounts:
       main:
         main:
-          - path: /media
+          - path: /download
 
   # Configure an emptyDir to share the port-forwarding location between containers
   # gluetun-data:

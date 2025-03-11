@@ -14,4 +14,4 @@ spec:
   volumes:
     - name: media-vol
       persistentVolumeClaim:
-        claimName: media
+        claimName: media-pvc

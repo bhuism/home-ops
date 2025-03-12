@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#CONTEXT=ceph-k8s
-CONTEXT=impl-k8s
+CONTEXT=ceph-k8s
+#CONTEXT=impl-k8s
 
 kubectl --context $CONTEXT get pod -A --field-selector status.phase=Failed
 

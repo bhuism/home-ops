@@ -34,9 +34,7 @@ service:
   main:
     controller: main
     type: LoadBalancer
-    #loadBalancerIP: 192.168.1.84
     annotations:
-      # metallb.universe.tf/allow-shared-ip: eightyone
       lbipam.cilium.io/ips: "192.168.1.84"
       lbipam.cilium.io/sharing-key: "eightyfour"
     ports:

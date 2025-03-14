@@ -30,9 +30,7 @@ spec:
             enabled: false
         serviceDns:
           annotations:
-            # metallb.universe.tf/allow-shared-ip: pihole-svc
             lbipam.cilium.io/ips: "192.168.1.82"
-            # lbipam.cilium.io/sharing-key: "piholednsservice"
           type: LoadBalancer
           mixedService: true
         virtualHost: pihole.impl.nl

@@ -18,7 +18,6 @@
 - [ArgoCD](https://argo-cd.readthedocs.io/)
 - [Arm Exported](https://github.com/carlosedp/docker-arm_exporter)
 - [Gatus](https://gatus.io/)
-- [MetalLB](https://metallb.universe.tf/)
 - [Prometheus Stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
 - [ExternalDNS](https://github.com/kubernetes-sigs/external-dns)
 - [Ingress-nginx](https://github.com/kubernetes/ingress-nginx)

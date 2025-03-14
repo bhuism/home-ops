@@ -1,7 +1,23 @@
 #!/bin/bash
 
 CONTEXT=ceph-k8s
-#CONTEXT=impl-k8s
+
+kubectl --context $CONTEXT get pod -A --field-selector status.phase=Failed
+
+kubectl --context $CONTEXT delete pods -A --field-selector status.phase=Failed
+
+for ns in $(kubectl --context $CONTEXT get po -A --no-headers | grep -v Running | awk {'print $1'}); do
+  delpods=$(kubectl --context $CONTEXT get pods --no-headers -n $ns | grep -E 'Evicted|Completed|ErrImagePull|Failed' | awk '{print $1 }')    
+  echo delpods=$delpods
+  for i in $delpods; do
+     echo deleting $ns/$i
+#     kubectl --context $CONTEXT delete pod $i --force=true --wait=false --grace-period=0 -n $ns 
+     kubectl --context $CONTEXT delete pod $i -n $ns 
+  done
+done
+
+
+CONTEXT=impl-k8s
 
 kubectl --context $CONTEXT get pod -A --field-selector status.phase=Failed
 

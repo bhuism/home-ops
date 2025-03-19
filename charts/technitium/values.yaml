@@ -54,8 +54,9 @@ ingress:
       - host: my.host.local
         paths:
           - path: /
-            pathType: Prefix
-    ingressClassName: ""
+            service:
+              identifier: main
+              port: http
     tls:
       - hosts:
           - my.host.local

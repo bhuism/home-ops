@@ -1,7 +1,8 @@
 apiVersion: v2
 name: technitium-dnsserver
-version: 2.0.0
+version: 1.0.0
 dependencies:
   - name: common
-    repository: https://library-charts.k8s-at-home.com
-    version: 4.5.2
+    repository: https://bjw-s.github.io/helm-charts/
+    version: 3.7.3
+    

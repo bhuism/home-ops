@@ -1,32 +1,18 @@
-#
-# IMPORTANT NOTE
-#
-# This chart inherits from our common library chart. You can check the default values/options here:
-# https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
-#
-
-image:
-  # -- image repository
-  repository: technitium/dns-server
-  # -- image tag
-  # @default -- chart.appVersion
-  tag:
-  # -- image pull policy
-  pullPolicy: Always
-
-# -- environment variables. See more environment variables in the [petio documentation](https://petio.org/docs).
-# @default -- See below
-env:
-  # -- Set the container timezone
-  TZ: UTC
-
-# -- Configures service settings for the chart.
-#  Depending of your k8s version, you'll be able, or not, to mix UDP and TCP services
-# @default -- See values.yaml
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          repository: technitium/dns-server
+          tag: 13.4.3
+          pullPolicy: Always
+        env:
+          TZ: UTC
 service:
   main:
     annotations: {}
     enabled: true
+    controller: main
     primary: true
     type: LoadBalancer
     externalTrafficPolicy: Local
@@ -62,8 +48,6 @@ service:
         protocol: TCP
 
 ingress:
-  # -- Enable and configure ingress settings for the chart under this key.
-  # @default -- See the [docs](https://github.com/k8s-at-home/library-charts/blob/main/charts/stable/common/README.md)
   main:
     enabled: false
     annotations: {}

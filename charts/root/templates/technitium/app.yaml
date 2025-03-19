@@ -14,8 +14,45 @@ spec:
     repoURL: https://charts.obeone.cloud
     targetRevision: 1.5.2
     helm:
-      valueFiles:
-        - values.yaml
+      valuesObject:
+        service:
+          main:
+            annotations:
+              lbipam.cilium.io/ips: "192.168.1.82"
+            externalTrafficPolicy: Cluster
+            ports:
+              http:
+                enabled: true
+              https:
+                enabled: false
+              dns-udp:
+              enabled: true
+              dns-tcp:
+                enabled: true
+              dhcp:
+                enabled: false
+              dot:
+                enabled: false
+              doh-reverse:
+                enabled: false
+        ingress:
+          main:
+            enabled: true
+            annotations:
+              external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+              external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+              cert-manager.io/cluster-issuer: letsencrypt-production
+            ingressClassName: nginx
+            hosts:
+              - host: technitium-dnsserver.impl.nl
+                paths:
+                  - path: /
+                    pathType: Prefix
+            tls:
+              - hosts:
+                  - technitium-dnsserver.impl.nl
+                secretName: technitium-dnsserver.impl.nl
+
   syncPolicy:
     automated:
       prune: true

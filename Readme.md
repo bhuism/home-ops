@@ -24,7 +24,7 @@
 - [Ok](https://github.com/bhuism/ok)
 - [Cloudflare Tunnel](https://github.com/cloudflare/helm-charts/tree/main/charts/cloudflare-tunnel)
 - [Echo-Server](https://ealenn.github.io/Echo-Server/)
-- [PiHole](https://pi-hole.net/)
+- [Technitium](https://https://technitium.com/dns//)
 - [Cert Manager](https://cert-manager.io/)
 - [WireGuard](https://www.wireguard.com/)
 - [Speedtest Exporter](https://github.com/MiguelNdeCarvalho/speedtest-exporter)

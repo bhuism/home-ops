@@ -10,9 +10,9 @@ spec:
     namespace: technitium
   project: default
   source:
-    chart: technitium-dnsserver
-    repoURL: https://charts.obeone.cloud
-    targetRevision: 1.5.2
+    repoURL: https://github.com/bhuism/home-ops.git
+    path: charts/technitium
+    targetRevision: HEAD
     helm:
       valuesObject:
         service:

@@ -47,7 +47,9 @@ spec:
               - host: technitium-dnsserver.impl.nl
                 paths:
                   - path: /
-                    pathType: Prefix
+                    service:
+                      identifier: main
+                      port: http
             tls:
               - hosts:
                   - technitium-dnsserver.impl.nl

@@ -50,7 +50,6 @@ service:
 ingress:
   main:
     enabled: false
-    annotations: {}
     hosts:
       - host: my.host.local
         paths:

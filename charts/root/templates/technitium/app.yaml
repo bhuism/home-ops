@@ -38,7 +38,7 @@ spec:
               https:
                 enabled: false
               dns-udp:
-              enabled: true
+                enabled: true
               dns-tcp:
                 enabled: true
               dhcp:

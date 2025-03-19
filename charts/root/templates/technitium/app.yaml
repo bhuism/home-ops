@@ -14,7 +14,7 @@ spec:
     repoURL: https://charts.obeone.cloud
     targetRevision: 1.5.2
     helm:
-      valuesFiles:
+      valueFiles:
         - values.yaml
   syncPolicy:
     automated:

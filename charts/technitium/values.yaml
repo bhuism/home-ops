@@ -8,9 +8,38 @@ controllers:
           pullPolicy: Always
         env:
           TZ: UTC
+        probes:
+          liveness:
+            enabled: true
+            custom: true
+            spec:
+              httpGet:
+                path: /
+                port: 5380
+          readiness:
+            enabled: true
+            custom: true
+            spec:
+              httpGet:
+                path: /
+                port: 5380
+          startup:
+            enabled: true
+            custom: true
+            spec:
+              httpGet:
+                path: /
+                port: 5380
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
+          requests:
+            cpu: 200m
+            memory: 256Mi
+
 service:
   main:
-    annotations: {}
     enabled: true
     controller: main
     primary: true
@@ -62,8 +91,6 @@ ingress:
           - my.host.local
         secretName: mycert-tls
 
-# -- Configure persistence settings for the chart under this key.
-# @default -- See values.yaml
 persistence:
   config:
     enabled: true

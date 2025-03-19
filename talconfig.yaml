@@ -59,6 +59,7 @@ patches:
         hostDNS:
           enabled: true
           forwardKubeDNSToHost: false
+          resolveMemberNames: true
 controlPlane:
   nameservers:
     - 1.0.0.1

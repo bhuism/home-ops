@@ -36,7 +36,6 @@ service:
     type: LoadBalancer
     annotations:
       lbipam.cilium.io/ips: "192.168.1.84"
-      lbipam.cilium.io/sharing-key: "eightyfour"
     ports:
       http:
         port: 1883

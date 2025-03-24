@@ -24,7 +24,7 @@ spec:
           showCatalogNbTags: true
           ingress:
             enabled: true
-            className: nginx-internal
+            ingressClassName: nginx-internal
             host: registry-ui.impl.nl
             annotations:
               external-dns.alpha.kubernetes.io/target: ingress.impl.nl

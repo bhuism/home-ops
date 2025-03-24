@@ -27,9 +27,9 @@ spec:
             enabled: true
             serviceMonitor:
               enabled: true
-          # service:
-          #   annotations:
-          #     lbipam.cilium.io/ips: "192.168.1.80"
+          service:
+            annotations:
+              lbipam.cilium.io/ips: "192.168.1.81"
         defaultBackend:
           enabled: true
           name: defaultbackend

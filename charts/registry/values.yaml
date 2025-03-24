@@ -45,7 +45,7 @@ service:
 
 ingress:
   main:
-    ingressClassName: nginx-internal
+    className: nginx-internal
     annotations:
       nginx.ingress.kubernetes.io/proxy-body-size: 512m
       nginx.ingress.kubernetes.io/auth-type: basic

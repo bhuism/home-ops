@@ -60,7 +60,7 @@ service:
 ingress:
   main:
     enabled: true
-    ingressClassName: nginx-external
+    className: nginx-external
     annotations:
       external-dns.alpha.kubernetes.io/target: jasmine.odee.net
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"

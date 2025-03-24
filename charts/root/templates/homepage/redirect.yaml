@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: www.impl.nl
+  namespace: ingress-nginx
+  annotations:
+    nginx.ingress.kubernetes.io/permanent-redirect: https://impl.nl
+    external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+    cert-manager.io/cluster-issuer: letsencrypt-production
+spec:
+  ingressClassName: nginx-internal
+  rules:
+  - host: www.impl.nl
+    http:
+      paths:
+      - backend:
+          service:
+            name: ingress-nginx-internal-defaultbackend
+            port:
+              name: http
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - www.impl.nl
+    secretName: www.impl.nl
+  defaultBackend:
+    service:
+      name: ingress-nginx-internal-defaultbackend
+      port:
+        name: http

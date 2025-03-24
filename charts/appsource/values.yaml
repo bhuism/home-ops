@@ -24,14 +24,15 @@ serviceAccount:
 
 podAnnotations: {}
 
-podSecurityContext: {}
+podSecurityContext:
+  {}
   # fsGroup: 2000
 
 securityContext:
   allowPrivilegeEscalation: false
   capabilities:
     drop:
-    - ALL
+      - ALL
   readOnlyRootFilesystem: false
   runAsNonRoot: true
   seccompProfile:
@@ -45,8 +46,7 @@ service:
 
 ingress:
   enabled: true
-  ingressClassName: nginx
-  className: nginx
+  ingressClassName: nginx-external
   annotations:
     external-dns.alpha.kubernetes.io/target: jasmine.odee.net
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"

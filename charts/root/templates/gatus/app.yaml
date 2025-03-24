@@ -26,7 +26,7 @@ spec:
             interval: 60s
         ingress:
           enabled: true
-          ingressClassName: nginx
+          ingressClassName: nginx-external
           annotations:
             external-dns.alpha.kubernetes.io/target: jasmine.odee.net
             external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"

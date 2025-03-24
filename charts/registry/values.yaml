@@ -45,6 +45,7 @@ service:
 
 ingress:
   main:
+    ingressClassName: nginx-internal
     annotations:
       nginx.ingress.kubernetes.io/proxy-body-size: 512m
       nginx.ingress.kubernetes.io/auth-type: basic
@@ -54,7 +55,6 @@ ingress:
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
       cert-manager.io/cluster-issuer: letsencrypt-production
       gethomepage.dev/enabled: "true"
-    className: nginx
     hosts:
       - host: registry.impl.nl
         paths:

@@ -1,0 +1,48 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ingress-nginx-external
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ingress-nginx
+  project: default
+  source:
+    chart: ingress-nginx
+    repoURL: https://kubernetes.github.io/ingress-nginx
+    targetRevision: 4.12.0
+    helm:
+      valuesObject:
+        controller:
+          name: nginx-external
+          replicaCount: 3
+          minAvailable: 1
+          ingressClassResource:
+            name: nginx-external
+            enabled: true
+            controllerValue: k8s.io/nginx-external
+          metrics:
+            enabled: true
+            serviceMonitor:
+              enabled: true
+          service:
+            annotations:
+              lbipam.cilium.io/ips: "192.168.1.80"
+        defaultBackend:
+          enabled: true
+          name: defaultbackend
+          image:
+            repository: ghcr.io/tarampampam/error-pages
+            tag: 3.3.1
+          resources:
+            requests:
+              memory: 250Mi
+              cpu: 25m
+            limits:
+              memory: 350Mi        
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true 

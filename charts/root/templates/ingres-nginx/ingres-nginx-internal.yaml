@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ingress-nginx-external
+  name: ingress-nginx-internal
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -16,20 +16,20 @@ spec:
     helm:
       valuesObject:
         controller:
-          name: nginx-external
+          name: nginx-internal
           replicaCount: 3
           minAvailable: 1
           ingressClassResource:
-            name: nginx-external
+            name: nginx-internal
             enabled: true
-            controllerValue: k8s.io/nginx-external
+            controllerValue: k8s.io/nginx-internal
           metrics:
             enabled: true
             serviceMonitor:
               enabled: true
-          service:
-            annotations:
-              lbipam.cilium.io/ips: "192.168.1.80"
+          # service:
+          #   annotations:
+          #     lbipam.cilium.io/ips: "192.168.1.80"
         defaultBackend:
           enabled: true
           name: defaultbackend
@@ -46,10 +46,3 @@ spec:
     automated:
       prune: true
       selfHeal: true 
-    managedNamespaceMetadata:
-      labels:
-        pod-security.kubernetes.io/enforce: privileged
-        pod-security.kubernetes.io/audit: privileged
-        pod-security.kubernetes.io/warn: privileged
-    syncOptions:
-      - CreateNamespace=true

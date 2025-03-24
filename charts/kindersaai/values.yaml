@@ -47,7 +47,6 @@ ingress:
   ingressClassName: nginx
   className: nginx
   annotations:
-    # kubernetes.io/ingress.class: nginx
     external-dns.alpha.kubernetes.io/target: jasmine.odee.net
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
     cert-manager.io/cluster-issuer: letsencrypt-production

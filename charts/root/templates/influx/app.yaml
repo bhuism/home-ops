@@ -24,6 +24,7 @@ spec:
         ingress:
           enabled: true
           tls: true
+          secretName: influx.impl.nl
           hostname: influx.impl.nl
           className: nginx-internal
           annotations:

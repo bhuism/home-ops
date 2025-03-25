@@ -23,12 +23,13 @@ spec:
           existingClaim: influx-v3-pvc
         ingress:
           enabled: true
-          tls: false
+          tls: true
           hostname: influx.impl.nl
           className: nginx-internal
           annotations:
             external-dns.alpha.kubernetes.io/target: ingress-internal.impl.nl
             external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+            cert-manager.io/cluster-issuer: letsencrypt-production
           path: /
         setDefaultUser:
           enabled: true

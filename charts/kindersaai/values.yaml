@@ -60,7 +60,6 @@ ingress:
     - secretName: www.kindersaai.nl
       hosts:
         - www.kindersaai.nl
-        - kindersaai.nl
 resources:
   limits:
     cpu: 100m

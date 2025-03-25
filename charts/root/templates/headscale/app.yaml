@@ -48,6 +48,14 @@ spec:
               - path: /web
                 service:
                 port: 80
+        persistence:
+          config:
+            enabled: true
+            mountPath: /etc/headscale
+            retain: true
+            storageClass: ceph-rbd
+            accessMode: ReadWriteOnce
+            size: 1Gi
         serviceMonitor:
           main:
             enabled: true

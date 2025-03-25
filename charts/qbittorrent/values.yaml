@@ -73,21 +73,25 @@ service:
       http:
         port: 8080
 
-# ingress:
-#   main:
-#     className: "external-nginx"
-#     hosts:
-#       - host: qbittorent.impl.nl
-#         paths:
-#           - path: /
-#             pathType: Prefix
-#             service:
-#               identifier: main
-#               port: http
-#     tls:
-#       - hosts:
-#           - *host
-
+ingress:
+  main:
+    className: "nginx-internal"
+    annotations:
+      external-dns.alpha.kubernetes.io/target: ingress-internal.impl.nl
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+      cert-manager.io/cluster-issuer: letsencrypt-production
+      gethomepage.dev/enabled: "true"
+    hosts:
+      - host: qbittorrent.impl.nl
+        paths:
+          - path: /
+            service:
+              identifier: main
+              port: http
+    tls:
+      - secretName: qbittorrent.impl.nl
+        hosts:
+          - qbittorrent.impl.nl
 persistence:
   config:
     enabled: true

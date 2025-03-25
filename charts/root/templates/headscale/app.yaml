@@ -44,10 +44,10 @@ spec:
             enabled: true
             hosts:
             - host: headscale.impl.nl
-                paths:
-                - path: /web
-                    service:
-                    port: 80
+              paths:
+              - path: /web
+                  service:
+                  port: 80
         serviceMonitor:
           main:
             enabled: true

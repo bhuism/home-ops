@@ -22,10 +22,10 @@ service:
         port: 9117
 ingress:
   main:
-    enabled: false
+    enabled: true
     className: nginx-internal
     annotations:
-      external-dns.alpha.kubernetes.io/target: ingress.impl.nl
+      external-dns.alpha.kubernetes.io/target: ingress-external.impl.nl
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
       cert-manager.io/cluster-issuer: letsencrypt-production
       gethomepage.dev/enabled: "true"

@@ -21,8 +21,8 @@ spec:
           ui:
             image: ghcr.io/gurucomputing/headscale-ui:latest
             ports:
-            - name: http
-              containerPort: 80
+              - name: http
+                containerPort: 80
             env:
               HTTP_PORT: 80
         service:
@@ -37,23 +37,23 @@ spec:
             className: nginx-internal
             ingressClassName: nginx-internal
             hosts:
-            - host: headscale.impl.nl
-              paths:
-              - path: /
+              - host: headscale.impl.nl
+                paths:
+                  - path: /
             tls:
-            - secretName: headscale.impl.nl
-              hosts:
-              - headscale.impl.nl
+              - secretName: headscale.impl.nl
+                hosts:
+                  - headscale.impl.nl
           ui:
             enabled: true
             className: nginx-internal
             ingressClassName: nginx-internal
             hosts:
-            - host: headscale.impl.nl
-              paths:
-              - path: /web
-                service:
-                port: 80
+              - host: headscale-ui.impl.nl
+                paths:
+                  - path: /web
+                    service:
+                    port: 80
         persistence:
           config:
             enabled: true

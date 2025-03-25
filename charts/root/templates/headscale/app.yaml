@@ -23,6 +23,8 @@ spec:
             ports:
             - name: http
               containerPort: 80
+            env:
+              HTTP_PORT: 80
         service:
           main:
             ports:

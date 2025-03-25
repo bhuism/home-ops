@@ -32,6 +32,8 @@ spec:
         ingress:
           main:
             enabled: true
+            className: nginx-internal
+            ingressClassName: nginx-internal
             hosts:
             - host: headscale.impl.nl
               paths:
@@ -42,6 +44,8 @@ spec:
               - headscale.impl.nl
           ui:
             enabled: true
+            className: nginx-internal
+            ingressClassName: nginx-internal
             hosts:
             - host: headscale.impl.nl
               paths:

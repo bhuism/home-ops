@@ -48,7 +48,7 @@ spec:
               cert-manager.io/cluster-issuer: letsencrypt-production
               gethomepage.dev/enabled: "true"
             hostname: argocd.impl.nl
-            tls: true
+            tls: false
 
         applicationSet:
           metrics:

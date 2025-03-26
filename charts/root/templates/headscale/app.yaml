@@ -36,8 +36,8 @@ spec:
         ingress:
           main:
             enabled: false
-            className: nginx-internal
-            ingressClassName: nginx-internal
+            className: nginx-external
+            ingressClassName: nginx-external
             hosts:
               - host: headscale.impl.nl
                 paths:
@@ -57,6 +57,8 @@ spec:
             hosts:
               - host: headscale.impl.nl
                 paths:
+                  - path: /
+                      port: 8080
                   - path: /web
                     service:
                       port: 80

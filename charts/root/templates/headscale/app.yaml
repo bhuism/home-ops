@@ -27,11 +27,11 @@ spec:
                 containerPort: 80
             env:
               HTTP_PORT: 80
-        # service:
-        #   main:
-        #     ports:
-        #       main:
-        #         port: 8080
+        service:
+          main:
+            ports:
+              ui:
+                port: 80
 
         ingress:
           main:
@@ -58,6 +58,8 @@ spec:
               - host: headscale.impl.nl
                 paths:
                   - path: /web
+                    service:
+                      port: 80
             tls:
               - secretName: headscale.impl.nl
                 hosts:

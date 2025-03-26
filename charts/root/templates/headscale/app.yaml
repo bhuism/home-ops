@@ -28,7 +28,7 @@ spec:
             env:
               HTTP_PORT: 80
         service:
-          main:
+          ui:
             ports:
               ui:
                 port: 80

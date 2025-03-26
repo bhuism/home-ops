@@ -58,9 +58,6 @@ spec:
               - host: headscale.impl.nl
                 paths:
                   - path: /web
-                    service:
-                      name: ui
-                      port: 80
             tls:
               - secretName: headscale.impl.nl
                 hosts:

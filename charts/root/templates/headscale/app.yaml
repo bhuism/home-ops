@@ -27,11 +27,11 @@ spec:
                 containerPort: 80
             env:
               HTTP_PORT: 80
-        service:
-          ui:
-            ports:
-              ui:
-                port: 80
+        # service:
+        #   main:
+        #     ports:
+        #       main:
+        #         port: 8080
 
         ingress:
           main:

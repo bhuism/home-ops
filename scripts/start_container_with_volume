@@ -1,6 +1,6 @@
 #!/bin/sh
 
-kubectl run -i --rm --tty debian -n jellyfin --overrides='
+kubectl run -i --rm --tty debian -n headscale --overrides='
 {
   "apiVersion": "v1",
       "spec": {
@@ -23,7 +23,7 @@ kubectl run -i --rm --tty debian -n jellyfin --overrides='
         "volumes": [{
           "name":"disk",
           "persistentVolumeClaim":{
-		"claimName": "jellyfin-media-pvc"
+		"claimName": "headscale-config"
 	}
         }]
       }

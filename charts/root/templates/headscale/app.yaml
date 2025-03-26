@@ -16,7 +16,9 @@ spec:
     helm:
       valuesObject:
         env:
-          HEADSCALE_PREFIXES_V4: 192.168.1.0/24
+          HEADSCALE_SERVER_URL: https://jasmine.odee.net:444
+          HEADSCALE_DERP_SERVER_ENABLED: true
+          HEADSCALE_DISABLE_CHECK_UPDATES: true
         sidecars:
           ui:
             image: ghcr.io/gurucomputing/headscale-ui:latest
@@ -33,7 +35,7 @@ spec:
 
         ingress:
           main:
-            enabled: true
+            enabled: false
             className: nginx-internal
             ingressClassName: nginx-internal
             hosts:
@@ -45,7 +47,7 @@ spec:
                 hosts:
                   - headscale.impl.nl
           ui:
-            enabled: true
+            enabled: false
             className: nginx-internal
             ingressClassName: nginx-internal
             hosts:

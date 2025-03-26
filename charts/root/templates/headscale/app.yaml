@@ -17,7 +17,7 @@ spec:
       valuesObject:
         env:
           HEADSCALE_SERVER_URL: https://jasmine.odee.net:444
-          HEADSCALE_DERP_SERVER_ENABLED: true
+          HEADSCALE_DERP_SERVER_ENABLED: false
           HEADSCALE_DISABLE_CHECK_UPDATES: true
         sidecars:
           ui:

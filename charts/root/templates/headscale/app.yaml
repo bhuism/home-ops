@@ -58,7 +58,7 @@ spec:
               - host: headscale.impl.nl
                 paths:
                   - path: /web
-                    service:
+                    service: main
                     port: 80
         persistence:
           config:

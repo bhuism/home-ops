@@ -47,11 +47,11 @@ spec:
                 hosts:
                   - headscale.impl.nl
           ui:
-            enabled: false
-            className: nginx-internal
-            ingressClassName: nginx-internal
+            enabled: true
+            className: nginx-external
+            ingressClassName: nginx-external
             hosts:
-              - host: headscale-ui.impl.nl
+              - host: headscale.impl.nl
                 paths:
                   - path: /web
                     service:

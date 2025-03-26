@@ -48,6 +48,10 @@ spec:
                   - headscale.impl.nl
           ui:
             enabled: true
+            annotations:
+              external-dns.alpha.kubernetes.io/target: jasmine.odee.net
+              external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+              cert-manager.io/cluster-issuer: letsencrypt-production
             className: nginx-external
             ingressClassName: nginx-external
             hosts:

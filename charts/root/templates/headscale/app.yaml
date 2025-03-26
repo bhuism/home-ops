@@ -58,7 +58,10 @@ spec:
               - host: headscale.impl.nl
                 paths:
                   - path: /
+                    service:
                       port: 8080
+              - host: headscale.impl.nl
+                paths:
                   - path: /web
                     service:
                       port: 80

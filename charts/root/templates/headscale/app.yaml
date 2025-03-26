@@ -1,73 +1,73 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: headscale
-#   finalizers:
-#     - resources-finalizer.argocd.argoproj.io
-# spec:
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: headscale
-#   project: default
-#   source:
-#     chart: headscale
-#     repoURL: https://charts.gabe565.com
-#     targetRevision: 0.16.0
-#     helm:
-#       valuesObject:
-#         env:
-#           HEADSCALE_PREFIXES_V4: 192.168.1.0/24
-#         sidecars:
-#           ui:
-#             image: ghcr.io/gurucomputing/headscale-ui:latest
-#             ports:
-#               - name: http
-#                 containerPort: 80
-#             env:
-#               HTTP_PORT: 80
-#         service:
-#           main:
-#             ports:
-#               ui:
-#                 port: 80
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: headscale
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: headscale
+  project: default
+  source:
+    chart: headscale
+    repoURL: https://charts.gabe565.com
+    targetRevision: 0.16.0
+    helm:
+      valuesObject:
+        env:
+          HEADSCALE_PREFIXES_V4: 192.168.1.0/24
+        sidecars:
+          ui:
+            image: ghcr.io/gurucomputing/headscale-ui:latest
+            ports:
+              - name: http
+                containerPort: 80
+            env:
+              HTTP_PORT: 80
+        service:
+          main:
+            ports:
+              ui:
+                port: 80
 
-#         ingress:
-#           main:
-#             enabled: true
-#             className: nginx-internal
-#             ingressClassName: nginx-internal
-#             hosts:
-#               - host: headscale.impl.nl
-#                 paths:
-#                   - path: /
-#             tls:
-#               - secretName: headscale.impl.nl
-#                 hosts:
-#                   - headscale.impl.nl
-#           ui:
-#             enabled: true
-#             className: nginx-internal
-#             ingressClassName: nginx-internal
-#             hosts:
-#               - host: headscale-ui.impl.nl
-#                 paths:
-#                   - path: /web
-#                     service:
-#                     port: 80
-#         persistence:
-#           config:
-#             enabled: true
-#             mountPath: /etc/headscale
-#             retain: true
-#             storageClass: cephfs
-#             accessMode: ReadWriteMany
-#             size: 1Gi
-#         serviceMonitor:
-#           main:
-#             enabled: true
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-#     syncOptions:
-#       - CreateNamespace=true
+        ingress:
+          main:
+            enabled: true
+            className: nginx-internal
+            ingressClassName: nginx-internal
+            hosts:
+              - host: headscale.impl.nl
+                paths:
+                  - path: /
+            tls:
+              - secretName: headscale.impl.nl
+                hosts:
+                  - headscale.impl.nl
+          ui:
+            enabled: true
+            className: nginx-internal
+            ingressClassName: nginx-internal
+            hosts:
+              - host: headscale-ui.impl.nl
+                paths:
+                  - path: /web
+                    service:
+                    port: 80
+        persistence:
+          config:
+            enabled: true
+            mountPath: /etc/headscale
+            retain: true
+            storageClass: cephfs
+            accessMode: ReadWriteMany
+            size: 1Gi
+        serviceMonitor:
+          main:
+            enabled: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

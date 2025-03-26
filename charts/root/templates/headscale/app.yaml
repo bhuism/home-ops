@@ -61,6 +61,10 @@ spec:
                     service:
                       name: main
                       port: 80
+            tls:
+              - secretName: headscale.impl.nl
+                hosts:
+                  - headscale.impl.nl
         persistence:
           config:
             enabled: true

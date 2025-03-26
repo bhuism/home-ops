@@ -59,7 +59,7 @@ spec:
                 paths:
                   - path: /web
                     service:
-                      name: main
+                      name: ui
                       port: 80
             tls:
               - secretName: headscale.impl.nl

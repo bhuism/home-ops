@@ -9,9 +9,6 @@ controllers:
           pullPolicy: IfNotPresent
           repository: alpine
           tag: 3.21.3
-        volumeMounts:
-          - name: config
-            mountPath: /etc/headscale
         command:
           - sh
           - -c
@@ -89,10 +86,8 @@ persistence:
     enabled: true
     type: persistentVolumeClaim
     existingClaim: headscale-config
-    advancedMounts:
-      main:
-        main:
-          - path: /etc/headscale
+    globalMounts:
+      - path: /etc/headscale
 
   data:
     enabled: true

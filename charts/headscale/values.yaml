@@ -13,24 +13,49 @@ controllers:
           - sh
           - -c
           - |
-            df
-            if [[ -f "/etc/headscale/config.yaml" ]]; then
-              echo 'Config already exists' >&2
-            else
-              echo 'Writing empty config' >&2              
-              mkdir -p "/etc/headscale"
-              cat <<- 'EOF' >"/etc/headscale/config.yaml"
-            # use environment variables to configure Headscale.
-            # For config reference, see https://github.com/juanfont/headscale/blob/main/config-example.yaml
-            # To configure any of these as an env:
-            #   1. Flatten object keys using "_"
-            #   2. Prefix with "HEADSCALE_"
-            #
-            # For example:
-            #   - "listen_addr" becomes "HEADSCALE_LISTEN_ADDR"
-            #   - "log.level" becomes "HEADSCALE_LOG_LEVEL"
+            echo 'Writing empty config' >&2              
+            mkdir -p "/etc/headscale"
+            cat <<- 'EOF' >"/etc/headscale/config.yaml"
+
+            server_url: https://headscale.impl.nl
+            listen_addr: 127.0.0.1:8080
+            metrics_listen_addr: 127.0.0.1:9090
+            grpc_listen_addr: 127.0.0.1:50443
+            grpc_allow_insecure: false
+
+            noise:
+              private_key_path: /var/lib/headscale/noise_private.key
+            prefixes:
+              v4: 100.64.0.0/10
+              allocation: sequential
+
+            derp:
+              server:
+                enabled: false
+              urls:
+                - https://controlplane.tailscale.com/derpmap/default
+              auto_update_enabled: true
+              update_frequency: 24h
+
+            disable_check_updates: true
+
+            # Time before an inactive ephemeral node is deleted?
+            ephemeral_node_inactivity_timeout: 30m
+
+            database:
+              type: sqlite
+              sqlite:
+                path: /var/lib/headscale/db.sqlite
+
+            log:
+              # Output formatting for logs: text or json
+              format: text
+              level: info
+
+            dns:
+              magic_dns: false
+
             EOF
-            fi
     containers:
       main:
         image:
@@ -45,21 +70,7 @@ controllers:
           startup:
             enabled: true
         env:
-          HEADSCALE_SERVER_URL: https://headscale.impl.nl
-          HEADSCALE_LISTEN_ADDR: "0.0.0.0:8080"
-          HEADSCALE_METRICS_LISTEN_ADDR: "0.0.0.0:9090"
-          HEADSCALE_PRIVATE_KEY_PATH: "/etc/headscale/private.key"
-          HEADSCALE_NOISE: "{}"
-          HEADSCALE_NOISE_PRIVATE_KEY_PATH: "/etc/headscale/noise_private.key"
-          HEADSCALE_DATABASE_TYPE: "sqlite3"
-          HEADSCALE_DATABASE_SQLITE_PATH: "/var/lib/headscale/db.sqlite"
-          HEADSCALE_PREFIXES_V4: "100.64.0.0/10"
-          HEADSCALE_DNS_MAGIC_DNS: "false"
-          HEADSCALE_DERP_URLS: "https://controlplane.tailscale.com/derpmap/default"
-          HEADSCALE_DERP_AUTO_UPDATE_ENABLED: "true"
-          HEADSCALE_DERP_UPDATE_FREQUENCY: "24h"
-          HEADSCALE_DERP_SERVER_ENABLED: "false"
-          HEADSCALE_DISABLE_CHECK_UPDATES: "false"
+          TZ: "UTC"
         args: ["serve"]
       headplane:
         image:
@@ -91,6 +102,8 @@ service:
         port: 9090
       headplane:
         port: 3000
+      grpc:
+        port: 50443
 
 ingress:
   main:

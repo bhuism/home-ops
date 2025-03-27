@@ -100,6 +100,7 @@ controllers:
 
             dns:
               magic_dns: false
+              base_domain: example.com
 
             EOF
 

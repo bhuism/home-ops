@@ -67,6 +67,8 @@ controllers:
             grpc_listen_addr: 0.0.0.0:50443
             grpc_allow_insecure: false
 
+            private_key_path: /var/lib/headscale/private.key
+
             noise:
               private_key_path: /var/lib/headscale/noise_private.key
             prefixes:

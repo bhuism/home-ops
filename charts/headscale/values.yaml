@@ -16,7 +16,7 @@ controllers:
             enabled: true
           startup:
             enabled: true
-      args: ["serve"]
+        args: ["serve"]
 service:
   main:
     controller: main

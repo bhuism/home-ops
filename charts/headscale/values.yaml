@@ -3,6 +3,8 @@ defaultPodOptions:
 
 controllers:
   main:
+    serviceAccount:
+      identifier: default
     initContainers:
       create-etc-headplane:
         image:
@@ -191,6 +193,35 @@ ingress:
       - secretName: headscale.impl.nl
         hosts:
           - headscale.impl.nl
+
+rbac:
+  roles:
+    role1:
+      forceRename: headplane-agent
+      enabled: true
+      type: Role
+      rules:
+        - apiGroups: [""]
+          resources: ["pods"]
+          verbs: ["get", "list"]
+        - apiGroups: ["apps"]
+          resources: ["deployments"]
+          verbs: ["get", "list"]
+  bindings:
+    binding1:
+      forceRename: headplane-agent
+      enabled: true
+      type: RoleBinding
+      roleRef:
+        identifier: role1
+      subjects:
+        - identifier: default
+        # - kind: ServiceAccount
+        #   name: test
+        #   namespace: "{{ .Release.Namespace }}"
+
+serviceAccount:
+  create: true
 
 persistence:
   config:

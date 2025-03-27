@@ -15,6 +15,7 @@ controllers:
           - |
             echo 'Writing empty config' >&2              
             mkdir -p "/etc/headscale"
+            chmod 755 "/etc/headscale"
             cat <<- 'EOF' >"/etc/headscale/config.yaml"
 
             server_url: https://headscale.impl.nl
@@ -56,6 +57,10 @@ controllers:
               magic_dns: false
 
             EOF
+
+            chmod 644 /etc/headscale/config.yaml
+            ls -lah /etc/headscale/config.yaml
+            
     containers:
       main:
         image:

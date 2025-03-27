@@ -16,10 +16,13 @@ controllers:
           - sh
           - -c
           - |
+            df
+            env
+            set
             if [[ -f "/etc/headscale/config.yaml" ]]; then
               echo 'Config already exists' >&2
             else
-              echo 'Writing empty config' >&2
+              echo 'Writing empty config' >&2              
               mkdir -p "/etc/headscale"
               cat <<- 'EOF' >"/etc/headscale/config.yaml"
                 # use environment variables to configure Headscale.
@@ -46,6 +49,10 @@ controllers:
             enabled: true
           startup:
             enabled: true
+        env:
+          HEADSCALE_SERVER_URL: https://headscale.impl.nl
+          HEADSCALE_LISTEN_ADDR: "0.0.0.0:8080"
+          HEADSCALE_METRICS_LISTEN_ADDR: "0.0.0.0:9090"
         args: ["serve"]
 service:
   main:

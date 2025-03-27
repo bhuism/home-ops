@@ -15,17 +15,26 @@ kubectl run -i --rm --tty debian -n headscale --overrides='
             "stdinOnce": true,
             "tty": true,
             "volumeMounts": [{
-              "mountPath": "/mnt",
-              "name": "disk"
+              "mountPath": "/mnt/config",
+              "name": "disk1"
+            },{
+              "mountPath": "/mnt/data",
+              "name": "disk2"
             }]
           }
         ],
         "volumes": [{
-          "name":"disk",
+          "name":"disk1",
           "persistentVolumeClaim":{
 		"claimName": "headscale-config"
 	}
-        }]
+        },{
+          "name":"disk2",
+          "persistentVolumeClaim":{
+		"claimName": "headscale-data"
+	}
+        }
+        ]
       }
 }
 '  --image=debian --restart=Never -- bash

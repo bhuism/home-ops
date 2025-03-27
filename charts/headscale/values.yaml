@@ -114,15 +114,15 @@ controllers:
           liveness:
             enabled: true
             type: TCP
-            port: 8080
+            port: 9090
           readiness:
             enabled: true
             type: TCP
-            port: 8080
+            port: 9090
           startup:
             enabled: true
             type: TCP
-            port: 8080
+            port: 9090
         env:
           TZ: "UTC"
         args: ["serve"]

@@ -110,10 +110,16 @@ controllers:
         probes:
           liveness:
             enabled: true
+            type: TCP
+            port: 8080
           readiness:
             enabled: true
+            type: TCP
+            port: 8080
           startup:
             enabled: true
+            type: TCP
+            port: 8080
         env:
           TZ: "UTC"
         args: ["serve"]
@@ -125,10 +131,16 @@ controllers:
         probes:
           liveness:
             enabled: true
+            type: TCP
+            port: 3000
           readiness:
             enabled: true
+            type: TCP
+            port: 3000
           startup:
             enabled: true
+            type: TCP
+            port: 3000
         env:
           # Set these if the pod name for Headscale is not static
           # We will use the downward API to get the pod name instead

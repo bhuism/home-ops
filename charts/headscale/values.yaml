@@ -52,9 +52,11 @@ controllers:
           HEADSCALE_NOISE: "{}"
           HEADSCALE_NOISE_PRIVATE_KEY_PATH: "/etc/headscale/noise_private.key"
           HEADSCALE_DATABASE_TYPE: "sqlite3"
-          HEADSCALE_DATABASE_SQLITE_PATH: "/etc/headscale/db.sqlite"
+          HEADSCALE_DATABASE_SQLITE_PATH: "/var/lib/headscale/db.sqlite"
           HEADSCALE_PREFIXES_V4: "100.64.0.0/10"
           HEADSCALE_DNS_MAGIC_DNS: "false"
+          HEADSCALE_DERP_SERVER_ENABLED: "false"
+          HEADSCALE_DISABLE_CHECK_UPDATES: "false"
         args: ["serve"]
 service:
   main:
@@ -101,4 +103,4 @@ persistence:
     advancedMounts:
       main:
         main:
-          - path: /var/lib//headscale
+          - path: /var/lib/headscale

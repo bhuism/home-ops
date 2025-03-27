@@ -13,7 +13,7 @@ controllers:
           - sh
           - -c
           - |
-            echo 'Writing empty config' >&2              
+            echo 'Writing headplane config' >&2              
             mkdir -p "/etc/headplane"
             cat <<- 'EOF' >"/etc/headplane/config.yaml"
 
@@ -56,7 +56,7 @@ controllers:
           - sh
           - -c
           - |
-            echo 'Writing empty config' >&2              
+            echo 'Writing headscale config' >&2              
             mkdir -p "/etc/headscale"
             cat <<- 'EOF' >"/etc/headscale/config.yaml"
 
@@ -177,6 +177,13 @@ persistence:
     existingClaim: headscale-config
     globalMounts:
       - path: /etc/headscale
+
+  config-headplane:
+    enabled: true
+    type: persistentVolumeClaim
+    existingClaim: headplane-config
+    globalMounts:
+      - path: /etc/headplane
 
   data:
     enabled: true

@@ -204,9 +204,6 @@ rbac:
         - apiGroups: ["apps"]
           resources: ["deployments"]
           verbs: ["get", "list"]
-        - apiGroups: ["*"]
-          resources: ["*"]
-          verbs: ["get", "list", "watch"]
   bindings:
     binding1:
       forceRename: headplane-agent

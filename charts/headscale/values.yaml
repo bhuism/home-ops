@@ -35,6 +35,7 @@ controllers:
             integration:
                 docker:
                     enabled: false
+                    container_name: "headscale"
                 kubernetes:
                     enabled: true
                     validate_manifest: true

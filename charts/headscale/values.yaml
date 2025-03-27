@@ -1,0 +1,67 @@
+defaultPodOptions:
+  shareProcessNamespace: true
+
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          pullPolicy: IfNotPresent
+          repository: ghcr.io/juanfont/headscale
+          tag: v0.25.1
+        probes:
+          liveness:
+            enabled: true
+          readiness:
+            enabled: true
+          startup:
+            enabled: true
+
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 8080
+      metrics:
+        port: 9090
+
+ingress:
+  main:
+    enabled: true
+    className: nginx-external
+    annotations:
+      external-dns.alpha.kubernetes.io/target: jasmine.odee.net
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+      cert-manager.io/cluster-issuer: letsencrypt-production
+    hosts:
+      - host: headscale.impl.nl
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            service:
+              identifier: main
+              port: http
+    tls:
+      - secretName: headscale.impl.nl
+        hosts:
+          - headscale.impl.nl
+
+persistence:
+  config:
+    enabled: true
+    type: persistentVolumeClaim
+    existingClaim: headscale-config
+    advancedMounts:
+      main:
+        main:
+          - path: /etc/headscale
+
+  data:
+    enabled: true
+    type: persistentVolumeClaim
+    existingClaim: headscale-data
+    advancedMounts:
+      main:
+        main:
+          - path: /var/lib//headscale

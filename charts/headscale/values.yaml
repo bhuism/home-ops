@@ -4,6 +4,49 @@ defaultPodOptions:
 controllers:
   main:
     initContainers:
+      create-etc-headplane:
+        image:
+          pullPolicy: IfNotPresent
+          repository: alpine
+          tag: 3.21.3
+        command:
+          - sh
+          - -c
+          - |
+            echo 'Writing empty config' >&2              
+            mkdir -p "/etc/headplane"
+            cat <<- 'EOF' >"/etc/headplane/config.yaml"
+
+            server:
+                host: "0.0.0.0"
+                port: 3000
+
+                # The secret used to encode and decode web sessions
+                # Ensure that this is exactly 32 characters long
+                cookie_secret: "<change_me_to_something_secure!>"
+                cookie_secure: false
+
+            headscale:
+                url: "http://localhost:8080"
+                public_url: "https://headscale.impl.nl"
+                config_path: "/etc/headscale/config.yaml"
+                config_strict: true
+
+            integration:
+                docker:
+                    enabled: false
+                kubernetes:
+                    enabled: true
+                    validate_manifest: true
+                    # This should be the name of the Pod running Headscale and Headplane.
+                    # If this isn't static you should be using the Kubernetes Downward API
+                    # to set this value (refer to docs/Integrated-Mode.md for more info).
+                    pod_name: "headplane"
+
+                proc:
+                    enabled: false
+            EOF
+
       create-etc-headscale:
         image:
           pullPolicy: IfNotPresent
@@ -15,7 +58,6 @@ controllers:
           - |
             echo 'Writing empty config' >&2              
             mkdir -p "/etc/headscale"
-            chmod 755 "/etc/headscale"
             cat <<- 'EOF' >"/etc/headscale/config.yaml"
 
             server_url: https://headscale.impl.nl
@@ -58,9 +100,6 @@ controllers:
 
             EOF
 
-            chmod 644 /etc/headscale/config.yaml
-            ls -lah /etc/headscale/config.yaml
-            
     containers:
       main:
         image:

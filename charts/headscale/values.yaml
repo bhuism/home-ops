@@ -4,7 +4,7 @@ defaultPodOptions:
 controllers:
   main:
     initContainers:
-      createEtcHeadscale:
+      create-etc-headscale:
         image:
           pullPolicy: IfNotPresent
           repository: alpine

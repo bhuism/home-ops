@@ -54,6 +54,7 @@ controllers:
           HEADSCALE_DATABASE_TYPE: "sqlite3"
           HEADSCALE_DATABASE_SQLITE_PATH: "/etc/headscale/db.sqlite"
           HEADSCALE_PREFIXES_V4: "100.64.0.0/10"
+          HEADSCALE_DNS_MAGIC_DNS: "false"
         args: ["serve"]
 service:
   main:

@@ -55,6 +55,9 @@ controllers:
           HEADSCALE_DATABASE_SQLITE_PATH: "/var/lib/headscale/db.sqlite"
           HEADSCALE_PREFIXES_V4: "100.64.0.0/10"
           HEADSCALE_DNS_MAGIC_DNS: "false"
+          HEADSCALE_DERP_URLS: "https://controlplane.tailscale.com/derpmap/default"
+          HEADSCALE_DERP_AUTO_UPDATE_ENABLED: "true"
+          HEADSCALE_DERP_UPDATE_FREQUENCY: "24h"
           HEADSCALE_DERP_SERVER_ENABLED: "false"
           HEADSCALE_DISABLE_CHECK_UPDATES: "false"
         args: ["serve"]

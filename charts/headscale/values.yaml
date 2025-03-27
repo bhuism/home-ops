@@ -61,6 +61,26 @@ controllers:
           HEADSCALE_DERP_SERVER_ENABLED: "false"
           HEADSCALE_DISABLE_CHECK_UPDATES: "false"
         args: ["serve"]
+      headplane:
+        image:
+          pullPolicy: IfNotPresent
+          repository: ghcr.io/tale/headplane
+          tag: 0.5.1
+        probes:
+          liveness:
+            enabled: true
+          readiness:
+            enabled: true
+          startup:
+            enabled: true
+        env:
+          # Set these if the pod name for Headscale is not static
+          # We will use the downward API to get the pod name instead
+          HEADPLANE_LOAD_ENV_OVERRIDES: "true"
+          HEADPLANE_INTEGRATION__KUBERNETES__POD_NAME:
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
 service:
   main:
     controller: main
@@ -69,6 +89,8 @@ service:
         port: 8080
       metrics:
         port: 9090
+      headplane:
+        port: 3000
 
 ingress:
   main:

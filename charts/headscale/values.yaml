@@ -53,6 +53,7 @@ controllers:
           HEADSCALE_NOISE_PRIVATE_KEY_PATH: "/etc/headscale/noise_private.key"
           HEADSCALE_DATABASE_TYPE: "sqlite3"
           HEADSCALE_DATABASE_SQLITE_PATH: "/etc/headscale/db.sqlite"
+          HEADSCALE_PREFIXES_V4: "100.64.0.0/10"
         args: ["serve"]
 service:
   main:

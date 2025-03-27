@@ -71,8 +71,10 @@ controllers:
 
             noise:
               private_key_path: /etc/headscale/noise_private.key
+
             prefixes:
-              v4: 100.64.0.0/10
+              v4: "100.64.0.0/10"
+              v6: "fd7a:115c:a1e0::/48"
               allocation: sequential
 
             derp:

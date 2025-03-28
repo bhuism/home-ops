@@ -15,6 +15,9 @@ spec:
     targetRevision: v0.13.0
     helm:
       valuesObject:
+        image:
+          repository: ghcr.io/joryirving/smartctl_exporter
+          tag: 0.13.0
         serviceMonitor:
           enabled: true
 

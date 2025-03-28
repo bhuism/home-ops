@@ -153,10 +153,10 @@ controllers:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          HEADPLANE_INTEGRATION_KUBERNETES_POD_NAME:
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.name
+          # HEADPLANE_INTEGRATION_KUBERNETES_POD_NAME:
+          #   valueFrom:
+          #     fieldRef:
+          #       fieldPath: metadata.name
 service:
   main:
     controller: main

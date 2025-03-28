@@ -147,7 +147,7 @@ controllers:
             type: TCP
             port: 3000
         env:
-          HEADPLANE_DEBUG_LOG: "true"
+          HEADPLANE_DEBUG_LOG: "false"
           HEADPLANE_LOAD_ENV_OVERRIDES: "true"
           HEADPLANE_INTEGRATION__KUBERNETES__POD_NAME:
             valueFrom:

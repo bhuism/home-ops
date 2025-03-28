@@ -148,15 +148,15 @@ controllers:
             port: 3000
         env:
           HEADPLANE_DEBUG_LOG: "true"
-
-          # HEADPLANE_INTEGRATION__KUBERNETES__POD_NAME:
-          #   valueFrom:
-          #     fieldRef:
-          #       fieldPath: metadata.name
-          # HEADPLANE_INTEGRATION_KUBERNETES_POD_NAME:
-          #   valueFrom:
-          #     fieldRef:
-          #       fieldPath: metadata.name
+          HEADPLANE_LOAD_ENV_OVERRIDES: "true"
+          HEADPLANE_INTEGRATION__KUBERNETES__POD_NAME:
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          HEADPLANE_INTEGRATION_KUBERNETES_POD_NAME:
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
 service:
   main:
     controller: main

@@ -26,7 +26,7 @@ controllers:
                 # The secret used to encode and decode web sessions
                 # Ensure that this is exactly 32 characters long
                 cookie_secret: "<change_me_to_something_secure!>"
-                cookie_secure: false
+                cookie_secure: true
 
             headscale:
                 url: "http://localhost:8080"

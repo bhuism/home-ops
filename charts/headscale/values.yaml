@@ -11,6 +11,8 @@ controllers:
           pullPolicy: IfNotPresent
           repository: alpine
           tag: 3.21.3
+        env:
+          HEADPLANE_DEBUG_LOG: "true"
         command:
           - sh
           - -c

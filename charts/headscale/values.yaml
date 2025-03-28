@@ -192,6 +192,25 @@ ingress:
       - secretName: headscale.impl.nl
         hosts:
           - headscale.impl.nl
+  headplane:
+    enabled: true
+    className: nginx-external
+    annotations:
+      external-dns.alpha.kubernetes.io/target: ingress-internal.impl.nl
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+      cert-manager.io/cluster-issuer: letsencrypt-production
+    hosts:
+      - host: headplane.impl.nl
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            service:
+              identifier: main
+              port: headplane
+    tls:
+      - secretName: headplane.impl.nl
+        hosts:
+          - headplane.impl.nl
 
 rbac:
   roles:

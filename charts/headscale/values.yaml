@@ -13,6 +13,7 @@ controllers:
           tag: 3.21.3
         env:
           HEADPLANE_DEBUG_LOG: "true"
+          HEADPLANE_LOAD_ENV_OVERRIDES: "true"
         command:
           - sh
           - -c

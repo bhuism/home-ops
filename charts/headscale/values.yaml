@@ -42,7 +42,7 @@ controllers:
                     # This should be the name of the Pod running Headscale and Headplane.
                     # If this isn't static you should be using the Kubernetes Downward API
                     # to set this value (refer to docs/Integrated-Mode.md for more info).
-                    pod_name: "headplane"
+                    pod_name: "headscale"
 
                 proc:
                     enabled: false

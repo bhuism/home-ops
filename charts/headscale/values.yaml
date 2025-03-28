@@ -194,7 +194,7 @@ ingress:
           - headscale.impl.nl
   headplane:
     enabled: true
-    className: nginx-external
+    className: nginx-internal
     annotations:
       external-dns.alpha.kubernetes.io/target: ingress-internal.impl.nl
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"

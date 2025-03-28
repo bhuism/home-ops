@@ -11,9 +11,6 @@ controllers:
           pullPolicy: IfNotPresent
           repository: alpine
           tag: 3.21.3
-        env:
-          HEADPLANE_DEBUG_LOG: "true"
-          HEADPLANE_LOAD_ENV_OVERRIDES: "true"
         command:
           - sh
           - -c
@@ -152,6 +149,8 @@ controllers:
             type: TCP
             port: 3000
         env:
+          HEADPLANE_DEBUG_LOG: "true"
+
           # HEADPLANE_INTEGRATION__KUBERNETES__POD_NAME:
           #   valueFrom:
           #     fieldRef:

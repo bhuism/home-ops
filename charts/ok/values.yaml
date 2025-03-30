@@ -9,7 +9,7 @@ controllers:
     containers:
       main:
         image:
-          repository: europe-west4-docker.pkg.dev/impl-383520/docker/ok
+          repository: ghcr.io/bhuism/ok
           tag: "latest"
           pullPolicy: Always
         probes:

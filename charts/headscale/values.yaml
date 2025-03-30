@@ -98,7 +98,10 @@ controllers:
             log:
               # Output formatting for logs: text or json
               format: text
-              level: info
+              level: debug
+
+            policy:
+              mode: database
 
             dns:
               magic_dns: false

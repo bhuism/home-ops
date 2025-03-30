@@ -8,7 +8,7 @@ controllers:
     containers:
       main:
         image:
-          repository: europe-west4-docker.pkg.dev/impl-383520/docker/objex
+          repository: ghcr.io/bhuism/objex
           tag: latest
           pullPolicy: Always
         probes:

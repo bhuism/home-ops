@@ -40,27 +40,47 @@ roleRef:
   name: tailscale
   apiGroup: rbac.authorization.k8s.io
 ---
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: StatefulSet
 metadata:
   name: headscale-client
   namespace: headscale-client
 spec:
-  serviceAccountName: tailscale
-  containers:
-    - name: tailscale
-      image: ghcr.io/tailscale/tailscale:latest
-      env:
-        - name: TS_KUBE_SECRET
-          value: tailscale-auth
-        - name: TS_AUTHKEY
-          value: 0bc2309450e85a5215c60d00946cd8aa4fd7ba5d49757497
-        - name: TS_ROUTES
-          value: "192.168.1.0/24"
-        - name: TS_USERSPACE
-          value: "true"
-        - name: TS_EXTRA_ARGS
-          value: "--login-server=http://headscale.headscale --accept-dns=false"
+  replicas: 1
+  template:
+    metadata:
+      deletionGracePeriodSeconds: 10
+    spec:
+      serviceAccountName: tailscale
+      initContainers:
+        - name: sysctler
+          securityContext:
+            privileged: true
+          command: ["/bin/sh"]
+          args:
+            - -c
+            - sysctl -w net.ipv4.ip_forward=1 net.ipv6.conf.all.forwarding=1
       securityContext:
-        runAsUser: 1000
-        runAsGroup: 1000
+        capabilities:
+          add:
+          - NET_ADMIN
+      resources:
+        requests:
+          cpu: 1m
+          memory: 1Mi
+      containers:
+        - name: tailscale
+          imagePullPolicy: Always
+          env:
+            - name: TS_KUBE_SECRET
+            value: tailscale-auth
+            - name: TS_AUTHKEY
+            value: 0bc2309450e85a5215c60d00946cd8aa4fd7ba5d49757497
+            - name: TS_ROUTES
+            value: "192.168.1.0/24"
+            - name: TS_USERSPACE
+            value: "false"
+            - name: TS_EXTRA_ARGS
+            value: "--login-server=http://headscale.headscale --accept-dns=false"
+          securityContext:
+            privileged: true

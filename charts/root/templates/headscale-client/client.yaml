@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: headscale-client
+  namespace: headscale-client
+spec:
+  serviceAccountName: tailscale
+  containers:
+    - name: tailscale
+      image: ghcr.io/tailscale/tailscale:latest
+      env:
+        - name: TS_KUBE_SECRET
+          value: tailscale-auth
+        - name: TS_AUTHKEY
+          valueFrom:
+            secretKeyRef:
+              name: tailscale-auth
+              key: TS_AUTHKEY
+        - name: TS_ROUTES
+          value: "192.168.1.0/24"
+        - name: TS_USERSPACE
+          value: "true"
+        - name: TS_EXTRA_ARGS
+          value: "--login-server=http://headscale.headscale"
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000

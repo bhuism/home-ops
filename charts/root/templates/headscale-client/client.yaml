@@ -4,7 +4,7 @@ metadata:
   name: headscale-client
   namespace: headscale-client
 spec:
-  serviceAccountName: tailscale
+#   serviceAccountName: tailscale
   containers:
     - name: tailscale
       image: ghcr.io/tailscale/tailscale:latest

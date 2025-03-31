@@ -1,10 +1,49 @@
 apiVersion: v1
+kind: Namespace
+metadata:
+  name: headscale-client
+  labels:
+    pod-security.kubernetes.io/audit: privileged
+    pod-security.kubernetes.io/enforce: privileged
+    pod-security.kubernetes.io/warn: privileged
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tailscale
+  namespace: headscale-client
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: tailscale
+  namespace: headscale-client
+rules:
+  - apiGroups: [""]
+    resourceNames: ["tailscale-auth"]
+    resources: ["secrets"]
+    verbs: ["get", "update", "patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: tailscale
+  namespace: headscale-client
+subjects:
+  - kind: ServiceAccount
+    name: tailscale
+roleRef:
+  kind: Role
+  name: tailscale
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
 kind: Pod
 metadata:
   name: headscale-client
   namespace: headscale-client
 spec:
-#   serviceAccountName: tailscale
+  serviceAccountName: tailscale
   containers:
     - name: tailscale
       image: ghcr.io/tailscale/tailscale:latest
@@ -21,7 +60,7 @@ spec:
         - name: TS_USERSPACE
           value: "true"
         - name: TS_EXTRA_ARGS
-          value: "--login-server=http://headscale.headscale"
+          value: "--login-server=http://headscale.headscale --accept-dns=false"
       securityContext:
         runAsUser: 1000
         runAsGroup: 1000

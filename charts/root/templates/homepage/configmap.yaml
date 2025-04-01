@@ -60,5 +60,11 @@ data:
     - search:
         provider: google
         target: _blank
+    - radarr:
+        type: radarr
+        url: http://radarr.star-arr.svc:7878
+        key: b0805bdcdc4545fa9bd888492c2cb49d
+        enableQueue: true # optional, defaults to false
+
   docker.yaml: ""
  

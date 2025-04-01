@@ -36,6 +36,20 @@ spec:
           lbipam.cilium.io/ips: 192.168.1.85
         persistence:
           existingClaim: minecraft-pvc
+        podSecurityContext:
+          # runAsUser: 1000
+          # runAsGroup: 3000
+          # runAsNonRoot: true
+          # fsGroup: 2000
+          # seccompProfile:
+          #   type: RuntimeDefault
+
+        securityContext:
+          capabilities:
+            add:
+              - NET_ADMIN
+          readOnlyRootFilesystem: true
+          allowPrivilegeEscalation: true
   syncPolicy:
     automated:
       prune: true

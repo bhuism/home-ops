@@ -73,7 +73,6 @@ data:
                 password: killer
                 enableLeechProgress: true
 
-
     # - Headscale:
     #     - Headscale:
     #         widgets:

@@ -69,7 +69,7 @@ data:
             widgets:
               - type: qbittorrent
                 url: http://qbittorrent.star-arr.svc:8080
-                username: root
+                username: admin
                 password: killer
                 enableLeechProgress: true
     - Technitium:

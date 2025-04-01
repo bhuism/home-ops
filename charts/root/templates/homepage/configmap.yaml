@@ -13,6 +13,7 @@ data:
     startUrl: https://impl.nl
     theme: dark
     headerStyle: clean
+    fullWidth: true
     target: _self
   custom.css: ""
   custom.js: ""
@@ -67,4 +68,3 @@ data:
         enableQueue: true # optional, defaults to false
 
   docker.yaml: ""
- 

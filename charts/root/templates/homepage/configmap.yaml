@@ -44,10 +44,10 @@ data:
         - Radarr:
             href: httpd://radarr.impl.nl
             widgets:
-              type: radarr
-              url: http://radarr.star-arr.svc:7878
-              key: b0805bdcdc4545fa9bd888492c2cb49d
-              enableQueue: true
+              - type: radarr
+                url: http://radarr.star-arr.svc:7878
+                key: b0805bdcdc4545fa9bd888492c2cb49d
+                enableQueue: true
 
   widgets.yaml: |
     - kubernetes:

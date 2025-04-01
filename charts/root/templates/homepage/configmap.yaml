@@ -63,6 +63,17 @@ data:
               - type: jackett
                 url: http://jackett.star-arr.svc:9117
                 password: killer
+    - qBittorrent
+        - qBittorrent
+            href: https://qbittorrent.impl.nl
+            widgets:
+              - type: qbittorrent
+                url: http://qbittorrent.star-arr.svc:8080
+                username: root
+                password: killer
+                enableLeechProgress: true
+
+
     # - Headscale:
     #     - Headscale:
     #         widgets:

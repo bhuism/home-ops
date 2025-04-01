@@ -13,7 +13,6 @@ data:
     startUrl: https://impl.nl
     theme: dark
     headerStyle: clean
-    fullWidth: true
     target: _self
     disableUpdateCheck: true
   custom.css: ""

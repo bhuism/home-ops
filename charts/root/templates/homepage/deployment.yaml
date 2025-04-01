@@ -22,12 +22,12 @@ spec:
       automountServiceAccountToken: true
       dnsPolicy: ClusterFirst
       enableServiceLinks: true
+      env:
+        HOMEPAGE_ALLOWED_HOSTS: www.impl.nl, impl.nl, 192.168.1.80
       containers:
         - name: homepage
           image: "ghcr.io/gethomepage/homepage:latest"
           imagePullPolicy: Always
-          env:
-            HOMEPAGE_ALLOWED_HOSTS: www.impl.nl, impl.nl, 192.168.1.80
           ports:
             - name: http
               containerPort: 3000

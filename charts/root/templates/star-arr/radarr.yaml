@@ -31,7 +31,7 @@ spec:
               external-dns.alpha.kubernetes.io/target: ingress-internal.impl.nl
               external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
               cert-manager.io/cluster-issuer: letsencrypt-production
-              # gethomepage.dev/enabled: "true"
+              gethomepage.dev/enabled: "false"
             hosts:
               - host: radarr.impl.nl
                 paths:

@@ -63,8 +63,8 @@ data:
               - type: jackett
                 url: http://jackett.star-arr.svc:9117
                 password: killer
-    - qBittorrent
-        - qBittorrent
+    - qBittorrent:
+        - qBittorrent:
             href: https://qbittorrent.impl.nl
             widgets:
               - type: qbittorrent

@@ -28,7 +28,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: HOMEPAGE_ALLOWED_HOSTS
-          value: "www.impl.nl,impl.nl,192.168.1.80"
+          value: www.impl.nl,impl.nl,192.168.1.80
         ports:
         - name: http
           containerPort: 3000

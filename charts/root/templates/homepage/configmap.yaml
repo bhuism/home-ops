@@ -15,6 +15,7 @@ data:
     headerStyle: clean
     fullWidth: true
     target: _self
+    disableUpdateCheck: true
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
@@ -40,6 +41,14 @@ data:
             href: https://bmc2.impl.nl
         - bmc3:
             href: https://bmc3.impl.nl
+    - Radarr:
+      href: httpd://radarr.impl.nl
+      widgets:
+        type: radarr
+        url: http://radarr.star-arr.svc:7878
+        key: b0805bdcdc4545fa9bd888492c2cb49d
+        enableQueue: true
+
   widgets.yaml: |
     - kubernetes:
         cluster:
@@ -61,10 +70,5 @@ data:
     - search:
         provider: google
         target: _blank
-    - radarr:
-        type: radarr
-        url: http://radarr.star-arr.svc:7878
-        key: b0805bdcdc4545fa9bd888492c2cb49d
-        enableQueue: true # optional, defaults to false
 
   docker.yaml: ""

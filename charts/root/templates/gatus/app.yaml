@@ -85,6 +85,11 @@ spec:
               conditions:
                 - "[STATUS] == 200"
                 - "[RESPONSE_TIME] < 5000"
+            - name: "Homepage"
+              url: "https://impl.nl"
+              conditions:
+                - "[STATUS] == 200"
+                - "[RESPONSE_TIME] < 5000"
             - name: "Objex Ui"
               url: "https://www.objex.nl/login"
               conditions:

@@ -49,6 +49,12 @@ data:
                 url: http://radarr.star-arr.svc:7878
                 key: b0805bdcdc4545fa9bd888492c2cb49d
                 enableQueue: true
+    - Gatus:
+        - Gatus:
+            href: httsp://gatus.impl.nl
+            widgets:
+              - type: gatus
+                url: http://gatus.gatus.svc:80
 
   widgets.yaml: |
     - kubernetes:

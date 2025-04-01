@@ -74,8 +74,4 @@ data:
         expanded: true
         cpu: true
         memory: true
-    - search:
-        provider: google
-        target: _blank
-
   docker.yaml: ""

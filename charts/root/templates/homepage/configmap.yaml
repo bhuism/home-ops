@@ -8,6 +8,7 @@ metadata:
 data:
   kubernetes.yaml: |
     mode: cluster
+    ingress: true
   settings.yaml: |
     title: impl.nl
     startUrl: https://impl.nl

@@ -197,11 +197,10 @@ ingress:
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
       cert-manager.io/cluster-issuer: letsencrypt-production
       gethomepage.dev/enabled: "true"
-      gethomepage.dev/widget.url: "https://headplane.impl.nl/admin"
     hosts:
       - host: headplane.impl.nl
         paths:
-          - path: /
+          - path: /admin
             pathType: ImplementationSpecific
             service:
               identifier: main

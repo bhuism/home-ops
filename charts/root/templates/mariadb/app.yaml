@@ -15,11 +15,10 @@ spec:
     targetRevision: 20.4.2
     helm:
       valuesObject:
+        resourcesPreset: "medium"
         auth:
           rootPassword: killer
         primary:
-          # readinessProbe:
-          #   enabled: true
           extraEnvVars:
             - name: MARIADB_INIT_SLEEP_TIME
               value: "15"

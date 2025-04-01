@@ -51,11 +51,25 @@ data:
                 enableQueue: true
     - Gatus:
         - Gatus:
-            href: httsp://gatus.impl.nl
+            href: https://gatus.impl.nl
             widgets:
               - type: gatus
                 url: http://gatus.gatus.svc:80
 
+    - Jackett:
+        - Jackett:
+            href: https://jackett.impl.nl
+            widgets:
+              type: jackett
+              url: http://jackett.star-arr.svc:9117
+              password: killer
+    # - Headscale:
+    #     - Headscale:
+    #         widgets:
+    #           - type: headscale
+    #             url: http://headscale.headscale.svc:8080
+    #             nodeId: nodeid
+    #             key: headscaleapiaccesstoken
   widgets.yaml: |
     - kubernetes:
         cluster:

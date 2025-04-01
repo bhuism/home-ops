@@ -7,7 +7,6 @@ defaultPodOptions:
 
 controllers:
   main:
-
     # Configure the pod-specific securityContext
     pod:
       securityContext:
@@ -59,6 +58,7 @@ controllers:
               key: password
           DNS_ADDRESS: 1.1.1.1
           FIREWALL_INPUT_PORTS: 8080
+          HTTP_CONTROL_SERVER_LOG: "on"
 
         securityContext:
           capabilities:
@@ -122,6 +122,6 @@ persistence:
   #     main:
   #       gluetun:
   #         - path: /tmp/gluetun
-        # port-forward:
-        #   - path: /tmp/gluetun
-        #     readOnly: true
+  # port-forward:
+  #   - path: /tmp/gluetun
+  #     readOnly: true

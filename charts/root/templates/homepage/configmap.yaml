@@ -60,9 +60,9 @@ data:
         - Jackett:
             href: https://jackett.impl.nl
             widgets:
-              type: jackett
-              url: http://jackett.star-arr.svc:9117
-              password: killer
+              - type: jackett
+                url: http://jackett.star-arr.svc:9117
+                password: killer
     # - Headscale:
     #     - Headscale:
     #         widgets:

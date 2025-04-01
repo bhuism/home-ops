@@ -72,7 +72,14 @@ data:
                 username: root
                 password: killer
                 enableLeechProgress: true
-
+    - Technitium:
+        - Technitium:
+            href: https://https://technitium-dnsserver.impl.nl/
+            widget:
+              type: technitium
+              url: http://technitium.technitium.svc:80
+              key: e15b91f2e5c6855f21e0cec46e250b359dd084381e57e6e66a28439722471dcd
+              range: LastDay
     # - Headscale:
     #     - Headscale:
     #         widgets:

@@ -5,9 +5,9 @@
 replicaCount: 1
 
 image:
-  repository: europe-west4-docker.pkg.dev/impl-383520/docker/appsource
+  repository: ghcr.io/bhuism/appsource
   pullPolicy: Always
-  tag: "latest"
+  tag: latest
 
 imagePullSecrets: []
 nameOverride: ""

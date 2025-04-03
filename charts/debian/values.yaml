@@ -2,8 +2,7 @@ defaultPodOptions:
   terminationGracePeriodSeconds: 3
 controllers:
   main:
-    type: statefulset
-    revisionHistoryLimit: 3
+    revisionHistoryLimit: 1
     containers:
       main:
         name: main
@@ -83,4 +82,3 @@ persistence:
 sshkeys:
   - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID8LV5y8YTAdq4DbU75jO3zbsmgRaLpRrWdGQHbxAt8/ bhuism@eva
   - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINJdW42VaTxFVVMIfEfYQUvIX6NuUKlzx6hLJNVoTJHF bhuism@elza
-

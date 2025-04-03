@@ -135,7 +135,7 @@ controllers:
         image:
           pullPolicy: IfNotPresent
           repository: ghcr.io/tale/headplane
-          tag: 0.5.7
+          tag: 0.5.8
         probes:
           liveness:
             enabled: true

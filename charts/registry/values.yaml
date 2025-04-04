@@ -5,7 +5,7 @@ controllers:
       main:
         image:
           repository: registry
-          tag: 2
+          tag: 3
         env:
           REGISTRY_HTTP_HEADERS_Access-Control-Allow-Origin: "[https://registry-ui.impl.nl]"
           REGISTRY_HTTP_HEADERS_Access-Control-Allow-Methods: "[HEAD,GET,OPTIONS,DELETE]"

@@ -201,7 +201,7 @@ ingress:
     hosts:
       - host: headplane.impl.nl
         paths:
-          - path: /admin
+          - path: /admin/
             pathType: ImplementationSpecific
             service:
               identifier: main

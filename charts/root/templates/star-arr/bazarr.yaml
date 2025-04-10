@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bazarr
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: star-arr
+  project: default
+  source:
+    repoURL: https://github.com/truecharts/public
+    path: charts/stable/bazarr
+    targetRevision: HEAD
+    helm:
+      valuesObject:
+        # podOptions:
+        #   nodeSelector:
+        #     kubernetes.io/arch: "arm64"
+        persistence:
+          config:
+            enabled: false
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

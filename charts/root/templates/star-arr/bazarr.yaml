@@ -20,6 +20,11 @@ spec:
             kubernetes.io/arch: "arm64"
         persistence:
           config:
+            enabled: true
+            type: pvc
+            existingClaim: bazarr-config-pvc
+            mountPath: /config
+          shared:
             enabled: false
   syncPolicy:
     automated:

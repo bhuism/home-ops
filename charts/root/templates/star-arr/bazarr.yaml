@@ -24,6 +24,11 @@ spec:
             type: pvc
             existingClaim: bazarr-config-pvc
             mountPath: /config
+          media:
+            enabled: true
+            type: pvc
+            existingClaim: media-pvc
+            mountPath: /media
           shared:
             enabled: false
   syncPolicy:

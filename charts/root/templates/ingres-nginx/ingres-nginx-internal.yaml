@@ -30,8 +30,8 @@ spec:
           service:
             annotations:
               lbipam.cilium.io/ips: "192.168.1.81"
-        config:
-          proxy-body-size: "8m"
+          config:
+            proxy-body-size: "8m"
         defaultBackend:
           enabled: true
           name: defaultbackend

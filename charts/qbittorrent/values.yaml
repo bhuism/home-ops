@@ -61,6 +61,7 @@ controllers:
           HTTP_CONTROL_SERVER_LOG: "on"
           FIREWALL_VPN_INPUT_PORTS: 50413
           FIREWALL_DEBUG: "on"
+          VPN_PORT_FORWARDING: "on"
         securityContext:
           capabilities:
             add:

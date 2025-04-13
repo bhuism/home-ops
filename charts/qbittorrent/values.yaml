@@ -60,7 +60,7 @@ controllers:
           FIREWALL_INPUT_PORTS: 8080
           HTTP_CONTROL_SERVER_LOG: "on"
           FIREWALL_VPN_INPUT_PORTS: 50413
-          FIREWALL_DEBUG: on
+          FIREWALL_DEBUG: "on"
         securityContext:
           capabilities:
             add:

@@ -7,7 +7,7 @@ spec:
   volumeMode: Filesystem
   resources:
     requests:
-      storage: 1Gi
+      storage: 10Gi
   accessModes:
     - ReadWriteOnce
   storageClassName: ceph-rbd

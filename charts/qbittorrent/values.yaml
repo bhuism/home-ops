@@ -60,9 +60,9 @@ controllers:
           FIREWALL_INPUT_PORTS: 8080
           HTTP_CONTROL_SERVER_LOG: "on"
           FIREWALL_VPN_INPUT_PORTS: 50413
-          FIREWALL_DEBUG: "on"
-          VPN_PORT_FORWARDING: "on"
-          VPN_PORT_FORWARDING_PROVIDER: "privatevpn"
+          # FIREWALL_DEBUG: "on"
+          # VPN_PORT_FORWARDING: "on"
+          # VPN_PORT_FORWARDING_PROVIDER: "privatevpn"
         securityContext:
           capabilities:
             add:

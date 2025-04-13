@@ -1,6 +1,6 @@
 #!/bin/sh
 
-kubectl run -i --rm --tty debian -n headscale --overrides='
+kubectl run -i --rm --tty debian2 -n star-arr --overrides='
 {
   "apiVersion": "v1",
       "spec": {
@@ -15,23 +15,23 @@ kubectl run -i --rm --tty debian -n headscale --overrides='
             "stdinOnce": true,
             "tty": true,
             "volumeMounts": [{
-              "mountPath": "/mnt/config",
-              "name": "disk1"
+              "mountPath": "/mnt/media",
+              "name": "media"
             },{
-              "mountPath": "/mnt/data",
-              "name": "disk2"
+              "mountPath": "/mnt/download",
+              "name": "download"
             }]
           }
         ],
         "volumes": [{
-          "name":"disk1",
+          "name":"media",
           "persistentVolumeClaim":{
-		"claimName": "headscale-config"
+		"claimName": "media-pvc"
 	}
         },{
-          "name":"disk2",
+          "name":"download",
           "persistentVolumeClaim":{
-		"claimName": "headscale-data"
+		"claimName": "download-pvc"
 	}
         }
         ]

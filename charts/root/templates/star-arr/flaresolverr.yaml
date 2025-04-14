@@ -15,6 +15,9 @@ spec:
     targetRevision: HEAD
     helm:
       valuesObject:
+        env:
+          LOG_LEVEL: debug
+          BROWSER_TIMEOUT: 120000
         podOptions:
           nodeSelector:
             kubernetes.io/arch: "arm64"

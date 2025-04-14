@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flaresolverr
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: star-arr
+  project: default
+  source:
+    repoURL: https://github.com/truecharts/public
+    path: charts/stable/flaresolverr
+    targetRevision: HEAD
+    helm:
+      valuesObject:
+        # podOptions:
+        #   nodeSelector:
+        #     kubernetes.io/arch: "arm64"
+        # persistence:
+        #   config:
+        #     enabled: true
+        #     type: pvc
+        #     existingClaim: bazarr-config-pvc
+        #     mountPath: /config
+        #   media:
+        #     enabled: true
+        #     type: pvc
+        #     existingClaim: media-pvc
+        #     mountPath: /media
+          shared:
+            enabled: false
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -19,7 +19,7 @@ spec:
           tag: v1.82.0
         env:
           TZ: "UTC"
-          TS_ROUTES: "192.168.1.81/32"
+          TS_ROUTES: "192.168.1.81/32,192.168.1.55/32"
           TS_EXTRA_ARGS: "--login-server=https://headscale.impl.nl --accept-dns=false"
   syncPolicy:
     automated:

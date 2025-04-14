@@ -17,7 +17,6 @@ spec:
       valuesObject:
         env:
           TZ: "Europe/Amsterdam"
-
         tolerations:
           - key: "node.kubernetes.io/unschedulable"
             operator: "Exists"

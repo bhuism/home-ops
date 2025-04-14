@@ -22,7 +22,7 @@ controllers:
           seccompProfile:
             type: RuntimeDefault
         env:
-          TZ: Europe/Amsterdam
+          TZ: "Europe/Amsterdam"
 service:
   main:
     controller: main

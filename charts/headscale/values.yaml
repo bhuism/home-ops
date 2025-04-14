@@ -129,7 +129,7 @@ controllers:
             type: TCP
             port: 9090
         env:
-          TZ: "UTC"
+          TZ: "Europe/Amsterdam"
         args: ["serve"]
       headplane:
         image:

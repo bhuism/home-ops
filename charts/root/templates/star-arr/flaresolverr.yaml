@@ -21,7 +21,7 @@ spec:
               containers:
                 main:
                   env:
-                    LOG_LEVEL: debug
+                    LOG_LEVEL: info
                     BROWSER_TIMEOUT: 120000
         podOptions:
           nodeSelector:

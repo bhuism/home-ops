@@ -23,6 +23,7 @@ spec:
                   env:
                     LOG_LEVEL: debug
                     BROWSER_TIMEOUT: 120000
+                    TZ: Europe/Amsterdam
         podOptions:
           nodeSelector:
             kubernetes.io/arch: "arm64"

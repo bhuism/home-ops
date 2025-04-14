@@ -15,9 +15,9 @@ spec:
     targetRevision: HEAD
     helm:
       valuesObject:
-        # podOptions:
-        #   nodeSelector:
-        #     kubernetes.io/arch: "arm64"
+        podOptions:
+          nodeSelector:
+            kubernetes.io/arch: "arm64"
         persistence:
         #   config:
         #     enabled: true

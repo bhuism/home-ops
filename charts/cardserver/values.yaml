@@ -1,0 +1,75 @@
+controllers:
+  main:
+    replicas: 3
+    strategy: RollingUpdate
+    rollingUpdate:
+      unavailable: 1
+      surge: 1
+    containers:
+      main:
+        image:
+          repository: ghcr.io/bhuism/cardserver
+          tag: latest
+          pullPolicy: Always
+        probes:
+          liveness:
+            enabled: true
+            type: HTTP
+            path: /manage/health/liveness
+            port: 9080
+          readiness:
+            enabled: true
+            type: HTTP
+            path: /manage/health/readiness
+            port: 9080
+          startup:
+            enabled: true
+            spec:
+              initialDelaySeconds: 5
+              timeoutSeconds: 3
+              periodSeconds: 5
+              failureThreshold: 60
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+        resources:
+          limits:
+            cpu: 0.5
+            memory: 256Mi
+          requests:
+            cpu: 0.5
+            memory: 256Mi
+        env:
+          SPRING_PROFILES_ACTIVE: production
+          # LOGGING_LEVEL_ROOT: debug
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 8080
+
+ingress:
+  main:
+    className: nginx-external
+    annotations:
+      external-dns.alpha.kubernetes.io/target: jasmine.odee.net
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+      cert-manager.io/cluster-issuer: letsencrypt-production
+      gethomepage.dev/enabled: "true"
+    hosts:
+      - host: www.klaversjassen.nl
+        paths:
+          - path: /api
+            service:
+              identifier: main
+              port: http
+    tls:
+      - secretName: www.klaversjassen.nl
+        hosts:
+          - www.klaversjassen.nl

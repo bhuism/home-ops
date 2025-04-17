@@ -29,6 +29,7 @@ spec:
           - stelseltoegang.nl
           - kindersaai.nl
           - appsource.nl
+          - klaversjassen.nl
   syncPolicy:
     automated:
       prune: true

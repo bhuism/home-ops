@@ -65,7 +65,7 @@ ingress:
     hosts:
       - host: api.klaversjassen.nl
         paths:
-          - path: /api
+          - path: /
             service:
               identifier: main
               port: http

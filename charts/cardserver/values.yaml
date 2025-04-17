@@ -63,13 +63,13 @@ ingress:
       cert-manager.io/cluster-issuer: letsencrypt-production
       gethomepage.dev/enabled: "true"
     hosts:
-      - host: www.klaversjassen.nl
+      - host: api.klaversjassen.nl
         paths:
           - path: /api
             service:
               identifier: main
               port: http
     tls:
-      - secretName: www.klaversjassen.nl
+      - secretName: api.klaversjassen.nl
         hosts:
-          - www.klaversjassen.nl
+          - api.klaversjassen.nl

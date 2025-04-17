@@ -40,10 +40,10 @@ controllers:
         resources:
           limits:
             cpu: 0.5
-            memory: 512Mi
+            memory: 768Mi
           requests:
             cpu: 0.5
-            memory: 512Mi
+            memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production
           # LOGGING_LEVEL_ROOT: debug

@@ -93,7 +93,7 @@ ingress:
     annotations:
       external-dns.alpha.kubernetes.io/target: ingress-internal.impl.nl
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-      # cert-manager.io/cluster-issuer: letsencrypt-production
+      cert-manager.io/cluster-issuer: letsencrypt-production
       gethomepage.dev/enabled: "true"
     hosts:
       - host: couchbase.impl.nl
@@ -102,10 +102,14 @@ ingress:
             service:
               identifier: main
               port: rest
-    # tls:
-    #   - secretName: couchbase.impl.nl
-    #     hosts:
-    #       - couchbase.impl.nl
+          - path: /
+            service:
+              identifier: main
+              port: memcached
+    tls:
+      - secretName: couchbase.impl.nl
+        hosts:
+          - couchbase.impl.nl
 persistence:
   data:
     enabled: true

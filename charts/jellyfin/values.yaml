@@ -68,3 +68,7 @@ persistence:
     existingClaim: jellyfin-cache-pvc
   media:
     existingClaim: media-pvc
+  tmp:
+    enabled: true
+    type: emptyDir
+    

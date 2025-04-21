@@ -22,10 +22,12 @@ controllers:
             port: 8091
           startup:
             enabled: true
+            port: 8091
             spec:
               initialDelaySeconds: 60
               failureThreshold: 15
               periodSeconds: 5
+              timeoutSeconds: 3
         securityContext:
           fsGroup: 1000
           fsGroupChangePolicy: Always

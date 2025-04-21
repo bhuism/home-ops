@@ -20,6 +20,8 @@ controllers:
             spec:
               initialDelaySeconds: 60
               timeoutSeconds: 3
+              periodSeconds: 10
+              failureThreshold: 12
           readiness:
             enabled: true
             type: HTTP
@@ -28,13 +30,15 @@ controllers:
             spec:
               initialDelaySeconds: 60
               timeoutSeconds: 3
+              periodSeconds: 10
+              failureThreshold: 12
           startup:
             enabled: true
             spec:
               initialDelaySeconds: 60
               timeoutSeconds: 3
-              periodSeconds: 5
-              failureThreshold: 60
+              periodSeconds: 10
+              failureThreshold: 12
         securityContext:
           allowPrivilegeEscalation: false
           runAsNonRoot: true

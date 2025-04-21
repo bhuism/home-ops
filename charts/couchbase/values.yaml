@@ -22,15 +22,15 @@ controllers:
         resources:
           limits:
             cpu: 2
-            memory: 3Gi
+            memory: 2Gi
           requests:
             cpu: 2
-            memory: 3Gi
+            memory: 2Gi
 service:
   main:
     controller: main
     ports:
-      rest:
+      http:
         port: 8091
       capi:
         port: 8092
@@ -67,7 +67,7 @@ ingress:
           - path: /
             service:
               identifier: main
-              port: rest
+              port: http
     tls:
       - secretName: couchbase.impl.nl
         hosts:

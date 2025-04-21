@@ -1,5 +1,11 @@
 controllers:
   main:
+    initContainers:
+      chown:
+        image:
+          repository: alpine
+          tag: latest
+        command: ["chown", "-R", "1000:1000", "/opt/couchbase/var"]
     containers:
       main:
         image:
@@ -100,7 +106,5 @@ persistence:
     enabled: true
     type: persistentVolumeClaim
     existingClaim: couchbase-pvc
-    advancedMounts:
-      main:
-        main:
-          - path: /opt/couchbase/var
+    globalMounts:
+      - path: /opt/couchbase/var

@@ -38,9 +38,29 @@ service:
   main:
     controller: main
     ports:
-      http:
+      rest:
         port: 8091
-
+      capi_port:
+        port: 8092
+      query_port:
+        port: 8093
+      fts_http_port:
+        port: 8094
+      cbas_http_port:
+        port: 8095
+      eventing_http_port:
+        port: 8096
+      backup_http_port:
+        port: 8097
+      prometheus_http_port:
+        port: 9123
+      eventing_debug_port:
+        port: 9140
+      memcached_port:
+        port: 11210
+      memcached_prometheus:
+        port: 11280
+      
 ingress:
   main:
     className: nginx-internal
@@ -55,7 +75,7 @@ ingress:
           - path: /
             service:
               identifier: main
-              port: http
+              port: ui
     tls:
       - secretName: couchbase.impl.nl
         hosts:

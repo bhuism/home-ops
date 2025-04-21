@@ -71,4 +71,4 @@ persistence:
   tmp:
     enabled: true
     type: emptyDir
-    
+    path: /tmp/jellyfin

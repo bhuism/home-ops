@@ -37,13 +37,13 @@ controllers:
               - ALL
           seccompProfile:
             type: RuntimeDefault
-        # resources:
-        #   limits:
-        #     cpu: 2
-        #     memory: 4Gi
-        #   requests:
-        #     cpu: 2
-        #     memory: 4Gi
+        resources:
+          limits:
+            cpu: 2
+            memory: 4Gi
+          requests:
+            cpu: 2
+            memory: 4Gi
 service:
   main:
     controller: main

@@ -27,6 +27,21 @@ spec:
             roles:
               - name: bucket_admin
                 bucket: cardserver
+        cluster:
+          servers:
+            default:
+              pod:
+                volumeMounts:
+                  default: couchbase-pvc
+                  data:  couchbase-pvc
+          volumeClaimTemplates:
+            - metadata:
+                name: couchbase-pvc
+              spec:
+                storageClassName: "default"
+                resources:
+                  requests:
+                    storage: 10Gi
   syncPolicy:
     automated:
       prune: true

@@ -19,6 +19,16 @@ controllers:
             spec:
               failureThreshold: 15
               periodSeconds: 1
+        securityContext:
+          runAsUser: 1000
+          runAsGroup: 1000
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
         resources:
           limits:
             cpu: 2

@@ -1,4 +1,4 @@
-controllers:
+grcontrollers:
   main:
     initContainers:
       chown:
@@ -17,13 +17,13 @@ controllers:
             type: TCP
             port: 8091
             spec:
-              initialDelaySeconds: 60
+              initialDelaySeconds: 120
           readiness:
             enabled: true
             type: TCP
             port: 8091
             spec:
-              initialDelaySeconds: 60
+              initialDelaySeconds: 120
           startup:
             enabled: true
             port: 8091
@@ -31,7 +31,7 @@ controllers:
               failureThreshold: 15
               periodSeconds: 5
               timeoutSeconds: 3
-              initialDelaySeconds: 60
+              initialDelaySeconds: 120
         securityContext:
           runAsUser: 1000
           runAsGroup: 1000

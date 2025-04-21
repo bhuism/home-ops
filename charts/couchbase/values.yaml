@@ -31,26 +31,37 @@ service:
     controller: main
     ports:
       http:
+        enabled: true
         port: 8091
       capi:
+        enabled: true
         port: 8092
       query:
+        enabled: true
         port: 8093
       ftshttp:
+        enabled: true
         port: 8094
       cbashttp:
+        enabled: true
         port: 8095
       eventinghttp:
+        enabled: true
         port: 8096
       backuphttp:
+        enabled: true
         port: 8097
       prometheushttp:
+        enabled: true
         port: 9123
       eventingdebug:
+        enabled: true
         port: 9140
       memcached:
+        enabled: true
         port: 11210
       memcachedprometheus:
+        enabled: true
         port: 11280
 
 ingress:

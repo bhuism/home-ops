@@ -64,7 +64,7 @@ persistence:
   data:
     enabled: true
     type: persistentVolumeClaim
-    existingClaim: couchbase-data
+    existingClaim: couchbase-pvc
     advancedMounts:
       main:
         main:

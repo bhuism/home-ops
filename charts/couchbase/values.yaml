@@ -60,3 +60,12 @@ ingress:
       - secretName: couchbase.impl.nl
         hosts:
           - couchbase.impl.nl
+persistence:
+  data:
+    enabled: true
+    type: persistentVolumeClaim
+    existingClaim: couchbase-data
+    advancedMounts:
+      main:
+        main:
+          - path: /opt/couchbase/var

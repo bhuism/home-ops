@@ -20,6 +20,8 @@ controllers:
               failureThreshold: 15
               periodSeconds: 1
         securityContext:
+          fsGroup: 1000
+          fsGroupChangePolicy: Always
           runAsUser: 1000
           runAsGroup: 1000
           allowPrivilegeEscalation: false

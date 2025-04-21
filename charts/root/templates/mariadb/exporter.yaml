@@ -12,7 +12,7 @@ spec:
   source:
     chart: prometheus-mysql-exporter
     repoURL: https://prometheus-community.github.io/helm-charts
-    targetRevision: 2.9.1
+    targetRevision: 2.10.0
     helm:
       valuesObject:
         mysql:

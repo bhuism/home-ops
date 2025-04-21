@@ -1,0 +1,62 @@
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          repository: couchbase/server
+          tag: community-7.6.2
+        probes:
+          liveness:
+            enabled: true
+            type: TCP
+            port: 8091
+          readiness:
+            enabled: true
+            type: TCP
+            port: 8091
+          startup:
+            enabled: true
+            spec:
+              failureThreshold: 15
+              periodSeconds: 1
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+        resources:
+          limits:
+            cpu: 2`
+            memory: 2Gi
+          requests:
+            cpu: 2
+            memory: 2Gi
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 8091
+
+ingress:
+  main:
+    className: nginx-internal
+    annotations:
+      external-dns.alpha.kubernetes.io/target: ingress-internal.impl.nl
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+      cert-manager.io/cluster-issuer: letsencrypt-production
+      gethomepage.dev/enabled: "true"
+    hosts:
+      - host: couchbase.impl.nl
+        paths:
+          - path: /
+            service:
+              identifier: main
+              port: http
+    tls:
+      - secretName: couchbase.impl.nl
+        hosts:
+          - couchbase.impl.nl

@@ -51,7 +51,12 @@ controllers:
             memory: 4Gi
 service:
   main:
+    enabled: true
     controller: main
+    primary: true
+    annotations:
+      lbipam.cilium.io/ips: "192.168.1.86"
+    type: LoadBalancer
     ports:
       rest:
         enabled: true
@@ -89,27 +94,28 @@ service:
 
 ingress:
   main:
-    className: nginx-internal
-    annotations:
-      external-dns.alpha.kubernetes.io/target: ingress-internal.impl.nl
-      external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-      cert-manager.io/cluster-issuer: letsencrypt-production
-      gethomepage.dev/enabled: "true"
-    hosts:
-      - host: couchbase.impl.nl
-        paths:
-          - path: /
-            service:
-              identifier: main
-              port: rest
-          - path: /
-            service:
-              identifier: main
-              port: memcached
-    tls:
-      - secretName: couchbase.impl.nl
-        hosts:
-          - couchbase.impl.nl
+    enabled: false
+    # className: nginx-internal
+    # annotations:
+    #   external-dns.alpha.kubernetes.io/target: ingress-internal.impl.nl
+    #   external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+    #   cert-manager.io/cluster-issuer: letsencrypt-production
+    #   gethomepage.dev/enabled: "true"
+    # hosts:
+    #   - host: couchbase.impl.nl
+    #     paths:
+    #       - path: /
+    #         service:
+    #           identifier: main
+    #           port: rest
+    #       - path: /
+    #         service:
+    #           identifier: main
+    #           port: memcached
+    # tls:
+    #   - secretName: couchbase.impl.nl
+    #     hosts:
+    #       - couchbase.impl.nl
 persistence:
   data:
     enabled: true

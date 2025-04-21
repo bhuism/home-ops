@@ -1,4 +1,4 @@
-grcontrollers:
+controllers:
   main:
     initContainers:
       chown:
@@ -44,10 +44,10 @@ grcontrollers:
             type: RuntimeDefault
         resources:
           limits:
-            cpu: '2'
+            cpu: "2"
             memory: 4Gi
           requests:
-            cpu: '2'
+            cpu: "2"
             memory: 4Gi
 service:
   main:

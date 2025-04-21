@@ -55,7 +55,7 @@ service:
   main:
     controller: main
     ports:
-      http:
+      rest:
         enabled: true
         port: 8091
       capi:
@@ -103,7 +103,7 @@ ingress:
           - path: /
             service:
               identifier: main
-              port: http
+              port: rest
     tls:
       - secretName: couchbase.impl.nl
         hosts:

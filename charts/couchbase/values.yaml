@@ -19,21 +19,13 @@ controllers:
             spec:
               failureThreshold: 15
               periodSeconds: 1
-        # securityContext:
-        #   allowPrivilegeEscalation: true
-        #   runAsNonRoot: false
-        #   capabilities:
-        #     drop:
-        #       - ALL
-        #   seccompProfile:
-        #     type: RuntimeDefault
         resources:
           limits:
             cpu: 2
-            memory: 2Gi
+            memory: 3Gi
           requests:
             cpu: 2
-            memory: 2Gi
+            memory: 3Gi
 service:
   main:
     controller: main
@@ -60,7 +52,7 @@ service:
         port: 11210
       memcachedprometheus:
         port: 11280
-      
+
 ingress:
   main:
     className: nginx-internal

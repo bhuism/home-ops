@@ -33,8 +33,6 @@ controllers:
               timeoutSeconds: 3
               initialDelaySeconds: 60
         securityContext:
-          fsGroup: 1000
-          fsGroupChangePolicy: Always
           runAsUser: 1000
           runAsGroup: 1000
           allowPrivilegeEscalation: false
@@ -46,10 +44,10 @@ controllers:
             type: RuntimeDefault
         resources:
           limits:
-            cpu: 2
+            cpu: '2'
             memory: 4Gi
           requests:
-            cpu: 2
+            cpu: '2'
             memory: 4Gi
 service:
   main:

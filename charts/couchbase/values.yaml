@@ -40,25 +40,25 @@ service:
     ports:
       rest:
         port: 8091
-      capi_port:
+      capi:
         port: 8092
-      query_port:
+      query:
         port: 8093
-      fts_http_port:
+      ftshttp:
         port: 8094
-      cbas_http_port:
+      cbashttp:
         port: 8095
-      eventing_http_port:
+      eventinghttp:
         port: 8096
-      backup_http_port:
+      backuphttp:
         port: 8097
-      prometheus_http_port:
+      prometheushttp:
         port: 9123
-      eventing_debug_port:
+      eventingdebug:
         port: 9140
-      memcached_port:
+      memcached:
         port: 11210
-      memcached_prometheus:
+      memcachedprometheus:
         port: 11280
       
 ingress:

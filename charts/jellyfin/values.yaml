@@ -72,3 +72,10 @@ persistence:
     enabled: true
     type: emptyDir
     path: /tmp/jellyfin
+  data:
+    enabled: true
+    type: emptyDir
+    advancedMounts:
+      main:
+        main:
+          - path: /tmp/jellyfin

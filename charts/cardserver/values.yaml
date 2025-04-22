@@ -1,10 +1,10 @@
 controllers:
   main:
-    # replicas: 3
-    # strategy: RollingUpdate
-    # rollingUpdate:
-    #   unavailable: 1
-    #   surge: 1
+    replicas: 3
+    strategy: RollingUpdate
+    rollingUpdate:
+      unavailable: 1
+      surge: 1
     containers:
       main:
         image:
@@ -56,8 +56,8 @@ controllers:
             memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production
-          LOGGING_LEVEL_ROOT: debug
-          LOGGING_LEVEL_NL_APPSOURCE: debug
+          # LOGGING_LEVEL_ROOT: debug
+          # LOGGING_LEVEL_NL_APPSOURCE: debug
 service:
   main:
     controller: main

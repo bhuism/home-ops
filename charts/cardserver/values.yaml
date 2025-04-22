@@ -56,7 +56,8 @@ controllers:
             memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production
-          # LOGGING_LEVEL_ROOT: debug
+          LOGGING_LEVEL_ROOT: debug
+          LOGGING_LEVEL_NL_APPSOURCE: debug
 service:
   main:
     controller: main

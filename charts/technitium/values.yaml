@@ -4,7 +4,7 @@ controllers:
       main:
         image:
           repository: technitium/dns-server
-          tag: 13.5.0
+          tag: 13.6.0
           pullPolicy: Always
         env:
           TZ: "Europe/Amsterdam"

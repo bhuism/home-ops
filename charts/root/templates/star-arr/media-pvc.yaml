@@ -7,7 +7,7 @@ spec:
   volumeMode: Filesystem
   resources:
     requests:
-      storage: 6000Gi
+      storage: 6500Gi
   accessModes:
     - ReadWriteMany
   storageClassName: cephfs

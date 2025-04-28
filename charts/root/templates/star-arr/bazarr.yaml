@@ -15,6 +15,9 @@ spec:
     targetRevision: HEAD
     helm:
       valuesObject:
+        workload:
+          main:
+            replicas: 0
         podOptions:
           nodeSelector:
             kubernetes.io/arch: "arm64"

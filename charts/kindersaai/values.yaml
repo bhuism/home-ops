@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: europe-west4-docker.pkg.dev/impl-383520/docker/kindersaai
+  repository: ghcr.io/bhuism/kindersaai
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"

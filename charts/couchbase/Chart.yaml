@@ -3,5 +3,5 @@ name: couchbase
 version: 1.0.0
 dependencies:
   - name: common
-    repository: https://bjw-s.github.io/helm-charts
+    repository: https://bjw-s-labs.github.io/helm-charts
     version: 3.7.3

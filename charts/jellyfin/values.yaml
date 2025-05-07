@@ -4,7 +4,7 @@ controllers:
       securityContext:
         fsGroup: 568
         fsGroupChangePolicy: "OnRootMismatch"
-    replicas: 0
+    replicas: 1
     containers:
       main:
         image:

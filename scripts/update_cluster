@@ -1,0 +1,8 @@
+#1/bin/sh
+
+VERSION=v1.10.1
+
+for i in 33 34 35 36 37 38 39 40; do
+    talosctl -n 192.168.1.$i upgrade --image factory.talos.dev/metal-installer/df156b82096feda49406ac03aa44e0ace524b7efe4e1f0e144a1e1ae3930f1c0:$VERSION
+    sleep 1m
+done

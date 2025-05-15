@@ -114,7 +114,7 @@ controllers:
         image:
           pullPolicy: IfNotPresent
           repository: ghcr.io/juanfont/headscale
-          tag: v0.26.0
+          tag: v0.25.1
         probes:
           liveness:
             enabled: true

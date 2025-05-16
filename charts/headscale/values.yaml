@@ -3,6 +3,8 @@ defaultPodOptions:
 
 controllers:
   main:
+    serviceAccount:
+      identifier: default
     initContainers:
       create-etc-headplane:
         image:

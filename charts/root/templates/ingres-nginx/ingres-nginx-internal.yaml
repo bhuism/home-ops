@@ -17,8 +17,8 @@ spec:
       valuesObject:
         controller:
           name: nginx-internal
-          # replicaCount: 3
-          # minAvailable: 1
+          replicaCount: 3
+          minAvailable: 1
           ingressClassResource:
             name: nginx-internal
             enabled: true
@@ -43,8 +43,8 @@ spec:
               memory: 250Mi
               cpu: 25m
             limits:
-              memory: 350Mi        
+              memory: 350Mi
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true 
+      selfHeal: true

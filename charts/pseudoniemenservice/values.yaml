@@ -1,6 +1,6 @@
 controllers:
   main:
-    replicas: 1
+    replicas: 2
     strategy: RollingUpdate
     rollingUpdate:
       unavailable: 1

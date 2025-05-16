@@ -235,7 +235,8 @@ rbac:
         - identifier: default
 
 serviceAccount:
-  identifier: default
+  default:
+    enabled: true
 
 persistence:
   config:

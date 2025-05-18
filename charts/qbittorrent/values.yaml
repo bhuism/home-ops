@@ -104,13 +104,13 @@ persistence:
       main:
         main:
           - path: /config
-  download:
-    enabled: true
-    existingClaim: download-pvc
-    advancedMounts:
-      main:
-        main:
-          - path: /download
+  # download:
+  #   enabled: true
+  #   existingClaim: download-pvc
+  #   advancedMounts:
+  #     main:
+  #       main:
+  #         - path: /download
   media:
     enabled: true
     existingClaim: media-pvc

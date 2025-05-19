@@ -7,7 +7,7 @@ defaultPodOptions:
 
 controllers:
   main:
-    replicas: 1
+    replicas: 0
     # Configure the pod-specific securityContext
     pod:
       securityContext:

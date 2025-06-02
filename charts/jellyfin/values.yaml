@@ -10,7 +10,7 @@ controllers:
         image:
           repository: jellyfin/jellyfin
           pullPolicy: IfNotPresent
-          tag: "10.10.7"
+          tag: "v2025060205"
         securityContext:
           runAsUser: 568
           runAsGroup: 568

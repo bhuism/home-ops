@@ -20,6 +20,9 @@ kubectl run -i --rm --tty debian2 -n star-arr --overrides='
             },{
               "mountPath": "/mnt/download",
               "name": "download"
+            },{
+              "mountPath": "/mnt/jellyfinconfig",
+              "name": "jellyfinconfig"
             }]
           }
         ],
@@ -32,6 +35,11 @@ kubectl run -i --rm --tty debian2 -n star-arr --overrides='
           "name":"download",
           "persistentVolumeClaim":{
 		"claimName": "download-pvc"
+	}
+        },{
+          "name":"jellyfinconfig",
+          "persistentVolumeClaim":{
+		"claimName": "jellyfin-config-pvc"
 	}
         }
         ]

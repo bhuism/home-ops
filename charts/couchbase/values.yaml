@@ -4,13 +4,13 @@ controllers:
       chown:
         image:
           repository: alpine
-          tag: latest
+          tag: "latest"
         command: ["chown", "-R", "1000:1000", "/opt/couchbase/var"]
     containers:
       main:
         image:
           repository: couchbase/server
-          tag: community-7.6.2
+          tag: "community-7.6.2"
         probes:
           liveness:
             enabled: true

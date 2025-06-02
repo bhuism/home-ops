@@ -31,7 +31,7 @@ controllers:
       main:
         image:
           repository: ghcr.io/home-operations/qbittorrent
-          tag: 5.1.0
+          tag: "5.1.0"
         env:
           TZ: "Europe/Amsterdam"
         securityContext:
@@ -43,7 +43,7 @@ controllers:
         dependsOn: main
         image:
           repository: ghcr.io/qdm12/gluetun
-          tag: v3.40.0
+          tag: "v3.40.0"
         env:
           TZ: "Europe/Amsterdam"
           VPN_SERVICE_PROVIDER: nordvpn

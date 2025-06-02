@@ -9,7 +9,7 @@ controllers:
       main:
         image:
           repository: ghcr.io/bhuism/pseudoniemenservice
-          tag: latest
+          tag: "latest"
         probes:
           liveness:
             enabled: true

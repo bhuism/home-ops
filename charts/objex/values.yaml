@@ -9,7 +9,7 @@ controllers:
       main:
         image:
           repository: ghcr.io/bhuism/objex
-          tag: latest
+          tag: "latest"
           pullPolicy: Always
         probes:
           liveness:

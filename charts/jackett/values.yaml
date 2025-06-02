@@ -5,7 +5,7 @@ controllers:
         image:
           pullPolicy: Always
           repository: lscr.io/linuxserver/jackett
-          tag: latest
+          tag: "latest"
         # securityContext:
         #   allowPrivilegeEscalation: false
         #   runAsNonRoot: false

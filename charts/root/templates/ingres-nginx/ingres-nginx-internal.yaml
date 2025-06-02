@@ -37,7 +37,7 @@ spec:
           name: defaultbackend
           image:
             repository: ghcr.io/tarampampam/error-pages
-            tag: 3.3.1
+            tag: "3.3.1"
           resources:
             requests:
               memory: 250Mi

@@ -17,7 +17,7 @@ spec:
       valuesObject:
         provider: cloudflare
         image:
-          tag: 0.15.0
+          tag: "0.15.0"
         cloudflare:
           apiToken: "BYwoYHyWZh0HojuWRxduO7gH_Ka30nQDgZjYaMtA"
           email: "bas@appsource.nl"

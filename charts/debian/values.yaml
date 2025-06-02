@@ -8,7 +8,7 @@ controllers:
         name: main
         image:
           repository: ghcr.io/bhuism/openssh-server
-          tag: 1.0.17
+          tag: "1.0.17"
           pullPolicy: IfNotPresent
         terminationGracePeriodSeconds: 3
         env:

@@ -108,6 +108,7 @@ controllers:
             dns:
               magic_dns: false
               base_domain: example.com
+              override_local_dns: false
 
             EOF
 

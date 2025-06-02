@@ -73,6 +73,7 @@ persistence:
   config:
     enabled: true
     type: configMap
+    name: config
     globalMounts:
       - path: /mosquitto/config/mosquitto.conf
         subPath: mosquitto.conf

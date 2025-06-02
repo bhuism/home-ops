@@ -10,7 +10,7 @@ controllers:
         image:
           repository: jellyfin/jellyfin
           pullPolicy: IfNotPresent
-          tag: 2025052605-arm64
+          tag: arm64v8-latest
         securityContext:
           runAsUser: 568
           runAsGroup: 568

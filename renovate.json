@@ -7,7 +7,7 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["*"],
-      "automerge": true
+      "automerge": false
     }
   ]
 }

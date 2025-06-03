@@ -14,5 +14,5 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBE_CONFIG }}
       - name: Rollout Restart
-        run: -n argocd annotate Application/root argocd.argoproj.io/refresh=normal
+        run: kubectl -n argocd annotate Application/root argocd.argoproj.io/refresh=normal
 

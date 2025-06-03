@@ -6,9 +6,13 @@ on:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    name: Rollout Restart
     steps:
-      - uses: actions-hub/kubectl@master
-        env:
-          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+      - name: Kubernetes context
+        uses: Azure/k8s-set-context@v4
         with:
-          args: -n argocd annotate Application/root argocd.argoproj.io/refresh=normal
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBE_CONFIG }}
+      - name: Rollout Restart
+        run: -n argocd annotate Application/root argocd.argoproj.io/refresh=normal
+

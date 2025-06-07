@@ -37,8 +37,13 @@ controllers:
         securityContext:
           runAsUser: 568
           runAsGroup: 568
-
-      # Configure the gluetun sidecar
+        resources:
+          limits:
+            cpu: 1
+            memory: 4Gi
+          requests:
+            cpu: 1
+            memory: 4Gi
       gluetun:
         dependsOn: main
         image:

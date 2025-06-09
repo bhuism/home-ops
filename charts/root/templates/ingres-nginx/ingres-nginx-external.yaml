@@ -30,6 +30,9 @@ spec:
           service:
             annotations:
               lbipam.cilium.io/ips: "192.168.1.80"
+          config:
+            proxy-read-timeout: 3600
+            proxy-send-timeout: 3600
         defaultBackend:
           enabled: true
           name: defaultbackend
@@ -41,8 +44,8 @@ spec:
               memory: 250Mi
               cpu: 25m
             limits:
-              memory: 350Mi        
+              memory: 350Mi
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true 
+      selfHeal: true

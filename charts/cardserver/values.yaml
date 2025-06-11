@@ -19,11 +19,9 @@ controllers:
             port: 9080
             spec:
               initialDelaySeconds: 60
-            # spec:
-            #   initialDelaySeconds: 90
-            #   timeoutSeconds: 3
-            #   periodSeconds: 10
-            #   failureThreshold: 12
+              timeoutSeconds: 5
+              periodSeconds: 10
+              failureThreshold: 3
           readiness:
             enabled: true
             type: HTTP
@@ -31,18 +29,16 @@ controllers:
             port: 9080
             spec:
               initialDelaySeconds: 60
-            # spec:
-            #   initialDelaySeconds: 90
-            #   timeoutSeconds: 3
-            #   periodSeconds: 10
-            #   failureThreshold: 12
+              timeoutSeconds: 5
+              periodSeconds: 10
+              failureThreshold: 3
           startup:
             enabled: true
             spec:
               initialDelaySeconds: 60
-              # timeoutSeconds: 3
-              # periodSeconds: 10
-              # failureThreshold: 12
+              timeoutSeconds: 5
+              periodSeconds: 10
+              failureThreshold: 3
         securityContext:
           allowPrivilegeEscalation: false
           runAsNonRoot: true

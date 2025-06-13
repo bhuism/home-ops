@@ -49,11 +49,11 @@ controllers:
             type: RuntimeDefault
         resources:
           limits:
-            cpu: 0.5
-            memory: 768Mi
+            cpu: 1.5
+            memory: 1024Mi
           requests:
-            cpu: 0.5
-            memory: 768Mi
+            cpu: 1.5
+            memory: 1024Mi
         env:
           SPRING_PROFILES_ACTIVE: production
           # LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY: trace

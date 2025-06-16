@@ -1,5 +1,9 @@
 controllers:
   main:
+    strategy: RollingUpdate
+    rollingUpdate:
+      unavailable: 1
+      surge: 1
     containers:
       main:
         image:
@@ -88,7 +92,6 @@ ingress:
       - secretName: api.klaversjassen.nl
         hosts:
           - api.klaversjassen.nl
-
 # rawResources:
 #   autoscaler:
 #     enabled: true

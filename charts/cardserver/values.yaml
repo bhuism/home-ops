@@ -93,3 +93,11 @@ ingress:
       - secretName: api.klaversjassen.nl
         hosts:
           - api.klaversjassen.nl
+
+
+rawResources:
+  autoscaling:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 3
+    targetCPUUtilizationPercentage: 80

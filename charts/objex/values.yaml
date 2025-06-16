@@ -1,6 +1,5 @@
 controllers:
   main:
-    replicas: 3
     strategy: RollingUpdate
     rollingUpdate:
       unavailable: 1
@@ -76,3 +75,31 @@ ingress:
       - secretName: api.objex.nl
         hosts:
           - api.objex.nl
+rawResources:
+  autoscaler:
+    enabled: true
+    apiVersion: autoscaling/v2
+    kind: HorizontalPodAutoscaler
+    metadata:
+      name: "{{ .Release.Name }}"
+    spec:
+      spec:
+        scaleTargetRef:
+          apiVersion: apps/v1
+          kind: Deployment
+          name: "{{ .Release.Name }}"
+        minReplicas: 1
+        maxReplicas: 3
+        metrics:
+          - type: Resource
+            resource:
+              name: cpu
+              target:
+                type: Utilization
+                averageUtilization: 80
+          - type: Resource
+            resource:
+              name: memory
+              target:
+                type: Utilization
+                averageUtilization: 80

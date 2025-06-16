@@ -95,9 +95,8 @@ ingress:
           - api.klaversjassen.nl
 
 
-rawResources:
-  autoscaling:
-    enabled: true
-    minReplicas: 1
-    maxReplicas: 3
-    targetCPUUtilizationPercentage: 80
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80

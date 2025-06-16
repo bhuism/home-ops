@@ -27,10 +27,10 @@ controllers:
         resources:
           limits:
             cpu: 100m
-            memory: 64Mi
+            memory: 256Mi
           requests:
             cpu: 100m
-            memory: 64Mi
+            memory: 256Mi
 
 service:
   ok-service:

@@ -1,8 +1,9 @@
 controllers:
   main:
+    type: statefulset
     strategy: RollingUpdate
     rollingUpdate:
-      unavailable: 1
+      unavailable: 0
       surge: 1
     containers:
       main:

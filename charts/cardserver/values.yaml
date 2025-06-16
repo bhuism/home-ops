@@ -101,22 +101,24 @@ rawResources:
     kind: HorizontalPodAutoscaler
     metadata:
       name: "{{ .Release.Name }}"
-    scaleTargetRef:
-      apiVersion: apps/v1
-      kind: Deployment
-      name: "{{ .Release.Name }}"
-    minReplicas: 1
-    maxReplicas: 3
-    metrics:
-      - type: Resource
-        resource:
-          name: cpu
-          target:
-            type: Utilization
-            averageUtilization: 80
-      - type: Resource
-        resource:
-          name: memory
-          target:
-            type: Utilization
-            averageUtilization: 80
+    spec:
+      spec:
+        scaleTargetRef:
+          apiVersion: apps/v1
+          kind: Deployment
+          name: "{{ .Release.Name }}"
+        minReplicas: 1
+        maxReplicas: 3
+        metrics:
+          - type: Resource
+            resource:
+              name: cpu
+              target:
+                type: Utilization
+                averageUtilization: 80
+          - type: Resource
+            resource:
+              name: memory
+              target:
+                type: Utilization
+                averageUtilization: 80

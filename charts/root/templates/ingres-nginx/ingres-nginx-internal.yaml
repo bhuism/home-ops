@@ -41,7 +41,7 @@ spec:
           resources:
             requests:
               memory: 250Mi
-              cpu: 25m
+              cpu: 250m
             limits:
               memory: 350Mi
   syncPolicy:

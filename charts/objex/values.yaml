@@ -38,11 +38,11 @@ controllers:
             type: RuntimeDefault
         resources:
           limits:
-            cpu: 4
-            memory: 3Gi
+            cpu: 500m
+            memory: 768Mi
           requests:
-            cpu: 2
-            memory: 3Gi
+            cpu: 500m
+            memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production,resourceserver
           SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb.mariadb:3306/objex

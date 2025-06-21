@@ -39,10 +39,10 @@ controllers:
         resources:
           limits:
             cpu: 500m
-            memory: 768Mi
+            memory: 256Mi
           requests:
             cpu: 500m
-            memory: 768Mi
+            memory: 256Mi
         env:
           SPRING_PROFILES_ACTIVE: production,resourceserver
           SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb.mariadb:3306/objex

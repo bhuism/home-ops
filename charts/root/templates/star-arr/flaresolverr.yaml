@@ -29,10 +29,10 @@ spec:
         resources:
           limits:
             cpu: 50m
-            memory: 2Gi
+            memory: 1Gi
           requests:
             cpu: 50m
-            memory: 2Gi
+            memory: 1Gi
         persistence:
           config:
             enabled: true

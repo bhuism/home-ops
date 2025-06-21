@@ -28,11 +28,11 @@ spec:
             kubernetes.io/arch: "arm64"
         resources:
           limits:
-            cpu: 50m
-            memory: 1Gi
+            cpu: 500m
+            memory: 1512Mi
           requests:
-            cpu: 50m
-            memory: 1Gi
+            cpu: 500m
+            memory: 1512Mi
         persistence:
           config:
             enabled: true

@@ -48,11 +48,11 @@ controllers:
             type: RuntimeDefault
         resources:
           limits:
-            cpu: 1.5
-            memory: 1024Mi
+            cpu: 1
+            memory: 768Mi
           requests:
-            cpu: 1.5
-            memory: 1024Mi
+            cpu: 1
+            memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production
           CARDSERVER_AUTH_JWT_SECRET:
@@ -92,31 +92,3 @@ ingress:
       - secretName: api.klaversjassen.nl
         hosts:
           - api.klaversjassen.nl
-# rawResources:
-#   autoscaler:
-#     enabled: true
-#     apiVersion: autoscaling/v2
-#     kind: HorizontalPodAutoscaler
-#     metadata:
-#       name: "{{ .Release.Name }}"
-#     spec:
-#       spec:
-#         scaleTargetRef:
-#           apiVersion: apps/v1
-#           kind: Deployment
-#           name: "{{ .Release.Name }}"
-#         minReplicas: 1
-#         maxReplicas: 3
-#         metrics:
-#           - type: Resource
-#             resource:
-#               name: cpu
-#               target:
-#                 type: Utilization
-#                 averageUtilization: 80
-#           - type: Resource
-#             resource:
-#               name: memory
-#               target:
-#                 type: Utilization
-#                 averageUtilization: 80

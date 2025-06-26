@@ -24,7 +24,7 @@ controllers:
           startup:
             enabled: true
             spec:
-              initialDelaySeconds: 20
+              initialDelaySeconds: 120
               timeoutSeconds: 3
               periodSeconds: 5
               failureThreshold: 60

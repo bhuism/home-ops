@@ -17,12 +17,6 @@ kubectl run -i --rm --tty debian2 -n star-arr --overrides='
             "volumeMounts": [{
               "mountPath": "/mnt/media",
               "name": "media"
-            },{
-              "mountPath": "/mnt/download",
-              "name": "download"
-            },{
-              "mountPath": "/mnt/jellyfinconfig",
-              "name": "jellyfinconfig"
             }]
           }
         ],

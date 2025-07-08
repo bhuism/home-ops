@@ -11,6 +11,13 @@ controllers:
           repository: jellyfin/jellyfin
           pullPolicy: IfNotPresent
           tag: "10.11.0-rc2"
+        resources:
+          limits:
+            cpu: 3
+            memory: 3Gi
+          requests:
+            cpu: 3
+            memory: 3Gi
         securityContext:
           runAsUser: 568
           runAsGroup: 568

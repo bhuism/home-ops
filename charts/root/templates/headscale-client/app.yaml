@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://johanneskastl.github.io/helm-charts/
     chart: tailscale
-    targetRevision: 0.28.2
+    targetRevision: 0.28.3
     helm:
       valuesObject:
         image:

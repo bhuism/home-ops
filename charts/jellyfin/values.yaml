@@ -10,7 +10,7 @@ controllers:
         image:
           repository: jellyfin/jellyfin
           pullPolicy: IfNotPresent
-          tag: "10.11.0-rc2"
+          tag: "10.11.0-rc3"
         resources:
           limits:
             cpu: 3

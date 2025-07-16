@@ -10,7 +10,7 @@ controllers:
         image:
           pullPolicy: IfNotPresent
           repository: alpine
-          tag: "3.22.0"
+          tag: "3.22.1"
         command:
           - sh
           - -c
@@ -54,7 +54,7 @@ controllers:
         image:
           pullPolicy: IfNotPresent
           repository: alpine
-          tag: "3.22.0"
+          tag: "3.22.1"
         command:
           - sh
           - -c

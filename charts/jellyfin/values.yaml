@@ -13,11 +13,11 @@ controllers:
           tag: "10.11.0-rc3"
         resources:
           limits:
-            cpu: 3
-            memory: 3Gi
+            cpu: 4
+            memory: 4Gi
           requests:
-            cpu: 3
-            memory: 3Gi
+            cpu: 4
+            memory: 4Gi
         securityContext:
           runAsUser: 568
           runAsGroup: 568

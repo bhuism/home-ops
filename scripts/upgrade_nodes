@@ -1,18 +1,18 @@
 #1/bin/sh
 
-VERSION=v1.10.5
+VERSION=v1.10.6
 
 #home ops
 
-#for i in 33 34 35 36 37 38 39 40; do
-#    talosctl --context impl-k8s -n 192.168.1.$i upgrade --image factory.talos.dev/metal-installer/df156b82096feda49406ac03aa44e0ace524b7efe4e1f0e144a1e1ae3930f1c0:$VERSION
-#    sleep 1m
-#done
+for i in 33 34 35 36 37 38 39 40; do
+    talosctl --context impl-k8s -n 192.168.1.$i upgrade --image factory.talos.dev/metal-installer/df156b82096feda49406ac03aa44e0ace524b7efe4e1f0e144a1e1ae3930f1c0:$VERSION
+    sleep 1m
+done
 
 #ceph
 
 #for i in 65 66 67 68 ; do
-for i in 68 ; do
-    talosctl --context ceph-k8s -n 192.168.1.$i upgrade --image factory.talos.dev/metal-installer/df156b82096feda49406ac03aa44e0ace524b7efe4e1f0e144a1e1ae3930f1c0:$VERSION
-    sleep 5m
-done
+#for i in 68 ; do
+#    talosctl --context ceph-k8s -n 192.168.1.$i upgrade --image factory.talos.dev/metal-installer/df156b82096feda49406ac03aa44e0ace524b7efe4e1f0e144a1e1ae3930f1c0:$VERSION
+#    sleep 5m
+#done

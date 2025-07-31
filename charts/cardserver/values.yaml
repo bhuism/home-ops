@@ -50,10 +50,10 @@ controllers:
         resources:
           limits:
             cpu: 1
-            memory: 768Mi
+            memory: 1Gi
           requests:
             cpu: 1
-            memory: 768Mi
+            memory: 1Gi
         env:
           SPRING_PROFILES_ACTIVE: production
           CARDSERVER_AUTH_JWT_SECRET:

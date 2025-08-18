@@ -23,6 +23,15 @@ spec:
             external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
             cert-manager.io/cluster-issuer: letsencrypt-production
             gethomepage.dev/enabled: "true"
+            nginx.ingress.kubernetes.io/enable-cors: "true"
+            nginx.ingress.kubernetes.io/cors-expose-headers: "*"
+            nginx.ingress.kubernetes.io/cors-allow-origin: "*"
+
+
+
+          hosts:
+            - host: echo.impl.nl
+              paths:
           pathType: Prefix
           extraPaths: []
           hosts:

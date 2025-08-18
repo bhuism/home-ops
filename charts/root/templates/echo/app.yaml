@@ -26,9 +26,6 @@ spec:
             nginx.ingress.kubernetes.io/enable-cors: "true"
             nginx.ingress.kubernetes.io/cors-expose-headers: "*"
             nginx.ingress.kubernetes.io/cors-allow-origin: "*"
-
-
-
           hosts:
             - host: echo.impl.nl
               paths:

@@ -7,7 +7,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: arc
   project: default
   source:
     chart: actions-runner-controller

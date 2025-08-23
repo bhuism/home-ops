@@ -25,9 +25,9 @@ controllers:
           startup:
             enabled: true
             spec:
-              initialDelaySeconds: 120
-              timeoutSeconds: 3
-              periodSeconds: 5
+              initialDelaySeconds: 180
+              timeoutSeconds: 10
+              periodSeconds: 15
               failureThreshold: 60
         securityContext:
           allowPrivilegeEscalation: false

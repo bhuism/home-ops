@@ -25,11 +25,11 @@ spec:
         txtOwnerId: impl
         resources:
           requests:
-            cpu: 0.2
-            memory: 128Mi
+            cpu: 10m
+            memory: 256Mi
           limits:
-            cpu: 0.2
-            memory: 128Mi        
+            cpu: 20m
+            memory: 300Mi
         domainFilters:
           - impl.nl
           - objex.nl

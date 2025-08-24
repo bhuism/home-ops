@@ -56,7 +56,7 @@ controllers:
             memory: 1Gi
         env:
           SPRING_PROFILES_ACTIVE: production
-          CARDSERVER_AUTH_JWT_ED25159_SECRET:
+          CARDSERVER_AUTH_JWT_ED25519_SECRET:
             valueFrom:
               secretKeyRef:
                 name: jwtsecret

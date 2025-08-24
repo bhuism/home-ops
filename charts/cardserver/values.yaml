@@ -56,11 +56,11 @@ controllers:
             memory: 1Gi
         env:
           SPRING_PROFILES_ACTIVE: production
-          CARDSERVER_AUTH_JWT_SECRET:
+          CARDSERVER_AUTH_JWT_ED25159_SECRET:
             valueFrom:
               secretKeyRef:
                 name: jwtsecret
-                key: jwtsecretvalue
+                key: jwted25519secretvalue
           # LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY: trace
           # LOGGING_LEVEL_ROOT: debug
           # LOGGING_LEVEL_NL_APPSOURCE: debug

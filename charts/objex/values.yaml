@@ -39,10 +39,10 @@ controllers:
             type: RuntimeDefault
         resources:
           limits:
-            cpu: 500m
+            cpu: 1
             memory: 1Gi
           requests:
-            cpu: 500m
+            cpu: 1
             memory: 1Gi
         env:
           SPRING_PROFILES_ACTIVE: production,resourceserver

@@ -11,17 +11,18 @@ spec:
   project: default
   source:
     chart: external-dns
-    repoURL: registry-1.docker.io/bitnamicharts
-    targetRevision: 9.0.3
+    repoURL: kubernetes-sigs.github.io/external-dns
+    targetRevision: 1.19.0
     helm:
       valuesObject:
-        provider: cloudflare
-        image:
-          tag: "0.15.0"
-        cloudflare:
-          apiToken: "BYwoYHyWZh0HojuWRxduO7gH_Ka30nQDgZjYaMtA"
-          email: "bas@appsource.nl"
-          proxied: false
+        env:
+          - name: CF_API_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: external-dns
+                key: cloudflare_api_token
+        provider:
+          name: cloudflare
         txtOwnerId: impl
         resources:
           requests:
@@ -40,6 +41,6 @@ spec:
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true 
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true

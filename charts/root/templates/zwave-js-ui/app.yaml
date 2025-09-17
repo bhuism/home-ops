@@ -12,7 +12,7 @@ spec:
   source:
     chart: zwave-js-ui
     repoURL: https://charts.ar80.eu
-    targetRevision: 0.2.152
+    targetRevision: 0.2.153
     helm:
       valuesObject:
 

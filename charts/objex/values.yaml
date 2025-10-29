@@ -30,6 +30,9 @@ controllers:
               timeoutSeconds: 3
           startup:
             enabled: true
+            type: HTTP
+            path: /
+            port: 8080
             spec:
               initialDelaySeconds: 60
               timeoutSeconds: 3

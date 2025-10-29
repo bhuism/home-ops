@@ -17,20 +17,24 @@ controllers:
             type: HTTP
             path: /manage/health/liveness
             port: 9080
-            timeoutSeconds: 5
+            spec:
+              initialDelaySeconds: 60
+              timeoutSeconds: 3
           readiness:
             enabled: true
             type: HTTP
             path: /manage/health/readiness
             port: 9080
-            timeoutSeconds: 5
+            spec:
+              initialDelaySeconds: 60
+              timeoutSeconds: 3
           startup:
             enabled: true
             spec:
-              initialDelaySeconds: 80
-              timeoutSeconds: 5
-              periodSeconds: 5
-              failureThreshold: 3
+              initialDelaySeconds: 60
+              timeoutSeconds: 3
+              periodSeconds: 1
+              failureThreshold: 10
         securityContext:
           allowPrivilegeEscalation: false
           runAsNonRoot: true

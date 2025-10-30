@@ -13,8 +13,8 @@ controllers:
           tag: "10.11.1"
         resources:
           limits:
-            cpu: 5
-            memory: 5Gi
+            cpu: 8
+            memory: 6Gi
           requests:
             cpu: 4
             memory: 4Gi

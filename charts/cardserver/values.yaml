@@ -49,11 +49,11 @@ controllers:
             type: RuntimeDefault
         resources:
           limits:
-            cpu: 1
-            memory: 1Gi
+            cpu: 2
+            memory: 2Gi
           requests:
-            cpu: 1
-            memory: 1Gi
+            cpu: 2
+            memory: 2Gi
         env:
           SPRING_PROFILES_ACTIVE: production
           CARDSERVER_AUTH_JWT_ED25519_SECRET:

@@ -16,7 +16,7 @@ controllers:
             cpu: 8
             memory: 6Gi
           requests:
-            cpu: 4
+            cpu: 6
             memory: 4Gi
         securityContext:
           runAsUser: 568

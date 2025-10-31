@@ -18,7 +18,7 @@ controllers:
             path: /manage/health/liveness
             port: 9080
             spec:
-              initialDelaySeconds: 60
+              initialDelaySeconds: 15
               timeoutSeconds: 5
               periodSeconds: 10
               failureThreshold: 3
@@ -28,14 +28,14 @@ controllers:
             path: /manage/health/readiness
             port: 9080
             spec:
-              initialDelaySeconds: 60
+              initialDelaySeconds: 15
               timeoutSeconds: 5
               periodSeconds: 10
               failureThreshold: 3
           startup:
             enabled: true
             spec:
-              initialDelaySeconds: 45
+              initialDelaySeconds: 15
               timeoutSeconds: 2
               periodSeconds: 1
               failureThreshold: 3

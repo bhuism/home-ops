@@ -1,5 +1,5 @@
 apiVersion: v2
-name: cardserver
+name: klaversjassen-ai
 version: 1.0.0
 dependencies:
   - name: common

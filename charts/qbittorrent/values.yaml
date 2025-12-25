@@ -48,7 +48,7 @@ controllers:
         dependsOn: main
         image:
           repository: ghcr.io/qdm12/gluetun
-          tag: "v3.40.4"
+          tag: "v3.41.0"
         env:
           TZ: "Europe/Amsterdam"
           VPN_SERVICE_PROVIDER: nordvpn

@@ -38,6 +38,7 @@ spec:
             username: "admin"
             password: "killer"
         startupProbe:
+          enabled: true
           failureThreshold: 30
   syncPolicy:
     automated:

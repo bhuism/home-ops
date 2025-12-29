@@ -37,6 +37,8 @@ spec:
           user:
             username: "admin"
             password: "killer"
+        startupProbe:
+          failureThreshold: 30
   syncPolicy:
     automated:
       prune: true

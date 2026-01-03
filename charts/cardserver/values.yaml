@@ -34,10 +34,10 @@ controllers:
           startup:
             enabled: true
             spec:
-              initialDelaySeconds: 45
+              initialDelaySeconds: 15
               timeoutSeconds: 5
               periodSeconds: 3
-              failureThreshold: 5
+              failureThreshold: 10
         securityContext:
           allowPrivilegeEscalation: false
           runAsNonRoot: true

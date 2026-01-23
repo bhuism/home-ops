@@ -16,7 +16,9 @@ spec:
     helm:
       valuesObject:
         operatorNamespace: rook-ceph
+
         cephClusterSpec:
+          imagePullPolicy: IfNotPresent
           external:
             enable: true
           crashCollector:

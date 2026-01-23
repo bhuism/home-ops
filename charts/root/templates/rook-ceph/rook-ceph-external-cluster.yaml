@@ -17,8 +17,15 @@ spec:
       valuesObject:
         operatorNamespace: rook-ceph
 
+        imagePullPolicy: IfNotPresent
+        cephVersion:
+            imagePullPolicy: IfNotPresent
+
+
         cephClusterSpec:
           imagePullPolicy: IfNotPresent
+          cephVersion:
+              imagePullPolicy: IfNotPresent
           external:
             enable: true
           crashCollector:

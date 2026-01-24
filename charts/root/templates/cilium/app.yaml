@@ -16,7 +16,7 @@ spec:
     helm:
       values: |
         hubble:
-          enabled: false
+          enabled: true
           ingress:
             enabled: true
           relay:

@@ -6,7 +6,8 @@ metadata:
 spec:
   instances: 1
 
-  retentionPolicy: "7d"
+  backups:
+    retentionPolicy: "7d"
 
   superuserSecret:
     name: superuser-secret

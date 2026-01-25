@@ -45,10 +45,10 @@ controllers:
         resources:
           limits:
             cpu: "2"
-            memory: 3Gi
+            memory: 6Gi
           requests:
             cpu: "2"
-            memory: 3Gi
+            memory: 6Gi
 service:
   main:
     enabled: true

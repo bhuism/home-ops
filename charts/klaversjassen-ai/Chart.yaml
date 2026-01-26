@@ -1,7 +1,0 @@
-apiVersion: v2
-name: klaversjassen-ai
-version: 1.0.0
-dependencies:
-  - name: common
-    repository: https://bjw-s-labs.github.io/helm-charts
-    version: 4.6.2

@@ -264,7 +264,7 @@ rbac:
 
 serviceAccount:
   default:
-    enabled: false
+    enabled: true
 
 persistence:
   config:

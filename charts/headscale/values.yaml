@@ -229,29 +229,29 @@ rbac:
           resources: ["deployments"]
           verbs: ["get", "list"]
         - apiGroups:
-          - ""
+            - ""
           resources:
-          - secrets
+            - secrets
           verbs:
-          - create
+            - create
         - apiGroups:
-          - ""
+            - ""
           resourceNames:
-          - tailscale-auth
+            - tailscale-auth
           resources:
-          - secrets
+            - secrets
           verbs:
-          - get
-          - update
-          - patch
+            - get
+            - update
+            - patch
         - apiGroups:
-          - ""
+            - ""
           resources:
-          - events
+            - events
           verbs:
-          - get
-          - create
-          - patch
+            - get
+            - create
+            - patch
 
   bindings:
     binding1:
@@ -260,11 +260,11 @@ rbac:
       roleRef:
         identifier: role1
       subjects:
-        - identifier: default
+        - identifier: headscale
 
 serviceAccount:
   default:
-    enabled: true
+    enabled: false
 
 persistence:
   config:

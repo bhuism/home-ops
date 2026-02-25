@@ -252,15 +252,14 @@ rbac:
             - get
             - create
             - patch
-
-  # bindings:
-  #   binding1:
-  #     enabled: true
-  #     type: RoleBinding
-  #     roleRef:
-  #       identifier: role1
-  #     subjects:
-  #       - identifier: default
+  bindings:
+    binding1:
+      enabled: true
+      type: RoleBinding
+      roleRef:
+        identifier: role1
+      subjects:
+        - identifier: default
 
 # serviceAccount:
 #   default:

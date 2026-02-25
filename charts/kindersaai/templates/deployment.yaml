@@ -5,9 +5,7 @@ metadata:
   labels:
     {{- include "kindersaai.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
       {{- include "kindersaai.selectorLabels" . | nindent 6 }}

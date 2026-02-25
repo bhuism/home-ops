@@ -140,7 +140,7 @@ controllers:
         image:
           pullPolicy: IfNotPresent
           repository: ghcr.io/tale/headplane
-          tag: "0.6.1-shell"
+          tag: "0.6.2-beta.5-shell"
         probes:
           liveness:
             enabled: true

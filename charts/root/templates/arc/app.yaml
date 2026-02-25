@@ -1,24 +1,24 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: arc
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: arc
-  project: default
-  source:
-    chart: actions-runner-controller
-    repoURL: https://actions-runner-controller.github.io/actions-runner-controller
-    targetRevision: 0.23.7
-    helm:
-      valuesObject:
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
-      - Replace=true      
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: arc
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io
+# spec:
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: arc
+#   project: default
+#   source:
+#     chart: actions-runner-controller
+#     repoURL: https://actions-runner-controller.github.io/actions-runner-controller
+#     targetRevision: 0.23.7
+#     helm:
+#       valuesObject:
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - CreateNamespace=true
+#       - Replace=true      

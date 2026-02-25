@@ -229,6 +229,31 @@ rbac:
         - apiGroups: ["apps"]
           resources: ["deployments"]
           verbs: ["get", "list"]
+        - apiGroups:
+          - ""
+          resources:
+          - secrets
+          verbs:
+          - create
+        - apiGroups:
+          - ""
+          resourceNames:
+          - tailscale-auth
+          resources:
+          - secrets
+          verbs:
+          - get
+          - update
+          - patch
+        - apiGroups:
+          - ""
+          resources:
+          - events
+          verbs:
+          - get
+          - create
+          - patch
+
   bindings:
     binding1:
       forceRename: headplane-agent

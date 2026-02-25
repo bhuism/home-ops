@@ -3,8 +3,8 @@ defaultPodOptions:
 
 controllers:
   main:
-    serviceAccount:
-      identifier: headscale
+    # serviceAccount:
+    #   identifier: headscale
     initContainers:
       create-etc-headplane:
         image:

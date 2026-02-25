@@ -1,0 +1,6 @@
+.git
+node_modules
+*.exe
+*.bin
+temp/
+# Add any specific large file name here

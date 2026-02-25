@@ -260,7 +260,7 @@ rbac:
       roleRef:
         identifier: role1
       subjects:
-        - identifier: headscale
+        - identifier: default
 
 serviceAccount:
   default:

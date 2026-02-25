@@ -225,7 +225,7 @@ rbac:
       rules:
         - apiGroups: [""]
           resources: ["pods"]
-          verbs: ["get", "list"]
+          verbs: ["get", "list", "watch"]
         - apiGroups: ["apps"]
           resources: ["deployments"]
           verbs: ["get", "list"]

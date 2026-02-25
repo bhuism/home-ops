@@ -219,7 +219,6 @@ ingress:
 rbac:
   roles:
     role1:
-      forceRename: headplane-agent
       enabled: true
       type: Role
       rules:
@@ -256,7 +255,6 @@ rbac:
 
   bindings:
     binding1:
-      forceRename: headplane-agent
       enabled: true
       type: RoleBinding
       roleRef:

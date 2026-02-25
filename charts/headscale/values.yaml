@@ -261,6 +261,10 @@ rbac:
       subjects:
         - identifier: default
 
+serviceAccount:
+  default:
+    enabled: true
+
 persistence:
   config:
     enabled: true

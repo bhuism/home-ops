@@ -64,6 +64,8 @@ controllers:
           # LOGGING_LEVEL_ROOT: debug
           # LOGGING_LEVEL_NL_APPSOURCE: debug
   couchbase2rediscontroller:
+    replicas: 1
+    strategy: Recreate
     containers:
       couchbase2redis:
         image:
@@ -177,9 +179,6 @@ service:
     ports:
       cardserverport:
         port: 8080
-  # couchbase2redisservice:
-  #   controller: couchbase2rediscontroller
-  #   ports:
   streamservice:
     controller: streamcontroller
     ports:

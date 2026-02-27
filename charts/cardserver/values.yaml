@@ -63,12 +63,114 @@ controllers:
           # LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY: trace
           # LOGGING_LEVEL_ROOT: debug
           # LOGGING_LEVEL_NL_APPSOURCE: debug
+      couchbase2redis:
+        image:
+          repository: ghcr.io/bhuism/couchbase2redis
+          tag: "latest"
+          pullPolicy: Always
+        probes:
+          liveness:
+            enabled: true
+            type: HTTP
+            path: /manage/health/liveness
+            port: 9081
+            spec:
+              initialDelaySeconds: 15
+              timeoutSeconds: 5
+              periodSeconds: 10
+              failureThreshold: 3
+          readiness:
+            enabled: true
+            type: HTTP
+            path: /manage/health/readiness
+            port: 9081
+            spec:
+              initialDelaySeconds: 15
+              timeoutSeconds: 5
+              periodSeconds: 10
+              failureThreshold: 3
+          startup:
+            enabled: true
+            spec:
+              initialDelaySeconds: 15
+              timeoutSeconds: 5
+              periodSeconds: 3
+              failureThreshold: 10
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+        resources:
+          limits:
+            cpu: 2
+            memory: 2Gi
+          requests:
+            cpu: 2
+            memory: 2Gi
+        env:
+          SPRING_PROFILES_ACTIVE: production
+      stream:
+        image:
+          repository: ghcr.io/bhuism/stream
+          tag: "latest"
+          pullPolicy: Always
+        probes:
+          liveness:
+            enabled: true
+            type: HTTP
+            path: /manage/health/liveness
+            port: 9082
+            spec:
+              initialDelaySeconds: 1
+              timeoutSeconds: 5
+              periodSeconds: 10
+              failureThreshold: 3
+          readiness:
+            enabled: true
+            type: HTTP
+            path: /manage/health/readiness
+            port: 9082
+            spec:
+              initialDelaySeconds: 1
+              timeoutSeconds: 5
+              periodSeconds: 10
+              failureThreshold: 3
+          startup:
+            enabled: true
+            spec:
+              initialDelaySeconds: 1
+              timeoutSeconds: 5
+              periodSeconds: 3
+              failureThreshold: 10
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+        resources:
+          limits:
+            cpu: 2
+            memory: 2Gi
+          requests:
+            cpu: 2
+            memory: 2Gi
+        env:
+          SPRING_PROFILES_ACTIVE: production
 service:
   mainservice:
     controller: cardservercontroller
     ports:
-      cardserver:
+      cardserverport:
         port: 8080
+      streamport:
+        port: 8082
 
 ingress:
   mainingress:
@@ -88,8 +190,17 @@ ingress:
           - path: /
             service:
               identifier: mainservice
-              port: cardserver
+              port: cardserverport
+      - host: stream.klaversjassen.nl
+        paths:
+          - path: /
+            service:
+              identifier: mainservice
+              port: streamport
     tls:
       - secretName: api.klaversjassen.nl
         hosts:
           - api.klaversjassen.nl
+      - secretName: stream.klaversjassen.nl
+        hosts:
+          - stream.klaversjassen.nl

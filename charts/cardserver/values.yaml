@@ -63,6 +63,8 @@ controllers:
           # LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY: trace
           # LOGGING_LEVEL_ROOT: debug
           # LOGGING_LEVEL_NL_APPSOURCE: debug
+  couchbase2rediscontroller:
+    containers:
       couchbase2redis:
         image:
           repository: ghcr.io/bhuism/couchbase2redis
@@ -113,6 +115,12 @@ controllers:
             memory: 2Gi
         env:
           SPRING_PROFILES_ACTIVE: production
+  streamcontroller:
+    replicas: 3
+    strategy: RollingUpdate
+    rollingUpdate:
+      unavailable: 0
+    containers:
       stream:
         image:
           repository: ghcr.io/bhuism/stream
@@ -164,11 +172,14 @@ controllers:
         env:
           SPRING_PROFILES_ACTIVE: production
 service:
-  mainservice:
+  cardserverservice:
     controller: cardservercontroller
     ports:
       cardserverport:
         port: 8080
+  streamservice:
+    controller: streamcontroller
+    ports:
       streamport:
         port: 8082
 
@@ -189,13 +200,13 @@ ingress:
         paths:
           - path: /
             service:
-              identifier: mainservice
+              identifier: cardserverservice
               port: cardserverport
       - host: stream.klaversjassen.nl
         paths:
           - path: /
             service:
-              identifier: mainservice
+              identifier: streamservice
               port: streamport
     tls:
       - secretName: api.klaversjassen.nl

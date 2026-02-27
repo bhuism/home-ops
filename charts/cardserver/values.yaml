@@ -5,7 +5,7 @@ controllers:
     rollingUpdate:
       unavailable: 0
     containers:
-      main:
+      cardserver:
         image:
           repository: ghcr.io/bhuism/cardserver
           tag: "latest"
@@ -60,19 +60,14 @@ controllers:
               secretKeyRef:
                 name: jwtsecret
                 key: jwtes512secretvalue
-          CARDSERVER_AUTH_JWT_ED25519_SECRET:
-            valueFrom:
-              secretKeyRef:
-                name: jwtsecret
-                key: jwted25519secretvalue
           # LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY: trace
           # LOGGING_LEVEL_ROOT: debug
           # LOGGING_LEVEL_NL_APPSOURCE: debug
 service:
   main:
-    controller: main
+    controller: cardserver
     ports:
-      http:
+      cardserver:
         port: 8080
 
 ingress:
@@ -92,8 +87,8 @@ ingress:
         paths:
           - path: /
             service:
-              identifier: main
-              port: http
+              identifier: cardserver
+              port: cardserver
     tls:
       - secretName: api.klaversjassen.nl
         hosts:

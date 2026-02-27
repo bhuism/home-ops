@@ -65,7 +65,7 @@ controllers:
           # LOGGING_LEVEL_NL_APPSOURCE: debug
 service:
   main:
-    controller: cardserver
+    controller: main
     ports:
       cardserver:
         port: 8080
@@ -87,7 +87,7 @@ ingress:
         paths:
           - path: /
             service:
-              identifier: cardserver
+              identifier: main
               port: cardserver
     tls:
       - secretName: api.klaversjassen.nl

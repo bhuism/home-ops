@@ -147,7 +147,7 @@ controllers:
             path: /manage/health/readiness
             port: 9082
             spec:
-              initialDelaySeconds: 1
+              initialDelaySeconds: 15
               timeoutSeconds: 5
               periodSeconds: 10
               failureThreshold: 3
@@ -155,7 +155,7 @@ controllers:
             enabled: true
             port: 9082
             spec:
-              initialDelaySeconds: 1
+              initialDelaySeconds: 15
               timeoutSeconds: 5
               periodSeconds: 3
               failureThreshold: 10

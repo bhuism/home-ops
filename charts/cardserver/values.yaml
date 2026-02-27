@@ -177,6 +177,9 @@ service:
     ports:
       cardserverport:
         port: 8080
+  # couchbase2redisservice:
+  #   controller: couchbase2rediscontroller
+  #   ports:
   streamservice:
     controller: streamcontroller
     ports:

@@ -33,6 +33,7 @@ controllers:
               failureThreshold: 3
           startup:
             enabled: true
+            port: 9080
             spec:
               initialDelaySeconds: 15
               timeoutSeconds: 5
@@ -95,6 +96,7 @@ controllers:
               failureThreshold: 3
           startup:
             enabled: true
+            port: 9081
             spec:
               initialDelaySeconds: 15
               timeoutSeconds: 5
@@ -151,6 +153,7 @@ controllers:
               failureThreshold: 3
           startup:
             enabled: true
+            port: 9082
             spec:
               initialDelaySeconds: 1
               timeoutSeconds: 5

@@ -137,7 +137,7 @@ controllers:
             path: /manage/health/liveness
             port: 9082
             spec:
-              initialDelaySeconds: 1
+              initialDelaySeconds: 15
               timeoutSeconds: 5
               periodSeconds: 10
               failureThreshold: 3

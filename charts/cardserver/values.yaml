@@ -1,6 +1,7 @@
 controllers:
   cardservercontroller:
     replicas: 3
+    revisionHistoryLimit: 1
     strategy: RollingUpdate
     rollingUpdate:
       unavailable: 0
@@ -66,6 +67,7 @@ controllers:
           # LOGGING_LEVEL_NL_APPSOURCE: debug
   couchbase2rediscontroller:
     replicas: 1
+    revisionHistoryLimit: 1
     strategy: Recreate
     containers:
       couchbase2redis:
@@ -121,6 +123,7 @@ controllers:
           SPRING_PROFILES_ACTIVE: production
   streamcontroller:
     replicas: 3
+    revisionHistoryLimit: 1
     strategy: RollingUpdate
     rollingUpdate:
       unavailable: 0

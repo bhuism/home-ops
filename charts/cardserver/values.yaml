@@ -180,7 +180,7 @@ controllers:
         env:
           SPRING_PROFILES_ACTIVE: production
   gameengine:
-    replicas: 1
+    replicas: 0
     revisionHistoryLimit: 1
     strategy: RollingUpdate
     rollingUpdate:

@@ -51,10 +51,10 @@ controllers:
         resources:
           limits:
             cpu: 2
-            memory: 2Gi
+            memory: 1Gi
           requests:
             cpu: 2
-            memory: 2Gi
+            memory: 1Gi
         env:
           SPRING_PROFILES_ACTIVE: production
           CARDSERVER_AUTH_JWT_ES512_SECRET:
@@ -115,10 +115,10 @@ controllers:
         resources:
           limits:
             cpu: 2
-            memory: 2Gi
+            memory: 1Gi
           requests:
             cpu: 2
-            memory: 2Gi
+            memory: 1Gi
         env:
           SPRING_PROFILES_ACTIVE: production
   streamcontroller:
@@ -173,10 +173,10 @@ controllers:
         resources:
           limits:
             cpu: 2
-            memory: 2Gi
+            memory: 1Gi
           requests:
             cpu: 2
-            memory: 2Gi
+            memory: 1Gi
         env:
           SPRING_PROFILES_ACTIVE: production
   gameengine:
@@ -231,10 +231,68 @@ controllers:
         resources:
           limits:
             cpu: 2
-            memory: 2Gi
+            memory: 1Gi
           requests:
             cpu: 2
-            memory: 2Gi
+            memory: 1Gi
+        env:
+          SPRING_PROFILES_ACTIVE: production
+  aiplayer:
+    replicas: 1
+    revisionHistoryLimit: 1
+    strategy: RollingUpdate
+    rollingUpdate:
+      unavailable: 0
+    containers:
+      stream:
+        image:
+          repository: ghcr.io/bhuism/aiplayer
+          tag: "latest"
+          pullPolicy: Always
+        probes:
+          liveness:
+            enabled: true
+            type: HTTP
+            path: /manage/health/liveness
+            port: 9084
+            spec:
+              initialDelaySeconds: 15
+              timeoutSeconds: 5
+              periodSeconds: 10
+              failureThreshold: 3
+          readiness:
+            enabled: true
+            type: HTTP
+            path: /manage/health/readiness
+            port: 9084
+            spec:
+              initialDelaySeconds: 15
+              timeoutSeconds: 5
+              periodSeconds: 10
+              failureThreshold: 3
+          startup:
+            enabled: true
+            port: 9084
+            spec:
+              initialDelaySeconds: 15
+              timeoutSeconds: 5
+              periodSeconds: 3
+              failureThreshold: 10
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+        resources:
+          limits:
+            cpu: 2
+            memory: 1Gi
+          requests:
+            cpu: 2
+            memory: 1Gi
         env:
           SPRING_PROFILES_ACTIVE: production
 service:

@@ -53,7 +53,7 @@ controllers:
             cpu: 2
             memory: 1500Mi
           requests:
-            cpu: 2
+            cpu: 1
             memory: 1500Mi
         env:
           SPRING_PROFILES_ACTIVE: production
@@ -117,7 +117,7 @@ controllers:
             cpu: 2
             memory: 1500Mi
           requests:
-            cpu: 2
+            cpu: 1
             memory: 1500Mi
         env:
           SPRING_PROFILES_ACTIVE: production
@@ -175,12 +175,12 @@ controllers:
             cpu: 2
             memory: 1500Mi
           requests:
-            cpu: 2
+            cpu: 1
             memory: 1500Mi
         env:
           SPRING_PROFILES_ACTIVE: production
   gameengine:
-    replicas: 0
+    replicas: 3
     revisionHistoryLimit: 1
     strategy: RollingUpdate
     rollingUpdate:
@@ -233,7 +233,7 @@ controllers:
             cpu: 2
             memory: 1500Mi
           requests:
-            cpu: 2
+            cpu: 1
             memory: 1500Mi
         env:
           SPRING_PROFILES_ACTIVE: production
@@ -291,7 +291,7 @@ controllers:
             cpu: 2
             memory: 1500Mi
           requests:
-            cpu: 2
+            cpu: 1
             memory: 1500Mi
         env:
           SPRING_PROFILES_ACTIVE: production

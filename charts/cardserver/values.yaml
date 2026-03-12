@@ -364,20 +364,22 @@ service:
   admin:
     controller: admin
     ports:
-      adminport:
+      http:
         port: 8085
   cardserverservice:
     controller: cardserver
     ports:
-      cardserverport:
+      http:
         port: 8080
       adminport:
         port: 9080
-  streamservice:
+  stream:
     controller: stream
     ports:
-      streamport:
+      http:
         port: 8082
+      adminport:
+        port: 9082
   couchbase2redis:
     controller: couchbase2redis
     ports:
@@ -402,19 +404,19 @@ ingress:
           - path: /
             service:
               identifier: cardserverservice
-              port: cardserverport
+              port: http
       - host: stream.klaversjassen.nl
         paths:
           - path: /
             service:
-              identifier: streamservice
-              port: streamport
+              identifier: stream
+              port: http
       - host: admin.klaversjassen.nl
         paths:
           - path: /
             service:
               identifier: admin
-              port: adminport
+              port: http
     tls:
       - secretName: api.klaversjassen.nl
         hosts:

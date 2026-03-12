@@ -351,6 +351,11 @@ controllers:
         env:
           SPRING_PROFILES_ACTIVE: production
 service:
+  aiplayer:
+    controller: aiplayer
+    ports:
+      adminport:
+        port: 9084
   admin:
     controller: admin
     ports:

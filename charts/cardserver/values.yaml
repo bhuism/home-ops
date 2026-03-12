@@ -65,7 +65,7 @@ controllers:
           # LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY: trace
           # LOGGING_LEVEL_ROOT: debug
           # LOGGING_LEVEL_NL_APPSOURCE: debug
-  couchbase2rediscontroller:
+  couchbase2redis:
     replicas: 1
     revisionHistoryLimit: 1
     strategy: Recreate
@@ -371,13 +371,18 @@ service:
     ports:
       cardserverport:
         port: 8080
-      cardserveradminport:
+      adminport:
         port: 9080
   streamservice:
     controller: stream
     ports:
       streamport:
         port: 8082
+  couchbase2redis:
+    controller: couchbase2redis
+    ports:
+      adminport:
+        port: 9081
 
 ingress:
   mainingress:
@@ -404,6 +409,12 @@ ingress:
             service:
               identifier: streamservice
               port: streamport
+      - host: admin.klaversjassen.nl
+        paths:
+          - path: /
+            service:
+              identifier: admin
+              port: adminport
     tls:
       - secretName: api.klaversjassen.nl
         hosts:
@@ -411,3 +422,6 @@ ingress:
       - secretName: stream.klaversjassen.nl
         hosts:
           - stream.klaversjassen.nl
+      - secretName: admin.klaversjassen.nl
+        hosts:
+          - admin.klaversjassen.nl

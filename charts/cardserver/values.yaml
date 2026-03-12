@@ -347,7 +347,6 @@ controllers:
             memory: 1500Mi
         env:
           SPRING_PROFILES_ACTIVE: production
-          LOGGING_LEVEL_ORG_SPRINGFRAMEWORK: trace
 service:
   aiplayer:
     controller: aiplayer

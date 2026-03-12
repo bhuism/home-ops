@@ -424,3 +424,34 @@ ingress:
       - secretName: admin.klaversjassen.nl
         hosts:
           - admin.klaversjassen.nl
+
+serviceAccount:
+  create: true
+  name: ""
+
+rawResources:
+  sba-pod-reader-role:
+    enabled: true
+    kind: ClusterRole
+    apiVersion: rbac.authorization.k8s.io/v1
+    metadata:
+      name: "{{ .Release.Name }}-pod-reader"
+    rules:
+      - apiGroups: [""]
+        resources: ["pods", "nodes", "endpoints", "services"]
+        verbs: ["get", "list", "watch"]
+
+  sba-pod-reader-binding:
+    enabled: true
+    kind: ClusterRoleBinding
+    apiVersion: rbac.authorization.k8s.io/v1
+    metadata:
+      name: "{{ .Release.Name }}-pod-reader-binding"
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: "{{ .Release.Name }}-pod-reader"
+    subjects:
+      - kind: ServiceAccount
+        name: '{{ include "bjw-s.common.lib.chart.names.serviceAccountName" . }}'
+        namespace: "{{ .Release.Namespace }}"

@@ -361,6 +361,8 @@ service:
     ports:
       cardserverport:
         port: 8080
+      cardserveradminport:
+        port: 9080
   streamservice:
     controller: streamcontroller
     ports:

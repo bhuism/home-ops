@@ -8,7 +8,7 @@ controllers:
     containers:
       api:
         image:
-          repository: ghcr.io/bhuism/cardserver
+          repository: ghcr.io/bhuism/api
           tag: "latest"
           pullPolicy: Always
         probes:
@@ -62,9 +62,6 @@ controllers:
               secretKeyRef:
                 name: jwtsecret
                 key: jwtes512secretvalue
-          # LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY: trace
-          # LOGGING_LEVEL_ROOT: debug
-          # LOGGING_LEVEL_NL_APPSOURCE: debug
   couchbase2redis:
     replicas: 1
     revisionHistoryLimit: 1

@@ -8,5 +8,5 @@ roleRef:
   name: sba-discovery-role
 subjects:
   - kind: ServiceAccount
-    name: "sba-manager"
+    name: "default"
     namespace: "cardserver"

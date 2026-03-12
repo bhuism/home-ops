@@ -295,6 +295,8 @@ controllers:
   admin:
     replicas: 1
     revisionHistoryLimit: 1
+    serviceAccount:
+      name: "sba-manager"
     containers:
       stream:
         image:
@@ -425,6 +427,3 @@ ingress:
         hosts:
           - admin.klaversjassen.nl
 
-serviceAccount:
-  create: true
-  name: "sba-manager"

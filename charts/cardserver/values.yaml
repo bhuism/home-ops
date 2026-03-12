@@ -432,5 +432,3 @@ serviceAccount:
     enabled: true
     create: true
     name: sba-manager
-  default:
-    enabled: true

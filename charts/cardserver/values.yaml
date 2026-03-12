@@ -427,8 +427,8 @@ ingress:
         hosts:
           - admin.klaversjassen.nl
 
-serviceAccount:
-  sba-manager-ident:
-    enabled: true
-    create: true
-    name: sba-manager
+# serviceAccount:
+#   sba-manager-ident:
+#     enabled: true
+#     create: true
+#     name: sba-manager

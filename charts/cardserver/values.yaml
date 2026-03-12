@@ -366,7 +366,7 @@ service:
     ports:
       http:
         port: 8085
-  cardserverservice:
+  cardserver:
     controller: cardserver
     ports:
       http:
@@ -403,7 +403,7 @@ ingress:
         paths:
           - path: /
             service:
-              identifier: cardserverservice
+              identifier: cardserver
               port: http
       - host: stream.klaversjassen.nl
         paths:

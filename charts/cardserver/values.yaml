@@ -296,7 +296,7 @@ controllers:
     replicas: 1
     revisionHistoryLimit: 1
     serviceAccount:
-      identifier: sba-manager-ident
+      name: sba-manager-ident
     containers:
       stream:
         image:

@@ -428,27 +428,3 @@ ingress:
 serviceAccount:
   create: true
   name: "spring-boot-admin-sa"
-
-# Using extraObjects which handles template evaluation more reliably in bjw-s
-extraObjects:
-  - apiVersion: rbac.authorization.k8s.io/v1
-    kind: ClusterRole
-    metadata:
-      name: spring-boot-admin-pod-reader
-    rules:
-      - apiGroups: [""]
-        resources: ["pods", "nodes", "endpoints", "services"]
-        verbs: ["get", "list", "watch"]
-
-  - apiVersion: rbac.authorization.k8s.io/v1
-    kind: ClusterRoleBinding
-    metadata:
-      name: spring-boot-admin-pod-reader-binding
-    roleRef:
-      apiGroup: rbac.authorization.k8s.io
-      kind: ClusterRole # This is the field that was failing
-      name: spring-boot-admin-pod-reader
-    subjects:
-      - kind: ServiceAccount
-        name: "spring-boot-admin-sa"
-        namespace: "cardserver"

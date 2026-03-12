@@ -356,6 +356,11 @@ service:
     ports:
       adminport:
         port: 9084
+  gameengine:
+    controller: gameengine
+    ports:
+      adminport:
+        port: 9083
   admin:
     controller: admin
     ports:

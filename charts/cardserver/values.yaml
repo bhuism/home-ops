@@ -427,4 +427,4 @@ ingress:
 
 serviceAccount:
   create: true
-  name: "spring-boot-admin-sa"
+  name: "spring-boot-admin-pod-reader"

@@ -352,7 +352,7 @@ controllers:
           SPRING_PROFILES_ACTIVE: production
 service:
   admin:
-    containers: admincontroller
+    controller: admin
     ports:
       adminport:
         port: 8085

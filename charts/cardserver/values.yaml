@@ -295,7 +295,67 @@ controllers:
             memory: 1500Mi
         env:
           SPRING_PROFILES_ACTIVE: production
+  admin:
+    replicas: 1
+    revisionHistoryLimit: 1
+    containers:
+      stream:
+        image:
+          repository: ghcr.io/bhuism/admin
+          tag: "latest"
+          pullPolicy: Always
+        probes:
+          liveness:
+            enabled: true
+            type: HTTP
+            path: /manage/health/liveness
+            port: 9085
+            spec:
+              initialDelaySeconds: 15
+              timeoutSeconds: 5
+              periodSeconds: 10
+              failureThreshold: 3
+          readiness:
+            enabled: true
+            type: HTTP
+            path: /manage/health/readiness
+            port: 9085
+            spec:
+              initialDelaySeconds: 15
+              timeoutSeconds: 5
+              periodSeconds: 10
+              failureThreshold: 3
+          startup:
+            enabled: true
+            port: 9085
+            spec:
+              initialDelaySeconds: 15
+              timeoutSeconds: 5
+              periodSeconds: 3
+              failureThreshold: 10
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+        resources:
+          limits:
+            cpu: 2
+            memory: 1500Mi
+          requests:
+            cpu: 1
+            memory: 1500Mi
+        env:
+          SPRING_PROFILES_ACTIVE: production
 service:
+  admin:
+    containers: admincontroller
+    ports:
+      adminport:
+        port: 8085
   cardserverservice:
     controller: cardservercontroller
     ports:

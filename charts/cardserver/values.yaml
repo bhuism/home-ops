@@ -1,12 +1,12 @@
 controllers:
-  cardserver:
+  api:
     replicas: 2
     revisionHistoryLimit: 1
     strategy: RollingUpdate
     rollingUpdate:
       unavailable: 0
     containers:
-      cardserver:
+      api:
         image:
           repository: ghcr.io/bhuism/cardserver
           tag: "latest"
@@ -366,8 +366,8 @@ service:
     ports:
       http:
         port: 8085
-  cardserver:
-    controller: cardserver
+  api:
+    controller: api
     ports:
       http:
         port: 8080
@@ -403,7 +403,7 @@ ingress:
         paths:
           - path: /
             service:
-              identifier: cardserver
+              identifier: api
               port: http
       - host: stream.klaversjassen.nl
         paths:

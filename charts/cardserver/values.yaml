@@ -1,5 +1,5 @@
 controllers:
-  cardservercontroller:
+  cardserver:
     replicas: 2
     revisionHistoryLimit: 1
     strategy: RollingUpdate
@@ -121,7 +121,7 @@ controllers:
             memory: 1500Mi
         env:
           SPRING_PROFILES_ACTIVE: production
-  streamcontroller:
+  stream:
     replicas: 2
     revisionHistoryLimit: 1
     strategy: RollingUpdate
@@ -367,14 +367,14 @@ service:
       adminport:
         port: 8085
   cardserverservice:
-    controller: cardservercontroller
+    controller: cardserver
     ports:
       cardserverport:
         port: 8080
       cardserveradminport:
         port: 9080
   streamservice:
-    controller: streamcontroller
+    controller: stream
     ports:
       streamport:
         port: 8082

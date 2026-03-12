@@ -1,6 +1,6 @@
 controllers:
   cardservercontroller:
-    replicas: 3
+    replicas: 2
     revisionHistoryLimit: 1
     strategy: RollingUpdate
     rollingUpdate:
@@ -122,7 +122,7 @@ controllers:
         env:
           SPRING_PROFILES_ACTIVE: production
   streamcontroller:
-    replicas: 3
+    replicas: 2
     revisionHistoryLimit: 1
     strategy: RollingUpdate
     rollingUpdate:
@@ -180,7 +180,7 @@ controllers:
         env:
           SPRING_PROFILES_ACTIVE: production
   gameengine:
-    replicas: 3
+    replicas: 2
     revisionHistoryLimit: 1
     strategy: RollingUpdate
     rollingUpdate:

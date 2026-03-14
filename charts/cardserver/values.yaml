@@ -370,6 +370,8 @@ service:
     ports:
       http:
         port: 8085
+      management:
+        port: 9085
   api:
     controller: api
     ports:

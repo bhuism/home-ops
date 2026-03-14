@@ -353,12 +353,12 @@ service:
   aiplayer:
     controller: aiplayer
     ports:
-      adminport:
+      management:
         port: 9084
   gameengine:
     controller: gameengine
     ports:
-      adminport:
+      management:
         port: 9083
   admin:
     controller: admin
@@ -367,22 +367,24 @@ service:
         port: 8085
   api:
     controller: api
+    annotations:
+      management.port: "9080"
     ports:
       http:
         port: 8080
-      adminport:
+      management:
         port: 9080
   stream:
     controller: stream
     ports:
       http:
         port: 8082
-      adminport:
+      management:
         port: 9082
   couchbase2redis:
     controller: couchbase2redis
     ports:
-      adminport:
+      management:
         port: 9081
 
 ingress:

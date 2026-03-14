@@ -1,6 +1,8 @@
 controllers:
   api:
     replicas: 2
+    annotations:
+      management.port: "9080"
     revisionHistoryLimit: 1
     strategy: RollingUpdate
     rollingUpdate:
@@ -367,8 +369,6 @@ service:
         port: 8085
   api:
     controller: api
-    annotations:
-      management.port: "9080"
     ports:
       http:
         port: 8080

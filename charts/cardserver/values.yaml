@@ -1,8 +1,8 @@
 controllers:
   api:
     replicas: 2
-    annotations:
-      management.port: "9080"
+    # annotations:
+    #   management.port: "9080"
     revisionHistoryLimit: 1
     strategy: RollingUpdate
     rollingUpdate:

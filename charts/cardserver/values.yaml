@@ -1,6 +1,6 @@
 controllers:
   api:
-    replicas: 2
+    replicas: 3
     # annotations:
     #   management.port: "9080"
     revisionHistoryLimit: 1
@@ -53,10 +53,10 @@ controllers:
         resources:
           limits:
             cpu: 2
-            memory: 1500Mi
+            memory: 768Mi
           requests:
             cpu: 1
-            memory: 1500Mi
+            memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production
           CARDSERVER_AUTH_JWT_ES512_SECRET:
@@ -114,10 +114,10 @@ controllers:
         resources:
           limits:
             cpu: 2
-            memory: 1500Mi
+            memory: 768Mi
           requests:
             cpu: 1
-            memory: 1500Mi
+            memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production
   stream:
@@ -172,14 +172,14 @@ controllers:
         resources:
           limits:
             cpu: 2
-            memory: 1500Mi
+            memory: 768Mi
           requests:
             cpu: 1
-            memory: 1500Mi
+            memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production
   gameengine:
-    replicas: 2
+    replicas: 3
     revisionHistoryLimit: 1
     strategy: RollingUpdate
     rollingUpdate:
@@ -230,10 +230,10 @@ controllers:
         resources:
           limits:
             cpu: 2
-            memory: 1500Mi
+            memory: 768Mi
           requests:
             cpu: 1
-            memory: 1500Mi
+            memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production
   aiplayer:
@@ -288,10 +288,10 @@ controllers:
         resources:
           limits:
             cpu: 2
-            memory: 1500Mi
+            memory: 768Mi
           requests:
             cpu: 1
-            memory: 1500Mi
+            memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production
   admin:
@@ -345,10 +345,10 @@ controllers:
         resources:
           limits:
             cpu: 2
-            memory: 1500Mi
+            memory: 768Mi
           requests:
             cpu: 1
-            memory: 1500Mi
+            memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production
 service:

@@ -297,8 +297,6 @@ controllers:
   admin:
     replicas: 1
     revisionHistoryLimit: 1
-    # annotations:
-    #   management.port: "9085"
     containers:
       stream:
         image:

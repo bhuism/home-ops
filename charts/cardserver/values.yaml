@@ -20,7 +20,7 @@ controllers:
             path: /actuator/health/liveness
             port: 9080
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 10
               failureThreshold: 3
@@ -30,7 +30,7 @@ controllers:
             path: /actuator/health/readiness
             port: 9080
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 10
               failureThreshold: 3
@@ -38,7 +38,7 @@ controllers:
             enabled: true
             port: 9080
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 3
               failureThreshold: 10
@@ -83,7 +83,7 @@ controllers:
             path: /actuator/health/liveness
             port: 9082
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 10
               failureThreshold: 3
@@ -93,7 +93,7 @@ controllers:
             path: /actuator/health/readiness
             port: 9082
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 10
               failureThreshold: 3
@@ -101,7 +101,7 @@ controllers:
             enabled: true
             port: 9082
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 3
               failureThreshold: 10
@@ -141,7 +141,7 @@ controllers:
             path: /actuator/health/liveness
             port: 9083
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 10
               failureThreshold: 3
@@ -151,7 +151,7 @@ controllers:
             path: /actuator/health/readiness
             port: 9083
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 10
               failureThreshold: 3
@@ -159,7 +159,7 @@ controllers:
             enabled: true
             port: 9083
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 3
               failureThreshold: 10
@@ -199,7 +199,7 @@ controllers:
             path: /actuator/health/liveness
             port: 9084
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 10
               failureThreshold: 3
@@ -209,7 +209,7 @@ controllers:
             path: /actuator/health/readiness
             port: 9084
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 10
               failureThreshold: 3
@@ -217,7 +217,7 @@ controllers:
             enabled: true
             port: 9084
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 3
               failureThreshold: 10
@@ -254,7 +254,7 @@ controllers:
             path: /actuator/health/liveness
             port: 9085
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 10
               failureThreshold: 3
@@ -264,7 +264,7 @@ controllers:
             path: /actuator/health/readiness
             port: 9085
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 10
               failureThreshold: 3
@@ -272,7 +272,7 @@ controllers:
             enabled: true
             port: 9085
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 10
               timeoutSeconds: 5
               periodSeconds: 3
               failureThreshold: 10

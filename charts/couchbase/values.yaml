@@ -1,5 +1,10 @@
 controllers:
   main:
+    replicas: 1
+    strategy: RollingUpdate
+    rollingUpdate:
+      unavailable: 1
+      surge: 0
     initContainers:
       chown:
         image:

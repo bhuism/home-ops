@@ -49,11 +49,11 @@ controllers:
             type: RuntimeDefault
         resources:
           limits:
-            cpu: "3"
-            memory: 4Gi
+            cpu: "2"
+            memory: 6Gi
           requests:
-            cpu: "3"
-            memory: 4Gi
+            cpu: "4"
+            memory: 6Gi
 service:
   main:
     enabled: true

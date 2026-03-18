@@ -64,62 +64,6 @@ controllers:
               secretKeyRef:
                 name: jwtsecret
                 key: jwtes512secretvalue
-  couchbase2redis:
-    replicas: 1
-    revisionHistoryLimit: 1
-    strategy: Recreate
-    containers:
-      couchbase2redis:
-        image:
-          repository: ghcr.io/bhuism/couchbase2redis
-          tag: "latest"
-          pullPolicy: Always
-        probes:
-          liveness:
-            enabled: true
-            type: HTTP
-            path: /actuator/health/liveness
-            port: 9081
-            spec:
-              initialDelaySeconds: 15
-              timeoutSeconds: 5
-              periodSeconds: 10
-              failureThreshold: 3
-          readiness:
-            enabled: true
-            type: HTTP
-            path: /actuator/health/readiness
-            port: 9081
-            spec:
-              initialDelaySeconds: 15
-              timeoutSeconds: 5
-              periodSeconds: 10
-              failureThreshold: 3
-          startup:
-            enabled: true
-            port: 9081
-            spec:
-              initialDelaySeconds: 15
-              timeoutSeconds: 5
-              periodSeconds: 3
-              failureThreshold: 10
-        securityContext:
-          allowPrivilegeEscalation: false
-          runAsNonRoot: true
-          capabilities:
-            drop:
-              - ALL
-          seccompProfile:
-            type: RuntimeDefault
-        resources:
-          limits:
-            cpu: 2
-            memory: 512Mi
-          requests:
-            cpu: 1
-            memory: 512Mi
-        env:
-          SPRING_PROFILES_ACTIVE: production
   stream:
     replicas: 2
     revisionHistoryLimit: 1
@@ -381,12 +325,6 @@ service:
         port: 8082
       management:
         port: 9082
-  couchbase2redis:
-    controller: couchbase2redis
-    ports:
-      management:
-        port: 9081
-
 ingress:
   mainingress:
     className: nginx-external

@@ -5,6 +5,7 @@ controllers:
         fsGroup: 568
         fsGroupChangePolicy: "OnRootMismatch"
     replicas: 1
+    revisionHistoryLimit: 1
     containers:
       main:
         image:

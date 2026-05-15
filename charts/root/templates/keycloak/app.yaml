@@ -25,7 +25,7 @@ spec:
 
         extraEnv: |
           - name: KC_LOG_LEVEL
-            value: DEBUG
+            value: WARN
           - name: KC_HOSTNAME
             value: auth.impl.nl
           - name: KC_HOSTNAME_STRICT

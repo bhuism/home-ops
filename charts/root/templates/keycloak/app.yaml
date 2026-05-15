@@ -10,7 +10,7 @@ spec:
     namespace: keycloak
   project: default
   source:
-    repoURL: oci://ghcr.io/codecentric/helm-charts
+    repoURL: oci://ghcr.io/codecentric/helm-charts/keycloakx
     chart: keycloakx
     targetRevision: 7.1.11
     helm:

@@ -1,0 +1,144 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: keycloak
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: keycloak
+  project: default
+  source:
+    repoURL: oci://ghcr.io/codecentric/helm-charts/keycloakx
+    chart: keycloak
+    targetRevision: 7.1.11
+    helm:
+      valuesObject:
+        revisionHistoryLimit: 1
+        restartPolicy: Always
+
+        ingress:
+          enabled: true
+          ingressClassName: nginx-external
+          servicePort: http
+          annotations:
+            external-dns.alpha.kubernetes.io/target: jasmine.odee.net
+            external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+            cert-manager.io/cluster-issuer: letsencrypt-production
+          labels: {}
+          rules:
+            - # Ingress host
+              host: auth.impl.nl
+              # Paths for the host
+              paths:
+                - path: '{{ tpl .Values.http.relativePath $ | trimSuffix "/" }}/'
+                  pathType: Prefix
+                  # serviceName: ""  # Optional: Override backend service name (e.g., for AWS ALB action annotations)
+                  # servicePort: ""  # Optional: Override backend service port name
+          # TLS configuration
+          tls:
+            - secretName: auth.impl.nl
+              hosts:
+                - auth.impl.nl
+
+          # ingress for console only (/auth/admin)
+          console:
+            # If `true`, an Ingress is created for console path only
+            enabled: true
+            # The name of Ingress Class associated with the console ingress only
+            ingressClassName: nginx-internal
+            # Ingress annotations for console ingress only
+            # Useful to set nginx.ingress.kubernetes.io/whitelist-source-range particularly
+            annotations:
+              external-dns.alpha.kubernetes.io/target: keycloak.impl.nl
+              external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+              cert-manager.io/cluster-issuer: letsencrypt-production
+              gethomepage.dev/enabled: "true"
+            labels: {}
+            rules:
+              - # Ingress host
+                host: keycloak.impl.nl
+                # Paths for the host
+                paths:
+                  - path: '{{ tpl .Values.http.relativePath $ | trimSuffix "/" }}/admin'
+                    pathType: Prefix
+                    # serviceName: ""  # Optional: Override backend service name (e.g., for AWS ALB action annotations)
+                    # servicePort: ""  # Optional: Override backend service port name
+
+            # Console TLS configuration
+            tls:
+              - secretName: keycloak.impl.nl
+                hosts:
+                  - keycloak.impl.nl
+
+        dbchecker:
+          enabled: false
+          image:
+            # Docker image used to check Database readiness at startup
+            repository: docker.io/busybox
+            # Image tag for the dbchecker image
+            tag: 1.37
+            # Image pull policy for the dbchecker image
+            pullPolicy: IfNotPresent
+          # SecurityContext for the dbchecker container
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsUser: 1000
+            runAsGroup: 1000
+            runAsNonRoot: true
+          # Resource requests and limits for the dbchecker container
+          resources:
+            requests:
+              cpu: "20m"
+              memory: "32Mi"
+            limits:
+              cpu: "20m"
+              memory: "32Mi"
+
+        database:
+          # don't create secret for db password. Instead use existing k8s secret
+          # existingSecret: "my-existent-dbpass-secret"
+          # existingSecretKey: "password"
+          existingSecret: ""
+          existingSecretKey: ""
+          # E.g. dev-file, dev-mem, mariadb, mssql, mysql, oracle or postgres
+          vendor: dev-mem
+          hostname:
+          port:
+          database:
+          username:
+          password:
+
+        cache:
+          # Use "custom" to disable automatic cache configuration
+          stack: default
+
+        proxy:
+          enabled: true
+          mode: forwarded
+          http:
+            enabled: true
+
+        metrics:
+          enabled: true
+
+        health:
+          enabled: true
+
+        http:
+          # For backwards compatibility reasons we set this to the value used by previous Keycloak versions.
+          relativePath: "/auth"
+          internalPort: http-internal
+          internalScheme: HTTP
+
+        serviceMonitor:
+          enabled: true
+
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

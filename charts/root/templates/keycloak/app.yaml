@@ -41,8 +41,7 @@ spec:
             cert-manager.io/cluster-issuer: letsencrypt-production
           labels: {}
           rules:
-            - # Ingress host
-              host: auth.impl.nl
+            - host: auth.impl.nl
               paths:
                 - path: /
                   pathType: ImplementationSpecific
@@ -68,7 +67,7 @@ spec:
             rules:
               - host: keycloak.impl.nl
                 paths:
-                  - path: '{{ tpl .Values.http.relativePath $ | trimSuffix "/" }}/admin'
+                  - path: /auth/admin
                     pathType: Prefix
             tls:
               - secretName: keycloak.impl.nl

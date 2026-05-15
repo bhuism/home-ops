@@ -28,7 +28,8 @@ spec:
             value: INFO
           - name: KC_HOSTNAME
             value: auth.impl.nl
-
+          - name: KC_PROXY_HEADERS
+            value: "x-forwarded"
         ingress:
           enabled: true
           ingressClassName: nginx-external
@@ -61,6 +62,12 @@ spec:
               external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
               cert-manager.io/cluster-issuer: letsencrypt-production
               gethomepage.dev/enabled: "true"
+              nginx.ingress.kubernetes.io/proxy-buffer-size: "128k" # Prevents big header errors with tokens
+              nginx.ingress.kubernetes.io/ssl-redirect: "true"
+              # Ensure headers are passed correctly
+              nginx.ingress.kubernetes.io/configuration-snippet: |
+                proxy_set_header X-Forwarded-Proto https;
+                proxy_set_header X-Forwarded-Port 443;
             labels: {}
             rules:
               - host: keycloak.impl.nl

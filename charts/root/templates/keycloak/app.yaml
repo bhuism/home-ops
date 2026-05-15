@@ -104,11 +104,6 @@ spec:
           existingSecretKey: ""
           # E.g. dev-file, dev-mem, mariadb, mssql, mysql, oracle or postgres
           vendor: dev-mem
-          hostname:
-          port:
-          database:
-          username:
-          password:
 
         cache:
           # Use "custom" to disable automatic cache configuration

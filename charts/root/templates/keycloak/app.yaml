@@ -97,8 +97,6 @@ spec:
               memory: "32Mi"
 
         database:
-          existingSecret: keycloak-db-password
-          existingSecretKey: password
           vendor: postgres
           hostname: postgresql-rw.cloudnative-pg
           port: 5432

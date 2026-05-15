@@ -23,9 +23,13 @@ spec:
         args:
           - start
 
-        # extraEnv: |
-        #   - name: KC_LOG_LEVEL
-        #     value: DEBUG
+        extraEnv: |
+          - name: KC_LOG_LEVEL
+            value: DEBUG
+          - name: KC_HOSTNAME
+            value: auth.impl.nl
+          - name: KC_HOSTNAME_STRICT
+            value: "false"
 
         ingress:
           enabled: true

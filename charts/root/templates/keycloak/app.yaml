@@ -18,10 +18,10 @@ spec:
         revisionHistoryLimit: 1
         restartPolicy: Always
 
-        # command:
-        #   - /opt/keycloak/bin/kc.sh
-        # args:
-        #   - start
+        command:
+          - /opt/keycloak/bin/kc.sh
+        args:
+          - start
 
         extraEnv: |
           - name: KC_LOG_LEVEL
@@ -127,7 +127,6 @@ spec:
           enabled: true
 
         http:
-          # For backwards compatibility reasons we set this to the value used by previous Keycloak versions.
           relativePath: "/auth"
           internalPort: http-internal
           internalScheme: HTTP

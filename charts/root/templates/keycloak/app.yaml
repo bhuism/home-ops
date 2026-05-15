@@ -30,13 +30,9 @@ spec:
           rules:
             - # Ingress host
               host: auth.impl.nl
-              # Paths for the host
               paths:
-                - path: '{{ tpl .Values.http.relativePath $ | trimSuffix "/" }}/'
-                  pathType: Prefix
-                  # serviceName: ""  # Optional: Override backend service name (e.g., for AWS ALB action annotations)
-                  # servicePort: ""  # Optional: Override backend service port name
-          # TLS configuration
+                - path: /
+                  pathType: ImplementationSpecific
           tls:
             - secretName: auth.impl.nl
               hosts:
@@ -59,14 +55,9 @@ spec:
             rules:
               - # Ingress host
                 host: keycloak.impl.nl
-                # Paths for the host
                 paths:
-                  - path: '{{ tpl .Values.http.relativePath $ | trimSuffix "/" }}/admin'
-                    pathType: Prefix
-                    # serviceName: ""  # Optional: Override backend service name (e.g., for AWS ALB action annotations)
-                    # servicePort: ""  # Optional: Override backend service port name
-
-            # Console TLS configuration
+                  - path: /
+                    pathType: ImplementationSpecific
             tls:
               - secretName: keycloak.impl.nl
                 hosts:
@@ -134,7 +125,6 @@ spec:
 
         serviceMonitor:
           enabled: true
-
 
   syncPolicy:
     automated:

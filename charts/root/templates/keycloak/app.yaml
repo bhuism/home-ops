@@ -10,13 +10,18 @@ spec:
     namespace: keycloak
   project: default
   source:
-    repoURL: oci://ghcr.io/codecentric/helm-charts/keycloakx
-    chart: keycloak
+    repoURL: oci://ghcr.io/codecentric/helm-charts
+    chart: keycloakx
     targetRevision: 7.1.11
     helm:
       valuesObject:
         revisionHistoryLimit: 1
         restartPolicy: Always
+
+        # command:
+        #   - /opt/keycloak/bin/kc.sh
+        # args:
+        #   - start
 
         extraEnv: |
           - name: KC_LOG_LEVEL

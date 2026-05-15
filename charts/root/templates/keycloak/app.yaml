@@ -66,11 +66,10 @@ spec:
               gethomepage.dev/enabled: "true"
             labels: {}
             rules:
-              - # Ingress host
-                host: keycloak.impl.nl
+              - host: keycloak.impl.nl
                 paths:
-                  - path: /
-                    pathType: ImplementationSpecific
+                  - path: '{{ tpl .Values.http.relativePath $ | trimSuffix "/" }}/admin'
+                    pathType: Prefix
             tls:
               - secretName: keycloak.impl.nl
                 hosts:

@@ -23,9 +23,9 @@ spec:
         args:
           - start
 
-        extraEnv: |
-          - name: KC_LOG_LEVEL
-            value: DEBUG
+        # extraEnv: |
+        #   - name: KC_LOG_LEVEL
+        #     value: DEBUG
 
         ingress:
           enabled: true

@@ -47,7 +47,7 @@ spec:
             # Ingress annotations for console ingress only
             # Useful to set nginx.ingress.kubernetes.io/whitelist-source-range particularly
             annotations:
-              external-dns.alpha.kubernetes.io/target: keycloak.impl.nl
+              external-dns.alpha.kubernetes.io/target: ingress-internal.impl.nl
               external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
               cert-manager.io/cluster-issuer: letsencrypt-production
               gethomepage.dev/enabled: "true"

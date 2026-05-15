@@ -25,11 +25,9 @@ spec:
 
         extraEnv: |
           - name: KC_LOG_LEVEL
-            value: WARN
+            value: INFO
           - name: KC_HOSTNAME
             value: auth.impl.nl
-          - name: KC_HOSTNAME_STRICT
-            value: "false"
 
         ingress:
           enabled: true
@@ -99,13 +97,14 @@ spec:
               memory: "32Mi"
 
         database:
-          # don't create secret for db password. Instead use existing k8s secret
-          # existingSecret: "my-existent-dbpass-secret"
-          # existingSecretKey: "password"
-          existingSecret: ""
-          existingSecretKey: ""
-          # E.g. dev-file, dev-mem, mariadb, mssql, mysql, oracle or postgres
-          vendor: dev-mem
+          existingSecret: keycloak-db-password
+          existingSecretKey: password
+          vendor: postgres
+          hostname: postgresql-rw.cloudnative-pg
+          port: 5432
+          database: keycloak
+          username: keycloak
+          password: killer
 
         cache:
           # Use "custom" to disable automatic cache configuration

@@ -18,6 +18,10 @@ spec:
         revisionHistoryLimit: 1
         restartPolicy: Always
 
+        extraEnv:
+          - name: KC_LOG_LEVEL
+            value: DEBUG
+
         ingress:
           enabled: true
           ingressClassName: nginx-external

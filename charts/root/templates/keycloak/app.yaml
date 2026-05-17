@@ -42,6 +42,8 @@ spec:
             external-dns.alpha.kubernetes.io/target: jasmine.odee.net
             external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
             cert-manager.io/cluster-issuer: letsencrypt-production
+            nginx.ingress.kubernetes.io/proxy-buffer-size: "128k" # Prevents big header errors with tokens
+            nginx.ingress.kubernetes.io/ssl-redirect: "true"
           labels: {}
           rules:
             - host: auth.impl.nl

@@ -117,7 +117,7 @@ spec:
 
         proxy:
           enabled: true
-          mode: xforwarded
+          mode: proxy-headers
           http:
             enabled: true
 

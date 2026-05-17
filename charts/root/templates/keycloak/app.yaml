@@ -23,7 +23,7 @@ spec:
         args:
           - start
 
-        extraEnv:
+        extraEnv: |
           - name: KC_LOG_LEVEL
             value: INFO
           - name: KC_HOSTNAME

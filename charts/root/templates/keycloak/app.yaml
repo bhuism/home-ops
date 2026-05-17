@@ -134,8 +134,8 @@ spec:
         health:
           enabled: true
 
-        # http:
-        #   relativePath: "/auth"
+        http:
+          relativePath: "/"
         #   internalPort: http-internal
         #   internalScheme: HTTP
 

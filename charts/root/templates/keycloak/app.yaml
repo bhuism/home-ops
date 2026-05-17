@@ -68,10 +68,6 @@ spec:
               gethomepage.dev/enabled: "true"
               nginx.ingress.kubernetes.io/proxy-buffer-size: "128k" # Prevents big header errors with tokens
               nginx.ingress.kubernetes.io/ssl-redirect: "true"
-              # Ensure headers are passed correctly
-              nginx.ingress.kubernetes.io/configuration-snippet: |
-                proxy_set_header X-Forwarded-Proto https;
-                proxy_set_header X-Forwarded-Port 443;
             labels: {}
             rules:
               - host: keycloak.impl.nl

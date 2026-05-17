@@ -27,9 +27,13 @@ spec:
           - name: KC_LOG_LEVEL
             value: INFO
           - name: KC_HOSTNAME
-            value: auth.impl.nl
+            value: https://auth.impl.nl
+          - name: KC_HOSTNAME_ADMIN
+            value: https://keycloak.impl.nl
           - name: KC_PROXY_HEADERS
-            value: "x-forwarded"
+            value: "xforwarded"
+          - name: KC_HTTP_ENABLED
+            value: "true"
         ingress:
           enabled: true
           ingressClassName: nginx-external

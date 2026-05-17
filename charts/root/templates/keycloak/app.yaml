@@ -34,6 +34,8 @@ spec:
             value: xforwarded
           - name: KC_HTTP_ENABLED
             value: "true"
+          - name: kc_http_management_relative_path
+            value: /auth/admin
         ingress:
           enabled: true
           ingressClassName: nginx-external

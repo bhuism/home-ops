@@ -36,6 +36,8 @@ spec:
             value: "true"
           - name: KC_HTTP_RELATIVE_PATH
             value: "/auth"
+          - name: KC_MANAGEMENT_RELATIVE_PATH
+            value: "/auth"
         ingress:
           enabled: true
           ingressClassName: nginx-external

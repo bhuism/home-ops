@@ -116,10 +116,7 @@ spec:
           stack: default
 
         proxy:
-          enabled: true
-          mode: proxy-headers
-          http:
-            enabled: true
+          enabled: false
 
         metrics:
           enabled: true

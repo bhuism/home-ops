@@ -30,12 +30,6 @@ spec:
             value: https://auth.impl.nl
           - name: KC_HOSTNAME_ADMIN
             value: https://keycloak.impl.nl
-          - name: KC_PROXY_HEADERS
-            value: "xforwarded"
-          - name: KC_HTTP_ENABLED
-            value: "true"
-          - name: KC_HTTP_RELATIVE_PATH
-            value: "/auth"
           - name: KC_MANAGEMENT_RELATIVE_PATH
             value: "/auth"
         ingress:
@@ -123,7 +117,7 @@ spec:
 
         proxy:
           enabled: true
-          mode: forwarded
+          mode: xforwarded
           http:
             enabled: true
 

@@ -31,7 +31,7 @@ spec:
           - name: KC_HOSTNAME_ADMIN
             value: https://keycloak.impl.nl
           - name: KC_PROXY_HEADERS
-            value: "x-forwarded"
+            value: "xforwarded"
           - name: KC_HTTP_ENABLED
             value: "true"
           - name: KC_HTTP_RELATIVE_PATH

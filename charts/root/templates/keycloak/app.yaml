@@ -48,8 +48,8 @@ spec:
           rules:
             - host: auth.impl.nl
               paths:
-                - path: /
-                  pathType: ImplementationSpecific
+                - path: /auth/
+                  pathType: Prefix
           tls:
             - secretName: auth.impl.nl
               hosts:

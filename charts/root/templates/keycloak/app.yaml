@@ -72,7 +72,7 @@ spec:
             rules:
               - host: keycloak.impl.nl
                 paths:
-                  - path: /auth/admin
+                  - path: /
                     pathType: Prefix
             tls:
               - secretName: keycloak.impl.nl

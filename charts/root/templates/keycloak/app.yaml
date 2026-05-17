@@ -30,8 +30,10 @@ spec:
             value: https://auth.impl.nl
           - name: KC_HOSTNAME_ADMIN
             value: https://keycloak.impl.nl
-          - name: KC_MANAGEMENT_RELATIVE_PATH
-            value: "/auth"
+          - name: KC_PROXY_HEADERS
+            value: xforwarded
+          - name: KC_HTTP_ENABLED
+            value: "true"
         ingress:
           enabled: true
           ingressClassName: nginx-external

@@ -15,6 +15,10 @@ spec:
     targetRevision: 7.1.11
     helm:
       valuesObject:
+
+        image:
+          tag: "26.6.1"
+
         replicas: 1
         revisionHistoryLimit: 1
         restartPolicy: Always

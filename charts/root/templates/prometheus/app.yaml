@@ -39,7 +39,7 @@ spec:
             auth.generic_oauth:
               name: Keycloak
               enabled: true
-              allow_sign_up: false
+              allow_sign_up: true
               client_id: main
               # client_secret: 92m5WAuUzfrfWlGn4yWDMo7TPtAR65Ov4yDTre3uKzboRauDiDL_Z4KqjJmg39Th
               scopes: openid profile email
@@ -49,8 +49,8 @@ spec:
               oidc_discovery_url: https://auth.impl.nl/realms/impl/.well-known/openid-configuration
               use_pkce: true
               use_refresh_token: true
-              skip_org_role_update_sync: false
-              role_attribute_path: contains(groups[*], 'admin') && 'Admin' || contains(groups[*], 'editor') && 'Editor' || 'Viewer'
+              # skip_org_role_update_sync: false
+              # role_attribute_path: contains(groups[*], 'admin') && 'Admin' || contains(groups[*], 'editor') && 'Editor' || 'Viewer'
 
           ingress:
             enabled: true

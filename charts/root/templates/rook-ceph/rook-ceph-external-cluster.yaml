@@ -16,8 +16,6 @@ spec:
     helm:
       valuesObject:
         operatorNamespace: rook-ceph
-        cephImage:
-          imagePullPolicy: IfNotPresent
         cephClusterSpec:
           external:
             enable: true
@@ -39,7 +37,6 @@ spec:
         # -- A list of CephObjectStore configurations to deploy
         # @default -- See [below](#ceph-object-stores)
         cephObjectStores: {}
-
 
   # optionally, the ceph-mgr IP address can be passed to gather metric from the prometheus exporter
   # monitoring:

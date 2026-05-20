@@ -37,16 +37,20 @@ spec:
               allow_embedding: true
 
             auth.generic_oauth:
-              name: Auth0
+              name: Keycloak
               enabled: true
-              allow_sign_up: true
-              client_id: ksdkWYma0ijfC10amKanYD3YtD9weZ4N
-              client_secret: 92m5WAuUzfrfWlGn4yWDMo7TPtAR65Ov4yDTre3uKzboRauDiDL_Z4KqjJmg39Th
-              scopes: openid profile email name
-              auth_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/authorize
-              token_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/oauth/token
-              api_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/userinfo
+              allow_sign_up: false
+              client_id: main
+              # client_secret: 92m5WAuUzfrfWlGn4yWDMo7TPtAR65Ov4yDTre3uKzboRauDiDL_Z4KqjJmg39Th
+              scopes: openid profile email
+              # auth_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/authorize
+              # token_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/oauth/token
+              # api_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/userinfo
+              oidc_discovery_url: https://auth.impl.nl/realms/impl/.well-known/openid-configuration
+              use_pkce: true
               use_refresh_token: true
+              skip_org_role_update_sync: false
+              role_attribute_path: contains(groups[*], 'admin') && 'Admin' || contains(groups[*], 'editor') && 'Editor' || 'Viewer'
 
           ingress:
             enabled: true

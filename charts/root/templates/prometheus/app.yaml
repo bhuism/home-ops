@@ -41,14 +41,15 @@ spec:
               enabled: true
               allow_sign_up: true
               client_id: main
+              client_secret:
               # client_secret: 92m5WAuUzfrfWlGn4yWDMo7TPtAR65Ov4yDTre3uKzboRauDiDL_Z4KqjJmg39Th
               scopes: openid profile email
-              # email_attribute_path: email
-              # login_attribute_path: username
-              # name_attribute_path: full_name
-              # auth_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/authorize
-              # token_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/oauth/token
-              # api_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/userinfo
+              email_attribute_path: email
+              login_attribute_path: username
+              name_attribute_path: full_name
+              auth_url: https://auth.impl.nl/realms/impl/protocol/openid-connect/auth
+              token_url: https://auth.impl.nl/realms/impl/protocol/openid-connect/token
+              api_url: https://auth.impl.nl/realms/impl/protocol/openid-connect/userinfo
               oidc_discovery_url: https://auth.impl.nl/realms/impl/.well-known/openid-configuration
               use_pkce: true
               use_refresh_token: true

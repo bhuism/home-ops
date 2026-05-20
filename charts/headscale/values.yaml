@@ -3,7 +3,7 @@ defaultPodOptions:
 
 controllers:
   main:
-    replicas: 0
+    # replicas: 0
     serviceAccount:
       identifier: default
     initContainers:

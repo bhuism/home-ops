@@ -43,6 +43,9 @@ spec:
               client_id: main
               # client_secret: 92m5WAuUzfrfWlGn4yWDMo7TPtAR65Ov4yDTre3uKzboRauDiDL_Z4KqjJmg39Th
               scopes: openid profile email
+              # email_attribute_path: email
+              # login_attribute_path: username
+              # name_attribute_path: full_name
               # auth_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/authorize
               # token_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/oauth/token
               # api_url: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/userinfo

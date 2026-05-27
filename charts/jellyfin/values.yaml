@@ -14,11 +14,11 @@ controllers:
           tag: "10.11.10"
         resources:
           limits:
-            cpu: 8
-            memory: 6Gi
-          requests:
             cpu: 6
-            memory: 4Gi
+            memory: 3Gi
+          requests:
+            cpu: 4
+            memory: 3Gi
         securityContext:
           runAsUser: 568
           runAsGroup: 568

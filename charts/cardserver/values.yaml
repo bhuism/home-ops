@@ -1,8 +1,8 @@
-defaultContainerOptions:
-  env:
-    logging_level_org_springframework_boot_actuate_autoconfigure_metrics_export_otlp: DEBUG
-    logging_level_io_opentelemetry: DEBUG
 controllers:
+  defaultContainerOptions:
+    env:
+      logging_level_org_springframework_boot_actuate_autoconfigure_metrics_export_otlp: DEBUG
+      logging_level_io_opentelemetry: DEBUG
   api:
     replicas: 3
     # annotations:

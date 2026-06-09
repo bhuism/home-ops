@@ -1,0 +1,59 @@
+# Use the allInOne strategy for low-footprint deployment in a single namespace
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jaeger
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jaeger
+  project: default
+  source:
+    repoURL: https://jaegertracing.github.io/helm-charts
+    chart: jaeger
+    targetRevision: 4.11.0
+    helm:
+      valuesObject:
+        provisionDataStore:
+          cassandra: false
+          elasticsearch: false
+
+        allInOne:
+          enabled: true
+          
+          # Configure the Jaeger core engine
+          extraEnv:
+            - name: COLLECTOR_OTLP_ENABLED
+              value: "true"
+            # Optional: Increase memory queue size if Spring hits it with high load
+            - name: COLLECTOR_QUEUE_SIZE
+              value: "5000"
+
+          # Allocate stable resources to handle direct JVM traffic injection
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 200m
+              memory: 256Mi
+
+        # Explicitly open the OTLP ingress ports on the Jaeger Service
+        collector:
+          service:
+            otlp:
+              grpc:
+                enabled: true
+                port: 4317
+              http:
+                enabled: true
+                port: 4318
+
+        # Enable the Query Web UI dashboard
+        query:
+          enabled: true
+          service:
+            type: ClusterIP
+            port: 16686

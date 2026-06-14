@@ -14,7 +14,7 @@ echo
 #ceph
 
 echo Ceph
-for i in 65 66 67 68 ; do
+for i in 65 66 67 68 69 70 ; do
     echo talosctl --context ceph-k8s -n 192.168.1.$i upgrade --image factory.talos.dev/metal-installer/df156b82096feda49406ac03aa44e0ace524b7efe4e1f0e144a1e1ae3930f1c0:$VERSION
 done
 

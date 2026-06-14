@@ -15,28 +15,28 @@ spec:
     targetRevision: 1.19.0
     helm:
       values: |
-        hubble:
-          enabled: false
-          ingress:
-            enabled: true
-          relay:
-            enabled: true
-          ui:
-            enabled: true
-            ingress:
-              enabled: true
-              className: nginx-internal
-              annotations:
-                external-dns.alpha.kubernetes.io/target: ingress-internal.impl.nl
-                external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-                cert-manager.io/cluster-issuer: letsencrypt-production
-                gethomepage.dev/enabled: "true"
-              hosts:
-                - hubble.impl.nl
-              tls:
-                - secretName: hubble.impl.nl
-                  hosts:
-                    - hubble.impl.nl
+        # hubble:
+        #   enabled: false
+        #   ingress:
+        #     enabled: true
+        #   relay:
+        #     enabled: true
+        #   ui:
+        #     enabled: true
+        #     ingress:
+        #       enabled: true
+        #       className: nginx-internal
+        #       annotations:
+        #         external-dns.alpha.kubernetes.io/target: ingress-internal.impl.nl
+        #         external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+        #         cert-manager.io/cluster-issuer: letsencrypt-production
+        #         gethomepage.dev/enabled: "true"
+        #       hosts:
+        #         - hubble.impl.nl
+        #       tls:
+        #         - secretName: hubble.impl.nl
+        #           hosts:
+        #             - hubble.impl.nl
         externalIPs:
           enabled: true
         devices: end0

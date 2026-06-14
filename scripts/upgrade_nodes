@@ -5,7 +5,7 @@ VERSION=v1.13.4
 #home ops
 echo Home
 for i in 33 34 35 36 37 38 39 40; do
-    echo talosctl --context impl-k8s -n 192.168.1.$i upgrade --image factory.talos.dev/metal-installer/df156b82096feda49406ac03aa44e0ace524b7efe4e1f0e144a1e1ae3930f1c0:$VERSION \; sleep 1m
+    echo talosctl --context impl-k8s -n 192.168.1.$i upgrade --image factory.talos.dev/metal-installer/df156b82096feda49406ac03aa44e0ace524b7efe4e1f0e144a1e1ae3930f1c0:$VERSION \; sleep 2m
 done
 
 echo

@@ -86,7 +86,6 @@ spec:
               - openid
               - profile
               - email
-              - "https://impl.nl/claims/groups"
           params:
             application.namespaces: "*"
             server.insecure: true

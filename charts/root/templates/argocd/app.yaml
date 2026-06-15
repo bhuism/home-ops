@@ -87,7 +87,6 @@ spec:
               - profile
               - email
               - "https://impl.nl/claims/groups"
-            scopes: '[https://impl.nl/claims/groups, email]' 
           params:
             application.namespaces: "*"
             server.insecure: true

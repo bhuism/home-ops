@@ -79,10 +79,6 @@ spec:
               requestedScopes: ["openid", "profile", "email"]
           rbac:
             create: true
-            policy.default: role:readonly
-            # policy.csv: |
-            #   g, bhuism@odee.net, role:admin
-            scopes: 'openid, profile, email'
           params:
             application.namespaces: "*"
             server.insecure: true

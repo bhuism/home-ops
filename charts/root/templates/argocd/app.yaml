@@ -76,7 +76,7 @@ spec:
               clientID: main
               enablePKCEAuthentication: true
               refreshTokenThreshold: 2m
-              requestedScopes: ["openid", "profile", "email", "groups"]
+              requestedScopes: ["openid", "profile", "email"]
           rbac:
             create: true
             policy.default: role:readonly

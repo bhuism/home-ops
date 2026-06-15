@@ -72,11 +72,11 @@ spec:
             url: https://argocd.impl.nl
             oidc.config: |
               name: Keycloak
-                issuer: https://auth.impl.nl/realms/impl
-                clientID: main
-                enablePKCEAuthentication: true
-                refreshTokenThreshold: 2m
-                requestedScopes: ["openid", "profile", "email", "groups"]
+              issuer: https://auth.impl.nl/realms/impl
+              clientID: main
+              enablePKCEAuthentication: true
+              refreshTokenThreshold: 2m
+              requestedScopes: ["openid", "profile", "email", "groups"]
           rbac:
             create: true
             policy.default: role:readonly

@@ -82,17 +82,17 @@ service:
 ingress:
   main:
     enabled: false
-    hosts:
-      - host: my.host.local
-        paths:
-          - path: /
-            service:
-              identifier: main
-              port: http
-    tls:
-      - hosts:
-          - my.host.local
-        secretName: mycert-tls
+    # hosts:
+    #   - host: my.host.local
+    #     paths:
+    #       - path: /
+    #         service:
+    #           identifier: main
+    #           port: http
+    # tls:
+    #   - hosts:
+    #       - my.host.local
+    #     secretName: mycert-tls
 
 persistence:
   config:

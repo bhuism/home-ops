@@ -71,16 +71,12 @@ spec:
             application.resourceTrackingMethod: annotation+label
             url: https://argocd.impl.nl
             oidc.config: |
-              name: Auth0
-              issuer: https://dev-g4n3hjan0v2jg3le.eu.auth0.com/
-              clientID: ksdkWYma0ijfC10amKanYD3YtD9weZ4N
-              clientSecret: 92m5WAuUzfrfWlGn4yWDMo7TPtAR65Ov4yDTre3uKzboRauDiDL_Z4KqjJmg39Th
-              logoutURL: "https://dev-g4n3hjan0v2jg3le.eu.auth0.com/oidc/logout?post_logout_redirect_uri=https://impl.nl"
-              requestedScopes:
-              - openid
-              - profile
-              - email
-              - "https://impl.nl/claims/groups"
+              name: Keycloak
+                issuer: https://auth.impl.nl/realms/impl
+                clientID: main
+                enablePKCEAuthentication: true
+                refreshTokenThreshold: 2m
+                requestedScopes: ["openid", "profile", "email", "groups"]
           rbac:
             create: true
             policy.default: role:readonly

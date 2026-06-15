@@ -9,7 +9,7 @@ jobs:
     name: Rollout Restart
     steps:
       - name: Kubernetes context
-        uses: Azure/k8s-set-context@v4
+        uses: Azure/k8s-set-context@v5
         with:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBE_CONFIG }}

@@ -312,13 +312,13 @@ service:
     ports:
       management:
         port: 9083
-  admin:
-    controller: admin
-    ports:
-      http:
-        port: 8085
-      management:
-        port: 9085
+  # admin:
+  #   controller: admin
+  #   ports:
+  #     http:
+  #       port: 8085
+  #     management:
+  #       port: 9085
   api:
     controller: api
     ports:
@@ -358,12 +358,12 @@ ingress:
             service:
               identifier: stream
               port: http
-      - host: admin.klaversjassen.nl
-        paths:
-          - path: /
-            service:
-              identifier: admin
-              port: http
+      # - host: admin.klaversjassen.nl
+      #   paths:
+      #     - path: /
+      #       service:
+      #         identifier: admin
+      #         port: http
     tls:
       - secretName: api.klaversjassen.nl
         hosts:
@@ -371,9 +371,9 @@ ingress:
       - secretName: stream.klaversjassen.nl
         hosts:
           - stream.klaversjassen.nl
-      - secretName: admin.klaversjassen.nl
-        hosts:
-          - admin.klaversjassen.nl
+      # - secretName: admin.klaversjassen.nl
+      #   hosts:
+      #     - admin.klaversjassen.nl
 
 # serviceAccount:
 #   sba-manager-ident:

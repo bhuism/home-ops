@@ -1,13 +1,25 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "group:all"],
-  "argocd": {
-    "fileMatch": ["charts/.+\\.yaml$"]
-  },
+  "extends": [
+    "config:recommended",
+    "group:all"
+  ],
   "packageRules": [
     {
-      "matchUpdateTypes": ["*"],
-      "automerge": true
+      "matchPaths": [
+        "^charts/.+\\.ya?ml$"
+      ],
+      "matchUpdateTypes": [
+        "patch",
+        "minor",
+        "pin",
+        "digest"
+      ],
+      "automerge": false
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "dependencyDashboardApproval": true
     }
   ]
 }

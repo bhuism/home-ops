@@ -1,5 +1,6 @@
 defaultPodOptions:
   shareProcessNamespace: true
+  automountServiceAccountToken: true
 
 controllers:
   main:

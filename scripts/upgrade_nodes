@@ -1,6 +1,6 @@
 #/bin/sh
 
-VERSION=v1.13.4
+VERSION=v1.13.5
 
 #home ops
 echo Home
@@ -19,6 +19,6 @@ for i in 65 66 67 68 ; do
 done
 
 echo Ceph x86
-for i in 69 70 ; do
+for i in 69 70 71 ; do
     echo talosctl --context ceph-k8s -n 192.168.1.$i upgrade --image factory.talos.dev/metal-installer/376567988ad370138ad8b2698212367b8edcb69b5fd68c80be1f2ec7d603b4ba:$VERSION
 done

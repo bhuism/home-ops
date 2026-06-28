@@ -24,14 +24,14 @@ spec:
         persistence:
           config:
             enabled: true
-            type: pvc
+            # type: pvc
             existingClaim: bazarr-config-pvc
-            mountPath: /config
+            # mountPath: /config
           media:
             enabled: true
-            type: pvc
+            # type: pvc
             existingClaim: media-pvc
-            mountPath: /media
+            # mountPath: /media
           shared:
             enabled: false
   syncPolicy:

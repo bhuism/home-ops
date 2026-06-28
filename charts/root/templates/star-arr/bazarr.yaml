@@ -23,13 +23,13 @@ spec:
             kubernetes.io/arch: "arm64"
         persistence:
           config:
-            enabled: true
-            # type: pvc
+            # enabled: true
+            type: persistentVolumeClaim
             existingClaim: bazarr-config-pvc
             # mountPath: /config
           media:
-            enabled: true
-            # type: pvc
+            # enabled: true
+            type: persistentVolumeClaim
             existingClaim: media-pvc
             # mountPath: /media
           shared:

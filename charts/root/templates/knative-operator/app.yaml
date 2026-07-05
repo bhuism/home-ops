@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: knative-operator
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://knative.github.io/operator"
+    targetRevision: 1.22.2
+    chart: knative-operator
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: knative-operator
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

@@ -15,3 +15,4 @@ spec:
       namespace: knative-serving
       annotations:
         lbipam.cilium.io/ips: "192.168.1.87"
+        external-dns.alpha.kubernetes.io/hostname: kourier.impl.nl

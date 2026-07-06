@@ -10,3 +10,8 @@ spec:
   config:
     network:
       ingress-class: kourier.ingress.networking.knative.dev
+  services:
+    - name: kourier
+      namespace: knative-serving
+      annotations:
+        lbipam.cilium.io/ips: "192.168.1.87"

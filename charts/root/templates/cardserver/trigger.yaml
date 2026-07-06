@@ -9,7 +9,4 @@ spec:
     attributes:
       type: order.created
   subscriber:
-    ref:
-      apiVersion: v1
-      kind: Service
-      name: cardserver-api
+    uri: http://cardserver-api.cardserver.svc.cluster.local:8080/processOrder

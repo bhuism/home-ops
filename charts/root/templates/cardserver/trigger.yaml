@@ -1,0 +1,15 @@
+apiVersion: eventing.knative.dev/v1
+kind: Trigger
+metadata:
+  name: route-order-creation
+  namespace: cardserver
+spec:
+  broker: default
+  filter:
+    attributes:
+      type: order.created
+  subscriber:
+    ref:
+      apiVersion: serving.knative.dev/v1
+      kind: Service
+      name: cardserver-api

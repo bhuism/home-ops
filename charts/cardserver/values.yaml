@@ -323,8 +323,7 @@ service:
     controller: api
     ports:
       http:
-        port: 80
-        targetPort: 8080
+        port: 8080
       management:
         port: 9080
   stream:

@@ -6,7 +6,7 @@ metadata:
 spec:
   broker: default
   filter:
-    attributes:
-      type: order.created
+    exact:
+      type: gameEvent
   subscriber:
-    uri: http://cardserver-api.cardserver.svc.cluster.local:8080/processOrder
+    uri: http://cardserver-gameengine.cardserver.svc.cluster.local:8080/gameEvent

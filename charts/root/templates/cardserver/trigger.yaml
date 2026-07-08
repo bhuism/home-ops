@@ -6,7 +6,7 @@ metadata:
 spec:
   broker: default
   filters:
-    exact:
-      type: gameEvent
+    - exact:
+        type: gameEvent
   subscriber:
     uri: http://cardserver-gameengine.cardserver.svc.cluster.local:8083/gameEvent

@@ -310,6 +310,8 @@ service:
   gameengine:
     controller: gameengine
     ports:
+      http:
+        port: 8083
       management:
         port: 9083
   # admin:

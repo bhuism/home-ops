@@ -9,4 +9,4 @@ spec:
     exact:
       type: gameEvent
   subscriber:
-    uri: http://cardserver-gameengine.cardserver.svc.cluster.local:9083/gameEvent
+    uri: http://cardserver-gameengine.cardserver.svc.cluster.local:8083/gameEvent

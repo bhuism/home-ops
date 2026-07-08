@@ -5,7 +5,7 @@ metadata:
   namespace: cardserver
 spec:
   broker: default
-  filter:
+  filters:
     exact:
       type: gameEvent
   subscriber:

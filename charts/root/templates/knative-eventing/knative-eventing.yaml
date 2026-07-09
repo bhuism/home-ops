@@ -4,5 +4,3 @@ metadata:
   name: knative-eventing
   namespace: knative-eventing
 spec:
-  high-availability:
-    replicas: 3

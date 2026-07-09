@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+#./setenv
+
+talhelper validate talconfig
+rm -Rf clusterconfig
+talhelper genconfig
+
+talhelper gencommand apply --extra-flags "--context impl-k8s --dry-run"
+#talhelper gencommand apply
+#talhelper gencommand upgrade
+#talhelper gencommand upgrade-k8s
+
+

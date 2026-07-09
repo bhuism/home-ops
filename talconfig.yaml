@@ -1,8 +1,8 @@
 clusterName: impl-k8s
-talosVersion: v1.9.4
-kubernetesVersion: v1.32.0
+talosVersion: v1.13.5
+kubernetesVersion: v1.33.0
 endpoint: https://control.impl.nl:6443
-allowSchedulingOnControlPlanes: true
+allowSchedulingOnControlPlanes: false
 cniConfig:
   name: none
 additionalMachineCertSans:
@@ -21,6 +21,7 @@ additionalMachineCertSans:
   - node3.impl.nl
   - node4.impl.nl
   - jasmine.odee.net
+  - control.impl.nl
 additionalApiServerCertSans:
   - 127.0.0.1
   - 192.168.1.11
@@ -37,22 +38,9 @@ additionalApiServerCertSans:
   - node3.impl.nl
   - node4.impl.nl
   - jasmine.odee.net
+  - control.impl.nl
 
 patches:
-  - |-
-    - op: add
-      path: /machine/kubelet/extraArgs
-      value:
-        rotate-server-certificates: true
-    - op: add 
-      path: /cluster/proxy
-      value:
-        disabled: true
-  - |-
-    cluster:
-      proxy:
-        extraArgs:
-          metrics-bind-address: "0.0.0.0:10249"
   - |-
     machine:
       features:
@@ -60,6 +48,35 @@ patches:
           enabled: true
           forwardKubeDNSToHost: false
           resolveMemberNames: true
+  - |-
+    cluster:
+      apiServer:
+        disablePodSecurityPolicy: true
+      proxy:
+        disabled: true
+#patches:
+#  - |-
+#    - op: add
+#      path: /machine/kubelet/extraArgs
+#      value:
+#        rotate-server-certificates: true
+#    - op: add 
+#      path: /cluster/proxy
+#      value:
+#        disabled: true
+#  - |-
+#    cluster:
+#      proxy:
+#        extraArgs:
+#          metrics-bind-address: "0.0.0.0:10249"
+#  - |-
+#    machine:
+#      features:
+#        hostDNS:
+#          enabled: true
+#          forwardKubeDNSToHost: false
+#          resolveMemberNames: true
+
 controlPlane:
   nameservers:
     - 1.0.0.1

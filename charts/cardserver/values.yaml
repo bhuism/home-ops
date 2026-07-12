@@ -1,6 +1,6 @@
 controllers:
   api:
-    replicas: 1
+    replicas: 3
     # annotations:
     #   management.port: "9080"
     revisionHistoryLimit: 1
@@ -67,7 +67,7 @@ controllers:
                 name: jwtsecret
                 key: jwtes512secretvalue
   stream:
-    replicas: 1
+    replicas: 3
     revisionHistoryLimit: 1
     strategy: RollingUpdate
     rollingUpdate:
@@ -187,7 +187,7 @@ controllers:
           logging_level_org_springframework_boot_actuate_autoconfigure_metrics_export_otlp: DEBUG
           logging_level_io_opentelemetry: DEBUG
   aiplayer:
-    replicas: 1
+    replicas: 3
     revisionHistoryLimit: 1
     strategy: RollingUpdate
     rollingUpdate:

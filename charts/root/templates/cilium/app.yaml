@@ -39,9 +39,9 @@ spec:
         #             - hubble.impl.nl
         externalIPs:
           enabled: true
-        devices:
-          - end0
-          - enp3s0
+        # devices:
+        #   - end0
+        #   - enp3s0
         ipam:
           mode: kubernetes
           # https://github.com/cilium/cilium/issues/35811

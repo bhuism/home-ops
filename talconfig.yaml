@@ -1,5 +1,5 @@
 clusterName: impl-k8s
-talosVersion: v1.13.5
+talosVersion: v1.13.6
 kubernetesVersion: v1.33.0
 endpoint: https://control.impl.nl:6443
 allowSchedulingOnControlPlanes: false
@@ -48,35 +48,12 @@ patches:
           enabled: true
           forwardKubeDNSToHost: false
           resolveMemberNames: true
-  - |-
+      kubelet:
+        extraArgs:
+          rotate-server-certificates: "true"
     cluster:
-      apiServer:
-        disablePodSecurityPolicy: true
       proxy:
         disabled: true
-#patches:
-#  - |-
-#    - op: add
-#      path: /machine/kubelet/extraArgs
-#      value:
-#        rotate-server-certificates: true
-#    - op: add 
-#      path: /cluster/proxy
-#      value:
-#        disabled: true
-#  - |-
-#    cluster:
-#      proxy:
-#        extraArgs:
-#          metrics-bind-address: "0.0.0.0:10249"
-#  - |-
-#    machine:
-#      features:
-#        hostDNS:
-#          enabled: true
-#          forwardKubeDNSToHost: false
-#          resolveMemberNames: true
-
 controlPlane:
   nameservers:
     - 1.0.0.1
@@ -132,3 +109,7 @@ nodes:
     ipAddress: 192.168.1.35
     controlPlane: true
     installDisk: /dev/mmcblk0
+  - hostname: node41
+    ipAddress: 192.168.1.41
+    controlPlane: false
+    installDisk: /dev/nvme0n1

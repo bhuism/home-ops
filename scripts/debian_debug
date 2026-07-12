@@ -1,3 +1,9 @@
 #!/bin/sh
 
-kubectl -n rook-ceph run -i --tty --rm --image=debian:stable-slim --restart=Never debug -- bash
+#kubectl -n rook-ceph run -i --tty --rm --image=debian:stable-slim --restart=Never debug -- bash
+
+
+kubectl --context impl-k8s create namespace node-debug-ns
+kubectl --context impl-k8s label namespace node-debug-ns pod-security.kubernetes.io/enforce=privileged
+kubectl --context impl-k8s debug node/node41 -it --image=ubuntu --profile=sysadmin -n node-debug-ns 
+kubectl --context impl-k8s delete namespace node-debug-ns

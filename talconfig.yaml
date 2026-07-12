@@ -51,6 +51,11 @@ patches:
       kubelet:
         extraArgs:
           rotate-server-certificates: "true"
+      kernel:
+        modules:
+          - name: nbd
+          - name: rbd
+          - name: ceph
     cluster:
       proxy:
         disabled: true

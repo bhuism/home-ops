@@ -10,7 +10,7 @@ controllers:
     containers:
       api:
         image:
-          repository: ghcr.io/bhuism/api
+          repository: ghcr.io/bhuism/cardserver/api
           tag: "latest"
           pullPolicy: Always
         probes:
@@ -75,7 +75,7 @@ controllers:
     containers:
       stream:
         image:
-          repository: ghcr.io/bhuism/stream
+          repository: ghcr.io/bhuism/cardserver/stream
           tag: "latest"
           pullPolicy: Always
         probes:
@@ -135,7 +135,7 @@ controllers:
     containers:
       stream:
         image:
-          repository: ghcr.io/bhuism/gameengine
+          repository: ghcr.io/bhuism/cardserver/gameengine
           tag: "latest"
           pullPolicy: Always
         probes:
@@ -195,7 +195,7 @@ controllers:
     containers:
       stream:
         image:
-          repository: ghcr.io/bhuism/aiplayer
+          repository: ghcr.io/bhuism/cardserver/aiplayer
           tag: "latest"
           pullPolicy: Always
         probes:

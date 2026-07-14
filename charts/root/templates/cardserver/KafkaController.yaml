@@ -1,0 +1,19 @@
+apiVersion: kafka.strimzi.io/v1
+kind: KafkaNodePool
+metadata:
+  name: broker-controller
+  namespace: cardgen
+  labels:
+    strimzi.io/cluster: cardgen
+spec:
+  replicas: 3
+  roles:
+    - controller
+  storage:
+    type: jbod
+    volumes:
+      - id: 0
+        type: persistent-claim
+        size: 50Gi
+        class: ceph-rbd
+        kraftMetadata: shared

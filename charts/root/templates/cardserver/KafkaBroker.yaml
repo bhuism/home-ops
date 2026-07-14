@@ -2,13 +2,12 @@ apiVersion: kafka.strimzi.io/v1
 kind: KafkaNodePool
 metadata:
   name: broker-controller
-  namespace: kafka
+  namespace: cardgen
   labels:
     strimzi.io/cluster: cardgen
 spec:
   replicas: 3
   roles:
-    - controller
     - broker
   storage:
     type: jbod

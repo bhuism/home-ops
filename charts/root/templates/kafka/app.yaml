@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kafka
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kafka
+  project: default
+  source:
+    repoURL: oci://registry-1.docker.io/bitnamicharts
+    chart: kafka
+    targetRevision: 32.4.3
+    helm:
+      valuesObject:
+        persistence:
+          enabled: true
+          existingClaim: kafka-pvc
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    # managedNamespaceMetadata:
+    #   labels:
+    #     pod-security.kubernetes.io/enforce: privileged
+    #     pod-security.kubernetes.io/audit: privileged
+    #     pod-security.kubernetes.io/warn: privileged
+    syncOptions:
+      - CreateNamespace=true

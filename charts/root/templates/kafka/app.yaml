@@ -10,7 +10,7 @@ spec:
     namespace: kafka
   project: default
   source:
-    repoURL: oci://registry-1.docker.io/bitnamicharts
+    repoURL: registry-1.docker.io/bitnamicharts
     chart: kafka
     targetRevision: 32.4.3
     helm:

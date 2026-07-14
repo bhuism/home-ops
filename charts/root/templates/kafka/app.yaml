@@ -15,8 +15,21 @@ spec:
     targetRevision: 32.4.3
     helm:
       valuesObject:
-        global:
-          defaultStorageClass: ceph-rbd
+        controller:
+          persistence:
+            enabled: true
+            storageClass: ceph-rbd
+          logPersistence:
+            enabled: true
+            storageClass: ceph-rbd
+        broker:
+          persistence:
+            enabled: true
+            storageClass: ceph-rbd
+          logPersistence:
+            enabled: true
+            storageClass: ceph-rbd
+
 
   syncPolicy:
     automated:

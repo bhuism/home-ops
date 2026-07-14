@@ -6,7 +6,6 @@ metadata:
 spec:
   kafka:
     version: 4.3.0
-    replicas: 3
     metadataVersion: 4.3-IV0
     listeners:
       - name: plain

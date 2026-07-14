@@ -1,7 +1,7 @@
 apiVersion: kafka.strimzi.io/v1
 kind: KafkaNodePool
 metadata:
-  name: broker-controller
+  name: kafkabroker
   namespace: cardserver
   labels:
     strimzi.io/cluster: cardserver

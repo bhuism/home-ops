@@ -22,6 +22,15 @@ spec:
       transaction.state.log.min.isr: 2
       default.replication.factor: 3
       min.insync.replicas: 2
+    
+      # Increase the time a follower waits before assuming the leader is dead
+      controller.quorum.fetch.timeout.ms: 10000
+      
+      # Increase the election timeout bounds to prevent rapid-fire elections
+      controller.quorum.election.timeout.ms: 10000
+      controller.quorum.election.backoff.max.ms: 5000
+  
+  
   entityOperator:
     topicOperator: {}
     userOperator: {}

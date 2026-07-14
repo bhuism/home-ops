@@ -4,7 +4,7 @@ metadata:
   name: broker
   namespace: kafka
   labels:
-    strimzi.io/cluster: my-kafka-cluster
+    strimzi.io/cluster: CardGen
 spec:
   replicas: 3
   roles:

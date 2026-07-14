@@ -1,8 +1,8 @@
 apiVersion: kafka.strimzi.io/v1
 kind: Kafka
 metadata:
-  name: cardgen
-  namespace: cardgen
+  name: cardserver
+  namespace: cardserver
 spec:
   kafka:
     version: 4.3.0

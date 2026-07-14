@@ -16,7 +16,7 @@ spec:
     helm:
       valuesObject:
         watchNamespaces:
-          - cardgen
+          - cardserver
   syncPolicy:
     automated:
       prune: true

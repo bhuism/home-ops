@@ -2,9 +2,9 @@ apiVersion: kafka.strimzi.io/v1
 kind: KafkaNodePool
 metadata:
   name: broker-controller
-  namespace: cardgen
+  namespace: cardserver
   labels:
-    strimzi.io/cluster: cardgen
+    strimzi.io/cluster: cardserver
 spec:
   replicas: 3
   roles:

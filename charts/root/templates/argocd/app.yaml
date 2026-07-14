@@ -68,7 +68,7 @@ spec:
               jsonPointers:
               - /spec/template/spec/hostUsers
             admin.enabled: true
-            application.resourceTrackingMethod: annotation+label
+            application.resourceTrackingMethod: annotation
             url: https://argocd.impl.nl
             oidc.config: |
               name: Keycloak

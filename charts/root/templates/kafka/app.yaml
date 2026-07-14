@@ -15,9 +15,8 @@ spec:
     targetRevision: 32.4.3
     helm:
       valuesObject:
-        persistence:
-          enabled: true
-          existingClaim: kafka-pvc
+        global:
+          defaultStorageClass: ceph-rbd
 
   syncPolicy:
     automated:

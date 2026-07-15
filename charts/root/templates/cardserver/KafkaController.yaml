@@ -14,6 +14,6 @@ spec:
     volumes:
       - id: 0
         type: persistent-claim
-        size: 50Gi
+        size: 5Gi
         class: local-path
         kraftMetadata: shared

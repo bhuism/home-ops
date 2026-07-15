@@ -122,7 +122,7 @@ controllers:
             memory: 512Mi
         env:
           SPRING_PROFILES_ACTIVE: production
-          KAFKA_BOOTSTRAP_SERVERS: "cardserver-kafka-bootstrap"
+          KAFKA_BOOTSTRAP_SERVERS: "cardserver-kafka-bootstrap:9092"
   gameengine:
     replicas: 3
     revisionHistoryLimit: 1

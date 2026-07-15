@@ -9,7 +9,7 @@ spec:
   class: com.couchbase.connect.kafka.CouchbaseSourceConnector
   tasksMax: 2
   config:
-    couchbase.seed.nodes: "impl"
+    couchbase.seed.nodes: "couchbase.couchbase.svc.cluster.local"
     couchbase.username: "root"
     couchbase.password: "killer"
     couchbase.bucket: "cardserver"

@@ -1,0 +1,18 @@
+apiVersion: kafka.strimzi.io/v1
+kind: KafkaConnector
+metadata:
+  name: couchbase-source
+  namespace: cardserver
+  labels:
+    strimzi.io/cluster: cardserver
+spec:
+  class: com.couchbase.connect.kafka.CouchbaseSourceConnector
+  tasksMax: 2
+  config:
+    couchbase.seed.nodes: "impl"
+    couchbase.username: "root"
+    couchbase.password: "killer"
+    couchbase.bucket: "cardserver"
+    couchbase.source.handler: "com.couchbase.connect.kafka.handler.source.DefaultSchemaSourceHandler"
+    value.converter: "org.apache.kafka.connect.json.JsonConverter"
+    value.converter.schemas.enable: false

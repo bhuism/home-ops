@@ -10,7 +10,7 @@ spec:
     namespace: local-path-storage
   project: default
   source:
-    chart: deploy/chart/local-path-provisioner
+    path: deploy/chart/local-path-provisioner
     repoURL: https://github.com/rancher/local-path-provisioner.git
     targetRevision: v0.0.36
     helm:

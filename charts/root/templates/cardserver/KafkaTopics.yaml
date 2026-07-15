@@ -8,7 +8,7 @@ metadata:
     strimzi.io/cluster: cardserver
 spec:
   partitions: 1 # Configs MUST be exactly 1 partition
-  replicas: 1   # Set to 3 if you have 3 or more Kafka brokers
+  replicas: 3
   config:
     cleanup.policy: compact
 ---
@@ -21,7 +21,7 @@ metadata:
     strimzi.io/cluster: cardserver
 spec:
   partitions: 25 # Standard default for offsets
-  replicas: 1
+  replicas: 3
   config:
     cleanup.policy: compact
 ---
@@ -34,7 +34,7 @@ metadata:
     strimzi.io/cluster: cardserver
 spec:
   partitions: 5 # Standard default for status
-  replicas: 1
+  replicas: 3
   config:
     cleanup.policy: compact
 ---

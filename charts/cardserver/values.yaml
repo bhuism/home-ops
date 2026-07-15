@@ -58,8 +58,6 @@ controllers:
             cpu: 1
             memory: 512Mi
         env:
-          logging_level_org_springframework_boot_actuate_autoconfigure_metrics_export_otlp: DEBUG
-          logging_level_io_opentelemetry: DEBUG
           SPRING_PROFILES_ACTIVE: production
           CARDSERVER_AUTH_JWT_ES512_SECRET:
             valueFrom:
@@ -124,8 +122,7 @@ controllers:
             memory: 512Mi
         env:
           SPRING_PROFILES_ACTIVE: production
-          logging_level_org_springframework_boot_actuate_autoconfigure_metrics_export_otlp: DEBUG
-          logging_level_io_opentelemetry: DEBUG
+          KAFKA_BOOTSTRAP_SERVERS: "cardserver-kafka-bootstrap"
   gameengine:
     replicas: 3
     revisionHistoryLimit: 1
@@ -184,8 +181,6 @@ controllers:
             memory: 512Mi
         env:
           SPRING_PROFILES_ACTIVE: production
-          logging_level_org_springframework_boot_actuate_autoconfigure_metrics_export_otlp: DEBUG
-          logging_level_io_opentelemetry: DEBUG
   aiplayer:
     replicas: 3
     revisionHistoryLimit: 1

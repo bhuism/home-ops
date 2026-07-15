@@ -1,0 +1,12 @@
+apiVersion: kafka.strimzi.io/v1
+kind: KafkaConnect
+metadata:
+  name: cardserver
+  namespace: cardserver
+  annotations:
+    strimzi.io/use-connector-resources: "true"
+spec:
+  version: 4.3.0
+  replicas: 1
+  bootstrapServers: cardserver-kafka-bootstrap:9092
+  image: ghcr.io/bhuism/kafka-connect-couchbase:1.0.2

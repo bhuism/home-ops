@@ -1,0 +1,39 @@
+---
+apiVersion: kafka.strimzi.io/v1
+kind: KafkaTopic
+metadata:
+  name: connect-cluster-cardserver-configs
+  namespace: cardgen
+  labels:
+    strimzi.io/cluster: cardgen
+spec:
+  partitions: 1 # Configs MUST be exactly 1 partition
+  replicas: 1   # Set to 3 if you have 3 or more Kafka brokers
+  config:
+    cleanup.policy: compact
+---
+apiVersion: kafka.strimzi.io/v1
+kind: KafkaTopic
+metadata:
+  name: connect-cluster-cardserver-offsets
+  namespace: cardgen
+  labels:
+    strimzi.io/cluster: cardgen
+spec:
+  partitions: 25 # Standard default for offsets
+  replicas: 1
+  config:
+    cleanup.policy: compact
+---
+apiVersion: kafka.strimzi.io/v1
+kind: KafkaTopic
+metadata:
+  name: connect-cluster-cardserver-status
+  namespace: cardgen
+  labels:
+    strimzi.io/cluster: cardgen
+spec:
+  partitions: 5 # Standard default for status
+  replicas: 1
+  config:
+    cleanup.policy: compact

@@ -9,4 +9,10 @@ spec:
   version: 4.3.0
   replicas: 1
   bootstrapServers: cardserver-kafka-bootstrap:9092
+
+  groupId: connect-cluster-cardserver
+  configStorageTopic: connect-cluster-cardserver-configs
+  statusStorageTopic: connect-cluster-cardserver-status
+  offsetStorageTopic: connect-cluster-cardserver-offsets
+
   image: ghcr.io/bhuism/kafka-connect-couchbase:1.0.2

@@ -15,4 +15,4 @@ spec:
   statusStorageTopic: connect-cluster-cardserver-status
   offsetStorageTopic: connect-cluster-cardserver-offsets
 
-  image: ghcr.io/bhuism/kafka-connect-couchbase:1.0.2
+  image: ghcr.io/bhuism/kafka-connect-couchbase:2.0.0

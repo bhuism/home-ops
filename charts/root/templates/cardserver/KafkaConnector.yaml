@@ -15,5 +15,5 @@ spec:
     couchbase.password: "killer"
     couchbase.bucket: "cardserver"
     couchbase.source.handler: "com.couchbase.connect.kafka.handler.source.RawJsonSourceHandler"
-    value.converter: "org.apache.kafka.connect.json.JsonConverter"
-    value.converter.schemas.enable: false
+    key.converter: "org.apache.kafka.connect.storage.StringConverter"
+    value.converter: "org.apache.kafka.connect.storage.StringConverter"

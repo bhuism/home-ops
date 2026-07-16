@@ -9,7 +9,6 @@ spec:
       apiVersion: eventing.knative.dev/v1
       kind: Broker
       name: default
-  # The target workload to inject the K_SINK env var into
   subject:
     apiVersion: apps/v1
     kind: Deployment

@@ -16,4 +16,5 @@ spec:
     couchbase.bucket: "cardserver"
     couchbase.source.handler: "com.couchbase.connect.kafka.handler.source.RawJsonSourceHandler"
     key.converter: "org.apache.kafka.connect.storage.StringConverter"
-    value.converter: "org.apache.kafka.connect.storage.StringConverter"
+    value.converter: "org.apache.kafka.connect.converters.ByteArrayConverter"
+

@@ -1,0 +1,17 @@
+apiVersion: messaging.knative.dev/v1
+kind: Subscription
+metadata:
+  name: kafka-ai-turn
+  namespace: cardserver
+spec:
+  # 1. The Source (The Kafka Channel)
+  channel:
+    apiVersion: messaging.knative.dev/v1
+    kind: KafkaChannel
+    name: couchbase-cardserver-events
+  # 2. The Destination (The Broker)
+  subscriber:
+    ref:
+      apiVersion: eventing.knative.dev/v1
+      kind: Broker
+      name: default

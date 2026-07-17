@@ -1,0 +1,12 @@
+apiVersion: eventing.knative.dev/v1
+kind: Trigger
+metadata:
+  name: route-order-creation
+  namespace: cardserver
+spec:
+  broker: default
+  filters:
+    - exact:
+        type: couchbaseCardserverEvents
+  subscriber:
+    uri: http://cardserver-aiplayer.cardserver.svc.cluster.local:8084/couchbaseCardserverEvents

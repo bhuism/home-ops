@@ -4,3 +4,6 @@ metadata:
   name: knative-eventing
   namespace: knative-eventing
 spec:
+  source:
+    kafka:
+      enable: true

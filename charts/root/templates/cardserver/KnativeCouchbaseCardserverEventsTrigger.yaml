@@ -5,9 +5,9 @@ metadata:
   namespace: cardserver
 spec:
   broker: default
-{{/*  filters:*/}}
-{{/*    - exact:*/}}
-{{/*        type: dev.knative.kafka.event*/}}
-{{/*        source: /apis/v1/namespaces/default/kafkasources/knative-kafka-ingress#couchbase-cardserver-events*/}}
+  filters:
+    - exact:
+        type: dev.knative.kafka.event
+        source: /apis/v1/namespaces/default/kafkasources/cardserver-kafka-source#couchbase-cardserver-events
   subscriber:
     uri: http://cardserver-aiplayer.cardserver.svc.cluster.local:8084/couchbaseCardserverEvents

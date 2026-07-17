@@ -1,12 +1,12 @@
-{{/*apiVersion: eventing.knative.dev/v1*/}}
-{{/*kind: Trigger*/}}
-{{/*metadata:*/}}
-{{/*  name: aiplayer-couchbase-cardserver-events*/}}
-{{/*  namespace: cardserver*/}}
-{{/*spec:*/}}
-{{/*  broker: default*/}}
-{{/*  filters:*/}}
-{{/*    - exact:*/}}
-{{/*        type: couchbase-cardserver-events*/}}
-{{/*  subscriber:*/}}
-{{/*    uri: http://cardserver-aiplayer.cardserver.svc.cluster.local:8084/couchbaseCardserverEvents*/}}
+apiVersion: eventing.knative.dev/v1
+kind: Trigger
+metadata:
+  name: aiplayer-couchbase-cardserver-events
+  namespace: cardserver
+spec:
+  broker: default
+  filters:
+    - exact:
+        type: couchbase-cardserver-events
+  subscriber:
+    uri: http://cardserver-aiplayer.cardserver.svc.cluster.local:8084/couchbaseCardserverEvents

@@ -7,6 +7,7 @@ spec:
   broker: default
   filters:
     - exact:
-        type: couchbase-cardserver-events
+        type: dev.knative.kafka.event
+        source: /apis/v1/namespaces/default/kafkasources/knative-kafka-ingress#couchbase-cardserver-events
   subscriber:
     uri: http://cardserver-aiplayer.cardserver.svc.cluster.local:8084/couchbaseCardserverEvents

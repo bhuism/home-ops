@@ -1,16 +1,16 @@
-{{/*apiVersion: sources.knative.dev/v1*/}}
-{{/*kind: KafkaSource*/}}
-{{/*metadata:*/}}
-{{/*  name: cardserver-kafka-source*/}}
-{{/*  namespace: cardserver*/}}
-{{/*spec:*/}}
+apiVersion: sources.knative.dev/v1
+kind: KafkaSource
+metadata:
+  name: cardserver-kafka-source
+  namespace: cardserver
+spec:
 {{/*  consumerGroup: knative-group*/}}
-{{/*  bootstrapServers:*/}}
-{{/*   - cardserver-kafka-bootstrap:9092*/}}
-{{/*  topics:*/}}
-{{/*   - couchbase-cardserver-events*/}}
-{{/*  sink:*/}}
-{{/*    ref:*/}}
-{{/*      apiVersion: eventing.knative.dev/v1*/}}
-{{/*      kind: Broker*/}}
-{{/*      name: default*/}}
+  bootstrapServers:
+   - cardserver-kafka-bootstrap:9092
+  topics:
+   - couchbase-cardserver-events
+  sink:
+    ref:
+      apiVersion: eventing.knative.dev/v1
+      kind: Broker
+      name: default

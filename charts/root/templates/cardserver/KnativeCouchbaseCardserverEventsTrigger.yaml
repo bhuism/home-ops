@@ -1,7 +1,7 @@
 apiVersion: eventing.knative.dev/v1
 kind: Trigger
 metadata:
-  name: aiplayer-couchbase-cardserver-events
+  name: couchbase-cardserver-events-trigger-aiplayer
   namespace: cardserver
 spec:
   broker: default

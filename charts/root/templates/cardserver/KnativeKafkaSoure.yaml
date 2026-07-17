@@ -4,7 +4,7 @@ metadata:
   name: cardserver-kafka-source
   namespace: cardserver
 spec:
-{{/*  consumerGroup: knative-group*/}}
+  consumerGroup: connect-cluster-cardserver
   bootstrapServers:
    - cardserver-kafka-bootstrap:9092
   topics:

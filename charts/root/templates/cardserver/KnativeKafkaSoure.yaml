@@ -1,0 +1,14 @@
+apiVersion: sources.knative.dev/v1
+kind: KafkaSource
+metadata:
+  name: kafka-source
+  namespace: cardserver
+spec:
+  bootstrapServers:
+   - cardserver-kafka-bootstrap:9092
+  topics:
+   - couchbase-cardserver-events
+  sink:
+    apiVersion: eventing.knative.dev/v1
+    kind: Broker
+    name: default

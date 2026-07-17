@@ -4,6 +4,7 @@ metadata:
   name: cardserver-kafka-source
   namespace: cardserver
 spec:
+  consumerGroup: knative-group
   bootstrapServers:
    - cardserver-kafka-bootstrap:9092
   topics:

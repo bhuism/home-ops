@@ -243,6 +243,8 @@ service:
   aiplayer:
     controller: aiplayer
     ports:
+      http:
+        port: 8084
       management:
         port: 9084
   gameengine:

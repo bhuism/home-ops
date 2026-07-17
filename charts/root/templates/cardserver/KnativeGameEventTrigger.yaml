@@ -1,7 +1,7 @@
 apiVersion: eventing.knative.dev/v1
 kind: Trigger
 metadata:
-  name: gameEventTrigger
+  name: game-event-trigger
   namespace: cardserver
 spec:
   broker: default

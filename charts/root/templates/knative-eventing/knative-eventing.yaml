@@ -6,4 +6,14 @@ metadata:
 spec:
   source:
     kafka:
-      enable: true
+      enabled: true
+    ceph:
+      enabled: false
+    github:
+      enabled: false
+    gitlab:
+      enabled: false
+    rabbitmq:
+      enabled: false
+    redis:
+      enabled: false

@@ -10,7 +10,7 @@ spec:
   replicas: 1
   bootstrapServers: cardserver-kafka-bootstrap:9092
 
-  groupId: connect-cluster-cardserver
+  groupId: kafka-connect-cardserver-couchbase
   configStorageTopic: connect-cluster-cardserver-configs
   statusStorageTopic: connect-cluster-cardserver-status
   offsetStorageTopic: connect-cluster-cardserver-offsets

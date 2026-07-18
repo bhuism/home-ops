@@ -4,7 +4,7 @@ metadata:
   name: cardserver-kafka-source
   namespace: cardserver
 spec:
-  consumerGroup: connect-cluster-cardserver
+  consumerGroup: connect-cluster-events-consumergroup
   bootstrapServers:
    - cardserver-kafka-bootstrap.cardserver.svc.cluster.local:9092
   topics:

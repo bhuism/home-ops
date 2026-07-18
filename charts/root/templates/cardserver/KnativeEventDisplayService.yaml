@@ -5,6 +5,10 @@ metadata:
   namespace: cardserver
 spec:
   template:
+    metadata:
+      annotations:
+        # Forces Knative to always keep at least 1 pod running
+        autoscaling.knative.dev/min-scale: "1"
     spec:
       containers:
         - image: gcr.io/knative-releases/knative.dev/eventing/cmd/event_display

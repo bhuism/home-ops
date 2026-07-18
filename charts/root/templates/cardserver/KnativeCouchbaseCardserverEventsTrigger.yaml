@@ -8,6 +8,6 @@ spec:
   filters:
     - exact:
         type: dev.knative.kafka.event
-        source: /apis/v1/namespaces/default/kafkasources/cardserver-kafka-source#couchbase-cardserver-events
+        source: /apis/v1/namespaces/cardserver/kafkasources/cardserver-kafka-source#couchbase-cardserver-events
   subscriber:
     uri: http://cardserver-aiplayer.cardserver.svc.cluster.local:8084/couchbaseCardserverEvents

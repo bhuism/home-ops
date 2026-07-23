@@ -59,6 +59,7 @@ controllers:
             memory: 512Mi
         env:
           SPRING_PROFILES_ACTIVE: production
+          KAFKA_BOOTSTRAP_SERVERS: "cardserver-kafka-bootstrap:9092"
           CARDSERVER_AUTH_JWT_ES512_SECRET:
             valueFrom:
               secretKeyRef:
@@ -181,6 +182,7 @@ controllers:
             memory: 512Mi
         env:
           SPRING_PROFILES_ACTIVE: production
+          KAFKA_BOOTSTRAP_SERVERS: "cardserver-kafka-bootstrap:9092"
   aiplayer:
     replicas: 3
     revisionHistoryLimit: 1
@@ -239,6 +241,7 @@ controllers:
             memory: 512Mi
         env:
           SPRING_PROFILES_ACTIVE: production
+          KAFKA_BOOTSTRAP_SERVERS: "cardserver-kafka-bootstrap:9092"
 service:
   aiplayer:
     controller: aiplayer

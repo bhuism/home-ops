@@ -32,9 +32,9 @@ spec:
           - name: KC_LOG_LEVEL
             value: INFO
           - name: KC_HOSTNAME
-            value: auth.impl.nl
+            value: https://auth.impl.nl
           - name: KC_HOSTNAME_ADMIN
-            value: keycloak.impl.nl
+            value: https://keycloak.impl.nl
           - name: KC_PROXY_HEADERS
             value: xforwarded
           # - name: KC_BOOTSTRAP_ADMIN_USERNAME

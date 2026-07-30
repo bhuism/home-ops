@@ -21,6 +21,11 @@ spec:
         revisionHistoryLimit: 1
         restartPolicy: Always
 
+        command:
+          - /opt/keycloak/bin/kc.sh
+        args:
+          - start
+
         extraEnv: |
           - name: KC_LOG_LEVEL
             value: INFO

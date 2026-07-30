@@ -8,7 +8,7 @@ metadata:
     strimzi.io/cluster: cardserver
 spec:
   partitions: 1 # Configs MUST be exactly 1 partition
-  replicas: 3
+  replicas: 2
   config:
     cleanup.policy: compact
 ---
@@ -21,7 +21,7 @@ metadata:
     strimzi.io/cluster: cardserver
 spec:
   partitions: 25 # Standard default for offsets
-  replicas: 3
+  replicas: 2
   config:
     cleanup.policy: compact
 ---
@@ -34,7 +34,7 @@ metadata:
     strimzi.io/cluster: cardserver
 spec:
   partitions: 5 # Standard default for status
-  replicas: 3
+  replicas: 2
   config:
     cleanup.policy: compact
 ---
@@ -47,7 +47,7 @@ metadata:
     strimzi.io/cluster: cardserver
 spec:
   partitions: 3
-  replicas: 3
+  replicas: 2
   config:
     retention.ms: 60000
     segment.bytes: 1073741824
@@ -61,7 +61,7 @@ metadata:
     strimzi.io/cluster: cardserver
 spec:
   partitions: 3
-  replicas: 3
+  replicas: 2
   config:
     retention.ms: 60000
     segment.bytes: 1073741824
@@ -75,7 +75,7 @@ metadata:
     strimzi.io/cluster: cardserver
 spec:
   partitions: 3
-  replicas: 3
+  replicas: 2
   config:
     retention.ms: 60000
     segment.bytes: 1073741824

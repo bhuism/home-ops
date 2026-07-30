@@ -28,24 +28,21 @@ spec:
         args:
           - start
 
-        extraEnv: |
+        extraEnv:
           - name: KC_LOG_LEVEL
             value: INFO
           - name: KC_HOSTNAME
-            value: https://auth.impl.nl
+            value: auth.impl.nl
           - name: KC_HOSTNAME_ADMIN
-            value: https://keycloak.impl.nl
-          - name: KC_PROXY_HEADERS
-            value: xforwarded
-          # - name: KC_BOOTSTRAP_ADMIN_USERNAME
-          #   value: admin
-          # - name: KC_BOOTSTRAP_ADMIN_PASSWORD
-          #   value: admin
+            value: keycloak.impl.nl
+          - name: KC_PROXY
+            value: edge
+          - name: KC_DB
+            value: postgres
 
         ingress:
           enabled: true
           ingressClassName: nginx-external
-          servicePort: http
           annotations:
             external-dns.alpha.kubernetes.io/target: jasmine.odee.net
             external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
@@ -90,7 +87,7 @@ spec:
                   - keycloak.impl.nl
 
         dbchecker:
-          enabled: false
+          enabled: true
           image:
             # Docker image used to check Database readiness at startup
             repository: docker.io/busybox
@@ -148,8 +145,8 @@ spec:
       selfHeal: true
     managedNamespaceMetadata:
       labels:
-        pod-security.kubernetes.io/enforce: privileged
-        pod-security.kubernetes.io/audit: privileged
-        pod-security.kubernetes.io/warn: privileged
+        pod-security.kubernetes.io/enforce: baseline
+        pod-security.kubernetes.io/audit: baseline
+        pod-security.kubernetes.io/warn: baseline
     syncOptions:
       - CreateNamespace=true

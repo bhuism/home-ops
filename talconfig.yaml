@@ -1,6 +1,6 @@
 clusterName: impl-k8s
-talosVersion: v1.13.6
-kubernetesVersion: v1.33.0
+talosVersion: v1.13.7
+kubernetesVersion: v1.35.0
 endpoint: https://control.impl.nl:6443
 allowSchedulingOnControlPlanes: false
 cniConfig:

@@ -55,13 +55,22 @@ controllers:
             cpu: "2"
             memory: 6Gi
 service:
+  ui:
+    enabled: true
+    controller: main
+    primary: false
+    annotations:
+      lbipam.cilium.io/ips: "192.168.1.86"
+    type: LoadBalancer
+    ports:
+      rest:
+        enabled: true
+        port: 8091
   main:
     enabled: true
     controller: main
     primary: true
-    annotations:
-      lbipam.cilium.io/ips: "192.168.1.86"
-    type: LoadBalancer
+    clusterIP: None
     ports:
       rest:
         enabled: true
@@ -111,7 +120,7 @@ ingress:
         paths:
           - path: /
             service:
-              identifier: main
+              identifier: ui
               port: rest
     tls:
       - secretName: couchbase.impl.nl

@@ -4,8 +4,6 @@ controllers:
     replicas: 3
     strategy: RollingUpdate
     initContainers:
-      securityContext:
-        runAsUser: 0
       chown:
         image:
           repository: alpine

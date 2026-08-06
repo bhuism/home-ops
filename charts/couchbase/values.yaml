@@ -1,11 +1,11 @@
 controllers:
   main:
-    replicas: 1
+    type: statefulset
+    replicas: 3
     strategy: RollingUpdate
-    rollingUpdate:
-      unavailable: 1
-      surge: 0
     initContainers:
+      securityContext:
+        runAsUser: 0
       chown:
         image:
           repository: alpine
@@ -31,6 +31,7 @@ controllers:
               initialDelaySeconds: 120
           startup:
             enabled: true
+            type: TCP
             port: 8091
             spec:
               failureThreshold: 15

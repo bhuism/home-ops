@@ -65,7 +65,7 @@ controllers:
         env:
           SPRING_PROFILES_ACTIVE: production
           KAFKA_BOOTSTRAP_SERVERS: "cardserver-kafka-bootstrap:9092"
-          LOGGING_LEVEL_COM_COUCHBASE_CORE: DEBUG
+#          LOGGING_LEVEL_COM_COUCHBASE_CORE: DEBUG
           CARDSERVER_AUTH_JWT_ES512_SECRET:
             valueFrom:
               secretKeyRef:
@@ -130,7 +130,7 @@ controllers:
         env:
           SPRING_PROFILES_ACTIVE: production
           KAFKA_BOOTSTRAP_SERVERS: "cardserver-kafka-bootstrap:9092"
-          LOGGING_LEVEL_COM_COUCHBASE_CORE: DEBUG
+#          LOGGING_LEVEL_COM_COUCHBASE_CORE: DEBUG
   gameengine:
     replicas: 3
     revisionHistoryLimit: 1
@@ -190,7 +190,7 @@ controllers:
         env:
           SPRING_PROFILES_ACTIVE: production
           KAFKA_BOOTSTRAP_SERVERS: "cardserver-kafka-bootstrap:9092"
-          LOGGING_LEVEL_COM_COUCHBASE_CORE: DEBUG
+#          LOGGING_LEVEL_COM_COUCHBASE_CORE: DEBUG
   aiplayer:
     replicas: 3
     revisionHistoryLimit: 1
@@ -250,7 +250,7 @@ controllers:
         env:
           SPRING_PROFILES_ACTIVE: production
           KAFKA_BOOTSTRAP_SERVERS: "cardserver-kafka-bootstrap:9092"
-          LOGGING_LEVEL_COM_COUCHBASE_CORE: DEBUG
+#          LOGGING_LEVEL_COM_COUCHBASE_CORE: DEBUG
 service:
   aiplayer:
     controller: aiplayer

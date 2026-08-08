@@ -98,14 +98,6 @@ ingress:
       - secretName: ip.impl.nl
         hosts:
           - ip.impl.nl
-persistence:
-  data:
-    enabled: true
-    type: persistentVolumeClaim
-    accessMode: "ReadWriteOnce"
-    size: 1Gi
-    globalMounts:
-      - path: /opt/couchbase/var
 
 # rawResources:
 #   autoscaler:

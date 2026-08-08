@@ -54,6 +54,7 @@ controllers:
             cpu: "2"
             memory: 6Gi
     statefulset:
+      serviceName: couchbase-main
       volumeClaimTemplates:
         - name: data
           enabled: true

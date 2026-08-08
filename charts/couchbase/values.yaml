@@ -53,6 +53,17 @@ controllers:
           requests:
             cpu: "2"
             memory: 6Gi
+    statefulset:
+      volumeClaimTemplates:
+        - name: data
+          enabled: true
+          type: persistentVolumeClaim
+          storageClass: ceph-rbd
+          accessMode: "ReadWriteOnce"
+          size: 10Gi
+          globalMounts:
+            - path: /opt/couchbase/var
+
 service:
   ui:
     enabled: true
@@ -125,12 +136,13 @@ ingress:
       - secretName: couchbase.impl.nl
         hosts:
           - couchbase.impl.nl
-persistence:
-  data:
-    enabled: true
-    accessMode: "ReadWriteOnce"
+#persistence:
+#  data:
+#    enabled: true
 #    type: persistentVolumeClaim
-#    existingClaim: couchbase-pvc
-    size: 10Gi
-    globalMounts:
-      - path: /opt/couchbase/var
+#    accessMode: "ReadWriteOnce"
+##    type: persistentVolumeClaim
+##    existingClaim: couchbase-pvc
+#    size: 10Gi
+#    globalMounts:
+#      - path: /opt/couchbase/var

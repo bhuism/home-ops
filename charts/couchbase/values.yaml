@@ -1,7 +1,7 @@
 controllers:
   main:
     type: statefulset
-    replicas: 1
+    replicas: 3
     strategy: RollingUpdate
     initContainers:
       chown:
@@ -136,13 +136,3 @@ ingress:
       - secretName: couchbase.impl.nl
         hosts:
           - couchbase.impl.nl
-#persistence:
-#  data:
-#    enabled: true
-#    type: persistentVolumeClaim
-#    accessMode: "ReadWriteOnce"
-##    type: persistentVolumeClaim
-##    existingClaim: couchbase-pvc
-#    size: 10Gi
-#    globalMounts:
-#      - path: /opt/couchbase/var

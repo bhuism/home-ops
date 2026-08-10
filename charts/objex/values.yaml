@@ -1,10 +1,10 @@
 controllers:
   main:
-    replicas: 1
-    # strategy: RollingUpdate
-    # rollingUpdate:
-    #   unavailable: 0
-    #   surge: 1
+    replicas: 3
+    revisionHistoryLimit: 1
+    strategy: RollingUpdate
+    rollingUpdate:
+      unavailable: 0
     containers:
       main:
         image:

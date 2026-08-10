@@ -24,8 +24,8 @@ spec:
                     LOG_LEVEL: info
                     BROWSER_TIMEOUT: 120000
         podOptions:
+          defaultAffinity: false
           nodeSelector:
-            kubernetes.io/arch: "arm64"
         resources:
           limits:
             cpu: 500m

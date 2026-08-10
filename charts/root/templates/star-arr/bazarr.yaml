@@ -19,8 +19,8 @@ spec:
           main:
             replicas: 1
         podOptions:
+          defaultAffinity: false
           nodeSelector:
-            kubernetes.io/arch: "arm64"
         persistence:
           config:
             enabled: true

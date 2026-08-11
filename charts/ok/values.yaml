@@ -31,6 +31,8 @@ controllers:
           capabilities:
             drop:
               - ALL
+          seccompProfile:
+            type: RuntimeDefault
         resources:
           limits:
             cpu: 100m

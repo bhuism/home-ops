@@ -25,6 +25,12 @@ controllers:
             port: 9080
           startup:
             enabled: true
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
         resources:
           limits:
             cpu: 100m

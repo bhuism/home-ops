@@ -52,8 +52,13 @@ controllers:
         env:
           TZ: "Europe/Amsterdam"
           VPN_SERVICE_PROVIDER: nordvpn
-          VPN_TYPE: openvpn
+#          VPN_TYPE: openvpn
+          VPN_TYPE: wireguard
           SERVER_COUNTRIES: Switzerland
+          WIREGUARD_PRIVATE_KEY:
+            configMapKeyRef:
+              name: nordvpn-credentials
+              key: wireguardpassword
           OPENVPN_USER:
             configMapKeyRef:
               name: nordvpn-credentials

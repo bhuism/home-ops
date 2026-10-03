@@ -12,7 +12,7 @@ controllers:
         image:
           pullPolicy: IfNotPresent
           repository: alpine
-          tag: "3.24.1"
+          tag: "3.24.2"
         command:
           - sh
           - -c
@@ -58,7 +58,7 @@ controllers:
         image:
           pullPolicy: IfNotPresent
           repository: alpine
-          tag: "3.24.1"
+          tag: "3.24.2"
         command:
           - sh
           - -c
@@ -121,7 +121,7 @@ controllers:
         image:
           pullPolicy: IfNotPresent
           repository: ghcr.io/juanfont/headscale
-          tag: "v0.29.3"
+          tag: "v0.29.4"
         probes:
           liveness:
             enabled: true

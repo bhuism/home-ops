@@ -70,8 +70,8 @@ ingress:
     enabled: true
     className: nginx-external
     annotations:
-      external-dns.alpha.kubernetes.io/target: jasmine.odee.net
-      external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+      external-dns.kubernetes.io/target: jasmine.odee.net
+      external-dns.kubernetes.io/cloudflare-proxied: "false"
       cert-manager.io/cluster-issuer: letsencrypt-production
       gethomepage.dev/enabled: "true"
     hosts:

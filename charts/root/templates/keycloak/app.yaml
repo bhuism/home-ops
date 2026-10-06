@@ -44,8 +44,8 @@ spec:
           enabled: true
           ingressClassName: nginx-external
           annotations:
-            external-dns.alpha.kubernetes.io/target: jasmine.odee.net
-            external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+            external-dns.kubernetes.io/target: jasmine.odee.net
+            external-dns.kubernetes.io/cloudflare-proxied: "false"
             cert-manager.io/cluster-issuer: letsencrypt-production
             nginx.ingress.kubernetes.io/proxy-buffer-size: "128k" # Prevents big header errors with tokens
             nginx.ingress.kubernetes.io/ssl-redirect: "true"
@@ -69,8 +69,8 @@ spec:
             # Ingress annotations for console ingress only
             # Useful to set nginx.ingress.kubernetes.io/whitelist-source-range particularly
             annotations:
-              external-dns.alpha.kubernetes.io/target: ingress-internal.impl.nl
-              external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+              external-dns.kubernetes.io/target: ingress-internal.impl.nl
+              external-dns.kubernetes.io/cloudflare-proxied: "false"
               cert-manager.io/cluster-issuer: letsencrypt-production
               gethomepage.dev/enabled: "true"
               nginx.ingress.kubernetes.io/proxy-buffer-size: "128k" # Prevents big header errors with tokens

@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/refs/heads/main/charts/library/common/values.schema.json
+
+defaultPodOptions:
+  hostNetwork: true
+  dnsPolicy: ClusterFirstWithHostNet
+
+controllers:
+  main:
+    type: deployment
+    replicas: 1
+    containers:
+      main:
+        image:
+          repository: ghcr.io/athombv/homey-shs
+          tag: "latest"
+          pullPolicy: IfNotPresent
+        securityContext:
+          privileged: true
+        env:
+          TZ: "Europe/Amsterdam"
+
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        enabled: true
+        port: 80
+
+ingress:
+  main:
+    enabled: true
+    className: nginx-internal
+    annotations:
+      external-dns.alpha.kubernetes.io/target: ingress-internal.impl.nl
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+      cert-manager.io/cluster-issuer: letsencrypt-production
+      gethomepage.dev/enabled: "true"
+    hosts:
+      - host: homey.impl.nl
+        paths:
+          - path: /
+            service:
+              identifier: main
+              port: http
+    tls:
+      - secretName: homey.impl.nl
+        hosts:
+          - homey.impl.nl
+
+persistence:
+  data:
+    enabled: true
+    type: persistentVolumeClaim
+    existingClaim: homey-shs-data-pvc
+    globalMounts:
+      - path: /homey/user

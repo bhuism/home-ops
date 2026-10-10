@@ -16,9 +16,11 @@ controllers:
           pullPolicy: IfNotPresent
         securityContext:
           privileged: true
+          runAsUser: 0
+          fsGroup: 1000
+          runAsNonRoot: false
         env:
           TZ: "Europe/Amsterdam"
-
 service:
   main:
     controller: main
@@ -55,3 +57,13 @@ persistence:
     existingClaim: homey-shs-data-pvc
     globalMounts:
       - path: /homey/user
+  run:
+    type: emptyDir
+    medium: Memory
+    globalMounts:
+      - path: /run
+  tmp:
+    type: emptyDir
+    medium: Memory
+    globalMounts:
+      - path: /tmp

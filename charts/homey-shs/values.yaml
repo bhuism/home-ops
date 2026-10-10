@@ -25,7 +25,7 @@ service:
     ports:
       http:
         enabled: true
-        port: 80
+        port: 4859
 
 ingress:
   main:

@@ -16,9 +16,6 @@ controllers:
           pullPolicy: IfNotPresent
         securityContext:
           privileged: true
-          runAsUser: 0
-          fsGroup: 1000
-          runAsNonRoot: false
         env:
           TZ: "Europe/Amsterdam"
 service:

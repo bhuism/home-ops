@@ -17,6 +17,8 @@ spec:
       valuesObject:
         env:
           TZ: "Europe/Amsterdam"
+        controller:
+          enabled: false
         ingress:
           main:
             enabled: true

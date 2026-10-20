@@ -40,7 +40,11 @@ spec:
         externalIPs:
           enabled: true
         devices:
-          - "!wpan0"
+          - eth+
+          - enp+
+          - eno+
+          - enx+
+          - end+
         ipam:
           mode: kubernetes
           # https://github.com/cilium/cilium/issues/35811

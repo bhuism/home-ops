@@ -52,12 +52,12 @@ ingress:
           - otbr.impl.nl
 
 persistence:
-   thread-data:
-     enabled: true
-     type: persistentVolumeClaim
-     existingClaim: otbr-data-pvc
-     globalMounts:
-       - path: /var/lib/thread
+  data:
+    enabled: true
+    type: persistentVolumeClaim
+    existingClaim: otbr-data-pvc
+    globalMounts:
+      - path: /data
   # dev-net-tun:
   #   enabled: true
   #   type: hostPath

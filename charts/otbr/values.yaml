@@ -17,6 +17,8 @@ controllers:
         env:
           TZ: "Europe/Amsterdam"
           OT_RCP_DEVICE: "spinel+hdlc+tcp://10.10.20.11:6638"
+          OT_INFRA_IF: "end0"
+
         #   BACKBONE_INTERFACE: "eth0"
         #   OTBR_REST_PORT: 8081
         #   OTBR_WEB_PORT: 80

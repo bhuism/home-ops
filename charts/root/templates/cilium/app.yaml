@@ -45,6 +45,7 @@ spec:
           - eno+
           - enx+
           - end+
+          - bond+
         ipam:
           mode: kubernetes
           # https://github.com/cilium/cilium/issues/35811

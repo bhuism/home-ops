@@ -34,9 +34,9 @@ service:
     type: LoadBalancer
     ports:
       rest:
+        enabled: true
         port: 8081
-        protocol: TCP
-
+        targetPort: 8081
 ingress:
   main:
     enabled: true

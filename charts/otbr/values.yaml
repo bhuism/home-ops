@@ -57,9 +57,3 @@ persistence:
     existingClaim: otbr-data-pvc
     globalMounts:
       - path: /var/lib/thread
-  # dev-net-tun:
-  #   enabled: true
-  #   type: hostPath
-  #   hostPath: /dev/net/tun
-  #   globalMounts:
-  #     - path: /dev/net/tun

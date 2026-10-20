@@ -39,7 +39,7 @@ spec:
         #             - hubble.impl.nl
         externalIPs:
           enabled: true
-        devices: "!wpan0"
+        devices: "!wpan0,enp+,end+,bond+"
         #  - eth+
         #  - enp+
         #  - eno+

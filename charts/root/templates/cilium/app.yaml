@@ -39,7 +39,7 @@ spec:
         #             - hubble.impl.nl
         externalIPs:
           enabled: true
-        devices: "!wpan0,enp+,end+,bond+"
+        #devices: "!wpan0,enp+,end+,bond+"
         #  - eth+
         #  - enp+
         #  - eno+
@@ -55,7 +55,7 @@ spec:
         kubeProxyReplacement: true
         loadBalancer:
           mode: hybrid
-          acceleration: native
+          acceleration: best-effort
         routingMode: native
         ipv4NativeRoutingCIDR: 10.0.0.0/8
         k8sServiceHost: 127.0.0.1

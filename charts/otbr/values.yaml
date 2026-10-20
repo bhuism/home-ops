@@ -9,19 +9,16 @@ controllers:
     containers:
       main:
         image:
-          repository: openthread/border-router
-          tag: "v2026.10.0"
+          repository: bnutzer/otbr-tcp
+          tag: latest
           pullPolicy: IfNotPresent
         securityContext:
           privileged: true
         env:
           TZ: "Europe/Amsterdam"
-          OT_RCP_DEVICE: "spinel+hdlc+tcp://10.10.20.11:6638"
-          OT_INFRA_IF: "end0"
-
-        #   BACKBONE_INTERFACE: "eth0"
-        #   OTBR_REST_PORT: 8081
-        #   OTBR_WEB_PORT: 80
+          RCP_HOST: 10.10.20.11
+          OTBR_BACKBONE_IF: "end0"
+          OTBR_WEB_ENABLE: 1
 
 service:
   main:

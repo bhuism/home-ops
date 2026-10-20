@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/refs/heads/main/charts/library/common/values.schema.json
+
+defaultPodOptions:
+  hostNetwork: true
+  dnsPolicy: ClusterFirstWithHostNet
+
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          repository: openthread/border-router
+          tag: "v2026.10.0"
+          pullPolicy: IfNotPresent
+        securityContext:
+          privileged: true
+        env:
+          TZ: "Europe/Amsterdam"
+        #   BACKBONE_INTERFACE: "eth0"
+        #   RADIO_URL: "spinel+hdlc+uart:///dev/ttyUSB0?uart-baudrate=460800"
+        #   OTBR_REST_PORT: 8081
+        #   OTBR_WEB_PORT: 80
+
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 80
+      rest:
+        port: 8081
+
+ingress:
+  main:
+    enabled: true
+    className: nginx-internal
+    annotations:
+      external-dns.kubernetes.io/target: ingress-internal.impl.nl
+      external-dns.kubernetes.io/cloudflare-proxied: "false"
+      cert-manager.io/cluster-issuer: letsencrypt-production
+      gethomepage.dev/enabled: "true"
+    hosts:
+      - host: otbr.impl.nl
+        paths:
+          - path: /
+            service:
+              identifier: main
+              port: http
+    tls:
+      - secretName: otbr.impl.nl
+        hosts:
+          - otbr.impl.nl
+
+persistence:
+   thread-data:
+     enabled: true
+     type: persistentVolumeClaim
+     existingClaim: otbr-data-pvc
+     globalMounts:
+       - path: /var/lib/thread
+  # dev-net-tun:
+  #   enabled: true
+  #   type: hostPath
+  #   hostPath: /dev/net/tun
+  #   globalMounts:
+  #     - path: /dev/net/tun

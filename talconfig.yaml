@@ -1,5 +1,5 @@
 clusterName: impl-k8s
-talosVersion: v1.13.7
+talosVersion: v1.13.9
 kubernetesVersion: v1.35.0
 endpoint: https://control.impl.nl:6443
 allowSchedulingOnControlPlanes: false
@@ -56,9 +56,16 @@ patches:
           - name: nbd
           - name: rbd
           - name: ceph
+      sysctls:
+        net.ipv6.conf.all.forwarding: "1"
+        net.ipv6.conf.default.forwarding: "1"
+        net.ipv6.conf.all.accept_ra: "2"
+        net.ipv6.conf.default.accept_ra: "2"
     cluster:
       proxy:
         disabled: true
+
+
 controlPlane:
   nameservers:
     - 1.0.0.1
@@ -76,45 +83,116 @@ nodes:
     ipAddress: 192.168.1.37
     controlPlane: false
     installDisk: /dev/mmcblk0
+    networkInterfaces:
+      - interface: end0
+        addresses:
+          - 192.168.1.37/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.1.1
+            metric: 1024
+        mtu: 1500
   - hostname: node38
     ipAddress: 192.168.1.38
     controlPlane: false
     installDisk: /dev/mmcblk0
+    networkInterfaces:
+      - interface: end0
+        addresses:
+          - 192.168.1.38/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.1.1
+            metric: 1024
+        mtu: 1500
   - hostname: node39
     ipAddress: 192.168.1.39
     controlPlane: false
     installDisk: /dev/mmcblk0
+    networkInterfaces:
+      - interface: end0
+        addresses:
+          - 192.168.1.39/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.1.1
+            metric: 1024
+        mtu: 1500
   - hostname: node40
     ipAddress: 192.168.1.40
     controlPlane: false
     installDisk: /dev/mmcblk0
+    networkInterfaces:
+      - interface: end0
+        addresses:
+          - 192.168.1.40/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.1.1
+            metric: 1024
+        mtu: 1500
   - hostname: node33
     ipAddress: 192.168.1.33
     controlPlane: true
     installDisk: /dev/mmcblk0
+    networkInterfaces:
+      - interface: end0
+        addresses:
+          - 192.168.1.33/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.1.1
+            metric: 1024
+        mtu: 1500
   - hostname: node36
     ipAddress: 192.168.1.36
     controlPlane: false
     installDisk: /dev/mmcblk0
-    schematic:
-      customization:
-        extraKernelArgs:
-          - "-console=ttyS2,115200"
-    patches:
-      - |-
-        machine:
-          udev:
-            rules:
-              - SUBSYSTEM=="usb", ATTRS{idVendor}==“051d”, ATTRS{idProduct}==“0002”, MODE="0666"
+    networkInterfaces:
+      - interface: end0
+        addresses:
+          - 192.168.1.36/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.1.1
+            metric: 1024
+        mtu: 1500
   - hostname: node34
     ipAddress: 192.168.1.34
     controlPlane: true
     installDisk: /dev/mmcblk0
+    networkInterfaces:
+      - interface: end0
+        addresses:
+          - 192.168.1.34/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.1.1
+            metric: 1024
+        mtu: 1500
   - hostname: node35
     ipAddress: 192.168.1.35
     controlPlane: true
     installDisk: /dev/mmcblk0
+    networkInterfaces:
+      - interface: end0
+        addresses:
+          - 192.168.1.35/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.1.1
+            metric: 1024
+        mtu: 1500
   - hostname: node41
     ipAddress: 192.168.1.41
     controlPlane: false
     installDisk: /dev/nvme0n1
+    networkInterfaces:
+      - interface: enp4s0
+        addresses:
+          - 192.168.1.41/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.1.1
+            metric: 1024
+        mtu: 1500

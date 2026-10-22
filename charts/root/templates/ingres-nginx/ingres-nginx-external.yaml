@@ -29,7 +29,7 @@ spec:
               enabled: true
           service:
             annotations:
-              lbipam.cilium.io/ips: "192.168.1.80"
+              lbipam.cilium.io/ips: "10.10.50.100"
           config:
             ssl-session-cache: "shared:SSL:10m"            
         defaultBackend:

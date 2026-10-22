@@ -21,7 +21,7 @@ spec:
               - "headscale.impl.nl"
         env:
           TZ: "Europe/Amsterdam"
-          TS_ROUTES: "10.10.50.100/32"
+          TS_ROUTES: "10.10.50.0/24"
           TS_EXTRA_ARGS: "--login-server=https://headscale.impl.nl --snat-subnet-routes=true"
           TS_USERSPACE: "false"
           TS_PORT: "41641"

@@ -15,8 +15,6 @@ spec:
     targetRevision: 0.38.0
     helm:
       valuesObject:
-        image:
-          tag: "v1.82.0"
         env:
           TZ: "Europe/Amsterdam"
           TS_ROUTES: "10.10.50.0/24"

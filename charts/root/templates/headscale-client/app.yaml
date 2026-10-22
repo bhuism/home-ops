@@ -15,6 +15,10 @@ spec:
     targetRevision: 0.38.0
     helm:
       valuesObject:
+        hostAliases:
+          - ip: 10.10.50.100
+            hostnames:
+              - "headscale.impl.nl"
         env:
           TZ: "Europe/Amsterdam"
           TS_ROUTES: "10.10.50.100/32"

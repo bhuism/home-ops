@@ -17,27 +17,11 @@ spec:
       valuesObject:
         env:
           TZ: "Europe/Amsterdam"
-          TS_ROUTES: "10.10.50.0/24"
-          TS_EXTRA_ARGS: "--login-server=https://headscale.impl.nl --snat-subnet-routes=true --accept-dns=false"
+          TS_ROUTES: "10.10.50.100/24"
+          TS_EXTRA_ARGS: "--login-server=https://headscale.impl.nl --snat-subnet-routes=true"
           TS_USERSPACE: "false"
           TS_PORT: "41641"
-          TS_AUTH_ONCE: "true"
-        service:
-          main:
-            enabled: true
-            type: LoadBalancer
-            externalTrafficPolicy: Cluster
-            annotations:
-              lbipam.cilium.io/ips: "192.168.1.87"
-            ports:
-              http:
-                enabled: false
-              tailscale-udp:
-                enabled: true
-                port: 41641
-                protocol: UDP
-                targetPort: 41641
-
+          TS_AUTH_ONCE: "false"
         securityContext:
           runAsUser: 0
           runAsGroup: 0
@@ -52,6 +36,20 @@ spec:
             type: hostPath
             hostPath: /dev/net/tun
             mountPath: /dev/net/tun
+        service:
+          main:
+            enabled: true
+            type: LoadBalancer
+            externalTrafficPolicy: Cluster
+            annotations:
+              lbipam.cilium.io/ips: "192.168.1.87"
+            ports:
+              tailscale-udp:
+                enabled: true
+                port: 41641
+                protocol: UDP
+                targetPort: 41641
+
   syncPolicy:
     automated:
       prune: true

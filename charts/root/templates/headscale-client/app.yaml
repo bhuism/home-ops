@@ -23,6 +23,7 @@ spec:
           TS_EXTRA_ARGS: "--login-server=https://headscale.impl.nl --snat-subnet-routes=true --accept-dns=false"
           TS_USERSPACE: "false"
           TS_PORT: "41641"
+          TS_AUTH_ONCE: "true"
         service:
           main:
             enabled: true
@@ -47,7 +48,6 @@ spec:
             add:
               - NET_ADMIN
               - NET_RAW
-
         persistence:
           tun:
             enabled: true

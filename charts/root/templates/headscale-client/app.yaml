@@ -44,6 +44,8 @@ spec:
             annotations:
               lbipam.cilium.io/ips: "192.168.1.87"
             ports:
+              http:
+                enabled: false
               tailscale-udp:
                 enabled: true
                 port: 41641

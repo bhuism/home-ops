@@ -1,12 +1,11 @@
 controllers:
   main:
-    type: statefulset
     containers:
       main:
         image:
           repository: ghcr.io/xirixiz/dsmr-reader-docker
           pullPolicy: IfNotPresent
-          tag: "5.10.4-2023.11.01"
+          tag: "6.2.1"
         env:
           TZ: "Europe/Amsterdam"
           VIRTUAL_HOST: localhost

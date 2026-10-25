@@ -20,6 +20,10 @@ controllers:
           DSMRREADER_ADMIN_USER: root
           DSMRREADER_ADMIN_PASSWORD: killer
           PGSSLCERT: /tmp/postgresql.crt
+          DSMRREADER_REMOTE_DATALOGGER_INPUT_METHOD: ipv4
+          DSMRREADER_REMOTE_DATALOGGER_NETWORK_HOST: 192.168.1.203
+          DSMRREADER_REMOTE_DATALOGGER_NETWORK_PORT: 23
+
 service:
   main:
     controller: main

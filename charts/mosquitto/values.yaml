@@ -14,6 +14,41 @@ controllers:
             enabled: true
           startup:
             enabled: true
+      ui:
+        image:
+          repository: smeagolworms4/mqtt-explorer
+          tag: "browser-1.0.3"
+          pullPolicy: IfNotPresent
+        env:
+          PORT: "4000"
+        probes:
+          liveness:
+            enabled: true
+            type: TCP
+            port: 4000
+            spec:
+              initialDelaySeconds: 0
+              periodSeconds: 10
+              timeoutSeconds: 1
+              failureThreshold: 3
+          readiness:
+            enabled: true
+            type: TCP
+            port: 4000
+            spec:
+              initialDelaySeconds: 0
+              periodSeconds: 10
+              timeoutSeconds: 1
+              failureThreshold: 3
+          startup:
+            enabled: true
+            type: TCP
+            port: 4000
+            spec:
+              initialDelaySeconds: 0
+              periodSeconds: 5
+              timeoutSeconds: 1
+              failureThreshold: 30
 configMaps:
   config:
     enabled: true
@@ -38,42 +73,69 @@ service:
       lbipam.cilium.io/ips: "192.168.1.84"
     ports:
       http:
+        enabled: false
+      mqtt:
+        enabled: true
         port: 1883
       websocket:
         enabled: true
         port: 8083
+      ui:
+        enabled: true
+        port: 4000
 
-# ingress:
-#   main:
-#     enabled: false
-#     hosts:
-#       - host: mosquitto.impl.nl
-#         paths:
-#           - path: /
-#             pathType: Prefix
-#             service:
-#               name: mqtt
-#               port: 1883
-#           - path: /
-#             pathType: Prefix
-#             service:
-#               name: ws
-#               port: 8083
+ingress:
+  main:
+    enabled: true
+    className: nginx-internal
+    annotations:
+      external-dns.kubernetes.io/target: ingress-internal.impl.nl
+      external-dns.kubernetes.io/cloudflare-proxied: "false"
+      cert-manager.io/cluster-issuer: letsencrypt-production
+      gethomepage.dev/enabled: "true"
+      gethomepage.dev/group: "Infrastructure"
+      gethomepage.dev/name: "Mosquitto"
+    hosts:
+      - host: mosquitto.impl.nl
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            service:
+              name: main
+              port: ui
+    tls:
+      - secretName: mosquitto.impl.nl
+        hosts:
+          - mosquitto.impl.nl
+
 persistence:
   configinc:
     type: persistentVolumeClaim
     existingClaim: mosquitto-inc-v4-pvc
-    globalMounts:
-      - path: /mosquitto/configinc
+    advancedMounts:
+      main:
+        main:
+          - path: /mosquitto/configinc
   data:
     type: persistentVolumeClaim
     existingClaim: mosquitto-data-v4-pvc
-    globalMounts:
-      - path: /mosquitto/data
+    advancedMounts:
+      main:
+        main:
+          - path: /mosquitto/data
   config:
     enabled: true
     type: configMap
-    name: mosquitto
-    globalMounts:
-      - path: /mosquitto/config/mosquitto.conf
-        subPath: mosquitto.conf
+    name: mosquitto-config
+    advancedMounts:
+      main:
+        main:
+          - path: /mosquitto/config/mosquitto.conf
+            subPath: mosquitto.conf
+  ui-config:
+    enabled: true
+    type: emptyDir
+    advancedMounts:
+      main:
+        ui:
+          - path: /mqtt-explorer/config

@@ -101,7 +101,7 @@ ingress:
           - path: /
             pathType: ImplementationSpecific
             service:
-              name: main
+              identifier: main
               port: ui
     tls:
       - secretName: mosquitto.impl.nl

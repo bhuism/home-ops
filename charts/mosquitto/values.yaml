@@ -53,7 +53,7 @@ configMaps:
   config:
     enabled: true
     data:
-      mosquitto.conf: |
+      mosquitto-config.conf: |
         per_listener_settings false
         allow_anonymous false
         persistence true

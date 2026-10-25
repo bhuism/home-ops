@@ -19,6 +19,11 @@ spec:
           enabled: true
         serviceMonitor:
           enabled: true
+        defaultArgs:
+          - --cert-dir=/tmp
+          - --kubelet-preferred-address-types=ExternalIP,Hostname
+          - --kubelet-use-node-status-port
+          - --metric-resolution=15s
   syncPolicy:
     automated:
       prune: true

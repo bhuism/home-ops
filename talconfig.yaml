@@ -1,5 +1,5 @@
 clusterName: impl-k8s
-talosVersion: v1.13.9
+talosVersion: v1.13.12
 kubernetesVersion: v1.35.0
 endpoint: https://control.impl.nl:6443
 allowSchedulingOnControlPlanes: false
@@ -99,9 +99,6 @@ nodes:
             dhcp: false
             addresses:
               - 10.0.50.33/24
-            routes:
-              - network: 0.0.0.0/0
-                gateway: 10.0.50.1
   - hostname: node34
     ipAddress: 192.168.1.34
     controlPlane: true
@@ -122,9 +119,6 @@ nodes:
             dhcp: false
             addresses:
               - 10.0.50.34/24
-            routes:
-              - network: 0.0.0.0/0
-                gateway: 10.0.50.1
   - hostname: node35
     ipAddress: 192.168.1.35
     controlPlane: true
@@ -145,9 +139,6 @@ nodes:
             dhcp: false
             addresses:
               - 10.0.50.35/24
-            routes:
-              - network: 0.0.0.0/0
-                gateway: 10.0.50.1
   - hostname: node36
     ipAddress: 192.168.1.36
     controlPlane: false
@@ -168,9 +159,6 @@ nodes:
             dhcp: false
             addresses:
               - 10.0.50.36/24
-            routes:
-              - network: 0.0.0.0/0
-                gateway: 10.0.50.1
   - hostname: node37
     ipAddress: 192.168.1.37
     controlPlane: false
@@ -191,9 +179,6 @@ nodes:
             dhcp: false
             addresses:
               - 10.0.50.37/24
-            routes:
-              - network: 0.0.0.0/0
-                gateway: 10.0.50.1
   - hostname: node38
     ipAddress: 192.168.1.38
     controlPlane: false
@@ -214,9 +199,6 @@ nodes:
             dhcp: false
             addresses:
               - 10.0.50.38/24
-            routes:
-              - network: 0.0.0.0/0
-                gateway: 10.0.50.1
   - hostname: node39
     ipAddress: 192.168.1.39
     controlPlane: false
@@ -237,9 +219,6 @@ nodes:
             dhcp: false
             addresses:
               - 10.0.50.39/24
-            routes:
-              - network: 0.0.0.0/0
-                gateway: 10.0.50.1
   - hostname: node40
     ipAddress: 192.168.1.40
     controlPlane: false
@@ -260,9 +239,6 @@ nodes:
             dhcp: false
             addresses:
               - 10.0.50.40/24
-            routes:
-              - network: 0.0.0.0/0
-                gateway: 10.0.50.1
   - hostname: node41
     ipAddress: 192.168.1.41
     controlPlane: false
@@ -283,6 +259,3 @@ nodes:
             dhcp: false
             addresses:
               - 10.0.50.41/24
-            routes:
-              - network: 0.0.0.0/0
-                gateway: 10.0.50.1

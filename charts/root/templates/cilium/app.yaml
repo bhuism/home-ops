@@ -15,37 +15,8 @@ spec:
     targetRevision: 1.19.5
     helm:
       values: |
-        # hubble:
-        #   enabled: false
-        #   ingress:
-        #     enabled: true
-        #   relay:
-        #     enabled: true
-        #   ui:
-        #     enabled: true
-        #     ingress:
-        #       enabled: true
-        #       className: nginx-internal
-        #       annotations:
-        #         external-dns.kubernetes.io/target: ingress-internal.impl.nl
-        #         external-dns.kubernetes.io/cloudflare-proxied: "false"
-        #         cert-manager.io/cluster-issuer: letsencrypt-production
-        #         gethomepage.dev/enabled: "true"
-        #       hosts:
-        #         - hubble.impl.nl
-        #       tls:
-        #         - secretName: hubble.impl.nl
-        #           hosts:
-        #             - hubble.impl.nl
         externalIPs:
           enabled: true
-        #devices: "!wpan0,enp+,end+,bond+"
-        #  - eth+
-        #  - enp+
-        #  - eno+
-        #  - enx+
-        #  - end+
-        #  - bond+
         ipam:
           mode: kubernetes
           # https://github.com/cilium/cilium/issues/35811
@@ -57,7 +28,7 @@ spec:
           mode: hybrid
           acceleration: best-effort
         routingMode: native
-        ipv4NativeRoutingCIDR: 10.0.0.0/8
+        ipv4NativeRoutingCIDR: 10.10.0.0/16
         k8sServiceHost: 127.0.0.1
         k8sServicePort: 7445
         autoDirectNodeRoutes: true

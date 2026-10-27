@@ -21,10 +21,9 @@ spec:
           enabled: true
         defaultArgs:
           - --cert-dir=/tmp
-          - --secure-port=4443
           - --kubelet-preferred-address-types=Hostname,InternalIP,ExternalIP
           - --kubelet-use-node-status-port
-          - --metric-resolution=15s
+          - --kubelet-ca-file=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
   syncPolicy:
     automated:
       prune: true

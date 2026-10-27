@@ -30,7 +30,7 @@ spec:
         service:
           main:
             annotations:
-              lbipam.cilium.io/ips: "192.168.1.82"
+              lbipam.cilium.io/ips: "10.10.41.82"
             externalTrafficPolicy: Cluster
             ports:
               http:

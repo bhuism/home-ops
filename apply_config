@@ -12,18 +12,3 @@ talhelper genconfig
 
 talhelper gencommand apply --extra-flags "--dry-run"
 talhelper gencommand apply
-
-
-#c=1
-#for i in 153 154 155 156 113 182 197 196 183 ; do
-
-#echo $c 192.168.1.$i
-
-#talosctl -n 192.168.1.$((153+$i-1)) apply-config -f controlplane.yaml -p @node$i.json
-
-#echo "talosctl -n 192.168.1.$i -e 192.168.1.$i apply-config --insecure -f clusterconfig/impl-k8s-node$c.yaml"
-
-#c=$((c+1))
-
-
-#done

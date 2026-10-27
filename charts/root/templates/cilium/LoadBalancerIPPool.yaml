@@ -1,7 +1,7 @@
 apiVersion: "cilium.io/v2alpha1"
 kind: CiliumLoadBalancerIPPool
 metadata:
-  name: "ipaddresspool-dmz"
+  name: "ipaddresspool-impl"
   namespace: kube-system
 spec:
   blocks:

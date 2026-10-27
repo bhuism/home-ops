@@ -6,7 +6,7 @@ metadata:
   labels:
     strimzi.io/cluster: cardserver
 spec:
-  replicas: 3
+  replicas: 1
   roles:
     - broker
   storage:

@@ -6,6 +6,6 @@ metadata:
 spec:
   externalIPs: false
   loadBalancerIPs: true
-{{/*  interfaces:*/}}
-{{/*    - ^end0\.41$*/}}
-{{/*    - ^enp4s0\.41$*/}}
+  interfaces:
+    - ^end0\.41$
+    - ^enp4s0\.41$

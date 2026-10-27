@@ -70,16 +70,11 @@ worker:
 
 nodes:
   - hostname: node33
-    ipAddress: 192.168.1.33
+    ipAddress: 10.10.41.33
     controlPlane: true
     installDisk: /dev/mmcblk0
     networkInterfaces:
       - interface: end0
-        up: true
-        addresses:
-          - 192.168.1.33/24
-        routes:
-          - gateway: 192.168.1.1
         dhcp: false
         vlans:
           - vlanId: 41
@@ -125,11 +120,7 @@ nodes:
     installDisk: /dev/mmcblk0
     networkInterfaces:
       - interface: end0
-#        addresses:
-#          - 192.168.1.36/24
-#        routes:
-#          - gateway: 192.168.1.1
-#        dhcp: false
+        dhcp: false
         mtu: 1500
         vlans:
           - vlanId: 41
@@ -139,93 +130,83 @@ nodes:
               - 10.10.41.36/24
             routes:
               - gateway: 10.10.41.1
-
-#          - vlanId: 50
-#            mtu: 1500
-#            dhcp: false
-#            addresses:
-#              - 10.0.50.36/24
   - hostname: node37
-    ipAddress: 192.168.1.37
+    ipAddress: 10.10.41.37
     controlPlane: false
     installDisk: /dev/mmcblk0
     networkInterfaces:
       - interface: end0
-        addresses:
-          - 192.168.1.37/24
-        routes:
-          - gateway: 192.168.1.1
+        dhcp: false
+        mtu: 1500
         vlans:
           - vlanId: 41
             mtu: 1500
             dhcp: false
             addresses:
               - 10.10.41.37/24
+            routes:
+              - gateway: 10.10.41.1
   - hostname: node38
-    ipAddress: 192.168.1.38
+    ipAddress: 10.10.41.38
     controlPlane: false
     installDisk: /dev/mmcblk0
     networkInterfaces:
       - interface: end0
         dhcp: false
-        addresses:
-          - 192.168.1.38/24
-        routes:
-          - gateway: 192.168.1.1
+        mtu: 1500
         vlans:
           - vlanId: 41
             mtu: 1500
             dhcp: false
             addresses:
               - 10.10.41.38/24
+            routes:
+              - gateway: 10.10.41.1
   - hostname: node39
-    ipAddress: 192.168.1.39
+    ipAddress: 10.10.41.39
     controlPlane: false
     installDisk: /dev/mmcblk0
     networkInterfaces:
       - interface: end0
-        addresses:
-          - 192.168.1.39/24
-        routes:
-          - gateway: 192.168.1.1
         dhcp: false
+        mtu: 1500
         vlans:
           - vlanId: 41
             mtu: 1500
             dhcp: false
             addresses:
               - 10.10.41.39/24
+            routes:
+              - gateway: 10.10.41.1
   - hostname: node40
-    ipAddress: 192.168.1.40
+    ipAddress: 10.10.41.40
     controlPlane: false
     installDisk: /dev/mmcblk0
     networkInterfaces:
       - interface: end0
-        addresses:
-          - 192.168.1.40/24
-        routes:
-          - gateway: 192.168.1.1
         dhcp: false
+        mtu: 1500
         vlans:
           - vlanId: 41
             mtu: 1500
             dhcp: false
             addresses:
               - 10.10.41.40/24
+            routes:
+              - gateway: 10.10.41.1
   - hostname: node41
-    ipAddress: 192.168.1.41
+    ipAddress: 10.10.41.41
     controlPlane: false
     installDisk: /dev/nvme0n1
     networkInterfaces:
       - interface: enp4s0
-        addresses:
-          - 192.168.1.41/24
-        routes:
-          - gateway: 192.168.1.1
         dhcp: false
+        mtu: 1500
         vlans:
           - vlanId: 41
             mtu: 1500
             dhcp: false
             addresses:
               - 10.10.41.41/24
+            routes:
+              - gateway: 10.10.41.1

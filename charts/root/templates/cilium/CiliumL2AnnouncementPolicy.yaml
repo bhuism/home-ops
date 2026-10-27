@@ -4,7 +4,7 @@ metadata:
   name: l2advertisement
   namespace: kube-system
 spec:
-  externalIPs: true
+  externalIPs: false
   loadBalancerIPs: true
   interfaces:
     - end+

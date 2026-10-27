@@ -5,8 +5,6 @@ metadata:
   namespace: cardserver
 spec:
   kafka:
-    version: 4.3.1
-    metadataVersion: "4.3"
     listeners:
       - name: plain
         port: 9092

@@ -38,6 +38,11 @@ spec:
           image:
             repository: ghcr.io/tarampampam/error-pages
             tag: "3.3.1"
+          extraEnvs:
+            - name: SEND_SAME_HTTP_CODE
+              value: "true"
+            - name: SHOW_DETAILS
+              value: "true"
           resources:
             requests:
               memory: 250Mi

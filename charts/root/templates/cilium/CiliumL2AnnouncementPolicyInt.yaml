@@ -1,12 +1,12 @@
 apiVersion: "cilium.io/v2alpha1"
 kind: CiliumL2AnnouncementPolicy
 metadata:
-  name: l2advertisement
+  name: l2advertisement-internal-policy
   namespace: kube-system
 spec:
   serviceSelector:
     matchLabels:
-      app.kubernetes.io/name: ingress-nginx
+      app.kubernetes.io/instance: ingress-nginx-internal
   externalIPs: false
   loadBalancerIPs: true
   interfaces:

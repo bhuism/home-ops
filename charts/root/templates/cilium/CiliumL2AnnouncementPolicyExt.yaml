@@ -1,0 +1,14 @@
+apiVersion: "cilium.io/v2alpha1"
+kind: CiliumL2AnnouncementPolicy
+metadata:
+  name: l2advertisement-external-policy
+  namespace: kube-system
+spec:
+  serviceSelector:
+    matchLabels:
+      app.kubernetes.io/instance: ingress-nginx-external
+  externalIPs: false
+  loadBalancerIPs: true
+  interfaces:
+    - ^end0\.41$
+    - ^enp4s0\.41$

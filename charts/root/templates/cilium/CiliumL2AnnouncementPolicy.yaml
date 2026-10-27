@@ -4,6 +4,9 @@ metadata:
   name: l2advertisement
   namespace: kube-system
 spec:
+  serviceSelector:
+    matchLabels:
+      app.kubernetes.io/name: ingress-nginx
   externalIPs: false
   loadBalancerIPs: true
   interfaces:

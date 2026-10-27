@@ -19,23 +19,27 @@ spec:
           enabled: true
         ipam:
           mode: kubernetes
-          # https://github.com/cilium/cilium/issues/35811
-          multiPoolPreAllocation: null
+
         l2announcements:
           enabled: true
+
         kubeProxyReplacement: true
+
+        routingMode: tunnel
+        tunnelProtocol: geneve
+
         loadBalancer:
-          mode: hybrid
+          mode: snat
           acceleration: best-effort
-        routingMode: native
-        ipv4NativeRoutingCIDR: 10.10.0.0/16
-        k8sServiceHost: 127.0.0.1
-        k8sServicePort: 7445
-        autoDirectNodeRoutes: true
+
+        autoDirectNodeRoutes: false
+
         bpf:
           masquerade: true
-          # hostLegacyRouting: false
-          # disableExternalIPMitigation: true
+
+        k8sServiceHost: 127.0.0.1
+        k8sServicePort: 7445
+
         securityContext:
           capabilities:
             ciliumAgent:

@@ -64,6 +64,10 @@ spec:
         k8sClientRateLimit:
           qps: 50
           burst: 100
+
+        devices:
+          - end0+
+          - enp4s0+
   syncPolicy:
     automated:
       prune: true

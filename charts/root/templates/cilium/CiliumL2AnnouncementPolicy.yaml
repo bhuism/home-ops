@@ -7,6 +7,5 @@ spec:
   externalIPs: false
   loadBalancerIPs: true
   interfaces:
-    - end+
-    - enp+
-    - eth+
+    - ^end0\.41$
+    - ^enp4s0\.41$

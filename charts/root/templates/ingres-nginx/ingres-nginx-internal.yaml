@@ -28,7 +28,6 @@ spec:
             serviceMonitor:
               enabled: true
           service:
-            externalTrafficPolicy: Local
             annotations:
               lbipam.cilium.io/ips: "10.10.41.101"
           config:

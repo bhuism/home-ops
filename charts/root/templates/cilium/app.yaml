@@ -25,7 +25,7 @@ spec:
           enabled: true
         kubeProxyReplacement: true
         loadBalancer:
-          mode: snat
+          mode: hybrid
           acceleration: best-effort
         routingMode: native
         ipv4NativeRoutingCIDR: 10.10.0.0/16

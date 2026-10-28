@@ -70,8 +70,8 @@ spec:
           burst: 100
 
         devices:
-          - end0+
-          - enp4s0+
+          - end0.41
+          - enp4s0.41
   syncPolicy:
     automated:
       prune: true

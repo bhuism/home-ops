@@ -7,4 +7,4 @@ spec:
   externalIPs: false
   loadBalancerIPs: true
   interfaces:
-    - ^end0.41$
+    - ^br-vlan41$

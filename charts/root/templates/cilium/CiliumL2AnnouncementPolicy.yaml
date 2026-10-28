@@ -9,3 +9,4 @@ spec:
   interfaces:
     - ^end0\.41$
     - ^enp4s0\.41$
+    - ^br-vlan41$

@@ -1,7 +1,7 @@
 apiVersion: "cilium.io/v2alpha1"
 kind: CiliumL2AnnouncementPolicy
 metadata:
-  name: l2advertisement-external-policy
+  name: l2advertisement-policy
   namespace: kube-system
 spec:
   externalIPs: false

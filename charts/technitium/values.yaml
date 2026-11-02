@@ -55,6 +55,7 @@ service:
     controller: main
     primary: true
     type: LoadBalancer
+    externalTrafficPolicy: Cluster
     ports:
       http:
         enabled: true

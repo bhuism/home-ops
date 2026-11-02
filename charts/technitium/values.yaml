@@ -9,32 +9,36 @@ controllers:
         env:
           TZ: "Europe/Amsterdam"
         probes:
-          liveness:
-            enabled: true
-            custom: true
-            spec:
-              initialDelaySeconds: 3
-              httpGet:
-                path: /
-                port: 5380
-          readiness:
-            enabled: true
-            custom: true
-            spec:
-              initialDelaySeconds: 3
-              httpGet:
-                path: /
-                port: 5380
           startup:
             enabled: true
             custom: true
             spec:
-              initialDelaySeconds: 15
-              failureThreshold: 30
-              periodSeconds: 5
               httpGet:
                 path: /
                 port: 5380
+              initialDelaySeconds: 5
+              periodSeconds: 5
+              failureThreshold: 20
+          liveness:
+            enabled: true
+            custom: true
+            spec:
+              httpGet:
+                path: /
+                port: 5380
+              periodSeconds: 10
+              timeoutSeconds: 3
+              failureThreshold: 3
+          readiness:
+            enabled: true
+            custom: true
+            spec:
+              httpGet:
+                path: /
+                port: 5380
+              periodSeconds: 10
+              timeoutSeconds: 3
+              failureThreshold: 3
         resources:
           limits:
             cpu: 500m
@@ -54,22 +58,17 @@ service:
     ports:
       http:
         enabled: true
+        port: 5380
         protocol: TCP
-      https:
-        enabled: false
+      dns-tcp:
+        enabled: true
+        port: 53
         protocol: TCP
       dns-udp:
         enabled: true
+        port: 53
         protocol: UDP
-      dns-tcp:
-        enabled: true
-        protocol: TCP
-      dhcp:
-        enabled: false
-      dot:
-        enabled: false
-      doh-reverse:
-        enabled: false
+
 ingress:
   main:
     enabled: true

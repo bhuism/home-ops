@@ -52,19 +52,22 @@ service:
     ports:
       http:
         enabled: true
+        protocol: TCP
       https:
         enabled: false
+        protocol: TCP
       dns-udp:
         enabled: true
+        protocol: UDP
       dns-tcp:
         enabled: true
+        protocol: TCP
       dhcp:
         enabled: false
       dot:
         enabled: false
       doh-reverse:
         enabled: false
-
 ingress:
   main:
     enabled: true

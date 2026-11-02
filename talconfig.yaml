@@ -17,6 +17,7 @@ additionalMachineCertSans:
   - 10.10.41.40
   - 10.10.41.41
   - control.impl.nl
+  - jasmine.odee.net
 additionalApiServerCertSans:
   - 127.0.0.1
   - 10.10.41.33
@@ -29,6 +30,7 @@ additionalApiServerCertSans:
   - 10.10.41.40
   - 10.10.41.41
   - control.impl.nl
+  - jasmine.odee.net
 patches:
   - |-
     machine:

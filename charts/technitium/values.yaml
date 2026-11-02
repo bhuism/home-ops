@@ -63,11 +63,11 @@ service:
         protocol: TCP
       dns-tcp:
         enabled: true
-        port: 53
+        port: 5300
         protocol: TCP
       dns-udp:
         enabled: true
-        port: 53
+        port: 5300
         protocol: UDP
 
 ingress:

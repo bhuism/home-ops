@@ -13,7 +13,7 @@ controllers:
             enabled: true
             custom: true
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 3
               httpGet:
                 path: /
                 port: 5380
@@ -21,7 +21,7 @@ controllers:
             enabled: true
             custom: true
             spec:
-              initialDelaySeconds: 15
+              initialDelaySeconds: 3
               httpGet:
                 path: /
                 port: 5380
@@ -30,6 +30,8 @@ controllers:
             custom: true
             spec:
               initialDelaySeconds: 15
+              failureThreshold: 30
+              periodSeconds: 5
               httpGet:
                 path: /
                 port: 5380

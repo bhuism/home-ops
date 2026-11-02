@@ -44,55 +44,46 @@ controllers:
 service:
   main:
     enabled: true
+    annotations:
+      lbipam.cilium.io/ips: "10.10.41.82"
     controller: main
     primary: true
     type: LoadBalancer
-    externalTrafficPolicy: Local
     ports:
       http:
         enabled: true
-        port: 80
-        targetPort: 5380
-        protocol: TCP
       https:
-        enabled: true
-        port: 443
-        targetPort: 53443
+        enabled: false
       dns-udp:
         enabled: true
-        port: 53
-        protocol: UDP
       dns-tcp:
         enabled: true
-        port: 53
-        protocol: TCP
       dhcp:
-        enabled: true
-        port: 67
-        protocol: UDP
+        enabled: false
       dot:
-        enabled: true
-        port: 853
-        protocol: TCP
+        enabled: false
       doh-reverse:
-        enabled: true
-        port: 8053
-        protocol: TCP
+        enabled: false
 
 ingress:
   main:
-    enabled: false
-    # hosts:
-    #   - host: my.host.local
-    #     paths:
-    #       - path: /
-    #         service:
-    #           identifier: main
-    #           port: http
-    # tls:
-    #   - hosts:
-    #       - my.host.local
-    #     secretName: mycert-tls
+    enabled: true
+    annotations:
+      external-dns.kubernetes.io/target: ingress-internal.impl.nl
+      external-dns.kubernetes.io/cloudflare-proxied: "false"
+      cert-manager.io/cluster-issuer: letsencrypt-production
+    className: nginx-internal
+    hosts:
+      - host: technitium-dnsserver.impl.nl
+        paths:
+          - path: /
+            service:
+              identifier: main
+              port: http
+    tls:
+      - hosts:
+          - technitium-dnsserver.impl.nl
+        secretName: technitium-dnsserver.impl.nl
 
 persistence:
   config:

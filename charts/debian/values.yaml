@@ -40,11 +40,11 @@ controllers:
         #     type: RuntimeDefault
         resources:
           requests:
-            memory: "64Mi"
+            memory: "256Mi"
             cpu: "500m"
             ephemeral-storage: "1Gi"
           limits:
-            memory: "64Mi"
+            memory: "256Mi"
             cpu: "500m"
             ephemeral-storage: "1Gi"
         lifecycle:

@@ -9,7 +9,7 @@ controllers:
         image:
           repository: ghcr.io/bhuism/openssh-server
           tag: "latest"
-          pullPolicy: IfNotPresent
+          pullPolicy: Always
         env:
           TZ: "Europe/Amsterdam"
         probes:

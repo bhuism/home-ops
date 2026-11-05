@@ -62,13 +62,13 @@ controlPlane:
   nameservers:
     - 1.0.0.1
     - 8.8.4.4
-    - 8.8.8.8
+    - 9.9.9.9
 
 worker:
   nameservers:
     - 1.0.0.1
     - 8.8.4.4
-    - 8.8.8.8
+    - 9.9.9.9
 
 nodes:
   - hostname: node33

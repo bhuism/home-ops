@@ -1,0 +1,77 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sonarr
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: star-arr
+  project: default
+  source:
+    repoURL: https://github.com/truecharts/public
+    path: charts/stable/sonarr
+    targetRevision: HEAD
+    helm:
+      valuesObject:
+        workload:
+          main:
+            replicas: 1
+            podSpec:
+              containers:
+                main:
+                  env:
+                    SONARR__AUTH__METHOD: "external"
+                    SONARR__APP__THEME: "dark"
+        ingress:
+          main:
+            enabled: true
+            ingressClassName: nginx-internal
+            annotations:
+              external-dns.kubernetes.io/target: ingress-internal.impl.nl
+              external-dns.kubernetes.io/cloudflare-proxied: "false"
+              cert-manager.io/cluster-issuer: letsencrypt-production
+              gethomepage.dev/enabled: "false"
+            hosts:
+              - host: sonarr.impl.nl
+                paths:
+                  - path: /
+            tls:
+              - secretName: sonarr.impl.nl
+                hosts:
+                  - sonarr.impl.nl
+            integrations:
+              homepage:
+                enabled: true
+              traefik:
+                enabled: false
+
+        metrics:
+          main:
+            enabled: false
+        podOptions:
+          defaultAffinity: false
+          nodeSelector:
+        persistence:
+          shared:
+            enabled: false
+          config:
+            enabled: true
+            type: pvc
+            existingClaim: sonarr-config-pvc
+            mountPath: /config
+          # download:
+          #   enabled: true
+          #   type: pvc
+          #   existingClaim: download-pvc
+          #   mountPath: /download
+          media:
+            enabled: true
+            type: pvc
+            existingClaim: media-pvc
+            mountPath: /media
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

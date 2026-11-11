@@ -22,7 +22,7 @@ spec:
               containers:
                 main:
                   env:
-                    SONARR__AUTH__METHOD: "external"
+                    SONARR__AUTH__METHOD: "External"
                     SONARR__APP__THEME: "dark"
         ingress:
           main:

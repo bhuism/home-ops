@@ -10,11 +10,9 @@ spec:
     namespace: nvidia-device-plugin
   project: default
   source:
-    repoURL: https://nvidia.github.io/k8s-device-plugin
-    path: nvdp/nvidia-device-plugin
+    repoURL: https://github.com/NVIDIA/k8s-device-plugin
+    path: deployments/helm/nvidia-device-plugin
     targetRevision: v0.20.1
-    helm:
-      valuesObject:
   syncPolicy:
     automated:
       prune: true

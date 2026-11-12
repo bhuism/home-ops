@@ -212,3 +212,10 @@ nodes:
               - 10.10.41.41/24
             routes:
               - gateway: 10.10.41.1
+
+    kernelModules:
+      - name: nvidia
+      - name: nvidia_uvm
+      - name: nvidia_drm
+      - name: nvidia_modeset
+

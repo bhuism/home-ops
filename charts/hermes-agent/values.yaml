@@ -1,0 +1,132 @@
+controllers:
+  main:
+    pod:
+      securityContext:
+        fsGroup: 10000
+        fsGroupChangePolicy: "OnRootMismatch"
+    replicas: 1
+    revisionHistoryLimit: 1
+    initContainers:
+      init-permissions:
+        image:
+          repository: busybox
+          tag: "1.37"
+        securityContext:
+          runAsUser: 0
+          runAsGroup: 0
+        command:
+          - /bin/sh
+          - -c
+          - |
+            # Seed config.yaml if not already present
+            if [ ! -f /opt/data/config.yaml ]; then
+              cp /config/config.yaml /opt/data/config.yaml
+            fi
+            chown -R 10000:10000 /opt/data || true
+        persistence:
+          data:
+            enabled: true
+          config:
+            enabled: true
+    containers:
+      main:
+        image:
+          repository: nousresearch/hermes-agent
+          pullPolicy: IfNotPresent
+          tag: "0.22.6"
+        resources:
+          limits:
+            cpu: 2
+            memory: 4Gi
+          requests:
+            cpu: 500m
+            memory: 1Gi
+        securityContext:
+          runAsUser: 10000
+          runAsGroup: 10000
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+        env:
+          HERMES_HOME: "/opt/data"
+          HERMES_UID: "10000"
+          HERMES_GID: "10000"
+          TZ: "Europe/Amsterdam"
+        # To enable the OpenAI-compatible API server, uncomment and set:
+        # - name: API_SERVER_HOST
+        #   value: "0.0.0.0"
+        # - name: API_SERVER_KEY
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: hermes-agent-api-key
+        #       key: apiKey
+        # To enable LLM provider, add your API keys:
+        # - name: OPENAI_API_KEY
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: hermes-agent-secrets
+        #       key: openaiApiKey
+        # - name: ANTHROPIC_API_KEY
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: hermes-agent-secrets
+        #       key: anthropicApiKey
+
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 8642
+
+ingress:
+  main:
+    enabled: true
+    className: nginx-internal
+    annotations:
+      external-dns.kubernetes.io/target: ingress-internal.impl.nl
+      external-dns.kubernetes.io/cloudflare-proxied: "false"
+      cert-manager.io/cluster-issuer: letsencrypt-production
+    hosts:
+      - host: hermes.impl.nl
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            service:
+              identifier: main
+              port: http
+    tls:
+      - secretName: hermes.impl.nl
+        hosts:
+          - hermes.impl.nl
+
+configMaps:
+  hermes:
+    enabled: true
+    data:
+      config.yaml: |
+        local_runtime:
+          enabled: true
+          backend: cuda
+        terminal:
+          backend: local
+
+persistence:
+  data:
+    enabled: true
+    storageClass: "ceph-rbd"
+    accessMode: ReadWriteOnce
+    size: 20Gi
+    globalMounts:
+      - path: /opt/data
+  config:
+    enabled: true
+    type: configMap
+    identifier: hermes
+    globalMounts:
+      - path: /config
+        readOnly: true

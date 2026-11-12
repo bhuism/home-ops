@@ -14,7 +14,7 @@ spec:
     path: deployments/helm/nvidia-device-plugin
     targetRevision: v0.20.1
     helm:
-      values:
+      valuesObject:
         runtimeClassName: nvidia
   syncPolicy:
     automated:

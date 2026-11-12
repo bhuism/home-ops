@@ -13,6 +13,9 @@ spec:
     repoURL: https://github.com/NVIDIA/k8s-device-plugin
     path: deployments/helm/nvidia-device-plugin
     targetRevision: v0.20.1
+    helm:
+      values:
+        runtimeClassName: nvidia
   syncPolicy:
     automated:
       prune: true

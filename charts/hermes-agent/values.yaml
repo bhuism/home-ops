@@ -22,8 +22,8 @@ controllers:
             if [ ! -f /opt/data/config.yaml ]; then
               cp /config/config.yaml /opt/data/config.yaml
             fi
-            chown -R 10000:10000 /opt/data || true
-            chown 10000:10000 /run && chmod 755 /run || exit 1
+            chown -Rf 10000:10000 /opt/data || true
+            chown -Rf 10000:10000 /run && chmod 755 /run || exit 1
         persistence:
           data:
             enabled: true

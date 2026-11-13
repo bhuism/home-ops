@@ -14,20 +14,7 @@ spec:
     path: charts/hermes-agent
     targetRevision: HEAD
     helm:
-      values: |
-        controllers:
-          main:
-            pod:
-              runtimeClassName: nvidia
-              nodeSelector:
-                kubernetes.io/hostname: node41
-            containers:
-              main:
-                resources:
-                  limits:
-                    nvidia.com/gpu: "1"
-                  requests:
-                    nvidia.com/gpu: "1"
+      values:
   syncPolicy:
     automated:
       prune: true

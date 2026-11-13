@@ -57,6 +57,11 @@ controllers:
           HERMES_UID: "10000"
           HERMES_GID: "10000"
           TZ: "Europe/Amsterdam"
+          GOOGLE_API_KEY:
+            valueFrom:
+              secretKeyRef:
+                name: google-ai-secret
+                key: GOOGLE_API_KEY
         # To enable the OpenAI-compatible API server, uncomment and set:
         # - name: API_SERVER_HOST
         #   value: "0.0.0.0"

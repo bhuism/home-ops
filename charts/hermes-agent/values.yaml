@@ -96,7 +96,17 @@ configMaps:
       config.yaml: |
         terminal:
           backend: local
-
+        model:
+            provider: google
+            default: gemini-2.5-pro
+        auxiliary:
+          provider: google
+          model: gemini-2.5-flash
+        terminal:
+          backend: local
+        gateway:
+          session_recovery:
+            restore_policy: reset
 persistence:
   run:
     enabled: true

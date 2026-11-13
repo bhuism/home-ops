@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hermes-agent
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: hermes
+  project: default
+  source:
+    repoURL: https://github.com/bhuism/home-ops.git
+    path: charts/hermes-agent
+    targetRevision: HEAD
+    helm:
+      values: |
+        controllers:
+          main:
+            pod:
+              runtimeClassName: nvidia
+              nodeSelector:
+                kubernetes.io/hostname: node41
+            containers:
+              main:
+                resources:
+                  limits:
+                    nvidia.com/gpu: "1"
+                  requests:
+                    nvidia.com/gpu: "1"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

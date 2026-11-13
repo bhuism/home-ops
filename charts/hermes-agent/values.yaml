@@ -62,33 +62,12 @@ controllers:
               secretKeyRef:
                 name: google-ai-secret
                 key: GOOGLE_API_KEY
-        # To enable the OpenAI-compatible API server, uncomment and set:
-        # - name: API_SERVER_HOST
-        #   value: "0.0.0.0"
-        # - name: API_SERVER_KEY
-        #   valueFrom:
-        #     secretKeyRef:
-        #       name: hermes-agent-api-key
-        #       key: apiKey
-        # To enable LLM provider, add your API keys:
-        # - name: OPENAI_API_KEY
-        #   valueFrom:
-        #     secretKeyRef:
-        #       name: hermes-agent-secrets
-        #       key: openaiApiKey
-        # - name: ANTHROPIC_API_KEY
-        #   valueFrom:
-        #     secretKeyRef:
-        #       name: hermes-agent-secrets
-        #       key: anthropicApiKey
-
 service:
   main:
     controller: main
     ports:
       http:
         port: 8642
-
 ingress:
   main:
     enabled: true
@@ -115,9 +94,6 @@ configMaps:
     enabled: true
     data:
       config.yaml: |
-        local_runtime:
-          enabled: true
-          backend: cuda
         terminal:
           backend: local
 

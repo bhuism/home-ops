@@ -33,7 +33,7 @@ controllers:
         image:
           repository: nousresearch/hermes-agent
           pullPolicy: IfNotPresent
-          tag: "0.22.6"
+          tag: "v0.23.1"
         resources:
           limits:
             cpu: 2

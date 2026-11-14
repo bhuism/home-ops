@@ -18,17 +18,8 @@ controllers:
           - /bin/sh
           - -c
           - |
-            # Seed config.yaml if not already present
-            if [ ! -f /opt/data/config.yaml ]; then
-              cp /config/config.yaml /opt/data/config.yaml
-            fi
-            chown -Rfv 10000:10000 /opt/data || true
-            chown -Rfv 10000:10000 /run && chmod 755 /run || exit 1
-        persistence:
-          data:
-            enabled: true
-          config:
-            enabled: true
+            chown -Rf 10000:10000 /opt/data || true
+            chown -Rf 10000:10000 /run && chmod -f 755 /run || exit 1
     containers:
       main:
         image:
@@ -62,6 +53,10 @@ controllers:
               secretKeyRef:
                 name: google-ai-secret
                 key: GOOGLE_API_KEY
+          HERMES_MODEL_PROVIDER: google
+          HERMES_AUXILIARY_PROVIDER: google
+          HERMES_GATEWAY_RESTORE_POLICY: ignore
+
 service:
   main:
     controller: main
@@ -89,22 +84,22 @@ ingress:
         hosts:
           - hermes.impl.nl
 
-configMaps:
-  hermes:
-    enabled: true
-    data:
-      config.yaml: |
-        terminal:
-          backend: local
-        model:
-          provider: google
-          default: gemini-2.5-pro
-        auxiliary:
-          provider: google
-          model: gemini-2.5-flash
-        gateway:
-          session_recovery:
-            restore_policy: ignore
+#configMaps:
+#  hermes:
+#    enabled: true
+#    data:
+#      config.yaml: |
+#        terminal:
+#          backend: local
+#        model:
+#          provider: google
+#          default: gemini-2.5-pro
+#        auxiliary:
+#          provider: google
+#          model: gemini-2.5-flash
+#        gateway:
+#          session_recovery:
+#            restore_policy: ignore
 persistence:
   run:
     enabled: true
@@ -118,10 +113,10 @@ persistence:
     size: 20Gi
     globalMounts:
       - path: /opt/data
-  config:
-    enabled: true
-    type: configMap
-    identifier: hermes
-    globalMounts:
-      - path: /config
-        readOnly: true
+#  config:
+#    enabled: true
+#    type: configMap
+#    identifier: hermes
+#    globalMounts:
+#      - path: /config
+#        readOnly: true

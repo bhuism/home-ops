@@ -98,6 +98,10 @@ configMaps:
         gateway:
           session_recovery:
             restore_policy: ignore
+        telemetry:
+          shared_metrics:
+            enabled: false
+            send: false
 persistence:
   run:
     enabled: true

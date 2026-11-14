@@ -50,7 +50,7 @@ controllers:
           HERMES_UID: "10000"
           HERMES_GID: "10000"
           TZ: "Europe/Amsterdam"
-#          HERMES_DASHBOARD: "true"
+          HERMES_DASHBOARD: "true"
 #          HERMES_DASHBOARD_HOST: "0.0.0.0"
 #          HERMES_DASHBOARD_PORT: "8642"
           GOOGLE_API_KEY:
@@ -105,8 +105,6 @@ configMaps:
           shared_metrics:
             enabled: true
         dashboard:
-          enabled: true
-          theme: midnight
           basic_auth:
             username: admin
             password: admin

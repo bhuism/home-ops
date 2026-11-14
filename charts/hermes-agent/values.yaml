@@ -99,7 +99,8 @@ configMaps:
           session_recovery:
             restore_policy: ignore
         telemetry:
-          enabled: false
+          shared_metrics:
+            enabled: true
 persistence:
   run:
     enabled: true

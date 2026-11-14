@@ -91,7 +91,7 @@ configMaps:
           backend: local
         model:
           provider: google
-          default: gemini-2.5-pro
+          default: gemini-3.8-flash
         auxiliary:
           provider: google
           model: gemini-2.5-flash

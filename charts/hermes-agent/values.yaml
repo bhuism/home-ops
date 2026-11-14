@@ -4,7 +4,7 @@ controllers:
       securityContext:
         fsGroup: 10000
         fsGroupChangePolicy: "OnRootMismatch"
-    replicas: 1
+    replicas: 0
     revisionHistoryLimit: 1
     initContainers:
       init-permissions:

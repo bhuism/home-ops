@@ -53,10 +53,6 @@ controllers:
               secretKeyRef:
                 name: google-ai-secret
                 key: GOOGLE_API_KEY
-          HERMES_MODEL_PROVIDER: google
-          HERMES_AUXILIARY_PROVIDER: google
-          HERMES_GATEWAY_RESTORE_POLICY: ignore
-
 service:
   main:
     controller: main
@@ -84,22 +80,22 @@ ingress:
         hosts:
           - hermes.impl.nl
 
-#configMaps:
-#  hermes:
-#    enabled: true
-#    data:
-#      config.yaml: |
-#        terminal:
-#          backend: local
-#        model:
-#          provider: google
-#          default: gemini-2.5-pro
-#        auxiliary:
-#          provider: google
-#          model: gemini-2.5-flash
-#        gateway:
-#          session_recovery:
-#            restore_policy: ignore
+configMaps:
+  hermes:
+    enabled: true
+    data:
+      config.yaml: |
+        terminal:
+          backend: local
+        model:
+          provider: google
+          default: gemini-2.5-pro
+        auxiliary:
+          provider: google
+          model: gemini-2.5-flash
+        gateway:
+          session_recovery:
+            restore_policy: ignore
 persistence:
   run:
     enabled: true
@@ -113,10 +109,11 @@ persistence:
     size: 20Gi
     globalMounts:
       - path: /opt/data
-#  config:
-#    enabled: true
-#    type: configMap
-#    identifier: hermes
-#    globalMounts:
-#      - path: /config
-#        readOnly: true
+  config:
+    enabled: true
+    type: configMap
+    identifier: hermes
+    globalMounts:
+      - path: /opt/data/config.yaml
+        subPath: config.yaml
+        readOnly: true

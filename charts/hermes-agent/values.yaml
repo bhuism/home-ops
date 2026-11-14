@@ -105,9 +105,10 @@ configMaps:
           shared_metrics:
             enabled: true
         dashboard:
+          theme: midnight
           basic_auth:
             username: admin
-            password_hash: "scrypt$16384$8$1$h9CeLv5+wsFydE9g43i+lA==$XXGUicJ+8rQbwv4Bq9ewtPvlvbWdsHNXZDg/rwYHUlc="
+            password_hash: "$scrypt$ln=18,r=8,p=1$3fx1S9pInMZKwj/7c19smQ$ebDIcPcq1UiMSzF5xi7qLf2BI5BlS50NxRut0FV1SZMnnAD3vhD7wwr4vBRZqH03c3HXp9dxBaAwCUBtcpsPdg"
 persistence:
   run:
     enabled: true

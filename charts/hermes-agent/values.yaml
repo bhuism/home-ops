@@ -51,8 +51,8 @@ controllers:
           HERMES_GID: "10000"
           TZ: "Europe/Amsterdam"
           HERMES_DASHBOARD: "true"
-#          HERMES_DASHBOARD_HOST: "0.0.0.0"
-#          HERMES_DASHBOARD_PORT: "8642"
+          HERMES_DASHBOARD_HOST: "0.0.0.0"
+          HERMES_DASHBOARD_PORT: "8642"
           GOOGLE_API_KEY:
             valueFrom:
               secretKeyRef:
@@ -105,6 +105,8 @@ configMaps:
           shared_metrics:
             enabled: true
         dashboard:
+          theme: default
+          public_url: https://hermes.impl.nl
           basic_auth:
             username: admin
             password: admin

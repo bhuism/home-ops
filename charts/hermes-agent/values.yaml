@@ -50,6 +50,9 @@ controllers:
           HERMES_UID: "10000"
           HERMES_GID: "10000"
           TZ: "Europe/Amsterdam"
+          HERMES_DASHBOARD: "true"
+          HERMES_DASHBOARD_HOST: "0.0.0.0"
+          HERMES_DASHBOARD_PORT: "8642"
           GOOGLE_API_KEY:
             valueFrom:
               secretKeyRef:
@@ -101,6 +104,10 @@ configMaps:
         telemetry:
           shared_metrics:
             enabled: true
+        dashboard:
+          basic_auth:
+            username: admin
+            password_hash: "scrypt$16384$8$1$h9CeLv5+wsFydE9g43i+lA==$XXGUicJ+8rQbwv4Bq9ewtPvlvbWdsHNXZDg/rwYHUlc="
 persistence:
   run:
     enabled: true

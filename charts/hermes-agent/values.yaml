@@ -26,8 +26,8 @@ controllers:
           repository: nousresearch/hermes-agent
           pullPolicy: IfNotPresent
           tag: "v0.23.1"
-#        tty: true
-#        stdin: true
+        tty: true
+        stdin: true
         resources:
           limits:
             cpu: 2

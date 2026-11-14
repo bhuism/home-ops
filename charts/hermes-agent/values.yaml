@@ -104,7 +104,7 @@ configMaps:
           model: gemini-2.5-flash
         gateway:
           session_recovery:
-            restore_policy: reset
+            restore_policy: ignore
 persistence:
   run:
     enabled: true

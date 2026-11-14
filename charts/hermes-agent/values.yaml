@@ -52,7 +52,7 @@ controllers:
           TZ: "Europe/Amsterdam"
           HERMES_DASHBOARD: "true"
           HERMES_DASHBOARD_HOST: "0.0.0.0"
-          HERMES_DASHBOARD_PORT: "8642"
+          HERMES_DASHBOARD_PORT: "8789"
           GOOGLE_API_KEY:
             valueFrom:
               secretKeyRef:
@@ -63,7 +63,7 @@ service:
     controller: main
     ports:
       http:
-        port: 8642
+        port: 8789
 ingress:
   main:
     enabled: true

@@ -20,9 +20,6 @@ controllers:
           - |
             chown -Rf 10000:10000 /opt/data || true
             chown -Rf 10000:10000 /run && chmod -f 755 /run || exit 1
-            cp -vf /opt/data/config2.yaml /opt/data/config.yaml
-            chown -Rf 10000:10000 /opt/data || true
-            chown -Rf 10000:10000 /run && chmod -f 755 /run || exit 1
     containers:
       main:
         image:
@@ -88,31 +85,31 @@ ingress:
         hosts:
           - hermes.impl.nl
 
-configMaps:
-  hermes:
-    enabled: true
-    data:
-      config.yaml: |
-        terminal:
-          backend: local
-        model:
-          provider: google
-          default: gemini-3.8-flash
-        auxiliary:
-          provider: google
-          model: gemini-2.5-flash
-        gateway:
-          session_recovery:
-            restore_policy: ignore
-        telemetry:
-          shared_metrics:
-            enabled: true
-        dashboard:
-          theme: default
-          public_url: https://hermes.impl.nl
-          basic_auth:
-            username: admin
-            password: admin
+#configMaps:
+#  hermes:
+#    enabled: true
+#    data:
+#      config.yaml: |
+#        terminal:
+#          backend: local
+#        model:
+#          provider: google
+#          default: gemini-3.8-flash
+#        auxiliary:
+#          provider: google
+#          model: gemini-2.5-flash
+#        gateway:
+#          session_recovery:
+#            restore_policy: ignore
+#        telemetry:
+#          shared_metrics:
+#            enabled: true
+#        dashboard:
+#          theme: default
+#          public_url: https://hermes.impl.nl
+#          basic_auth:
+#            username: admin
+#            password: admin
 persistence:
   run:
     enabled: true
@@ -126,11 +123,11 @@ persistence:
     size: 20Gi
     globalMounts:
       - path: /opt/data
-  config:
-    enabled: true
-    type: configMap
-    identifier: hermes
-    globalMounts:
-      - path: /opt/data/config2.yaml
-        subPath: config2.yaml
-        readOnly: true
+#  config:
+#    enabled: true
+#    type: configMap
+#    identifier: hermes
+#    globalMounts:
+#      - path: /opt/data/config2.yaml
+#        subPath: config2.yaml
+#        readOnly: true

@@ -15,7 +15,7 @@ controllers:
     pod:
       affinity:
         podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
+          preferredDuringSchedulingIgnoredDuringExecution.:
             - labelSelector:
                 matchExpressions:
                   - key: app.kubernetes.io/name
@@ -95,7 +95,7 @@ controllers:
     pod:
       affinity:
         podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
+          preferredDuringSchedulingIgnoredDuringExecution.:
             - labelSelector:
                 matchExpressions:
                   - key: app.kubernetes.io/name
@@ -170,7 +170,7 @@ controllers:
     pod:
       affinity:
         podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
+          preferredDuringSchedulingIgnoredDuringExecution.:
             - labelSelector:
                 matchExpressions:
                   - key: app.kubernetes.io/name
@@ -245,7 +245,7 @@ controllers:
     pod:
       affinity:
         podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
+          preferredDuringSchedulingIgnoredDuringExecution.:
             - labelSelector:
                 matchExpressions:
                   - key: app.kubernetes.io/name

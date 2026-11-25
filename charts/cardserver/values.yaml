@@ -3,16 +3,6 @@ defaultPodOptions:
     options:
       - name: ndots
         value: "2"
-  affinity:
-    podAntiAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        - labelSelector:
-            matchExpressions:
-              - key: app.kubernetes.io/name
-                operator: In
-                values:
-                  - cardserver
-          topologyKey: kubernetes.io/hostname
 controllers:
   api:
     replicas: 3
@@ -22,6 +12,21 @@ controllers:
     strategy: RollingUpdate
     rollingUpdate:
       unavailable: 0
+    pod:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app.kubernetes.io/name
+                    operator: In
+                    values:
+                      - cardserver
+                  - key: app.kubernetes.io/controller
+                    operator: In
+                    values:
+                      - api
+              topologyKey: kubernetes.io/hostname
     containers:
       api:
         image:
@@ -87,6 +92,21 @@ controllers:
     strategy: RollingUpdate
     rollingUpdate:
       unavailable: 0
+    pod:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app.kubernetes.io/name
+                    operator: In
+                    values:
+                      - cardserver
+                  - key: app.kubernetes.io/controller
+                    operator: In
+                    values:
+                      - stream
+              topologyKey: kubernetes.io/hostname
     containers:
       stream:
         image:
@@ -147,6 +167,21 @@ controllers:
     strategy: RollingUpdate
     rollingUpdate:
       unavailable: 0
+    pod:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app.kubernetes.io/name
+                    operator: In
+                    values:
+                      - cardserver
+                  - key: app.kubernetes.io/controller
+                    operator: In
+                    values:
+                      - gameengine
+              topologyKey: kubernetes.io/hostname
     containers:
       stream:
         image:
@@ -207,6 +242,21 @@ controllers:
     strategy: RollingUpdate
     rollingUpdate:
       unavailable: 0
+    pod:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app.kubernetes.io/name
+                    operator: In
+                    values:
+                      - cardserver
+                  - key: app.kubernetes.io/controller
+                    operator: In
+                    values:
+                      - aiplayer
+              topologyKey: kubernetes.io/hostname
     containers:
       stream:
         image:

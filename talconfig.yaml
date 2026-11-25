@@ -54,7 +54,9 @@ patches:
     cluster:
       proxy:
         disabled: true
-
+      controllerManager:
+        extraArgs:
+          terminated-pod-gc-threshold: "50"
 
 
 

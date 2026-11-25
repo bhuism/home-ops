@@ -17,6 +17,8 @@ spec:
       valuesObject:
         alertmanager:
           enabled: false
+        kubeProxy:
+          enabled: false
         grafana:
           assertNoLeakedSecrets: false
           adminPassword: killer

@@ -75,7 +75,7 @@ controllers:
             cpu: 512m
             memory: 512Mi
           requests:
-            cpu: 256m
+            cpu: 512m
             memory: 512Mi
         env:
           SPRING_PROFILES_ACTIVE: production
@@ -155,7 +155,7 @@ controllers:
             cpu: 512m
             memory: 512Mi
           requests:
-            cpu: 256m
+            cpu: 512m
             memory: 512Mi
         env:
           SPRING_PROFILES_ACTIVE: production
@@ -230,7 +230,7 @@ controllers:
             cpu: 512m
             memory: 512Mi
           requests:
-            cpu: 256m
+            cpu: 512m
             memory: 512Mi
         env:
           SPRING_PROFILES_ACTIVE: production
@@ -305,7 +305,7 @@ controllers:
             cpu: 512m
             memory: 512Mi
           requests:
-            cpu: 256m
+            cpu: 512m
             memory: 512Mi
         env:
           SPRING_PROFILES_ACTIVE: production

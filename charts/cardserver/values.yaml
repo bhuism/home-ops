@@ -3,6 +3,16 @@ defaultPodOptions:
     options:
       - name: ndots
         value: "2"
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values:
+                  - cardserver
+          topologyKey: kubernetes.io/hostname
 controllers:
   api:
     replicas: 3

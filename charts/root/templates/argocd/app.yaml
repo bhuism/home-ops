@@ -23,12 +23,26 @@ spec:
           env:
             - name: SSL_CERT_DIR
               value: "/app/config/tls/"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 1000m
+              memory: 512Mi
         server:
           metrics:
             enabled: true
           env:
             - name: SSL_CERT_DIR
               value: "/app/config/tls/"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
           extraArgs:
             - --insecure
           config:
@@ -59,6 +73,13 @@ spec:
         controller:
           metrics:
             enabled: true
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: 1000m
+              memory: 1024Mi
         configs:
           cm:
             resource.customizations.ignoreDifferences.apps_Deployment: |

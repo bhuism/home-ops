@@ -72,10 +72,10 @@ controllers:
             type: RuntimeDefault
         resources:
           limits:
-            cpu: 2
+            cpu: 512m
             memory: 512Mi
           requests:
-            cpu: 1
+            cpu: 256m
             memory: 512Mi
         env:
           SPRING_PROFILES_ACTIVE: production
@@ -152,10 +152,10 @@ controllers:
             type: RuntimeDefault
         resources:
           limits:
-            cpu: 2
+            cpu: 512m
             memory: 512Mi
           requests:
-            cpu: 1
+            cpu: 256m
             memory: 512Mi
         env:
           SPRING_PROFILES_ACTIVE: production
@@ -227,10 +227,10 @@ controllers:
             type: RuntimeDefault
         resources:
           limits:
-            cpu: 2
+            cpu: 512m
             memory: 512Mi
           requests:
-            cpu: 1
+            cpu: 256m
             memory: 512Mi
         env:
           SPRING_PROFILES_ACTIVE: production
@@ -302,10 +302,10 @@ controllers:
             type: RuntimeDefault
         resources:
           limits:
-            cpu: 2
+            cpu: 512m
             memory: 512Mi
           requests:
-            cpu: 1
+            cpu: 256m
             memory: 512Mi
         env:
           SPRING_PROFILES_ACTIVE: production

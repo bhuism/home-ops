@@ -73,10 +73,10 @@ controllers:
         resources:
           limits:
             cpu: 512m
-            memory: 512Mi
+            memory: 768Mi
           requests:
             cpu: 512m
-            memory: 512Mi
+            memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production
           KAFKA_BOOTSTRAP_SERVERS: "cardserver-kafka-bootstrap:9092"
@@ -153,10 +153,10 @@ controllers:
         resources:
           limits:
             cpu: 512m
-            memory: 512Mi
+            memory: 768Mi
           requests:
             cpu: 512m
-            memory: 512Mi
+            memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production
           KAFKA_BOOTSTRAP_SERVERS: "cardserver-kafka-bootstrap:9092"
@@ -228,10 +228,10 @@ controllers:
         resources:
           limits:
             cpu: 512m
-            memory: 512Mi
+            memory: 768Mi
           requests:
             cpu: 512m
-            memory: 512Mi
+            memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production
           KAFKA_BOOTSTRAP_SERVERS: "cardserver-kafka-bootstrap:9092"
@@ -303,10 +303,10 @@ controllers:
         resources:
           limits:
             cpu: 512m
-            memory: 512Mi
+            memory: 768Mi
           requests:
             cpu: 512m
-            memory: 512Mi
+            memory: 768Mi
         env:
           SPRING_PROFILES_ACTIVE: production
           KAFKA_BOOTSTRAP_SERVERS: "cardserver-kafka-bootstrap:9092"

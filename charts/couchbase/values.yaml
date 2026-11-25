@@ -1,3 +1,15 @@
+defaultPodOptions:
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values:
+                  - couchbase
+          topologyKey: kubernetes.io/hostname
+
 controllers:
   main:
     type: statefulset

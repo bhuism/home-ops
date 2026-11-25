@@ -16,7 +16,7 @@ spec:
     helm:
       valuesObject:
         alertmanager:
-          enabled: false
+          enabled: true
         kubeProxy:
           enabled: false
         grafana:

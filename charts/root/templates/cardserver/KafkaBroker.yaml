@@ -17,3 +17,17 @@ spec:
         size: 16Gi
         class: ceph-rbd
         kraftMetadata: shared
+  template:
+    pod:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: strimzi.io/name
+                      operator: In
+                      values:
+                        - cardserver-kafka
+                topologyKey: kubernetes.io/hostname

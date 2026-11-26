@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ceph-csi-drivers
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: rook-ceph
+  project: default
+  source:
+    chart: ceph-csi-drivers
+    repoURL: https://ceph.github.io/ceph-csi-operator
+    targetRevision: 1.1.0
+    helm:
+      valuesObject:
+        operatorConfig:
+          driverSpecDefaults:
+            controllerPlugin:
+              hostNetwork: true
+              replicas: 2
+            nodePlugin:
+              kubeletDirPath: /var/lib/kubelet
+              priorityClassName: system-node-critical
+        drivers:
+          rbd:
+            enabled: true
+            snapshotPolicy: none
+          cephfs:
+            enabled: true
+            snapshotPolicy: none
+          nfs:
+            enabled: false
+          nvmeof:
+            enabled: false
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ServerSideApply=true

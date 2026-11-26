@@ -26,10 +26,10 @@ spec:
           resources:
             requests:
               cpu: 1
-              memory: 256Mi
+              memory: 512Mi
             limits:
               cpu: 2
-              memory: 512Mi
+              memory: 1Gi
         server:
           metrics:
             enabled: true

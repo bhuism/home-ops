@@ -10,7 +10,7 @@ controllers:
       init-permissions:
         image:
           repository: busybox
-          tag: "1.37"
+          tag: "1.38"
         securityContext:
           runAsUser: 0
           runAsGroup: 0
@@ -25,7 +25,7 @@ controllers:
         image:
           repository: nousresearch/hermes-agent
           pullPolicy: IfNotPresent
-          tag: "v0.23.1"
+          tag: "v0.23.4"
         tty: true
         stdin: true
         resources:

@@ -12,7 +12,7 @@ spec:
   source:
     chart: mariadb
     repoURL: registry-1.docker.io/bitnamicharts
-    targetRevision: 24.2.0
+    targetRevision: 28.1.9
     helm:
       valuesObject:
         resourcesPreset: "medium"

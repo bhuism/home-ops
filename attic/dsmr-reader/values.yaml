@@ -6,7 +6,7 @@ controllers:
         image:
           repository: ghcr.io/xirixiz/dsmr-reader-docker
           pullPolicy: IfNotPresent
-          tag: "6.2.1"
+          tag: "6.2.3"
         env:
           TZ: "Europe/Amsterdam"
           VIRTUAL_HOST: localhost

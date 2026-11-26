@@ -26,9 +26,11 @@ spec:
         drivers:
           rbd:
             enabled: true
+            name: rook-ceph.rbd.csi.ceph.com
             snapshotPolicy: none
           cephfs:
             enabled: true
+            name: rook-ceph.cephfs.csi.ceph.com
             snapshotPolicy: none
           nfs:
             enabled: false

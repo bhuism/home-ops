@@ -6,15 +6,15 @@
     "group:all"
   ],
   "argocd": {
-    "fileMatch": [
-      "^charts/.*\\.ya?ml$"
+    "managerFilePatterns": [
+      "/^charts/.*\\.ya?ml$/"
     ]
   },
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^charts/.*\\.ya?ml$"
+      "managerFilePatterns": [
+        "/^charts/.*\\.ya?ml$/"
       ],
       "matchStrings": [
         "targetRevision:\\s*(?<currentDigest>[0-9a-f]{40})\\s+# renovate: datasource=git-refs depName=(?<depName>[^\\s]+) packageName=(?<packageName>[^\\s]+) currentValue=(?<currentValue>[^\\s]+)"

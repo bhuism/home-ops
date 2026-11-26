@@ -17,7 +17,7 @@ controllers:
         env:
           TZ: "Europe/Amsterdam"
           RCP_HOST: 10.10.20.11
-          OTBR_BACKBONE_IF: "end0"
+          OTBR_BACKBONE_IF: "end0.41"
           OTBR_WEB_ENABLE: 1
 
 service:

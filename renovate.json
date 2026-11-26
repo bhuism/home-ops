@@ -5,10 +5,29 @@
     "config:recommended",
     "group:all"
   ],
+  "argocd": {
+    "fileMatch": [
+      "^charts/.*\\.ya?ml$"
+    ]
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^charts/.*\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "targetRevision:\\s*(?<currentDigest>[0-9a-f]{40})\\s+# renovate: datasource=git-refs depName=(?<depName>[^\\s]+) packageName=(?<packageName>[^\\s]+) currentValue=(?<currentValue>[^\\s]+)"
+      ],
+      "datasourceTemplate": "git-refs",
+      "versioningTemplate": "git",
+      "autoReplaceStringTemplate": "targetRevision: {{{newDigest}}} # renovate: datasource=git-refs depName={{{depName}}} packageName={{{packageName}}} currentValue={{{currentValue}}}"
+    }
+  ],
   "packageRules": [
     {
       "matchFileNames": [
-        "^charts/.+\\.ya?ml$"
+        "/^charts\\/.+\\.ya?ml$/"
       ],
       "matchUpdateTypes": [
         "patch",

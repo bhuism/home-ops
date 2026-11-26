@@ -16,17 +16,19 @@ controllers:
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: app.kubernetes.io/name
-                    operator: In
-                    values:
-                      - cardserver
-                  - key: app.kubernetes.io/controller
-                    operator: In
-                    values:
-                      - api
-              topologyKey: kubernetes.io/hostname
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app.kubernetes.io/name
+                      operator: In
+                      values:
+                        - cardserver
+                    - key: app.kubernetes.io/controller
+                      operator: In
+                      values:
+                        - api
+                topologyKey: kubernetes.io/hostname
     containers:
       api:
         image:
@@ -96,17 +98,19 @@ controllers:
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: app.kubernetes.io/name
-                    operator: In
-                    values:
-                      - cardserver
-                  - key: app.kubernetes.io/controller
-                    operator: In
-                    values:
-                      - stream
-              topologyKey: kubernetes.io/hostname
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app.kubernetes.io/name
+                      operator: In
+                      values:
+                        - cardserver
+                    - key: app.kubernetes.io/controller
+                      operator: In
+                      values:
+                        - stream
+                topologyKey: kubernetes.io/hostname
     containers:
       stream:
         image:
@@ -171,17 +175,19 @@ controllers:
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: app.kubernetes.io/name
-                    operator: In
-                    values:
-                      - cardserver
-                  - key: app.kubernetes.io/controller
-                    operator: In
-                    values:
-                      - gameengine
-              topologyKey: kubernetes.io/hostname
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app.kubernetes.io/name
+                      operator: In
+                      values:
+                        - cardserver
+                    - key: app.kubernetes.io/controller
+                      operator: In
+                      values:
+                        - gameengine
+                topologyKey: kubernetes.io/hostname
     containers:
       stream:
         image:
@@ -246,17 +252,19 @@ controllers:
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: app.kubernetes.io/name
-                    operator: In
-                    values:
-                      - cardserver
-                  - key: app.kubernetes.io/controller
-                    operator: In
-                    values:
-                      - aiplayer
-              topologyKey: kubernetes.io/hostname
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app.kubernetes.io/name
+                      operator: In
+                      values:
+                        - cardserver
+                    - key: app.kubernetes.io/controller
+                      operator: In
+                      values:
+                        - aiplayer
+                topologyKey: kubernetes.io/hostname
     containers:
       stream:
         image:

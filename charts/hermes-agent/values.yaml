@@ -25,7 +25,7 @@ controllers:
         image:
           repository: nousresearch/hermes-agent
           pullPolicy: IfNotPresent
-          tag: "v0.23.4"
+          tag: "v0.23.5"
         tty: true
         stdin: true
         resources:
